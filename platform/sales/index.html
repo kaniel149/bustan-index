@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0A1628">
+  <title>TM Energy — Sales</title>
+  <link rel="manifest" href="manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-light: #101E32;
+      --navy-lighter: #162540;
+      --green: #00D68F;
+      --green-dim: rgba(0,214,143,.12);
+      --gold: #FFB800;
+      --gold-dim: rgba(255,184,0,.12);
+      --red: #FF4757;
+      --red-dim: rgba(255,71,87,.12);
+      --blue: #3B82F6;
+      --blue-dim: rgba(59,130,246,.12);
+      --purple: #8B5CF6;
+      --purple-dim: rgba(139,92,246,.12);
+      --text: #E8ECF4;
+      --text-sec: rgba(255,255,255,.6);
+      --text-dim: rgba(255,255,255,.4);
+      --glass: rgba(255,255,255,.04);
+      --glass-border: rgba(255,255,255,.08);
+      --radius: 14px;
+      --radius-sm: 10px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    body { font-family:'Inter',sans-serif; background:var(--navy); color:var(--text); min-height:100vh; min-height:100dvh; overflow-x:hidden; }
+
+    /* Status Bar */
+    .status-bar { padding:12px 20px 8px; display:flex; align-items:center; justify-content:space-between; }
+    .status-bar .greeting { font-size:.85rem; color:var(--text-sec); }
+    .status-bar .greeting strong { color:var(--text); }
+    .status-bar .actions { display:flex; gap:8px; }
+    .icon-btn { width:38px; height:38px; border-radius:50%; background:var(--glass); border:1px solid var(--glass-border); color:var(--text); display:flex; align-items:center; justify-content:center; font-size:1.1rem; cursor:pointer; }
+
+    /* Screens */
+    .screen { display:none; padding:0 16px 100px; }
+    .screen.active { display:block; }
+
+    /* Dashboard */
+    .pipeline-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:16px 0; }
+    .pipeline-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius-sm); padding:16px; text-align:center; cursor:pointer; transition:transform .15s; }
+    .pipeline-card:active { transform:scale(.96); }
+    .pipeline-card .count { font-size:2rem; font-weight:700; }
+    .pipeline-card .label { font-size:.7rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.5px; margin-top:2px; }
+    .pipeline-card.new .count { color:var(--blue); }
+    .pipeline-card.survey .count { color:var(--gold); }
+    .pipeline-card.proposal .count { color:var(--purple); }
+    .pipeline-card.won .count { color:var(--green); }
+
+    /* Quick Actions */
+    .quick-actions { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:16px 0; }
+    .quick-action { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius-sm); padding:20px 16px; display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer; transition:transform .15s; }
+    .quick-action:active { transform:scale(.96); }
+    .quick-action .qa-icon { font-size:1.8rem; }
+    .quick-action .qa-label { font-size:.8rem; font-weight:500; text-align:center; }
+    .quick-action .qa-sub { font-size:.65rem; color:var(--text-dim); text-align:center; }
+
+    /* Section Headers */
+    .section-header { display:flex; align-items:center; justify-content:space-between; margin:20px 0 10px; }
+    .section-header h2 { font-size:1rem; font-weight:600; }
+    .section-header .see-all { font-size:.75rem; color:var(--green); cursor:pointer; }
+
+    /* Lead Cards */
+    .lead-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius-sm); padding:14px 16px; margin-bottom:8px; cursor:pointer; transition:transform .15s; display:flex; align-items:center; gap:12px; }
+    .lead-card:active { transform:scale(.98); }
+    .lead-avatar { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1rem; flex-shrink:0; }
+    .lead-info { flex:1; min-width:0; }
+    .lead-name { font-size:.9rem; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .lead-meta { font-size:.7rem; color:var(--text-dim); margin-top:2px; display:flex; gap:8px; }
+    .lead-status { font-size:.65rem; padding:3px 8px; border-radius:8px; font-weight:600; flex-shrink:0; }
+    .status-new { background:var(--blue-dim); color:var(--blue); }
+    .status-contacted { background:var(--gold-dim); color:var(--gold); }
+    .status-survey { background:var(--purple-dim); color:var(--purple); }
+    .status-proposal { background:var(--green-dim); color:var(--green); }
+    .status-won { background:var(--green); color:var(--navy); }
+    .status-lost { background:var(--red-dim); color:var(--red); }
+
+    /* Lead Detail */
+    .detail-header { text-align:center; padding:20px 0 10px; }
+    .detail-avatar { width:64px; height:64px; border-radius:50%; margin:0 auto 10px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; font-weight:700; }
+    .detail-name { font-size:1.3rem; font-weight:700; }
+    .detail-location { font-size:.8rem; color:var(--text-dim); margin-top:4px; }
+    .detail-actions { display:flex; justify-content:center; gap:12px; margin:16px 0; }
+    .detail-action-btn { display:flex; flex-direction:column; align-items:center; gap:4px; padding:10px 16px; background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius-sm); cursor:pointer; min-width:70px; }
+    .detail-action-btn .icon { font-size:1.2rem; }
+    .detail-action-btn .text { font-size:.65rem; color:var(--text-sec); }
+
+    /* Timeline */
+    .timeline { margin:16px 0; }
+    .timeline-item { display:flex; gap:12px; padding:10px 0; }
+    .timeline-dot { width:10px; height:10px; border-radius:50%; background:var(--green); margin-top:5px; flex-shrink:0; position:relative; }
+    .timeline-dot::after { content:''; position:absolute; top:12px; left:4px; width:2px; height:calc(100% + 10px); background:var(--glass-border); }
+    .timeline-item:last-child .timeline-dot::after { display:none; }
+    .timeline-content { flex:1; }
+    .timeline-title { font-size:.85rem; font-weight:500; }
+    .timeline-time { font-size:.7rem; color:var(--text-dim); }
+
+    /* Tabs in detail */
+    .detail-tabs { display:flex; gap:0; margin:16px 0 8px; border-bottom:1px solid var(--glass-border); }
+    .detail-tab { flex:1; text-align:center; padding:10px; font-size:.8rem; font-weight:500; color:var(--text-dim); cursor:pointer; border-bottom:2px solid transparent; }
+    .detail-tab.active { color:var(--green); border-bottom-color:var(--green); }
+    .tab-content { display:none; }
+    .tab-content.active { display:block; }
+
+    /* Forms */
+    .form-group { margin-bottom:16px; }
+    .form-label { font-size:.75rem; color:var(--text-sec); margin-bottom:6px; display:block; font-weight:500; }
+    .form-input { width:100%; padding:12px 14px; background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius-sm); color:var(--text); font-size:.9rem; font-family:inherit; outline:none; }
+    .form-input:focus { border-color:var(--green); }
+    .form-input::placeholder { color:var(--text-dim); }
+    select.form-input { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; }
+    textarea.form-input { min-height:80px; resize:vertical; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+    /* Camera */
+    .camera-btn { width:100%; padding:40px 20px; background:var(--glass); border:2px dashed var(--glass-border); border-radius:var(--radius); display:flex; flex-direction:column; align-items:center; gap:10px; cursor:pointer; transition:border-color .2s; }
+    .camera-btn:active { border-color:var(--green); }
+    .camera-btn .cam-icon { font-size:2rem; }
+    .camera-btn .cam-text { font-size:.85rem; color:var(--text-sec); }
+    .camera-btn .cam-sub { font-size:.7rem; color:var(--text-dim); }
+    .photo-preview { width:100%; border-radius:var(--radius-sm); margin-top:8px; display:none; }
+
+    /* Primary Button */
+    .btn-primary { width:100%; padding:14px; background:var(--green); color:var(--navy); border:none; border-radius:var(--radius-sm); font-size:.9rem; font-weight:700; font-family:inherit; cursor:pointer; }
+    .btn-primary:active { opacity:.8; }
+    .btn-secondary { width:100%; padding:14px; background:var(--glass); color:var(--text); border:1px solid var(--glass-border); border-radius:var(--radius-sm); font-size:.9rem; font-weight:600; font-family:inherit; cursor:pointer; }
+    .btn-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px; }
+
+    /* Steps indicator */
+    .steps { display:flex; justify-content:center; gap:6px; margin:16px 0; }
+    .step { width:8px; height:8px; border-radius:50%; background:var(--glass-border); }
+    .step.active { background:var(--green); width:24px; border-radius:4px; }
+    .step.done { background:var(--green); }
+
+    /* Bottom Nav */
+    .bottom-nav { position:fixed; bottom:0; left:0; right:0; background:var(--navy-light); border-top:1px solid var(--glass-border); display:flex; padding:8px 0 calc(8px + var(--safe-bottom)); z-index:100; }
+    .nav-item { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:6px; cursor:pointer; color:var(--text-dim); transition:color .15s; }
+    .nav-item.active { color:var(--green); }
+    .nav-item .nav-icon { font-size:1.3rem; }
+    .nav-item .nav-label { font-size:.6rem; font-weight:500; letter-spacing:.3px; }
+
+    /* Back button */
+    .back-bar { display:flex; align-items:center; gap:8px; padding:12px 0; cursor:pointer; }
+    .back-bar .arrow { font-size:1.2rem; }
+    .back-bar .title { font-size:1rem; font-weight:600; }
+
+    /* Empty state */
+    .empty-state { text-align:center; padding:60px 20px; }
+    .empty-state .empty-icon { font-size:3rem; margin-bottom:12px; }
+    .empty-state .empty-title { font-size:1rem; font-weight:600; margin-bottom:4px; }
+    .empty-state .empty-sub { font-size:.8rem; color:var(--text-dim); }
+
+    /* FAB */
+    .fab { position:fixed; bottom:80px; right:20px; width:56px; height:56px; border-radius:50%; background:var(--green); color:var(--navy); border:none; font-size:1.5rem; font-weight:700; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 20px rgba(0,214,143,.3); z-index:90; }
+    .fab:active { transform:scale(.9); }
+
+    /* Page header */
+    .page-header { padding:16px 0 8px; }
+    .page-header h1 { font-size:1.5rem; font-weight:700; }
+    .page-header .sub { font-size:.8rem; color:var(--text-dim); margin-top:2px; }
+
+    /* Search */
+    .search-bar { position:relative; margin:12px 0; }
+    .search-bar input { width:100%; padding:10px 14px 10px 38px; background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius-sm); color:var(--text); font-size:.85rem; font-family:inherit; outline:none; }
+    .search-bar .search-icon { position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:.9rem; color:var(--text-dim); }
+
+    /* Stat row */
+    .stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:12px 0; }
+    .stat-mini { text-align:center; padding:12px 8px; background:var(--glass); border-radius:var(--radius-sm); border:1px solid var(--glass-border); }
+    .stat-mini .val { font-size:1.4rem; font-weight:700; color:var(--green); }
+    .stat-mini .lbl { font-size:.6rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.5px; }
+
+    /* Bill Analysis Card */
+    .bill-result { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); padding:20px; margin:16px 0; }
+    .bill-result h3 { font-size:.95rem; font-weight:600; margin-bottom:12px; }
+    .bill-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--glass-border); font-size:.85rem; }
+    .bill-row:last-child { border-bottom:none; }
+    .bill-row .val { font-weight:600; color:var(--green); }
+
+    @media(min-width:768px) {
+      .screen { max-width:480px; margin:0 auto; }
+      .bottom-nav { max-width:480px; left:50%; transform:translateX(-50%); border-radius:16px 16px 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== SCREEN: DASHBOARD ===== -->
+<div class="screen active" id="screen-dashboard">
+  <div class="status-bar">
+    <div class="greeting">Good morning, <strong>Sales Team</strong></div>
+    <div class="actions">
+      <div class="icon-btn" onclick="showScreen('settings')">⚙️</div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-mini"><div class="val" id="stat-total">0</div><div class="lbl">Total Leads</div></div>
+    <div class="stat-mini"><div class="val" id="stat-value" style="color:var(--gold)">฿0</div><div class="lbl">Pipeline Value</div></div>
+    <div class="stat-mini"><div class="val" id="stat-won">0</div><div class="lbl">Won</div></div>
+  </div>
+
+  <div class="pipeline-cards">
+    <div class="pipeline-card new" onclick="filterLeads('new')"><div class="count" id="count-new">0</div><div class="label">New Leads</div></div>
+    <div class="pipeline-card survey" onclick="filterLeads('survey')"><div class="count" id="count-survey">0</div><div class="label">Site Survey</div></div>
+    <div class="pipeline-card proposal" onclick="filterLeads('proposal')"><div class="count" id="count-proposal">0</div><div class="label">Proposal Sent</div></div>
+    <div class="pipeline-card won" onclick="filterLeads('won')"><div class="count" id="count-won">0</div><div class="label">Won</div></div>
+  </div>
+
+  <div class="section-header">
+    <h2>⚡ Quick Actions</h2>
+  </div>
+  <div class="quick-actions">
+    <div class="quick-action" onclick="showScreen('new-lead')">
+      <div class="qa-icon">📋</div>
+      <div class="qa-label">New Lead</div>
+      <div class="qa-sub">Capture & qualify</div>
+    </div>
+    <div class="quick-action" onclick="showScreen('bill-scan')">
+      <div class="qa-icon">🔍</div>
+      <div class="qa-label">Scan Bill</div>
+      <div class="qa-sub">Analyze electricity</div>
+    </div>
+    <div class="quick-action" onclick="showScreen('roof-survey')">
+      <div class="qa-icon">📸</div>
+      <div class="qa-label">Roof Survey</div>
+      <div class="qa-sub">Photo & measure</div>
+    </div>
+    <div class="quick-action" onclick="showScreen('proposal-builder')">
+      <div class="qa-icon">📄</div>
+      <div class="qa-label">Proposal</div>
+      <div class="qa-sub">Generate & send</div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <h2>📌 Recent Leads</h2>
+    <span class="see-all" onclick="showScreen('leads')">See All →</span>
+  </div>
+  <div id="recent-leads"></div>
+</div>
+
+<!-- ===== SCREEN: LEADS LIST ===== -->
+<div class="screen" id="screen-leads">
+  <div class="back-bar" onclick="showScreen('dashboard')">
+    <span class="arrow">←</span>
+    <span class="title">All Leads</span>
+  </div>
+  <div class="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Search leads..." id="lead-search" oninput="renderLeadsList()">
+  </div>
+  <div id="leads-list"></div>
+  <button class="fab" onclick="showScreen('new-lead')">+</button>
+</div>
+
+<!-- ===== SCREEN: NEW LEAD ===== -->
+<div class="screen" id="screen-new-lead">
+  <div class="back-bar" onclick="showScreen('dashboard')">
+    <span class="arrow">←</span>
+    <span class="title">New Lead</span>
+  </div>
+
+  <div class="steps">
+    <div class="step active" id="step-1"></div>
+    <div class="step" id="step-2"></div>
+    <div class="step" id="step-3"></div>
+  </div>
+
+  <!-- Step 1: Basic Info -->
+  <div id="new-lead-step-1">
+    <div class="page-header"><h1>Contact Info</h1><div class="sub">Who's the lead?</div></div>
+    <div class="form-group">
+      <label class="form-label">Full Name *</label>
+      <input type="text" class="form-input" id="lead-name" placeholder="John Smith">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Phone *</label>
+        <input type="tel" class="form-input" id="lead-phone" placeholder="+66 XXX XXX XXXX">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" id="lead-email" placeholder="john@email.com">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Location</label>
+      <input type="text" class="form-input" id="lead-location" placeholder="Baan Tai, Koh Phangan">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Property Type</label>
+        <select class="form-input" id="lead-property">
+          <option value="residential">🏠 Residential</option>
+          <option value="commercial">🏢 Commercial</option>
+          <option value="industrial">🏭 Industrial</option>
+          <option value="resort">🏨 Resort/Hotel</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Source</label>
+        <select class="form-input" id="lead-source">
+          <option value="referral">Referral</option>
+          <option value="walk-in">Walk-in</option>
+          <option value="website">Website</option>
+          <option value="facebook">Facebook</option>
+          <option value="phone">Phone Call</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Notes</label>
+      <textarea class="form-input" id="lead-notes" placeholder="Initial conversation notes..."></textarea>
+    </div>
+    <button class="btn-primary" onclick="newLeadStep(2)">Next: Electricity Bill →</button>
+    <button class="btn-secondary" style="margin-top:8px" onclick="saveLead(true)">Save & Skip to Later</button>
+  </div>
+
+  <!-- Step 2: Bill Photo -->
+  <div id="new-lead-step-2" style="display:none">
+    <div class="page-header"><h1>Electricity Bill</h1><div class="sub">Snap a photo of their latest PEA bill</div></div>
+    <label class="camera-btn" id="bill-camera">
+      <div class="cam-icon">📷</div>
+      <div class="cam-text">Take Photo of Bill</div>
+      <div class="cam-sub">Or tap to upload from gallery</div>
+      <input type="file" accept="image/*" capture="environment" style="display:none" onchange="handleBillPhoto(event)">
+    </label>
+    <img class="photo-preview" id="bill-preview">
+
+    <div class="bill-result" id="bill-result" style="display:none">
+      <h3>📊 Bill Analysis</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Monthly kWh</label>
+          <input type="number" class="form-input" id="bill-kwh" placeholder="2000">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Monthly Cost (฿)</label>
+          <input type="number" class="form-input" id="bill-cost" placeholder="12000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Rate (฿/kWh)</label>
+        <input type="number" class="form-input" id="bill-rate" value="6.0" step="0.1">
+      </div>
+      <div class="bill-row"><span>Annual Cost</span><span class="val" id="bill-annual">-</span></div>
+      <div class="bill-row"><span>Potential Savings (70%)</span><span class="val" id="bill-savings">-</span></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="newLeadStep(1)">← Back</button>
+      <button class="btn-primary" onclick="newLeadStep(3)">Next: Roof →</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Roof Photo -->
+  <div id="new-lead-step-3" style="display:none">
+    <div class="page-header"><h1>Roof Photo</h1><div class="sub">Take a photo of the roof for initial assessment</div></div>
+    <label class="camera-btn" id="roof-camera">
+      <div class="cam-icon">🏠</div>
+      <div class="cam-text">Take Photo of Roof</div>
+      <div class="cam-sub">Aerial/drone photo preferred</div>
+      <input type="file" accept="image/*" capture="environment" style="display:none" onchange="handleRoofPhoto(event)">
+    </label>
+    <img class="photo-preview" id="roof-preview">
+
+    <div class="form-group" style="margin-top:16px">
+      <label class="form-label">Roof Type</label>
+      <select class="form-input" id="roof-type">
+        <option value="corrugated">Corrugated Metal</option>
+        <option value="concrete">Concrete Flat</option>
+        <option value="tile">Tile</option>
+        <option value="standing-seam">Standing Seam</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Est. Roof Area (m²)</label>
+        <input type="number" class="form-input" id="roof-area" placeholder="150">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Orientation</label>
+        <select class="form-input" id="roof-orientation">
+          <option value="south">South</option>
+          <option value="east">East</option>
+          <option value="west">West</option>
+          <option value="north">North</option>
+          <option value="flat">Flat</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="newLeadStep(2)">← Back</button>
+      <button class="btn-primary" onclick="saveLead(false)">✓ Save Lead</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN: LEAD DETAIL ===== -->
+<div class="screen" id="screen-lead-detail">
+  <div class="back-bar" onclick="showScreen('leads')">
+    <span class="arrow">←</span>
+    <span class="title">Lead Detail</span>
+  </div>
+  <div id="lead-detail-content"></div>
+</div>
+
+<!-- ===== SCREEN: BILL SCAN ===== -->
+<div class="screen" id="screen-bill-scan">
+  <div class="back-bar" onclick="showScreen('dashboard')">
+    <span class="arrow">←</span>
+    <span class="title">Bill Scanner</span>
+  </div>
+  <div class="page-header"><h1>⚡ Bill Analysis</h1><div class="sub">Scan electricity bill to calculate savings</div></div>
+  <label class="camera-btn" style="margin-top:16px">
+    <div class="cam-icon">📷</div>
+    <div class="cam-text">Scan Electricity Bill</div>
+    <div class="cam-sub">AI will extract usage data</div>
+    <input type="file" accept="image/*" capture="environment" style="display:none" onchange="handleStandaloneBill(event)">
+  </label>
+  <img class="photo-preview" id="standalone-bill-preview">
+  <div id="standalone-bill-result"></div>
+</div>
+
+<!-- ===== SCREEN: ROOF SURVEY ===== -->
+<div class="screen" id="screen-roof-survey">
+  <div class="back-bar" onclick="showScreen('dashboard')">
+    <span class="arrow">←</span>
+    <span class="title">Roof Survey</span>
+  </div>
+  <div class="page-header"><h1>📸 Roof Survey</h1><div class="sub">Document the roof for system design</div></div>
+  <div class="empty-state">
+    <div class="empty-icon">🚧</div>
+    <div class="empty-title">Coming Soon</div>
+    <div class="empty-sub">Full roof survey with area marking, panel layout overlay, and shading analysis</div>
+  </div>
+</div>
+
+<!-- ===== SCREEN: PROPOSAL BUILDER ===== -->
+<div class="screen" id="screen-proposal-builder">
+  <div class="back-bar" onclick="showScreen('dashboard')">
+    <span class="arrow">←</span>
+    <span class="title">Proposal Builder</span>
+  </div>
+  <div class="page-header"><h1>📄 Generate Proposal</h1><div class="sub">Auto-build professional solar proposal</div></div>
+  <div class="empty-state">
+    <div class="empty-icon">🚧</div>
+    <div class="empty-title">Coming Soon</div>
+    <div class="empty-sub">Select lead → auto-generate 3-option proposal → send via WhatsApp → track opens & signatures</div>
+  </div>
+</div>
+
+<!-- ===== BOTTOM NAV ===== -->
+<div class="bottom-nav">
+  <div class="nav-item active" onclick="showScreen('dashboard')" id="nav-dashboard">
+    <div class="nav-icon">📊</div>
+    <div class="nav-label">Dashboard</div>
+  </div>
+  <div class="nav-item" onclick="showScreen('leads')" id="nav-leads">
+    <div class="nav-icon">👥</div>
+    <div class="nav-label">Leads</div>
+  </div>
+  <div class="nav-item" onclick="showScreen('new-lead')" id="nav-new">
+    <div class="nav-icon">➕</div>
+    <div class="nav-label">New Lead</div>
+  </div>
+  <div class="nav-item" onclick="window.open('../academy/index.html','_self')" id="nav-academy">
+    <div class="nav-icon">🎓</div>
+    <div class="nav-label">Academy</div>
+  </div>
+  <div class="nav-item" onclick="showScreen('settings')" id="nav-more">
+    <div class="nav-icon">⚙️</div>
+    <div class="nav-label">More</div>
+  </div>
+</div>
+
+<script>
+// ===== DATA LAYER =====
+const STORAGE_KEY = 'tm_sales_leads';
+
+function getLeads() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+  catch { return []; }
+}
+function saveLeads(leads) { localStorage.setItem(STORAGE_KEY, JSON.stringify(leads)); }
+
+// ===== NAVIGATION =====
+let currentScreen = 'dashboard';
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById('screen-' + id);
+  if (el) el.classList.add('active');
+  currentScreen = id;
+
+  // Update nav
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const navMap = { dashboard:'nav-dashboard', leads:'nav-leads', 'new-lead':'nav-new' };
+  if (navMap[id]) document.getElementById(navMap[id])?.classList.add('active');
+
+  // Refresh data
+  if (id === 'dashboard') renderDashboard();
+  if (id === 'leads') renderLeadsList();
+}
+
+// ===== DASHBOARD =====
+function renderDashboard() {
+  const leads = getLeads();
+  const counts = { new:0, contacted:0, survey:0, proposal:0, won:0, lost:0 };
+  let totalValue = 0;
+  leads.forEach(l => {
+    counts[l.status] = (counts[l.status]||0) + 1;
+    if (l.estimatedValue) totalValue += l.estimatedValue;
+  });
+
+  document.getElementById('stat-total').textContent = leads.length;
+  document.getElementById('stat-value').textContent = '฿' + (totalValue/1000).toFixed(0) + 'K';
+  document.getElementById('stat-won').textContent = counts.won;
+  document.getElementById('count-new').textContent = counts.new;
+  document.getElementById('count-survey').textContent = counts.survey;
+  document.getElementById('count-proposal').textContent = counts.proposal;
+  document.getElementById('count-won').textContent = counts.won;
+
+  // Recent leads
+  const recent = leads.slice(-5).reverse();
+  const container = document.getElementById('recent-leads');
+  if (recent.length === 0) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-title">No leads yet</div><div class="empty-sub">Tap + to add your first lead</div></div>';
+    return;
+  }
+  container.innerHTML = recent.map(l => renderLeadCard(l)).join('');
+
+  // Greeting
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  document.querySelector('.greeting').innerHTML = `${greeting}, <strong>Sales Team</strong>`;
+}
+
+function renderLeadCard(l) {
+  const initials = l.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+  const colors = { new:'var(--blue)', contacted:'var(--gold)', survey:'var(--purple)', proposal:'var(--green)', won:'var(--green)', lost:'var(--red)' };
+  const bg = colors[l.status] || 'var(--blue)';
+  return `<div class="lead-card" onclick="showLeadDetail('${l.id}')">
+    <div class="lead-avatar" style="background:${bg}20;color:${bg}">${initials}</div>
+    <div class="lead-info">
+      <div class="lead-name">${l.name}</div>
+      <div class="lead-meta"><span>${l.location||'No location'}</span><span>${l.property||''}</span></div>
+    </div>
+    <span class="lead-status status-${l.status}">${l.status.toUpperCase()}</span>
+  </div>`;
+}
+
+// ===== LEADS LIST =====
+function renderLeadsList() {
+  const leads = getLeads();
+  const search = (document.getElementById('lead-search')?.value || '').toLowerCase();
+  const filtered = search ? leads.filter(l => l.name.toLowerCase().includes(search) || (l.location||'').toLowerCase().includes(search)) : leads;
+  const container = document.getElementById('leads-list');
+  if (filtered.length === 0) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">No leads found</div><div class="empty-sub">Add a new lead to get started</div></div>';
+    return;
+  }
+  container.innerHTML = filtered.reverse().map(l => renderLeadCard(l)).join('');
+}
+
+function filterLeads(status) {
+  showScreen('leads');
+  // Could filter by status — for now just show all
+}
+
+// ===== NEW LEAD =====
+let currentStep = 1;
+function newLeadStep(step) {
+  currentStep = step;
+  [1,2,3].forEach(s => {
+    document.getElementById('new-lead-step-'+s).style.display = s===step ? 'block' : 'none';
+    const stepEl = document.getElementById('step-'+s);
+    stepEl.className = s < step ? 'step done' : s === step ? 'step active' : 'step';
+  });
+}
+
+function handleBillPhoto(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById('bill-preview').src = e.target.result;
+    document.getElementById('bill-preview').style.display = 'block';
+    document.getElementById('bill-result').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+function handleRoofPhoto(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById('roof-preview').src = e.target.result;
+    document.getElementById('roof-preview').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+// Bill calculations
+['bill-kwh','bill-cost','bill-rate'].forEach(id => {
+  document.getElementById(id)?.addEventListener('input', calcBill);
+});
+function calcBill() {
+  const kwh = parseFloat(document.getElementById('bill-kwh').value) || 0;
+  const cost = parseFloat(document.getElementById('bill-cost').value) || 0;
+  const annual = cost * 12;
+  const savings = annual * 0.7;
+  document.getElementById('bill-annual').textContent = '฿' + annual.toLocaleString();
+  document.getElementById('bill-savings').textContent = '฿' + Math.round(savings).toLocaleString() + '/yr';
+}
+
+function saveLead(skipPhotos) {
+  const name = document.getElementById('lead-name').value.trim();
+  if (!name) { alert('Please enter a name'); return; }
+
+  const lead = {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2,6),
+    name,
+    phone: document.getElementById('lead-phone').value,
+    email: document.getElementById('lead-email').value,
+    location: document.getElementById('lead-location').value,
+    property: document.getElementById('lead-property').value,
+    source: document.getElementById('lead-source').value,
+    notes: document.getElementById('lead-notes').value,
+    status: 'new',
+    createdAt: new Date().toISOString(),
+    bill: {
+      kwh: document.getElementById('bill-kwh')?.value || '',
+      cost: document.getElementById('bill-cost')?.value || '',
+      rate: document.getElementById('bill-rate')?.value || '6.0',
+    },
+    roof: {
+      type: document.getElementById('roof-type')?.value || '',
+      area: document.getElementById('roof-area')?.value || '',
+      orientation: document.getElementById('roof-orientation')?.value || '',
+    },
+    estimatedValue: (parseFloat(document.getElementById('bill-kwh')?.value||0) / 1000 * 4.2 * 0.82 * 29000) || 300000,
+    timeline: [{ action: 'Lead created', time: new Date().toISOString() }]
+  };
+
+  const leads = getLeads();
+  leads.push(lead);
+  saveLeads(leads);
+
+  // Reset form
+  ['lead-name','lead-phone','lead-email','lead-location','lead-notes','bill-kwh','bill-cost','roof-area'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  newLeadStep(1);
+  showScreen('dashboard');
+}
+
+// ===== LEAD DETAIL =====
+function showLeadDetail(id) {
+  const leads = getLeads();
+  const lead = leads.find(l => l.id === id);
+  if (!lead) return;
+
+  const initials = lead.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+  const colors = { new:'var(--blue)', contacted:'var(--gold)', survey:'var(--purple)', proposal:'var(--green)', won:'var(--green)', lost:'var(--red)' };
+  const bg = colors[lead.status] || 'var(--blue)';
+
+  const statusOptions = ['new','contacted','survey','proposal','won','lost'].map(s =>
+    `<option value="${s}" ${s===lead.status?'selected':''}>${s.toUpperCase()}</option>`
+  ).join('');
+
+  document.getElementById('lead-detail-content').innerHTML = `
+    <div class="detail-header">
+      <div class="detail-avatar" style="background:${bg}20;color:${bg}">${initials}</div>
+      <div class="detail-name">${lead.name}</div>
+      <div class="detail-location">${lead.location || 'No location'} · ${lead.property || ''}</div>
+    </div>
+
+    <div class="detail-actions">
+      <a class="detail-action-btn" href="tel:${lead.phone}"><div class="icon">📞</div><div class="text">Call</div></a>
+      <a class="detail-action-btn" href="https://wa.me/${(lead.phone||'').replace(/[^0-9]/g,'')}"><div class="icon">💬</div><div class="text">WhatsApp</div></a>
+      <a class="detail-action-btn" href="mailto:${lead.email||''}"><div class="icon">📧</div><div class="text">Email</div></a>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Status</label>
+      <select class="form-input" onchange="updateLeadStatus('${lead.id}',this.value)">${statusOptions}</select>
+    </div>
+
+    ${lead.bill && lead.bill.kwh ? `
+    <div class="bill-result">
+      <h3>⚡ Electricity Data</h3>
+      <div class="bill-row"><span>Monthly Usage</span><span class="val">${lead.bill.kwh} kWh</span></div>
+      <div class="bill-row"><span>Monthly Cost</span><span class="val">฿${parseInt(lead.bill.cost).toLocaleString()}</span></div>
+      <div class="bill-row"><span>Annual Cost</span><span class="val">฿${(parseInt(lead.bill.cost)*12).toLocaleString()}</span></div>
+      <div class="bill-row"><span>Est. System Size</span><span class="val">${(parseInt(lead.bill.kwh)/4.2/0.82/30).toFixed(1)} kWp</span></div>
+      <div class="bill-row"><span>Est. Annual Savings</span><span class="val" style="color:var(--gold)">฿${Math.round(parseInt(lead.bill.cost)*12*0.7).toLocaleString()}</span></div>
+    </div>` : ''}
+
+    ${lead.roof && lead.roof.area ? `
+    <div class="bill-result">
+      <h3>🏠 Roof Data</h3>
+      <div class="bill-row"><span>Type</span><span class="val">${lead.roof.type}</span></div>
+      <div class="bill-row"><span>Area</span><span class="val">${lead.roof.area} m²</span></div>
+      <div class="bill-row"><span>Orientation</span><span class="val">${lead.roof.orientation}</span></div>
+      <div class="bill-row"><span>Max Panels</span><span class="val">${Math.floor(parseInt(lead.roof.area)/2.58)}</span></div>
+    </div>` : ''}
+
+    <div class="section-header"><h2>📝 Timeline</h2></div>
+    <div class="timeline">
+      ${(lead.timeline||[]).map(t => `
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">${t.action}</div>
+            <div class="timeline-time">${new Date(t.time).toLocaleString()}</div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="form-group" style="margin-top:16px">
+      <label class="form-label">Add Note</label>
+      <textarea class="form-input" id="new-note" placeholder="Add a note..."></textarea>
+    </div>
+    <button class="btn-secondary" onclick="addNote('${lead.id}')">Add Note</button>
+
+    <div class="btn-row" style="margin-top:24px">
+      <button class="btn-secondary" style="color:var(--red)" onclick="deleteLead('${lead.id}')">🗑 Delete</button>
+      <button class="btn-primary" onclick="generateProposal('${lead.id}')">📄 Generate Proposal</button>
+    </div>
+  `;
+  showScreen('lead-detail');
+}
+
+function updateLeadStatus(id, status) {
+  const leads = getLeads();
+  const lead = leads.find(l => l.id === id);
+  if (lead) {
+    lead.status = status;
+    lead.timeline = lead.timeline || [];
+    lead.timeline.push({ action: `Status changed to ${status.toUpperCase()}`, time: new Date().toISOString() });
+    saveLeads(leads);
+  }
+}
+
+function addNote(id) {
+  const note = document.getElementById('new-note').value.trim();
+  if (!note) return;
+  const leads = getLeads();
+  const lead = leads.find(l => l.id === id);
+  if (lead) {
+    lead.timeline = lead.timeline || [];
+    lead.timeline.push({ action: note, time: new Date().toISOString() });
+    saveLeads(leads);
+    showLeadDetail(id);
+  }
+}
+
+function deleteLead(id) {
+  if (!confirm('Delete this lead?')) return;
+  const leads = getLeads().filter(l => l.id !== id);
+  saveLeads(leads);
+  showScreen('leads');
+}
+
+function generateProposal(id) {
+  const lead = getLeads().find(l => l.id === id);
+  if (!lead) return;
+  alert(`Proposal generation coming soon!\n\nLead: ${lead.name}\nSystem: ${lead.bill?.kwh ? (parseInt(lead.bill.kwh)/4.2/0.82/30).toFixed(1) + ' kWp' : 'TBD'}\nValue: ฿${(lead.estimatedValue/1000).toFixed(0)}K`);
+}
+
+// Standalone bill scan
+function handleStandaloneBill(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById('standalone-bill-preview').src = e.target.result;
+    document.getElementById('standalone-bill-preview').style.display = 'block';
+    document.getElementById('standalone-bill-result').innerHTML = `
+      <div class="bill-result" style="margin-top:16px">
+        <h3>📊 Enter Bill Details</h3>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Monthly kWh</label><input type="number" class="form-input" id="sb-kwh" placeholder="2000" oninput="calcStandaloneBill()"></div>
+          <div class="form-group"><label class="form-label">Monthly ฿</label><input type="number" class="form-input" id="sb-cost" placeholder="12000" oninput="calcStandaloneBill()"></div>
+        </div>
+        <div class="bill-row"><span>Annual Cost</span><span class="val" id="sb-annual">-</span></div>
+        <div class="bill-row"><span>Recommended System</span><span class="val" id="sb-system">-</span></div>
+        <div class="bill-row"><span>Est. Investment</span><span class="val" id="sb-invest">-</span></div>
+        <div class="bill-row"><span>Annual Savings (70%)</span><span class="val" id="sb-savings" style="color:var(--gold)">-</span></div>
+        <div class="bill-row"><span>Payback Period</span><span class="val" id="sb-payback" style="color:var(--green)">-</span></div>
+      </div>
+    `;
+  };
+  reader.readAsDataURL(file);
+}
+function calcStandaloneBill() {
+  const kwh = parseFloat(document.getElementById('sb-kwh').value) || 0;
+  const cost = parseFloat(document.getElementById('sb-cost').value) || 0;
+  const annual = cost * 12;
+  const kWp = kwh / 4.2 / 0.82 / 30;
+  const invest = kWp * 29000;
+  const savings = annual * 0.7;
+  const payback = invest / savings;
+  document.getElementById('sb-annual').textContent = '฿' + annual.toLocaleString();
+  document.getElementById('sb-system').textContent = kWp.toFixed(1) + ' kWp';
+  document.getElementById('sb-invest').textContent = '฿' + Math.round(invest).toLocaleString();
+  document.getElementById('sb-savings').textContent = '฿' + Math.round(savings).toLocaleString() + '/yr';
+  document.getElementById('sb-payback').textContent = payback.toFixed(1) + ' years';
+}
+
+// ===== INIT =====
+renderDashboard();
+
+// Add demo data if empty
+if (getLeads().length === 0) {
+  const demo = [
+    { id:'demo1', name:'Somchai Ratchaporn', phone:'+66891234567', email:'somchai@gmail.com', location:'Thong Sala', property:'commercial', source:'referral', status:'proposal', createdAt:'2026-03-10T09:00:00Z', bill:{kwh:'3500',cost:'21000',rate:'6.0'}, roof:{type:'corrugated',area:'250',orientation:'south'}, estimatedValue:980000, timeline:[{action:'Lead created',time:'2026-03-10T09:00:00Z'},{action:'Site survey completed',time:'2026-03-12T14:00:00Z'},{action:'Proposal sent via WhatsApp',time:'2026-03-13T11:00:00Z'}] },
+    { id:'demo2', name:'Maria Schmidt', phone:'+66952345678', email:'maria@resort.com', location:'Haad Rin', property:'resort', source:'website', status:'survey', createdAt:'2026-03-12T10:00:00Z', bill:{kwh:'8000',cost:'48000',rate:'6.0'}, roof:{type:'concrete',area:'500',orientation:'flat'}, estimatedValue:2400000, timeline:[{action:'Lead created',time:'2026-03-12T10:00:00Z'},{action:'Called — interested in PPA model',time:'2026-03-13T09:00:00Z'}] },
+    { id:'demo3', name:'David Thompson', phone:'+66813456789', email:'', location:'Baan Tai', property:'residential', source:'facebook', status:'new', createdAt:'2026-03-14T16:00:00Z', bill:{kwh:'1200',cost:'7200',rate:'6.0'}, roof:{type:'tile',area:'100',orientation:'south'}, estimatedValue:350000, timeline:[{action:'Lead created from Facebook ad',time:'2026-03-14T16:00:00Z'}] },
+    { id:'demo4', name:'Kittisak Wongsawan', phone:'+66874567890', email:'kittisak@factory.co.th', location:'Srithanu', property:'industrial', source:'referral', status:'won', createdAt:'2026-03-01T08:00:00Z', bill:{kwh:'15000',cost:'90000',rate:'6.0'}, roof:{type:'corrugated',area:'800',orientation:'south'}, estimatedValue:4500000, timeline:[{action:'Lead created',time:'2026-03-01T08:00:00Z'},{action:'Site survey',time:'2026-03-03T10:00:00Z'},{action:'Proposal sent',time:'2026-03-05T14:00:00Z'},{action:'Contract signed!',time:'2026-03-08T11:00:00Z'}] },
+    { id:'demo5', name:'Nattapong Srisuk', phone:'+66895678901', email:'nattapong@email.com', location:'Chaloklum', property:'residential', source:'walk-in', status:'contacted', createdAt:'2026-03-13T11:00:00Z', bill:{kwh:'2000',cost:'12000',rate:'6.0'}, roof:{type:'corrugated',area:'120',orientation:'west'}, estimatedValue:580000, timeline:[{action:'Walk-in at office',time:'2026-03-13T11:00:00Z'},{action:'Sent brochure via LINE',time:'2026-03-13T15:00:00Z'}] },
+  ];
+  saveLeads(demo);
+  renderDashboard();
+}
+</script>
+</body>
+</html>
