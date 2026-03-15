@@ -1746,47 +1746,6 @@ section { padding: 72px 0; }
   </div>
 </footer>
 
-<script>
-// Clickable option selection in agreement section
-document.addEventListener('DOMContentLoaded', function() {
-  const optionRadios = document.querySelectorAll('.option-select .option-radio');
-  optionRadios.forEach(function(radio, index) {
-    // Create actual radio input
-    const input = document.createElement('input');
-    input.type = 'radio';
-    input.name = 'selected-option';
-    input.value = 'option-' + String.fromCharCode(65 + index);
-    input.style.display = 'none';
-    radio.prepend(input);
-
-    radio.addEventListener('click', function() {
-      // Deselect all
-      optionRadios.forEach(function(r) {
-        r.style.borderColor = '';
-        r.style.background = '';
-        r.style.transform = '';
-        r.style.boxShadow = '';
-        const dot = r.querySelector('.radio-dot');
-        if (dot) { dot.style.borderColor = '#ccc'; dot.innerHTML = ''; }
-        const inp = r.querySelector('input[type="radio"]');
-        if (inp) inp.checked = false;
-      });
-      // Select this one
-      this.style.borderColor = 'var(--gold)';
-      this.style.background = 'var(--gold-soft)';
-      this.style.transform = 'scale(1.03)';
-      this.style.boxShadow = '0 4px 16px rgba(232,168,32,.2)';
-      const dot = this.querySelector('.radio-dot');
-      if (dot) {
-        dot.style.borderColor = 'var(--gold)';
-        dot.innerHTML = '<div style="width:10px;height:10px;background:var(--gold);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></div>';
-      }
-      const inp = this.querySelector('input[type="radio"]');
-      if (inp) inp.checked = true;
-    });
-  });
-});
-</script>
 <script src="proposal-system.js"></script>
 </body>
 </html>

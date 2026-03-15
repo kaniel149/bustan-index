@@ -110,24 +110,30 @@
         ...data
       };
       if (navigator.sendBeacon) {
-        navigator.sendBeacon(CONFIG.appsScriptUrl, JSON.stringify(fallback));
+        navigator.sendBeacon(CONFIG.appsScriptUrl, new Blob([JSON.stringify(fallback)], { type: 'application/json' }));
       }
-    }
-
-    // Also update proposals table — increment open_count, update status
-    if (event === 'viewed') {
-      const existing = await supabase.from('proposals').select('id,open_count,status', { extra_data: `->>'ref'`, extra_data: META.ref });
-      // We'll match by extra_data.ref or by a lookup
     }
   };
 
-  // Track page view
-  const viewStart = Date.now();
+  // Track page view with tab visibility awareness
+  let viewStart = Date.now();
+  let totalHiddenMs = 0;
+  let hiddenSince = null;
   trackEvent('viewed');
 
-  // Track time on page when leaving
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      hiddenSince = Date.now();
+    } else if (hiddenSince) {
+      totalHiddenMs += Date.now() - hiddenSince;
+      hiddenSince = null;
+    }
+  });
+
+  // Track time on page when leaving (excluding hidden time)
   window.addEventListener('beforeunload', () => {
-    const seconds = Math.round((Date.now() - viewStart) / 1000);
+    if (hiddenSince) totalHiddenMs += Date.now() - hiddenSince;
+    const seconds = Math.round((Date.now() - viewStart - totalHiddenMs) / 1000);
     trackEvent('time_spent', { seconds });
   });
 
@@ -209,7 +215,9 @@
         radio.style.borderColor = '#E8A820';
         radio.style.background = 'rgba(232,168,32,.06)';
         if (dot) { dot.style.borderColor = '#E8A820'; dot.style.background = '#E8A820'; }
-        selectedOption = ['PPA', 'EPC', 'EPC+Battery'][i] || `Option ${i+1}`;
+        const radioText = radio.textContent.trim().replace(/\s+/g, ' ');
+        const optMatch = radioText.match(/Option\s+[A-C]:\s*(\S+)/i);
+        selectedOption = optMatch ? optMatch[0].split('—')[0].trim() : `Option ${i+1}`;
         trackEvent('option_selected', { option: selectedOption });
       });
     });
@@ -238,7 +246,7 @@
           const sigContainer = document.createElement('div');
           sigContainer.innerHTML = `
             <div style="margin:16px 0 8px;font-size:12px;color:#999;">Draw your signature below:</div>
-            <canvas id="sig-canvas" width="400" height="150" style="border:2px dashed #ddd;border-radius:12px;cursor:crosshair;width:100%;touch-action:none;background:#fafafa;"></canvas>
+            <canvas id="sig-canvas" style="border:2px dashed #ddd;border-radius:12px;cursor:crosshair;width:100%;touch-action:none;background:#fafafa;"></canvas>
             <div style="display:flex;gap:8px;margin-top:8px;">
               <button id="sig-clear" style="padding:6px 16px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;font-size:12px;">Clear</button>
             </div>`;
@@ -246,15 +254,25 @@
 
           const canvas = document.getElementById('sig-canvas');
           const ctx = canvas.getContext('2d');
+          // DPI-aware canvas sizing
+          const dpr = window.devicePixelRatio || 1;
+          const cssWidth = 400;
+          const cssHeight = 150;
+          canvas.width = cssWidth * dpr;
+          canvas.height = cssHeight * dpr;
+          canvas.style.width = '100%';
+          canvas.style.maxWidth = cssWidth + 'px';
+          ctx.scale(dpr, dpr);
           let drawing = false;
           let hasSigned = false;
 
           const getPos = (e) => {
             const rect = canvas.getBoundingClientRect();
-            const scaleX = canvas.width / rect.width;
-            const scaleY = canvas.height / rect.height;
             const clientX = e.touches ? e.touches[0].clientX : e.clientX;
             const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            // Map from CSS pixels to canvas logical pixels (ctx is already scaled by dpr)
+            const scaleX = cssWidth / rect.width;
+            const scaleY = cssHeight / rect.height;
             return { x: (clientX - rect.left) * scaleX, y: (clientY - rect.top) * scaleY };
           };
 

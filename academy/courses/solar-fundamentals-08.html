@@ -461,12 +461,19 @@
   </section>
 
   <!-- Quiz -->
-  <section class="lesson-section fade-up quiz-section">
-    <h2 data-en>Final Quiz — Test Your Knowledge</h2>
-    <h2 data-he>מבחן סיום — בדוק את הידע שלך</h2>
-    <h2 data-th>แบบทดสอบสุดท้าย — ทดสอบความรู้ของคุณ</h2>
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Final Quiz — Test Your Knowledge</span>
+      <span data-he>מבחן סיום — בדוק את הידע שלך</span>
+      <span data-th>แบบทดสอบสุดท้าย — ทดสอบความรู้ของคุณ</span>
+    </div>
     <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
   </section>
+
+  <!-- Complete Button -->
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
 
   <div class="lesson-nav">
     <a href="solar-fundamentals-07.html" class="lesson-nav-btn prev">
@@ -544,7 +551,8 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  if (typeof initQuiz === 'function') initQuiz([
+  initCompleteButton('solar-fundamentals', 8);
+  if (typeof initQuiz === 'function') initQuiz('solar-fundamentals', 8, [
     {
       question: {
         en: "Which authority manages electricity distribution outside Bangkok?",
@@ -602,7 +610,6 @@ document.addEventListener('DOMContentLoaded', () => {
       correct: 1
     }
   ]);
-});
 </script>
 
 <footer class="footer">

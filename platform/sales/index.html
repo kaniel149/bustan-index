@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#0A1628">
@@ -41,7 +41,7 @@
     .status-bar .greeting { font-size:.85rem; color:var(--text-sec); }
     .status-bar .greeting strong { color:var(--text); }
     .status-bar .actions { display:flex; gap:8px; }
-    .icon-btn { width:38px; height:38px; border-radius:50%; background:var(--glass); border:1px solid var(--glass-border); color:var(--text); display:flex; align-items:center; justify-content:center; font-size:1.1rem; cursor:pointer; }
+    .icon-btn { width:44px; height:44px; border-radius:50%; background:var(--glass); border:1px solid var(--glass-border); color:var(--text); display:flex; align-items:center; justify-content:center; font-size:1.1rem; cursor:pointer; }
 
     /* Screens */
     .screen { display:none; padding:0 16px 100px; }
@@ -464,6 +464,27 @@
   </div>
 </div>
 
+<!-- ===== SCREEN: SETTINGS ===== -->
+<div class="screen" id="screen-settings">
+  <div class="back-bar" onclick="showScreen('dashboard')">
+    <span class="arrow">←</span>
+    <span class="title">Settings</span>
+  </div>
+  <div class="page-header"><h1>⚙️ Settings</h1><div class="sub">App configuration</div></div>
+  <div class="bill-result">
+    <h3>📱 App Info</h3>
+    <div class="bill-row"><span>Version</span><span class="val">1.0.1</span></div>
+    <div class="bill-row"><span>Build</span><span class="val">2026-03-15</span></div>
+    <div class="bill-row"><span>Storage Used</span><span class="val" id="storage-used">-</span></div>
+  </div>
+  <div class="form-group" style="margin-top:16px">
+    <button class="btn-secondary" onclick="exportData()">📤 Export Leads (JSON)</button>
+  </div>
+  <div class="form-group">
+    <button class="btn-secondary" style="color:var(--red)" onclick="clearAllData()">🗑 Clear All Data</button>
+  </div>
+</div>
+
 <!-- ===== BOTTOM NAV ===== -->
 <div class="bottom-nav">
   <div class="nav-item active" onclick="showScreen('dashboard')" id="nav-dashboard">
@@ -489,6 +510,14 @@
 </div>
 
 <script>
+// ===== UTILITIES =====
+function escapeHtml(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
 // ===== DATA LAYER =====
 const STORAGE_KEY = 'tm_sales_leads';
 
@@ -496,7 +525,10 @@ function getLeads() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
   catch { return []; }
 }
-function saveLeads(leads) { localStorage.setItem(STORAGE_KEY, JSON.stringify(leads)); }
+function saveLeads(leads) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(leads)); }
+  catch(e) { alert('Storage full. Please export and clear old leads.'); }
+}
 
 // ===== NAVIGATION =====
 let currentScreen = 'dashboard';
@@ -511,9 +543,13 @@ function showScreen(id) {
   const navMap = { dashboard:'nav-dashboard', leads:'nav-leads', 'new-lead':'nav-new' };
   if (navMap[id]) document.getElementById(navMap[id])?.classList.add('active');
 
+  // Clear filter when leaving leads
+  if (id !== 'leads') currentFilter = null;
+
   // Refresh data
   if (id === 'dashboard') renderDashboard();
   if (id === 'leads') renderLeadsList();
+  if (id === 'settings') updateStorageInfo();
 }
 
 // ===== DASHBOARD =====
@@ -550,35 +586,48 @@ function renderDashboard() {
 }
 
 function renderLeadCard(l) {
-  const initials = l.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+  const safeName = escapeHtml(l.name);
+  const initials = escapeHtml(l.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2));
   const colors = { new:'var(--blue)', contacted:'var(--gold)', survey:'var(--purple)', proposal:'var(--green)', won:'var(--green)', lost:'var(--red)' };
+  const safeStatus = escapeHtml(l.status);
   const bg = colors[l.status] || 'var(--blue)';
-  return `<div class="lead-card" onclick="showLeadDetail('${l.id}')">
+  const safeId = escapeHtml(l.id);
+  return `<div class="lead-card" onclick="showLeadDetail('${safeId}')">
     <div class="lead-avatar" style="background:${bg}20;color:${bg}">${initials}</div>
     <div class="lead-info">
-      <div class="lead-name">${l.name}</div>
-      <div class="lead-meta"><span>${l.location||'No location'}</span><span>${l.property||''}</span></div>
+      <div class="lead-name">${safeName}</div>
+      <div class="lead-meta"><span>${escapeHtml(l.location)||'No location'}</span><span>${escapeHtml(l.property)||''}</span></div>
     </div>
-    <span class="lead-status status-${l.status}">${l.status.toUpperCase()}</span>
+    <span class="lead-status status-${safeStatus}">${safeStatus.toUpperCase()}</span>
   </div>`;
 }
 
 // ===== LEADS LIST =====
+let currentFilter = null;
+
 function renderLeadsList() {
   const leads = getLeads();
   const search = (document.getElementById('lead-search')?.value || '').toLowerCase();
-  const filtered = search ? leads.filter(l => l.name.toLowerCase().includes(search) || (l.location||'').toLowerCase().includes(search)) : leads;
+  let filtered = leads;
+  if (currentFilter) filtered = filtered.filter(l => l.status === currentFilter);
+  if (search) filtered = filtered.filter(l => l.name.toLowerCase().includes(search) || (l.location||'').toLowerCase().includes(search));
   const container = document.getElementById('leads-list');
   if (filtered.length === 0) {
-    container.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">No leads found</div><div class="empty-sub">Add a new lead to get started</div></div>';
+    const msg = currentFilter ? `No ${currentFilter} leads found` : 'No leads found';
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">${escapeHtml(msg)}</div><div class="empty-sub">${currentFilter ? 'Try a different filter' : 'Add a new lead to get started'}</div></div>`;
     return;
   }
-  container.innerHTML = filtered.reverse().map(l => renderLeadCard(l)).join('');
+  container.innerHTML = [...filtered].reverse().map(l => renderLeadCard(l)).join('');
 }
 
 function filterLeads(status) {
+  currentFilter = status;
   showScreen('leads');
-  // Could filter by status — for now just show all
+}
+
+function clearFilter() {
+  currentFilter = null;
+  renderLeadsList();
 }
 
 // ===== NEW LEAD =====
@@ -676,7 +725,9 @@ function showLeadDetail(id) {
   const lead = leads.find(l => l.id === id);
   if (!lead) return;
 
-  const initials = lead.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+  const safeName = escapeHtml(lead.name);
+  const safeId = escapeHtml(lead.id);
+  const initials = escapeHtml(lead.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2));
   const colors = { new:'var(--blue)', contacted:'var(--gold)', survey:'var(--purple)', proposal:'var(--green)', won:'var(--green)', lost:'var(--red)' };
   const bg = colors[lead.status] || 'var(--blue)';
 
@@ -684,41 +735,47 @@ function showLeadDetail(id) {
     `<option value="${s}" ${s===lead.status?'selected':''}>${s.toUpperCase()}</option>`
   ).join('');
 
+  const billKwh = parseInt(lead.bill?.kwh, 10) || 0;
+  const billCost = parseInt(lead.bill?.cost, 10) || 0;
+  const roofArea = parseInt(lead.roof?.area, 10) || 0;
+  const safePhone = escapeHtml(lead.phone || '');
+  const phoneDigits = (lead.phone||'').replace(/[^0-9]/g,'');
+
   document.getElementById('lead-detail-content').innerHTML = `
     <div class="detail-header">
       <div class="detail-avatar" style="background:${bg}20;color:${bg}">${initials}</div>
-      <div class="detail-name">${lead.name}</div>
-      <div class="detail-location">${lead.location || 'No location'} · ${lead.property || ''}</div>
+      <div class="detail-name">${safeName}</div>
+      <div class="detail-location">${escapeHtml(lead.location) || 'No location'} · ${escapeHtml(lead.property) || ''}</div>
     </div>
 
     <div class="detail-actions">
-      <a class="detail-action-btn" href="tel:${lead.phone}"><div class="icon">📞</div><div class="text">Call</div></a>
-      <a class="detail-action-btn" href="https://wa.me/${(lead.phone||'').replace(/[^0-9]/g,'')}"><div class="icon">💬</div><div class="text">WhatsApp</div></a>
-      <a class="detail-action-btn" href="mailto:${lead.email||''}"><div class="icon">📧</div><div class="text">Email</div></a>
+      ${safePhone ? `<a class="detail-action-btn" href="tel:${safePhone}"><div class="icon">📞</div><div class="text">Call</div></a>` : ''}
+      ${phoneDigits ? `<a class="detail-action-btn" href="https://wa.me/${phoneDigits}"><div class="icon">💬</div><div class="text">WhatsApp</div></a>` : ''}
+      <a class="detail-action-btn" href="mailto:${escapeHtml(lead.email||'')}"><div class="icon">📧</div><div class="text">Email</div></a>
     </div>
 
     <div class="form-group">
       <label class="form-label">Status</label>
-      <select class="form-input" onchange="updateLeadStatus('${lead.id}',this.value)">${statusOptions}</select>
+      <select class="form-input" onchange="updateLeadStatus('${safeId}',this.value)">${statusOptions}</select>
     </div>
 
-    ${lead.bill && lead.bill.kwh ? `
+    ${billKwh > 0 ? `
     <div class="bill-result">
       <h3>⚡ Electricity Data</h3>
-      <div class="bill-row"><span>Monthly Usage</span><span class="val">${lead.bill.kwh} kWh</span></div>
-      <div class="bill-row"><span>Monthly Cost</span><span class="val">฿${parseInt(lead.bill.cost).toLocaleString()}</span></div>
-      <div class="bill-row"><span>Annual Cost</span><span class="val">฿${(parseInt(lead.bill.cost)*12).toLocaleString()}</span></div>
-      <div class="bill-row"><span>Est. System Size</span><span class="val">${(parseInt(lead.bill.kwh)/4.2/0.82/30).toFixed(1)} kWp</span></div>
-      <div class="bill-row"><span>Est. Annual Savings</span><span class="val" style="color:var(--gold)">฿${Math.round(parseInt(lead.bill.cost)*12*0.7).toLocaleString()}</span></div>
+      <div class="bill-row"><span>Monthly Usage</span><span class="val">${billKwh.toLocaleString()} kWh</span></div>
+      <div class="bill-row"><span>Monthly Cost</span><span class="val">฿${billCost.toLocaleString()}</span></div>
+      <div class="bill-row"><span>Annual Cost</span><span class="val">฿${(billCost*12).toLocaleString()}</span></div>
+      <div class="bill-row"><span>Est. System Size</span><span class="val">${(billKwh/4.2/0.82/30).toFixed(1)} kWp</span></div>
+      <div class="bill-row"><span>Est. Annual Savings</span><span class="val" style="color:var(--gold)">฿${Math.round(billCost*12*0.7).toLocaleString()}</span></div>
     </div>` : ''}
 
-    ${lead.roof && lead.roof.area ? `
+    ${roofArea > 0 ? `
     <div class="bill-result">
       <h3>🏠 Roof Data</h3>
-      <div class="bill-row"><span>Type</span><span class="val">${lead.roof.type}</span></div>
-      <div class="bill-row"><span>Area</span><span class="val">${lead.roof.area} m²</span></div>
-      <div class="bill-row"><span>Orientation</span><span class="val">${lead.roof.orientation}</span></div>
-      <div class="bill-row"><span>Max Panels</span><span class="val">${Math.floor(parseInt(lead.roof.area)/2.58)}</span></div>
+      <div class="bill-row"><span>Type</span><span class="val">${escapeHtml(lead.roof.type)}</span></div>
+      <div class="bill-row"><span>Area</span><span class="val">${roofArea} m²</span></div>
+      <div class="bill-row"><span>Orientation</span><span class="val">${escapeHtml(lead.roof.orientation)}</span></div>
+      <div class="bill-row"><span>Max Panels</span><span class="val">${Math.floor(roofArea/2.58)}</span></div>
     </div>` : ''}
 
     <div class="section-header"><h2>📝 Timeline</h2></div>
@@ -727,7 +784,7 @@ function showLeadDetail(id) {
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-title">${t.action}</div>
+            <div class="timeline-title">${escapeHtml(t.action)}</div>
             <div class="timeline-time">${new Date(t.time).toLocaleString()}</div>
           </div>
         </div>
@@ -738,11 +795,11 @@ function showLeadDetail(id) {
       <label class="form-label">Add Note</label>
       <textarea class="form-input" id="new-note" placeholder="Add a note..."></textarea>
     </div>
-    <button class="btn-secondary" onclick="addNote('${lead.id}')">Add Note</button>
+    <button class="btn-secondary" onclick="addNote('${safeId}')">Add Note</button>
 
     <div class="btn-row" style="margin-top:24px">
-      <button class="btn-secondary" style="color:var(--red)" onclick="deleteLead('${lead.id}')">🗑 Delete</button>
-      <button class="btn-primary" onclick="generateProposal('${lead.id}')">📄 Generate Proposal</button>
+      <button class="btn-secondary" style="color:var(--red)" onclick="deleteLead('${safeId}')">🗑 Delete</button>
+      <button class="btn-primary" onclick="generateProposal('${safeId}')">📄 Generate Proposal</button>
     </div>
   `;
   showScreen('lead-detail');
@@ -822,14 +879,46 @@ function calcStandaloneBill() {
   document.getElementById('sb-system').textContent = kWp.toFixed(1) + ' kWp';
   document.getElementById('sb-invest').textContent = '฿' + Math.round(invest).toLocaleString();
   document.getElementById('sb-savings').textContent = '฿' + Math.round(savings).toLocaleString() + '/yr';
-  document.getElementById('sb-payback').textContent = payback.toFixed(1) + ' years';
+  document.getElementById('sb-payback').textContent = savings > 0 ? payback.toFixed(1) + ' years' : 'N/A';
+}
+
+// ===== SETTINGS =====
+function exportData() {
+  const data = JSON.stringify(getLeads(), null, 2);
+  const blob = new Blob([data], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'tm-leads-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click(); URL.revokeObjectURL(url);
+}
+
+function clearAllData() {
+  if (!confirm('Delete ALL leads? This cannot be undone.')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  localStorage.setItem('tm_sales_initialized', '1');
+  showScreen('dashboard');
+}
+
+function updateStorageInfo() {
+  const el = document.getElementById('storage-used');
+  if (el) {
+    const bytes = new Blob([localStorage.getItem(STORAGE_KEY) || '']).size;
+    el.textContent = bytes > 1024 ? (bytes/1024).toFixed(1) + ' KB' : bytes + ' B';
+  }
+}
+
+// ===== SERVICE WORKER =====
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
 }
 
 // ===== INIT =====
 renderDashboard();
 
-// Add demo data if empty
-if (getLeads().length === 0) {
+// Add demo data if empty (only on first run)
+const initialized = localStorage.getItem('tm_sales_initialized');
+if (!initialized && getLeads().length === 0) {
+  localStorage.setItem('tm_sales_initialized', '1');
   const demo = [
     { id:'demo1', name:'Somchai Ratchaporn', phone:'+66891234567', email:'somchai@gmail.com', location:'Thong Sala', property:'commercial', source:'referral', status:'proposal', createdAt:'2026-03-10T09:00:00Z', bill:{kwh:'3500',cost:'21000',rate:'6.0'}, roof:{type:'corrugated',area:'250',orientation:'south'}, estimatedValue:980000, timeline:[{action:'Lead created',time:'2026-03-10T09:00:00Z'},{action:'Site survey completed',time:'2026-03-12T14:00:00Z'},{action:'Proposal sent via WhatsApp',time:'2026-03-13T11:00:00Z'}] },
     { id:'demo2', name:'Maria Schmidt', phone:'+66952345678', email:'maria@resort.com', location:'Haad Rin', property:'resort', source:'website', status:'survey', createdAt:'2026-03-12T10:00:00Z', bill:{kwh:'8000',cost:'48000',rate:'6.0'}, roof:{type:'concrete',area:'500',orientation:'flat'}, estimatedValue:2400000, timeline:[{action:'Lead created',time:'2026-03-12T10:00:00Z'},{action:'Called — interested in PPA model',time:'2026-03-13T09:00:00Z'}] },

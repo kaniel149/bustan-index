@@ -382,6 +382,21 @@
   </section>
 
   <!-- Navigation -->
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <!-- Complete Button -->
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
   <div class="lesson-nav">
     <a href="sales-bd-02.html" class="lesson-nav-btn prev">
       <span data-en>← Previous: The Sales Process</span>
@@ -404,6 +419,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('sales-bd', 3);
   if (typeof initQuiz === 'function') initQuiz('sales-bd', 3, [
     {
       question: {

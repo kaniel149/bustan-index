@@ -350,6 +350,21 @@
     </ol>
   </section>
 
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <!-- Complete Button -->
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
   <!-- Navigation -->
   <div class="lesson-nav">
     <a href="technical-02.html" class="lesson-nav-btn prev">
@@ -373,6 +388,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('technical', 3);
   if (typeof initQuiz === 'function') initQuiz('technical', 3, [
     {
       question: {
