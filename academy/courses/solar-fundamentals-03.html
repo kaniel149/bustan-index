@@ -6,6 +6,14 @@
   <title>Lesson 3: Inverters & Components — TM Energy Academy</title>
   <link rel="stylesheet" href="../assets/academy.css">
   <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .video-section { margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .video-section h3 { margin-bottom: 15px; color: #00D68F; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; }
+    .video-caption { margin-top: 10px; font-size: 0.9em; color: rgba(255,255,255,0.6); font-style: italic; }
+  </style>
 </head>
 <body data-lang="en">
 <div class="bg-ambient"></div>
@@ -114,6 +122,8 @@
     <p data-en><strong>3. Central Inverters</strong> — Large-scale inverters (250 kW – 5 MW+) used in utility-scale solar farms. Multiple strings feed into a single massive inverter. Lowest cost per watt but requires uniform, unshaded ground-mount installations. Not common for rooftop projects.</p>
     <p data-he><strong>3. ממירים מרכזיים</strong> — ממירים בקנה מידה גדול (250 קילווואט – 5 מגה-וואט+) המשמשים בחוות סולאריות. מספר סטרינגים מוזנים לממיר ענק יחיד. העלות הנמוכה ביותר לוואט אך דורש התקנות קרקעיות אחידות ללא הצללה. לא נפוץ בפרויקטים על גגות.</p>
     <p data-th><strong>3. เซ็นทรัลอินเวอร์เตอร์</strong> — อินเวอร์เตอร์ขนาดใหญ่ (250 kW – 5 MW+) ใช้ในโซลาร์ฟาร์มขนาดใหญ่ หลายสตริงป้อนเข้าอินเวอร์เตอร์ขนาดใหญ่ตัวเดียว ต้นทุนต่ำที่สุดต่อวัตต์แต่ต้องการการติดตั้งบนพื้นดินที่สม่ำเสมอไม่มีเงา ไม่ค่อยพบในโปรเจกต์บนหลังคา</p>
+
+    <img src="../images/inverter-types.png" alt="Comparison diagram of String Inverter, Micro-Inverter, and Power Optimizer architectures" class="lesson-image">
 
     <div class="diagram-placeholder">
       <span class="icon">📊</span>
@@ -230,15 +240,27 @@
     <p data-he>צפו במדריך וידאו זה להדרכה על תהליך התקנת ממיר Huawei SUN2000, כולל הרכבה, חיווט והגדרה ראשונית:</p>
     <p data-th>ชมวิดีโอแนะนำขั้นตอนการติดตั้งอินเวอร์เตอร์ Huawei SUN2000 รวมถึงการติดตั้ง การเดินสาย และการตั้งค่าเบื้องต้น:</p>
 
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/KsXEuVv2PlM" 
-        frameborder="0" allowfullscreen
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-      </iframe>
+    <div class="video-section">
+      <h3>📹 Watch: Huawei SUN2000 Installation Guide</h3>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/KsXEuVv2PlM" 
+          frameborder="0" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+      </div>
+      <p class="video-caption">Complete walkthrough of Huawei SUN2000 inverter mounting, wiring, and initial configuration</p>
     </div>
-    <p class="video-caption" data-en>Video: Huawei SUN2000 Installation Guide</p>
-    <p class="video-caption" data-he>וידאו: מדריך התקנת Huawei SUN2000</p>
-    <p class="video-caption" data-th>วิดีโอ: คู่มือการติดตั้ง Huawei SUN2000</p>
+
+    <div class="video-section">
+      <h3>📹 Watch: How to Commission a Solar Inverter</h3>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/IqpGB1n7HWw" 
+          frameborder="0" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+      </div>
+      <p class="video-caption">Step-by-step inverter commissioning process — from first power-on to grid connection verification</p>
+    </div>
   </section>
 
   <!-- Quiz -->

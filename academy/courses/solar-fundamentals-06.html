@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 6: System Sizing — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="solar-fundamentals-01.html"><span data-en>Solar Fundamentals</span><span data-he>מבוא לסולאר</span><span data-th>พื้นฐานพลังงานแสงอาทิตย์</span></a>
+    <span>›</span>
+    <span data-en>Lesson 6</span><span data-he>שיעור 6</span><span data-th>บทที่ 6</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 6 of 8</span><span data-he>שיעור 6 מתוך 8</span><span data-th>บทที่ 6 จาก 8</span>
+    </div>
+    <h1 class="lesson-title" data-en>System Sizing</h1>
+    <h1 class="lesson-title" data-he>תכנון גודל מערכת</h1>
+    <h1 class="lesson-title" data-th>การออกแบบขนาดระบบ</h1>
+    <div class="lesson-meta">
+      <span>⏱ <span data-en>~40 min</span><span data-he>~40 דקות</span><span data-th>~40 นาที</span></span>
+      <span>☀️ <span data-en>Solar Fundamentals</span><span data-he>מבוא לסולאר</span><span data-th>พื้นฐานโซลาร์</span></span>
+    </div>
+  </div>
+
+  <!-- Section 1: Reading Electricity Bills -->
+  <section class="content-section fade-up">
+    <h2 data-en>Reading Electricity Bills (PEA Format)</h2>
+    <h2 data-he>קריאת חשבונות חשמל (פורמט PEA)</h2>
+    <h2 data-th>การอ่านบิลค่าไฟฟ้า (รูปแบบ PEA)</h2>
+
+    <p data-en>The first step in sizing a solar system is understanding the customer's electricity consumption. In Thailand, electricity bills from the Provincial Electricity Authority (PEA) contain critical data for system design:</p>
+    <p data-he>הצעד הראשון בתכנון גודל מערכת סולארית הוא הבנת צריכת החשמל של הלקוח. בתאילנד, חשבונות חשמל מרשות החשמל המחוזית (PEA) מכילים נתונים קריטיים לתכנון המערכת:</p>
+    <p data-th>ขั้นตอนแรกในการออกแบบระบบโซลาร์คือการเข้าใจการใช้ไฟฟ้าของลูกค้า ในประเทศไทย บิลค่าไฟฟ้าจากการไฟฟ้าส่วนภูมิภาค (PEA) มีข้อมูลสำคัญสำหรับการออกแบบระบบ:</p>
+
+    <ul data-en>
+      <li><strong>Customer Account Number (CA)</strong> — Unique identifier needed for PEA applications and net metering registration</li>
+      <li><strong>Meter Number</strong> — The physical meter ID; needed for interconnection paperwork</li>
+      <li><strong>Rate Category</strong> — Residential (1.1, 1.2, 1.3), Small Business (2.1, 2.2), Medium Business (3), Large Business (4), Government (5), or Special (6). This determines the pricing structure.</li>
+      <li><strong>Monthly kWh consumption</strong> — The total energy used. Collect at least 12 months of data to account for seasonal variation.</li>
+      <li><strong>Peak Demand (kW)</strong> — For commercial accounts (categories 3–6), the bill shows maximum demand. This affects transformer sizing and system design limits.</li>
+      <li><strong>Power Factor</strong> — Commercial bills show the power factor. Below 0.85 incurs penalties; solar inverters can help improve it.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>מספר חשבון לקוח (CA)</strong> — מזהה ייחודי הנדרש לבקשות PEA ורישום מונה נטו</li>
+      <li><strong>מספר מונה</strong> — מזהה המונה הפיזי; נדרש לניירת חיבור</li>
+      <li><strong>קטגוריית תעריף</strong> — מגורים (1.1, 1.2, 1.3), עסק קטן (2.1, 2.2), עסק בינוני (3), עסק גדול (4), ממשלתי (5), או מיוחד (6). זה קובע את מבנה המחירים.</li>
+      <li><strong>צריכת kWh חודשית</strong> — סך האנרגיה שנצרכה. אספו לפחות 12 חודשי נתונים כדי להתחשב בשינויים עונתיים.</li>
+      <li><strong>ביקוש שיא (kW)</strong> — עבור חשבונות מסחריים (קטגוריות 3–6), החשבון מציג ביקוש מרבי. זה משפיע על גודל השנאי ומגבלות תכנון המערכת.</li>
+      <li><strong>מקדם הספק</strong> — חשבונות מסחריים מציגים את מקדם ההספק. מתחת ל-0.85 נגרמים קנסות; ממירים סולאריים יכולים לעזור לשפר אותו.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>หมายเลขผู้ใช้ไฟ (CA)</strong> — รหัสเฉพาะที่จำเป็นสำหรับการยื่นคำขอ PEA และการลงทะเบียน net metering</li>
+      <li><strong>หมายเลขมิเตอร์</strong> — รหัสมิเตอร์จริง จำเป็นสำหรับเอกสารการเชื่อมต่อ</li>
+      <li><strong>ประเภทอัตราค่าไฟ</strong> — ที่อยู่อาศัย (1.1, 1.2, 1.3), ธุรกิจขนาดเล็ก (2.1, 2.2), ธุรกิจขนาดกลาง (3), ธุรกิจขนาดใหญ่ (4), ราชการ (5), หรือพิเศษ (6) สิ่งนี้กำหนดโครงสร้างราคา</li>
+      <li><strong>การใช้ไฟ kWh รายเดือน</strong> — พลังงานทั้งหมดที่ใช้ เก็บข้อมูลอย่างน้อย 12 เดือนเพื่อรองรับความแตกต่างตามฤดูกาล</li>
+      <li><strong>ความต้องการสูงสุด (kW)</strong> — สำหรับบัญชีเชิงพาณิชย์ (ประเภท 3–6) บิลแสดงความต้องการสูงสุด สิ่งนี้ส่งผลต่อขนาดหม้อแปลงและขีดจำกัดการออกแบบระบบ</li>
+      <li><strong>ตัวประกอบกำลังไฟฟ้า</strong> — บิลเชิงพาณิชย์แสดงตัวประกอบกำลังไฟฟ้า ต่ำกว่า 0.85 จะถูกปรับ อินเวอร์เตอร์โซลาร์สามารถช่วยปรับปรุงได้</li>
+    </ul>
+
+    <div class="key-term">
+      <p><strong data-en>TOU (Time of Use)</strong><strong data-he>TOU (שימוש לפי זמן)</strong><strong data-th>TOU (อัตราตามช่วงเวลา)</strong> — <span data-en>A billing structure where electricity costs more during peak hours (09:00–22:00 Mon–Fri) and less during off-peak hours. Understanding TOU patterns helps optimize solar system sizing to offset the most expensive electricity first.</span><span data-he>מבנה חיוב בו חשמל עולה יותר בשעות שיא (09:00–22:00 שני–שישי) ופחות בשעות שפל. הבנת דפוסי TOU מסייעת לאופטימיזציה של גודל המערכת הסולארית כדי לקזז קודם את החשמל היקר ביותר.</span><span data-th>โครงสร้างการเรียกเก็บเงินที่ค่าไฟแพงกว่าในชั่วโมงพีค (09:00–22:00 จันทร์–ศุกร์) และถูกกว่าในชั่วโมง off-peak การเข้าใจรูปแบบ TOU ช่วยเพิ่มประสิทธิภาพการออกแบบระบบโซลาร์เพื่อชดเชยค่าไฟที่แพงที่สุดก่อน</span></p>
+    </div>
+  </section>
+
+  <!-- Section 2: kWp Calculation -->
+  <section class="content-section fade-up">
+    <h2 data-en>Monthly kWh → Required kWp Formula</h2>
+    <h2 data-he>נוסחת kWh חודשי → kWp נדרש</h2>
+    <h2 data-th>สูตร kWh รายเดือน → kWp ที่ต้องการ</h2>
+
+    <p data-en>The core formula for sizing a solar system converts monthly energy consumption into the required system capacity:</p>
+    <p data-he>הנוסחה המרכזית לתכנון גודל מערכת סולארית ממירה צריכת אנרגיה חודשית לקיבולת המערכת הנדרשת:</p>
+    <p data-th>สูตรหลักสำหรับการออกแบบระบบโซลาร์แปลงการใช้พลังงานรายเดือนเป็นขนาดระบบที่ต้องการ:</p>
+
+    <div class="key-term">
+      <p><strong data-en>System Size (kWp) = Monthly kWh ÷ (PSH × 30 × PR)</strong><strong data-he>גודל מערכת (kWp) = kWh חודשי ÷ (PSH × 30 × PR)</strong><strong data-th>ขนาดระบบ (kWp) = kWh รายเดือน ÷ (PSH × 30 × PR)</strong></p>
+    </div>
+
+    <p data-en>Where:</p>
+    <p data-he>כאשר:</p>
+    <p data-th>โดยที่:</p>
+
+    <ul data-en>
+      <li><strong>Monthly kWh</strong> — Average monthly electricity consumption from bills</li>
+      <li><strong>PSH (Peak Sun Hours)</strong> — Average daily equivalent hours of full sunlight</li>
+      <li><strong>30</strong> — Days per month</li>
+      <li><strong>PR (Performance Ratio)</strong> — System efficiency factor accounting for all losses</li>
+    </ul>
+    <ul data-he>
+      <li><strong>kWh חודשי</strong> — צריכת חשמל חודשית ממוצעת מחשבונות</li>
+      <li><strong>PSH (שעות שמש שיא)</strong> — ממוצע יומי של שעות שוות ערך לאור שמש מלא</li>
+      <li><strong>30</strong> — ימים בחודש</li>
+      <li><strong>PR (יחס ביצועים)</strong> — מקדם יעילות מערכת המתחשב בכל ההפסדים</li>
+    </ul>
+    <ul data-th>
+      <li><strong>kWh รายเดือน</strong> — การใช้ไฟฟ้าเฉลี่ยรายเดือนจากบิล</li>
+      <li><strong>PSH (ชั่วโมงแสงแดดสูงสุด)</strong> — ค่าเฉลี่ยรายวันของชั่วโมงที่เทียบเท่าแสงอาทิตย์เต็มที่</li>
+      <li><strong>30</strong> — จำนวนวันต่อเดือน</li>
+      <li><strong>PR (อัตราส่วนสมรรถนะ)</strong> — ตัวประกอบประสิทธิภาพระบบที่คิดรวมการสูญเสียทั้งหมด</li>
+    </ul>
+
+    <p data-en><strong>Example:</strong> A factory uses 15,000 kWh/month in Nonthaburi (PSH = 4.5). With a PR of 0.80:</p>
+    <p data-he><strong>דוגמה:</strong> מפעל צורך 15,000 kWh/חודש בנนטבורי (PSH = 4.5). עם PR של 0.80:</p>
+    <p data-th><strong>ตัวอย่าง:</strong> โรงงานใช้ไฟ 15,000 kWh/เดือน ในนนทบุรี (PSH = 4.5) โดยมี PR เท่ากับ 0.80:</p>
+
+    <p data-en>System Size = 15,000 ÷ (4.5 × 30 × 0.80) = 15,000 ÷ 108 = <strong>138.9 kWp</strong></p>
+    <p data-he>גודל מערכת = 15,000 ÷ (4.5 × 30 × 0.80) = 15,000 ÷ 108 = <strong>138.9 kWp</strong></p>
+    <p data-th>ขนาดระบบ = 15,000 ÷ (4.5 × 30 × 0.80) = 15,000 ÷ 108 = <strong>138.9 kWp</strong></p>
+
+    <p data-en>In practice, you'd round to a standard system size — in this case approximately <strong>140 kWp</strong>, or about 250 panels of 580W each.</p>
+    <p data-he>בפועל, מעגלים לגודל מערכת סטנדרטי — במקרה זה בערך <strong>140 kWp</strong>, או כ-250 פאנלים של 580W כל אחד.</p>
+    <p data-th>ในทางปฏิบัติ จะปัดเป็นขนาดระบบมาตรฐาน — ในกรณีนี้ประมาณ <strong>140 kWp</strong> หรือแผงประมาณ 250 แผงที่ 580W แต่ละแผง</p>
+  </section>
+
+  <!-- Section 3: Peak Sun Hours -->
+  <section class="content-section fade-up">
+    <h2 data-en>Peak Sun Hours in Thailand</h2>
+    <h2 data-he>שעות שמש שיא בתאילנד</h2>
+    <h2 data-th>ชั่วโมงแสงแดดสูงสุดในประเทศไทย</h2>
+
+    <p data-en>Peak Sun Hours (PSH) represent the number of hours per day when solar irradiance averages 1,000 W/m² (1 kW/m²). Thailand's geographic location near the equator provides excellent solar resources across the country:</p>
+    <p data-he>שעות שמש שיא (PSH) מייצגות את מספר השעות ביום בהן קרינת שמש ממוצעת 1,000 ואט/מ"ר (1 kW/מ"ר). מיקומה הגיאוגרפי של תאילנד ליד קו המשווה מספק משאבי שמש מצוינים ברחבי הארץ:</p>
+    <p data-th>ชั่วโมงแสงแดดสูงสุด (PSH) หมายถึงจำนวนชั่วโมงต่อวันที่รังสีดวงอาทิตย์เฉลี่ย 1,000 วัตต์/ตร.ม. (1 kW/ตร.ม.) ที่ตั้งทางภูมิศาสตร์ของประเทศไทยใกล้เส้นศูนย์สูตรให้ทรัพยากรแสงอาทิตย์ที่ดีเยี่ยมทั่วประเทศ:</p>
+
+    <ul data-en>
+      <li><strong>Central Thailand (Bangkok, Nonthaburi, Pathum Thani):</strong> 4.3–4.6 PSH — Consistent year-round, slight dip during rainy season (Jun–Oct)</li>
+      <li><strong>Northeast (Nakhon Ratchasima, Udon Thani, Khon Kaen):</strong> 4.5–5.0 PSH — Highest irradiance in Thailand; drier climate means more clear-sky days</li>
+      <li><strong>North (Chiang Mai, Chiang Rai, Lampang):</strong> 4.2–4.7 PSH — Good resource but haze season (Feb–Apr) reduces output</li>
+      <li><strong>South (Surat Thani, Songkhla, Phuket):</strong> 4.2–4.5 PSH — More rainfall, but still viable; two monsoon seasons to consider</li>
+      <li><strong>East (Chonburi, Rayong, EEC zone):</strong> 4.4–4.8 PSH — Excellent for industrial solar; many factories in this region</li>
+    </ul>
+    <ul data-he>
+      <li><strong>מרכז תאילנד (בנגקוק, ננטבורי, פתום טני):</strong> 4.3–4.6 PSH — עקבי לאורך השנה, ירידה קלה בעונת הגשמים (יוני–אוקטובר)</li>
+      <li><strong>צפון-מזרח (נקון רטצ'סימה, אודון טני, קון קאן):</strong> 4.5–5.0 PSH — קרינה הגבוהה ביותר בתאילנד; אקלים יבש יותר אומר יותר ימים בהירים</li>
+      <li><strong>צפון (צ'יאנג מאי, צ'יאנג ראי, לאמפאנג):</strong> 4.2–4.7 PSH — משאב טוב אך עונת ערפיח (פבר'–אפר') מפחיתה תפוקה</li>
+      <li><strong>דרום (סוראט טני, סונגקלא, פוקט):</strong> 4.2–4.5 PSH — יותר גשמים, אך עדיין כדאי; שתי עונות מונסון לשקול</li>
+      <li><strong>מזרח (צ'ונבורי, ראיונג, אזור EEC):</strong> 4.4–4.8 PSH — מצוין לסולאר תעשייתי; מפעלים רבים באזור</li>
+    </ul>
+    <ul data-th>
+      <li><strong>ภาคกลาง (กรุงเทพ, นนทบุรี, ปทุมธานี):</strong> 4.3–4.6 PSH — สม่ำเสมอตลอดปี ลดลงเล็กน้อยช่วงฤดูฝน (มิ.ย.–ต.ค.)</li>
+      <li><strong>ภาคตะวันออกเฉียงเหนือ (นครราชสีมา, อุดรธานี, ขอนแก่น):</strong> 4.5–5.0 PSH — รังสีสูงที่สุดในประเทศไทย อากาศแห้งกว่าหมายถึงวันที่ท้องฟ้าแจ่มใสมากกว่า</li>
+      <li><strong>ภาคเหนือ (เชียงใหม่, เชียงราย, ลำปาง):</strong> 4.2–4.7 PSH — ทรัพยากรดีแต่ฤดูหมอกควัน (ก.พ.–เม.ย.) ลดเอาต์พุต</li>
+      <li><strong>ภาคใต้ (สุราษฎร์ธานี, สงขลา, ภูเก็ต):</strong> 4.2–4.5 PSH — ฝนตกมากกว่าแต่ยังคุ้มค่า ต้องพิจารณาสองฤดูมรสุม</li>
+      <li><strong>ภาคตะวันออก (ชลบุรี, ระยอง, เขต EEC):</strong> 4.4–4.8 PSH — ดีเยี่ยมสำหรับโซลาร์อุตสาหกรรม มีโรงงานจำนวนมากในพื้นที่นี้</li>
+    </ul>
+  </section>
+
+  <!-- Section 4: Performance Ratio -->
+  <section class="content-section fade-up">
+    <h2 data-en>Performance Ratio (PR)</h2>
+    <h2 data-he>יחס ביצועים (PR)</h2>
+    <h2 data-th>อัตราส่วนสมรรถนะ (PR)</h2>
+
+    <p data-en>The Performance Ratio accounts for all real-world losses that reduce the system's actual output compared to its theoretical maximum. A well-designed system in Thailand typically achieves a PR of <strong>0.75–0.85</strong>. Here's what affects it:</p>
+    <p data-he>יחס הביצועים מתחשב בכל ההפסדים בעולם האמיתי שמפחיתים את התפוקה בפועל של המערכת בהשוואה למקסימום התיאורטי שלה. מערכת מתוכננת היטב בתאילנד משיגה בדרך כלל PR של <strong>0.75–0.85</strong>. הנה מה שמשפיע:</p>
+    <p data-th>อัตราส่วนสมรรถนะคำนึงถึงการสูญเสียในโลกจริงทั้งหมดที่ลดเอาต์พุตจริงของระบบเมื่อเทียบกับค่าสูงสุดทางทฤษฎี ระบบที่ออกแบบมาดีในประเทศไทยมักได้ PR ที่ <strong>0.75–0.85</strong> นี่คือปัจจัยที่ส่งผล:</p>
+
+    <ul data-en>
+      <li><strong>Temperature losses (5–12%)</strong> — Thailand's hot climate is the biggest PR reducer. Panels lose ~0.35% efficiency per °C above 25°C. At 45°C cell temperature, that's a 7% loss.</li>
+      <li><strong>Soiling/dust (2–5%)</strong> — Dirt, bird droppings, and pollution accumulate on panels. Regular cleaning or rain mitigates this.</li>
+      <li><strong>DC cable losses (1–3%)</strong> — Resistance in wires from panels to inverter. Proper cable sizing minimizes this.</li>
+      <li><strong>AC cable losses (0.5–1%)</strong> — Inverter to grid connection point losses.</li>
+      <li><strong>Inverter efficiency loss (2–4%)</strong> — Modern inverters are 97–98.5% efficient, but still lose some energy in conversion.</li>
+      <li><strong>Mismatch losses (1–2%)</strong> — Panels in the same string never perform identically.</li>
+      <li><strong>Shading losses (0–10%)</strong> — Depends on site-specific conditions assessed in Lesson 5.</li>
+      <li><strong>Degradation (0.5%/year)</strong> — Panels gradually lose output over their 25–30 year lifespan.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>הפסדי טמפרטורה (5–12%)</strong> — האקלים החם של תאילנד הוא המפחית הגדול ביותר של PR. פאנלים מאבדים ~0.35% יעילות לכל °C מעל 25°C. בטמפרטורת תא של 45°C, זהו הפסד של 7%.</li>
+      <li><strong>לכלוך/אבק (2–5%)</strong> — לכלוך, צואת ציפורים וזיהום מצטברים על פאנלים. ניקוי קבוע או גשם מפחית זאת.</li>
+      <li><strong>הפסדי כבל DC (1–3%)</strong> — התנגדות בחוטים מפאנלים לממיר. גודל כבל נכון ממזער זאת.</li>
+      <li><strong>הפסדי כבל AC (0.5–1%)</strong> — הפסדים מממיר לנקודת חיבור לרשת.</li>
+      <li><strong>הפסד יעילות ממיר (2–4%)</strong> — ממירים מודרניים יעילים ב-97–98.5%, אך עדיין מאבדים אנרגיה בהמרה.</li>
+      <li><strong>הפסדי אי-התאמה (1–2%)</strong> — פאנלים באותו סטרינג לעולם לא מתפקדים באופן זהה.</li>
+      <li><strong>הפסדי הצללה (0–10%)</strong> — תלוי בתנאי אתר ספציפיים שנבדקו בשיעור 5.</li>
+      <li><strong>דעיכה (0.5%/שנה)</strong> — פאנלים מאבדים תפוקה בהדרגה לאורך 25–30 שנות חייהם.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>การสูญเสียจากอุณหภูมิ (5–12%)</strong> — สภาพอากาศร้อนของไทยเป็นตัวลด PR มากที่สุด แผงสูญเสียประสิทธิภาพ ~0.35% ต่อ °C ที่สูงกว่า 25°C ที่อุณหภูมิเซลล์ 45°C จะสูญเสีย 7%</li>
+      <li><strong>ฝุ่น/สิ่งสกปรก (2–5%)</strong> — ฝุ่น มูลนก และมลพิษสะสมบนแผง การทำความสะอาดสม่ำเสมอหรือฝนช่วยลดปัญหานี้</li>
+      <li><strong>การสูญเสียในสาย DC (1–3%)</strong> — ความต้านทานในสายจากแผงไปอินเวอร์เตอร์ การเลือกขนาดสายที่เหมาะสมช่วยลดปัญหา</li>
+      <li><strong>การสูญเสียในสาย AC (0.5–1%)</strong> — การสูญเสียจากอินเวอร์เตอร์ไปจุดเชื่อมต่อกริด</li>
+      <li><strong>การสูญเสียประสิทธิภาพอินเวอร์เตอร์ (2–4%)</strong> — อินเวอร์เตอร์สมัยใหม่มีประสิทธิภาพ 97–98.5% แต่ยังสูญเสียพลังงานบางส่วนในการแปลง</li>
+      <li><strong>การสูญเสียจากความไม่ตรงกัน (1–2%)</strong> — แผงในสตริงเดียวกันไม่เคยทำงานเหมือนกันทุกประการ</li>
+      <li><strong>การสูญเสียจากเงา (0–10%)</strong> — ขึ้นอยู่กับสภาพเฉพาะของสถานที่ที่ประเมินในบทที่ 5</li>
+      <li><strong>การเสื่อมสภาพ (0.5%/ปี)</strong> — แผงค่อยๆ สูญเสียเอาต์พุตตลอดอายุการใช้งาน 25–30 ปี</li>
+    </ul>
+
+    <div class="did-you-know">
+      <div class="dyk-title" data-en>Did You Know?</div>
+      <div class="dyk-title" data-he>הידעת?</div>
+      <div class="dyk-title" data-th>รู้หรือไม่?</div>
+      <p data-en>In Thailand, temperature is the #1 factor reducing Performance Ratio. That's why rooftop systems with good airflow underneath the panels consistently outperform ground-mounted systems with restricted ventilation. A 5 cm gap between the roof and panels can improve PR by 2–3%.</p>
+      <p data-he>בתאילנד, טמפרטורה היא הגורם מספר 1 שמפחית את יחס הביצועים. לכן מערכות גג עם זרימת אוויר טובה מתחת לפאנלים עולות בביצועיהן בעקביות על מערכות קרקעיות עם אוורור מוגבל. רווח של 5 ס"מ בין הגג לפאנלים יכול לשפר PR ב-2–3%.</p>
+      <p data-th>ในประเทศไทย อุณหภูมิเป็นปัจจัยอันดับ 1 ที่ลดอัตราส่วนสมรรถนะ นั่นเป็นเหตุผลว่าทำไมระบบบนหลังคาที่มีอากาศไหลเวียนดีใต้แผงจึงมีประสิทธิภาพดีกว่าระบบติดตั้งบนพื้นที่มีการระบายอากาศจำกัดอย่างสม่ำเสมอ ช่องว่าง 5 ซม. ระหว่างหลังคาและแผงสามารถปรับปรุง PR ได้ 2–3%</p>
+    </div>
+  </section>
+
+  <!-- Section 5: String Configuration -->
+  <section class="content-section fade-up">
+    <h2 data-en>String Configuration</h2>
+    <h2 data-he>תצורת סטרינג</h2>
+    <h2 data-th>การจัดสตริง</h2>
+
+    <p data-en>Solar panels are connected in series (strings) to reach the voltage required by the inverter. The key rules for string design:</p>
+    <p data-he>פאנלים סולאריים מחוברים בטור (סטרינגים) כדי להגיע למתח הנדרש על ידי הממיר. כללי המפתח לתכנון סטרינג:</p>
+    <p data-th>แผงโซลาร์เชื่อมต่อแบบอนุกรม (สตริง) เพื่อให้ได้แรงดันที่อินเวอร์เตอร์ต้องการ กฎสำคัญสำหรับการออกแบบสตริง:</p>
+
+    <ul data-en>
+      <li><strong>Maximum Voltage Rule:</strong> Total string Voc (open-circuit voltage) at the lowest expected temperature must be <strong>less than the inverter's maximum DC input voltage</strong>. For Huawei SUN2000 inverters, this is typically 1,100V.</li>
+      <li><strong>Voc Temperature Correction:</strong> At low temperatures, Voc increases. Use the temperature coefficient (typically -0.25%/°C for mono panels) to calculate Voc at the lowest expected ambient temperature (in Thailand, typically 15°C for design purposes).</li>
+      <li><strong>Minimum Voltage Rule:</strong> String Vmp (voltage at maximum power) at the highest expected temperature must be <strong>above the inverter's MPPT minimum voltage</strong>.</li>
+      <li><strong>MPPT Range:</strong> The string voltage must stay within the inverter's MPPT operating range across all temperature conditions.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>כלל מתח מרבי:</strong> סך Voc סטרינג (מתח מעגל פתוח) בטמפרטורה הנמוכה ביותר הצפויה חייב להיות <strong>נמוך ממתח DC מרבי של הממיר</strong>. עבור ממירי Huawei SUN2000, זה בדרך כלל 1,100V.</li>
+      <li><strong>תיקון Voc לטמפרטורה:</strong> בטמפרטורות נמוכות, Voc עולה. השתמשו במקדם טמפרטורה (בדרך כלל -0.25%/°C לפאנלים מונו) לחישוב Voc בטמפרטורת הסביבה הנמוכה ביותר (בתאילנד, בדרך כלל 15°C לצורכי תכנון).</li>
+      <li><strong>כלל מתח מינימלי:</strong> Vmp סטרינג (מתח בהספק מרבי) בטמפרטורה הגבוהה ביותר הצפויה חייב להיות <strong>מעל מתח MPPT מינימלי של הממיר</strong>.</li>
+      <li><strong>טווח MPPT:</strong> מתח הסטרינג חייב להישאר בטווח ההפעלה של MPPT הממיר בכל תנאי הטמפרטורה.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>กฎแรงดันสูงสุด:</strong> Voc รวมของสตริง (แรงดันวงจรเปิด) ที่อุณหภูมิต่ำสุดที่คาดว่าจะเกิดต้อง<strong>น้อยกว่าแรงดัน DC สูงสุดของอินเวอร์เตอร์</strong> สำหรับอินเวอร์เตอร์ Huawei SUN2000 โดยทั่วไปคือ 1,100V</li>
+      <li><strong>การปรับ Voc ตามอุณหภูมิ:</strong> ที่อุณหภูมิต่ำ Voc จะเพิ่มขึ้น ใช้สัมประสิทธิ์อุณหภูมิ (โดยทั่วไป -0.25%/°C สำหรับแผงโมโน) เพื่อคำนวณ Voc ที่อุณหภูมิแวดล้อมต่ำสุด (ในไทย โดยทั่วไป 15°C สำหรับการออกแบบ)</li>
+      <li><strong>กฎแรงดันต่ำสุด:</strong> Vmp ของสตริง (แรงดันที่กำลังสูงสุด) ที่อุณหภูมิสูงสุดต้อง<strong>สูงกว่าแรงดัน MPPT ต่ำสุดของอินเวอร์เตอร์</strong></li>
+      <li><strong>ช่วง MPPT:</strong> แรงดันสตริงต้องอยู่ในช่วงการทำงาน MPPT ของอินเวอร์เตอร์ในทุกสภาวะอุณหภูมิ</li>
+    </ul>
+
+    <p data-en><strong>Example:</strong> A panel with Voc = 49.6V, and inverter max Vdc = 1,100V. Maximum panels per string = 1,100 ÷ 49.6 = 22.1 → <strong>22 panels maximum</strong> (before temperature correction — actual number may be lower after correcting for cold temperatures).</p>
+    <p data-he><strong>דוגמה:</strong> פאנל עם Voc = 49.6V, ומתח DC מרבי של ממיר = 1,100V. מספר פאנלים מרבי בסטרינג = 1,100 ÷ 49.6 = 22.1 → <strong>22 פאנלים מקסימום</strong> (לפני תיקון טמפרטורה — המספר בפועל עשוי להיות נמוך יותר לאחר תיקון לטמפרטורות נמוכות).</p>
+    <p data-th><strong>ตัวอย่าง:</strong> แผงที่มี Voc = 49.6V และอินเวอร์เตอร์ max Vdc = 1,100V จำนวนแผงสูงสุดต่อสตริง = 1,100 ÷ 49.6 = 22.1 → <strong>สูงสุด 22 แผง</strong> (ก่อนปรับอุณหภูมิ — จำนวนจริงอาจน้อยกว่าหลังปรับสำหรับอุณหภูมิต่ำ)</p>
+  </section>
+
+  <!-- Section 6: DC/AC Ratio -->
+  <section class="content-section fade-up">
+    <h2 data-en>DC/AC Ratio</h2>
+    <h2 data-he>יחס DC/AC</h2>
+    <h2 data-th>อัตราส่วน DC/AC</h2>
+
+    <p data-en>The DC/AC ratio (also called oversizing ratio) is the ratio of the total DC panel capacity (kWp) to the inverter's AC output capacity (kW). A ratio greater than 1.0 means more panel capacity than inverter capacity — and this is intentional:</p>
+    <p data-he>יחס DC/AC (נקרא גם יחס גודל יתר) הוא היחס בין קיבולת DC כוללת של פאנלים (kWp) לקיבולת פלט AC של הממיר (kW). יחס גדול מ-1.0 אומר יותר קיבולת פאנלים מקיבולת ממיר — וזה מכוון:</p>
+    <p data-th>อัตราส่วน DC/AC (เรียกอีกอย่างว่าอัตราส่วนการออกแบบเกิน) คืออัตราส่วนของกำลัง DC รวมของแผง (kWp) ต่อกำลังเอาต์พุต AC ของอินเวอร์เตอร์ (kW) อัตราส่วนที่มากกว่า 1.0 หมายถึงกำลังแผงมากกว่ากำลังอินเวอร์เตอร์ — และนี่คือความตั้งใจ:</p>
+
+    <ul data-en>
+      <li><strong>Typical range: 1.1–1.3</strong> for Thailand conditions</li>
+      <li><strong>Why oversize?</strong> Panels rarely produce nameplate power — temperature, soiling, and angle losses mean actual output is 70–85% of rated. Oversizing ensures the inverter runs at full capacity more hours of the day.</li>
+      <li><strong>Clipping:</strong> When DC input exceeds inverter AC capacity, excess energy is "clipped" (wasted). With a 1.2 ratio, clipping losses are typically only 1–2% annually, but the overall energy harvest increases by 5–10%.</li>
+      <li><strong>Cost savings:</strong> A smaller inverter costs less. Using a 100 kW inverter with 120 kWp of panels is more cost-effective than a 120 kW inverter.</li>
+      <li><strong>Huawei recommendation:</strong> Huawei SUN2000 inverters support up to 1.5 DC/AC ratio, but 1.1–1.3 is the practical sweet spot in Thailand.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>טווח טיפוסי: 1.1–1.3</strong> לתנאי תאילנד</li>
+      <li><strong>למה גודל יתר?</strong> פאנלים לעיתים רחוקות מייצרים הספק נקוב — טמפרטורה, לכלוך והפסדי זווית גורמים שהתפוקה בפועל היא 70–85% מהנקוב. גודל יתר מבטיח שהממיר רץ בקיבולת מלאה יותר שעות ביום.</li>
+      <li><strong>חיתוך:</strong> כשקלט DC עולה על קיבולת AC של הממיר, אנרגיה עודפת "נחתכת" (מבוזבזת). עם יחס 1.2, הפסדי חיתוך הם בדרך כלל רק 1–2% שנתית, אך קציר האנרגיה הכולל עולה ב-5–10%.</li>
+      <li><strong>חיסכון בעלויות:</strong> ממיר קטן יותר עולה פחות. שימוש בממיר 100 kW עם 120 kWp של פאנלים חסכוני יותר מממיר 120 kW.</li>
+      <li><strong>המלצת Huawei:</strong> ממירי Huawei SUN2000 תומכים ביחס DC/AC עד 1.5, אך 1.1–1.3 הוא הנקודה המעשית המיטבית בתאילנד.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>ช่วงทั่วไป: 1.1–1.3</strong> สำหรับสภาพในประเทศไทย</li>
+      <li><strong>ทำไมต้องออกแบบเกิน?</strong> แผงไม่ค่อยผลิตตามกำลังที่กำหนด — อุณหภูมิ ฝุ่น และการสูญเสียจากมุมทำให้เอาต์พุตจริงอยู่ที่ 70–85% ของค่าพิกัด การออกแบบเกินทำให้อินเวอร์เตอร์ทำงานเต็มกำลังได้มากชั่วโมงขึ้นต่อวัน</li>
+      <li><strong>การตัด (Clipping):</strong> เมื่อ DC เข้าเกินกำลัง AC ของอินเวอร์เตอร์ พลังงานส่วนเกินจะถูก "ตัด" (สูญเสีย) ที่อัตราส่วน 1.2 การสูญเสียจากการตัดโดยทั่วไปเพียง 1–2% ต่อปี แต่การเก็บเกี่ยวพลังงานโดยรวมเพิ่มขึ้น 5–10%</li>
+      <li><strong>ประหยัดค่าใช้จ่าย:</strong> อินเวอร์เตอร์ขนาดเล็กกว่ามีราคาถูกกว่า ใช้อินเวอร์เตอร์ 100 kW กับแผง 120 kWp คุ้มค่ากว่าอินเวอร์เตอร์ 120 kW</li>
+      <li><strong>คำแนะนำจาก Huawei:</strong> อินเวอร์เตอร์ Huawei SUN2000 รองรับอัตราส่วน DC/AC สูงสุด 1.5 แต่ 1.1–1.3 เป็นจุดที่เหมาะสมในทางปฏิบัติในประเทศไทย</li>
+    </ul>
+  </section>
+
+  <!-- Section 7: Cable Sizing -->
+  <section class="content-section fade-up">
+    <h2 data-en>Cable Sizing Basics</h2>
+    <h2 data-he>יסודות גודל כבלים</h2>
+    <h2 data-th>พื้นฐานการเลือกขนาดสายเคเบิล</h2>
+
+    <p data-en>Proper cable sizing ensures safety and minimizes energy losses. Undersized cables cause voltage drop, energy waste, and fire hazards.</p>
+    <p data-he>גודל כבלים נכון מבטיח בטיחות וממזער הפסדי אנרגיה. כבלים בגודל חסר גורמים לנפילת מתח, בזבוז אנרגיה וסכנות שריפה.</p>
+    <p data-th>การเลือกขนาดสายเคเบิลที่เหมาะสมรับประกันความปลอดภัยและลดการสูญเสียพลังงาน สายที่เล็กเกินไปทำให้เกิดแรงดันตก สูญเสียพลังงาน และเสี่ยงต่อการเกิดไฟ</p>
+
+    <ul data-en>
+      <li><strong>DC cables (panel to inverter):</strong> Typically 4 mm² or 6 mm² solar-rated (PV1-F / H1Z2Z2-K). Must be UV-resistant, double-insulated, and rated for the system voltage.</li>
+      <li><strong>AC cables (inverter to MDB):</strong> Sized based on inverter output current and cable run length. Common sizes: 25 mm² to 95 mm² for commercial systems.</li>
+      <li><strong>Voltage drop limit:</strong> Keep total voltage drop below <strong>2% for DC</strong> and <strong>3% for AC</strong> cables. Lower is better.</li>
+      <li><strong>Current carrying capacity:</strong> Cable must safely carry the maximum current (Isc × 1.25 for DC) considering ambient temperature derating in Thailand's heat.</li>
+      <li><strong>Conduit and tray:</strong> Outdoor DC cables should run in UV-resistant conduit or cable trays. Never leave solar cables loose on the roof.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>כבלי DC (מפאנל לממיר):</strong> בדרך כלל 4 מ"מ² או 6 מ"מ² מדורגים לסולאר (PV1-F / H1Z2Z2-K). חייבים להיות עמידים ב-UV, עם בידוד כפול, ומדורגים למתח המערכת.</li>
+      <li><strong>כבלי AC (מממיר ל-MDB):</strong> מותאמים על בסיס זרם פלט הממיר ואורך הכבל. גדלים נפוצים: 25 מ"מ² עד 95 מ"מ² למערכות מסחריות.</li>
+      <li><strong>מגבלת נפילת מתח:</strong> שמרו על נפילת מתח כוללת מתחת ל-<strong>2% עבור DC</strong> ו-<strong>3% עבור AC</strong>. נמוך יותר עדיף.</li>
+      <li><strong>קיבולת נשיאת זרם:</strong> הכבל חייב לשאת בבטחה את הזרם המרבי (Isc × 1.25 עבור DC) בהתחשב בהפחתת דירוג טמפרטורת סביבה בחום תאילנד.</li>
+      <li><strong>צנרת ומגש:</strong> כבלי DC חיצוניים צריכים לעבור בצנרת עמידת UV או מגשי כבלים. לעולם אל תשאירו כבלים סולאריים חופשיים על הגג.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>สาย DC (แผงไปอินเวอร์เตอร์):</strong> โดยทั่วไป 4 มม.² หรือ 6 มม.² ระดับโซลาร์ (PV1-F / H1Z2Z2-K) ต้องทน UV ฉนวนสองชั้น และรองรับแรงดันของระบบ</li>
+      <li><strong>สาย AC (อินเวอร์เตอร์ไป MDB):</strong> ขนาดตามกระแสเอาต์พุตอินเวอร์เตอร์และความยาวสาย ขนาดทั่วไป: 25 มม.² ถึง 95 มม.² สำหรับระบบเชิงพาณิชย์</li>
+      <li><strong>ขีดจำกัดแรงดันตก:</strong> รักษาแรงดันตกรวมให้ต่ำกว่า <strong>2% สำหรับ DC</strong> และ <strong>3% สำหรับ AC</strong> ยิ่งต่ำยิ่งดี</li>
+      <li><strong>ขีดความสามารถในการรับกระแส:</strong> สายต้องรับกระแสสูงสุดได้อย่างปลอดภัย (Isc × 1.25 สำหรับ DC) โดยคำนึงถึงการลดพิกัดจากอุณหภูมิแวดล้อมในสภาพอากาศร้อนของไทย</li>
+      <li><strong>ท่อร้อยสายและรางเคเบิล:</strong> สาย DC กลางแจ้งควรเดินในท่อทน UV หรือรางเคเบิล ห้ามปล่อยสายโซลาร์หลวมบนหลังคา</li>
+    </ul>
+
+    <div class="key-term">
+      <p><strong data-en>Voltage Drop</strong><strong data-he>נפילת מתח</strong><strong data-th>แรงดันตก</strong> — <span data-en>The reduction in voltage as current flows through cable resistance. Calculated as: Vdrop = 2 × L × I × ρ ÷ A, where L = cable length, I = current, ρ = resistivity of copper (0.0175 Ω·mm²/m), A = cross-section area. Higher voltage drop means wasted energy as heat in the cables.</span><span data-he>הפחתת המתח כשזרם זורם דרך התנגדות הכבל. מחושב כ: Vdrop = 2 × L × I × ρ ÷ A, כאשר L = אורך כבל, I = זרם, ρ = התנגדות סגולית של נחושת (0.0175 Ω·מ"מ²/מ), A = שטח חתך. נפילת מתח גבוהה יותר אומרת אנרגיה מבוזבזת כחום בכבלים.</span><span data-th>การลดลงของแรงดันเมื่อกระแสไหลผ่านความต้านทานของสาย คำนวณจาก: Vdrop = 2 × L × I × ρ ÷ A โดย L = ความยาวสาย, I = กระแส, ρ = ความต้านทานจำเพาะของทองแดง (0.0175 Ω·มม.²/ม.), A = พื้นที่หน้าตัด แรงดันตกสูงหมายถึงพลังงานที่สูญเสียเป็นความร้อนในสาย</span></p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <nav class="lesson-nav">
+    <a href="solar-fundamentals-05.html">
+      <span data-en>← Previous Lesson</span><span data-he>השיעור הקודם ←</span><span data-th>← บทก่อนหน้า</span>
+    </a>
+    <a href="../index.html">
+      <span data-en>Course Home</span><span data-he>דף הקורס</span><span data-th>หน้าหลักคอร์ส</span>
+    </a>
+    <a href="solar-fundamentals-07.html">
+      <span data-en>Next Lesson →</span><span data-he>→ השיעור הבא</span><span data-th>บทถัดไป →</span>
+    </a>
+  </nav>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 TM Energy Co., Ltd.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('solar-fundamentals', 6);
+  initQuiz('solar-fundamentals', 6, [
+    {
+      question: {
+        en: "A factory uses 20,000 kWh/month. With PSH of 4.5 and PR of 0.80, what system size is needed?",
+        he: "מפעל צורך 20,000 kWh/חודש. עם PSH של 4.5 ו-PR של 0.80, מה גודל המערכת הנדרש?",
+        th: "โรงงานใช้ไฟ 20,000 kWh/เดือน ที่ PSH 4.5 และ PR 0.80 ต้องใช้ระบบขนาดเท่าไร?"
+      },
+      options: [
+        { en: "~93 kWp", he: "~93 kWp", th: "~93 kWp" },
+        { en: "~139 kWp", he: "~139 kWp", th: "~139 kWp" },
+        { en: "~185 kWp", he: "~185 kWp", th: "~185 kWp" },
+        { en: "~250 kWp", he: "~250 kWp", th: "~250 kWp" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "Which region of Thailand has the highest Peak Sun Hours?",
+        he: "באיזה אזור בתאילנד יש את שעות השמש השיא הגבוהות ביותר?",
+        th: "ภูมิภาคใดของประเทศไทยมีชั่วโมงแสงแดดสูงสุดมากที่สุด?"
+      },
+      options: [
+        { en: "South (Phuket, Songkhla)", he: "דרום (פוקט, סונגקלא)", th: "ภาคใต้ (ภูเก็ต, สงขลา)" },
+        { en: "Central (Bangkok)", he: "מרכז (בנגקוק)", th: "ภาคกลาง (กรุงเทพ)" },
+        { en: "Northeast (Nakhon Ratchasima, Khon Kaen)", he: "צפון-מזרח (נקון רטצ'סימה, קון קאן)", th: "ภาคตะวันออกเฉียงเหนือ (นครราชสีมา, ขอนแก่น)" },
+        { en: "North (Chiang Mai)", he: "צפון (צ'יאנג מאי)", th: "ภาคเหนือ (เชียงใหม่)" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "What is the typical DC/AC ratio recommended for solar systems in Thailand?",
+        he: "מהו יחס DC/AC טיפוסי מומלץ למערכות סולאריות בתאילנד?",
+        th: "อัตราส่วน DC/AC ทั่วไปที่แนะนำสำหรับระบบโซลาร์ในประเทศไทยคือเท่าไร?"
+      },
+      options: [
+        { en: "0.7–0.9", he: "0.7–0.9", th: "0.7–0.9" },
+        { en: "1.0 (exact match)", he: "1.0 (התאמה מדויקת)", th: "1.0 (ตรงพอดี)" },
+        { en: "1.1–1.3", he: "1.1–1.3", th: "1.1–1.3" },
+        { en: "2.0–2.5", he: "2.0–2.5", th: "2.0–2.5" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "What is the maximum recommended DC voltage drop for solar cable runs?",
+        he: "מהי נפילת מתח DC מרבית מומלצת לכבלים סולאריים?",
+        th: "แรงดันตก DC สูงสุดที่แนะนำสำหรับสายเคเบิลโซลาร์คือเท่าไร?"
+      },
+      options: [
+        { en: "0.5%", he: "0.5%", th: "0.5%" },
+        { en: "2%", he: "2%", th: "2%" },
+        { en: "5%", he: "5%", th: "5%" },
+        { en: "10%", he: "10%", th: "10%" }
+      ],
+      correct: 1
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>

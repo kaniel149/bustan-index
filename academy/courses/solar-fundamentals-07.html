@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 7: Energy Economics — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="solar-fundamentals-01.html"><span data-en>Solar Fundamentals</span><span data-he>מבוא לסולאר</span><span data-th>พื้นฐานพลังงานแสงอาทิตย์</span></a>
+    <span>›</span>
+    <span data-en>Lesson 7</span><span data-he>שיעור 7</span><span data-th>บทที่ 7</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 7 of 8</span><span data-he>שיעור 7 מתוך 8</span><span data-th>บทที่ 7 จาก 8</span>
+    </div>
+    <h1 class="lesson-title" data-en>Energy Economics</h1>
+    <h1 class="lesson-title" data-he>כלכלת אנרגיה</h1>
+    <h1 class="lesson-title" data-th>เศรษฐศาสตร์พลังงาน</h1>
+    <div class="lesson-meta">
+      <span>⏱ <span data-en>~40 min</span><span data-he>~40 דקות</span><span data-th>~40 นาที</span></span>
+      <span>☀️ <span data-en>Solar Fundamentals</span><span data-he>מבוא לסולאר</span><span data-th>พื้นฐานโซลาร์</span></span>
+    </div>
+  </div>
+
+  <!-- Section 1: PEA Electricity Rates -->
+  <section class="content-section fade-up">
+    <h2 data-en>PEA Electricity Rates</h2>
+    <h2 data-he>תעריפי חשמל PEA</h2>
+    <h2 data-th>อัตราค่าไฟฟ้า PEA</h2>
+
+    <p data-en>Understanding Thailand's electricity pricing structure is essential for calculating solar savings. The Provincial Electricity Authority (PEA) offers two main rate structures:</p>
+    <p data-he>הבנת מבנה תמחור החשמל בתאילנד חיונית לחישוב חיסכון סולארי. רשות החשמל המחוזית (PEA) מציעה שני מבני תעריפים עיקריים:</p>
+    <p data-th>การเข้าใจโครงสร้างราคาค่าไฟฟ้าของไทยเป็นสิ่งจำเป็นสำหรับการคำนวณการประหยัดจากโซลาร์ การไฟฟ้าส่วนภูมิภาค (PEA) มีโครงสร้างอัตราค่าไฟหลักสองแบบ:</p>
+
+    <ul data-en>
+      <li><strong>Flat Rate (Normal)</strong> — A single per-kWh rate regardless of time of day. Most residential and small commercial users are on flat rate. Typical cost: <strong>~4.0–4.5 THB/kWh</strong> (including Ft charge and VAT).</li>
+      <li><strong>TOU (Time of Use)</strong> — Different rates for peak and off-peak hours. Available for medium and large businesses:
+        <ul>
+          <li><strong>Peak:</strong> 09:00–22:00 Mon–Fri → ~5.0–5.5 THB/kWh</li>
+          <li><strong>Off-Peak:</strong> 22:00–09:00 weekdays + all weekends/holidays → ~2.5–3.0 THB/kWh</li>
+        </ul>
+      </li>
+      <li><strong>Demand Charge</strong> — Commercial users (categories 3–6) also pay a per-kW demand charge based on their peak 15-minute consumption. Typically <strong>200–350 THB/kW/month</strong>.</li>
+      <li><strong>Ft Charge (Fuel Adjustment)</strong> — A variable surcharge adjusted every 4 months based on fuel costs. Has ranged from -0.12 to +0.93 THB/kWh in recent years.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>תעריף אחיד (רגיל)</strong> — תעריף אחיד לכל kWh ללא קשר לשעה ביום. רוב משתמשי מגורים ועסקים קטנים על תעריף אחיד. עלות טיפוסית: <strong>~4.0–4.5 THB/kWh</strong> (כולל חיוב Ft ו-VAT).</li>
+      <li><strong>TOU (שימוש לפי זמן)</strong> — תעריפים שונים לשעות שיא ושפל. זמין לעסקים בינוניים וגדולים:
+        <ul>
+          <li><strong>שיא:</strong> 09:00–22:00 שני–שישי → ~5.0–5.5 THB/kWh</li>
+          <li><strong>שפל:</strong> 22:00–09:00 ימי חול + כל סופ"ש/חגים → ~2.5–3.0 THB/kWh</li>
+        </ul>
+      </li>
+      <li><strong>חיוב ביקוש</strong> — משתמשים מסחריים (קטגוריות 3–6) משלמים גם חיוב ביקוש לפי kW על בסיס צריכת שיא של 15 דקות. בדרך כלל <strong>200–350 THB/kW/חודש</strong>.</li>
+      <li><strong>חיוב Ft (התאמת דלק)</strong> — תוספת משתנה המותאמת כל 4 חודשים לפי עלויות דלק. נע בין -0.12 ל-+0.93 THB/kWh בשנים האחרונות.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>อัตราคงที่ (ปกติ)</strong> — อัตราต่อ kWh เดียวไม่ว่าเวลาใด ผู้ใช้ที่อยู่อาศัยและธุรกิจขนาดเล็กส่วนใหญ่ใช้อัตราคงที่ ค่าใช้จ่ายทั่วไป: <strong>~4.0–4.5 บาท/kWh</strong> (รวม Ft และ VAT)</li>
+      <li><strong>TOU (อัตราตามช่วงเวลา)</strong> — อัตราต่างกันสำหรับช่วงพีคและนอกพีค มีให้สำหรับธุรกิจขนาดกลางและใหญ่:
+        <ul>
+          <li><strong>พีค:</strong> 09:00–22:00 จันทร์–ศุกร์ → ~5.0–5.5 บาท/kWh</li>
+          <li><strong>นอกพีค:</strong> 22:00–09:00 วันธรรมดา + วันหยุดสุดสัปดาห์/วันหยุดนักขัตฤกษ์ → ~2.5–3.0 บาท/kWh</li>
+        </ul>
+      </li>
+      <li><strong>ค่าความต้องการ (Demand Charge)</strong> — ผู้ใช้เชิงพาณิชย์ (ประเภท 3–6) ยังจ่ายค่าความต้องการต่อ kW ตามการใช้สูงสุด 15 นาที โดยทั่วไป <strong>200–350 บาท/kW/เดือน</strong></li>
+      <li><strong>ค่า Ft (ค่าเชื้อเพลิง)</strong> — ค่าธรรมเนียมผันแปรที่ปรับทุก 4 เดือนตามต้นทุนเชื้อเพลิง เคยอยู่ในช่วง -0.12 ถึง +0.93 บาท/kWh ในช่วงไม่กี่ปีที่ผ่านมา</li>
+    </ul>
+
+    <div class="key-term">
+      <p><strong data-en>Why TOU matters for solar</strong><strong data-he>למה TOU חשוב לסולאר</strong><strong data-th>ทำไม TOU จึงสำคัญสำหรับโซลาร์</strong> — <span data-en>Solar panels generate electricity primarily during peak TOU hours (09:00–22:00 weekdays). This means every kWh of solar offsets the most expensive electricity. For TOU customers, solar savings are 30–40% higher than for flat-rate customers with the same consumption.</span><span data-he>פאנלים סולאריים מייצרים חשמל בעיקר בשעות שיא TOU (09:00–22:00 ימי חול). זה אומר שכל kWh סולארי מקזז את החשמל היקר ביותר. ללקוחות TOU, חיסכון סולארי גבוה ב-30–40% בהשוואה ללקוחות תעריף אחיד עם אותה צריכה.</span><span data-th>แผงโซลาร์ผลิตไฟฟ้าส่วนใหญ่ในช่วงพีค TOU (09:00–22:00 วันธรรมดา) ซึ่งหมายความว่าทุก kWh ของโซลาร์จะชดเชยค่าไฟที่แพงที่สุด สำหรับลูกค้า TOU การประหยัดจากโซลาร์สูงกว่าลูกค้าอัตราคงที่ที่ใช้ไฟเท่ากัน 30–40%</span></p>
+    </div>
+  </section>
+
+  <!-- Section 2: LCOE -->
+  <section class="content-section fade-up">
+    <h2 data-en>Solar LCOE Calculation</h2>
+    <h2 data-he>חישוב LCOE סולארי</h2>
+    <h2 data-th>การคำนวณ LCOE โซลาร์</h2>
+
+    <p data-en>LCOE (Levelized Cost of Energy) is the total lifetime cost of a solar system divided by total lifetime energy production. It tells you the true cost per kWh of solar electricity:</p>
+    <p data-he>LCOE (עלות אנרגיה ממוצעת) היא העלות הכוללת של מערכת סולארית לאורך חייה חלקי סך ייצור האנרגיה לאורך חייה. היא מציגה את העלות האמיתית ל-kWh של חשמל סולארי:</p>
+    <p data-th>LCOE (ต้นทุนพลังงานเฉลี่ย) คือต้นทุนตลอดอายุการใช้งานของระบบโซลาร์หารด้วยการผลิตพลังงานตลอดอายุ บอกคุณถึงต้นทุนที่แท้จริงต่อ kWh ของไฟฟ้าโซลาร์:</p>
+
+    <div class="key-term">
+      <p><strong data-en>LCOE = Total System Cost ÷ Total Lifetime Energy (kWh)</strong><strong data-he>LCOE = עלות מערכת כוללת ÷ סך אנרגיה לאורך חיים (kWh)</strong><strong data-th>LCOE = ต้นทุนระบบรวม ÷ พลังงานตลอดอายุ (kWh)</strong></p>
+    </div>
+
+    <p data-en><strong>Example:</strong> A 100 kWp system in Thailand:</p>
+    <p data-he><strong>דוגמה:</strong> מערכת 100 kWp בתאילנד:</p>
+    <p data-th><strong>ตัวอย่าง:</strong> ระบบ 100 kWp ในประเทศไทย:</p>
+
+    <ul data-en>
+      <li>System cost: 2,800,000 THB (28 THB/Wp installed)</li>
+      <li>O&M cost over 25 years: ~420,000 THB</li>
+      <li>Total cost: 3,220,000 THB</li>
+      <li>Annual production: 140,000 kWh (Year 1)</li>
+      <li>25-year production (with 0.5%/yr degradation): ~3,310,000 kWh</li>
+      <li><strong>LCOE = 3,220,000 ÷ 3,310,000 = ~0.97 THB/kWh</strong></li>
+    </ul>
+    <ul data-he>
+      <li>עלות מערכת: 2,800,000 THB (28 THB/Wp מותקן)</li>
+      <li>עלות תחזוקה על פני 25 שנים: ~420,000 THB</li>
+      <li>עלות כוללת: 3,220,000 THB</li>
+      <li>ייצור שנתי: 140,000 kWh (שנה 1)</li>
+      <li>ייצור 25 שנים (עם דעיכה 0.5%/שנה): ~3,310,000 kWh</li>
+      <li><strong>LCOE = 3,220,000 ÷ 3,310,000 = ~0.97 THB/kWh</strong></li>
+    </ul>
+    <ul data-th>
+      <li>ค่าระบบ: 2,800,000 บาท (28 บาท/Wp ติดตั้ง)</li>
+      <li>ค่า O&M ตลอด 25 ปี: ~420,000 บาท</li>
+      <li>ต้นทุนรวม: 3,220,000 บาท</li>
+      <li>การผลิตต่อปี: 140,000 kWh (ปีที่ 1)</li>
+      <li>การผลิต 25 ปี (เสื่อมสภาพ 0.5%/ปี): ~3,310,000 kWh</li>
+      <li><strong>LCOE = 3,220,000 ÷ 3,310,000 = ~0.97 บาท/kWh</strong></li>
+    </ul>
+
+    <p data-en>At ~1 THB/kWh, solar is <strong>4× cheaper</strong> than grid electricity at ~4 THB/kWh. This massive gap is what makes solar such a compelling investment in Thailand.</p>
+    <p data-he>ב-~1 THB/kWh, סולאר <strong>זול פי 4</strong> מחשמל רשת ב-~4 THB/kWh. פער מסיבי זה הוא מה שהופך סולאר להשקעה כל כך משכנעת בתאילנד.</p>
+    <p data-th>ที่ ~1 บาท/kWh โซลาร์<strong>ถูกกว่า 4 เท่า</strong>เมื่อเทียบกับค่าไฟจากกริดที่ ~4 บาท/kWh ช่องว่างขนาดใหญ่นี้คือสิ่งที่ทำให้โซลาร์เป็นการลงทุนที่น่าสนใจมากในประเทศไทย</p>
+  </section>
+
+  <!-- Section 3: Payback & ROI -->
+  <section class="content-section fade-up">
+    <h2 data-en>Payback, ROI & IRR</h2>
+    <h2 data-he>החזר השקעה, ROI ו-IRR</h2>
+    <h2 data-th>ระยะคืนทุน, ROI และ IRR</h2>
+
+    <p data-en>Three key financial metrics help customers evaluate a solar investment:</p>
+    <p data-he>שלושה מדדים פיננסיים מרכזיים מסייעים ללקוחות להעריך השקעה סולארית:</p>
+    <p data-th>ตัวชี้วัดทางการเงินหลักสามตัวช่วยให้ลูกค้าประเมินการลงทุนโซลาร์:</p>
+
+    <ul data-en>
+      <li><strong>Simple Payback Period</strong> — How many years until the system pays for itself.
+        <br><em>Payback = Total System Cost ÷ Annual Savings</em>
+        <br>Example: 2,800,000 THB system saving 560,000 THB/year → <strong>5.0 years payback</strong>
+        <br>For commercial solar in Thailand, typical payback is <strong>4–7 years</strong>.
+      </li>
+      <li><strong>ROI (Return on Investment)</strong> — Total profit as a percentage of the investment.
+        <br><em>ROI = (Total Savings over Lifetime − Total Cost) ÷ Total Cost × 100%</em>
+        <br>Example: 25-year savings of 12,600,000 THB, cost of 3,220,000 THB → <strong>ROI = 291%</strong>
+        <br>Solar ROI in Thailand typically ranges from <strong>200–400%</strong> over 25 years.
+      </li>
+      <li><strong>IRR (Internal Rate of Return)</strong> — The annualized return rate accounting for the time value of money. Think of it as the "interest rate" your solar investment earns.
+        <br>For well-designed commercial systems in Thailand, IRR is typically <strong>15–25%</strong>, far exceeding bank deposits (1–2%) or stock market averages (8–10%).
+      </li>
+    </ul>
+    <ul data-he>
+      <li><strong>תקופת החזר פשוטה</strong> — כמה שנים עד שהמערכת מחזירה את עצמה.
+        <br><em>החזר = עלות מערכת כוללת ÷ חיסכון שנתי</em>
+        <br>דוגמה: מערכת ב-2,800,000 THB חוסכת 560,000 THB/שנה → <strong>החזר 5.0 שנים</strong>
+        <br>להתקנות סולאריות מסחריות בתאילנד, החזר טיפוסי הוא <strong>4–7 שנים</strong>.
+      </li>
+      <li><strong>ROI (תשואה על השקעה)</strong> — רווח כולל כאחוז מההשקעה.
+        <br><em>ROI = (סך חיסכון לאורך חיים − עלות כוללת) ÷ עלות כוללת × 100%</em>
+        <br>דוגמה: חיסכון 25 שנים של 12,600,000 THB, עלות 3,220,000 THB → <strong>ROI = 291%</strong>
+        <br>ROI סולארי בתאילנד נע בדרך כלל בין <strong>200–400%</strong> על פני 25 שנים.
+      </li>
+      <li><strong>IRR (שיעור תשואה פנימי)</strong> — שיעור תשואה שנתי המתחשב בערך הזמן של כסף. חשבו על זה כ"ריבית" שההשקעה הסולארית שלכם מרוויחה.
+        <br>למערכות מסחריות מתוכננות היטב בתאילנד, IRR הוא בדרך כלל <strong>15–25%</strong>, עולה בהרבה על פיקדונות בנקאיים (1–2%) או ממוצע שוק המניות (8–10%).
+      </li>
+    </ul>
+    <ul data-th>
+      <li><strong>ระยะเวลาคืนทุน (Simple Payback)</strong> — กี่ปีจนกว่าระบบจะคุ้มทุน
+        <br><em>คืนทุน = ต้นทุนระบบรวม ÷ เงินประหยัดต่อปี</em>
+        <br>ตัวอย่าง: ระบบ 2,800,000 บาท ประหยัดได้ 560,000 บาท/ปี → <strong>คืนทุน 5.0 ปี</strong>
+        <br>สำหรับโซลาร์เชิงพาณิชย์ในไทย ระยะคืนทุนทั่วไปคือ <strong>4–7 ปี</strong>
+      </li>
+      <li><strong>ROI (ผลตอบแทนจากการลงทุน)</strong> — กำไรรวมเป็นเปอร์เซ็นต์ของการลงทุน
+        <br><em>ROI = (เงินประหยัดรวมตลอดอายุ − ต้นทุนรวม) ÷ ต้นทุนรวม × 100%</em>
+        <br>ตัวอย่าง: เงินประหยัด 25 ปี 12,600,000 บาท ต้นทุน 3,220,000 บาท → <strong>ROI = 291%</strong>
+        <br>ROI โซลาร์ในไทยโดยทั่วไปอยู่ที่ <strong>200–400%</strong> ตลอด 25 ปี
+      </li>
+      <li><strong>IRR (อัตราผลตอบแทนภายใน)</strong> — อัตราผลตอบแทนรายปีที่คำนึงถึงมูลค่าเงินตามเวลา ให้คิดว่าเป็น "อัตราดอกเบี้ย" ที่การลงทุนโซลาร์ของคุณได้รับ
+        <br>สำหรับระบบเชิงพาณิชย์ที่ออกแบบดีในไทย IRR โดยทั่วไปอยู่ที่ <strong>15–25%</strong> ซึ่งสูงกว่าเงินฝากธนาคาร (1–2%) หรือค่าเฉลี่ยตลาดหุ้น (8–10%) มาก
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 4: PPA Model -->
+  <section class="content-section fade-up">
+    <h2 data-en>PPA Model (Power Purchase Agreement)</h2>
+    <h2 data-he>מודל PPA (הסכם רכישת חשמל)</h2>
+    <h2 data-th>โมเดล PPA (สัญญาซื้อขายไฟฟ้า)</h2>
+
+    <p data-en>A PPA is a financing model where the solar company owns and installs the system on the customer's roof at <strong>zero upfront cost</strong>. The customer simply buys the solar electricity at a discounted rate:</p>
+    <p data-he>PPA הוא מודל מימון בו חברת הסולאר מחזיקה ומתקינה את המערכת על גג הלקוח <strong>ללא עלות מראש</strong>. הלקוח פשוט קונה את החשמל הסולארי בתעריף מוזל:</p>
+    <p data-th>PPA เป็นรูปแบบการเงินที่บริษัทโซลาร์เป็นเจ้าของและติดตั้งระบบบนหลังคาลูกค้า<strong>โดยไม่มีค่าใช้จ่ายล่วงหน้า</strong> ลูกค้าเพียงซื้อไฟฟ้าโซลาร์ในอัตราที่ลดราคา:</p>
+
+    <ul data-en>
+      <li><strong>How it works:</strong> Solar company installs, owns, and maintains the system. Customer signs a long-term contract (15–25 years) to buy the electricity at a fixed discounted rate.</li>
+      <li><strong>Typical PPA rate:</strong> 3.0–3.8 THB/kWh — 10–25% discount from grid electricity</li>
+      <li><strong>Customer benefits:</strong> Zero investment, immediate savings, no maintenance responsibility, predictable electricity costs</li>
+      <li><strong>Solar company benefits:</strong> Long-term revenue stream, asset ownership, potential tax benefits</li>
+      <li><strong>Common terms:</strong> 15–25 year contract, annual escalation of 0–2%, buyout option after year 7–10</li>
+      <li><strong>Best for:</strong> Large commercial/industrial users with high credit quality, companies that prefer OpEx over CapEx</li>
+    </ul>
+    <ul data-he>
+      <li><strong>איך זה עובד:</strong> חברת סולאר מתקינה, מחזיקה ומתחזקת את המערכת. הלקוח חותם על חוזה ארוך טווח (15–25 שנים) לרכוש את החשמל בתעריף מוזל קבוע.</li>
+      <li><strong>תעריף PPA טיפוסי:</strong> 3.0–3.8 THB/kWh — הנחה של 10–25% מחשמל רשת</li>
+      <li><strong>יתרונות ללקוח:</strong> אפס השקעה, חיסכון מיידי, אין אחריות תחזוקה, עלויות חשמל צפויות</li>
+      <li><strong>יתרונות לחברת סולאר:</strong> זרם הכנסות ארוך טווח, בעלות על נכס, הטבות מס פוטנציאליות</li>
+      <li><strong>תנאים נפוצים:</strong> חוזה 15–25 שנים, העלאה שנתית של 0–2%, אפשרות רכישה אחרי שנה 7–10</li>
+      <li><strong>הכי טוב עבור:</strong> משתמשים מסחריים/תעשייתיים גדולים עם איכות אשראי גבוהה, חברות שמעדיפות OpEx על CapEx</li>
+    </ul>
+    <ul data-th>
+      <li><strong>ทำงานอย่างไร:</strong> บริษัทโซลาร์ติดตั้ง เป็นเจ้าของ และดูแลระบบ ลูกค้าเซ็นสัญญาระยะยาว (15–25 ปี) เพื่อซื้อไฟฟ้าในอัตราลดราคาคงที่</li>
+      <li><strong>อัตรา PPA ทั่วไป:</strong> 3.0–3.8 บาท/kWh — ส่วนลด 10–25% จากค่าไฟกริด</li>
+      <li><strong>ประโยชน์สำหรับลูกค้า:</strong> ไม่มีการลงทุน ประหยัดทันที ไม่ต้องรับผิดชอบการบำรุงรักษา ค่าไฟที่คาดการณ์ได้</li>
+      <li><strong>ประโยชน์สำหรับบริษัทโซลาร์:</strong> กระแสรายได้ระยะยาว ความเป็นเจ้าของสินทรัพย์ สิทธิประโยชน์ทางภาษี</li>
+      <li><strong>เงื่อนไขทั่วไป:</strong> สัญญา 15–25 ปี ปรับขึ้นประจำปี 0–2% มีตัวเลือกซื้อคืนหลังปีที่ 7–10</li>
+      <li><strong>เหมาะสำหรับ:</strong> ผู้ใช้เชิงพาณิชย์/อุตสาหกรรมขนาดใหญ่ที่มีเครดิตดี บริษัทที่ต้องการ OpEx มากกว่า CapEx</li>
+    </ul>
+  </section>
+
+  <!-- Section 5: ESCO Model -->
+  <section class="content-section fade-up">
+    <h2 data-en>ESCO Model (Energy Service Company)</h2>
+    <h2 data-he>מודל ESCO (חברת שירותי אנרגיה)</h2>
+    <h2 data-th>โมเดล ESCO (บริษัทจัดการพลังงาน)</h2>
+
+    <p data-en>The ESCO model is similar to PPA but goes beyond just solar. An ESCO provides comprehensive energy management services:</p>
+    <p data-he>מודל ESCO דומה ל-PPA אך חורג מעבר לסולאר בלבד. ESCO מספקת שירותי ניהול אנרגיה מקיפים:</p>
+    <p data-th>โมเดล ESCO คล้ายกับ PPA แต่ครอบคลุมมากกว่าแค่โซลาร์ ESCO ให้บริการจัดการพลังงานอย่างครบวงจร:</p>
+
+    <ul data-en>
+      <li><strong>Guaranteed savings:</strong> The ESCO guarantees a specific percentage of energy savings. If the savings fall short, the ESCO covers the difference.</li>
+      <li><strong>Bundled solutions:</strong> Solar + LED lighting + HVAC optimization + power factor correction + energy monitoring — all in one contract.</li>
+      <li><strong>Shared savings model:</strong> Energy savings are split between the ESCO and customer (e.g., 70/30 or 60/40) for the contract duration.</li>
+      <li><strong>DEDE registration:</strong> In Thailand, legitimate ESCOs should be registered with the Department of Alternative Energy Development and Efficiency (DEDE).</li>
+      <li><strong>Contract duration:</strong> Typically 7–15 years, shorter than PPA since there are multiple revenue sources.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>חיסכון מובטח:</strong> ESCO מבטיחה אחוז ספציפי של חיסכון באנרגיה. אם החיסכון לא מגיע, ESCO מכסה את ההפרש.</li>
+      <li><strong>פתרונות משולבים:</strong> סולאר + תאורת LED + אופטימיזציית מיזוג + תיקון מקדם הספק + ניטור אנרגיה — הכל בחוזה אחד.</li>
+      <li><strong>מודל חיסכון משותף:</strong> חיסכון האנרגיה מתחלק בין ESCO ללקוח (למשל 70/30 או 60/40) למשך תקופת החוזה.</li>
+      <li><strong>רישום DEDE:</strong> בתאילנד, חברות ESCO לגיטימיות צריכות להיות רשומות במשרד לפיתוח אנרגיה חלופית ויעילות (DEDE).</li>
+      <li><strong>משך חוזה:</strong> בדרך כלל 7–15 שנים, קצר יותר מ-PPA מכיוון שיש מקורות הכנסה מרובים.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>การประหยัดที่รับประกัน:</strong> ESCO รับประกันเปอร์เซ็นต์การประหยัดพลังงานที่เฉพาะเจาะจง หากประหยัดได้ไม่ถึง ESCO จะชดเชยส่วนต่าง</li>
+      <li><strong>โซลูชันแบบรวม:</strong> โซลาร์ + ไฟ LED + ปรับปรุง HVAC + แก้ไข Power Factor + การตรวจสอบพลังงาน — ทั้งหมดในสัญญาเดียว</li>
+      <li><strong>โมเดลแบ่งปันการประหยัด:</strong> เงินประหยัดจากพลังงานแบ่งระหว่าง ESCO และลูกค้า (เช่น 70/30 หรือ 60/40) ตลอดระยะเวลาสัญญา</li>
+      <li><strong>การจดทะเบียน DEDE:</strong> ในประเทศไทย ESCO ที่ถูกต้องควรจดทะเบียนกับกรมพัฒนาพลังงานทดแทนและอนุรักษ์พลังงาน (DEDE)</li>
+      <li><strong>ระยะเวลาสัญญา:</strong> โดยทั่วไป 7–15 ปี สั้นกว่า PPA เพราะมีแหล่งรายได้หลายทาง</li>
+    </ul>
+  </section>
+
+  <!-- Section 6: Leasing & Other Options -->
+  <section class="content-section fade-up">
+    <h2 data-en>Leasing & Installment Options</h2>
+    <h2 data-he>ליסינג ואפשרויות תשלומים</h2>
+    <h2 data-th>การเช่าและตัวเลือกผ่อนชำระ</h2>
+
+    <p data-en>Beyond direct purchase and PPA, several financing options make solar accessible:</p>
+    <p data-he>מעבר לרכישה ישירה ו-PPA, מספר אפשרויות מימון הופכות סולאר לנגיש:</p>
+    <p data-th>นอกเหนือจากการซื้อตรงและ PPA ยังมีตัวเลือกการเงินหลายอย่างที่ทำให้โซลาร์เข้าถึงได้:</p>
+
+    <ul data-en>
+      <li><strong>Solar Lease:</strong> Customer leases the equipment for fixed monthly payments over 5–10 years. Ownership transfers at end of lease. Monthly payment typically equals or is less than current electricity bill savings.</li>
+      <li><strong>Bank Loan:</strong> Customer borrows to purchase the system outright. Many Thai banks (KBank, SCB, KBTG) offer green energy loans at preferential rates (4–6% interest). The system often pays for itself faster than the loan term.</li>
+      <li><strong>Equipment Installment:</strong> The solar company offers installment plans (typically 12–60 months). No bank involvement — simpler process but potentially higher rates.</li>
+      <li><strong>BOI-backed financing:</strong> Companies with BOI privileges (Category 5.2) can deduct solar investment from taxable income, effectively reducing the system cost by the corporate tax rate (20%).</li>
+    </ul>
+    <ul data-he>
+      <li><strong>ליסינג סולארי:</strong> הלקוח שוכר את הציוד בתשלומים חודשיים קבועים על פני 5–10 שנים. הבעלות עוברת בסוף הליסינג. תשלום חודשי בדרך כלל שווה או נמוך מחיסכון חשבון החשמל הנוכחי.</li>
+      <li><strong>הלוואה בנקאית:</strong> הלקוח לווה לרכישת המערכת. בנקים תאילנדיים רבים (KBank, SCB, KBTG) מציעים הלוואות אנרגיה ירוקה בריבית מועדפת (4–6%). המערכת לרוב מחזירה את עצמה מהר יותר מתקופת ההלוואה.</li>
+      <li><strong>תשלומים לציוד:</strong> חברת הסולאר מציעה תוכניות תשלומים (בדרך כלל 12–60 חודשים). ללא מעורבות בנקאית — תהליך פשוט יותר אך פוטנציאלית ריביות גבוהות יותר.</li>
+      <li><strong>מימון נתמך BOI:</strong> חברות עם הטבות BOI (קטגוריה 5.2) יכולות לנכות השקעה סולארית מהכנסה חייבת, ולמעשה להפחית את עלות המערכת בשיעור מס חברות (20%).</li>
+    </ul>
+    <ul data-th>
+      <li><strong>เช่าโซลาร์:</strong> ลูกค้าเช่าอุปกรณ์ด้วยค่าเช่ารายเดือนคงที่เป็นเวลา 5–10 ปี ความเป็นเจ้าของโอนเมื่อสิ้นสุดสัญญาเช่า ค่าเช่ารายเดือนโดยทั่วไปเท่ากับหรือน้อยกว่าเงินประหยัดจากค่าไฟ</li>
+      <li><strong>สินเชื่อธนาคาร:</strong> ลูกค้ากู้เงินเพื่อซื้อระบบ ธนาคารไทยหลายแห่ง (KBank, SCB, KBTG) มีสินเชื่อพลังงานสะอาดในอัตราพิเศษ (ดอกเบี้ย 4–6%) ระบบมักคุ้มทุนเร็วกว่าระยะเวลาสินเชื่อ</li>
+      <li><strong>ผ่อนชำระอุปกรณ์:</strong> บริษัทโซลาร์เสนอแผนผ่อนชำระ (โดยทั่วไป 12–60 เดือน) ไม่ต้องผ่านธนาคาร กระบวนการง่ายกว่าแต่อาจมีอัตราดอกเบี้ยสูงกว่า</li>
+      <li><strong>สินเชื่อสนับสนุน BOI:</strong> บริษัทที่ได้สิทธิ BOI (ประเภท 5.2) สามารถหักการลงทุนโซลาร์จากรายได้ที่ต้องเสียภาษี ลดต้นทุนระบบลงอย่างมีประสิทธิภาพตามอัตราภาษีนิติบุคคล (20%)</li>
+    </ul>
+  </section>
+
+  <!-- Section 7: Net Metering Economics -->
+  <section class="content-section fade-up">
+    <h2 data-en>Net Metering Economics</h2>
+    <h2 data-he>כלכלת מונה נטו</h2>
+    <h2 data-th>เศรษฐศาสตร์ Net Metering</h2>
+
+    <p data-en>Net metering in Thailand allows solar system owners to sell excess electricity back to the grid, but the economics are important to understand:</p>
+    <p data-he>מונה נטו בתאילנד מאפשר לבעלי מערכות סולאריות למכור חשמל עודף בחזרה לרשת, אך חשוב להבין את הכלכלה:</p>
+    <p data-th>Net metering ในประเทศไทยอนุญาตให้เจ้าของระบบโซลาร์ขายไฟฟ้าส่วนเกินคืนกริด แต่สิ่งสำคัญคือต้องเข้าใจเศรษฐศาสตร์:</p>
+
+    <ul data-en>
+      <li><strong>Buy-back rate:</strong> PEA currently buys excess solar at <strong>~2.20 THB/kWh</strong> — significantly less than the ~4.0–4.5 THB/kWh you pay to buy. This means self-consumption is always more profitable than exporting.</li>
+      <li><strong>Self-consumption ratio:</strong> The percentage of solar production consumed on-site. For factories operating Mon–Fri daytime, this can be 80–95%. For residential, typically 30–50% without batteries.</li>
+      <li><strong>Optimization strategy:</strong> Size the system to maximize self-consumption. A system that covers 70–80% of daytime load with 90% self-consumption is more profitable than a system that covers 120% of load with 50% self-consumption.</li>
+      <li><strong>Battery economics:</strong> Adding batteries to store excess solar for evening use can increase self-consumption but must be evaluated against battery costs. Currently batteries add 8–12 THB/kWh to stored energy cost — not yet economical for most grid-connected commercial systems.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>תעריף רכישה חוזרת:</strong> PEA קונה כיום עודפי סולאר ב-<strong>~2.20 THB/kWh</strong> — משמעותית פחות מ-~4.0–4.5 THB/kWh שאתם משלמים לרכישה. זה אומר שצריכה עצמית תמיד רווחית יותר מייצוא.</li>
+      <li><strong>יחס צריכה עצמית:</strong> אחוז ייצור הסולאר הנצרך באתר. למפעלים שפועלים שני–שישי ביום, זה יכול להיות 80–95%. למגורים, בדרך כלל 30–50% ללא סוללות.</li>
+      <li><strong>אסטרטגיית אופטימיזציה:</strong> התאימו את גודל המערכת למקסום צריכה עצמית. מערכת שמכסה 70–80% מעומס יום עם 90% צריכה עצמית רווחית יותר ממערכת שמכסה 120% מהעומס עם 50% צריכה עצמית.</li>
+      <li><strong>כלכלת סוללות:</strong> הוספת סוללות לאחסון עודפי סולאר לשימוש ערב יכולה להגדיל צריכה עצמית אך צריכה להיות מוערכת מול עלויות הסוללה. כיום סוללות מוסיפות 8–12 THB/kWh לעלות אנרגיה מאוחסנת — עדיין לא כלכלי לרוב המערכות המסחריות המחוברות לרשת.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>อัตรารับซื้อ:</strong> PEA ปัจจุบันรับซื้อไฟโซลาร์ส่วนเกินที่ <strong>~2.20 บาท/kWh</strong> — น้อยกว่าราคา ~4.0–4.5 บาท/kWh ที่คุณจ่ายซื้อมาก ซึ่งหมายความว่าการใช้เองเสมอให้กำไรมากกว่าการส่งออก</li>
+      <li><strong>สัดส่วนการใช้เอง:</strong> เปอร์เซ็นต์ของการผลิตโซลาร์ที่ใช้ในสถานที่ สำหรับโรงงานที่ทำงาน จันทร์–ศุกร์ กลางวัน สามารถอยู่ที่ 80–95% สำหรับที่อยู่อาศัย โดยทั่วไป 30–50% โดยไม่มีแบตเตอรี่</li>
+      <li><strong>กลยุทธ์การเพิ่มประสิทธิภาพ:</strong> ออกแบบระบบให้เพิ่มการใช้เองสูงสุด ระบบที่ครอบคลุม 70–80% ของโหลดกลางวันด้วยการใช้เอง 90% ให้ผลกำไรมากกว่าระบบที่ครอบคลุม 120% ของโหลดด้วยการใช้เอง 50%</li>
+      <li><strong>เศรษฐศาสตร์แบตเตอรี่:</strong> การเพิ่มแบตเตอรี่เพื่อเก็บโซลาร์ส่วนเกินสำหรับใช้ตอนเย็นสามารถเพิ่มการใช้เอง แต่ต้องประเมินเทียบกับค่าแบตเตอรี่ ปัจจุบันแบตเตอรี่เพิ่มค่าใช้จ่าย 8–12 บาท/kWh ของพลังงานที่เก็บ — ยังไม่คุ้มค่าสำหรับระบบเชิงพาณิชย์ที่เชื่อมกริดส่วนใหญ่</li>
+    </ul>
+
+    <div class="did-you-know">
+      <div class="dyk-title" data-en>Did You Know?</div>
+      <div class="dyk-title" data-he>הידעת?</div>
+      <div class="dyk-title" data-th>รู้หรือไม่?</div>
+      <p data-en>The "golden rule" of solar economics in Thailand: every kWh consumed on-site saves ~4.0 THB, while every kWh exported earns only ~2.20 THB. This 45% gap means system sizing for maximum self-consumption delivers the best financial returns. TM Energy's design philosophy prioritizes self-consumption optimization over maximum system size.</p>
+      <p data-he>"כלל הזהב" של כלכלת סולאר בתאילנד: כל kWh הנצרך באתר חוסך ~4.0 THB, בעוד כל kWh מיוצא מרוויח רק ~2.20 THB. פער זה של 45% אומר שתכנון מערכת למקסום צריכה עצמית מניב את התשואות הפיננסיות הטובות ביותר. פילוסופיית התכנון של TM Energy מעדיפה אופטימיזציית צריכה עצמית על פני גודל מערכת מרבי.</p>
+      <p data-th>"กฎทอง" ของเศรษฐศาสตร์โซลาร์ในไทย: ทุก kWh ที่ใช้เองในสถานที่ประหยัด ~4.0 บาท ขณะที่ทุก kWh ที่ส่งออกได้เพียง ~2.20 บาท ช่องว่าง 45% นี้หมายความว่าการออกแบบระบบให้ใช้เองสูงสุดจะให้ผลตอบแทนทางการเงินที่ดีที่สุด ปรัชญาการออกแบบของ TM Energy ให้ความสำคัญกับการเพิ่มประสิทธิภาพการใช้เองมากกว่าขนาดระบบสูงสุด</p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <nav class="lesson-nav">
+    <a href="solar-fundamentals-06.html">
+      <span data-en>← Previous Lesson</span><span data-he>השיעור הקודם ←</span><span data-th>← บทก่อนหน้า</span>
+    </a>
+    <a href="../index.html">
+      <span data-en>Course Home</span><span data-he>דף הקורס</span><span data-th>หน้าหลักคอร์ส</span>
+    </a>
+    <a href="solar-fundamentals-08.html">
+      <span data-en>Next Lesson →</span><span data-he>→ השיעור הבא</span><span data-th>บทถัดไป →</span>
+    </a>
+  </nav>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 TM Energy Co., Ltd.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('solar-fundamentals', 7);
+  initQuiz('solar-fundamentals', 7, [
+    {
+      question: {
+        en: "What is the approximate LCOE of solar in Thailand compared to grid electricity?",
+        he: "מהו ה-LCOE המשוער של סולאר בתאילנד בהשוואה לחשמל רשת?",
+        th: "LCOE โดยประมาณของโซลาร์ในประเทศไทยเทียบกับค่าไฟจากกริดเป็นเท่าไร?"
+      },
+      options: [
+        { en: "Solar ~1 THB/kWh vs Grid ~4 THB/kWh", he: "סולאר ~1 THB/kWh מול רשת ~4 THB/kWh", th: "โซลาร์ ~1 บาท/kWh เทียบ กริด ~4 บาท/kWh" },
+        { en: "Solar ~3 THB/kWh vs Grid ~4 THB/kWh", he: "סולאר ~3 THB/kWh מול רשת ~4 THB/kWh", th: "โซลาร์ ~3 บาท/kWh เทียบ กริด ~4 บาท/kWh" },
+        { en: "Solar ~5 THB/kWh vs Grid ~4 THB/kWh", he: "סולאר ~5 THB/kWh מול רשת ~4 THB/kWh", th: "โซลาร์ ~5 บาท/kWh เทียบ กริด ~4 บาท/kWh" },
+        { en: "They cost about the same", he: "הם עולים בערך אותו דבר", th: "ราคาเท่ากัน" }
+      ],
+      correct: 0
+    },
+    {
+      question: {
+        en: "In a PPA model, who owns and maintains the solar system?",
+        he: "במודל PPA, מי מחזיק ומתחזק את המערכת הסולארית?",
+        th: "ในโมเดล PPA ใครเป็นเจ้าของและดูแลระบบโซลาร์?"
+      },
+      options: [
+        { en: "The building owner", he: "בעל הבניין", th: "เจ้าของอาคาร" },
+        { en: "The solar company", he: "חברת הסולאר", th: "บริษัทโซลาร์" },
+        { en: "PEA (the electricity authority)", he: "PEA (רשות החשמל)", th: "PEA (การไฟฟ้า)" },
+        { en: "The government", he: "הממשלה", th: "รัฐบาล" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "Why is self-consumption more profitable than exporting excess solar to the grid in Thailand?",
+        he: "למה צריכה עצמית רווחית יותר מייצוא עודפי סולאר לרשת בתאילנד?",
+        th: "ทำไมการใช้เองจึงให้กำไรมากกว่าการส่งออกโซลาร์ส่วนเกินไปยังกริดในประเทศไทย?"
+      },
+      options: [
+        { en: "It's not — exporting pays more", he: "זה לא — ייצוא משלם יותר", th: "ไม่ใช่ — การส่งออกให้ราคาดีกว่า" },
+        { en: "Grid buy rate (~2.2 THB) is much lower than retail rate (~4.0 THB)", he: "תעריף רכישת רשת (~2.2 THB) נמוך בהרבה מתעריף קמעונאי (~4.0 THB)", th: "อัตรารับซื้อ (~2.2 บาท) ต่ำกว่าอัตราค่าไฟปลีก (~4.0 บาท) มาก" },
+        { en: "PEA doesn't allow exporting at all", he: "PEA לא מאפשרת ייצוא כלל", th: "PEA ไม่อนุญาตให้ส่งออกเลย" },
+        { en: "There is no net metering in Thailand", he: "אין מונה נטו בתאילנד", th: "ไม่มี net metering ในประเทศไทย" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the typical simple payback period for commercial solar in Thailand?",
+        he: "מהי תקופת ההחזר הפשוטה הטיפוסית לסולאר מסחרי בתאילנד?",
+        th: "ระยะคืนทุนปกติของโซลาร์เชิงพาณิชย์ในประเทศไทยคือเท่าไร?"
+      },
+      options: [
+        { en: "1–2 years", he: "1–2 שנים", th: "1–2 ปี" },
+        { en: "4–7 years", he: "4–7 שנים", th: "4–7 ปี" },
+        { en: "10–15 years", he: "10–15 שנים", th: "10–15 ปี" },
+        { en: "20–25 years", he: "20–25 שנים", th: "20–25 ปี" }
+      ],
+      correct: 1
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>
