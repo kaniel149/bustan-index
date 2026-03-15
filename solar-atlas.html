@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>KP Solar Atlas — Koh Phangan Drone Survey Map</title>
+<title>TM Energy Solar Atlas — Koh Phangan Drone Survey Map</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -127,7 +127,7 @@ select:focus { border-color:#E8A820; outline:none; }
 <div class="header">
   <div class="logo">
     <div class="logo-mark">TM</div>
-    <div class="logo-text"><span>KP Solar</span> Atlas</div>
+    <div class="logo-text"><span>TM Energy Solar</span> Atlas</div>
   </div>
   <div class="header-stats">
     <div class="hstat">
@@ -209,7 +209,7 @@ select:focus { border-color:#E8A820; outline:none; }
 <div id="map"></div>
 
 <div class="info-panel" id="info-panel">
-  <h4>🛸 KP Solar Atlas</h4>
+  <h4>🛸 TM Energy Solar Atlas</h4>
   <p data-i18n="info_desc">Drone survey of Koh Phangan — mapping every rooftop for solar potential.</p>
   <p style="margin-top:8px;">
     <span class="phase-badge phase-planning" data-i18n="phase_planning">Phase: Planning</span><br>
@@ -253,7 +253,7 @@ var i18n = {
     search_placeholder:'חיפוש גגות...', zone:'אזור', all_zones:'כל האזורים', potential:'פוטנציאל',
     all:'הכל', roof_type:'סוג גג', all_types:'כל הסוגים', metal:'מתכת', concrete:'בטון',
     tile_type:'רעפים', heatmap:'🔥 מפת חום', scan_zones:'📡 אזורי סריקה', high:'גבוה', medium:'בינוני',
-    low:'נמוך', info_desc:'סקר רחפן של קופנגן — מיפוי כל גג לפוטנציאל סולארי.',
+    low:'נמוך', info_desc:'סקר רחפן של קו פנגן — מיפוי כל גג לפוטנציאל סולארי.',
     phase_planning:'שלב: תכנון', info_target:'יעד: 2,500+ גגות על פני 22 קמ"ר',
     info_click:'לחץ על סמן לניתוח סולארי והצעת מחיר מיידית.',
     monthly_before:'חשבון חודשי לפני', monthly_after:'חשבון חודשי אחרי', system_size:'גודל מערכת',
@@ -468,7 +468,7 @@ sampleRoofs.forEach(function(r) {
     color: '#fff', weight: 2, fillOpacity: 0.85
   }).addTo(map);
 
-  var wa_link = 'https://wa.me/66623480119?text=' + encodeURIComponent('Hi TM Energy, I saw "' + r.name + '" on the KP Solar Atlas. I\'d like a free solar proposal!');
+  var wa_link = 'https://wa.me/66997044944?text=' + encodeURIComponent('Hi TM Energy, I saw "' + r.name + '" on the TM Energy Solar Atlas. I\'d like a free solar proposal!');
   var roofBg = getRoofColor(r.type);
 
   marker.bindPopup(function() {
