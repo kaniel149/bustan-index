@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3: Solar + EV + Storage Integration — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .video-section { margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .video-section h3 { margin-bottom: 15px; color: #00D68F; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; }
+    .video-caption { margin-top: 10px; font-size: 0.9em; color: rgba(255,255,255,0.6); font-style: italic; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="ev-storage-01.html"><span data-en>EV & Energy Storage</span><span data-he>EV ואגירת אנרגיה</span><span data-th>EV และกักเก็บพลังงาน</span></a>
+    <span>›</span>
+    <span data-en>Lesson 3</span><span data-he>שיעור 3</span><span data-th>บทที่ 3</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 3 of 3</span><span data-he>שיעור 3 מתוך 3</span><span data-th>บทที่ 3 จาก 3</span>
+    </div>
+    <h1>
+      <span data-en>Solar + EV + Storage Integration</span>
+      <span data-he>אינטגרציית סולאר + EV + אגירה</span>
+      <span data-th>การบูรณาการ โซลาร์ + EV + กักเก็บ</span>
+    </h1>
+    <p class="lesson-subtitle">
+      <span data-en>The complete energy ecosystem — from rooftop to road, with smart management and business opportunities</span>
+      <span data-he>מערכת האנרגיה המלאה — מהגג לכביש, עם ניהול חכם והזדמנויות עסקיות</span>
+      <span data-th>ระบบนิเวศพลังงานครบวงจร — จากหลังคาสู่ถนน ด้วยการจัดการอัจฉริยะและโอกาสทางธุรกิจ</span>
+    </p>
+  </div>
+
+  <!-- Section 1: System Architecture -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🔄 System Architecture</span>
+      <span data-he>🔄 ארכיטקטורת מערכת</span>
+      <span data-th>🔄 สถาปัตยกรรมระบบ</span>
+    </h2>
+
+    <img src="../images/solar-ev-integration.png" alt="Solar + EV + Storage integrated system diagram" class="lesson-image">
+
+    <h3>
+      <span data-en>Energy Flow: From Panels to Wheels</span>
+      <span data-he>זרימת אנרגיה: מפאנלים לגלגלים</span>
+      <span data-th>การไหลของพลังงาน: จากแผงสู่ล้อ</span>
+    </h3>
+    <p>
+      <span data-en>A fully integrated solar+EV+storage system has five main components working together:</span>
+      <span data-he>מערכת סולאר+EV+אגירה משולבת כוללת חמישה רכיבים עיקריים שעובדים יחד:</span>
+      <span data-th>ระบบโซลาร์+EV+กักเก็บที่บูรณาการครบถ้วนมี 5 องค์ประกอบหลักทำงานร่วมกัน:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Component</span><span data-he>רכיב</span><span data-th>องค์ประกอบ</span></th>
+            <th><span data-en>Role</span><span data-he>תפקיד</span><span data-th>บทบาท</span></th>
+            <th><span data-en>Example</span><span data-he>דוגמה</span><span data-th>ตัวอย่าง</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>☀️ PV Array</span><span data-he>☀️ מערך PV</span><span data-th>☀️ แผง PV</span></td>
+            <td><span data-en>Generate DC electricity from sunlight</span><span data-he>מייצר חשמל DC מאור שמש</span><span data-th>ผลิตไฟฟ้า DC จากแสงอาทิตย์</span></td>
+            <td><span data-en>48× LONGi 580W = 27.8 kWp</span><span data-he>48× LONGi 580W = 27.8 kWp</span><span data-th>48× LONGi 580W = 27.8 kWp</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>🔌 Hybrid Inverter</span><span data-he>🔌 ממיר היברידי</span><span data-th>🔌 ไฮบริดอินเวอร์เตอร์</span></td>
+            <td><span data-en>Convert DC→AC, manage battery charge/discharge, grid interaction</span><span data-he>ממיר DC→AC, מנהל טעינה/פריקה של סוללה, אינטראקציה עם רשת</span><span data-th>แปลง DC→AC จัดการชาร์จ/ดิสชาร์จแบตเตอรี่ การโต้ตอบกับกริด</span></td>
+            <td><span data-en>Huawei SUN2000-25KTL-M5</span><span data-he>Huawei SUN2000-25KTL-M5</span><span data-th>Huawei SUN2000-25KTL-M5</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>🔋 Battery</span><span data-he>🔋 סוללה</span><span data-th>🔋 แบตเตอรี่</span></td>
+            <td><span data-en>Store excess solar for night use or backup</span><span data-he>אוגר עודף סולארי לשימוש לילי או גיבוי</span><span data-th>กักเก็บโซลาร์ส่วนเกินสำหรับใช้ตอนกลางคืนหรือสำรอง</span></td>
+            <td><span data-en>Huawei LUNA2000-10-S0 (10 kWh)</span><span data-he>Huawei LUNA2000-10-S0 (10 kWh)</span><span data-th>Huawei LUNA2000-10-S0 (10 kWh)</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>🚗 EV Charger</span><span data-he>🚗 מטען EV</span><span data-th>🚗 เครื่องชาร์จ EV</span></td>
+            <td><span data-en>Charge electric vehicles, smart load management</span><span data-he>טעינת רכבים חשמליים, ניהול עומסים חכם</span><span data-th>ชาร์จรถยนต์ไฟฟ้า จัดการโหลดอัจฉริยะ</span></td>
+            <td><span data-en>Huawei AC 7kW / ABB Terra 22kW</span><span data-he>Huawei AC 7kW / ABB Terra 22kW</span><span data-th>Huawei AC 7kW / ABB Terra 22kW</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>🧠 EMS</span><span data-he>🧠 EMS</span><span data-th>🧠 EMS</span></td>
+            <td><span data-en>Energy Management System — optimizes all energy flows</span><span data-he>מערכת ניהול אנרגיה — מייעלת את כל זרימות האנרגיה</span><span data-th>ระบบจัดการพลังงาน — เพิ่มประสิทธิภาพการไหลของพลังงานทั้งหมด</span></td>
+            <td><span data-en>FusionSolar / Huawei SmartLogger</span><span data-he>FusionSolar / Huawei SmartLogger</span><span data-th>FusionSolar / Huawei SmartLogger</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>
+      <span data-en>Priority Logic: How the EMS Decides</span>
+      <span data-he>לוגיקת עדיפויות: איך ה-EMS מחליט</span>
+      <span data-th>ลอจิกลำดับความสำคัญ: EMS ตัดสินใจอย่างไร</span>
+    </h3>
+    <p>
+      <span data-en>The EMS follows a priority cascade to maximize self-consumption and minimize grid dependency:</span>
+      <span data-he>ה-EMS עוקב אחרי מפל עדיפויות למקסם צריכה עצמית ולמזער תלות ברשת:</span>
+      <span data-th>EMS ปฏิบัติตามลำดับความสำคัญเพื่อเพิ่มการใช้ไฟเองสูงสุดและลดการพึ่งพากริด:</span>
+    </p>
+    <ol>
+      <li><span data-en><strong>Priority 1:</strong> Power building loads (lights, AC, appliances)</span><span data-he><strong>עדיפות 1:</strong> ספק עומסי מבנה (תאורה, מזגן, מכשירים)</span><span data-th><strong>ลำดับที่ 1:</strong> จ่ายโหลดอาคาร (ไฟ แอร์ เครื่องใช้ไฟฟ้า)</span></li>
+      <li><span data-en><strong>Priority 2:</strong> Charge battery (if below target SOC)</span><span data-he><strong>עדיפות 2:</strong> טען סוללה (אם מתחת ל-SOC יעד)</span><span data-th><strong>ลำดับที่ 2:</strong> ชาร์จแบตเตอรี่ (ถ้าต่ำกว่า SOC เป้าหมาย)</span></li>
+      <li><span data-en><strong>Priority 3:</strong> Charge EV (solar-surplus mode)</span><span data-he><strong>עדיפות 3:</strong> טען EV (מצב עודף סולארי)</span><span data-th><strong>ลำดับที่ 3:</strong> ชาร์จ EV (โหมดโซลาร์ส่วนเกิน)</span></li>
+      <li><span data-en><strong>Priority 4:</strong> Export to grid (earn ฿2.70/kWh)</span><span data-he><strong>עדיפות 4:</strong> ייצא לרשת (הרוויח ฿2.70/kWh)</span><span data-th><strong>ลำดับที่ 4:</strong> ส่งออกไปกริด (ได้ ฿2.70/kWh)</span></li>
+    </ol>
+    <p>
+      <span data-en>At night, the cascade reverses: battery powers loads first, then grid fills the gap. EV can charge from grid during off-peak hours (cheaper rates) if battery is depleted.</span>
+      <span data-he>בלילה, המפל מתהפך: סוללה מספקת עומסים קודם, ואז הרשת ממלאת את הפער. EV יכול להיטען מהרשת בשעות שפל (תעריפים זולים יותר) אם הסוללה ריקה.</span>
+      <span data-th>ตอนกลางคืน ลำดับกลับด้าน: แบตเตอรี่จ่ายโหลดก่อน จากนั้นกริดเติมเต็ม EV สามารถชาร์จจากกริดช่วง off-peak (ค่าไฟถูกกว่า) ถ้าแบตเตอรี่หมด</span>
+    </p>
+  </section>
+
+  <!-- Section 2: Peak Shaving -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📉 Peak Shaving with Batteries</span>
+      <span data-he>📉 גילוח שיא עם סוללות</span>
+      <span data-th>📉 Peak Shaving ด้วยแบตเตอรี่</span>
+    </h2>
+    <p>
+      <span data-en>Peak shaving is a strategy where batteries discharge during high-demand periods to reduce the maximum power drawn from the grid. This is especially valuable for commercial customers in Thailand who pay demand charges (฿/kW) in addition to energy charges (฿/kWh).</span>
+      <span data-he>גילוח שיא היא אסטרטגיה שבה סוללות פורקות בתקופות ביקוש גבוה כדי להפחית את ההספק המקסימלי הנשאב מהרשת. זה בעל ערך במיוחד ללקוחות מסחריים בתאילנד שמשלמים דמי ביקוש (฿/kW) בנוסף לדמי אנרגיה (฿/kWh).</span>
+      <span data-th>Peak shaving คือกลยุทธ์ที่แบตเตอรี่จ่ายไฟในช่วงความต้องการสูงเพื่อลดกำลังไฟสูงสุดที่ดึงจากกริด สิ่งนี้มีคุณค่าเป็นพิเศษสำหรับลูกค้าพาณิชย์ในไทยที่จ่ายค่า demand charge (฿/kW) นอกเหนือจากค่าพลังงาน (฿/kWh)</span>
+    </p>
+
+    <div class="key-concept">
+      <h4><span data-en>Example: Factory with 200 kW Peak Demand</span><span data-he>דוגמה: מפעל עם ביקוש שיא 200 kW</span><span data-th>ตัวอย่าง: โรงงานที่มี Peak Demand 200 kW</span></h4>
+      <p>
+        <span data-en>Without peak shaving: 200 kW × ฿132/kW = ฿26,400/month in demand charges alone.<br>
+        With 50 kWh battery + solar: Peak reduced to 120 kW → ฿15,840/month.<br>
+        <strong>Savings: ฿10,560/month = ฿126,720/year from peak shaving alone.</strong></span>
+        <span data-he>בלי גילוח שיא: 200 kW × ฿132/kW = ฿26,400/חודש בדמי ביקוש בלבד.<br>
+        עם סוללה 50 kWh + סולארי: שיא יורד ל-120 kW → ฿15,840/חודש.<br>
+        <strong>חיסכון: ฿10,560/חודש = ฿126,720/שנה מגילוח שיא בלבד.</strong></span>
+        <span data-th>ไม่มี peak shaving: 200 kW × ฿132/kW = ฿26,400/เดือน เฉพาะ demand charge<br>
+        มีแบตเตอรี่ 50 kWh + โซลาร์: Peak ลดเหลือ 120 kW → ฿15,840/เดือน<br>
+        <strong>ประหยัด: ฿10,560/เดือน = ฿126,720/ปี จาก peak shaving อย่างเดียว</strong></span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: V2G -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🔮 V2G: Vehicle to Grid (The Future)</span>
+      <span data-he>🔮 V2G: רכב לרשת (העתיד)</span>
+      <span data-th>🔮 V2G: Vehicle to Grid (อนาคต)</span>
+    </h2>
+    <p>
+      <span data-en>V2G (Vehicle-to-Grid) allows electric vehicles to discharge their batteries back to the building or grid. A typical EV has a 40-80 kWh battery — that's 4-8× a home battery system! When parked (cars sit idle 95% of the time), they become massive distributed energy storage.</span>
+      <span data-he>V2G (רכב-לרשת) מאפשר לרכבים חשמליים לפרוק את הסוללות שלהם חזרה למבנה או לרשת. ל-EV טיפוסי סוללה של 40-80 kWh — זה פי 4-8 ממערכת סוללה ביתית! כשהם חונים (מכוניות עומדות 95% מהזמן), הם הופכים לאגירת אנרגיה מבוזרת עצומה.</span>
+      <span data-th>V2G (Vehicle-to-Grid) ให้รถยนต์ไฟฟ้าจ่ายไฟจากแบตเตอรี่กลับไปที่อาคารหรือกริดได้ EV ทั่วไปมีแบตเตอรี่ 40-80 kWh — นั่นคือ 4-8 เท่าของแบตเตอรี่บ้าน! เมื่อจอดอยู่ (รถจอดเฉยๆ 95% ของเวลา) มันกลายเป็นระบบกักเก็บพลังงานแบบกระจายขนาดใหญ่</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Feature</span><span data-he>תכונה</span><span data-th>คุณสมบัติ</span></th>
+            <th><span data-en>V1G (Smart Charging)</span><span data-he>V1G (טעינה חכמה)</span><span data-th>V1G (สมาร์ทชาร์จ)</span></th>
+            <th><span data-en>V2G (Bidirectional)</span><span data-he>V2G (דו-כיווני)</span><span data-th>V2G (สองทิศทาง)</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Direction</span><span data-he>כיוון</span><span data-th>ทิศทาง</span></td>
+            <td><span data-en>Grid → Car only</span><span data-he>רשת → מכונית בלבד</span><span data-th>กริด → รถ เท่านั้น</span></td>
+            <td><span data-en>Grid ↔ Car (both ways)</span><span data-he>רשת ↔ מכונית (שני כיוונים)</span><span data-th>กริด ↔ รถ (ทั้งสองทาง)</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Available Now?</span><span data-he>זמין עכשיו?</span><span data-th>มีแล้วตอนนี้?</span></td>
+            <td><span data-en>Yes — most smart chargers</span><span data-he>כן — רוב מטעני חכמים</span><span data-th>ใช่ — สมาร์ทชาร์จเจอร์ส่วนใหญ่</span></td>
+            <td><span data-en>Limited — Nissan Leaf, some BYD models</span><span data-he>מוגבל — Nissan Leaf, חלק מדגמי BYD</span><span data-th>จำกัด — Nissan Leaf บาง BYD รุ่น</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Charger Type</span><span data-he>סוג מטען</span><span data-th>ประเภทชาร์จเจอร์</span></td>
+            <td><span data-en>Any AC charger with OCPP</span><span data-he>כל מטען AC עם OCPP</span><span data-th>ชาร์จเจอร์ AC ที่มี OCPP</span></td>
+            <td><span data-en>DC bidirectional charger (CCS2)</span><span data-he>מטען DC דו-כיווני (CCS2)</span><span data-th>ชาร์จเจอร์ DC สองทิศทาง (CCS2)</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Thailand Status</span><span data-he>סטטוס בתאילנד</span><span data-th>สถานะในไทย</span></td>
+            <td><span data-en>Active — PEA supports</span><span data-he>פעיל — PEA תומך</span><span data-th>ใช้งานได้ — PEA สนับสนุน</span></td>
+            <td><span data-en>Pilot phase — EGAT trials 2025-2026</span><span data-he>שלב פיילוט — ניסויי EGAT 2025-2026</span><span data-th>ช่วงนำร่อง — EGAT ทดลอง 2025-2026</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 4: Business Model -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>💼 Business Model: Solar + EV Charging Station</span>
+      <span data-he>💼 מודל עסקי: תחנת סולאר + טעינת EV</span>
+      <span data-th>💼 โมเดลธุรกิจ: สถานีโซลาร์ + ชาร์จ EV</span>
+    </h2>
+
+    <h3>
+      <span data-en>The TM Energy Hybrid Model</span>
+      <span data-he>המודל ההיברידי של TM Energy</span>
+      <span data-th>โมเดลไฮบริดของ TM Energy</span>
+    </h3>
+    <p>
+      <span data-en>Combining solar generation with EV charging creates a powerful business opportunity. On islands like Koh Phangan, where electricity costs are high and EV adoption is growing, this model is especially attractive:</span>
+      <span data-he>שילוב ייצור סולארי עם טעינת EV יוצר הזדמנות עסקית חזקה. באיים כמו קו פנגן, שם עלויות החשמל גבוהות ואימוץ EV גדל, המודל הזה אטרקטיבי במיוחד:</span>
+      <span data-th>การรวมการผลิตโซลาร์กับการชาร์จ EV สร้างโอกาสทางธุรกิจที่ทรงพลัง บนเกาะเช่นเกาะพะงัน ที่ค่าไฟแพงและการใช้ EV เติบโต โมเดลนี้น่าสนใจเป็นพิเศษ:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Revenue Stream</span><span data-he>מקור הכנסה</span><span data-th>แหล่งรายได้</span></th>
+            <th><span data-en>How It Works</span><span data-he>איך זה עובד</span><span data-th>ทำงานอย่างไร</span></th>
+            <th><span data-en>Est. Monthly</span><span data-he>הערכה חודשית</span><span data-th>ประมาณ/เดือน</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>EV Charging Fees</span><span data-he>דמי טעינת EV</span><span data-th>ค่าชาร์จ EV</span></td>
+            <td><span data-en>Charge ฿8-12/kWh (grid cost: ฿6, solar cost: ฿2)</span><span data-he>גבו ฿8-12/kWh (עלות רשת: ฿6, עלות סולארי: ฿2)</span><span data-th>คิด ฿8-12/kWh (ต้นทุนกริด: ฿6 ต้นทุนโซลาร์: ฿2)</span></td>
+            <td>฿15-40K</td>
+          </tr>
+          <tr>
+            <td><span data-en>Building Energy Savings</span><span data-he>חיסכון אנרגיית מבנה</span><span data-th>การประหยัดพลังงานอาคาร</span></td>
+            <td><span data-en>Self-consumption offsets grid purchases at ฿6/kWh</span><span data-he>צריכה עצמית מקזזת רכישות רשת ב-฿6/kWh</span><span data-th>การใช้ไฟเองชดเชยค่าไฟกริดที่ ฿6/kWh</span></td>
+            <td>฿10-25K</td>
+          </tr>
+          <tr>
+            <td><span data-en>Grid Export</span><span data-he>ייצוא לרשת</span><span data-th>ส่งออกไปกริด</span></td>
+            <td><span data-en>Surplus solar sold to PEA at ฿2.70/kWh</span><span data-he>עודף סולארי נמכר ל-PEA ב-฿2.70/kWh</span><span data-th>โซลาร์ส่วนเกินขายให้ PEA ที่ ฿2.70/kWh</span></td>
+            <td>฿3-8K</td>
+          </tr>
+          <tr>
+            <td><span data-en>Advertising / Parking</span><span data-he>פרסום / חנייה</span><span data-th>โฆษณา / ที่จอดรถ</span></td>
+            <td><span data-en>Digital screens at charging stations, premium parking fees</span><span data-he>מסכים דיגיטליים בתחנות טעינה, דמי חנייה פרימיום</span><span data-th>หน้าจอดิจิทัลที่สถานีชาร์จ ค่าจอดรถพรีเมียม</span></td>
+            <td>฿5-15K</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-concept">
+      <h4><span data-en>Koh Phangan Opportunity</span><span data-he>הזדמנות בקו פנגן</span><span data-th>โอกาสที่เกาะพะงัน</span></h4>
+      <p>
+        <span data-en>TM Energy's plan: 5 solar+EV charging stations across the island (Thong Sala, Haad Rin, Baan Tai, Srithanu, Chaloklum). Each station: 30 kWp solar + 30 kWh battery + 2× AC 22kW chargers + 1× DC 60kW fast charger. Fleet: BYD Dolphin, Seagull, and Atto 3 for rent. Combined revenue potential: ฿150-300K/month across all stations.</span>
+        <span data-he>תוכנית TM Energy: 5 תחנות סולאר+טעינת EV ברחבי האי (תונג סאלה, האד רין, באן טאי, סריטאנו, צ'אלוקלום). כל תחנה: 30 kWp סולארי + 30 kWh סוללה + 2× מטען AC 22kW + 1× מטען DC 60kW מהיר. צי: BYD Dolphin, Seagull, ו-Atto 3 להשכרה. פוטנציאל הכנסות משולב: ฿150-300K/חודש מכל התחנות.</span>
+        <span data-th>แผนของ TM Energy: 5 สถานีโซลาร์+ชาร์จ EV ทั่วเกาะ (ท้องศาลา หาดริ้น บ้านใต้ ศรีธนู ชะลอกลม) แต่ละสถานี: 30 kWp โซลาร์ + 30 kWh แบตเตอรี่ + 2× AC 22kW charger + 1× DC 60kW fast charger รถเช่า: BYD Dolphin, Seagull และ Atto 3 รายได้รวมที่มีศักยภาพ: ฿150-300K/เดือน จากทุกสถานี</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5: Smart Charging -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🧠 Smart Charging Strategies</span>
+      <span data-he>🧠 אסטרטגיות טעינה חכמה</span>
+      <span data-th>🧠 กลยุทธ์สมาร์ทชาร์จ</span>
+    </h2>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Strategy</span><span data-he>אסטרטגיה</span><span data-th>กลยุทธ์</span></th>
+            <th><span data-en>How It Works</span><span data-he>איך זה עובד</span><span data-th>ทำงานอย่างไร</span></th>
+            <th><span data-en>Best For</span><span data-he>מתאים ל</span><span data-th>เหมาะสำหรับ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Solar-Only Charging</span><span data-he>טעינה סולארית בלבד</span><span data-th>ชาร์จจากโซลาร์อย่างเดียว</span></td>
+            <td><span data-en>EV only charges when solar surplus exists</span><span data-he>EV נטען רק כשיש עודף סולארי</span><span data-th>EV ชาร์จเฉพาะเมื่อมีโซลาร์ส่วนเกิน</span></td>
+            <td><span data-en>Home use, cost-conscious customers</span><span data-he>שימוש ביתי, לקוחות חסכוניים</span><span data-th>ใช้ที่บ้าน ลูกค้าประหยัด</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Scheduled Charging</span><span data-he>טעינה מתוזמנת</span><span data-th>ชาร์จตามกำหนดเวลา</span></td>
+            <td><span data-en>Charge during off-peak hours (22:00-06:00)</span><span data-he>טעינה בשעות שפל (22:00-06:00)</span><span data-th>ชาร์จช่วง off-peak (22:00-06:00)</span></td>
+            <td><span data-en>TOU rate customers, fleet management</span><span data-he>לקוחות תעריף TOU, ניהול צי</span><span data-th>ลูกค้าค่าไฟ TOU การจัดการรถกอง</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Load Balancing</span><span data-he>איזון עומסים</span><span data-th>สมดุลโหลด</span></td>
+            <td><span data-en>Charger adjusts power based on total building load</span><span data-he>מטען מתאים הספק לפי עומס מבנה כולל</span><span data-th>ชาร์จเจอร์ปรับกำลังตามโหลดรวมอาคาร</span></td>
+            <td><span data-en>Buildings with limited grid connection</span><span data-he>מבנים עם חיבור רשת מוגבל</span><span data-th>อาคารที่มีขนาดกริดจำกัด</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <div class="lesson-nav">
+    <a href="ev-storage-02.html" class="lesson-nav-btn prev">
+      <span data-en>← Previous: EV Charging Basics</span>
+      <span data-he>← הקודם: יסודות טעינת EV</span>
+      <span data-th>← ก่อนหน้า: พื้นฐานการชาร์จ EV</span>
+    </a>
+    <a href="../index.html" class="lesson-nav-btn next">
+      <span data-en>Back to Academy →</span>
+      <span data-he>חזרה לאקדמיה →</span>
+      <span data-th>กลับสู่ Academy →</span>
+    </a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p><span data-en>© 2026 TM Energy Academy</span><span data-he>© 2026 TM Energy Academy</span><span data-th>© 2026 TM Energy Academy</span></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof initQuiz === 'function') initQuiz('ev-storage', 3, [
+    {
+      question: {
+        en: "In a solar+EV+storage system, what is the EMS priority order during daytime?",
+        he: "במערכת סולאר+EV+אגירה, מהו סדר עדיפויות ה-EMS במהלך היום?",
+        th: "ในระบบโซลาร์+EV+กักเก็บ ลำดับความสำคัญของ EMS ช่วงกลางวันคืออะไร?"
+      },
+      options: [
+        { en: "EV → Battery → Building → Grid", he: "EV → סוללה → מבנה → רשת", th: "EV → แบตเตอรี่ → อาคาร → กริด" },
+        { en: "Building → Battery → EV → Grid", he: "מבנה → סוללה → EV → רשת", th: "อาคาร → แบตเตอรี่ → EV → กริด" },
+        { en: "Grid → Building → Battery → EV", he: "רשת → מבנה → סוללה → EV", th: "กริด → อาคาร → แบตเตอรี่ → EV" },
+        { en: "Battery → EV → Grid → Building", he: "סוללה → EV → רשת → מבנה", th: "แบตเตอรี่ → EV → กริด → อาคาร" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the main advantage of peak shaving with batteries for commercial customers?",
+        he: "מהו היתרון העיקרי של גילוח שיא עם סוללות ללקוחות מסחריים?",
+        th: "ข้อดีหลักของ peak shaving ด้วยแบตเตอรี่สำหรับลูกค้าพาณิชย์คืออะไร?"
+      },
+      options: [
+        { en: "Reduces energy consumption (kWh)", he: "מפחית צריכת אנרגיה (kWh)", th: "ลดการใช้พลังงาน (kWh)" },
+        { en: "Reduces demand charges (฿/kW) by lowering peak grid draw", he: "מפחית דמי ביקוש (฿/kW) ע\"י הורדת שיא שאיבה מהרשת", th: "ลด demand charge (฿/kW) โดยลดการดึงไฟสูงสุดจากกริด" },
+        { en: "Eliminates the need for solar panels", he: "מבטל את הצורך בפאנלים סולאריים", th: "ไม่ต้องใช้แผงโซลาร์" },
+        { en: "Increases grid export revenue", he: "מגדיל הכנסות מייצוא לרשת", th: "เพิ่มรายได้จากการส่งออกไปกริด" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What does V2G (Vehicle-to-Grid) allow an electric vehicle to do?",
+        he: "מה V2G (רכב-לרשת) מאפשר לרכב חשמלי לעשות?",
+        th: "V2G (Vehicle-to-Grid) ให้รถยนต์ไฟฟ้าทำอะไรได้?"
+      },
+      options: [
+        { en: "Only charge faster from the grid", he: "רק להיטען מהר יותר מהרשת", th: "ชาร์จจากกริดเร็วขึ้นเท่านั้น" },
+        { en: "Discharge its battery back to the building or grid", he: "לפרוק את הסוללה חזרה למבנה או לרשת", th: "จ่ายไฟจากแบตเตอรี่กลับไปอาคารหรือกริด" },
+        { en: "Drive autonomously to the charging station", he: "לנסוע אוטונומית לתחנת הטעינה", th: "ขับอัตโนมัติไปสถานีชาร์จ" },
+        { en: "Convert solar DC directly to the car", he: "להמיר DC סולארי ישירות למכונית", th: "แปลง DC โซลาร์ตรงไปยังรถ" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "Which smart charging strategy charges the EV ONLY when there is excess solar production?",
+        he: "איזו אסטרטגיית טעינה חכמה טוענת את ה-EV רק כשיש עודף ייצור סולארי?",
+        th: "กลยุทธ์สมาร์ทชาร์จใดชาร์จ EV เฉพาะเมื่อมีการผลิตโซลาร์ส่วนเกิน?"
+      },
+      options: [
+        { en: "Scheduled Charging", he: "טעינה מתוזמנת", th: "ชาร์จตามกำหนดเวลา" },
+        { en: "Load Balancing", he: "איזון עומסים", th: "สมดุลโหลด" },
+        { en: "Solar-Only Charging", he: "טעינה סולארית בלבד", th: "ชาร์จจากโซลาร์อย่างเดียว" },
+        { en: "V2G Mode", he: "מצב V2G", th: "โหมด V2G" }
+      ],
+      correct: 2
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>
