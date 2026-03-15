@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1: Battery Storage Fundamentals — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .video-section { margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .video-section h3 { margin-bottom: 15px; color: #00D68F; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; }
+    .video-caption { margin-top: 10px; font-size: 0.9em; color: rgba(255,255,255,0.6); font-style: italic; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="ev-storage-01.html"><span data-en>EV & Storage</span><span data-he>רכב חשמלי ואגירה</span><span data-th>EV และการกักเก็บพลังงาน</span></a>
+    <span>›</span>
+    <span data-en>Lesson 1</span><span data-he>שיעור 1</span><span data-th>บทที่ 1</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 1 of 3</span><span data-he>שיעור 1 מתוך 3</span><span data-th>บทที่ 1 จาก 3</span>
+    </div>
+    <h1 class="lesson-title" data-en>Battery Storage Fundamentals</h1>
+    <h1 class="lesson-title" data-he>יסודות אגירת אנרגיה בסוללות</h1>
+    <h1 class="lesson-title" data-th>พื้นฐานการกักเก็บพลังงานด้วยแบตเตอรี่</h1>
+    <div class="lesson-meta">
+      <span>⏱ <span data-en>~30 min</span><span data-he>~30 דקות</span><span data-th>~30 นาที</span></span>
+      <span>🔋 <span data-en>EV & Storage</span><span data-he>רכב חשמלי ואגירה</span><span data-th>EV และการกักเก็บ</span></span>
+    </div>
+  </div>
+
+  <!-- Section 1: Battery Types -->
+  <section class="content-section fade-up">
+    <h2 data-en>Battery Types for Energy Storage</h2>
+    <h2 data-he>סוגי סוללות לאגירת אנרגיה</h2>
+    <h2 data-th>ประเภทแบตเตอรี่สำหรับกักเก็บพลังงาน</h2>
+
+    <img src="../images/system-types-grid.png" alt="Battery storage system types and grid configurations" class="lesson-image">
+
+    <p data-en>Battery energy storage systems (BESS) are the key to unlocking the full potential of solar power. They store excess solar energy produced during the day for use at night, during peak demand, or when the grid fails. There are two main battery chemistries used in modern energy storage:</p>
+    <p data-he>מערכות אגירת אנרגיה בסוללות (BESS) הן המפתח למיצוי הפוטנציאל המלא של אנרגיה סולארית. הן מאחסנות עודפי אנרגיה סולארית שנוצרים ביום לשימוש בלילה, בשעות שיא ביקוש, או כשהרשת נופלת. ישנן שתי כימיות סוללה עיקריות בשימוש באגירת אנרגיה מודרנית:</p>
+    <p data-th>ระบบกักเก็บพลังงานด้วยแบตเตอรี่ (BESS) เป็นกุญแจสำคัญในการปลดปล่อยศักยภาพเต็มที่ของพลังงานแสงอาทิตย์ ระบบเหล่านี้เก็บพลังงานแสงอาทิตย์ส่วนเกินที่ผลิตในตอนกลางวันไว้ใช้ตอนกลางคืน ช่วงพีคดีมานด์ หรือเมื่อกริดล่ม มีเคมีแบตเตอรี่หลักสองประเภทที่ใช้ในการกักเก็บพลังงานสมัยใหม่:</p>
+
+    <ul data-en>
+      <li><strong>Lithium Iron Phosphate (LFP)</strong> — The dominant chemistry for home and commercial storage. Extremely safe (no thermal runaway risk), long cycle life (6,000–10,000 cycles), lower energy density but excellent for stationary applications. Used in Huawei LUNA2000, BYD BatteryBox, Tesla Powerwall 3.</li>
+      <li><strong>Nickel Manganese Cobalt (NMC)</strong> — Higher energy density (more kWh per kg), but slightly higher fire risk and shorter cycle life (3,000–5,000 cycles). Common in older systems and EV batteries. Being phased out of stationary storage in favor of LFP.</li>
+      <li><strong>Lead-Acid (Legacy)</strong> — The oldest rechargeable battery technology. Very low cost per unit, but heavy, short cycle life (500–1,500 cycles), limited DoD (50%), and requires maintenance. Still used in off-grid islands and backup systems where budget is extremely limited. Being rapidly replaced by lithium.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>ליתיום ברזל פוספט (LFP)</strong> — הכימיה הדומיננטית לאגירה ביתית ומסחרית. בטוחה במיוחד (ללא סיכון לריצה תרמית), חיי מחזור ארוכים (6,000–10,000 מחזורים), צפיפות אנרגיה נמוכה יותר אך מצוינת ליישומים נייחים. בשימוש ב-Huawei LUNA2000, BYD BatteryBox, Tesla Powerwall 3.</li>
+      <li><strong>ניקל מנגן קובלט (NMC)</strong> — צפיפות אנרגיה גבוהה יותר (יותר kWh לק"ג), אך סיכון שריפה מעט גבוה יותר וחיי מחזור קצרים יותר (3,000–5,000 מחזורים). נפוצה במערכות ישנות וסוללות רכב חשמלי. נעלמת מאגירה נייחת לטובת LFP.</li>
+      <li><strong>עופרת-חומצה (מורשת)</strong> — טכנולוגיית הסוללה הנטענת העתיקה ביותר. עלות נמוכה מאוד ליחידה, אך כבדה, חיי מחזור קצרים (500–1,500 מחזורים), DoD מוגבל (50%), ודורשת תחזוקה. עדיין בשימוש באיים off-grid ומערכות גיבוי שם התקציב מוגבל ביותר. מוחלפת במהירות בליתיום.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>ลิเธียมไอรอนฟอสเฟต (LFP)</strong> — เคมีหลักสำหรับการกักเก็บในบ้านและเชิงพาณิชย์ ปลอดภัยมาก (ไม่มีความเสี่ยง thermal runaway) อายุรอบการใช้งานยาว (6,000–10,000 รอบ) ความหนาแน่นพลังงานต่ำกว่าแต่เหมาะสำหรับการใช้งานแบบคงที่ ใช้ใน Huawei LUNA2000, BYD BatteryBox, Tesla Powerwall 3</li>
+      <li><strong>นิกเกิลแมงกานีสโคบอลต์ (NMC)</strong> — ความหนาแน่นพลังงานสูงกว่า (kWh ต่อ กก. มากกว่า) แต่มีความเสี่ยงไฟไหม้สูงกว่าเล็กน้อยและอายุรอบสั้นกว่า (3,000–5,000 รอบ) พบได้ทั่วไปในระบบเก่าและแบตเตอรี่ EV กำลังถูกเลิกใช้ในการกักเก็บแบบคงที่เพื่อเปลี่ยนไปใช้ LFP</li>
+      <li><strong>ตะกั่วกรด (เดิม)</strong> — เทคโนโลยีแบตเตอรี่ชาร์จใหม่ได้เก่าแก่ที่สุด ต้นทุนต่อหน่วยต่ำมาก แต่หนัก อายุรอบสั้น (500–1,500 รอบ) DoD จำกัด (50%) และต้องบำรุงรักษา ยังใช้ในเกาะ off-grid และระบบสำรองที่งบประมาณจำกัดมาก กำลังถูกแทนที่ด้วยลิเธียมอย่างรวดเร็ว</li>
+    </ul>
+  </section>
+
+  <!-- Section 2: Key Specifications -->
+  <section class="content-section fade-up">
+    <h2 data-en>Key Battery Specifications</h2>
+    <h2 data-he>מפרטי סוללה מרכזיים</h2>
+    <h2 data-th>ข้อมูลจำเพาะหลักของแบตเตอรี่</h2>
+
+    <p data-en>When evaluating battery storage systems, these are the critical specifications to understand and compare:</p>
+    <p data-he>בעת הערכת מערכות אגירת סוללות, אלה המפרטים הקריטיים שיש להבין ולהשוות:</p>
+    <p data-th>เมื่อประเมินระบบกักเก็บพลังงานแบตเตอรี่ ข้อมูลจำเพาะที่สำคัญที่ต้องเข้าใจและเปรียบเทียบมีดังนี้:</p>
+
+    <ul data-en>
+      <li><strong>Capacity (kWh)</strong> — The total amount of energy the battery can store. A 10 kWh battery can power a 1 kW load for 10 hours, or a 5 kW load for 2 hours. Usable capacity is always less than total capacity due to DoD limits.</li>
+      <li><strong>Power Rating (kW)</strong> — How much power the battery can deliver at any instant. A 5 kW battery can run a 5 kW load but not a 7 kW load. Important for sizing: a large capacity with low power rating can't handle high-draw appliances like air conditioners.</li>
+      <li><strong>Depth of Discharge (DoD)</strong> — The percentage of battery capacity that can actually be used. LFP batteries typically allow 90–100% DoD, while lead-acid should not go below 50% DoD to preserve lifespan. Higher DoD = more usable energy.</li>
+      <li><strong>Cycle Life</strong> — How many charge/discharge cycles the battery can perform before capacity degrades to 70–80% of original. LFP: 6,000–10,000 cycles. NMC: 3,000–5,000 cycles. Lead-acid: 500–1,500 cycles. One cycle per day = cycle life in days.</li>
+      <li><strong>Round-Trip Efficiency</strong> — The percentage of energy you get back out compared to what you put in. Lithium batteries achieve 92–98% efficiency. Lead-acid achieves 75–85%. Higher efficiency = less wasted energy.</li>
+      <li><strong>Warranty</strong> — Manufacturers typically guarantee 70–80% capacity retention over 10–15 years. Huawei LUNA2000: 10 years. Tesla Powerwall: 10 years. Always check warranty terms for cycle limits and capacity retention guarantees.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>קיבולת (kWh)</strong> — כמות האנרגיה הכוללת שהסוללה יכולה לאחסן. סוללת 10 kWh יכולה להפעיל עומס 1 kW למשך 10 שעות, או עומס 5 kW למשך 2 שעות. קיבולת שמישה תמיד פחותה מהקיבולת הכוללת בגלל מגבלות DoD.</li>
+      <li><strong>הספק מדורג (kW)</strong> — כמה הספק הסוללה יכולה לספק ברגע נתון. סוללת 5 kW יכולה להריץ עומס 5 kW אך לא עומס 7 kW. חשוב לתכנון: קיבולת גדולה עם הספק נמוך לא יכולה להתמודד עם מכשירים בעלי שאיבה גבוהה כמו מזגנים.</li>
+      <li><strong>עומק פריקה (DoD)</strong> — אחוז קיבולת הסוללה שניתן להשתמש בו בפועל. סוללות LFP מאפשרות בדרך כלל 90–100% DoD, בעוד עופרת-חומצה לא צריכה לרדת מתחת ל-50% DoD כדי לשמר את תוחלת החיים. DoD גבוה יותר = יותר אנרגיה שמישה.</li>
+      <li><strong>חיי מחזור</strong> — כמה מחזורי טעינה/פריקה הסוללה יכולה לבצע לפני שהקיבולת יורדת ל-70–80% מהמקור. LFP: 6,000–10,000 מחזורים. NMC: 3,000–5,000 מחזורים. עופרת-חומצה: 500–1,500 מחזורים. מחזור אחד ביום = חיי מחזור בימים.</li>
+      <li><strong>יעילות הלוך-חזור</strong> — אחוז האנרגיה שמקבלים בחזרה לעומת מה שהכניסו. סוללות ליתיום מגיעות ליעילות 92–98%. עופרת-חומצה מגיעה ל-75–85%. יעילות גבוהה יותר = פחות אנרגיה מבוזבזת.</li>
+      <li><strong>אחריות</strong> — יצרנים בדרך כלל מתחייבים על שמירת 70–80% קיבולת על פני 10–15 שנים. Huawei LUNA2000: 10 שנים. Tesla Powerwall: 10 שנים. תמיד בדקו תנאי אחריות למגבלות מחזורים והתחייבויות שמירת קיבולת.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>ความจุ (kWh)</strong> — ปริมาณพลังงานทั้งหมดที่แบตเตอรี่สามารถเก็บได้ แบตเตอรี่ 10 kWh สามารถจ่ายไฟให้โหลด 1 kW เป็นเวลา 10 ชั่วโมง หรือโหลด 5 kW เป็นเวลา 2 ชั่วโมง ความจุที่ใช้ได้จริงจะน้อยกว่าความจุทั้งหมดเสมอเนื่องจากข้อจำกัด DoD</li>
+      <li><strong>พิกัดกำลัง (kW)</strong> — ปริมาณพลังงานที่แบตเตอรี่สามารถจ่ายได้ในขณะใดขณะหนึ่ง แบตเตอรี่ 5 kW สามารถรันโหลด 5 kW แต่ไม่ใช่โหลด 7 kW สำคัญสำหรับการออกแบบ: ความจุมากแต่พิกัดกำลังต่ำไม่สามารถรองรับเครื่องใช้ไฟฟ้าที่ดึงไฟมากเช่นแอร์</li>
+      <li><strong>ความลึกของการคายประจุ (DoD)</strong> — เปอร์เซ็นต์ของความจุแบตเตอรี่ที่สามารถใช้ได้จริง แบตเตอรี่ LFP อนุญาต DoD 90–100% ในขณะที่ตะกั่วกรดไม่ควรต่ำกว่า 50% DoD เพื่อรักษาอายุการใช้งาน DoD สูงขึ้น = พลังงานที่ใช้ได้มากขึ้น</li>
+      <li><strong>อายุรอบการใช้งาน</strong> — จำนวนรอบชาร์จ/คายประจุที่แบตเตอรี่สามารถทำได้ก่อนที่ความจุจะลดลงเหลือ 70–80% ของเดิม LFP: 6,000–10,000 รอบ NMC: 3,000–5,000 รอบ ตะกั่วกรด: 500–1,500 รอบ หนึ่งรอบต่อวัน = อายุรอบเป็นวัน</li>
+      <li><strong>ประสิทธิภาพไป-กลับ</strong> — เปอร์เซ็นต์ของพลังงานที่ได้คืนเทียบกับที่ใส่เข้าไป แบตเตอรี่ลิเธียมมีประสิทธิภาพ 92–98% ตะกั่วกรดมีประสิทธิภาพ 75–85% ประสิทธิภาพสูงขึ้น = สูญเสียพลังงานน้อยลง</li>
+      <li><strong>การรับประกัน</strong> — ผู้ผลิตมักรับประกันการคงความจุ 70–80% ตลอด 10–15 ปี Huawei LUNA2000: 10 ปี Tesla Powerwall: 10 ปี ตรวจสอบเงื่อนไขการรับประกันสำหรับข้อจำกัดรอบและการรับประกันการคงความจุเสมอ</li>
+    </ul>
+
+    <div class="key-term">
+      <p><strong data-en>Depth of Discharge (DoD)</strong><strong data-he>עומק פריקה (DoD)</strong><strong data-th>ความลึกของการคายประจุ (DoD)</strong> — <span data-en>The percentage of a battery's total capacity that has been discharged. A 10 kWh battery at 90% DoD has used 9 kWh and has 1 kWh remaining. LFP batteries can safely operate at 90–100% DoD, making nearly all stored energy usable.</span><span data-he>אחוז הקיבולת הכוללת של סוללה שפורקה. סוללת 10 kWh ב-90% DoD השתמשה ב-9 kWh ונותר 1 kWh. סוללות LFP יכולות לעבוד בבטחה ב-90–100% DoD, מה שהופך כמעט את כל האנרגיה המאוחסנת לשמישה.</span><span data-th>เปอร์เซ็นต์ของความจุทั้งหมดของแบตเตอรี่ที่ถูกคายประจุ แบตเตอรี่ 10 kWh ที่ DoD 90% ได้ใช้ 9 kWh และเหลือ 1 kWh แบตเตอรี่ LFP สามารถทำงานที่ DoD 90–100% ได้อย่างปลอดภัย ทำให้พลังงานที่เก็บไว้เกือบทั้งหมดใช้งานได้</span></p>
+    </div>
+  </section>
+
+  <!-- Section 3: Huawei LUNA2000 -->
+  <section class="content-section fade-up">
+    <h2 data-en>Huawei LUNA2000 Deep Dive</h2>
+    <h2 data-he>צלילה עמוקה ל-Huawei LUNA2000</h2>
+    <h2 data-th>เจาะลึก Huawei LUNA2000</h2>
+
+    <p data-en>The Huawei LUNA2000 is TM Energy's recommended battery storage solution for residential and small commercial projects. It's a modular LFP battery system that integrates seamlessly with Huawei SUN2000 hybrid inverters:</p>
+    <p data-he>ה-Huawei LUNA2000 הוא פתרון אגירת הסוללות המומלץ של TM Energy לפרויקטים ביתיים ומסחריים קטנים. זוהי מערכת סוללות LFP מודולרית שמשתלבת באופן חלק עם ממירים היברידיים של Huawei SUN2000:</p>
+    <p data-th>Huawei LUNA2000 คือโซลูชันกักเก็บพลังงานแบตเตอรี่ที่ TM Energy แนะนำสำหรับโปรเจกต์ที่อยู่อาศัยและเชิงพาณิชย์ขนาดเล็ก เป็นระบบแบตเตอรี่ LFP แบบโมดูลาร์ที่ทำงานร่วมกับอินเวอร์เตอร์ไฮบริด Huawei SUN2000 ได้อย่างไร้รอยต่อ:</p>
+
+    <ul data-en>
+      <li><strong>Modular design:</strong> Each module is 5 kWh. Stack 1–6 modules per tower for 5–30 kWh capacity. Start small and expand as needs grow.</li>
+      <li><strong>Chemistry:</strong> LFP (Lithium Iron Phosphate) — safest lithium chemistry, no cobalt, no thermal runaway risk.</li>
+      <li><strong>DoD:</strong> 100% usable capacity — all 5 kWh per module is available.</li>
+      <li><strong>Cycle life:</strong> 6,000 cycles at 90% DoD — that's over 16 years of daily cycling.</li>
+      <li><strong>Power output:</strong> 2.5 kW per module (continuous), 5 kW per tower. Two towers in parallel = 10 kW output.</li>
+      <li><strong>Warranty:</strong> 10 years standard warranty with guaranteed ≥60% capacity retention.</li>
+      <li><strong>IP rating:</strong> IP66 — fully weatherproof, can be installed outdoors in tropical climates.</li>
+      <li><strong>Communication:</strong> Integrates with Huawei FusionSolar app for real-time monitoring, remote firmware updates, and smart energy management.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>עיצוב מודולרי:</strong> כל מודול הוא 5 kWh. ניתן לערום 1–6 מודולים למגדל לקיבולת 5–30 kWh. להתחיל קטן ולהרחיב לפי הצורך.</li>
+      <li><strong>כימיה:</strong> LFP (ליתיום ברזל פוספט) — כימיית הליתיום הבטוחה ביותר, ללא קובלט, ללא סיכון לריצה תרמית.</li>
+      <li><strong>DoD:</strong> 100% קיבולת שמישה — כל 5 kWh למודול זמינים.</li>
+      <li><strong>חיי מחזור:</strong> 6,000 מחזורים ב-90% DoD — זה מעל 16 שנים של מחזור יומי.</li>
+      <li><strong>הספק מוצא:</strong> 2.5 kW למודול (רציף), 5 kW למגדל. שני מגדלים במקביל = 10 kW הספק.</li>
+      <li><strong>אחריות:</strong> 10 שנים אחריות סטנדרטית עם התחייבות ל-≥60% שמירת קיבולת.</li>
+      <li><strong>דירוג IP:</strong> IP66 — עמיד לחלוטין למזג אוויר, ניתן להתקנה בחוץ באקלים טרופי.</li>
+      <li><strong>תקשורת:</strong> משתלב עם אפליקציית Huawei FusionSolar לניטור בזמן אמת, עדכוני קושחה מרחוק, וניהול אנרגיה חכם.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>การออกแบบแบบโมดูลาร์:</strong> แต่ละโมดูล 5 kWh ซ้อน 1–6 โมดูลต่อทาวเวอร์สำหรับความจุ 5–30 kWh เริ่มต้นเล็กและขยายตามความต้องการที่เพิ่มขึ้น</li>
+      <li><strong>เคมี:</strong> LFP (ลิเธียมไอรอนฟอสเฟต) — เคมีลิเธียมที่ปลอดภัยที่สุด ไม่มีโคบอลต์ ไม่มีความเสี่ยง thermal runaway</li>
+      <li><strong>DoD:</strong> ความจุที่ใช้ได้ 100% — ทั้ง 5 kWh ต่อโมดูลพร้อมใช้งาน</li>
+      <li><strong>อายุรอบ:</strong> 6,000 รอบที่ DoD 90% — นั่นคือกว่า 16 ปีของการใช้งานรายวัน</li>
+      <li><strong>กำลังเอาต์พุต:</strong> 2.5 kW ต่อโมดูล (ต่อเนื่อง), 5 kW ต่อทาวเวอร์ สองทาวเวอร์ขนาน = 10 kW เอาต์พุต</li>
+      <li><strong>การรับประกัน:</strong> 10 ปีการรับประกันมาตรฐานพร้อมรับประกันการคงความจุ ≥60%</li>
+      <li><strong>ระดับ IP:</strong> IP66 — กันน้ำกันฝุ่นสมบูรณ์ ติดตั้งกลางแจ้งในสภาพอากาศเขตร้อนได้</li>
+      <li><strong>การสื่อสาร:</strong> ทำงานร่วมกับแอป Huawei FusionSolar สำหรับการตรวจสอบแบบเรียลไทม์ อัปเดตเฟิร์มแวร์ระยะไกล และการจัดการพลังงานอัจฉริยะ</li>
+    </ul>
+
+    <div class="did-you-know">
+      <div class="dyk-title" data-en>Did You Know?</div>
+      <div class="dyk-title" data-he>הידעת?</div>
+      <div class="dyk-title" data-th>รู้หรือไม่?</div>
+      <p data-en>A single Huawei LUNA2000 tower (30 kWh) can power an average Thai household for approximately 2–3 days during a grid outage, assuming moderate consumption of 10–15 kWh/day. On Koh Phangan, where power outages during storms can last 12–48 hours, this provides complete energy independence.</p>
+      <p data-he>מגדל Huawei LUNA2000 יחיד (30 kWh) יכול להפעיל משק בית תאילנדי ממוצע למשך כ-2–3 ימים במהלך הפסקת חשמל, בהנחת צריכה מתונה של 10–15 kWh ליום. בקופנגן, שם הפסקות חשמל במהלך סערות יכולות להימשך 12–48 שעות, זה מספק עצמאות אנרגטית מלאה.</p>
+      <p data-th>ทาวเวอร์ Huawei LUNA2000 เดียว (30 kWh) สามารถจ่ายไฟให้ครัวเรือนไทยโดยเฉลี่ยได้ประมาณ 2–3 วันระหว่างไฟดับ สมมติการใช้ไฟปานกลาง 10–15 kWh/วัน บนเกาะพะงัน ที่ไฟดับระหว่างพายุอาจนาน 12–48 ชั่วโมง นี่ให้ความเป็นอิสระด้านพลังงานอย่างสมบูรณ์</p>
+    </div>
+  </section>
+
+  <!-- Section 4: Sizing Batteries -->
+  <section class="content-section fade-up">
+    <h2 data-en>Sizing Batteries: Backup vs Self-Consumption</h2>
+    <h2 data-he>תכנון גודל סוללות: גיבוי לעומת צריכה עצמית</h2>
+    <h2 data-th>การกำหนดขนาดแบตเตอรี่: สำรองไฟ vs การใช้ไฟเอง</h2>
+
+    <p data-en>Battery sizing depends entirely on the use case. There are two fundamentally different approaches:</p>
+    <p data-he>תכנון גודל הסוללה תלוי לחלוטין בתרחיש השימוש. ישנן שתי גישות שונות מיסודן:</p>
+    <p data-th>การกำหนดขนาดแบตเตอรี่ขึ้นอยู่กับกรณีการใช้งานทั้งหมด มีสองแนวทางที่แตกต่างกันโดยพื้นฐาน:</p>
+
+    <ul data-en>
+      <li><strong>Backup Power Sizing:</strong> Size for the critical loads you need during an outage. List essential appliances (lights, refrigerator, fans, router, phone charging) and their wattage. Multiply total watts × hours of autonomy needed. Example: 2 kW of critical loads × 12 hours = 24 kWh battery. Add 10–20% safety margin.</li>
+      <li><strong>Self-Consumption Optimization:</strong> Size to store daytime solar excess for nighttime use. Analyze the gap between solar production hours (09:00–16:00) and evening consumption (17:00–23:00). Typically 5–15 kWh covers a household's evening needs. The goal is to maximize the percentage of solar energy consumed on-site rather than exported to the grid at low feed-in rates.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>תכנון לגיבוי חשמל:</strong> תכננו לפי העומסים הקריטיים שאתם צריכים במהלך הפסקת חשמל. רשמו מכשירים חיוניים (תאורה, מקרר, מאווררים, ראוטר, טעינת טלפון) וההספק שלהם. הכפילו ואט כולל × שעות אוטונומיה נדרשות. דוגמה: 2 kW עומסים קריטיים × 12 שעות = סוללת 24 kWh. הוסיפו 10–20% מרווח ביטחון.</li>
+      <li><strong>אופטימיזציה של צריכה עצמית:</strong> תכננו לאחסון עודפי סולאר מהיום לשימוש בלילה. נתחו את הפער בין שעות ייצור סולארי (09:00–16:00) לצריכת ערב (17:00–23:00). בדרך כלל 5–15 kWh מכסים את צרכי הערב של משק בית. המטרה היא למקסם את אחוז האנרגיה הסולארית הנצרכת באתר במקום לייצא לרשת בתעריפי הזנה נמוכים.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>การกำหนดขนาดสำหรับสำรองไฟ:</strong> กำหนดขนาดตามโหลดวิกฤตที่ต้องการระหว่างไฟดับ ลิสต์เครื่องใช้ไฟฟ้าจำเป็น (ไฟ ตู้เย็น พัดลม เราเตอร์ ชาร์จโทรศัพท์) และกำลังวัตต์ คูณวัตต์รวม × ชั่วโมงที่ต้องการ ตัวอย่าง: โหลดวิกฤต 2 kW × 12 ชั่วโมง = แบตเตอรี่ 24 kWh เพิ่มส่วนเผื่อ 10–20%</li>
+      <li><strong>การปรับให้เหมาะสมสำหรับการใช้ไฟเอง:</strong> กำหนดขนาดเพื่อเก็บพลังงานแสงอาทิตย์ส่วนเกินตอนกลางวันไว้ใช้ตอนกลางคืน วิเคราะห์ช่องว่างระหว่างช่วงเวลาผลิตโซลาร์ (09:00–16:00) และการใช้ไฟช่วงเย็น (17:00–23:00) โดยทั่วไป 5–15 kWh ครอบคลุมความต้องการช่วงเย็นของครัวเรือน เป้าหมายคือเพิ่มเปอร์เซ็นต์ของพลังงานแสงอาทิตย์ที่ใช้ในสถานที่แทนการส่งออกไปยังกริดในอัตราฟีดอินต่ำ</li>
+    </ul>
+  </section>
+
+  <!-- Section 5: Economics -->
+  <section class="content-section fade-up">
+    <h2 data-en>When Do Batteries Make Financial Sense?</h2>
+    <h2 data-he>מתי סוללות כדאיות כלכלית?</h2>
+    <h2 data-th>เมื่อไหร่ที่แบตเตอรี่คุ้มค่าทางการเงิน?</h2>
+
+    <p data-en>Batteries are not always the right investment. Their economics depend heavily on local conditions. Here are the scenarios where batteries make strong financial sense:</p>
+    <p data-he>סוללות לא תמיד ההשקעה הנכונה. הכלכליות שלהן תלויות מאוד בתנאים מקומיים. הנה התרחישים שבהם סוללות הגיוניות כלכלית:</p>
+    <p data-th>แบตเตอรี่ไม่ใช่การลงทุนที่เหมาะสมเสมอไป ความคุ้มค่าทางเศรษฐกิจขึ้นอยู่กับสภาพท้องถิ่นเป็นอย่างมาก นี่คือสถานการณ์ที่แบตเตอรี่คุ้มค่าทางการเงิน:</p>
+
+    <ul data-en>
+      <li><strong>High TOU spread:</strong> When the difference between peak and off-peak electricity rates is large (>฿2/kWh), batteries can buy cheap off-peak power and discharge during expensive peak hours. In Thailand, TOU spreads of ฿2.3–3.0/kWh make this viable for commercial users.</li>
+      <li><strong>Unreliable grid / frequent outages:</strong> On islands like Koh Phangan, Koh Samui, and Koh Tao, the grid can fail during storms for hours or days. The cost of lost business (restaurants, hotels, shops) far exceeds battery investment. Batteries replace expensive diesel generators.</li>
+      <li><strong>No net metering / low feed-in tariffs:</strong> In Thailand, there is currently no net metering for residential customers. Excess solar exported to the grid is either unpaid or paid at very low rates. Batteries capture this energy for self-use at full retail value.</li>
+      <li><strong>Demand charge reduction:</strong> For commercial customers paying demand charges (฿/kW), batteries can shave peak demand by discharging during the highest-draw periods, reducing the 15-minute peak and lowering the monthly demand charge.</li>
+      <li><strong>Island and off-grid locations:</strong> Where diesel generation costs ฿8–15/kWh, solar+battery systems pay for themselves in 3–5 years. Koh Phangan diesel cost is approximately ฿10–12/kWh — solar+battery delivers power at ฿3–4/kWh levelized cost.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>פער TOU גבוה:</strong> כשההפרש בין תעריפי שיא ושפל גדול (>฿2/kWh), סוללות יכולות לקנות חשמל שפל זול ולפרוק בשעות שיא יקרות. בתאילנד, פערי TOU של ฿2.3–3.0/kWh הופכים את זה לכדאי למשתמשים מסחריים.</li>
+      <li><strong>רשת לא אמינה / הפסקות תכופות:</strong> באיים כמו קופנגן, קוסמוי וקוטאו, הרשת יכולה ליפול בסערות לשעות או ימים. עלות עסקים אבודים (מסעדות, מלונות, חנויות) עולה בהרבה על השקעה בסוללות. סוללות מחליפות גנרטורי דיזל יקרים.</li>
+      <li><strong>אין net metering / תעריפי הזנה נמוכים:</strong> בתאילנד, אין כרגע net metering ללקוחות ביתיים. עודפי סולאר המיוצאים לרשת אינם משולמים או משולמים בתעריפים נמוכים מאוד. סוללות לוכדות אנרגיה זו לשימוש עצמי בערך הקמעונאי המלא.</li>
+      <li><strong>הפחתת חיובי ביקוש:</strong> עבור לקוחות מסחריים המשלמים חיובי ביקוש (฿/kW), סוללות יכולות לגזום שיא ביקוש על ידי פריקה בתקופות השאיבה הגבוהות ביותר, מפחיתות את שיא 15 הדקות ומורידות את חיוב הביקוש החודשי.</li>
+      <li><strong>איים ומיקומים off-grid:</strong> היכן שייצור דיזל עולה ฿8–15/kWh, מערכות סולאר+סוללה מחזירות את עצמן תוך 3–5 שנים. עלות דיזל בקופנגן כ-฿10–12/kWh — סולאר+סוללה מספקות חשמל בעלות ממוצעת של ฿3–4/kWh.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>ส่วนต่าง TOU สูง:</strong> เมื่อความแตกต่างระหว่างอัตราค่าไฟช่วงพีคและออฟพีคมาก (>฿2/kWh) แบตเตอรี่สามารถซื้อไฟออฟพีคราคาถูกและคายประจุในช่วงพีคราคาแพง ในประเทศไทย ส่วนต่าง TOU ที่ ฿2.3–3.0/kWh ทำให้คุ้มค่าสำหรับผู้ใช้เชิงพาณิชย์</li>
+      <li><strong>กริดไม่เสถียร / ไฟดับบ่อย:</strong> บนเกาะเช่นเกาะพะงัน เกาะสมุย และเกาะเต่า กริดอาจล่มระหว่างพายุเป็นชั่วโมงหรือวัน ต้นทุนธุรกิจที่สูญเสีย (ร้านอาหาร โรงแรม ร้านค้า) เกินกว่าการลงทุนแบตเตอรี่มาก แบตเตอรี่ทดแทนเครื่องปั่นไฟดีเซลราคาแพง</li>
+      <li><strong>ไม่มี net metering / ค่าฟีดอินต่ำ:</strong> ในประเทศไทย ปัจจุบันไม่มี net metering สำหรับลูกค้าที่อยู่อาศัย โซลาร์ส่วนเกินที่ส่งออกไปยังกริดไม่ได้รับเงินหรือได้รับในอัตราต่ำมาก แบตเตอรี่เก็บพลังงานนี้ไว้ใช้เองในมูลค่าค้าปลีกเต็ม</li>
+      <li><strong>ลดค่าดีมานด์ชาร์จ:</strong> สำหรับลูกค้าเชิงพาณิชย์ที่จ่ายค่าดีมานด์ (฿/kW) แบตเตอรี่สามารถตัดพีคดีมานด์โดยคายประจุในช่วงที่ดึงไฟสูงสุด ลดพีค 15 นาทีและลดค่าดีมานด์รายเดือน</li>
+      <li><strong>เกาะและสถานที่ off-grid:</strong> ที่ซึ่งการผลิตดีเซลมีค่าใช้จ่าย ฿8–15/kWh ระบบโซลาร์+แบตเตอรี่คืนทุนใน 3–5 ปี ต้นทุนดีเซลเกาะพะงันประมาณ ฿10–12/kWh — โซลาร์+แบตเตอรี่ส่งพลังงานที่ต้นทุนเฉลี่ย ฿3–4/kWh</li>
+    </ul>
+  </section>
+
+  <!-- Section 6: Thailand Context -->
+  <section class="content-section fade-up">
+    <h2 data-en>Thailand Context: Island Grids & Storm Backup</h2>
+    <h2 data-he>הקשר תאילנדי: רשתות איים וגיבוי סערות</h2>
+    <h2 data-th>บริบทประเทศไทย: กริดเกาะและสำรองไฟพายุ</h2>
+
+    <p data-en>Thailand's island communities face unique energy challenges that make battery storage especially valuable:</p>
+    <p data-he>קהילות האיים של תאילנד מתמודדות עם אתגרי אנרגיה ייחודיים שהופכים אגירת סוללות לבעלת ערך במיוחד:</p>
+    <p data-th>ชุมชนเกาะของประเทศไทยเผชิญกับความท้าทายด้านพลังงานเฉพาะตัวที่ทำให้การกักเก็บพลังงานด้วยแบตเตอรี่มีคุณค่าเป็นพิเศษ:</p>
+
+    <ul data-en>
+      <li><strong>Koh Phangan grid reality:</strong> The island receives power via undersea cable from the mainland. During monsoon season (October–December), storms can damage the cable or local distribution, causing outages lasting 6–48 hours. Hotels and restaurants lose revenue; food spoils; medical equipment fails.</li>
+      <li><strong>Diesel dependency:</strong> Most businesses on the island rely on diesel generators as backup. Diesel fuel costs ฿35–40/liter on the island (30% premium over mainland), and generators produce power at ฿10–12/kWh — 2–3× the grid rate.</li>
+      <li><strong>Solar+battery solution:</strong> A 10 kW solar system paired with 20–30 kWh of battery storage eliminates diesel dependency for most businesses. The system pays for itself in 4–6 years through avoided diesel costs and electricity savings.</li>
+      <li><strong>TM Energy's approach:</strong> TM Energy installs Huawei hybrid systems on Koh Phangan that automatically switch to battery backup within 20 milliseconds of a grid outage — fast enough that computers don't restart and refrigeration never stops.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>מציאות רשת קופנגן:</strong> האי מקבל חשמל דרך כבל תת-ימי מהיבשה. בעונת המונסון (אוקטובר–דצמבר), סערות יכולות לפגוע בכבל או בחלוקה המקומית, וגורמות להפסקות של 6–48 שעות. מלונות ומסעדות מפסידים הכנסות; אוכל נרקב; ציוד רפואי נכשל.</li>
+      <li><strong>תלות בדיזל:</strong> רוב העסקים באי מסתמכים על גנרטורי דיזל כגיבוי. דלק דיזל עולה ฿35–40 לליטר באי (פרמיה של 30% על פני היבשה), וגנרטורים מייצרים חשמל ב-฿10–12/kWh — פי 2–3 מתעריף הרשת.</li>
+      <li><strong>פתרון סולאר+סוללה:</strong> מערכת סולארית 10 kW בשילוב 20–30 kWh אגירת סוללות מבטלת תלות בדיזל לרוב העסקים. המערכת מחזירה את עצמה תוך 4–6 שנים דרך עלויות דיזל נמנעות וחיסכון בחשמל.</li>
+      <li><strong>הגישה של TM Energy:</strong> TM Energy מתקינה מערכות היברידיות של Huawei בקופנגן שעוברות אוטומטית לגיבוי סוללה תוך 20 מילישניות מהפסקת חשמל — מהיר מספיק שמחשבים לא מופעלים מחדש וקירור אף פעם לא נפסק.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>ความเป็นจริงของกริดเกาะพะงัน:</strong> เกาะรับไฟฟ้าผ่านสายเคเบิลใต้ทะเลจากแผ่นดินใหญ่ ในช่วงมรสุม (ตุลาคม–ธันวาคม) พายุอาจทำให้สายเคเบิลหรือระบบจำหน่ายในพื้นที่เสียหาย ทำให้ไฟดับนาน 6–48 ชั่วโมง โรงแรมและร้านอาหารสูญเสียรายได้ อาหารเน่าเสีย อุปกรณ์การแพทย์ล้มเหลว</li>
+      <li><strong>การพึ่งพาดีเซล:</strong> ธุรกิจส่วนใหญ่บนเกาะพึ่งพาเครื่องปั่นไฟดีเซลเป็นสำรอง น้ำมันดีเซลราคา ฿35–40/ลิตรบนเกาะ (แพงกว่าแผ่นดินใหญ่ 30%) และเครื่องปั่นไฟผลิตไฟฟ้าที่ ฿10–12/kWh — แพงกว่าอัตรากริด 2–3 เท่า</li>
+      <li><strong>โซลูชันโซลาร์+แบตเตอรี่:</strong> ระบบโซลาร์ 10 kW พร้อมแบตเตอรี่ 20–30 kWh ขจัดการพึ่งพาดีเซลสำหรับธุรกิจส่วนใหญ่ ระบบคืนทุนใน 4–6 ปีจากต้นทุนดีเซลที่หลีกเลี่ยงได้และการประหยัดค่าไฟ</li>
+      <li><strong>แนวทางของ TM Energy:</strong> TM Energy ติดตั้งระบบไฮบริด Huawei บนเกาะพะงันที่สลับไปใช้แบตเตอรี่สำรองโดยอัตโนมัติภายใน 20 มิลลิวินาทีหลังไฟดับ — เร็วพอที่คอมพิวเตอร์ไม่รีสตาร์ทและตู้เย็นไม่หยุดทำงาน</li>
+    </ul>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">
+      <span data-en>← Course Home</span><span data-he>דף הקורס ←</span><span data-th>← หน้าหลักคอร์ส</span>
+    </a>
+    <a href="../index.html">
+      <span data-en>Course Home</span><span data-he>דף הקורס</span><span data-th>หน้าหลักคอร์ส</span>
+    </a>
+    <a href="ev-storage-02.html">
+      <span data-en>Next Lesson →</span><span data-he>→ השיעור הבא</span><span data-th>บทถัดไป →</span>
+    </a>
+  </nav>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 TM Energy Co., Ltd.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('ev-storage', 1);
+  initQuiz('ev-storage', 1, [
+    {
+      question: {
+        en: "Which battery chemistry is considered the safest for stationary energy storage?",
+        he: "איזו כימיית סוללה נחשבת לבטוחה ביותר לאגירת אנרגיה נייחת?",
+        th: "เคมีแบตเตอรี่ชนิดใดถือว่าปลอดภัยที่สุดสำหรับการกักเก็บพลังงานแบบคงที่?"
+      },
+      options: [
+        { en: "NMC (Nickel Manganese Cobalt)", he: "NMC (ניקל מנגן קובלט)", th: "NMC (นิกเกิลแมงกานีสโคบอลต์)" },
+        { en: "LFP (Lithium Iron Phosphate)", he: "LFP (ליתיום ברזל פוספט)", th: "LFP (ลิเธียมไอรอนฟอสเฟต)" },
+        { en: "Lead-Acid", he: "עופרת-חומצה", th: "ตะกั่วกรด" },
+        { en: "Nickel-Cadmium", he: "ניקל-קדמיום", th: "นิกเกิลแคดเมียม" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the typical Depth of Discharge (DoD) for LFP batteries?",
+        he: "מהו עומק הפריקה (DoD) הטיפוסי לסוללות LFP?",
+        th: "ความลึกของการคายประจุ (DoD) ทั่วไปสำหรับแบตเตอรี่ LFP คือเท่าไร?"
+      },
+      options: [
+        { en: "50%", he: "50%", th: "50%" },
+        { en: "70%", he: "70%", th: "70%" },
+        { en: "90–100%", he: "90–100%", th: "90–100%" },
+        { en: "30%", he: "30%", th: "30%" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "How many kWh modules can a single Huawei LUNA2000 tower stack?",
+        he: "כמה מודולי kWh ניתן לערום במגדל Huawei LUNA2000 יחיד?",
+        th: "ทาวเวอร์ Huawei LUNA2000 เดียวสามารถซ้อนโมดูล kWh ได้กี่ตัว?"
+      },
+      options: [
+        { en: "1–3 modules (5–15 kWh)", he: "1–3 מודולים (5–15 kWh)", th: "1–3 โมดูล (5–15 kWh)" },
+        { en: "1–6 modules (5–30 kWh)", he: "1–6 מודולים (5–30 kWh)", th: "1–6 โมดูล (5–30 kWh)" },
+        { en: "1–10 modules (5–50 kWh)", he: "1–10 מודולים (5–50 kWh)", th: "1–10 โมดูล (5–50 kWh)" },
+        { en: "1–2 modules (5–10 kWh)", he: "1–2 מודולים (5–10 kWh)", th: "1–2 โมดูล (5–10 kWh)" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "Why are batteries particularly valuable on Koh Phangan?",
+        he: "למה סוללות בעלות ערך במיוחד בקופנגן?",
+        th: "ทำไมแบตเตอรี่จึงมีคุณค่าเป็นพิเศษบนเกาะพะงัน?"
+      },
+      options: [
+        { en: "The island has no electricity at all", he: "לאי אין חשמל בכלל", th: "เกาะไม่มีไฟฟ้าเลย" },
+        { en: "Electricity is free on the island", he: "החשמל חינם באי", th: "ค่าไฟฟ้าฟรีบนเกาะ" },
+        { en: "Storms can damage the undersea cable causing outages of 6–48 hours, and diesel backup costs ฿10–12/kWh", he: "סערות יכולות לפגוע בכבל התת-ימי וגורמות להפסקות של 6–48 שעות, וגיבוי דיזל עולה ฿10–12/kWh", th: "พายุอาจทำให้สายเคเบิลใต้ทะเลเสียหายทำให้ไฟดับ 6–48 ชั่วโมง และดีเซลสำรองมีค่าใช้จ่าย ฿10–12/kWh" },
+        { en: "Solar panels don't work on islands", he: "פאנלים סולאריים לא עובדים באיים", th: "แผงโซลาร์ไม่ทำงานบนเกาะ" }
+      ],
+      correct: 2
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>
