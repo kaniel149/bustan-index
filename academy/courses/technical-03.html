@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3: Inverter Installation & Commissioning — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .video-section { margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .video-section h3 { margin-bottom: 15px; color: #00D68F; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; }
+    .video-caption { margin-top: 10px; font-size: 0.9em; color: rgba(255,255,255,0.6); font-style: italic; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="technical-01.html"><span data-en>Technical Installation</span><span data-he>התקנה טכנית</span><span data-th>การติดตั้งทางเทคนิค</span></a>
+    <span>›</span>
+    <span data-en>Lesson 3</span><span data-he>שיעור 3</span><span data-th>บทที่ 3</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 3 of 3</span><span data-he>שיעור 3 מתוך 3</span><span data-th>บทที่ 3 จาก 3</span>
+    </div>
+    <h1>
+      <span data-en>Inverter Installation & Commissioning</span>
+      <span data-he>התקנת ממיר והפעלה ראשונית</span>
+      <span data-th>การติดตั้งอินเวอร์เตอร์และการเดินระบบ</span>
+    </h1>
+    <p class="lesson-subtitle">
+      <span data-en>From wall mounting to grid connection — complete inverter setup with Huawei SUN2000 walkthrough</span>
+      <span data-he>מהתקנה על הקיר ועד חיבור לרשת — הגדרת ממיר מלאה עם מדריך Huawei SUN2000</span>
+      <span data-th>จากการติดตั้งบนผนังจนถึงการเชื่อมต่อกริด — การตั้งค่าอินเวอร์เตอร์ครบถ้วนพร้อมแนะนำ Huawei SUN2000</span>
+    </p>
+  </div>
+
+  <!-- Section 1: Location Selection -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📍 Inverter Location Selection</span>
+      <span data-he>📍 בחירת מיקום הממיר</span>
+      <span data-th>📍 การเลือกตำแหน่งอินเวอร์เตอร์</span>
+    </h2>
+
+    <img src="../images/inverter-types.png" alt="Types of solar inverters — string, micro, and hybrid" class="lesson-image">
+
+    <h3>
+      <span data-en>Critical Placement Criteria</span>
+      <span data-he>קריטריונים קריטיים למיקום</span>
+      <span data-th>เกณฑ์การวางตำแหน่งที่สำคัญ</span>
+    </h3>
+    <p>
+      <span data-en>Inverter placement directly impacts performance and lifespan. In Thailand's tropical climate, heat management is the #1 concern. Key requirements:</span>
+      <span data-he>מיקום הממיר משפיע ישירות על ביצועים ואורך חיים. באקלים הטרופי של תאילנד, ניהול חום הוא הדאגה מספר 1. דרישות מפתח:</span>
+      <span data-th>ตำแหน่งอินเวอร์เตอร์ส่งผลโดยตรงต่อประสิทธิภาพและอายุการใช้งาน ในสภาพอากาศเขตร้อนของไทย การจัดการความร้อนเป็นข้อกังวลอันดับ 1 ข้อกำหนดสำคัญ:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Factor</span><span data-he>גורם</span><span data-th>ปัจจัย</span></th>
+            <th><span data-en>Requirement</span><span data-he>דרישה</span><span data-th>ข้อกำหนด</span></th>
+            <th><span data-en>Why It Matters</span><span data-he>למה זה חשוב</span><span data-th>ทำไมจึงสำคัญ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Temperature</span><span data-he>טמפרטורה</span><span data-th>อุณหภูมิ</span></td>
+            <td><span data-en>Shade, never direct sun</span><span data-he>צל, לעולם לא שמש ישירה</span><span data-th>ร่มเงา ไม่โดนแดดโดยตรง</span></td>
+            <td><span data-en>Every 10°C above 25°C = 3-5% efficiency loss</span><span data-he>כל 10°C מעל 25°C = 3-5% ירידה ביעילות</span><span data-th>ทุก 10°C เหนือ 25°C = ประสิทธิภาพลด 3-5%</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Ventilation</span><span data-he>אוורור</span><span data-th>การระบายอากาศ</span></td>
+            <td><span data-en>Min 30cm clearance all sides</span><span data-he>מרווח מינימלי 30ס"מ מכל הצדדים</span><span data-th>เว้นระยะขั้นต่ำ 30 ซม. ทุกด้าน</span></td>
+            <td><span data-en>Natural convection cooling</span><span data-he>קירור קונבקציה טבעי</span><span data-th>การระบายความร้อนแบบพาความร้อนธรรมชาติ</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Water Protection</span><span data-he>הגנה ממים</span><span data-th>การป้องกันน้ำ</span></td>
+            <td><span data-en>IP65 rated, but avoid direct rain</span><span data-he>דירוג IP65, אבל הימנעו מגשם ישיר</span><span data-th>ระดับ IP65 แต่หลีกเลี่ยงฝนโดยตรง</span></td>
+            <td><span data-en>Salt air on islands accelerates corrosion</span><span data-he>אוויר מלוח באיים מאיץ קורוזיה</span><span data-th>อากาศเค็มบนเกาะเร่งการกัดกร่อน</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Access</span><span data-he>גישה</span><span data-th>การเข้าถึง</span></td>
+            <td><span data-en>Eye level, easy to reach</span><span data-he>גובה עיניים, נגיש בקלות</span><span data-th>ระดับสายตา เข้าถึงง่าย</span></td>
+            <td><span data-en>Maintenance, LED reading, DC disconnect</span><span data-he>תחזוקה, קריאת LED, ניתוק DC</span><span data-th>บำรุงรักษา อ่าน LED ตัดวงจร DC</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Cable Distance</span><span data-he>מרחק כבלים</span><span data-th>ระยะสายเคเบิล</span></td>
+            <td><span data-en>As close to panels and DB as possible</span><span data-he>קרוב ככל האפשר לפאנלים ולוח חשמל</span><span data-th>ใกล้แผงและตู้ MDB มากที่สุด</span></td>
+            <td><span data-en>Shorter DC runs = less voltage drop + lower cost</span><span data-he>ריצות DC קצרות = פחות נפילת מתח + עלות נמוכה</span><span data-th>สาย DC สั้น = แรงดันตกน้อย + ต้นทุนต่ำ</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="did-you-know">
+      <p>
+        <span data-en>💡 <strong>Koh Phangan Tip:</strong> On the island, mount inverters under roof overhangs or inside well-ventilated utility rooms. The combination of tropical heat (35°C+) and salt air is the biggest enemy. A simple corrugated roof shade over the inverter can add years to its life.</span>
+        <span data-he>💡 <strong>טיפ לקו פנגן:</strong> באי, התקינו ממירים מתחת לשולי גג או בתוך חדרי שירות עם אוורור טוב. השילוב של חום טרופי (35°C+) ואוויר מלוח הוא האויב הגדול ביותר. סוכך פח גלי פשוט מעל הממיר יכול להוסיף שנים לחייו.</span>
+        <span data-th>💡 <strong>เคล็ดลับเกาะพะงัน:</strong> บนเกาะ ติดตั้งอินเวอร์เตอร์ใต้ชายคาหรือในห้องเทคนิคที่ระบายอากาศดี การรวมกันของความร้อนเขตร้อน (35°C+) และอากาศเค็มเป็นศัตรูตัวฉกาจ หลังคาสังกะสีง่ายๆ กันแดดให้อินเวอร์เตอร์สามารถยืดอายุได้หลายปี</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: AC Connection -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>⚡ AC Connection to Distribution Board</span>
+      <span data-he>⚡ חיבור AC ללוח חשמל</span>
+      <span data-th>⚡ การเชื่อมต่อ AC กับตู้ MDB</span>
+    </h2>
+
+    <h3>
+      <span data-en>Step-by-Step AC Wiring</span>
+      <span data-he>חיבור AC שלב אחר שלב</span>
+      <span data-th>การเดินสาย AC ทีละขั้นตอน</span>
+    </h3>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Step</span><span data-he>שלב</span><span data-th>ขั้นตอน</span></th>
+            <th><span data-en>Action</span><span data-he>פעולה</span><span data-th>การดำเนินการ</span></th>
+            <th><span data-en>Details</span><span data-he>פרטים</span><span data-th>รายละเอียด</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><span data-en>Turn off main breaker</span><span data-he>כבו מפסק ראשי</span><span data-th>ปิดเบรกเกอร์หลัก</span></td>
+            <td><span data-en>Verify zero voltage with multimeter on bus bars</span><span data-he>ודאו אפס מתח עם מולטימטר על פסי צבירה</span><span data-th>ตรวจสอบแรงดันเป็นศูนย์ด้วยมัลติมิเตอร์ที่บัสบาร์</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span data-en>Install dedicated solar breaker</span><span data-he>התקינו מפסק סולארי ייעודי</span><span data-th>ติดตั้งเบรกเกอร์โซลาร์เฉพาะ</span></td>
+            <td><span data-en>Size: 1.25× inverter max AC current. For SUN2000-25KTL: 40A 3-phase breaker</span><span data-he>גודל: 1.25× זרם AC מקסימלי של הממיר. עבור SUN2000-25KTL: מפסק 40A תלת-פאזי</span><span data-th>ขนาด: 1.25× กระแส AC สูงสุดของอินเวอร์เตอร์ สำหรับ SUN2000-25KTL: เบรกเกอร์ 40A 3 เฟส</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><span data-en>Run AC cable</span><span data-he>משכו כבל AC</span><span data-th>เดินสาย AC</span></td>
+            <td><span data-en>4mm² minimum for <30m run; use conduit for UV/rain protection</span><span data-he>מינימום 4mm² לריצה של <30 מטר; השתמשו בצינור להגנה מ-UV/גשם</span><span data-th>ขั้นต่ำ 4mm² สำหรับระยะ <30 ม.; ใช้ท่อร้อยสายป้องกัน UV/ฝน</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><span data-en>Connect L1, L2, L3, N, PE</span><span data-he>חברו L1, L2, L3, N, PE</span><span data-th>เชื่อมต่อ L1, L2, L3, N, PE</span></td>
+            <td><span data-en>Follow color code: Brown/Black/Grey (L), Blue (N), Green-Yellow (PE)</span><span data-he>עקבו אחרי קוד צבע: חום/שחור/אפור (L), כחול (N), ירוק-צהוב (PE)</span><span data-th>ตามรหัสสี: น้ำตาล/ดำ/เทา (L) น้ำเงิน (N) เขียว-เหลือง (PE)</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><span data-en>Torque connections</span><span data-he>הדקו חיבורים</span><span data-th>ขันแน่นจุดเชื่อมต่อ</span></td>
+            <td><span data-en>Use torque wrench to manufacturer spec (typically 2-3 Nm for terminal blocks)</span><span data-he>השתמשו במפתח מומנט למפרט יצרן (בדרך כלל 2-3 Nm לבלוקי טרמינל)</span><span data-th>ใช้ประแจทอร์คตามสเปคผู้ผลิต (ปกติ 2-3 Nm สำหรับเทอร์มินัลบล็อก)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-concept">
+      <h4><span data-en>⚠️ Anti-Islanding Protection</span><span data-he>⚠️ הגנת אנטי-איילנדינג</span><span data-th>⚠️ การป้องกัน Anti-Islanding</span></h4>
+      <p>
+        <span data-en><strong>What it does:</strong> Automatically shuts down the inverter when the grid goes down, preventing back-feed that could electrocute utility workers.<br>
+        <strong>How it works:</strong> The inverter monitors grid voltage and frequency. If either goes outside normal range (e.g., voltage ±10% or frequency ±0.5 Hz), the inverter disconnects within 0.1-2 seconds.<br>
+        <strong>Thailand requirement:</strong> PEA mandates anti-islanding on all grid-tied systems. Huawei SUN2000 series has this built in — no external relay needed.</span>
+        <span data-he><strong>מה זה עושה:</strong> כבה אוטומטית את הממיר כשהרשת נופלת, מונע הזנה חוזרת שעלולה להכות עובדי חברת חשמל בזרם.<br>
+        <strong>איך זה עובד:</strong> הממיר מנטר מתח ותדר רשת. אם אחד מהם יוצא מטווח נורמלי (למשל, מתח ±10% או תדר ±0.5 Hz), הממיר מתנתק תוך 0.1-2 שניות.<br>
+        <strong>דרישת תאילנד:</strong> PEA מחייב אנטי-איילנדינג על כל מערכת grid-tied. סדרת Huawei SUN2000 כוללת זאת מובנה — לא צריך ממסר חיצוני.</span>
+        <span data-th><strong>ทำอะไร:</strong> ปิดอินเวอร์เตอร์อัตโนมัติเมื่อกริดดับ ป้องกันไฟย้อนกลับที่อาจทำให้ช่างการไฟฟ้าถูกไฟดูด<br>
+        <strong>ทำงานอย่างไร:</strong> อินเวอร์เตอร์ตรวจสอบแรงดันและความถี่กริด ถ้าค่าใดออกนอกช่วงปกติ (เช่น แรงดัน ±10% หรือความถี่ ±0.5 Hz) อินเวอร์เตอร์ตัดการเชื่อมต่อภายใน 0.1-2 วินาที<br>
+        <strong>ข้อกำหนดไทย:</strong> PEA กำหนดให้ระบบ grid-tied ทุกระบบต้องมี anti-islanding Huawei SUN2000 มีในตัว — ไม่ต้องใช้รีเลย์ภายนอก</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: Grounding -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🔌 Grounding & Earthing</span>
+      <span data-he>🔌 הארקה</span>
+      <span data-th>🔌 การต่อกราวด์และสายดิน</span>
+    </h2>
+
+    <img src="../images/grounding-system.png" alt="Solar system grounding and earthing diagram" class="lesson-image">
+
+    <h3>
+      <span data-en>Grounding Requirements</span>
+      <span data-he>דרישות הארקה</span>
+      <span data-th>ข้อกำหนดการต่อกราวด์</span>
+    </h3>
+    <p>
+      <span data-en>Proper grounding protects equipment and people from lightning strikes, fault currents, and static discharge. Thailand's tropical thunderstorm season (May-October) makes this especially critical.</span>
+      <span data-he>הארקה נכונה מגנה על ציוד ואנשים מפגיעות ברק, זרמי תקלה ופריקה סטטית. עונת הסופות הטרופית של תאילנד (מאי-אוקטובר) הופכת זאת לקריטית במיוחד.</span>
+      <span data-th>การต่อกราวด์ที่ถูกต้องปกป้องอุปกรณ์และผู้คนจากฟ้าผ่า กระแสผิดพลาด และไฟฟ้าสถิต ฤดูพายุฝนเขตร้อนของไทย (พฤษภาคม-ตุลาคม) ทำให้สิ่งนี้สำคัญเป็นพิเศษ</span>
+    </p>
+
+    <ul>
+      <li><span data-en><strong>Equipment grounding:</strong> All metal frames, rails, inverter chassis → connected to ground bus with 6mm² green-yellow copper</span><span data-he><strong>הארקת ציוד:</strong> כל מסגרות מתכת, מסילות, שלדת ממיר → מחוברים לפס הארקה עם נחושת 6mm² ירוק-צהוב</span><span data-th><strong>กราวด์อุปกรณ์:</strong> โครงโลหะ ราง ตัวถังอินเวอร์เตอร์ทั้งหมด → ต่อกับบัสกราวด์ด้วยทองแดง 6mm² เขียว-เหลือง</span></li>
+      <li><span data-en><strong>Earth electrode:</strong> Copper-clad ground rod (min 2.4m length) driven into soil. Target resistance: <5Ω (measure with earth resistance tester)</span><span data-he><strong>אלקטרודת אדמה:</strong> מוט הארקה מצופה נחושת (מינימום 2.4 מטר) נקבע בקרקע. התנגדות יעד: <5Ω (למדוד עם בודק התנגדות אדמה)</span><span data-th><strong>หลักดิน:</strong> แท่งกราวด์เคลือบทองแดง (ยาวขั้นต่ำ 2.4 ม.) ตอกลงดิน ค่าความต้านทานเป้าหมาย: <5Ω (วัดด้วยเครื่องวัดความต้านทานดิน)</span></li>
+      <li><span data-en><strong>Lightning protection:</strong> Surge Protection Device (SPD) on both DC and AC sides. Type 2 SPD minimum; Type 1+2 recommended for island installations</span><span data-he><strong>הגנת ברק:</strong> מכשיר הגנת נחשולים (SPD) בצדי DC ו-AC. SPD Type 2 מינימום; Type 1+2 מומלץ להתקנות באיים</span><span data-th><strong>ป้องกันฟ้าผ่า:</strong> อุปกรณ์ป้องกันเสิร์จ (SPD) ทั้งฝั่ง DC และ AC SPD Type 2 ขั้นต่ำ; แนะนำ Type 1+2 สำหรับการติดตั้งบนเกาะ</span></li>
+    </ul>
+  </section>
+
+  <!-- Section 4: Huawei SUN2000 Setup -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📱 Huawei SUN2000 Setup Walkthrough</span>
+      <span data-he>📱 מדריך הגדרת Huawei SUN2000</span>
+      <span data-th>📱 คู่มือตั้งค่า Huawei SUN2000</span>
+    </h2>
+
+    <h3>
+      <span data-en>Physical Installation</span>
+      <span data-he>התקנה פיזית</span>
+      <span data-th>การติดตั้งทางกายภาพ</span>
+    </h3>
+    <p>
+      <span data-en>The Huawei SUN2000 series (5-100 kW) is the most common commercial inverter in Southeast Asia. Here's the complete setup process:</span>
+      <span data-he>סדרת Huawei SUN2000 (5-100 kW) הוא הממיר המסחרי הנפוץ ביותר בדרום-מזרח אסיה. הנה תהליך ההגדרה המלא:</span>
+      <span data-th>Huawei SUN2000 series (5-100 kW) เป็นอินเวอร์เตอร์เชิงพาณิชย์ที่พบมากที่สุดในเอเชียตะวันออกเฉียงใต้ นี่คือกระบวนการตั้งค่าทั้งหมด:</span>
+    </p>
+
+    <ol>
+      <li><span data-en><strong>Mount the bracket:</strong> Use the supplied template to drill 4 mounting holes. Ensure level with spirit level.</span><span data-he><strong>התקינו את התושבת:</strong> השתמשו בתבנית המצורפת לקדיחת 4 חורי הרכבה. ודאו מפלס עם פלס.</span><span data-th><strong>ติดตั้งแผงยึด:</strong> ใช้แม่แบบที่ให้มาเจาะรู 4 รู ให้ได้ระดับด้วยระดับน้ำ</span></li>
+      <li><span data-en><strong>Hang the inverter:</strong> Lift onto bracket hooks (25KTL weighs 55kg — need 2 people).</span><span data-he><strong>תלו את הממיר:</strong> הרימו על ווי התושבת (25KTL שוקל 55 ק"ג — צריך 2 אנשים).</span><span data-th><strong>แขวนอินเวอร์เตอร์:</strong> ยกขึ้นเกี่ยวกับตะขอแผงยึด (25KTL หนัก 55 กก. — ต้องใช้ 2 คน)</span></li>
+      <li><span data-en><strong>Connect DC strings:</strong> Insert MC4 connectors into PV input ports (up to 4 MPPT inputs on 25KTL).</span><span data-he><strong>חברו סטרינגים DC:</strong> הכניסו מחברי MC4 ליציאות קלט PV (עד 4 כניסות MPPT ב-25KTL).</span><span data-th><strong>เชื่อมต่อสตริง DC:</strong> เสียบ MC4 เข้าพอร์ต PV input (สูงสุด 4 MPPT inputs ใน 25KTL)</span></li>
+      <li><span data-en><strong>Connect AC output:</strong> Wire to dedicated breaker in DB (as described above).</span><span data-he><strong>חברו פלט AC:</strong> חווטו למפסק ייעודי בלוח (כמתואר למעלה).</span><span data-th><strong>เชื่อมต่อ AC output:</strong> เดินสายไปเบรกเกอร์เฉพาะใน MDB (ตามที่อธิบายข้างต้น)</span></li>
+      <li><span data-en><strong>Connect communications:</strong> Plug in SmartDongle (WiFi or 4G) for FusionSolar monitoring.</span><span data-he><strong>חברו תקשורת:</strong> חברו SmartDongle (WiFi או 4G) לניטור FusionSolar.</span><span data-th><strong>เชื่อมต่อการสื่อสาร:</strong> เสียบ SmartDongle (WiFi หรือ 4G) สำหรับมอนิเตอร์ FusionSolar</span></li>
+    </ol>
+
+    <h3>
+      <span data-en>FusionSolar App Configuration</span>
+      <span data-he>הגדרת אפליקציית FusionSolar</span>
+      <span data-th>การตั้งค่าแอป FusionSolar</span>
+    </h3>
+    <p>
+      <span data-en>FusionSolar is Huawei's cloud monitoring platform. During commissioning:</span>
+      <span data-he>FusionSolar היא פלטפורמת הניטור בענן של Huawei. במהלך ההפעלה:</span>
+      <span data-th>FusionSolar เป็นแพลตฟอร์มมอนิเตอร์คลาวด์ของ Huawei ระหว่างการเดินระบบ:</span>
+    </p>
+    <ol>
+      <li><span data-en>Download FusionSolar app → Create installer account</span><span data-he>הורידו אפליקציית FusionSolar → צרו חשבון מתקין</span><span data-th>ดาวน์โหลดแอป FusionSolar → สร้างบัญชีผู้ติดตั้ง</span></li>
+      <li><span data-en>Connect phone to inverter WiFi (SUN2000-XXXXXX, password on label)</span><span data-he>חברו טלפון ל-WiFi הממיר (SUN2000-XXXXXX, סיסמה על התווית)</span><span data-th>เชื่อมต่อโทรศัพท์กับ WiFi อินเวอร์เตอร์ (SUN2000-XXXXXX รหัสผ่านอยู่บนฉลาก)</span></li>
+      <li><span data-en>Set grid code: Thailand → PEA (or MEA for Bangkok area)</span><span data-he>הגדירו קוד רשת: תאילנד → PEA (או MEA לאזור בנגקוק)</span><span data-th>ตั้งรหัสกริด: Thailand → PEA (หรือ MEA สำหรับพื้นที่กรุงเทพฯ)</span></li>
+      <li><span data-en>Configure MPPT strings: number of panels per string, panel wattage</span><span data-he>הגדירו סטרינגים MPPT: מספר פאנלים לסטרינג, הספק פאנל</span><span data-th>กำหนดค่า MPPT strings: จำนวนแผงต่อสตริง กำลังวัตต์แผง</span></li>
+      <li><span data-en>Set export limitation (if required by PEA): 0% for zero-export, or match approved capacity</span><span data-he>הגדירו מגבלת ייצוא (אם נדרש ע"י PEA): 0% ל-zero-export, או התאימו לקיבולת מאושרת</span><span data-th>ตั้งค่าจำกัดส่งออก (ถ้า PEA กำหนด): 0% สำหรับ zero-export หรือตามกำลังที่อนุมัติ</span></li>
+      <li><span data-en>Create plant in FusionSolar cloud → transfer ownership to customer account</span><span data-he>צרו plant בענן FusionSolar → העבירו בעלות לחשבון הלקוח</span><span data-th>สร้าง plant ใน FusionSolar cloud → โอนสิทธิ์ให้บัญชีลูกค้า</span></li>
+    </ol>
+  </section>
+
+  <!-- Section 5: Commissioning Checklist -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>✅ Commissioning Checklist</span>
+      <span data-he>✅ רשימת בדיקות הפעלה</span>
+      <span data-th>✅ เช็คลิสต์การเดินระบบ</span>
+    </h2>
+
+    <p>
+      <span data-en>Before turning on the system, complete every item:</span>
+      <span data-he>לפני הפעלת המערכת, השלימו כל סעיף:</span>
+      <span data-th>ก่อนเปิดระบบ ต้องทำทุกรายการให้ครบ:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Check</span><span data-he>בדיקה</span><span data-th>การตรวจ</span></th>
+            <th><span data-en>Method</span><span data-he>שיטה</span><span data-th>วิธีการ</span></th>
+            <th><span data-en>Pass Criteria</span><span data-he>קריטריון מעבר</span><span data-th>เกณฑ์ผ่าน</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>DC String Voltage</span><span data-he>מתח סטרינג DC</span><span data-th>แรงดัน DC String</span></td>
+            <td><span data-en>Multimeter at inverter DC input</span><span data-he>מולטימטר בקלט DC ממיר</span><span data-th>มัลติมิเตอร์ที่ DC input อินเวอร์เตอร์</span></td>
+            <td><span data-en>Within ±5% of calculated Vmp × panels</span><span data-he>בטווח ±5% מ-Vmp מחושב × פאנלים</span><span data-th>อยู่ภายใน ±5% ของ Vmp คำนวณ × จำนวนแผง</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Insulation Resistance</span><span data-he>התנגדות בידוד</span><span data-th>ค่าความต้านทานฉนวน</span></td>
+            <td><span data-en>Megger test (500V DC)</span><span data-he>בדיקת מגר (500V DC)</span><span data-th>ทดสอบ Megger (500V DC)</span></td>
+            <td><span data-en>>1 MΩ (wet conditions: >0.5 MΩ)</span><span data-he>>1 MΩ (תנאים רטובים: >0.5 MΩ)</span><span data-th>>1 MΩ (สภาพเปียก: >0.5 MΩ)</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Earth Continuity</span><span data-he>רציפות הארקה</span><span data-th>ความต่อเนื่องกราวด์</span></td>
+            <td><span data-en>Low-resistance ohmmeter</span><span data-he>אוהממטר התנגדות נמוכה</span><span data-th>โอห์มมิเตอร์ความต้านทานต่ำ</span></td>
+            <td><span data-en><0.5Ω between frame and earth bar</span><span data-he><0.5Ω בין מסגרת ופס הארקה</span><span data-th><0.5Ω ระหว่างโครงและแท่งดิน</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>AC Voltage</span><span data-he>מתח AC</span><span data-th>แรงดัน AC</span></td>
+            <td><span data-en>Multimeter at inverter AC output</span><span data-he>מולטימטר בפלט AC ממיר</span><span data-th>มัลติมิเตอร์ที่ AC output อินเวอร์เตอร์</span></td>
+            <td><span data-en>220V ±10% (single-phase) or 380V ±10% (3-phase)</span><span data-he>220V ±10% (חד-פאזי) או 380V ±10% (תלת-פאזי)</span><span data-th>220V ±10% (เฟสเดียว) หรือ 380V ±10% (3 เฟส)</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Visual Inspection</span><span data-he>בדיקה ויזואלית</span><span data-th>การตรวจสอบด้วยตา</span></td>
+            <td><span data-en>Walk entire system</span><span data-he>עברו על כל המערכת</span><span data-th>ตรวจสอบทั้งระบบ</span></td>
+            <td><span data-en>No exposed wires, all conduit sealed, labels on all cables</span><span data-he>אין חוטים חשופים, כל צינורות אטומים, תוויות על כל כבלים</span><span data-th>ไม่มีสายเปลือย ท่อร้อยสายปิดสนิท ติดฉลากสายทุกเส้น</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>
+      <span data-en>First Power-On Sequence</span>
+      <span data-he>רצף הפעלה ראשונה</span>
+      <span data-th>ลำดับการเปิดเครื่องครั้งแรก</span>
+    </h3>
+    <ol>
+      <li><span data-en>Turn on AC breaker (grid side first)</span><span data-he>הפעילו מפסק AC (צד רשת קודם)</span><span data-th>เปิดเบรกเกอร์ AC (ฝั่งกริดก่อน)</span></li>
+      <li><span data-en>Turn on DC isolator (or connect DC strings)</span><span data-he>הפעילו מנתק DC (או חברו סטרינגים DC)</span><span data-th>เปิดตัวตัดวงจร DC (หรือเชื่อมต่อ DC strings)</span></li>
+      <li><span data-en>Wait 60-90 seconds for inverter boot sequence</span><span data-he>חכו 60-90 שניות לאתחול הממיר</span><span data-th>รอ 60-90 วินาทีสำหรับการบูตอินเวอร์เตอร์</span></li>
+      <li><span data-en>Check LED: Green steady = normal operation</span><span data-he>בדקו LED: ירוק קבוע = פעולה תקינה</span><span data-th>ตรวจ LED: เขียวนิ่ง = ทำงานปกติ</span></li>
+      <li><span data-en>Verify power output in FusionSolar app</span><span data-he>ודאו ייצור חשמל באפליקציית FusionSolar</span><span data-th>ตรวจสอบกำลังผลิตในแอป FusionSolar</span></li>
+      <li><span data-en>Record readings: DC voltage per string, AC voltage, power output, frequency</span><span data-he>תעדו קריאות: מתח DC לסטרינג, מתח AC, הספק, תדר</span><span data-th>บันทึกค่า: แรงดัน DC ต่อสตริง แรงดัน AC กำลัง ความถี่</span></li>
+    </ol>
+  </section>
+
+  <!-- Navigation -->
+  <div class="lesson-nav">
+    <a href="technical-02.html" class="lesson-nav-btn prev">
+      <span data-en>← Previous: DC Wiring & String Configuration</span>
+      <span data-he>← הקודם: חיווט DC וקונפיגורציית סטרינג</span>
+      <span data-th>← ก่อนหน้า: การเดินสาย DC และการกำหนดค่าสตริง</span>
+    </a>
+    <a href="../index.html" class="lesson-nav-btn next">
+      <span data-en>Back to Academy →</span>
+      <span data-he>חזרה לאקדמיה →</span>
+      <span data-th>กลับสู่ Academy →</span>
+    </a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p><span data-en>© 2026 TM Energy Academy</span><span data-he>© 2026 TM Energy Academy</span><span data-th>© 2026 TM Energy Academy</span></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof initQuiz === 'function') initQuiz('technical', 3, [
+    {
+      question: {
+        en: "What happens if the grid goes down on a system with anti-islanding protection?",
+        he: "מה קורה אם הרשת נופלת במערכת עם הגנת אנטי-איילנדינג?",
+        th: "จะเกิดอะไรขึ้นถ้ากริดดับในระบบที่มี anti-islanding?"
+      },
+      options: [
+        { en: "The inverter keeps producing power normally", he: "הממיר ממשיך לייצר חשמל כרגיל", th: "อินเวอร์เตอร์ยังคงผลิตไฟปกติ" },
+        { en: "The inverter automatically shuts down within seconds", he: "הממיר נכבה אוטומטית תוך שניות", th: "อินเวอร์เตอร์ปิดอัตโนมัติภายในไม่กี่วินาที" },
+        { en: "The battery takes over immediately", he: "הסוללה לוקחת פיקוד מיד", th: "แบตเตอรี่เข้ามาทำงานทันที" },
+        { en: "Nothing — it only affects the grid side", he: "כלום — זה משפיע רק על צד הרשת", th: "ไม่มีอะไร — มีผลแค่ฝั่งกริด" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the target earth resistance for a solar system ground rod?",
+        he: "מהי התנגדות הארקה יעד למוט הארקה של מערכת סולארית?",
+        th: "ค่าความต้านทานดินเป้าหมายสำหรับแท่งกราวด์ระบบโซลาร์คือเท่าไร?"
+      },
+      options: [
+        { en: "< 50Ω", he: "< 50Ω", th: "< 50Ω" },
+        { en: "< 5Ω", he: "< 5Ω", th: "< 5Ω" },
+        { en: "< 100Ω", he: "< 100Ω", th: "< 100Ω" },
+        { en: "Doesn't matter as long as it's connected", he: "לא משנה כל עוד זה מחובר", th: "ไม่สำคัญแค่เชื่อมต่อก็พอ" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "During Huawei SUN2000 commissioning, what grid code should be set for Koh Phangan?",
+        he: "במהלך הפעלת Huawei SUN2000, איזה קוד רשת צריך להגדיר לקו פנגן?",
+        th: "ระหว่างเดินระบบ Huawei SUN2000 ควรตั้งรหัสกริดอะไรสำหรับเกาะพะงัน?"
+      },
+      options: [
+        { en: "MEA (Metropolitan Electricity Authority)", he: "MEA (רשות חשמל מטרופולינית)", th: "MEA (การไฟฟ้านครหลวง)" },
+        { en: "PEA (Provincial Electricity Authority)", he: "PEA (רשות חשמל פרובינציאלית)", th: "PEA (การไฟฟ้าส่วนภูมิภาค)" },
+        { en: "EGAT (Electricity Generating Authority)", he: "EGAT (רשות ייצור חשמל)", th: "EGAT (การไฟฟ้าฝ่ายผลิตแห่งประเทศไทย)" },
+        { en: "Any code works — it auto-detects", he: "כל קוד עובד — זה מזהה אוטומטית", th: "รหัสไหนก็ได้ — ตรวจจับอัตโนมัติ" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the correct power-on sequence for a grid-tied solar system?",
+        he: "מהו רצף ההפעלה הנכון למערכת סולארית grid-tied?",
+        th: "ลำดับการเปิดระบบโซลาร์ grid-tied ที่ถูกต้องคืออะไร?"
+      },
+      options: [
+        { en: "DC first, then AC", he: "DC קודם, אח\"כ AC", th: "DC ก่อน แล้ว AC" },
+        { en: "AC first (grid side), then DC", he: "AC קודם (צד רשת), אח\"כ DC", th: "AC ก่อน (ฝั่งกริด) แล้ว DC" },
+        { en: "Both at the same time", he: "שניהם בו זמנית", th: "ทั้งสองพร้อมกัน" },
+        { en: "Order doesn't matter", he: "הסדר לא משנה", th: "ลำดับไม่สำคัญ" }
+      ],
+      correct: 1
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>
