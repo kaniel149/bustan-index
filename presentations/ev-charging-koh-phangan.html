@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM Energy — EV Charging Network | קו פנגן</title>
+<style>
+/* ============================================================
+   TM ENERGY — EV CHARGING & FLEET PRESENTATION
+   Brand: Navy #0A1628 | Green #00D68F | Gold #FFB800
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0A1628;
+  --navy-light: #121E33;
+  --navy-mid: #1A2940;
+  --green: #00D68F;
+  --green-dim: #00B377;
+  --green-glow: rgba(0, 214, 143, 0.15);
+  --gold: #FFB800;
+  --gold-dim: #E5A600;
+  --white: #FFFFFF;
+  --gray: #8892A4;
+  --gray-light: #B0B8C8;
+  --red: #FF4757;
+  --orange: #FF8C42;
+  --blue: #3B82F6;
+  --slide-w: 100vw;
+  --slide-h: 100vh;
+}
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Inter', 'Heebo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.heb { font-family: 'Heebo', 'Inter', sans-serif; direction: rtl; }
+
+/* ── Slide Engine ── */
+.deck { position: relative; width: 100%; height: 100%; }
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: var(--slide-w); height: var(--slide-h);
+  padding: 60px 80px;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+  overflow: hidden;
+}
+.slide.active {
+  opacity: 1; transform: translateX(0); pointer-events: auto; z-index: 2;
+}
+.slide.exit-left {
+  opacity: 0; transform: translateX(-60px);
+}
+
+/* ── Background Patterns ── */
+.slide::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(0,214,143,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(255,184,0,0.03) 0%, transparent 50%);
+  pointer-events: none; z-index: 0;
+}
+.slide > * { position: relative; z-index: 1; }
+
+/* ── Grid Line Deco ── */
+.grid-bg {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ── Progress Bar ── */
+#progress {
+  position: fixed; top: 0; left: 0; height: 3px; z-index: 100;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  transition: width 0.4s ease;
+  box-shadow: 0 0 12px var(--green);
+}
+
+/* ── Slide Counter ── */
+#counter {
+  position: fixed; bottom: 28px; right: 40px; z-index: 100;
+  font-size: 13px; font-weight: 500; color: var(--gray);
+  letter-spacing: 1px;
+}
+
+/* ── Fullscreen Button ── */
+#fs-btn {
+  position: fixed; bottom: 24px; left: 40px; z-index: 100;
+  background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--gray-light); padding: 8px 14px; border-radius: 6px;
+  cursor: pointer; font-size: 12px; letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+#fs-btn:hover { background: var(--green); color: var(--navy); border-color: var(--green); }
+
+/* ── Nav Arrows ── */
+.nav-arrow {
+  position: fixed; top: 50%; z-index: 100;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--gray-light); font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s; transform: translateY(-50%);
+}
+.nav-arrow:hover { background: var(--green); color: var(--navy); border-color: var(--green); }
+#nav-prev { left: 16px; }
+#nav-next { right: 16px; }
+
+/* ── Typography ── */
+.slide-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--green); margin-bottom: 12px;
+}
+h1 { font-size: 52px; font-weight: 900; line-height: 1.1; margin-bottom: 16px; }
+h2 { font-size: 38px; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+.subtitle { font-size: 20px; color: var(--gray-light); font-weight: 300; margin-bottom: 32px; }
+.accent { color: var(--green); }
+.gold { color: var(--gold); }
+
+/* ── Cards ── */
+.card-grid { display: grid; gap: 20px; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 24px;
+  transition: all 0.3s;
+}
+.card:hover { border-color: var(--green); background: rgba(0,214,143,0.04); }
+.card.highlight { border-color: var(--green); background: var(--green-glow); }
+
+/* ── Data Bars ── */
+.bar-chart { display: flex; flex-direction: column; gap: 12px; }
+.bar-row { display: flex; align-items: center; gap: 12px; }
+.bar-label { width: 100px; font-size: 13px; color: var(--gray-light); text-align: right; flex-shrink: 0; }
+.bar-track { flex: 1; height: 28px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; position: relative; }
+.bar-fill {
+  height: 100%; border-radius: 6px;
+  background: linear-gradient(90deg, var(--green), var(--green-dim));
+  display: flex; align-items: center; padding-left: 10px;
+  font-size: 12px; font-weight: 700; color: var(--navy);
+  width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+.bar-fill.gold-bar { background: linear-gradient(90deg, var(--gold), var(--gold-dim)); }
+.bar-fill.blue-bar { background: linear-gradient(90deg, var(--blue), #2563EB); color: #fff; }
+.bar-value { margin-left: auto; padding-right: 10px; font-size: 12px; font-weight: 700; }
+
+.slide.active .bar-fill { width: var(--w); }
+
+/* ── Stat Boxes ── */
+.stat-row { display: flex; gap: 24px; margin: 20px 0; flex-wrap: wrap; }
+.stat-box { text-align: center; flex: 1; min-width: 120px; }
+.stat-num { font-size: 42px; font-weight: 900; color: var(--green); line-height: 1; }
+.stat-num.gold-num { color: var(--gold); }
+.stat-desc { font-size: 13px; color: var(--gray-light); margin-top: 6px; }
+
+/* ── Tables ── */
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.data-table th {
+  text-align: left; padding: 10px 14px; font-weight: 700; font-size: 12px;
+  text-transform: uppercase; letter-spacing: 1px; color: var(--green);
+  border-bottom: 2px solid rgba(0,214,143,0.3);
+}
+.data-table td {
+  padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* ── Timeline ── */
+.timeline { display: flex; align-items: flex-start; gap: 0; position: relative; margin-top: 20px; }
+.timeline::before {
+  content: ''; position: absolute; top: 20px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+}
+.tl-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  position: relative; text-align: center; padding: 0 8px;
+}
+.tl-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--green); border: 3px solid var(--navy);
+  margin-bottom: 14px; z-index: 1; position: relative; top: 12px;
+}
+.tl-dot.gold-dot { background: var(--gold); }
+.tl-content { margin-top: 20px; }
+.tl-month { font-size: 12px; font-weight: 700; color: var(--green); margin-bottom: 4px; }
+.tl-text { font-size: 11px; color: var(--gray-light); line-height: 1.4; }
+
+/* ── Risk Matrix ── */
+.risk-row { display: flex; gap: 16px; margin-bottom: 12px; align-items: center; }
+.risk-badge {
+  padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; width: 70px; text-align: center;
+}
+.risk-high { background: rgba(255,71,87,0.2); color: var(--red); border: 1px solid rgba(255,71,87,0.3); }
+.risk-med { background: rgba(255,140,66,0.2); color: var(--orange); border: 1px solid rgba(255,140,66,0.3); }
+.risk-low { background: rgba(0,214,143,0.2); color: var(--green); border: 1px solid rgba(0,214,143,0.3); }
+.risk-text { font-size: 14px; }
+.risk-mitigation { font-size: 12px; color: var(--gray); margin-top: 2px; }
+
+/* ── Flow Diagram ── */
+.flow { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+.flow-node {
+  background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 20px; border-radius: 10px; text-align: center; font-size: 13px; font-weight: 600;
+  min-width: 120px;
+}
+.flow-node.green-node { border-color: var(--green); background: var(--green-glow); }
+.flow-node.gold-node { border-color: var(--gold); background: rgba(255,184,0,0.1); }
+.flow-arrow { font-size: 20px; color: var(--green); padding: 0 8px; }
+
+/* ── Cover Slide Special ── */
+.cover-logo { height: 70px; margin-bottom: 24px; filter: brightness(1.1); }
+.cover-line { width: 80px; height: 3px; background: var(--green); margin: 20px 0; }
+.cover-meta { font-size: 14px; color: var(--gray); margin-top: 24px; }
+
+/* ── Location Pin ── */
+.loc-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--green-dim));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 12px;
+}
+
+/* ── Comparison Cards ── */
+.vs-card { position: relative; overflow: hidden; }
+.vs-card .vs-badge {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--green); color: var(--navy);
+  padding: 3px 10px; border-radius: 12px;
+  font-size: 10px; font-weight: 800; text-transform: uppercase;
+}
+
+/* ── Energy Flow Diagram ── */
+.energy-flow { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 30px 0; }
+.ef-box {
+  padding: 18px 24px; border-radius: 12px; text-align: center;
+  font-size: 14px; font-weight: 600; min-width: 130px;
+}
+.ef-solar { background: linear-gradient(135deg, var(--gold), #E5A600); color: var(--navy); }
+.ef-battery { background: linear-gradient(135deg, var(--blue), #2563EB); color: #fff; }
+.ef-charger { background: linear-gradient(135deg, var(--green), var(--green-dim)); color: var(--navy); }
+.ef-grid { background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.1); }
+.ef-arrow { font-size: 24px; color: var(--gold); }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.slide.active .anim {
+  animation: fadeUp 0.6s cubic-bezier(.4,0,.2,1) forwards;
+  opacity: 0;
+}
+.slide.active .anim.d1 { animation-delay: 0.1s; }
+.slide.active .anim.d2 { animation-delay: 0.2s; }
+.slide.active .anim.d3 { animation-delay: 0.3s; }
+.slide.active .anim.d4 { animation-delay: 0.4s; }
+.slide.active .anim.d5 { animation-delay: 0.5s; }
+.slide.active .anim.d6 { animation-delay: 0.6s; }
+.slide.active .anim.d7 { animation-delay: 0.7s; }
+
+/* ── Donut Chart ── */
+.donut-wrap { display: flex; align-items: center; gap: 30px; }
+.donut {
+  width: 140px; height: 140px; border-radius: 50%;
+  background: conic-gradient(var(--green) 0% 35%, var(--gold) 35% 55%, var(--blue) 55% 75%, var(--gray) 75% 100%);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.donut-inner {
+  width: 90px; height: 90px; border-radius: 50%;
+  background: var(--navy); display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 800;
+}
+
+/* ── Print ── */
+@media print {
+  body { overflow: visible; background: #fff; color: #000; }
+  .slide {
+    position: relative; opacity: 1 !important; transform: none !important;
+    pointer-events: auto; page-break-after: always; height: auto; min-height: 100vh;
+    background: #fff; border-bottom: 1px solid #ccc;
+  }
+  .slide::before { display: none; }
+  #progress, #counter, #fs-btn, .nav-arrow, .grid-bg { display: none; }
+  .card { border-color: #ddd; }
+  .accent, .stat-num { color: #00A06B; }
+  h1, h2, h3 { color: #0A1628; }
+  .subtitle, .stat-desc, .bar-label { color: #555; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .slide { padding: 30px 24px; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 26px; }
+  .card-grid.cols-3, .card-grid.cols-4, .card-grid.cols-5 { grid-template-columns: 1fr 1fr; }
+  .stat-num { font-size: 32px; }
+  .timeline { flex-wrap: wrap; }
+  .tl-item { flex: 0 0 33%; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress" style="width:0%"></div>
+<div id="counter">1 / 13</div>
+<button id="fs-btn" onclick="toggleFS()">⛶ FULLSCREEN</button>
+<div class="nav-arrow" id="nav-prev" onclick="go(-1)">‹</div>
+<div class="nav-arrow" id="nav-next" onclick="go(1)">›</div>
+
+<div class="deck">
+
+<!-- ============================================================
+     SLIDE 1 — COVER
+     ============================================================ -->
+<div class="slide active" id="s1">
+  <div class="grid-bg"></div>
+  <div>
+    <img src="../proposals/tm-logo.png" alt="TM Energy" class="cover-logo anim d1" onerror="this.style.display='none'">
+    <div class="slide-label anim d2">EV Charging & Fleet Strategy</div>
+    <h1 class="anim d3">TM Energy<br><span class="accent">EV Charging Network</span></h1>
+    <div class="cover-line anim d4"></div>
+    <div class="subtitle anim d5 heb" style="direction:rtl">תשתית טעינה ושירותי ציי רכב חשמלי — קו פנגן, תאילנד</div>
+    <div class="cover-meta anim d6">March 2026 &nbsp;|&nbsp; Investor & Partner Deck &nbsp;|&nbsp; Confidential</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 2 — MARKET OVERVIEW
+     ============================================================ -->
+<div class="slide" id="s2">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Market Overview</div>
+  <h2 class="anim d2"><span class="heb">שוק ה-EV בתאילנד</span> — Explosive Growth</h2>
+  <p class="subtitle anim d3">Thailand's 30@30 policy: 30% of production will be EVs by 2030</p>
+
+  <div class="stat-row anim d4">
+    <div class="stat-box">
+      <div class="stat-num">150K+</div>
+      <div class="stat-desc">EVs registered in 2025</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num gold-num">112%</div>
+      <div class="stat-desc">YoY growth rate</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">725K</div>
+      <div class="stat-desc">Target by 2030</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num gold-num">$3.2B</div>
+      <div class="stat-desc">Gov't incentive budget</div>
+    </div>
+  </div>
+
+  <div class="bar-chart anim d5" style="max-width:700px">
+    <div class="bar-row">
+      <div class="bar-label">2022</div>
+      <div class="bar-track"><div class="bar-fill" style="--w:12%">9,678</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">2023</div>
+      <div class="bar-track"><div class="bar-fill" style="--w:35%">52,581</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">2024</div>
+      <div class="bar-track"><div class="bar-fill gold-bar" style="--w:55%">91,000</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">2025</div>
+      <div class="bar-track"><div class="bar-fill" style="--w:75%">150,000+</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">2030 (target)</div>
+      <div class="bar-track"><div class="bar-fill gold-bar" style="--w:100%">725,000</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 3 — WHY KOH PHANGAN
+     ============================================================ -->
+<div class="slide" id="s3">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Opportunity</div>
+  <h2 class="anim d2"><span class="heb">למה קו פנגן?</span></h2>
+  <p class="subtitle anim d3">Zero EV infrastructure on an island with massive tourism & growing local demand</p>
+
+  <div class="card-grid cols-4 anim d4">
+    <div class="card" style="text-align:center">
+      <div style="font-size:36px;margin-bottom:8px">🏝️</div>
+      <h3 style="font-size:18px">Island Scale</h3>
+      <div class="stat-num" style="font-size:28px;margin:8px 0">167 km²</div>
+      <div class="stat-desc">Perfect EV range — entire island drivable on single charge</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:36px;margin-bottom:8px">✈️</div>
+      <h3 style="font-size:18px">Tourists/Year</h3>
+      <div class="stat-num gold-num" style="font-size:28px;margin:8px 0">1M+</div>
+      <div class="stat-desc">Growing eco-conscious traveler segment</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:36px;margin-bottom:8px">⚡</div>
+      <h3 style="font-size:18px">Competition</h3>
+      <div class="stat-num" style="font-size:28px;margin:8px 0;color:var(--red)">0</div>
+      <div class="stat-desc">Zero public EV chargers — first mover advantage</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:36px;margin-bottom:8px">☀️</div>
+      <h3 style="font-size:18px">Solar Potential</h3>
+      <div class="stat-num gold-num" style="font-size:28px;margin:8px 0">5.2h</div>
+      <div class="stat-desc">Avg peak sun hours — ideal for solar-powered charging</div>
+    </div>
+  </div>
+
+  <div class="card anim d5" style="margin-top:20px;border-color:var(--green);background:var(--green-glow)">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="font-size:28px">🎯</div>
+      <div>
+        <strong class="accent">First-Mover Lock-in:</strong> Secure prime locations before competition arrives.
+        <span style="color:var(--gray-light)">Once established, switching costs & brand recognition create lasting moat.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 4 — 5 STATION LOCATIONS
+     ============================================================ -->
+<div class="slide" id="s4">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Network Plan</div>
+  <h2 class="anim d2"><span class="heb">5 תחנות טעינה</span> — Island Coverage</h2>
+  <p class="subtitle anim d3">Strategic placement covers 100% of population centers & tourist hotspots</p>
+
+  <div class="card-grid cols-5 anim d4">
+    <div class="card" style="text-align:center;padding:20px 14px">
+      <div class="loc-icon" style="margin:0 auto 12px">🎆</div>
+      <h3 style="font-size:15px;margin-bottom:6px">Haad Rin</h3>
+      <div style="font-size:11px;color:var(--gray-light);margin-bottom:10px">Full Moon Party zone</div>
+      <div style="font-size:11px;color:var(--green);font-weight:700">2× DC Fast</div>
+      <div style="font-size:11px;color:var(--gray)">High tourist traffic</div>
+      <div style="font-size:11px;color:var(--gold);font-weight:600;margin-top:6px">Priority: #1</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px 14px">
+      <div class="loc-icon" style="margin:0 auto 12px;background:linear-gradient(135deg,var(--gold),var(--gold-dim))">🏘️</div>
+      <h3 style="font-size:15px;margin-bottom:6px">Thong Sala</h3>
+      <div style="font-size:11px;color:var(--gray-light);margin-bottom:10px">Main port & town center</div>
+      <div style="font-size:11px;color:var(--green);font-weight:700">2× DC + 4× AC</div>
+      <div style="font-size:11px;color:var(--gray)">Hub station</div>
+      <div style="font-size:11px;color:var(--gold);font-weight:600;margin-top:6px">Priority: #1</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px 14px">
+      <div class="loc-icon" style="margin:0 auto 12px">🏖️</div>
+      <h3 style="font-size:15px;margin-bottom:6px">Baan Tai</h3>
+      <div style="font-size:11px;color:var(--gray-light);margin-bottom:10px">Beach road corridor</div>
+      <div style="font-size:11px;color:var(--green);font-weight:700">2× AC + 1× DC</div>
+      <div style="font-size:11px;color:var(--gray)">Mid-island coverage</div>
+      <div style="font-size:11px;color:var(--gold);font-weight:600;margin-top:6px">Priority: #2</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px 14px">
+      <div class="loc-icon" style="margin:0 auto 12px">🧘</div>
+      <h3 style="font-size:15px;margin-bottom:6px">Srithanu</h3>
+      <div style="font-size:11px;color:var(--gray-light);margin-bottom:10px">Wellness & yoga hub</div>
+      <div style="font-size:11px;color:var(--green);font-weight:700">2× AC</div>
+      <div style="font-size:11px;color:var(--gray)">Eco-tourism audience</div>
+      <div style="font-size:11px;color:var(--gold);font-weight:600;margin-top:6px">Priority: #2</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px 14px">
+      <div class="loc-icon" style="margin:0 auto 12px">⛵</div>
+      <h3 style="font-size:15px;margin-bottom:6px">Chaloklum</h3>
+      <div style="font-size:11px;color:var(--gray-light);margin-bottom:10px">Northern fishing village</div>
+      <div style="font-size:11px;color:var(--green);font-weight:700">2× AC</div>
+      <div style="font-size:11px;color:var(--gray)">North coverage</div>
+      <div style="font-size:11px;color:var(--gold);font-weight:600;margin-top:6px">Priority: #3</div>
+    </div>
+  </div>
+
+  <div class="stat-row anim d5" style="margin-top:24px">
+    <div class="stat-box"><div class="stat-num" style="font-size:28px">5</div><div class="stat-desc">Locations</div></div>
+    <div class="stat-box"><div class="stat-num gold-num" style="font-size:28px">15</div><div class="stat-desc">Charge Points</div></div>
+    <div class="stat-box"><div class="stat-num" style="font-size:28px">100%</div><div class="stat-desc">Island Coverage</div></div>
+    <div class="stat-box"><div class="stat-num gold-num" style="font-size:28px">&lt;15 min</div><div class="stat-desc">Drive to nearest</div></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 5 — HARDWARE OPTIONS
+     ============================================================ -->
+<div class="slide" id="s5">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Hardware</div>
+  <h2 class="anim d2"><span class="heb">אפשרויות חומרה</span> — AC vs DC</h2>
+
+  <div class="card-grid cols-2 anim d3" style="margin-bottom:24px">
+    <div class="card vs-card">
+      <h3>AC Charger <span style="color:var(--gray);font-size:14px;font-weight:400">(Level 2)</span></h3>
+      <div style="height:3px;width:50px;background:var(--blue);margin:12px 0"></div>
+      <table class="data-table" style="font-size:13px">
+        <tr><td style="color:var(--gray-light)">Power</td><td><strong>7–22 kW</strong></td></tr>
+        <tr><td style="color:var(--gray-light)">Charge time</td><td>4–8 hours (full)</td></tr>
+        <tr><td style="color:var(--gray-light)">Cost/unit</td><td><strong class="accent">$800 – $2,500</strong></td></tr>
+        <tr><td style="color:var(--gray-light)">Install cost</td><td>$500 – $1,000</td></tr>
+        <tr><td style="color:var(--gray-light)">Best for</td><td>Hotels, restaurants, overnight</td></tr>
+        <tr><td style="color:var(--gray-light)">Brand</td><td>ABB, Schneider, Chinese OEM</td></tr>
+      </table>
+    </div>
+    <div class="card vs-card highlight">
+      <div class="vs-badge">Recommended</div>
+      <h3>DC Fast Charger <span style="color:var(--gray);font-size:14px;font-weight:400">(Level 3)</span></h3>
+      <div style="height:3px;width:50px;background:var(--green);margin:12px 0"></div>
+      <table class="data-table" style="font-size:13px">
+        <tr><td style="color:var(--gray-light)">Power</td><td><strong>30–120 kW</strong></td></tr>
+        <tr><td style="color:var(--gray-light)">Charge time</td><td>20–60 min (80%)</td></tr>
+        <tr><td style="color:var(--gray-light)">Cost/unit</td><td><strong class="accent">$15,000 – $40,000</strong></td></tr>
+        <tr><td style="color:var(--gray-light)">Install cost</td><td>$3,000 – $8,000</td></tr>
+        <tr><td style="color:var(--gray-light)">Best for</td><td>Public stations, fleet ops</td></tr>
+        <tr><td style="color:var(--gray-light)">Brand</td><td>Autel, Star Charge, EVSE</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card anim d4" style="border-color:var(--gold);background:rgba(255,184,0,0.06)">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="font-size:28px">💡</div>
+      <div>
+        <strong class="gold">Recommended Mix:</strong> 5× DC Fast (60kW) for hubs + 10× AC (22kW) for destination.
+        <span style="color:var(--gray-light)">Total hardware CAPEX: ~$100,000–$135,000 (Chinese OEM pricing).</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 6 — SOLAR + EV SYNERGY
+     ============================================================ -->
+<div class="slide" id="s6">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Synergy</div>
+  <h2 class="anim d2"><span class="heb">סינרגיה סולארית</span> — Solar + EV</h2>
+  <p class="subtitle anim d3">TM Energy's solar expertise = lowest-cost charging on the island</p>
+
+  <div class="energy-flow anim d4">
+    <div class="ef-box ef-solar">☀️ Solar Panels<br><small>50–100 kWp per site</small></div>
+    <div class="ef-arrow">→</div>
+    <div class="ef-box ef-battery">🔋 Battery Storage<br><small>100–200 kWh buffer</small></div>
+    <div class="ef-arrow">→</div>
+    <div class="ef-box ef-charger">⚡ EV Chargers<br><small>DC Fast + AC L2</small></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 8px">
+      <div class="ef-arrow">↑</div>
+      <div style="font-size:10px;color:var(--gray)">Backup</div>
+    </div>
+    <div class="ef-box ef-grid">🔌 Grid Power<br><small>PEA connection</small></div>
+  </div>
+
+  <div class="card-grid cols-3 anim d5" style="margin-top:20px">
+    <div class="card" style="text-align:center">
+      <div class="stat-num" style="font-size:28px">60–80%</div>
+      <div class="stat-desc">Solar self-consumption ratio</div>
+      <div style="margin-top:8px;font-size:12px;color:var(--green)">Grid cost offset</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div class="stat-num gold-num" style="font-size:28px">฿1.5</div>
+      <div class="stat-desc">Solar LCOE per kWh</div>
+      <div style="margin-top:8px;font-size:12px;color:var(--gray)">vs ฿4.5 grid rate</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div class="stat-num" style="font-size:28px">70%</div>
+      <div class="stat-desc">Margin on energy sold</div>
+      <div style="margin-top:8px;font-size:12px;color:var(--gold)">Solar-powered pricing</div>
+    </div>
+  </div>
+
+  <div class="card anim d6" style="margin-top:16px;border-color:var(--green)">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="font-size:28px">🌿</div>
+      <div>
+        <strong class="accent">Green Premium:</strong> 100% solar-powered charging = premium pricing + ESG appeal for eco-tourism.
+        Charge at ฿8–12/kWh vs ฿5–7 mainland — tourists & businesses pay for convenience.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 7 — BUSINESS MODEL
+     ============================================================ -->
+<div class="slide" id="s7">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Business Model</div>
+  <h2 class="anim d2"><span class="heb">מודל עסקי</span></h2>
+
+  <div class="flow anim d3">
+    <div class="flow-node ef-solar">☀️ Solar<br>Generation</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node green-node">⚡ EV Charging<br>฿8–12/kWh</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node gold-node">💰 Revenue<br>Per Session</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="border-color:var(--green)">📈 Scale<br>& Expand</div>
+  </div>
+
+  <div class="card-grid cols-2 anim d4" style="margin-top:20px">
+    <div class="card">
+      <h3 style="color:var(--green);margin-bottom:16px">Revenue Streams</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+        <div style="display:flex;justify-content:space-between"><span>⚡ Charging fees (per kWh)</span><strong class="accent">60%</strong></div>
+        <div style="display:flex;justify-content:space-between"><span>🚗 EV fleet rental</span><strong class="accent">25%</strong></div>
+        <div style="display:flex;justify-content:space-between"><span>🤝 Partnership commissions</span><strong class="accent">10%</strong></div>
+        <div style="display:flex;justify-content:space-between"><span>📊 Data & advertising</span><strong class="accent">5%</strong></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--gold);margin-bottom:16px">Pricing Strategy</h3>
+      <table class="data-table" style="font-size:13px">
+        <tr><td>DC Fast Charging</td><td style="text-align:right"><strong>฿10–12/kWh</strong></td></tr>
+        <tr><td>AC Destination</td><td style="text-align:right"><strong>฿8–9/kWh</strong></td></tr>
+        <tr><td>Fleet (bulk rate)</td><td style="text-align:right"><strong>฿6–7/kWh</strong></td></tr>
+        <tr><td>Idle fee (>30min)</td><td style="text-align:right"><strong>฿5/min</strong></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card-grid cols-2 anim d5" style="margin-top:16px">
+    <div class="card" style="border-color:var(--green)">
+      <h3 style="font-size:16px">✅ Own & Operate</h3>
+      <div style="font-size:13px;color:var(--gray-light);margin-top:8px">
+        Full CAPEX investment → 100% revenue → higher risk, higher reward<br>
+        <strong class="accent">Best for: Thong Sala & Haad Rin hubs</strong>
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--gold)">
+      <h3 style="font-size:16px">🤝 Revenue Share Partnership</h3>
+      <div style="font-size:13px;color:var(--gray-light);margin-top:8px">
+        Host provides location + power → TM provides hardware → 70/30 split<br>
+        <strong class="gold">Best for: Hotels, malls, satellite locations</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 8 — FINANCIAL PROJECTIONS
+     ============================================================ -->
+<div class="slide" id="s8">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Financials</div>
+  <h2 class="anim d2"><span class="heb">תחזית פיננסית</span> — 5 Year Model</h2>
+
+  <div class="card-grid cols-2 anim d3">
+    <div class="card">
+      <h3 style="color:var(--green);font-size:16px;margin-bottom:12px">CAPEX Breakdown</h3>
+      <table class="data-table" style="font-size:13px">
+        <tr><td>DC Fast Chargers (5×)</td><td style="text-align:right">$100,000</td></tr>
+        <tr><td>AC Chargers (10×)</td><td style="text-align:right">$18,000</td></tr>
+        <tr><td>Solar + Battery</td><td style="text-align:right">$120,000</td></tr>
+        <tr><td>Installation & Civil</td><td style="text-align:right">$35,000</td></tr>
+        <tr><td>Software & Network</td><td style="text-align:right">$12,000</td></tr>
+        <tr><td>Permits & Legal</td><td style="text-align:right">$5,000</td></tr>
+        <tr style="border-top:2px solid var(--green)"><td><strong>Total CAPEX</strong></td><td style="text-align:right"><strong class="accent">$290,000</strong></td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--gold);font-size:16px;margin-bottom:12px">Annual OPEX</h3>
+      <table class="data-table" style="font-size:13px">
+        <tr><td>Grid electricity (backup)</td><td style="text-align:right">$8,000</td></tr>
+        <tr><td>Maintenance & Parts</td><td style="text-align:right">$6,000</td></tr>
+        <tr><td>Software / OCPP</td><td style="text-align:right">$3,600</td></tr>
+        <tr><td>Insurance</td><td style="text-align:right">$2,400</td></tr>
+        <tr><td>Staff (1 technician)</td><td style="text-align:right">$9,600</td></tr>
+        <tr style="border-top:2px solid var(--gold)"><td><strong>Total OPEX/yr</strong></td><td style="text-align:right"><strong class="gold">$29,600</strong></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="anim d4" style="margin-top:20px">
+    <h3 style="font-size:16px;margin-bottom:14px">Revenue Projections (Charging Only)</h3>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">Year 1</div>
+        <div class="bar-track"><div class="bar-fill" style="--w:20%"><span style="padding-left:6px">$38,000</span></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Year 2</div>
+        <div class="bar-track"><div class="bar-fill" style="--w:40%"><span style="padding-left:6px">$72,000</span></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Year 3</div>
+        <div class="bar-track"><div class="bar-fill gold-bar" style="--w:60%"><span style="padding-left:6px">$115,000</span></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Year 4</div>
+        <div class="bar-track"><div class="bar-fill" style="--w:80%"><span style="padding-left:6px">$158,000</span></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Year 5</div>
+        <div class="bar-track"><div class="bar-fill gold-bar" style="--w:100%"><span style="padding-left:6px">$210,000</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-row anim d5" style="margin-top:16px">
+    <div class="stat-box"><div class="stat-num" style="font-size:26px">3.2 yr</div><div class="stat-desc">Payback Period</div></div>
+    <div class="stat-box"><div class="stat-num gold-num" style="font-size:26px">38%</div><div class="stat-desc">IRR</div></div>
+    <div class="stat-box"><div class="stat-num" style="font-size:26px">$593K</div><div class="stat-desc">5yr Revenue</div></div>
+    <div class="stat-box"><div class="stat-num gold-num" style="font-size:26px">2.0×</div><div class="stat-desc">MOIC</div></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 9 — CHINESE EV FLEET
+     ============================================================ -->
+<div class="slide" id="s9">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Fleet Strategy</div>
+  <h2 class="anim d2"><span class="heb">צי רכב חשמלי סיני</span></h2>
+  <p class="subtitle anim d3">Best-value EVs for island operations — range, durability, cost</p>
+
+  <div class="card-grid cols-3 anim d4">
+    <div class="card highlight" style="text-align:center">
+      <div style="font-size:40px;margin-bottom:8px">🐬</div>
+      <h3>BYD Dolphin</h3>
+      <div style="height:2px;width:40px;background:var(--green);margin:10px auto"></div>
+      <table class="data-table" style="font-size:12px;text-align:left">
+        <tr><td style="color:var(--gray-light)">Range</td><td>420 km</td></tr>
+        <tr><td style="color:var(--gray-light)">Battery</td><td>44.9 kWh (LFP)</td></tr>
+        <tr><td style="color:var(--gray-light)">Power</td><td>70 kW / 180 Nm</td></tr>
+        <tr><td style="color:var(--gray-light)">China price</td><td>~$14,500</td></tr>
+        <tr><td style="color:var(--gray-light)">Landed cost</td><td><strong class="accent">~$22,000</strong></td></tr>
+        <tr><td style="color:var(--gray-light)">Ideal for</td><td>Rental fleet</td></tr>
+      </table>
+      <div style="margin-top:10px;padding:4px 10px;background:var(--green);color:var(--navy);border-radius:6px;font-size:11px;font-weight:700;display:inline-block">TOP PICK</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:40px;margin-bottom:8px">🐱</div>
+      <h3>ORA Good Cat</h3>
+      <div style="height:2px;width:40px;background:var(--gold);margin:10px auto"></div>
+      <table class="data-table" style="font-size:12px;text-align:left">
+        <tr><td style="color:var(--gray-light)">Range</td><td>400 km</td></tr>
+        <tr><td style="color:var(--gray-light)">Battery</td><td>47.8 kWh (NMC)</td></tr>
+        <tr><td style="color:var(--gray-light)">Power</td><td>105 kW / 210 Nm</td></tr>
+        <tr><td style="color:var(--gray-light)">China price</td><td>~$15,800</td></tr>
+        <tr><td style="color:var(--gray-light)">Landed cost</td><td><strong class="gold">~$24,000</strong></td></tr>
+        <tr><td style="color:var(--gray-light)">Ideal for</td><td>Premium rental</td></tr>
+      </table>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:40px;margin-bottom:8px">🏎️</div>
+      <h3>MG4 Electric</h3>
+      <div style="height:2px;width:40px;background:var(--blue);margin:10px auto"></div>
+      <table class="data-table" style="font-size:12px;text-align:left">
+        <tr><td style="color:var(--gray-light)">Range</td><td>450 km</td></tr>
+        <tr><td style="color:var(--gray-light)">Battery</td><td>51 kWh (LFP)</td></tr>
+        <tr><td style="color:var(--gray-light)">Power</td><td>125 kW / 250 Nm</td></tr>
+        <tr><td style="color:var(--gray-light)">China price</td><td>~$16,500</td></tr>
+        <tr><td style="color:var(--gray-light)">Landed cost</td><td><strong style="color:var(--blue)">~$25,500</strong></td></tr>
+        <tr><td style="color:var(--gray-light)">Ideal for</td><td>Performance tier</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card anim d5" style="margin-top:16px">
+    <div style="display:flex;gap:24px;font-size:13px;flex-wrap:wrap">
+      <div><strong class="accent">Fleet size (Phase 1):</strong> 10 vehicles</div>
+      <div><strong class="gold">Daily rental:</strong> ฿1,200–1,800/day</div>
+      <div><strong class="accent">Utilization target:</strong> 70%</div>
+      <div><strong class="gold">Monthly revenue/car:</strong> ~฿25,000</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 10 — IMPORT PROCESS
+     ============================================================ -->
+<div class="slide" id="s10">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Import Process</div>
+  <h2 class="anim d2"><span class="heb">תהליך ייבוא</span> — China → Thailand</h2>
+  <p class="subtitle anim d3">End-to-end vehicle import with EV incentive benefits</p>
+
+  <div class="flow anim d4" style="flex-wrap:wrap;gap:8px">
+    <div class="flow-node" style="min-width:140px">
+      <div style="font-size:22px;margin-bottom:4px">🏭</div>
+      <strong style="font-size:12px">1. Source</strong><br>
+      <span style="font-size:11px;color:var(--gray-light)">Select models<br>Factory order</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="min-width:140px">
+      <div style="font-size:22px;margin-bottom:4px">🚢</div>
+      <strong style="font-size:12px">2. Ship</strong><br>
+      <span style="font-size:11px;color:var(--gray-light)">RoRo shipping<br>4–6 weeks</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="min-width:140px">
+      <div style="font-size:22px;margin-bottom:4px">📋</div>
+      <strong style="font-size:12px">3. Customs</strong><br>
+      <span style="font-size:11px;color:var(--gray-light)">Laem Chabang port<br>0–8% EV duty</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="min-width:140px">
+      <div style="font-size:22px;margin-bottom:4px">🔍</div>
+      <strong style="font-size:12px">4. Inspect</strong><br>
+      <span style="font-size:11px;color:var(--gray-light)">DLT inspection<br>Safety cert</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="min-width:140px">
+      <div style="font-size:22px;margin-bottom:4px">📝</div>
+      <strong style="font-size:12px">5. Register</strong><br>
+      <span style="font-size:11px;color:var(--gray-light)">Green plates<br>EV excise exempt</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node green-node" style="min-width:140px">
+      <div style="font-size:22px;margin-bottom:4px">🛣️</div>
+      <strong style="font-size:12px">6. Road</strong><br>
+      <span style="font-size:11px;color:var(--gray-light)">Ferry to island<br>Fleet deploy</span>
+    </div>
+  </div>
+
+  <div class="card-grid cols-2 anim d5" style="margin-top:24px">
+    <div class="card">
+      <h3 style="font-size:16px;color:var(--green);margin-bottom:10px">Timeline</h3>
+      <div style="font-size:14px;display:flex;flex-direction:column;gap:6px">
+        <div>Order to factory: <strong>2–4 weeks</strong></div>
+        <div>Shipping: <strong>4–6 weeks</strong></div>
+        <div>Customs & inspection: <strong>2–3 weeks</strong></div>
+        <div>Registration: <strong>1–2 weeks</strong></div>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:6px;color:var(--green)"><strong>Total: 10–15 weeks</strong></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:16px;color:var(--gold);margin-bottom:10px">EV Import Incentives</h3>
+      <div style="font-size:14px;display:flex;flex-direction:column;gap:6px">
+        <div>Import duty: <strong>0% (RCEP/ACFTA)</strong></div>
+        <div>Excise tax: <strong>2% (vs 30% ICE)</strong></div>
+        <div>Subsidy: <strong>฿70,000–150,000/car</strong></div>
+        <div>Road tax: <strong>Reduced</strong></div>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:6px;color:var(--gold)"><strong>Save ~35% vs ICE import</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 11 — RISK & MITIGATION
+     ============================================================ -->
+<div class="slide" id="s11">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Risk Analysis</div>
+  <h2 class="anim d2"><span class="heb">סיכונים ומענה</span></h2>
+
+  <div class="anim d3" style="display:flex;flex-direction:column;gap:14px;max-width:900px">
+    <div class="risk-row">
+      <div class="risk-badge risk-high">HIGH</div>
+      <div>
+        <div class="risk-text"><strong>Grid Power Reliability</strong> — Island grid can be unstable</div>
+        <div class="risk-mitigation">→ Solar + battery buffer provides 80% energy independence. UPS for critical systems.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-badge risk-high">HIGH</div>
+      <div>
+        <div class="risk-text"><strong>Low Initial Demand</strong> — Few EVs on island currently</div>
+        <div class="risk-mitigation">→ Fleet rental creates guaranteed demand. Phase deployment with demand growth.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-badge risk-med">MED</div>
+      <div>
+        <div class="risk-text"><strong>Regulatory Changes</strong> — EV incentive policies may shift</div>
+        <div class="risk-mitigation">→ Front-load imports while subsidies active. BOI promotion application for tax benefits.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-badge risk-med">MED</div>
+      <div>
+        <div class="risk-text"><strong>Competition Entry</strong> — National chains (EA, PTT) may expand</div>
+        <div class="risk-mitigation">→ First-mover advantage + location lock-in + solar cost edge. Brand loyalty program.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-badge risk-med">MED</div>
+      <div>
+        <div class="risk-text"><strong>Tropical Climate Wear</strong> — Heat, humidity, salt air</div>
+        <div class="risk-mitigation">→ Marine-grade enclosures. IP65+ rated equipment. Quarterly maintenance schedule.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-badge risk-low">LOW</div>
+      <div>
+        <div class="risk-text"><strong>Currency Fluctuation</strong> — THB/USD/CNY exposure</div>
+        <div class="risk-mitigation">→ Revenue in THB, costs mostly in THB. CNY exposure only at import time.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-badge risk-low">LOW</div>
+      <div>
+        <div class="risk-text"><strong>Technology Obsolescence</strong> — Charger standards evolving</div>
+        <div class="risk-mitigation">→ CCS2/GB/T dual-standard chargers. Modular design allows upgrades.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 12 — 6-MONTH ROADMAP
+     ============================================================ -->
+<div class="slide" id="s12">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Roadmap</div>
+  <h2 class="anim d2"><span class="heb">תוכנית 6 חודשים</span></h2>
+  <p class="subtitle anim d3">From approval to first customer — phased execution</p>
+
+  <div class="timeline anim d4" style="margin-top:30px">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-month">Month 1</div>
+        <div class="tl-text"><strong>Foundation</strong><br>Entity setup<br>Site agreements<br>Permit applications<br>Hardware orders</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-month">Month 2</div>
+        <div class="tl-text"><strong>Build</strong><br>Solar installation<br>Civil works<br>Grid connections<br>EV fleet ordered</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot gold-dot"></div>
+      <div class="tl-content">
+        <div class="tl-month" style="color:var(--gold)">Month 3</div>
+        <div class="tl-text"><strong>Phase 1 Launch</strong><br>Thong Sala + Haad Rin<br>2 DC + 4 AC live<br>Soft launch</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-month">Month 4</div>
+        <div class="tl-text"><strong>Fleet Arrival</strong><br>First 5 EVs delivered<br>Rental ops begin<br>App & payments live</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-month">Month 5</div>
+        <div class="tl-text"><strong>Phase 2 Expand</strong><br>Baan Tai + Srithanu<br>Partnership stations<br>Marketing push</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot gold-dot"></div>
+      <div class="tl-content">
+        <div class="tl-month" style="color:var(--gold)">Month 6</div>
+        <div class="tl-text"><strong>Full Network</strong><br>All 5 stations live<br>10 EVs in fleet<br>Revenue optimization</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-grid cols-3 anim d5" style="margin-top:30px">
+    <div class="card" style="text-align:center;border-color:var(--green)">
+      <div style="font-size:13px;color:var(--green);font-weight:700;margin-bottom:4px">Phase 1 — Month 3</div>
+      <div style="font-size:12px;color:var(--gray-light)">2 stations, first revenue</div>
+    </div>
+    <div class="card" style="text-align:center;border-color:var(--gold)">
+      <div style="font-size:13px;color:var(--gold);font-weight:700;margin-bottom:4px">Phase 2 — Month 5</div>
+      <div style="font-size:12px;color:var(--gray-light)">4 stations + fleet ops</div>
+    </div>
+    <div class="card" style="text-align:center;border-color:var(--green)">
+      <div style="font-size:13px;color:var(--green);font-weight:700;margin-bottom:4px">Full Network — Month 6</div>
+      <div style="font-size:12px;color:var(--gray-light)">5 stations, 10 EVs, full ops</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 13 — SUMMARY & NEXT STEPS
+     ============================================================ -->
+<div class="slide" id="s13">
+  <div class="grid-bg"></div>
+  <div class="slide-label anim d1">Summary</div>
+  <h2 class="anim d2"><span class="heb">סיכום והצעדים הבאים</span></h2>
+
+  <div class="stat-row anim d3" style="margin-bottom:24px">
+    <div class="stat-box">
+      <div class="stat-num" style="font-size:30px">$290K</div>
+      <div class="stat-desc">Total Investment</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num gold-num" style="font-size:30px">3.2 yr</div>
+      <div class="stat-desc">Payback</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" style="font-size:30px">38%</div>
+      <div class="stat-desc">IRR</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num gold-num" style="font-size:30px">5</div>
+      <div class="stat-desc">Stations</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" style="font-size:30px">10</div>
+      <div class="stat-desc">Fleet Vehicles</div>
+    </div>
+  </div>
+
+  <div class="card-grid cols-2 anim d4">
+    <div class="card" style="border-color:var(--green)">
+      <h3 style="color:var(--green);font-size:16px;margin-bottom:12px">🎯 Why Now</h3>
+      <ul style="font-size:13px;color:var(--gray-light);list-style:none;display:flex;flex-direction:column;gap:8px">
+        <li>✅ Zero competition on Koh Phangan</li>
+        <li>✅ Thai EV market growing 100%+ YoY</li>
+        <li>✅ Government subsidies active through 2027</li>
+        <li>✅ Solar synergy = unbeatable unit economics</li>
+        <li>✅ Island scale = achievable with modest CAPEX</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:var(--gold)">
+      <h3 style="color:var(--gold);font-size:16px;margin-bottom:12px">📋 Next Steps</h3>
+      <ol style="font-size:13px;color:var(--gray-light);padding-left:16px;display:flex;flex-direction:column;gap:8px">
+        <li>Partner/investor alignment meeting</li>
+        <li>Site visits & landlord negotiations</li>
+        <li>BOI application filing</li>
+        <li>Hardware vendor final selection & PO</li>
+        <li>Entity registration (Thai company)</li>
+        <li>Phase 1 construction kickoff</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card anim d5" style="margin-top:20px;background:linear-gradient(135deg, rgba(0,214,143,0.08), rgba(255,184,0,0.08));border-color:var(--green);text-align:center;padding:28px">
+    <div style="font-size:20px;font-weight:800;margin-bottom:6px">TM Energy</div>
+    <div style="font-size:14px;color:var(--gray-light);margin-bottom:12px">Powering the future of island mobility</div>
+    <div style="display:flex;justify-content:center;gap:32px;font-size:13px">
+      <div><span class="accent">Email:</span> info@tm.energy</div>
+      <div><span class="gold">Web:</span> tm.energy</div>
+      <div><span class="accent">Location:</span> Koh Phangan, Thailand</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<script>
+/* ── Presentation Engine ── */
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let cur = 0;
+
+function showSlide(n, dir) {
+  if (n < 0 || n >= total) return;
+  const prev = slides[cur];
+  prev.classList.remove('active');
+  prev.classList.add(dir > 0 ? 'exit-left' : '');
+  setTimeout(() => prev.classList.remove('exit-left'), 500);
+
+  cur = n;
+  const next = slides[cur];
+  next.style.transform = dir > 0 ? 'translateX(60px)' : 'translateX(-60px)';
+  requestAnimationFrame(() => {
+    next.classList.add('active');
+  });
+
+  document.getElementById('progress').style.width = ((cur / (total - 1)) * 100) + '%';
+  document.getElementById('counter').textContent = (cur + 1) + ' / ' + total;
+}
+
+function go(dir) { showSlide(cur + dir, dir); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+  if (e.key === 'Home') { e.preventDefault(); showSlide(0, -1); }
+  if (e.key === 'End') { e.preventDefault(); showSlide(total - 1, 1); }
+  if (e.key === 'f' || e.key === 'F') toggleFS();
+});
+
+/* Touch support */
+let touchX = 0;
+document.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
+document.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchX;
+  if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+});
+
+function toggleFS() {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+}
+
+/* Init */
+document.getElementById('progress').style.width = '0%';
+</script>
+
+</body>
+</html>
