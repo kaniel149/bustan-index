@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Admin — TM Energy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-light: #101E32;
+      --navy-lighter: #162540;
+      --green: #00D68F;
+      --green-dim: rgba(0,214,143,.15);
+      --gold: #FFB800;
+      --gold-dim: rgba(255,184,0,.15);
+      --red: #FF4757;
+      --red-dim: rgba(255,71,87,.15);
+      --blue: #3B82F6;
+      --blue-dim: rgba(59,130,246,.15);
+      --text: #E8ECF4;
+      --text-dim: rgba(255,255,255,.5);
+      --glass: rgba(255,255,255,.04);
+      --glass-border: rgba(255,255,255,.08);
+      --radius: 12px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:var(--navy); color:var(--text); min-height:100vh; }
+
+    .header { background:var(--navy-light); border-bottom:1px solid var(--glass-border); padding:16px 32px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .header h1 { font-size:1.3rem; font-weight:600; }
+    .header h1 span { color:var(--green); }
+    .header-right { display:flex; gap:12px; align-items:center; }
+    .header-badge { background:var(--green-dim); color:var(--green); padding:4px 12px; border-radius:20px; font-size:.8rem; font-weight:600; }
+
+    .container { max-width:1400px; margin:0 auto; padding:24px; }
+
+    /* Stats Row */
+    .stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:32px; }
+    .stat-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); padding:20px; text-align:center; }
+    .stat-value { font-size:2.2rem; font-weight:700; color:var(--green); }
+    .stat-label { font-size:.8rem; color:var(--text-dim); margin-top:4px; text-transform:uppercase; letter-spacing:.5px; }
+
+    /* Quality Score */
+    .quality-meter { height:8px; background:rgba(255,255,255,.08); border-radius:4px; margin-top:8px; overflow:hidden; }
+    .quality-fill { height:100%; border-radius:4px; transition:width .5s ease; }
+
+    /* Track Section */
+    .track-section { margin-bottom:32px; }
+    .track-header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .track-header h2 { font-size:1.1rem; font-weight:600; }
+    .track-badge { font-size:.75rem; padding:3px 10px; border-radius:12px; font-weight:600; }
+    .track-badge.complete { background:var(--green-dim); color:var(--green); }
+    .track-badge.partial { background:var(--gold-dim); color:var(--gold); }
+
+    /* Lesson Table */
+    .lesson-table { width:100%; border-collapse:collapse; background:var(--glass); border-radius:var(--radius); overflow:hidden; border:1px solid var(--glass-border); }
+    .lesson-table th { text-align:left; padding:12px 16px; background:var(--navy-lighter); font-size:.75rem; text-transform:uppercase; letter-spacing:.5px; color:var(--text-dim); font-weight:600; }
+    .lesson-table td { padding:10px 16px; border-top:1px solid var(--glass-border); font-size:.85rem; }
+    .lesson-table tr:hover td { background:rgba(255,255,255,.02); }
+
+    .check { color:var(--green); }
+    .warn { color:var(--gold); }
+    .miss { color:var(--red); }
+    .chip { display:inline-block; padding:2px 8px; border-radius:8px; font-size:.75rem; font-weight:500; }
+    .chip-green { background:var(--green-dim); color:var(--green); }
+    .chip-gold { background:var(--gold-dim); color:var(--gold); }
+    .chip-red { background:var(--red-dim); color:var(--red); }
+    .chip-blue { background:var(--blue-dim); color:var(--blue); }
+
+    /* Improvement Plan */
+    .plan-section { margin-top:40px; }
+    .plan-section h2 { font-size:1.2rem; margin-bottom:16px; }
+    .plan-phase { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); margin-bottom:16px; overflow:hidden; }
+    .plan-phase-header { padding:16px 20px; display:flex; align-items:center; gap:12px; cursor:pointer; }
+    .plan-phase-header h3 { font-size:.95rem; font-weight:600; flex:1; }
+    .plan-phase-header .priority { font-size:.75rem; padding:3px 10px; border-radius:12px; font-weight:600; }
+    .priority-critical { background:var(--red-dim); color:var(--red); }
+    .priority-high { background:var(--gold-dim); color:var(--gold); }
+    .priority-medium { background:var(--blue-dim); color:var(--blue); }
+    .priority-low { background:var(--green-dim); color:var(--green); }
+    .plan-items { padding:0 20px 16px; }
+    .plan-item { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-top:1px solid var(--glass-border); font-size:.85rem; }
+    .plan-item:first-child { border-top:none; }
+    .plan-item input[type=checkbox] { margin-top:3px; accent-color:var(--green); }
+    .plan-item .scope { color:var(--text-dim); font-size:.75rem; }
+
+    /* Summary Bar */
+    .summary-bar { position:fixed; bottom:0; left:0; right:0; background:var(--navy-light); border-top:1px solid var(--glass-border); padding:12px 32px; display:flex; align-items:center; justify-content:space-between; z-index:100; }
+    .summary-bar .left { font-size:.85rem; color:var(--text-dim); }
+    .summary-bar .right { display:flex; gap:16px; }
+    .btn { padding:8px 20px; border-radius:8px; border:none; font-size:.8rem; font-weight:600; cursor:pointer; }
+    .btn-green { background:var(--green); color:var(--navy); }
+    .btn-outline { background:transparent; border:1px solid var(--glass-border); color:var(--text); }
+
+    @media(max-width:768px) {
+      .stats-row { grid-template-columns:1fr 1fr; }
+      .lesson-table { font-size:.75rem; }
+      .container { padding:16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <h1>🎓 <span>TM Energy</span> Academy Admin</h1>
+  <div class="header-right">
+    <span class="header-badge">17 Lessons</span>
+    <span class="header-badge">4 Tracks</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value" id="totalLessons">17</div>
+      <div class="stat-label">Total Lessons</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="totalSize">720</div>
+      <div class="stat-label">Total KB</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="avgScore">0</div>
+      <div class="stat-label">Avg Quality Score</div>
+      <div class="quality-meter"><div class="quality-fill" id="avgScoreBar" style="width:0%;background:var(--gold)"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="issueCount">0</div>
+      <div class="stat-label">Issues Found</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Languages</div>
+    </div>
+  </div>
+
+  <!-- Track 1: Solar Fundamentals -->
+  <div class="track-section">
+    <div class="track-header">
+      <span style="font-size:1.5rem">☀️</span>
+      <h2>Solar Fundamentals</h2>
+      <span class="track-badge complete">8 Lessons</span>
+    </div>
+    <table class="lesson-table" id="track-solar"></table>
+  </div>
+
+  <!-- Track 2: Sales & BD -->
+  <div class="track-section">
+    <div class="track-header">
+      <span style="font-size:1.5rem">💼</span>
+      <h2>Sales & Business Development</h2>
+      <span class="track-badge complete">3 Lessons</span>
+    </div>
+    <table class="lesson-table" id="track-sales"></table>
+  </div>
+
+  <!-- Track 3: Technical -->
+  <div class="track-section">
+    <div class="track-header">
+      <span style="font-size:1.5rem">⚡</span>
+      <h2>Technical Installation</h2>
+      <span class="track-badge complete">3 Lessons</span>
+    </div>
+    <table class="lesson-table" id="track-technical"></table>
+  </div>
+
+  <!-- Track 4: EV & Storage -->
+  <div class="track-section">
+    <div class="track-header">
+      <span style="font-size:1.5rem">🔋</span>
+      <h2>EV & Energy Storage</h2>
+      <span class="track-badge complete">3 Lessons</span>
+    </div>
+    <table class="lesson-table" id="track-ev"></table>
+  </div>
+
+  <!-- Improvement Plan -->
+  <div class="plan-section">
+    <h2>📋 Improvement Plan</h2>
+
+    <!-- Phase 1: Critical Fixes -->
+    <div class="plan-phase">
+      <div class="plan-phase-header">
+        <h3>Phase 1: Structural Consistency</h3>
+        <span class="priority priority-critical">CRITICAL</span>
+      </div>
+      <div class="plan-items">
+        <div class="plan-item"><input type="checkbox"><div>Add <code>&lt;section class="lesson-section"&gt;</code> wrappers to 14 lessons missing them<div class="scope">sf-01→08, sales-01→02, tech-01→02, ev-01→02</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add prev/next navigation buttons to 14 lessons<div class="scope">All except sf-03, sales-03, tech-03, ev-03 (already have them)</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Fix lesson-number counter: "Lesson X of 3" (not "of 10") in all lessons<div class="scope">sales-bd-01, sales-bd-02 say "of 10"</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Standardize footer: all lessons should have ©2026 TM Energy Academy footer<div class="scope">Verify all 17</div></div></div>
+      </div>
+    </div>
+
+    <!-- Phase 2: Content Gaps -->
+    <div class="plan-phase">
+      <div class="plan-phase-header">
+        <h3>Phase 2: Missing Media</h3>
+        <span class="priority priority-high">HIGH</span>
+      </div>
+      <div class="plan-items">
+        <div class="plan-item"><input type="checkbox"><div>Add YouTube videos to 7 lessons with 0 videos<div class="scope">sf-06, sf-07, sf-08, sales-03, tech-03, ev-01, ev-02, ev-03</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add images to 3 lessons with 0 images<div class="scope">sf-06, sf-07, sales-01, sales-02</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Generate 8+ new educational images via Gemini for new courses<div class="scope">Sales: customer persona, objection handling; Technical: AC wiring, mounting; EV: battery comparison, V2G diagram</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Validate all YouTube embeds load correctly (no Error 153)<div class="scope">Test all 24 video IDs in browser</div></div></div>
+      </div>
+    </div>
+
+    <!-- Phase 3: Interactive Elements -->
+    <div class="plan-phase">
+      <div class="plan-phase-header">
+        <h3>Phase 3: Interactive Enhancements</h3>
+        <span class="priority priority-high">HIGH</span>
+      </div>
+      <div class="plan-items">
+        <div class="plan-item"><input type="checkbox"><div>Add spec-tables to lessons that lack structured data<div class="scope">sf-01, sf-03, sf-04, sf-05→08, sales-01, sales-02, tech-01, tech-02, ev-01, ev-02</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add key-concept boxes to 14 lessons missing them<div class="scope">All subagent-built lessons lack key-concept divs</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add interactive calculators: ROI calculator (sales-03), string sizing calculator (tech-02), battery sizing calculator (ev-01)<div class="scope">New JS components</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add progress tracking to academy.js — localStorage persistence across sessions<div class="scope">Track completed lessons, quiz scores per user</div></div></div>
+      </div>
+    </div>
+
+    <!-- Phase 4: Content Quality -->
+    <div class="plan-phase">
+      <div class="plan-phase-header">
+        <h3>Phase 4: Content Quality & Accuracy</h3>
+        <span class="priority priority-medium">MEDIUM</span>
+      </div>
+      <div class="plan-items">
+        <div class="plan-item"><input type="checkbox"><div>Verify all Thai (TH) translations are natural and accurate<div class="scope">Get native Thai speaker review or use professional translation</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Update all PEA/ERC regulatory references to 2026 data<div class="scope">Buy-back rates, permit requirements, approved equipment lists</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add real TM Energy project photos to relevant lessons<div class="scope">Replace generic Gemini images with actual installation photos</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Review quiz questions for difficulty balance — aim for 70% pass rate<div class="scope">All 17 quizzes, ~68 total questions</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add Huawei SUN2000 datasheet specs to technical lessons<div class="scope">Real voltage ranges, current limits, MPPT specs</div></div></div>
+      </div>
+    </div>
+
+    <!-- Phase 5: UX & Design -->
+    <div class="plan-phase">
+      <div class="plan-phase-header">
+        <h3>Phase 5: UX & Design Polish</h3>
+        <span class="priority priority-medium">MEDIUM</span>
+      </div>
+      <div class="plan-items">
+        <div class="plan-item"><input type="checkbox"><div>Add reading time estimate to each lesson header<div class="scope">Calculate from word count: ~200 words/min</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add print/PDF export button to each lesson<div class="scope">CSS @media print styles + window.print() button</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Improve mobile responsiveness — test all 17 lessons at 375px width<div class="scope">Tables, images, video containers</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add dark/light mode toggle<div class="scope">CSS variables swap, localStorage preference</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Add scroll progress indicator (thin bar at top of page)<div class="scope">academy.js enhancement</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Animate fade-up on scroll for sections<div class="scope">IntersectionObserver in academy.js</div></div></div>
+      </div>
+    </div>
+
+    <!-- Phase 6: Advanced Features -->
+    <div class="plan-phase">
+      <div class="plan-phase-header">
+        <h3>Phase 6: Advanced Features</h3>
+        <span class="priority priority-low">FUTURE</span>
+      </div>
+      <div class="plan-items">
+        <div class="plan-item"><input type="checkbox"><div>Build Management course (Track 5) — 3 lessons<div class="scope">Project management, team leadership, compliance</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Employee progress dashboard — track who completed what<div class="scope">Supabase integration, user accounts</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Certificate generation — PDF certificate on course completion<div class="scope">Canvas API or html2pdf.js</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Exam mode — final test per track, timed, minimum 80% to pass<div class="scope">New exam.js component</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Subdomain setup: academy.energy-tm.com → GitHub Pages<div class="scope">CNAME record + GitHub Pages config</div></div></div>
+        <div class="plan-item"><input type="checkbox"><div>Search functionality — search across all lesson content<div class="scope">Client-side full-text search index</div></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="summary-bar">
+  <div class="left">Last updated: <span id="lastUpdate"></span></div>
+  <div class="right">
+    <button class="btn btn-outline" onclick="location.href='index.html'">← Academy</button>
+    <button class="btn btn-green" onclick="runAudit()">🔄 Run Audit</button>
+  </div>
+</div>
+
+<script>
+const lessons = [
+  // Solar Fundamentals
+  { id:'sf-01', track:'solar', file:'solar-fundamentals-01.html', title:'What is Solar Energy?', kb:33, images:1, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sf-02', track:'solar', file:'solar-fundamentals-02.html', title:'Solar Panel Types & Technology', kb:28, images:2, videos:1, quiz:4, tables:1, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sf-03', track:'solar', file:'solar-fundamentals-03.html', title:'System Components', kb:36, images:1, videos:3, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sf-04', track:'solar', file:'solar-fundamentals-04.html', title:'System Types & Grid Connection', kb:35, images:1, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sf-05', track:'solar', file:'solar-fundamentals-05.html', title:'Site Assessment & Shading', kb:46, images:3, videos:6, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sf-06', track:'solar', file:'solar-fundamentals-06.html', title:'System Sizing & Design', kb:49, images:0, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sf-07', track:'solar', file:'solar-fundamentals-07.html', title:'Energy Economics', kb:46, images:0, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sf-08', track:'solar', file:'solar-fundamentals-08.html', title:'Maintenance & Monitoring', kb:43, images:1, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:false, kc:false },
+
+  // Sales
+  { id:'sales-01', track:'sales', file:'sales-bd-01.html', title:'Understanding the Solar Customer', kb:45, images:0, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sales-02', track:'sales', file:'sales-bd-02.html', title:'The Sales Process', kb:49, images:0, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'sales-03', track:'sales', file:'sales-bd-03.html', title:'Pricing, Proposals & Closing', kb:42, images:0, videos:0, quiz:4, tables:4, sections:6, nav:true, dyk:true, kc:true },
+
+  // Technical
+  { id:'tech-01', track:'technical', file:'technical-01.html', title:'Rooftop Mounting Systems', kb:53, images:1, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'tech-02', track:'technical', file:'technical-02.html', title:'DC Wiring & String Config', kb:43, images:2, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:false, kc:false },
+  { id:'tech-03', track:'technical', file:'technical-03.html', title:'Inverter Install & Commissioning', kb:40, images:2, videos:0, quiz:4, tables:3, sections:5, nav:true, dyk:true, kc:true },
+
+  // EV & Storage
+  { id:'ev-01', track:'ev', file:'ev-storage-01.html', title:'Battery Storage Fundamentals', kb:50, images:1, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'ev-02', track:'ev', file:'ev-storage-02.html', title:'EV Charging Basics', kb:46, images:2, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
+  { id:'ev-03', track:'ev', file:'ev-storage-03.html', title:'Solar+EV+Storage Integration', kb:34, images:1, videos:0, quiz:4, tables:4, sections:5, nav:true, dyk:false, kc:true },
+];
+
+function scoreLesson(l) {
+  let score = 0;
+  // Base content (40pts)
+  score += l.kb > 25 ? 10 : 5;
+  score += l.quiz >= 4 ? 15 : (l.quiz > 0 ? 8 : 0);
+  score += l.dyk ? 5 : 0;
+  score += l.kc ? 5 : 0;
+  score += l.sections > 0 ? 5 : 0;
+  // Media (30pts)
+  score += l.images >= 2 ? 15 : (l.images >= 1 ? 10 : 0);
+  score += l.videos >= 2 ? 15 : (l.videos >= 1 ? 10 : 0);
+  // Structure (20pts)
+  score += l.nav ? 10 : 0;
+  score += l.tables >= 2 ? 10 : (l.tables >= 1 ? 5 : 0);
+  // Trilingual bonus (10pts)
+  score += 10; // all have trilingual
+  return Math.min(score, 100);
+}
+
+function chipFor(val, good, warn) {
+  if (val >= good) return `<span class="chip chip-green">${val}</span>`;
+  if (val >= warn) return `<span class="chip chip-gold">${val}</span>`;
+  return `<span class="chip chip-red">${val}</span>`;
+}
+
+function boolChip(val) {
+  return val ? '<span class="check">✓</span>' : '<span class="miss">✗</span>';
+}
+
+function renderTrack(trackId, tableId) {
+  const trackLessons = lessons.filter(l => l.track === trackId);
+  const table = document.getElementById(tableId);
+  let html = `<thead><tr>
+    <th>Lesson</th><th>Title</th><th>KB</th><th>Imgs</th><th>Vids</th><th>Quiz</th><th>Tables</th><th>Sections</th><th>Nav</th><th>DYK</th><th>KC</th><th>Score</th>
+  </tr></thead><tbody>`;
+
+  trackLessons.forEach(l => {
+    const s = scoreLesson(l);
+    const scoreColor = s >= 80 ? 'var(--green)' : s >= 60 ? 'var(--gold)' : 'var(--red)';
+    html += `<tr>
+      <td><a href="courses/${l.file}" style="color:var(--green);text-decoration:none">${l.id}</a></td>
+      <td>${l.title}</td>
+      <td>${l.kb}</td>
+      <td>${chipFor(l.images,2,1)}</td>
+      <td>${chipFor(l.videos,2,1)}</td>
+      <td>${chipFor(l.quiz,4,2)}</td>
+      <td>${chipFor(l.tables,2,1)}</td>
+      <td>${chipFor(l.sections,3,1)}</td>
+      <td>${boolChip(l.nav)}</td>
+      <td>${boolChip(l.dyk)}</td>
+      <td>${boolChip(l.kc)}</td>
+      <td style="font-weight:700;color:${scoreColor}">${s}%</td>
+    </tr>`;
+  });
+
+  html += '</tbody>';
+  table.innerHTML = html;
+}
+
+function runAudit() {
+  renderTrack('solar', 'track-solar');
+  renderTrack('sales', 'track-sales');
+  renderTrack('technical', 'track-technical');
+  renderTrack('ev', 'track-ev');
+
+  // Compute stats
+  let totalScore = 0, issues = 0;
+  lessons.forEach(l => {
+    const s = scoreLesson(l);
+    totalScore += s;
+    if (!l.nav) issues++;
+    if (l.images === 0) issues++;
+    if (l.videos === 0) issues++;
+    if (l.sections === 0) issues++;
+    if (!l.kc) issues++;
+    if (l.tables === 0) issues++;
+    if (!l.dyk) issues++;
+  });
+
+  const avg = Math.round(totalScore / lessons.length);
+  document.getElementById('avgScore').textContent = avg + '%';
+  document.getElementById('issueCount').textContent = issues;
+  document.getElementById('avgScoreBar').style.width = avg + '%';
+  document.getElementById('avgScoreBar').style.background =
+    avg >= 80 ? 'var(--green)' : avg >= 60 ? 'var(--gold)' : 'var(--red)';
+
+  document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+
+  // Save checkbox state
+  document.querySelectorAll('.plan-item input[type=checkbox]').forEach((cb, i) => {
+    cb.checked = localStorage.getItem('plan-' + i) === 'true';
+    cb.addEventListener('change', () => localStorage.setItem('plan-' + i, cb.checked));
+  });
+}
+
+// Run on load
+runAudit();
+</script>
+
+</body>
+</html>
