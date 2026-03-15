@@ -1,6 +1,6 @@
 # Thailand Energy Market Overview
 
-**Research Document — Copenhagen Solar Project**
+**Research Document — TM Energy Project**
 **Date:** March 2026
 **Status:** Comprehensive Research (v1.0)
 
@@ -642,5 +642,5 @@ Sources: World Bank WITS Data; Nation Thailand; Argus Media; Stimson Center; Ene
 
 ---
 
-*Document prepared for internal use — Copenhagen Solar Project*
+*Document prepared for internal use — TM Energy Project*
 *Last updated: March 2026*

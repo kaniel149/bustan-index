@@ -317,7 +317,7 @@ Research from Thai academic studies established maximum viable land costs for VS
 | Medium output (Group 2) | 34,720–73,988 | Positive NPV; 10.67 year payback |
 | Lower output (Group 3) | Up to 356,800 | Matches WACC threshold |
 
-**Recommendation for Copenhagen Solar:** Target Northeast Thailand (Nakhon Ratchasima, Udon Thani) at **THB 40,000–80,000/rai** ($1,140–$2,286/rai). Best combination of low land costs, excellent solar irradiance, flat terrain, and proximity to grid infrastructure.
+**Recommendation for TM Energy:** Target Northeast Thailand (Nakhon Ratchasima, Udon Thani) at **THB 40,000–80,000/rai** ($1,140–$2,286/rai). Best combination of low land costs, excellent solar irradiance, flat terrain, and proximity to grid infrastructure.
 
 ### 7.3 Land Area Requirements
 
@@ -531,7 +531,7 @@ In April 2025, the US imposed tariffs of up to **375.2%** on Thai-manufactured s
 - **Revenue match:** THB revenue covers THB costs naturally
 - **Risk:** A 10% THB depreciation increases equipment costs by ~5–6% of total project cost
 
-**Note for Copenhagen (DKK/EUR investors):** Additional EUR/DKK → THB conversion risk. Consider EUR → USD → THB path or direct EUR/THB hedging.
+**Note for International (DKK/EUR investors):** Additional EUR/DKK → THB conversion risk. Consider EUR → USD → THB path or direct EUR/THB hedging.
 
 ---
 

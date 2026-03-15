@@ -1,6 +1,6 @@
 # Micro-Grid & Island Solar in Thailand
 
-> Research compiled March 2026 | Copenhagen Solar Project
+> Research compiled March 2026 | TM Energy Project
 > Sources cited inline; verify technical details with PEA/EGAT and local consultants.
 
 ---
@@ -268,7 +268,7 @@ A consortium is developing a wave-powered micro-grid pilot on Koh Tao:
 - Supplements submarine cable power supply
 - Community reaction mixed (visual impact concerns)
 
-### 4.5 Relevance to Copenhagen Solar
+### 4.5 Relevance to TM Energy
 
 The Koh Tao case demonstrates:
 - Islands are actively seeking renewable alternatives
@@ -634,7 +634,7 @@ Since PEA charges uniform tariff (~THB 4.26/kWh) but actual island generation co
 | **Canvas Solar** | Private (Koh Phangan) | Solar+battery for resorts/homes |
 | **Eco Wave Power** | Israeli/International | Wave energy pilot (Koh Tao) |
 
-### 10.3 Entry Strategy for Copenhagen Solar
+### 10.3 Entry Strategy for TM Energy
 
 **Recommended approach:**
 1. **Partner with PEA** — They need private investment to reduce diesel costs
