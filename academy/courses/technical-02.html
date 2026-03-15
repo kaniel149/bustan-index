@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2: DC Wiring & String Configuration — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .video-section { margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .video-section h3 { margin-bottom: 15px; color: #00D68F; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; }
+    .video-caption { margin-top: 10px; font-size: 0.9em; color: rgba(255,255,255,0.6); font-style: italic; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="technical-01.html"><span data-en>Technical Installation</span><span data-he>התקנה טכנית</span><span data-th>การติดตั้งทางเทคนิค</span></a>
+    <span>›</span>
+    <span data-en>Lesson 2</span><span data-he>שיעור 2</span><span data-th>บทที่ 2</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 2 of 3</span><span data-he>שיעור 2 מתוך 3</span><span data-th>บทที่ 2 จาก 3</span>
+    </div>
+    <h1 class="lesson-title" data-en>DC Wiring & String Configuration</h1>
+    <h1 class="lesson-title" data-he>חיווט DC ותצורת סטרינגים</h1>
+    <h1 class="lesson-title" data-th>การเดินสาย DC และการกำหนดค่าสตริง</h1>
+    <div class="lesson-meta">
+      <span>⏱ <span data-en>~45 min</span><span data-he>~45 דקות</span><span data-th>~45 นาที</span></span>
+      <span>🔧 <span data-en>Technical Installation</span><span data-he>התקנה טכנית</span><span data-th>การติดตั้งทางเทคนิค</span></span>
+    </div>
+  </div>
+
+  <!-- Section 1: Series vs Parallel -->
+  <section class="content-section fade-up">
+    <h2 data-en>Series vs Parallel Wiring</h2>
+    <h2 data-he>חיווט טורי מול מקבילי</h2>
+    <h2 data-th>การต่อแบบอนุกรม vs แบบขนาน</h2>
+
+    <img src="../images/string-wiring.png" alt="Diagram showing series and parallel wiring configurations for solar panels" class="lesson-image">
+
+    <p data-en>Understanding the difference between series and parallel wiring is fundamental to solar PV system design. The wiring method determines the voltage and current characteristics of your array:</p>
+    <p data-he>הבנת ההבדל בין חיווט טורי ומקבילי היא יסודית לתכנון מערכת PV סולארית. שיטת החיווט קובעת את מאפייני המתח והזרם של המערך שלכם:</p>
+    <p data-th>การเข้าใจความแตกต่างระหว่างการต่อแบบอนุกรมและขนานเป็นพื้นฐานของการออกแบบระบบ PV โซลาร์ วิธีการเดินสายกำหนดคุณลักษณะแรงดันและกระแสของอาร์เรย์:</p>
+
+    <ul data-en>
+      <li><strong>Series connection (string wiring)</strong> — Connect the positive (+) MC4 connector of Panel 1 to the negative (−) MC4 connector of Panel 2, and so on. Result: <strong>voltages add up, current stays the same</strong>. Example: 10 panels × 50V Voc = 500V string voltage, with current equal to one panel's Isc (~14A).</li>
+      <li><strong>Parallel connection</strong> — Connect all positive (+) terminals together and all negative (−) terminals together, using MC4 Y-branch or T-branch connectors. Result: <strong>currents add up, voltage stays the same</strong>. Example: 2 strings in parallel = 2 × 14A = 28A, voltage remains at string voltage.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>חיבור טורי (חיווט סטרינג)</strong> — חברו את מחבר MC4 החיובי (+) של פאנל 1 למחבר MC4 השלילי (−) של פאנל 2, וכן הלאה. תוצאה: <strong>מתחים מצטברים, זרם נשאר זהה</strong>. דוגמה: 10 פאנלים × 50V Voc = 500V מתח סטרינג, עם זרם שווה ל-Isc של פאנל אחד (~14A).</li>
+      <li><strong>חיבור מקבילי</strong> — חברו את כל הקצוות החיוביים (+) יחד ואת כל הקצוות השליליים (−) יחד, באמצעות מחברי Y או T של MC4. תוצאה: <strong>זרמים מצטברים, מתח נשאר זהה</strong>. דוגמה: 2 סטרינגים במקביל = 2 × 14A = 28A, מתח נשאר מתח סטרינג.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>การต่อแบบอนุกรม (สายสตริง)</strong> — ต่อขั้ว MC4 บวก (+) ของแผง 1 เข้ากับขั้ว MC4 ลบ (−) ของแผง 2 ไปเรื่อยๆ ผลลัพธ์: <strong>แรงดันรวมกัน กระแสคงเดิม</strong> ตัวอย่าง: 10 แผง × 50V Voc = 500V แรงดันสตริง โดยกระแสเท่ากับ Isc ของแผงเดียว (~14A)</li>
+      <li><strong>การต่อแบบขนาน</strong> — ต่อขั้วบวก (+) ทั้งหมดเข้าด้วยกันและขั้วลบ (−) ทั้งหมดเข้าด้วยกัน โดยใช้ตัวแยก MC4 แบบ Y หรือ T ผลลัพธ์: <strong>กระแสรวมกัน แรงดันคงเดิม</strong> ตัวอย่าง: 2 สตริงขนาน = 2 × 14A = 28A แรงดันยังคงเป็นแรงดันสตริง</li>
+    </ul>
+
+    <div class="key-term">
+      <p><strong data-en>String</strong><strong data-he>סטרינג</strong><strong data-th>สตริง</strong> — <span data-en>A group of solar panels wired in series. A string is the basic building block of a solar array. Each MPPT input on an inverter connects to one or more strings.</span><span data-he>קבוצת פאנלים סולאריים מחוברים בטור. סטרינג הוא אבן הבניין הבסיסית של מערך סולארי. כל כניסת MPPT בממיר מתחברת לסטרינג אחד או יותר.</span><span data-th>กลุ่มแผงโซลาร์ที่ต่ออนุกรม สตริงเป็นส่วนประกอบพื้นฐานของอาร์เรย์โซลาร์ แต่ละอินพุต MPPT บนอินเวอร์เตอร์เชื่อมต่อกับหนึ่งสตริงขึ้นไป</span></p>
+    </div>
+  </section>
+
+  <!-- Section 2: String Sizing -->
+  <section class="content-section fade-up">
+    <h2 data-en>String Sizing: Matching Panels to Inverter</h2>
+    <h2 data-he>תכנון גודל סטרינג: התאמת פאנלים לממיר</h2>
+    <h2 data-th>การกำหนดขนาดสตริง: จับคู่แผงกับอินเวอร์เตอร์</h2>
+
+    <p data-en>String sizing is one of the most critical calculations in solar design. The total open-circuit voltage (Voc) of all panels in a string must fall within the inverter's MPPT voltage window — and must <strong>never exceed the inverter's maximum DC input voltage</strong>, or the inverter will be permanently destroyed.</p>
+    <p data-he>תכנון גודל סטרינג הוא אחד החישובים הקריטיים ביותר בתכנון סולארי. מתח המעגל הפתוח הכולל (Voc) של כל הפאנלים בסטרינג חייב ליפול בתוך חלון מתח ה-MPPT של הממיר — ו<strong>לעולם לא לחרוג ממתח DC מקסימלי של הממיר</strong>, אחרת הממיר ייהרס לצמיתות.</p>
+    <p data-th>การกำหนดขนาดสตริงเป็นหนึ่งในการคำนวณที่สำคัญที่สุดในการออกแบบโซลาร์ แรงดันวงจรเปิดรวม (Voc) ของแผงทั้งหมดในสตริงต้องอยู่ในช่วงแรงดัน MPPT ของอินเวอร์เตอร์ — และ<strong>ห้ามเกินแรงดัน DC อินพุตสูงสุดของอินเวอร์เตอร์</strong>โดยเด็ดขาด ไม่เช่นนั้นอินเวอร์เตอร์จะเสียหายถาวร</p>
+
+    <p data-en><strong>The formula:</strong></p>
+    <p data-he><strong>הנוסחה:</strong></p>
+    <p data-th><strong>สูตร:</strong></p>
+
+    <ul data-en>
+      <li><strong>Maximum panels per string</strong> = Floor(Inverter Max Vdc ÷ Panel Voc at lowest temperature)</li>
+      <li><strong>Minimum panels per string</strong> = Ceiling(Inverter Min MPPT Voltage ÷ Panel Vmp at highest temperature)</li>
+    </ul>
+    <ul data-he>
+      <li><strong>מקסימום פאנלים לסטרינג</strong> = Floor(מתח DC מקסימלי של ממיר ÷ Voc של פאנל בטמפרטורה הנמוכה ביותר)</li>
+      <li><strong>מינימום פאנלים לסטרינג</strong> = Ceiling(מתח MPPT מינימלי של ממיר ÷ Vmp של פאנל בטמפרטורה הגבוהה ביותר)</li>
+    </ul>
+    <ul data-th>
+      <li><strong>จำนวนแผงสูงสุดต่อสตริง</strong> = Floor(แรงดัน DC สูงสุดอินเวอร์เตอร์ ÷ Voc แผงที่อุณหภูมิต่ำสุด)</li>
+      <li><strong>จำนวนแผงต่ำสุดต่อสตริง</strong> = Ceiling(แรงดัน MPPT ต่ำสุดอินเวอร์เตอร์ ÷ Vmp แผงที่อุณหภูมิสูงสุด)</li>
+    </ul>
+
+    <p data-en><strong>Temperature correction is critical in Thailand.</strong> Voc increases at cold temperatures (dangerous for max limit) and Vmp decreases at hot temperatures (dangerous for min limit). For Thailand:</p>
+    <p data-he><strong>תיקון טמפרטורה הוא קריטי בתאילנד.</strong> Voc עולה בטמפרטורות נמוכות (מסוכן לגבול מקסימלי) ו-Vmp יורד בטמפרטורות גבוהות (מסוכן לגבול מינימלי). עבור תאילנד:</p>
+    <p data-th><strong>การปรับอุณหภูมิมีความสำคัญในประเทศไทย</strong> Voc เพิ่มขึ้นที่อุณหภูมิเย็น (อันตรายสำหรับขีดจำกัดสูงสุด) และ Vmp ลดลงที่อุณหภูมิร้อน (อันตรายสำหรับขีดจำกัดต่ำสุด) สำหรับประเทศไทย:</p>
+
+    <ul data-en>
+      <li>Cool morning startup (cell ~30°C): Voc factor ≈ ×0.985</li>
+      <li>Hot afternoon (cell ~65°C): Voc factor ≈ ×0.880, Vmp factor ≈ ×0.870</li>
+      <li>Extreme hot, still air (cell ~75°C): Voc factor ≈ ×0.850, Vmp factor ≈ ×0.835</li>
+    </ul>
+    <ul data-he>
+      <li>הפעלה בבוקר קריר (תא ~30°C): מקדם Voc ≈ ×0.985</li>
+      <li>אחה"צ חם (תא ~65°C): מקדם Voc ≈ ×0.880, מקדם Vmp ≈ ×0.870</li>
+      <li>חם קיצוני, אוויר דומם (תא ~75°C): מקדם Voc ≈ ×0.850, מקדם Vmp ≈ ×0.835</li>
+    </ul>
+    <ul data-th>
+      <li>สตาร์ทเช้าเย็น (เซลล์ ~30°C): ตัวคูณ Voc ≈ ×0.985</li>
+      <li>บ่ายร้อน (เซลล์ ~65°C): ตัวคูณ Voc ≈ ×0.880, ตัวคูณ Vmp ≈ ×0.870</li>
+      <li>ร้อนจัด อากาศนิ่ง (เซลล์ ~75°C): ตัวคูณ Voc ≈ ×0.850, ตัวคูณ Vmp ≈ ×0.835</li>
+    </ul>
+
+    <p data-en><strong>Example:</strong> A Huawei SUN2000-100KTL (MPPT range 200–1000V, Max 1100V) with 550W panels (Voc = 50V, Vmp = 42V):</p>
+    <p data-he><strong>דוגמה:</strong> ממיר Huawei SUN2000-100KTL (טווח MPPT 200–1000V, מקסימום 1100V) עם פאנלים 550W (Voc = 50V, Vmp = 42V):</p>
+    <p data-th><strong>ตัวอย่าง:</strong> Huawei SUN2000-100KTL (ช่วง MPPT 200–1000V, สูงสุด 1100V) กับแผง 550W (Voc = 50V, Vmp = 42V):</p>
+
+    <ul data-en>
+      <li>Max panels = Floor(1100 ÷ (50 × 0.985)) = Floor(1100 ÷ 49.25) = <strong>22 panels</strong></li>
+      <li>Min panels = Ceiling(200 ÷ (42 × 0.835)) = Ceiling(200 ÷ 35.07) = <strong>6 panels</strong></li>
+      <li>Safe range: <strong>6 to 22 panels per string</strong></li>
+    </ul>
+    <ul data-he>
+      <li>מקסימום פאנלים = Floor(1100 ÷ (50 × 0.985)) = Floor(1100 ÷ 49.25) = <strong>22 פאנלים</strong></li>
+      <li>מינימום פאנלים = Ceiling(200 ÷ (42 × 0.835)) = Ceiling(200 ÷ 35.07) = <strong>6 פאנלים</strong></li>
+      <li>טווח בטוח: <strong>6 עד 22 פאנלים לסטרינג</strong></li>
+    </ul>
+    <ul data-th>
+      <li>แผงสูงสุด = Floor(1100 ÷ (50 × 0.985)) = Floor(1100 ÷ 49.25) = <strong>22 แผง</strong></li>
+      <li>แผงต่ำสุด = Ceiling(200 ÷ (42 × 0.835)) = Ceiling(200 ÷ 35.07) = <strong>6 แผง</strong></li>
+      <li>ช่วงปลอดภัย: <strong>6 ถึง 22 แผงต่อสตริง</strong></li>
+    </ul>
+  </section>
+
+  <!-- Section 3: MC4 Connectors -->
+  <section class="content-section fade-up">
+    <h2 data-en>MC4 Connectors: Assembly & Best Practices</h2>
+    <h2 data-he>מחברי MC4: הרכבה ושיטות עבודה מיטביות</h2>
+    <h2 data-th>ขั้วต่อ MC4: การประกอบและแนวปฏิบัติที่ดี</h2>
+
+    <img src="../images/mc4-connector.png" alt="MC4 connector components showing crimping process and assembly" class="lesson-image">
+
+    <p data-en>MC4 connectors are the industry standard for solar DC connections. The name stands for "Multi-Contact, 4mm" — referring to the 4mm² contact pin. Proper MC4 assembly is critical for system safety and longevity.</p>
+    <p data-he>מחברי MC4 הם הסטנדרט התעשייתי לחיבורי DC סולאריים. השם מייצג "Multi-Contact, 4mm" — מתייחס לפין מגע 4 מ"מ². הרכבת MC4 נכונה היא קריטית לבטיחות ואריכות חיי המערכת.</p>
+    <p data-th>ขั้วต่อ MC4 เป็นมาตรฐานอุตสาหกรรมสำหรับการเชื่อมต่อ DC โซลาร์ ชื่อย่อมาจาก "Multi-Contact, 4mm" — หมายถึงพินสัมผัส 4 มม.² การประกอบ MC4 ที่ถูกต้องมีความสำคัญต่อความปลอดภัยและอายุการใช้งานของระบบ</p>
+
+    <p data-en><strong>Assembly procedure:</strong></p>
+    <p data-he><strong>הליך הרכבה:</strong></p>
+    <p data-th><strong>ขั้นตอนการประกอบ:</strong></p>
+
+    <ul data-en>
+      <li><strong>Step 1:</strong> Cut solar cable to required length</li>
+      <li><strong>Step 2:</strong> Strip insulation — expose exactly 8mm of conductor</li>
+      <li><strong>Step 3:</strong> Insert stripped conductor into MC4 metal contact pin (male) or socket (female)</li>
+      <li><strong>Step 4:</strong> Crimp using a dedicated MC4 crimping tool — never use generic crimpers. Verify by pulling firmly — the wire must not pull out</li>
+      <li><strong>Step 5:</strong> Thread the cable gland nut over the cable <em>before</em> inserting the contact into the housing</li>
+      <li><strong>Step 6:</strong> Insert crimped contact into MC4 housing — listen for a distinct click confirming engagement</li>
+      <li><strong>Step 7:</strong> Tighten cable gland nut to achieve IP67 waterproof seal</li>
+    </ul>
+    <ul data-he>
+      <li><strong>שלב 1:</strong> חתכו כבל סולארי לאורך הנדרש</li>
+      <li><strong>שלב 2:</strong> הפשיטו בידוד — חשפו בדיוק 8 מ"מ של מוליך</li>
+      <li><strong>שלב 3:</strong> הכניסו מוליך מופשט לתוך פין מגע MC4 מתכתי (זכר) או שקע (נקבה)</li>
+      <li><strong>שלב 4:</strong> לחצו באמצעות כלי לחיצה MC4 ייעודי — לעולם אל תשתמשו במלחציים גנריים. אמתו במשיכה חזקה — החוט לא יכול להישלף</li>
+      <li><strong>שלב 5:</strong> השחילו את אום הכבל על הכבל <em>לפני</em> הכנסת המגע לגוף</li>
+      <li><strong>שלב 6:</strong> הכניסו מגע מלוחץ לגוף MC4 — הקשיבו לקליק ברור המאשר נעילה</li>
+      <li><strong>שלב 7:</strong> הדקו אום הכבל להשגת אטימות IP67</li>
+    </ul>
+    <ul data-th>
+      <li><strong>ขั้นที่ 1:</strong> ตัดสายโซลาร์ตามความยาวที่ต้องการ</li>
+      <li><strong>ขั้นที่ 2:</strong> ปอกฉนวน — เปิดตัวนำ 8 มม. พอดี</li>
+      <li><strong>ขั้นที่ 3:</strong> สอดตัวนำที่ปอกแล้วเข้าพินสัมผัส MC4 โลหะ (ตัวผู้) หรือซ็อกเก็ต (ตัวเมีย)</li>
+      <li><strong>ขั้นที่ 4:</strong> ย้ำด้วยเครื่องมือย้ำ MC4 เฉพาะ — ห้ามใช้คีมย้ำทั่วไป ตรวจสอบโดยดึงแรง — สายต้องไม่หลุด</li>
+      <li><strong>ขั้นที่ 5:</strong> ร้อยน็อตแกลนด์สายผ่านสาย <em>ก่อน</em> สอดหน้าสัมผัสเข้าตัวเรือน</li>
+      <li><strong>ขั้นที่ 6:</strong> สอดหน้าสัมผัสที่ย้ำแล้วเข้าตัวเรือน MC4 — ฟังเสียงคลิกที่ชัดเจนยืนยันการล็อก</li>
+      <li><strong>ขั้นที่ 7:</strong> ขันน็อตแกลนด์สายเพื่อให้ได้ระดับกันน้ำ IP67</li>
+    </ul>
+
+    <p data-en><strong>Critical safety rules for MC4 connectors:</strong></p>
+    <p data-he><strong>כללי בטיחות קריטיים למחברי MC4:</strong></p>
+    <p data-th><strong>กฎความปลอดภัยที่สำคัญสำหรับขั้วต่อ MC4:</strong></p>
+
+    <ul data-en>
+      <li>⚠️ <strong>Never connect/disconnect MC4 under load</strong> — high DC current creates dangerous arcs that can cause burns or fire</li>
+      <li>⚠️ <strong>Never mix MC4 brands</strong> — cross-brand connections void the IP67 rating and are a fire hazard. Stäubli to Stäubli only, etc.</li>
+      <li>⚠️ <strong>Always verify polarity before connecting strings</strong> — reversed polarity (error code 2002) can damage the inverter</li>
+      <li>All MC4 connections must remain accessible for inspection — never bury them in walls or seal them permanently</li>
+      <li>IP67 rating means: fully dust-proof, waterproof when submerged to 1 meter for 30 minutes</li>
+    </ul>
+    <ul data-he>
+      <li>⚠️ <strong>לעולם אל תחברו/תנתקו MC4 תחת עומס</strong> — זרם DC גבוה יוצר קשתות מסוכנות שעלולות לגרום לכוויות או שריפה</li>
+      <li>⚠️ <strong>לעולם אל תערבבו מותגי MC4</strong> — חיבורים בין-מותגיים מבטלים דירוג IP67 ומהווים סכנת שריפה. Stäubli ל-Stäubli בלבד, וכו'</li>
+      <li>⚠️ <strong>תמיד אמתו קוטביות לפני חיבור סטרינגים</strong> — קוטביות הפוכה (קוד שגיאה 2002) יכולה להזיק לממיר</li>
+      <li>כל חיבורי MC4 חייבים להישאר נגישים לבדיקה — לעולם אל תטמינו אותם בקירות או תאטמו אותם לצמיתות</li>
+      <li>דירוג IP67 פירושו: אטום לחלוטין לאבק, עמיד במים בטבילה עד מטר אחד למשך 30 דקות</li>
+    </ul>
+    <ul data-th>
+      <li>⚠️ <strong>ห้ามต่อ/ถอด MC4 ขณะมีโหลด</strong> — กระแส DC สูงสร้างอาร์คอันตรายที่อาจทำให้เกิดแผลไหม้หรือไฟไหม้</li>
+      <li>⚠️ <strong>ห้ามผสมยี่ห้อ MC4</strong> — การเชื่อมต่อข้ามยี่ห้อทำให้เรท IP67 เป็นโมฆะและเป็นอันตรายจากไฟ ใช้ Stäubli กับ Stäubli เท่านั้น ฯลฯ</li>
+      <li>⚠️ <strong>ตรวจสอบขั้วก่อนต่อสตริงเสมอ</strong> — ขั้วกลับ (รหัสข้อผิดพลาด 2002) อาจทำให้อินเวอร์เตอร์เสียหาย</li>
+      <li>การเชื่อมต่อ MC4 ทั้งหมดต้องเข้าถึงได้สำหรับการตรวจสอบ — ห้ามฝังในผนังหรือปิดผนึกถาวร</li>
+      <li>เรท IP67 หมายถึง: กันฝุ่นสมบูรณ์ กันน้ำเมื่อจมในน้ำลึก 1 เมตร เป็นเวลา 30 นาที</li>
+    </ul>
+  </section>
+
+  <!-- Section 4: DC Cable Sizing -->
+  <section class="content-section fade-up">
+    <h2 data-en>DC Cable Sizing & Voltage Drop</h2>
+    <h2 data-he>תכנון גודל כבל DC ונפילת מתח</h2>
+    <h2 data-th>การกำหนดขนาดสาย DC และแรงดันตก</h2>
+
+    <p data-en>DC cables must be properly sized to minimize voltage drop — which represents wasted energy as heat in the cables. The industry standard is to keep voltage drop below 2% on the DC side.</p>
+    <p data-he>כבלי DC חייבים להיות בגודל נכון למזעור נפילת מתח — שמייצגת אנרגיה מבוזבזת כחום בכבלים. הסטנדרט התעשייתי הוא לשמור על נפילת מתח מתחת ל-2% בצד ה-DC.</p>
+    <p data-th>สาย DC ต้องมีขนาดที่เหมาะสมเพื่อลดแรงดันตก — ซึ่งแสดงถึงพลังงานที่สูญเสียเป็นความร้อนในสาย มาตรฐานอุตสาหกรรมคือรักษาแรงดันตกต่ำกว่า 2% ฝั่ง DC</p>
+
+    <p data-en><strong>Cable sizing formula:</strong></p>
+    <p data-he><strong>נוסחת תכנון גודל כבל:</strong></p>
+    <p data-th><strong>สูตรกำหนดขนาดสาย:</strong></p>
+
+    <ul data-en>
+      <li>Cable size (mm²) = (2 × L × I) ÷ (ΔV × κ)</li>
+      <li>Where: L = cable length one way (m), I = Isc × 1.25 (A), ΔV = allowable voltage drop (V), κ = conductivity of copper = 56 m/(Ω·mm²)</li>
+    </ul>
+    <ul data-he>
+      <li>גודל כבל (מ"מ²) = (2 × L × I) ÷ (ΔV × κ)</li>
+      <li>כאשר: L = אורך כבל כיוון אחד (מ'), I = Isc × 1.25 (A), ΔV = נפילת מתח מותרת (V), κ = מוליכות של נחושת = 56 m/(Ω·mm²)</li>
+    </ul>
+    <ul data-th>
+      <li>ขนาดสาย (มม.²) = (2 × L × I) ÷ (ΔV × κ)</li>
+      <li>โดย: L = ความยาวสายทางเดียว (ม.), I = Isc × 1.25 (A), ΔV = แรงดันตกที่ยอมรับได้ (V), κ = สภาพนำไฟฟ้าของทองแดง = 56 m/(Ω·mm²)</li>
+    </ul>
+
+    <p data-en><strong>Quick reference — DC cable sizing:</strong></p>
+    <p data-he><strong>עזר מהיר — גודל כבל DC:</strong></p>
+    <p data-th><strong>อ้างอิงด่วน — ขนาดสาย DC:</strong></p>
+
+    <ul data-en>
+      <li>Systems ≤3 kWp (Isc ≤10A): <strong>4 mm²</strong> — up to 30m run</li>
+      <li>Systems 3–10 kWp (Isc 10–15A): <strong>6 mm²</strong> — up to 40m run</li>
+      <li>Systems 10–30 kWp (Isc 15–20A): <strong>6 mm² or 10 mm²</strong> — up to 50m run</li>
+      <li>Larger systems: calculate per string based on actual run lengths</li>
+    </ul>
+    <ul data-he>
+      <li>מערכות ≤3 kWp (Isc ≤10A): <strong>4 מ"מ²</strong> — עד 30 מ' אורך</li>
+      <li>מערכות 3–10 kWp (Isc 10–15A): <strong>6 מ"מ²</strong> — עד 40 מ' אורך</li>
+      <li>מערכות 10–30 kWp (Isc 15–20A): <strong>6 מ"מ² או 10 מ"מ²</strong> — עד 50 מ' אורך</li>
+      <li>מערכות גדולות יותר: חשבו לפי סטרינג בהתבסס על אורכי כבל בפועל</li>
+    </ul>
+    <ul data-th>
+      <li>ระบบ ≤3 kWp (Isc ≤10A): <strong>4 มม.²</strong> — วิ่งได้ถึง 30 ม.</li>
+      <li>ระบบ 3–10 kWp (Isc 10–15A): <strong>6 มม.²</strong> — วิ่งได้ถึง 40 ม.</li>
+      <li>ระบบ 10–30 kWp (Isc 15–20A): <strong>6 มม.² หรือ 10 มม.²</strong> — วิ่งได้ถึง 50 ม.</li>
+      <li>ระบบขนาดใหญ่: คำนวณต่อสตริงตามความยาวจริง</li>
+    </ul>
+
+    <p data-en><strong>DC cable specifications (per IEC 62548):</strong> Solar-rated, double-insulated (H1Z2Z2-K), tinned copper conductor, UV-resistant, temperature rated −40°C to +90°C, voltage rated 1000V or 1500V DC. DC color code: <strong>Red = Positive (+), Black = Negative (−), Green-Yellow = Earth</strong>.</p>
+    <p data-he><strong>מפרט כבל DC (לפי IEC 62548):</strong> מדורג סולאר, בידוד כפול (H1Z2Z2-K), מוליך נחושת מצופה בדיל, עמיד UV, מדורג טמפרטורה −40°C עד +90°C, מדורג מתח 1000V או 1500V DC. קוד צבע DC: <strong>אדום = חיובי (+), שחור = שלילי (−), ירוק-צהוב = הארקה</strong>.</p>
+    <p data-th><strong>สเปคสาย DC (ตาม IEC 62548):</strong> เรทสำหรับโซลาร์ ฉนวนสองชั้น (H1Z2Z2-K) ตัวนำทองแดงชุบดีบุก ทน UV เรทอุณหภูมิ −40°C ถึง +90°C เรทแรงดัน 1000V หรือ 1500V DC รหัสสี DC: <strong>แดง = บวก (+), ดำ = ลบ (−), เขียว-เหลือง = กราวด์</strong></p>
+  </section>
+
+  <!-- Section 5: Combiner Boxes -->
+  <section class="content-section fade-up">
+    <h2 data-en>Combiner Boxes & DC Disconnect</h2>
+    <h2 data-he>תיבות שילוב וניתוק DC</h2>
+    <h2 data-th>กล่องรวมสายและตัวตัด DC</h2>
+
+    <p data-en>For larger systems with multiple strings, combiner boxes and DC disconnects are essential safety and organization components:</p>
+    <p data-he>למערכות גדולות יותר עם סטרינגים מרובים, תיבות שילוב וניתוקי DC הם רכיבי בטיחות וארגון חיוניים:</p>
+    <p data-th>สำหรับระบบขนาดใหญ่ที่มีหลายสตริง กล่องรวมสายและตัวตัด DC เป็นส่วนประกอบด้านความปลอดภัยและการจัดระบบที่จำเป็น:</p>
+
+    <ul data-en>
+      <li><strong>Combiner box</strong> — Collects multiple string cables into a single output cable to the inverter. Contains string fuses (rated 1.5× to 2.4× Isc) that protect individual strings from backfeed current. Must be IP65+ rated for outdoor installation. Located on or near the roof to minimize cable runs.</li>
+      <li><strong>DC isolator (rotary switch)</strong> — A manual disconnect switch between the array and inverter. Required by code — allows the system to be safely de-energized for maintenance. Must be rated for: Vdc ≥ string Voc × 1.2 and Idc ≥ string Isc × 1.25. Must be lockable (LOTO compatible). Install within 2 meters of the inverter.</li>
+      <li><strong>DC SPD (Surge Protection Device)</strong> — Type 2 surge protector installed at the inverter DC input. Protects against lightning-induced voltage spikes. Must be rated for Uc ≥ Voc × 1.2. Critical in Thailand due to high lightning frequency.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>תיבת שילוב (Combiner box)</strong> — אוספת כבלי סטרינגים מרובים לכבל פלט יחיד לממיר. מכילה נתיכי סטרינג (מדורגים 1.5× עד 2.4× Isc) שמגנים על סטרינגים בודדים מזרם חוזר. חייבת להיות מדורגת IP65+ להתקנה חיצונית. ממוקמת על או ליד הגג למזעור אורכי כבל.</li>
+      <li><strong>מנתק DC (מפסק סיבובי)</strong> — מפסק ניתוק ידני בין המערך לממיר. נדרש לפי תקן — מאפשר הפחתת מתח המערכת בביטחה לתחזוקה. חייב להיות מדורג ל: Vdc ≥ Voc סטרינג × 1.2 ו-Idc ≥ Isc סטרינג × 1.25. חייב להיות נעיל (תואם LOTO). התקינו במרחק 2 מטרים מהממיר.</li>
+      <li><strong>SPD DC (מכשיר הגנה מנחשולים)</strong> — מגן נחשולים סוג 2 המותקן בכניסת DC של הממיר. מגן מפני קפיצות מתח שנגרמות מברקים. חייב להיות מדורג ל-Uc ≥ Voc × 1.2. קריטי בתאילנד בשל תדירות ברקים גבוהה.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>กล่องรวมสาย (Combiner box)</strong> — รวบรวมสายสตริงหลายเส้นเป็นสายเอาต์พุตเดียวไปอินเวอร์เตอร์ มีฟิวส์สตริง (เรท 1.5× ถึง 2.4× Isc) ที่ป้องกันสตริงแต่ละเส้นจากกระแสย้อนกลับ ต้องเรท IP65+ สำหรับติดตั้งกลางแจ้ง ติดตั้งบนหรือใกล้หลังคาเพื่อลดระยะสาย</li>
+      <li><strong>ตัวตัด DC (สวิตช์หมุน)</strong> — สวิตช์ตัดวงจรด้วยมือระหว่างอาร์เรย์กับอินเวอร์เตอร์ กฎหมายกำหนด — ช่วยให้ตัดไฟระบบได้อย่างปลอดภัยสำหรับการบำรุงรักษา ต้องเรท: Vdc ≥ Voc สตริง × 1.2 และ Idc ≥ Isc สตริง × 1.25 ต้องล็อกได้ (รองรับ LOTO) ติดตั้งภายใน 2 เมตรจากอินเวอร์เตอร์</li>
+      <li><strong>SPD DC (อุปกรณ์ป้องกันเสิร์จ)</strong> — ตัวป้องกันเสิร์จ Type 2 ติดตั้งที่อินพุต DC อินเวอร์เตอร์ ป้องกันแรงดันกระชากจากฟ้าผ่า ต้องเรท Uc ≥ Voc × 1.2 สำคัญมากในประเทศไทยเนื่องจากความถี่ฟ้าผ่าสูง</li>
+    </ul>
+
+    <div class="key-term">
+      <p><strong data-en>Cable Management Best Practices</strong><strong data-he>שיטות עבודה מיטביות לניהול כבלים</strong><strong data-th>แนวปฏิบัติที่ดีสำหรับการจัดการสาย</strong> — <span data-en>Route DC cables along mounting rails using UV-resistant clips. Bundle with black nylon cable ties. Use conduit for vertical runs from roof to inverter. Maintain 4× cable diameter minimum bend radius. Keep DC and AC cables physically separated (50mm minimum or separate conduit). Label all cables at both ends: string number, polarity, voltage.</span><span data-he>הובילו כבלי DC לאורך פסי הרכבה באמצעות קליפסים עמידי UV. אגדו באזיקוני ניילון שחורים. השתמשו בצנרת למרחקים אנכיים מהגג לממיר. שמרו רדיוס כיפוף מינימלי של 4× קוטר כבל. שמרו כבלי DC ו-AC מופרדים פיזית (50 מ"מ מינימום או צנרת נפרדת). סמנו כל הכבלים בשני הקצוות: מספר סטרינג, קוטביות, מתח.</span><span data-th>เดินสาย DC ตามรางยึดด้วยคลิปทน UV มัดด้วยสายรัดไนลอนสีดำ ใช้ท่อร้อยสายสำหรับเส้นทางแนวตั้งจากหลังคาไปอินเวอร์เตอร์ รักษารัศมีโค้งขั้นต่ำ 4 เท่าของเส้นผ่านศูนย์กลางสาย แยกสาย DC และ AC ทางกายภาพ (50 มม. ขั้นต่ำหรือท่อแยก) ติดป้ายสายทั้งสองปลาย: หมายเลขสตริง ขั้ว แรงดัน</span></p>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="content-section fade-up">
+    <h2 data-en>Watch & Learn: DC Wiring</h2>
+    <h2 data-he>צפו ולמדו: חיווט DC</h2>
+    <h2 data-th>ชมและเรียนรู้: การเดินสาย DC</h2>
+
+    <div class="video-section">
+      <h3>📹 Watch: Solar Panel Wiring — Series vs Parallel Explained</h3>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/0UHLMx_0mRY" frameborder="0" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+      </div>
+      <p class="video-caption">Clear visual explanation of series and parallel solar panel wiring with real-world examples</p>
+    </div>
+
+    <div class="video-section">
+      <h3>📹 Watch: How to Crimp MC4 Connectors</h3>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/kCN9s3JdOZk" frameborder="0" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+      </div>
+      <p class="video-caption">Step-by-step MC4 connector crimping and assembly tutorial</p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <nav class="lesson-nav">
+    <a href="technical-01.html">
+      <span data-en>← Previous Lesson</span><span data-he>השיעור הקודם ←</span><span data-th>← บทก่อนหน้า</span>
+    </a>
+    <a href="../index.html">
+      <span data-en>Course Home</span><span data-he>דף הקורס</span><span data-th>หน้าหลักคอร์ส</span>
+    </a>
+    <a href="technical-03.html">
+      <span data-en>Next Lesson →</span><span data-he>→ השיעור הבא</span><span data-th>บทถัดไป →</span>
+    </a>
+  </nav>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 TM Energy Co., Ltd.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('technical', 2);
+  initQuiz('technical', 2, [
+    {
+      question: {
+        en: "What happens when solar panels are wired in series?",
+        he: "מה קורה כשפאנלים סולאריים מחוברים בטור?",
+        th: "เกิดอะไรขึ้นเมื่อแผงโซลาร์ต่อแบบอนุกรม?"
+      },
+      options: [
+        { en: "Voltage stays the same, current adds up", he: "מתח נשאר זהה, זרם מצטבר", th: "แรงดันคงเดิม กระแสรวมกัน" },
+        { en: "Voltage adds up, current stays the same", he: "מתח מצטבר, זרם נשאר זהה", th: "แรงดันรวมกัน กระแสคงเดิม" },
+        { en: "Both voltage and current add up", he: "גם מתח וגם זרם מצטברים", th: "ทั้งแรงดันและกระแสรวมกัน" },
+        { en: "Neither voltage nor current changes", he: "לא מתח ולא זרם משתנים", th: "ทั้งแรงดันและกระแสไม่เปลี่ยน" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the maximum allowable voltage drop on the DC side of a solar installation?",
+        he: "מהי נפילת המתח המקסימלית המותרת בצד ה-DC של התקנה סולארית?",
+        th: "แรงดันตกสูงสุดที่ยอมรับได้ฝั่ง DC ของการติดตั้งโซลาร์คือเท่าไร?"
+      },
+      options: [
+        { en: "1%", he: "1%", th: "1%" },
+        { en: "2%", he: "2%", th: "2%" },
+        { en: "5%", he: "5%", th: "5%" },
+        { en: "10%", he: "10%", th: "10%" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "Why should you never mix MC4 connector brands?",
+        he: "למה לעולם אסור לערבב מותגי מחברי MC4?",
+        th: "ทำไมจึงห้ามผสมยี่ห้อขั้วต่อ MC4?"
+      },
+      options: [
+        { en: "They come in different colors", he: "הם באים בצבעים שונים", th: "มีสีต่างกัน" },
+        { en: "It voids the warranty on the panels", he: "זה מבטל אחריות הפאנלים", th: "ทำให้การรับประกันแผงเป็นโมฆะ" },
+        { en: "Cross-brand connections void IP67 rating and are a fire hazard", he: "חיבורים בין-מותגיים מבטלים דירוג IP67 ומהווים סכנת שריפה", th: "การเชื่อมต่อข้ามยี่ห้อทำให้เรท IP67 เป็นโมฆะและเป็นอันตรายจากไฟ" },
+        { en: "It makes the system slower", he: "זה מאט את המערכת", th: "ทำให้ระบบช้าลง" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "What happens if string Voc exceeds the inverter's maximum DC input voltage?",
+        he: "מה קורה אם Voc של סטרינג חורג ממתח DC מקסימלי של הממיר?",
+        th: "จะเกิดอะไรขึ้นถ้า Voc สตริงเกินแรงดัน DC อินพุตสูงสุดของอินเวอร์เตอร์?"
+      },
+      options: [
+        { en: "The inverter reduces its output automatically", he: "הממיר מפחית את הפלט שלו אוטומטית", th: "อินเวอร์เตอร์ลดเอาต์พุตอัตโนมัติ" },
+        { en: "Nothing — inverters have built-in protection", he: "כלום — לממירים יש הגנה מובנית", th: "ไม่มีอะไร — อินเวอร์เตอร์มีการป้องกันในตัว" },
+        { en: "The inverter will be permanently destroyed", he: "הממיר ייהרס לצמיתות", th: "อินเวอร์เตอร์จะเสียหายถาวร" },
+        { en: "The panels produce less power", he: "הפאנלים מייצרים פחות חשמל", th: "แผงผลิตไฟน้อยลง" }
+      ],
+      correct: 2
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>

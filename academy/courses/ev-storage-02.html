@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2: EV Charging Basics — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .video-section { margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .video-section h3 { margin-bottom: 15px; color: #00D68F; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; }
+    .video-caption { margin-top: 10px; font-size: 0.9em; color: rgba(255,255,255,0.6); font-style: italic; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="ev-storage-01.html"><span data-en>EV & Storage</span><span data-he>רכב חשמלי ואגירה</span><span data-th>EV และการกักเก็บพลังงาน</span></a>
+    <span>›</span>
+    <span data-en>Lesson 2</span><span data-he>שיעור 2</span><span data-th>บทที่ 2</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 2 of 3</span><span data-he>שיעור 2 מתוך 3</span><span data-th>บทที่ 2 จาก 3</span>
+    </div>
+    <h1 class="lesson-title" data-en>EV Charging Basics</h1>
+    <h1 class="lesson-title" data-he>יסודות טעינת רכב חשמלי</h1>
+    <h1 class="lesson-title" data-th>พื้นฐานการชาร์จรถยนต์ไฟฟ้า</h1>
+    <div class="lesson-meta">
+      <span>⏱ <span data-en>~30 min</span><span data-he>~30 דקות</span><span data-th>~30 นาที</span></span>
+      <span>⚡ <span data-en>EV & Storage</span><span data-he>רכב חשמלי ואגירה</span><span data-th>EV และการกักเก็บ</span></span>
+    </div>
+  </div>
+
+  <!-- Section 1: EV Market in Thailand -->
+  <section class="content-section fade-up">
+    <h2 data-en>The EV Market in Thailand</h2>
+    <h2 data-he>שוק הרכב החשמלי בתאילנד</h2>
+    <h2 data-th>ตลาด EV ในประเทศไทย</h2>
+
+    <p data-en>Thailand is rapidly becoming Southeast Asia's EV hub, driven by aggressive government policy and Chinese automaker investment. Understanding this market is essential for anyone in the energy business:</p>
+    <p data-he>תאילנד הופכת במהירות למרכז ה-EV של דרום-מזרח אסיה, מונעת על ידי מדיניות ממשלתית אגרסיבית והשקעות יצרני רכב סיניים. הבנת שוק זה חיונית לכל מי שבעסקי האנרגיה:</p>
+    <p data-th>ประเทศไทยกำลังกลายเป็นศูนย์กลาง EV ของเอเชียตะวันออกเฉียงใต้อย่างรวดเร็ว ขับเคลื่อนโดยนโยบายรัฐบาลที่เข้มข้นและการลงทุนจากผู้ผลิตรถยนต์จีน การเข้าใจตลาดนี้จำเป็นสำหรับทุกคนในธุรกิจพลังงาน:</p>
+
+    <ul data-en>
+      <li><strong>30@30 Policy:</strong> Thailand's government target to have 30% of all vehicles produced domestically be electric by 2030. This policy drives massive tax incentives, factory investments, and charging infrastructure buildout.</li>
+      <li><strong>BYD dominance:</strong> Chinese automaker BYD has captured ~40% of Thailand's EV market with the Atto 3, Dolphin, and Seal models. BYD opened a factory in Rayong in 2024 with 150,000 unit/year capacity. Other Chinese brands (MG, GWM, Neta, Changan) together hold another ~35%.</li>
+      <li><strong>Tax incentives:</strong> The government offers up to ฿150,000 subsidy per EV, reduced excise tax (2% vs 8% for ICE vehicles), and import duty exemptions. This makes EVs price-competitive with conventional cars for the first time.</li>
+      <li><strong>Charging infrastructure gap:</strong> Despite rapid EV adoption, Thailand has only ~4,000 public charging points (2024). The government targets 12,000 by 2030. This gap represents a massive opportunity for solar+EV charging installations.</li>
+      <li><strong>Growth trajectory:</strong> EV registrations in Thailand grew from 9,678 (2022) to 76,314 (2023) — nearly 8× growth in one year. 2024 exceeded 100,000 registrations. Every EV needs charging infrastructure.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>מדיניות 30@30:</strong> יעד ממשלת תאילנד שבו 30% מכל הרכבים המיוצרים מקומית יהיו חשמליים עד 2030. מדיניות זו מניעה תמריצי מס מסיביים, השקעות במפעלים, ובניית תשתיות טעינה.</li>
+      <li><strong>דומיננטיות BYD:</strong> יצרנית הרכב הסינית BYD תפסה ~40% משוק ה-EV של תאילנד עם דגמי Atto 3, Dolphin ו-Seal. BYD פתחה מפעל בראיונג ב-2024 עם קיבולת 150,000 יחידות/שנה. מותגים סיניים אחרים (MG, GWM, Neta, Changan) מחזיקים ביחד עוד ~35%.</li>
+      <li><strong>תמריצי מס:</strong> הממשלה מציעה עד ฿150,000 סבסוד ל-EV, מס בלו מופחת (2% לעומת 8% לרכבי ICE), ופטור ממכס ייבוא. זה הופך EV לתחרותי במחיר עם מכוניות רגילות לראשונה.</li>
+      <li><strong>פער תשתיות טעינה:</strong> למרות אימוץ EV מהיר, לתאילנד יש רק ~4,000 נקודות טעינה ציבוריות (2024). הממשלה מתמקדת ב-12,000 עד 2030. פער זה מייצג הזדמנות מסיבית להתקנות סולאר+טעינת EV.</li>
+      <li><strong>מסלול צמיחה:</strong> רישומי EV בתאילנד גדלו מ-9,678 (2022) ל-76,314 (2023) — צמיחה פי 8 כמעט בשנה אחת. 2024 חרגה מ-100,000 רישומים. כל EV צריך תשתית טעינה.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>นโยบาย 30@30:</strong> เป้าหมายของรัฐบาลไทยที่จะให้ 30% ของยานยนต์ทั้งหมดที่ผลิตในประเทศเป็นรถไฟฟ้าภายในปี 2030 นโยบายนี้ขับเคลื่อนสิทธิประโยชน์ทางภาษีมหาศาล การลงทุนในโรงงาน และการสร้างโครงสร้างพื้นฐานการชาร์จ</li>
+      <li><strong>BYD ครองตลาด:</strong> ผู้ผลิตรถยนต์จีน BYD ครองตลาด EV ไทย ~40% ด้วยรุ่น Atto 3, Dolphin และ Seal BYD เปิดโรงงานในระยองปี 2024 กำลังการผลิต 150,000 คัน/ปี แบรนด์จีนอื่น (MG, GWM, Neta, Changan) รวมกันครอง ~35%</li>
+      <li><strong>สิทธิประโยชน์ทางภาษี:</strong> รัฐบาลให้เงินอุดหนุนสูงสุด ฿150,000 ต่อ EV ลดภาษีสรรพสามิต (2% เทียบกับ 8% สำหรับรถ ICE) และยกเว้นอากรนำเข้า ทำให้ EV แข่งขันด้านราคาได้กับรถทั่วไปเป็นครั้งแรก</li>
+      <li><strong>ช่องว่างโครงสร้างพื้นฐานการชาร์จ:</strong> แม้จะมีการนำ EV มาใช้อย่างรวดเร็ว แต่ประเทศไทยมีจุดชาร์จสาธารณะเพียง ~4,000 จุด (2024) รัฐบาลตั้งเป้า 12,000 ภายในปี 2030 ช่องว่างนี้เป็นโอกาสมหาศาลสำหรับการติดตั้งโซลาร์+ชาร์จ EV</li>
+      <li><strong>แนวโน้มการเติบโต:</strong> การจดทะเบียน EV ในไทยเพิ่มจาก 9,678 (2022) เป็น 76,314 (2023) — เติบโตเกือบ 8 เท่าในปีเดียว ปี 2024 เกิน 100,000 คัน EV ทุกคันต้องการโครงสร้างพื้นฐานการชาร์จ</li>
+    </ul>
+  </section>
+
+  <!-- Section 2: Charger Types -->
+  <section class="content-section fade-up">
+    <h2 data-en>Charger Types: AC Level 1, AC Level 2, DC Fast</h2>
+    <h2 data-he>סוגי מטענים: AC רמה 1, AC רמה 2, DC מהיר</h2>
+    <h2 data-th>ประเภทเครื่องชาร์จ: AC Level 1, AC Level 2, DC Fast</h2>
+
+    <img src="../images/ev-charger-types.png" alt="Comparison of EV charger types — AC Level 1, AC Level 2, and DC Fast Charging" class="lesson-image">
+
+    <p data-en>EV chargers come in three main categories, each with different power levels, use cases, and costs:</p>
+    <p data-he>מטעני EV באים בשלוש קטגוריות עיקריות, כל אחת עם רמות הספק, תרחישי שימוש ועלויות שונות:</p>
+    <p data-th>เครื่องชาร์จ EV มีสามประเภทหลัก แต่ละประเภทมีระดับพลังงาน กรณีการใช้งาน และต้นทุนที่แตกต่างกัน:</p>
+
+    <ul data-en>
+      <li><strong>AC Level 1 (1.4–2.4 kW):</strong> Standard household outlet (230V, single phase). Charges at 8–15 km of range per hour. Takes 24–40 hours for a full charge. No special equipment needed — just the portable cable that comes with the car. Suitable only for overnight charging at home with short daily commutes.</li>
+      <li><strong>AC Level 2 (7–22 kW):</strong> Dedicated charging station with 230V single-phase (7 kW) or 400V three-phase (11–22 kW). Charges at 40–120 km of range per hour. Full charge in 4–8 hours. The standard for home wallboxes, office parking, and destination charging (hotels, malls, restaurants). Cost: ฿15,000–60,000 for the unit + installation.</li>
+      <li><strong>DC Fast Charging (50–350 kW):</strong> Bypasses the car's onboard charger and feeds DC directly to the battery. Charges 10–80% in 20–45 minutes at 50 kW, or 15–25 minutes at 150+ kW. Used at public charging stations, highway rest stops, and commercial charging hubs. Cost: ฿500,000–3,000,000+ per unit. Requires heavy electrical infrastructure (dedicated transformer, high-capacity cables).</li>
+    </ul>
+    <ul data-he>
+      <li><strong>AC רמה 1 (1.4–2.4 kW):</strong> שקע ביתי סטנדרטי (230V, פאזה אחת). טוען 8–15 ק"מ טווח לשעה. לוקח 24–40 שעות לטעינה מלאה. לא דרוש ציוד מיוחד — רק הכבל הנייד שמגיע עם הרכב. מתאים רק לטעינת לילה בבית עם נסיעות יומיות קצרות.</li>
+      <li><strong>AC רמה 2 (7–22 kW):</strong> תחנת טעינה ייעודית עם 230V חד-פאזי (7 kW) או 400V תלת-פאזי (11–22 kW). טוען 40–120 ק"מ טווח לשעה. טעינה מלאה ב-4–8 שעות. הסטנדרט לוולבוקסים ביתיים, חניוני משרדים, וטעינת יעד (מלונות, קניונים, מסעדות). עלות: ฿15,000–60,000 ליחידה + התקנה.</li>
+      <li><strong>טעינה מהירה DC (50–350 kW):</strong> עוקפת את המטען המובנה ברכב ומזינה DC ישירות לסוללה. טוענת 10–80% תוך 20–45 דקות ב-50 kW, או 15–25 דקות ב-150+ kW. בשימוש בתחנות טעינה ציבוריות, תחנות מנוחה בכבישים מהירים, ומרכזי טעינה מסחריים. עלות: ฿500,000–3,000,000+ ליחידה. דורשת תשתית חשמלית כבדה (שנאי ייעודי, כבלים בעלי קיבולת גבוהה).</li>
+    </ul>
+    <ul data-th>
+      <li><strong>AC Level 1 (1.4–2.4 kW):</strong> เต้ารับในบ้านมาตรฐาน (230V เฟสเดียว) ชาร์จได้ 8–15 กม. ระยะทางต่อชั่วโมง ใช้เวลา 24–40 ชั่วโมงสำหรับชาร์จเต็ม ไม่ต้องใช้อุปกรณ์พิเศษ — แค่สายชาร์จพกพาที่มากับรถ เหมาะสำหรับชาร์จข้ามคืนที่บ้านกับการเดินทางประจำวันสั้นๆ เท่านั้น</li>
+      <li><strong>AC Level 2 (7–22 kW):</strong> สถานีชาร์จเฉพาะทางด้วย 230V เฟสเดียว (7 kW) หรือ 400V สามเฟส (11–22 kW) ชาร์จได้ 40–120 กม. ระยะทางต่อชั่วโมง ชาร์จเต็มใน 4–8 ชั่วโมง มาตรฐานสำหรับวอลบ็อกซ์ที่บ้าน ที่จอดรถสำนักงาน และการชาร์จปลายทาง (โรงแรม ห้าง ร้านอาหาร) ราคา: ฿15,000–60,000 ต่อเครื่อง + ค่าติดตั้ง</li>
+      <li><strong>DC Fast Charging (50–350 kW):</strong> ข้ามชาร์จเจอร์ออนบอร์ดของรถและป้อน DC ตรงไปยังแบตเตอรี่ ชาร์จ 10–80% ใน 20–45 นาทีที่ 50 kW หรือ 15–25 นาทีที่ 150+ kW ใช้ในสถานีชาร์จสาธารณะ จุดพักริมทางหลวง และศูนย์ชาร์จเชิงพาณิชย์ ราคา: ฿500,000–3,000,000+ ต่อเครื่อง ต้องการโครงสร้างพื้นฐานไฟฟ้าหนัก (หม้อแปลงเฉพาะ สายเคเบิลความจุสูง)</li>
+    </ul>
+  </section>
+
+  <!-- Section 3: Connector Standards -->
+  <section class="content-section fade-up">
+    <h2 data-en>Connector Standards</h2>
+    <h2 data-he>תקני מחברים</h2>
+    <h2 data-th>มาตรฐานหัวชาร์จ</h2>
+
+    <img src="../images/ev-connector-types.png" alt="EV connector types — Type 2, CCS2, and CHAdeMO comparison" class="lesson-image">
+
+    <p data-en>Different EVs use different connector types. In Thailand and Southeast Asia, these are the standards you'll encounter:</p>
+    <p data-he>רכבים חשמליים שונים משתמשים בסוגי מחברים שונים. בתאילנד ודרום-מזרח אסיה, אלה התקנים שתיתקלו בהם:</p>
+    <p data-th>รถ EV ต่างรุ่นใช้หัวชาร์จต่างประเภท ในประเทศไทยและเอเชียตะวันออกเฉียงใต้ มาตรฐานที่คุณจะพบมีดังนี้:</p>
+
+    <ul data-en>
+      <li><strong>Type 2 (Mennekes):</strong> The standard AC connector in Thailand and Europe. Used for AC Level 2 charging (7–22 kW). All EVs sold in Thailand support Type 2 for AC charging. The connector has 7 pins and supports single-phase and three-phase AC.</li>
+      <li><strong>CCS2 (Combined Charging System Type 2):</strong> The dominant DC fast charging standard in Thailand. Combines the Type 2 AC connector on top with two additional DC pins on the bottom. Supports 50–350 kW DC charging. Used by BYD, MG, GWM, Mercedes, BMW, Volvo, and most other brands sold in Thailand.</li>
+      <li><strong>CHAdeMO:</strong> A Japanese DC fast charging standard used by Nissan (Leaf) and some older EVs. Being phased out globally in favor of CCS2. Still found at some public charging stations in Thailand but declining rapidly. Maximum 50–100 kW.</li>
+      <li><strong>GB/T:</strong> Chinese national standard. Some Chinese-made EVs may use this connector in their home market, but all EVs sold in Thailand use CCS2 for DC and Type 2 for AC. Not relevant for Thai installations.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>Type 2 (Mennekes):</strong> מחבר ה-AC הסטנדרטי בתאילנד ואירופה. בשימוש לטעינת AC רמה 2 (7–22 kW). כל הרכבים החשמליים הנמכרים בתאילנד תומכים ב-Type 2 לטעינת AC. למחבר 7 פינים ותומך ב-AC חד-פאזי ותלת-פאזי.</li>
+      <li><strong>CCS2 (Combined Charging System Type 2):</strong> תקן טעינה מהירה DC הדומיננטי בתאילנד. משלב את מחבר ה-AC מסוג Type 2 למעלה עם שני פיני DC נוספים למטה. תומך בטעינת DC של 50–350 kW. בשימוש על ידי BYD, MG, GWM, מרצדס, BMW, וולוו ורוב המותגים האחרים הנמכרים בתאילנד.</li>
+      <li><strong>CHAdeMO:</strong> תקן טעינה מהירה DC יפני בשימוש על ידי ניסאן (Leaf) וכמה EVs ישנים. נעלם בהדרגה ברחבי העולם לטובת CCS2. עדיין נמצא בכמה תחנות טעינה ציבוריות בתאילנד אך יורד במהירות. מקסימום 50–100 kW.</li>
+      <li><strong>GB/T:</strong> תקן לאומי סיני. חלק מרכבי EV תוצרת סין עשויים להשתמש במחבר זה בשוק הביתי שלהם, אך כל ה-EVs הנמכרים בתאילנד משתמשים ב-CCS2 ל-DC ו-Type 2 ל-AC. לא רלוונטי להתקנות תאילנדיות.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>Type 2 (Mennekes):</strong> หัวชาร์จ AC มาตรฐานในประเทศไทยและยุโรป ใช้สำหรับชาร์จ AC Level 2 (7–22 kW) รถ EV ทุกรุ่นที่ขายในไทยรองรับ Type 2 สำหรับชาร์จ AC หัวชาร์จมี 7 พิน รองรับ AC เฟสเดียวและสามเฟส</li>
+      <li><strong>CCS2 (Combined Charging System Type 2):</strong> มาตรฐานชาร์จเร็ว DC หลักในประเทศไทย รวมหัวชาร์จ Type 2 AC ด้านบนกับพิน DC เพิ่มเติมสองตัวด้านล่าง รองรับชาร์จ DC 50–350 kW ใช้โดย BYD, MG, GWM, Mercedes, BMW, Volvo และแบรนด์อื่นๆ ส่วนใหญ่ที่ขายในไทย</li>
+      <li><strong>CHAdeMO:</strong> มาตรฐานชาร์จเร็ว DC ของญี่ปุ่น ใช้โดย Nissan (Leaf) และ EV รุ่นเก่าบางรุ่น กำลังถูกเลิกใช้ทั่วโลกเพื่อเปลี่ยนเป็น CCS2 ยังพบได้ในสถานีชาร์จสาธารณะบางแห่งในไทยแต่ลดลงอย่างรวดเร็ว สูงสุด 50–100 kW</li>
+      <li><strong>GB/T:</strong> มาตรฐานแห่งชาติจีน รถ EV ที่ผลิตในจีนบางรุ่นอาจใช้หัวชาร์จนี้ในตลาดบ้าน แต่รถ EV ทุกรุ่นที่ขายในไทยใช้ CCS2 สำหรับ DC และ Type 2 สำหรับ AC ไม่เกี่ยวข้องกับการติดตั้งในไทย</li>
+    </ul>
+
+    <div class="key-term">
+      <p><strong data-en>CCS2 (Combined Charging System 2)</strong><strong data-he>CCS2 (מערכת טעינה משולבת 2)</strong><strong data-th>CCS2 (Combined Charging System 2)</strong> — <span data-en>The dominant DC fast charging standard in Thailand. It combines a Type 2 AC connector with two additional DC power pins, enabling both AC charging (up to 22 kW) and DC fast charging (up to 350 kW) through a single port on the vehicle.</span><span data-he>תקן טעינה מהירה DC הדומיננטי בתאילנד. הוא משלב מחבר AC מסוג Type 2 עם שני פיני הספק DC נוספים, מאפשר גם טעינת AC (עד 22 kW) וגם טעינה מהירה DC (עד 350 kW) דרך יציאה אחת ברכב.</span><span data-th>มาตรฐานชาร์จเร็ว DC หลักในประเทศไทย รวมหัวชาร์จ AC Type 2 กับพิน DC เพิ่มเติมสองตัว ทำให้สามารถชาร์จทั้ง AC (สูงสุด 22 kW) และชาร์จเร็ว DC (สูงสุด 350 kW) ผ่านพอร์ตเดียวบนรถ</span></p>
+    </div>
+  </section>
+
+  <!-- Section 4: Installation Requirements -->
+  <section class="content-section fade-up">
+    <h2 data-en>Installation Requirements</h2>
+    <h2 data-he>דרישות התקנה</h2>
+    <h2 data-th>ข้อกำหนดการติดตั้ง</h2>
+
+    <p data-en>Installing an EV charger requires careful planning of the electrical infrastructure. Here are the key considerations:</p>
+    <p data-he>התקנת מטען EV דורשת תכנון קפדני של תשתית החשמל. הנה השיקולים המרכזיים:</p>
+    <p data-th>การติดตั้งเครื่องชาร์จ EV ต้องวางแผนโครงสร้างพื้นฐานไฟฟ้าอย่างรอบคอบ ข้อพิจารณาหลักมีดังนี้:</p>
+
+    <ul data-en>
+      <li><strong>Electrical capacity assessment:</strong> A 7 kW charger needs a 32A dedicated circuit on a 230V single-phase supply. A 22 kW charger needs a 32A three-phase (400V) circuit. DC fast chargers (50+ kW) typically require a dedicated transformer. Always check the building's main breaker capacity and available amperage before installation.</li>
+      <li><strong>Cable runs:</strong> Distance from the electrical panel to the charger location affects cable size and cost. Every 10 meters of cable run increases cost by ฿1,000–3,000 depending on cable gauge. Keep runs as short as possible. For outdoor installations, use UV-resistant conduit rated for tropical conditions.</li>
+      <li><strong>Load management:</strong> In multi-unit buildings (condos, offices), installing multiple chargers can overload the building's electrical system. Dynamic Load Management (DLM) systems distribute available power among multiple chargers, reducing the need for expensive electrical upgrades. Example: 4 chargers sharing a 32A supply, each getting 8A when all are active.</li>
+      <li><strong>Protection devices:</strong> EV chargers require a Type B RCD (Residual Current Device) or Type A RCD + DC fault detection module. Standard Type A RCDs don't detect DC leakage currents that can occur during EV charging. This is a safety-critical requirement.</li>
+      <li><strong>Mounting and location:</strong> Wall-mount chargers need a sturdy wall (concrete or steel-reinforced). Pedestal-mount chargers need a concrete foundation. Consider cable management, drainage, lighting for nighttime use, and protection from monsoon rain.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>הערכת קיבולת חשמלית:</strong> מטען 7 kW דורש מעגל ייעודי 32A על אספקה חד-פאזית 230V. מטען 22 kW דורש מעגל תלת-פאזי (400V) 32A. מטעני DC מהירים (50+ kW) בדרך כלל דורשים שנאי ייעודי. תמיד בדקו את קיבולת המפסק הראשי של הבניין וזרם פנוי לפני ההתקנה.</li>
+      <li><strong>מסלולי כבלים:</strong> המרחק מלוח החשמל למיקום המטען משפיע על גודל הכבל והעלות. כל 10 מטר מסלול כבל מגדילים את העלות ב-฿1,000–3,000 בהתאם לעובי הכבל. שמרו על מסלולים קצרים ככל האפשר. להתקנות חיצוניות, השתמשו בצנרת עמידה ל-UV המדורגת לתנאים טרופיים.</li>
+      <li><strong>ניהול עומסים:</strong> בבניינים רב-יחידתיים (קונדו, משרדים), התקנת מטענים מרובים יכולה להעמיס על מערכת החשמל של הבניין. מערכות ניהול עומסים דינמיות (DLM) מחלקות הספק זמין בין מטענים מרובים, מפחיתות את הצורך בשדרוגי חשמל יקרים. דוגמה: 4 מטענים חולקים אספקת 32A, כל אחד מקבל 8A כשכולם פעילים.</li>
+      <li><strong>התקני הגנה:</strong> מטעני EV דורשים RCD מסוג B (התקן זרם שיורי) או RCD מסוג A + מודול זיהוי תקלות DC. RCD סטנדרטי מסוג A לא מזהה זרמי דליפה DC שיכולים להתרחש במהלך טעינת EV. זוהי דרישת בטיחות קריטית.</li>
+      <li><strong>הרכבה ומיקום:</strong> מטעני קיר דורשים קיר חזק (בטון או מחוזק פלדה). מטעני עמוד דורשים בסיס בטון. שקלו ניהול כבלים, ניקוז, תאורה לשימוש לילי, והגנה מגשם מונסון.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>การประเมินกำลังไฟฟ้า:</strong> เครื่องชาร์จ 7 kW ต้องใช้วงจรเฉพาะ 32A บนแหล่งจ่ายเฟสเดียว 230V เครื่องชาร์จ 22 kW ต้องใช้วงจรสามเฟส (400V) 32A เครื่องชาร์จเร็ว DC (50+ kW) มักต้องใช้หม้อแปลงเฉพาะ ตรวจสอบขนาดเมนเบรกเกอร์ของอาคารและแอมแปร์ที่มีอยู่เสมอก่อนติดตั้ง</li>
+      <li><strong>เส้นทางสายเคเบิล:</strong> ระยะทางจากแผงไฟฟ้าถึงตำแหน่งเครื่องชาร์จมีผลต่อขนาดสายและต้นทุน ทุก 10 เมตรของเส้นทางสายเพิ่มค่าใช้จ่าย ฿1,000–3,000 ขึ้นอยู่กับขนาดสาย ทำเส้นทางให้สั้นที่สุดเท่าที่จะได้ สำหรับการติดตั้งกลางแจ้ง ใช้ท่อร้อยสายทนรังสี UV สำหรับสภาพอากาศเขตร้อน</li>
+      <li><strong>การจัดการโหลด:</strong> ในอาคารหลายยูนิต (คอนโด สำนักงาน) การติดตั้งเครื่องชาร์จหลายตัวอาจทำให้ระบบไฟฟ้าของอาคารโอเวอร์โหลด ระบบ Dynamic Load Management (DLM) กระจายพลังงานที่มีอยู่ให้เครื่องชาร์จหลายตัว ลดความจำเป็นในการอัปเกรดไฟฟ้าราคาแพง ตัวอย่าง: 4 เครื่องชาร์จแบ่งใช้แหล่งจ่าย 32A แต่ละตัวได้ 8A เมื่อใช้พร้อมกันทั้งหมด</li>
+      <li><strong>อุปกรณ์ป้องกัน:</strong> เครื่องชาร์จ EV ต้องใช้ RCD ชนิด B (อุปกรณ์กระแสรั่ว) หรือ RCD ชนิด A + โมดูลตรวจจับกระแสรั่ว DC RCD มาตรฐานชนิด A ไม่ตรวจจับกระแสรั่ว DC ที่อาจเกิดขึ้นระหว่างชาร์จ EV นี่เป็นข้อกำหนดด้านความปลอดภัยที่สำคัญ</li>
+      <li><strong>การยึดและสถานที่:</strong> เครื่องชาร์จติดผนังต้องการผนังแข็งแรง (คอนกรีตหรือเหล็กเสริม) เครื่องชาร์จแบบเสาต้องการฐานคอนกรีต พิจารณาการจัดการสายเคเบิล การระบายน้ำ ไฟส่องสว่างสำหรับใช้ตอนกลางคืน และการป้องกันฝนมรสุม</li>
+    </ul>
+  </section>
+
+  <!-- Section 5: Smart Charging -->
+  <section class="content-section fade-up">
+    <h2 data-en>Smart Charging Features</h2>
+    <h2 data-he>תכונות טעינה חכמה</h2>
+    <h2 data-th>ฟีเจอร์การชาร์จอัจฉริยะ</h2>
+
+    <p data-en>Modern EV chargers go far beyond simply plugging in. Smart charging features optimize energy use, reduce costs, and integrate with solar systems:</p>
+    <p data-he>מטעני EV מודרניים חורגים הרבה מעבר לחיבור פשוט. תכונות טעינה חכמה מייעלות שימוש באנרגיה, מפחיתות עלויות ומשתלבות עם מערכות סולאריות:</p>
+    <p data-th>เครื่องชาร์จ EV สมัยใหม่ทำได้มากกว่าแค่เสียบปลั๊ก ฟีเจอร์การชาร์จอัจฉริยะเพิ่มประสิทธิภาพการใช้พลังงาน ลดต้นทุน และเชื่อมต่อกับระบบโซลาร์:</p>
+
+    <ul data-en>
+      <li><strong>Load balancing:</strong> The charger communicates with a CT clamp on the main breaker to monitor total building consumption. If the building approaches its capacity limit, the charger automatically reduces its power. This prevents tripping the main breaker and avoids expensive electrical upgrades.</li>
+      <li><strong>Scheduled charging:</strong> Program the charger to start at specific times — e.g., after 22:00 when TOU off-peak rates begin. This saves ฿2–3/kWh on every charge session. Most smart chargers support scheduling via smartphone app.</li>
+      <li><strong>Solar-aware charging (Excess Solar):</strong> The charger monitors solar production in real-time and charges the EV only with excess solar energy that would otherwise be exported to the grid. This maximizes solar self-consumption and charges the EV at essentially zero marginal cost. Huawei chargers integrate natively with FusionSolar for this feature.</li>
+      <li><strong>OCPP (Open Charge Point Protocol):</strong> An open communication standard that allows chargers from different manufacturers to work with any backend management platform. Essential for commercial charging stations that need billing, user authentication, and remote management.</li>
+      <li><strong>Energy metering and reporting:</strong> Track kWh consumed per session, per user, per vehicle. Essential for workplace charging (allocating costs to employees), shared residential charging, and commercial stations that bill customers per kWh.</li>
+    </ul>
+    <ul data-he>
+      <li><strong>איזון עומסים:</strong> המטען מתקשר עם מהדק CT על המפסק הראשי כדי לנטר את צריכת הבניין הכוללת. אם הבניין מתקרב למגבלת הקיבולת שלו, המטען מפחית אוטומטית את ההספק שלו. זה מונע נפילת מפסק ראשי ונמנע משדרוגי חשמל יקרים.</li>
+      <li><strong>טעינה מתוזמנת:</strong> תכנתו את המטען להתחיל בזמנים מסוימים — למשל, אחרי 22:00 כשתעריפי TOU שפל מתחילים. זה חוסך ฿2–3/kWh בכל הפעלת טעינה. רוב המטענים החכמים תומכים בתזמון דרך אפליקציית סמארטפון.</li>
+      <li><strong>טעינה מודעת סולאר (עודפי סולאר):</strong> המטען מנטר ייצור סולארי בזמן אמת וטוען את ה-EV רק עם אנרגיה סולארית עודפת שאחרת הייתה מיוצאת לרשת. זה ממקסם צריכה עצמית סולארית וטוען את ה-EV בעלות שולית אפסית למעשה. מטעני Huawei משתלבים מובנית עם FusionSolar לתכונה זו.</li>
+      <li><strong>OCPP (פרוטוקול נקודת טעינה פתוח):</strong> תקן תקשורת פתוח המאפשר למטענים מיצרנים שונים לעבוד עם כל פלטפורמת ניהול. חיוני לתחנות טעינה מסחריות שצריכות חיוב, אימות משתמשים וניהול מרחוק.</li>
+      <li><strong>מדידת אנרגיה ודיווח:</strong> מעקב אחר kWh נצרכים להפעלה, למשתמש, לרכב. חיוני לטעינה במקום עבודה (הקצאת עלויות לעובדים), טעינה שיתופית דיורית, ותחנות מסחריות שמחייבות לקוחות ל-kWh.</li>
+    </ul>
+    <ul data-th>
+      <li><strong>การปรับสมดุลโหลด:</strong> เครื่องชาร์จสื่อสารกับ CT clamp บนเมนเบรกเกอร์เพื่อตรวจสอบการใช้ไฟรวมของอาคาร หากอาคารเข้าใกล้ขีดจำกัดกำลังไฟ เครื่องชาร์จจะลดกำลังโดยอัตโนมัติ ป้องกันเมนเบรกเกอร์ตกและหลีกเลี่ยงการอัปเกรดไฟฟ้าราคาแพง</li>
+      <li><strong>การชาร์จตามตารางเวลา:</strong> โปรแกรมเครื่องชาร์จให้เริ่มในเวลาที่กำหนด — เช่น หลัง 22:00 เมื่ออัตรา TOU ออฟพีคเริ่ม ประหยัด ฿2–3/kWh ทุกครั้งที่ชาร์จ เครื่องชาร์จอัจฉริยะส่วนใหญ่รองรับการตั้งเวลาผ่านแอปมือถือ</li>
+      <li><strong>การชาร์จตามโซลาร์ (โซลาร์ส่วนเกิน):</strong> เครื่องชาร์จตรวจสอบการผลิตโซลาร์แบบเรียลไทม์และชาร์จ EV เฉพาะพลังงานโซลาร์ส่วนเกินที่ไม่เช่นนั้นจะถูกส่งออกไปยังกริด เพิ่มการใช้โซลาร์ด้วยตัวเองให้สูงสุดและชาร์จ EV ที่ต้นทุนส่วนเพิ่มเป็นศูนย์ เครื่องชาร์จ Huawei ทำงานร่วมกับ FusionSolar ได้โดยตรง</li>
+      <li><strong>OCPP (Open Charge Point Protocol):</strong> มาตรฐานการสื่อสารแบบเปิดที่อนุญาตให้เครื่องชาร์จจากผู้ผลิตต่างๆ ทำงานกับแพลตฟอร์มการจัดการใดก็ได้ จำเป็นสำหรับสถานีชาร์จเชิงพาณิชย์ที่ต้องมีระบบเก็บเงิน การยืนยันตัวตน และการจัดการระยะไกล</li>
+      <li><strong>การวัดพลังงานและรายงาน:</strong> ติดตาม kWh ที่ใช้ต่อเซสชัน ต่อผู้ใช้ ต่อรถ จำเป็นสำหรับการชาร์จในที่ทำงาน (แบ่งค่าใช้จ่ายให้พนักงาน) การชาร์จร่วมกันในที่พัก และสถานีเชิงพาณิชย์ที่เก็บเงินลูกค้าต่อ kWh</li>
+    </ul>
+
+    <div class="did-you-know">
+      <div class="dyk-title" data-en>Did You Know?</div>
+      <div class="dyk-title" data-he>הידעת?</div>
+      <div class="dyk-title" data-th>รู้หรือไม่?</div>
+      <p data-en>A typical BYD Atto 3 (60.5 kWh battery) driven 40 km/day consumes about 7–8 kWh. A 10 kW solar system produces ~40 kWh/day in Thailand. That means a solar system can fully charge an EV's daily driving needs using only 15–20% of its production — leaving plenty for the home and battery storage.</p>
+      <p data-he>BYD Atto 3 טיפוסי (סוללת 60.5 kWh) הנוסע 40 ק"מ ביום צורך כ-7–8 kWh. מערכת סולארית 10 kW מייצרת ~40 kWh/יום בתאילנד. זה אומר שמערכת סולארית יכולה לטעון באופן מלא את צרכי הנסיעה היומיים של EV תוך שימוש ב-15–20% בלבד מהייצור שלה — ונשאר הרבה לבית ולאגירת סוללות.</p>
+      <p data-th>BYD Atto 3 ทั่วไป (แบตเตอรี่ 60.5 kWh) ขับ 40 กม./วัน ใช้ไฟประมาณ 7–8 kWh ระบบโซลาร์ 10 kW ผลิตได้ ~40 kWh/วันในประเทศไทย นั่นหมายความว่าระบบโซลาร์สามารถชาร์จความต้องการขับขี่รายวันของ EV ได้เต็มที่โดยใช้เพียง 15–20% ของกำลังผลิต — เหลือเยอะสำหรับบ้านและกักเก็บแบตเตอรี่</p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <nav class="lesson-nav">
+    <a href="ev-storage-01.html">
+      <span data-en>← Previous Lesson</span><span data-he>השיעור הקודם ←</span><span data-th>← บทก่อนหน้า</span>
+    </a>
+    <a href="../index.html">
+      <span data-en>Course Home</span><span data-he>דף הקורס</span><span data-th>หน้าหลักคอร์ส</span>
+    </a>
+    <a href="ev-storage-03.html">
+      <span data-en>Next Lesson →</span><span data-he>→ השיעור הבא</span><span data-th>บทถัดไป →</span>
+    </a>
+  </nav>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 TM Energy Co., Ltd.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('ev-storage', 2);
+  initQuiz('ev-storage', 2, [
+    {
+      question: {
+        en: "What is Thailand's 30@30 policy?",
+        he: "מהי מדיניות 30@30 של תאילנד?",
+        th: "นโยบาย 30@30 ของประเทศไทยคืออะไร?"
+      },
+      options: [
+        { en: "30% tax on all vehicles by 2030", he: "מס 30% על כל הרכבים עד 2030", th: "ภาษี 30% สำหรับรถทุกคันภายในปี 2030" },
+        { en: "30% of domestically produced vehicles to be electric by 2030", he: "30% מהרכבים המיוצרים מקומית יהיו חשמליים עד 2030", th: "30% ของยานยนต์ที่ผลิตในประเทศเป็นรถไฟฟ้าภายในปี 2030" },
+        { en: "30 charging stations in 30 provinces", he: "30 תחנות טעינה ב-30 מחוזות", th: "30 สถานีชาร์จใน 30 จังหวัด" },
+        { en: "Reduce emissions by 30% in 30 years", he: "הפחתת פליטות ב-30% תוך 30 שנה", th: "ลดการปล่อยมลพิษ 30% ใน 30 ปี" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the dominant DC fast charging connector standard in Thailand?",
+        he: "מהו תקן מחבר טעינה מהירה DC הדומיננטי בתאילנד?",
+        th: "มาตรฐานหัวชาร์จเร็ว DC หลักในประเทศไทยคืออะไร?"
+      },
+      options: [
+        { en: "CHAdeMO", he: "CHAdeMO", th: "CHAdeMO" },
+        { en: "GB/T", he: "GB/T", th: "GB/T" },
+        { en: "CCS2", he: "CCS2", th: "CCS2" },
+        { en: "Tesla Supercharger (NACS)", he: "Tesla Supercharger (NACS)", th: "Tesla Supercharger (NACS)" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "What does 'solar-aware charging' mean?",
+        he: "מה המשמעות של 'טעינה מודעת סולאר'?",
+        th: "'การชาร์จตามโซลาร์' หมายถึงอะไร?"
+      },
+      options: [
+        { en: "Charging only when the sun is shining", he: "טעינה רק כשהשמש זורחת", th: "ชาร์จเฉพาะเมื่อแดดออก" },
+        { en: "Using solar panels mounted on the car", he: "שימוש בפאנלים סולאריים מותקנים על הרכב", th: "ใช้แผงโซลาร์ที่ติดบนรถ" },
+        { en: "The charger uses only excess solar energy that would otherwise be exported to the grid", he: "המטען משתמש רק באנרגיה סולארית עודפת שאחרת הייתה מיוצאת לרשת", th: "เครื่องชาร์จใช้เฉพาะพลังงานโซลาร์ส่วนเกินที่ไม่เช่นนั้นจะถูกส่งออกไปยังกริด" },
+        { en: "Painting the charger to look like a solar panel", he: "צביעת המטען כדי להיראות כמו פאנל סולארי", th: "ทาสีเครื่องชาร์จให้ดูเหมือนแผงโซลาร์" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "Why do EV chargers require a Type B RCD instead of a standard Type A?",
+        he: "למה מטעני EV דורשים RCD מסוג B במקום סוג A סטנדרטי?",
+        th: "ทำไมเครื่องชาร์จ EV ต้องใช้ RCD ชนิด B แทนชนิด A มาตรฐาน?"
+      },
+      options: [
+        { en: "Type B is cheaper", he: "סוג B זול יותר", th: "ชนิด B ถูกกว่า" },
+        { en: "Type A doesn't detect DC leakage currents that can occur during EV charging", he: "סוג A לא מזהה זרמי דליפה DC שיכולים להתרחש במהלך טעינת EV", th: "ชนิด A ไม่ตรวจจับกระแสรั่ว DC ที่อาจเกิดขึ้นระหว่างชาร์จ EV" },
+        { en: "Type B has a nicer design", he: "לסוג B עיצוב יפה יותר", th: "ชนิด B มีดีไซน์สวยกว่า" },
+        { en: "Type A is no longer manufactured", he: "סוג A כבר לא מיוצר", th: "ชนิด A ไม่ผลิตแล้ว" }
+      ],
+      correct: 1
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>
