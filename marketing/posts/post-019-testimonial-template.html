@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #F8F9FA; color: #1B2A4A; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .top-accent { position: absolute; top: 0; left: 0; right: 0; height: 8px; background: linear-gradient(90deg, #F27A1A, #00D68F); }
+  .quote-marks { font-size: 160px; font-weight: 800; color: #F27A1A; line-height: 0.7; opacity: 0.15; position: absolute; top: 100px; left: 60px; font-family: Georgia, serif; }
+  .quote-section { margin: 80px 0 40px; padding: 0 20px; position: relative; z-index: 2; }
+  .quote-text { font-size: 38px; font-weight: 600; line-height: 1.5; color: #1B2A4A; font-style: italic; max-width: 880px; }
+  .quote-placeholder { color: #A0AABE; font-style: italic; }
+  .stars { display: flex; gap: 8px; margin: 40px 0 32px; padding: 0 20px; }
+  .star { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+  .star svg { width: 36px; height: 36px; }
+  .star-filled { color: #F27A1A; }
+  .author { padding: 0 20px; }
+  .author .name { font-size: 28px; font-weight: 700; color: #1B2A4A; }
+  .author .location { font-size: 22px; color: #5A6B8A; margin-top: 4px; }
+  .divider { width: 60px; height: 4px; background: #F27A1A; border-radius: 2px; margin: 40px 20px; }
+  .footer { background: #1B2A4A; padding: 28px 36px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+  .footer-left { display: flex; align-items: center; gap: 16px; }
+  .footer-logo-circle { width: 48px; height: 48px; background: #F27A1A; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #fff; }
+  .footer-text { color: #fff; }
+  .footer-text .brand { font-size: 22px; font-weight: 700; }
+  .footer-text .tagline { font-size: 16px; color: #A0AABE; }
+  .footer-right { font-size: 16px; color: #A0AABE; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top-accent"></div>
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="quote-marks">"</div>
+  <div class="quote-section">
+    <div class="quote-text">
+      <span class="quote-placeholder">[Customer quote goes here — e.g., "We cut our electricity bill by 65% in the first month. The team at TM Energy made it incredibly easy."]</span>
+    </div>
+  </div>
+  <div class="stars">
+    <div class="star star-filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+    <div class="star star-filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+    <div class="star star-filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+    <div class="star star-filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+    <div class="star star-filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+  </div>
+  <div class="author">
+    <div class="name">— [Name]</div>
+    <div class="location">[Location], Thailand</div>
+  </div>
+  <div class="divider"></div>
+  <div class="footer">
+    <div class="footer-left">
+      <div class="footer-logo-circle">TM</div>
+      <div class="footer-text">
+        <div class="brand">TM Energy</div>
+        <div class="tagline">Solar Solutions for Southern Thailand</div>
+      </div>
+    </div>
+    <div class="footer-right">tmenergy.co.th</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #FFFFFF; color: #1B2A4A; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .badge { display: inline-block; background: #00D68F; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  h1 { font-size: 58px; font-weight: 800; line-height: 1.1; margin-bottom: 6px; }
+  .subtitle { font-size: 24px; color: #5A6B8A; margin-bottom: 44px; }
+  .models { display: flex; gap: 24px; flex: 1; }
+  .model { flex: 1; border-radius: 24px; padding: 36px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; border: 3px solid #E8ECF2; position: relative; background: #fff; }
+  .model.popular { border-color: #00D68F; background: linear-gradient(180deg, #00D68F08, #fff); }
+  .pop-badge { position: absolute; top: -14px; background: #00D68F; color: #fff; font-size: 13px; font-weight: 700; padding: 4px 16px; border-radius: 12px; }
+  .model-icon { width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 20px; }
+  .icon-buy { background: #1B2A4A; color: #fff; }
+  .icon-sub { background: #00D68F; color: #fff; }
+  .icon-rent { background: #F27A1A; color: #fff; }
+  .model h3 { font-size: 30px; font-weight: 800; margin-bottom: 4px; }
+  .model .type { font-size: 18px; color: #5A6B8A; margin-bottom: 20px; font-weight: 600; }
+  .model-features { list-style: none; text-align: left; width: 100%; margin-bottom: auto; }
+  .model-features li { font-size: 18px; padding: 10px 0; border-bottom: 1px solid #F0F2F5; display: flex; align-items: center; gap: 10px; }
+  .model-features li::before { content: '✓'; color: #00D68F; font-weight: 800; font-size: 16px; }
+  .model .price-indicator { margin-top: 24px; }
+  .price-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 6px; }
+  .price-dot { width: 14px; height: 14px; border-radius: 50%; background: #E0E4EA; }
+  .price-dot.filled { background: #F27A1A; }
+  .price-label { font-size: 15px; color: #5A6B8A; }
+  .bottom-cta { background: #1B2A4A; padding: 28px 36px; border-radius: 16px; text-align: center; margin-top: 28px; }
+  .bottom-cta .big { font-size: 28px; font-weight: 800; color: #F27A1A; }
+  .bottom-cta .small { font-size: 18px; color: #A0AABE; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="badge">Options</div>
+  <h1>3 Ways to Go Solar</h1>
+  <p class="subtitle">Choose the model that fits your budget and goals</p>
+  <div class="models">
+    <div class="model">
+      <div class="model-icon icon-buy">🏗</div>
+      <h3>EPC</h3>
+      <div class="type">Buy & Own</div>
+      <ul class="model-features">
+        <li>You own the system</li>
+        <li>Maximum savings</li>
+        <li>Full ROI in 3–5 yrs</li>
+        <li>25+ year lifespan</li>
+      </ul>
+      <div class="price-indicator">
+        <div class="price-dots">
+          <div class="price-dot filled"></div>
+          <div class="price-dot filled"></div>
+          <div class="price-dot filled"></div>
+        </div>
+        <div class="price-label">Higher upfront</div>
+      </div>
+    </div>
+    <div class="model popular">
+      <div class="pop-badge">Most Popular</div>
+      <div class="model-icon icon-sub">⚡</div>
+      <h3>PPA</h3>
+      <div class="type">Subscribe</div>
+      <ul class="model-features">
+        <li>Zero upfront cost</li>
+        <li>Pay ฿4.50/kWh</li>
+        <li>We maintain it all</li>
+        <li>Save from day one</li>
+      </ul>
+      <div class="price-indicator">
+        <div class="price-dots">
+          <div class="price-dot filled"></div>
+          <div class="price-dot"></div>
+          <div class="price-dot"></div>
+        </div>
+        <div class="price-label">No upfront cost</div>
+      </div>
+    </div>
+    <div class="model">
+      <div class="model-icon icon-rent">🔑</div>
+      <h3>Lease</h3>
+      <div class="type">Rent</div>
+      <ul class="model-features">
+        <li>Fixed monthly fee</li>
+        <li>Predictable costs</li>
+        <li>Maintenance included</li>
+        <li>Flexible terms</li>
+      </ul>
+      <div class="price-indicator">
+        <div class="price-dots">
+          <div class="price-dot filled"></div>
+          <div class="price-dot filled"></div>
+          <div class="price-dot"></div>
+        </div>
+        <div class="price-label">Monthly payment</div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-cta">
+    <div class="big">Which one is right for you?</div>
+    <div class="small">Contact us for a free consultation — we'll help you choose</div>
+  </div>
+</div>
+</body>
+</html>

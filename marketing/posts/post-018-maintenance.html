@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #FFFFFF; color: #1B2A4A; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .badge { display: inline-block; background: #F27A1A; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 6px; }
+  .subtitle { font-size: 24px; color: #5A6B8A; margin-bottom: 48px; }
+  .maintenance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; }
+  .maint-card { background: #F8F9FA; border-radius: 24px; padding: 36px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; border: 2px solid #E8ECF2; }
+  .maint-icon { width: 88px; height: 88px; border-radius: 22px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .icon-1 { background: #00D68F18; }
+  .icon-2 { background: #F27A1A18; }
+  .icon-3 { background: #1B2A4A12; }
+  .icon-4 { background: #00D68F18; }
+  .maint-icon .emoji { font-size: 40px; }
+  .maint-card h3 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+  .maint-card .freq { font-size: 18px; color: #00D68F; font-weight: 700; margin-bottom: 6px; }
+  .maint-card p { font-size: 18px; color: #5A6B8A; line-height: 1.4; }
+  .bottom-section { margin-top: 32px; display: flex; gap: 20px; }
+  .thats-it { background: #00D68F; flex: 2; padding: 32px 36px; border-radius: 16px; display: flex; flex-direction: column; justify-content: center; }
+  .thats-it .big { font-size: 36px; font-weight: 800; color: #1B2A4A; }
+  .thats-it .small { font-size: 20px; color: #1B2A4A; opacity: 0.7; margin-top: 8px; }
+  .years-box { background: #1B2A4A; flex: 1; padding: 32px 28px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .years-box .num { font-size: 56px; font-weight: 800; color: #F27A1A; }
+  .years-box .label { font-size: 18px; color: #A0AABE; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="badge">Maintenance</div>
+  <h1>Solar Maintenance:<br>Keep It Simple</h1>
+  <p class="subtitle">Solar panels need almost no maintenance — here's your checklist</p>
+  <div class="maintenance-grid">
+    <div class="maint-card">
+      <div class="maint-icon icon-1"><span class="emoji">💧</span></div>
+      <h3>Clean Panels</h3>
+      <div class="freq">2× per year</div>
+      <p>Rinse with water to remove dust and debris</p>
+    </div>
+    <div class="maint-card">
+      <div class="maint-icon icon-2"><span class="emoji">🔧</span></div>
+      <h3>Check Inverter</h3>
+      <div class="freq">Annually</div>
+      <p>Quick visual inspection — green light = all good</p>
+    </div>
+    <div class="maint-card">
+      <div class="maint-icon icon-3"><span class="emoji">📊</span></div>
+      <h3>Monitor Output</h3>
+      <div class="freq">Monthly (via app)</div>
+      <p>Check your production stays consistent</p>
+    </div>
+    <div class="maint-card">
+      <div class="maint-icon icon-4"><span class="emoji">📞</span></div>
+      <h3>Call If Drops</h3>
+      <div class="freq">As needed</div>
+      <p>Output drops? We diagnose and fix it.</p>
+    </div>
+  </div>
+  <div class="bottom-section">
+    <div class="thats-it">
+      <div class="big">That's it.</div>
+      <div class="small">No moving parts. No oil changes. No complicated servicing.</div>
+    </div>
+    <div class="years-box">
+      <div class="num">25+</div>
+      <div class="label">years of clean<br>energy</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
