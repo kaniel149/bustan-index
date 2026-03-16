@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Academy Admin — TM Energy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy: #0A1628;
       --navy-light: #101E32;
       --navy-lighter: #162540;
+      --navy-card: #0E1A2E;
       --green: #00D68F;
       --green-dim: rgba(0,214,143,.15);
       --gold: #FFB800;
@@ -18,395 +18,1710 @@
       --red-dim: rgba(255,71,87,.15);
       --blue: #3B82F6;
       --blue-dim: rgba(59,130,246,.15);
+      --purple: #A855F7;
+      --purple-dim: rgba(168,85,247,.15);
       --text: #E8ECF4;
       --text-dim: rgba(255,255,255,.5);
+      --text-muted: rgba(255,255,255,.35);
       --glass: rgba(255,255,255,.04);
       --glass-border: rgba(255,255,255,.08);
+      --glass-hover: rgba(255,255,255,.07);
       --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --shadow: 0 4px 24px rgba(0,0,0,.3);
+      --transition: .2s ease;
+      --sidebar-w: 260px;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter',sans-serif; background:var(--navy); color:var(--text); min-height:100vh; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--navy); color: var(--text); min-height: 100vh; overflow-x: hidden; }
 
-    .header { background:var(--navy-light); border-bottom:1px solid var(--glass-border); padding:16px 32px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
-    .header h1 { font-size:1.3rem; font-weight:600; }
-    .header h1 span { color:var(--green); }
-    .header-right { display:flex; gap:12px; align-items:center; }
-    .header-badge { background:var(--green-dim); color:var(--green); padding:4px 12px; border-radius:20px; font-size:.8rem; font-weight:600; }
-
-    .container { max-width:1400px; margin:0 auto; padding:24px; }
-
-    /* Stats Row */
-    .stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:32px; }
-    .stat-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); padding:20px; text-align:center; }
-    .stat-value { font-size:2.2rem; font-weight:700; color:var(--green); }
-    .stat-label { font-size:.8rem; color:var(--text-dim); margin-top:4px; text-transform:uppercase; letter-spacing:.5px; }
-
-    /* Quality Score */
-    .quality-meter { height:8px; background:rgba(255,255,255,.08); border-radius:4px; margin-top:8px; overflow:hidden; }
-    .quality-fill { height:100%; border-radius:4px; transition:width .5s ease; }
-
-    /* Track Section */
-    .track-section { margin-bottom:32px; }
-    .track-header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-    .track-header h2 { font-size:1.1rem; font-weight:600; }
-    .track-badge { font-size:.75rem; padding:3px 10px; border-radius:12px; font-weight:600; }
-    .track-badge.complete { background:var(--green-dim); color:var(--green); }
-    .track-badge.partial { background:var(--gold-dim); color:var(--gold); }
-
-    /* Lesson Table */
-    .lesson-table { width:100%; border-collapse:collapse; background:var(--glass); border-radius:var(--radius); overflow:hidden; border:1px solid var(--glass-border); }
-    .lesson-table th { text-align:left; padding:12px 16px; background:var(--navy-lighter); font-size:.75rem; text-transform:uppercase; letter-spacing:.5px; color:var(--text-dim); font-weight:600; }
-    .lesson-table td { padding:10px 16px; border-top:1px solid var(--glass-border); font-size:.85rem; }
-    .lesson-table tr:hover td { background:rgba(255,255,255,.02); }
-
-    .check { color:var(--green); }
-    .warn { color:var(--gold); }
-    .miss { color:var(--red); }
-    .chip { display:inline-block; padding:2px 8px; border-radius:8px; font-size:.75rem; font-weight:500; }
-    .chip-green { background:var(--green-dim); color:var(--green); }
-    .chip-gold { background:var(--gold-dim); color:var(--gold); }
-    .chip-red { background:var(--red-dim); color:var(--red); }
-    .chip-blue { background:var(--blue-dim); color:var(--blue); }
-
-    /* Improvement Plan */
-    .plan-section { margin-top:40px; }
-    .plan-section h2 { font-size:1.2rem; margin-bottom:16px; }
-    .plan-phase { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); margin-bottom:16px; overflow:hidden; }
-    .plan-phase-header { padding:16px 20px; display:flex; align-items:center; gap:12px; cursor:pointer; }
-    .plan-phase-header h3 { font-size:.95rem; font-weight:600; flex:1; }
-    .plan-phase-header .priority { font-size:.75rem; padding:3px 10px; border-radius:12px; font-weight:600; }
-    .priority-critical { background:var(--red-dim); color:var(--red); }
-    .priority-high { background:var(--gold-dim); color:var(--gold); }
-    .priority-medium { background:var(--blue-dim); color:var(--blue); }
-    .priority-low { background:var(--green-dim); color:var(--green); }
-    .plan-items { padding:0 20px 16px; }
-    .plan-item { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-top:1px solid var(--glass-border); font-size:.85rem; }
-    .plan-item:first-child { border-top:none; }
-    .plan-item input[type=checkbox] { margin-top:3px; accent-color:var(--green); }
-    .plan-item .scope { color:var(--text-dim); font-size:.75rem; }
-
-    /* Summary Bar */
-    .summary-bar { position:fixed; bottom:0; left:0; right:0; background:var(--navy-light); border-top:1px solid var(--glass-border); padding:12px 32px; display:flex; align-items:center; justify-content:space-between; z-index:100; }
-    .summary-bar .left { font-size:.85rem; color:var(--text-dim); }
-    .summary-bar .right { display:flex; gap:16px; }
-    .btn { padding:8px 20px; border-radius:8px; border:none; font-size:.8rem; font-weight:600; cursor:pointer; }
-    .btn-green { background:var(--green); color:var(--navy); }
-    .btn-outline { background:transparent; border:1px solid var(--glass-border); color:var(--text); }
-
-    @media(max-width:768px) {
-      .stats-row { grid-template-columns:1fr 1fr; }
-      .lesson-table { font-size:.75rem; }
-      .container { padding:16px; }
+    /* === PIN SCREEN === */
+    #pin-screen {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 24px;
     }
+    #pin-screen.hidden { display: none; }
+    .pin-logo { font-size: 28px; font-weight: 700; color: var(--green); letter-spacing: -0.5px; }
+    .pin-logo span { color: var(--gold); }
+    .pin-subtitle { color: var(--text-dim); font-size: 14px; margin-top: -12px; }
+    .pin-input-group { display: flex; gap: 12px; }
+    .pin-digit {
+      width: 56px; height: 64px; border: 2px solid var(--glass-border);
+      background: var(--glass); border-radius: var(--radius-sm);
+      color: var(--text); font-size: 24px; font-weight: 600;
+      text-align: center; outline: none; transition: var(--transition);
+    }
+    .pin-digit:focus { border-color: var(--green); box-shadow: 0 0 0 3px var(--green-dim); }
+    .pin-digit.error { border-color: var(--red); animation: shake .4s; }
+    .pin-error { color: var(--red); font-size: 13px; height: 20px; }
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    /* === LAYOUT === */
+    .app-layout { display: flex; min-height: 100vh; }
+    .sidebar {
+      width: var(--sidebar-w); background: var(--navy-light);
+      border-right: 1px solid var(--glass-border);
+      display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 200;
+      transition: transform .3s ease;
+    }
+    .sidebar-header {
+      padding: 24px 20px; border-bottom: 1px solid var(--glass-border);
+    }
+    .sidebar-brand { font-size: 20px; font-weight: 700; color: var(--green); }
+    .sidebar-brand span { color: var(--gold); }
+    .sidebar-sub { font-size: 11px; color: var(--text-dim); margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
+    .sidebar-nav { flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 2px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 14px; border-radius: var(--radius-sm);
+      color: var(--text-dim); font-size: 14px; font-weight: 500;
+      cursor: pointer; transition: var(--transition);
+      border: none; background: none; width: 100%; text-align: left;
+    }
+    .nav-item:hover { background: var(--glass-hover); color: var(--text); }
+    .nav-item.active { background: var(--green-dim); color: var(--green); }
+    .nav-item svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .nav-item .badge {
+      margin-left: auto; background: var(--green); color: var(--navy);
+      font-size: 11px; font-weight: 700; padding: 2px 7px;
+      border-radius: 10px;
+    }
+    .sidebar-footer {
+      padding: 16px 20px; border-top: 1px solid var(--glass-border);
+      font-size: 12px; color: var(--text-muted);
+    }
+    .sidebar-footer a { color: var(--green); text-decoration: none; }
+
+    .main-content {
+      margin-left: var(--sidebar-w); flex: 1; min-height: 100vh;
+    }
+
+    /* === TOP BAR === */
+    .topbar {
+      height: 64px; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--glass-border);
+      background: rgba(10,22,40,.8); backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 16px; }
+    .hamburger {
+      display: none; background: none; border: none; color: var(--text);
+      cursor: pointer; padding: 4px;
+    }
+    .hamburger svg { width: 24px; height: 24px; }
+    .page-title { font-size: 18px; font-weight: 600; }
+    .topbar-right { display: flex; align-items: center; gap: 12px; }
+    .topbar-btn {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      color: var(--text-dim); padding: 8px 14px; border-radius: var(--radius-sm);
+      font-size: 13px; cursor: pointer; transition: var(--transition);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .topbar-btn:hover { background: var(--glass-hover); color: var(--text); }
+    .topbar-btn svg { width: 16px; height: 16px; }
+
+    /* === PAGES === */
+    .page { display: none; padding: 32px; animation: fadeIn .3s ease; }
+    .page.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* === CARDS === */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .stat-card {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg); padding: 24px;
+      backdrop-filter: blur(8px); transition: var(--transition);
+    }
+    .stat-card:hover { background: var(--glass-hover); transform: translateY(-2px); }
+    .stat-label { font-size: 13px; color: var(--text-dim); margin-bottom: 8px; text-transform: uppercase; letter-spacing: .5px; }
+    .stat-value { font-size: 32px; font-weight: 700; line-height: 1; }
+    .stat-value.green { color: var(--green); }
+    .stat-value.gold { color: var(--gold); }
+    .stat-value.blue { color: var(--blue); }
+    .stat-value.purple { color: var(--purple); }
+    .stat-sub { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+
+    /* === GLASS PANEL === */
+    .panel {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg); backdrop-filter: blur(8px);
+      overflow: hidden; margin-bottom: 24px;
+    }
+    .panel-header {
+      padding: 20px 24px; border-bottom: 1px solid var(--glass-border);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .panel-title { font-size: 16px; font-weight: 600; }
+    .panel-body { padding: 24px; }
+    .panel-body.no-pad { padding: 0; }
+
+    /* === BUTTONS === */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: var(--radius-sm);
+      font-size: 14px; font-weight: 500; cursor: pointer;
+      border: none; transition: var(--transition);
+    }
+    .btn svg { width: 16px; height: 16px; }
+    .btn-primary { background: var(--green); color: var(--navy); }
+    .btn-primary:hover { background: #00e89a; transform: translateY(-1px); }
+    .btn-secondary { background: var(--glass); border: 1px solid var(--glass-border); color: var(--text); }
+    .btn-secondary:hover { background: var(--glass-hover); }
+    .btn-danger { background: var(--red-dim); color: var(--red); }
+    .btn-danger:hover { background: var(--red); color: #fff; }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: #ffc520; }
+    .btn-sm { padding: 6px 12px; font-size: 12px; }
+    .btn-icon { padding: 8px; background: var(--glass); border: 1px solid var(--glass-border); color: var(--text-dim); border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition); }
+    .btn-icon:hover { color: var(--text); background: var(--glass-hover); }
+
+    /* === TABLE === */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; padding: 12px 16px; font-size: 11px; text-transform: uppercase; letter-spacing: .8px; color: var(--text-dim); border-bottom: 1px solid var(--glass-border); cursor: pointer; user-select: none; white-space: nowrap; }
+    th:hover { color: var(--text); }
+    th .sort-icon { display: inline-block; margin-left: 4px; opacity: .3; }
+    th.sorted .sort-icon { opacity: 1; color: var(--green); }
+    td { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.03); font-size: 14px; white-space: nowrap; }
+    tr:hover td { background: rgba(255,255,255,.02); }
+
+    /* === AVATAR === */
+    .avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 600; flex-shrink: 0;
+    }
+    .avatar.installer { background: var(--blue-dim); color: var(--blue); }
+    .avatar.sales { background: var(--gold-dim); color: var(--gold); }
+    .avatar.manager { background: var(--purple-dim); color: var(--purple); }
+    .avatar.admin { background: var(--green-dim); color: var(--green); }
+
+    .employee-cell { display: flex; align-items: center; gap: 12px; }
+    .employee-info .emp-name { font-weight: 500; }
+    .employee-info .emp-email { font-size: 12px; color: var(--text-dim); }
+
+    /* === PROGRESS BAR === */
+    .progress-bar { background: rgba(255,255,255,.06); border-radius: 6px; height: 8px; width: 120px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 6px; transition: width .5s ease; }
+    .progress-fill.red { background: var(--red); }
+    .progress-fill.yellow { background: var(--gold); }
+    .progress-fill.green { background: var(--green); }
+    .progress-text { font-size: 12px; font-weight: 600; margin-top: 2px; }
+
+    /* === ROLE BADGE === */
+    .role-badge {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 600; text-transform: capitalize;
+    }
+    .role-badge.installer { background: var(--blue-dim); color: var(--blue); }
+    .role-badge.sales { background: var(--gold-dim); color: var(--gold); }
+    .role-badge.manager { background: var(--purple-dim); color: var(--purple); }
+    .role-badge.admin { background: var(--green-dim); color: var(--green); }
+
+    /* === SEARCH === */
+    .search-box {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm); padding: 8px 14px;
+    }
+    .search-box svg { width: 16px; height: 16px; color: var(--text-dim); flex-shrink: 0; }
+    .search-box input {
+      background: none; border: none; color: var(--text);
+      font-size: 14px; outline: none; width: 200px;
+    }
+    .search-box input::placeholder { color: var(--text-muted); }
+
+    /* === FORMS === */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-size: 12px; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: .5px; }
+    .form-input, .form-select {
+      background: var(--navy); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm); padding: 10px 14px;
+      color: var(--text); font-size: 14px; outline: none;
+      transition: var(--transition);
+    }
+    .form-input:focus, .form-select:focus { border-color: var(--green); box-shadow: 0 0 0 3px var(--green-dim); }
+    .form-select { cursor: pointer; }
+    .form-select option { background: var(--navy-light); }
+
+    /* === CHECKBOX GROUP === */
+    .checkbox-group { display: flex; flex-direction: column; gap: 8px; }
+    .checkbox-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; background: var(--glass);
+      border: 1px solid var(--glass-border); border-radius: var(--radius-sm);
+      cursor: pointer; transition: var(--transition);
+    }
+    .checkbox-item:hover { background: var(--glass-hover); }
+    .checkbox-item input[type="checkbox"] { accent-color: var(--green); width: 16px; height: 16px; cursor: pointer; }
+    .checkbox-label { font-size: 14px; }
+    .checkbox-sub { font-size: 12px; color: var(--text-dim); }
+
+    /* === MODAL === */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.6);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000; opacity: 0; pointer-events: none;
+      transition: opacity .2s ease;
+    }
+    .modal-overlay.show { opacity: 1; pointer-events: auto; }
+    .modal {
+      background: var(--navy-light); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg); width: 90%; max-width: 560px;
+      max-height: 90vh; overflow-y: auto;
+      transform: scale(.95); transition: transform .2s ease;
+    }
+    .modal-overlay.show .modal { transform: scale(1); }
+    .modal-header {
+      padding: 20px 24px; border-bottom: 1px solid var(--glass-border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .modal-title { font-size: 18px; font-weight: 600; }
+    .modal-close { background: none; border: none; color: var(--text-dim); cursor: pointer; font-size: 20px; padding: 4px; }
+    .modal-close:hover { color: var(--text); }
+    .modal-body { padding: 24px; }
+    .modal-footer {
+      padding: 16px 24px; border-top: 1px solid var(--glass-border);
+      display: flex; justify-content: flex-end; gap: 12px;
+    }
+
+    /* === CONFIRM DIALOG === */
+    .confirm-text { font-size: 15px; line-height: 1.6; color: var(--text-dim); margin-bottom: 8px; }
+    .confirm-warn { color: var(--red); font-weight: 500; }
+
+    /* === ACTIVITY FEED === */
+    .activity-list { display: flex; flex-direction: column; }
+    .activity-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.03);
+    }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+    .activity-dot.green { background: var(--green); }
+    .activity-dot.gold { background: var(--gold); }
+    .activity-dot.blue { background: var(--blue); }
+    .activity-dot.red { background: var(--red); }
+    .activity-text { font-size: 14px; line-height: 1.4; }
+    .activity-time { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    /* === COURSE CARDS === */
+    .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .course-card {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg); padding: 24px; transition: var(--transition);
+    }
+    .course-card:hover { background: var(--glass-hover); transform: translateY(-2px); }
+    .course-icon { font-size: 28px; margin-bottom: 12px; }
+    .course-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .course-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 16px; }
+    .course-meta { display: flex; gap: 16px; font-size: 12px; color: var(--text-dim); }
+    .course-meta span { display: flex; align-items: center; gap: 4px; }
+
+    /* === CERTIFICATE === */
+    .cert-modal .modal { max-width: 700px; }
+    .certificate {
+      background: linear-gradient(135deg, #0D1B2A 0%, #1B2838 100%);
+      border: 3px solid var(--gold); border-radius: var(--radius-lg);
+      padding: 60px 48px; text-align: center; position: relative;
+      overflow: hidden;
+    }
+    .certificate::before {
+      content: ''; position: absolute; inset: 8px;
+      border: 1px solid rgba(255,184,0,.2); border-radius: 10px;
+    }
+    .cert-header { font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); margin-bottom: 8px; }
+    .cert-title { font-size: 32px; font-weight: 700; color: var(--green); margin-bottom: 32px; }
+    .cert-label { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+    .cert-name { font-size: 28px; font-weight: 600; color: var(--text); margin-bottom: 24px; }
+    .cert-track { font-size: 18px; color: var(--gold); margin-bottom: 8px; font-weight: 500; }
+    .cert-date { font-size: 14px; color: var(--text-dim); margin-bottom: 40px; }
+    .cert-footer { display: flex; justify-content: center; gap: 80px; }
+    .cert-sign { text-align: center; }
+    .cert-sign-line { width: 160px; border-top: 1px solid var(--text-dim); padding-top: 8px; margin: 0 auto; }
+    .cert-sign-name { font-size: 14px; font-weight: 500; }
+    .cert-sign-role { font-size: 12px; color: var(--text-dim); }
+
+    /* === SETTINGS === */
+    .settings-section { margin-bottom: 32px; }
+    .settings-title { font-size: 14px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 16px; }
+
+    /* === TOAST === */
+    .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 2000; display: flex; flex-direction: column; gap: 8px; }
+    .toast {
+      background: var(--navy-light); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm); padding: 12px 20px;
+      font-size: 14px; display: flex; align-items: center; gap: 10px;
+      animation: slideIn .3s ease; box-shadow: var(--shadow);
+      min-width: 280px;
+    }
+    .toast.success { border-left: 3px solid var(--green); }
+    .toast.error { border-left: 3px solid var(--red); }
+    .toast.info { border-left: 3px solid var(--blue); }
+    @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+    /* === EMPTY STATE === */
+    .empty-state { text-align: center; padding: 60px 20px; }
+    .empty-icon { font-size: 48px; margin-bottom: 16px; opacity: .5; }
+    .empty-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .empty-desc { font-size: 14px; color: var(--text-dim); margin-bottom: 24px; }
+
+    /* === FILTER TABS === */
+    .filter-tabs { display: flex; gap: 4px; background: var(--glass); border-radius: var(--radius-sm); padding: 3px; }
+    .filter-tab {
+      padding: 6px 14px; border-radius: 6px; font-size: 13px;
+      cursor: pointer; color: var(--text-dim); background: none;
+      border: none; transition: var(--transition);
+    }
+    .filter-tab:hover { color: var(--text); }
+    .filter-tab.active { background: var(--green-dim); color: var(--green); }
+
+    /* === QUIZ RESULTS === */
+    .quiz-score { font-weight: 600; font-size: 13px; }
+    .quiz-score.pass { color: var(--green); }
+    .quiz-score.fail { color: var(--red); }
+
+    /* === SIDEBAR OVERLAY (mobile) === */
+    .sidebar-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5);
+      z-index: 199;
+    }
+    .sidebar-overlay.show { display: block; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .main-content { margin-left: 0; }
+      .hamburger { display: block; }
+      .topbar { padding: 0 16px; }
+      .page { padding: 20px 16px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .stat-card { padding: 16px; }
+      .stat-value { font-size: 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .search-box input { width: 140px; }
+      .course-grid { grid-template-columns: 1fr; }
+      .certificate { padding: 40px 24px; }
+      .cert-title { font-size: 24px; }
+      .cert-name { font-size: 22px; }
+      .cert-footer { flex-direction: column; gap: 24px; }
+      .panel-header { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* === PRINT CERTIFICATE === */
+    @media print {
+      body * { visibility: hidden; }
+      .certificate, .certificate * { visibility: visible; }
+      .certificate { position: absolute; left: 0; top: 0; width: 100%; border: 3px solid #FFB800; }
+      .cert-title { color: #00D68F !important; }
+      .cert-header, .cert-track { color: #FFB800 !important; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.2); }
   </style>
 </head>
 <body>
 
-<header class="header">
-  <h1>🎓 <span>TM Energy</span> Academy Admin</h1>
-  <div class="header-right">
-    <span class="header-badge">17 Lessons</span>
-    <span class="header-badge">4 Tracks</span>
+<!-- PIN SCREEN -->
+<div id="pin-screen">
+  <div class="pin-logo">TM <span>Energy</span></div>
+  <div class="pin-subtitle">Academy Admin Panel</div>
+  <div class="pin-input-group">
+    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric" autofocus>
+    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric">
+    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric">
+    <input class="pin-digit" type="password" maxlength="1" inputmode="numeric">
   </div>
-</header>
-
-<div class="container">
-
-  <!-- Stats -->
-  <div class="stats-row">
-    <div class="stat-card">
-      <div class="stat-value" id="totalLessons">17</div>
-      <div class="stat-label">Total Lessons</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value" id="totalSize">720</div>
-      <div class="stat-label">Total KB</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value" id="avgScore">0</div>
-      <div class="stat-label">Avg Quality Score</div>
-      <div class="quality-meter"><div class="quality-fill" id="avgScoreBar" style="width:0%;background:var(--gold)"></div></div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value" id="issueCount">0</div>
-      <div class="stat-label">Issues Found</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">3</div>
-      <div class="stat-label">Languages</div>
-    </div>
-  </div>
-
-  <!-- Track 1: Solar Fundamentals -->
-  <div class="track-section">
-    <div class="track-header">
-      <span style="font-size:1.5rem">☀️</span>
-      <h2>Solar Fundamentals</h2>
-      <span class="track-badge complete">8 Lessons</span>
-    </div>
-    <table class="lesson-table" id="track-solar"></table>
-  </div>
-
-  <!-- Track 2: Sales & BD -->
-  <div class="track-section">
-    <div class="track-header">
-      <span style="font-size:1.5rem">💼</span>
-      <h2>Sales & Business Development</h2>
-      <span class="track-badge complete">3 Lessons</span>
-    </div>
-    <table class="lesson-table" id="track-sales"></table>
-  </div>
-
-  <!-- Track 3: Technical -->
-  <div class="track-section">
-    <div class="track-header">
-      <span style="font-size:1.5rem">⚡</span>
-      <h2>Technical Installation</h2>
-      <span class="track-badge complete">3 Lessons</span>
-    </div>
-    <table class="lesson-table" id="track-technical"></table>
-  </div>
-
-  <!-- Track 4: EV & Storage -->
-  <div class="track-section">
-    <div class="track-header">
-      <span style="font-size:1.5rem">🔋</span>
-      <h2>EV & Energy Storage</h2>
-      <span class="track-badge complete">3 Lessons</span>
-    </div>
-    <table class="lesson-table" id="track-ev"></table>
-  </div>
-
-  <!-- Improvement Plan -->
-  <div class="plan-section">
-    <h2>📋 Improvement Plan</h2>
-
-    <!-- Phase 1: Critical Fixes -->
-    <div class="plan-phase">
-      <div class="plan-phase-header">
-        <h3>Phase 1: Structural Consistency</h3>
-        <span class="priority priority-critical">CRITICAL</span>
-      </div>
-      <div class="plan-items">
-        <div class="plan-item"><input type="checkbox"><div>Add <code>&lt;section class="lesson-section"&gt;</code> wrappers to 14 lessons missing them<div class="scope">sf-01→08, sales-01→02, tech-01→02, ev-01→02</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add prev/next navigation buttons to 14 lessons<div class="scope">All except sf-03, sales-03, tech-03, ev-03 (already have them)</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Fix lesson-number counter: "Lesson X of 3" (not "of 10") in all lessons<div class="scope">sales-bd-01, sales-bd-02 say "of 10"</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Standardize footer: all lessons should have ©2026 TM Energy Academy footer<div class="scope">Verify all 17</div></div></div>
-      </div>
-    </div>
-
-    <!-- Phase 2: Content Gaps -->
-    <div class="plan-phase">
-      <div class="plan-phase-header">
-        <h3>Phase 2: Missing Media</h3>
-        <span class="priority priority-high">HIGH</span>
-      </div>
-      <div class="plan-items">
-        <div class="plan-item"><input type="checkbox"><div>Add YouTube videos to 7 lessons with 0 videos<div class="scope">sf-06, sf-07, sf-08, sales-03, tech-03, ev-01, ev-02, ev-03</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add images to 3 lessons with 0 images<div class="scope">sf-06, sf-07, sales-01, sales-02</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Generate 8+ new educational images via Gemini for new courses<div class="scope">Sales: customer persona, objection handling; Technical: AC wiring, mounting; EV: battery comparison, V2G diagram</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Validate all YouTube embeds load correctly (no Error 153)<div class="scope">Test all 24 video IDs in browser</div></div></div>
-      </div>
-    </div>
-
-    <!-- Phase 3: Interactive Elements -->
-    <div class="plan-phase">
-      <div class="plan-phase-header">
-        <h3>Phase 3: Interactive Enhancements</h3>
-        <span class="priority priority-high">HIGH</span>
-      </div>
-      <div class="plan-items">
-        <div class="plan-item"><input type="checkbox"><div>Add spec-tables to lessons that lack structured data<div class="scope">sf-01, sf-03, sf-04, sf-05→08, sales-01, sales-02, tech-01, tech-02, ev-01, ev-02</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add key-concept boxes to 14 lessons missing them<div class="scope">All subagent-built lessons lack key-concept divs</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add interactive calculators: ROI calculator (sales-03), string sizing calculator (tech-02), battery sizing calculator (ev-01)<div class="scope">New JS components</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add progress tracking to academy.js — localStorage persistence across sessions<div class="scope">Track completed lessons, quiz scores per user</div></div></div>
-      </div>
-    </div>
-
-    <!-- Phase 4: Content Quality -->
-    <div class="plan-phase">
-      <div class="plan-phase-header">
-        <h3>Phase 4: Content Quality & Accuracy</h3>
-        <span class="priority priority-medium">MEDIUM</span>
-      </div>
-      <div class="plan-items">
-        <div class="plan-item"><input type="checkbox"><div>Verify all Thai (TH) translations are natural and accurate<div class="scope">Get native Thai speaker review or use professional translation</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Update all PEA/ERC regulatory references to 2026 data<div class="scope">Buy-back rates, permit requirements, approved equipment lists</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add real TM Energy project photos to relevant lessons<div class="scope">Replace generic Gemini images with actual installation photos</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Review quiz questions for difficulty balance — aim for 70% pass rate<div class="scope">All 17 quizzes, ~68 total questions</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add Huawei SUN2000 datasheet specs to technical lessons<div class="scope">Real voltage ranges, current limits, MPPT specs</div></div></div>
-      </div>
-    </div>
-
-    <!-- Phase 5: UX & Design -->
-    <div class="plan-phase">
-      <div class="plan-phase-header">
-        <h3>Phase 5: UX & Design Polish</h3>
-        <span class="priority priority-medium">MEDIUM</span>
-      </div>
-      <div class="plan-items">
-        <div class="plan-item"><input type="checkbox"><div>Add reading time estimate to each lesson header<div class="scope">Calculate from word count: ~200 words/min</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add print/PDF export button to each lesson<div class="scope">CSS @media print styles + window.print() button</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Improve mobile responsiveness — test all 17 lessons at 375px width<div class="scope">Tables, images, video containers</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add dark/light mode toggle<div class="scope">CSS variables swap, localStorage preference</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Add scroll progress indicator (thin bar at top of page)<div class="scope">academy.js enhancement</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Animate fade-up on scroll for sections<div class="scope">IntersectionObserver in academy.js</div></div></div>
-      </div>
-    </div>
-
-    <!-- Phase 6: Advanced Features -->
-    <div class="plan-phase">
-      <div class="plan-phase-header">
-        <h3>Phase 6: Advanced Features</h3>
-        <span class="priority priority-low">FUTURE</span>
-      </div>
-      <div class="plan-items">
-        <div class="plan-item"><input type="checkbox"><div>Build Management course (Track 5) — 3 lessons<div class="scope">Project management, team leadership, compliance</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Employee progress dashboard — track who completed what<div class="scope">Supabase integration, user accounts</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Certificate generation — PDF certificate on course completion<div class="scope">Canvas API or html2pdf.js</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Exam mode — final test per track, timed, minimum 80% to pass<div class="scope">New exam.js component</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Subdomain setup: academy.energy-tm.com → GitHub Pages<div class="scope">CNAME record + GitHub Pages config</div></div></div>
-        <div class="plan-item"><input type="checkbox"><div>Search functionality — search across all lesson content<div class="scope">Client-side full-text search index</div></div></div>
-      </div>
-    </div>
-  </div>
-
+  <div class="pin-error" id="pin-error"></div>
 </div>
 
-<div class="summary-bar">
-  <div class="left">Last updated: <span id="lastUpdate"></span></div>
-  <div class="right">
-    <button class="btn btn-outline" onclick="location.href='index.html'">← Academy</button>
-    <button class="btn btn-green" onclick="runAudit()">🔄 Run Audit</button>
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- SIDEBAR OVERLAY (mobile) -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- APP -->
+<div class="app-layout" id="app" style="display:none;">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand">TM <span>Energy</span></div>
+      <div class="sidebar-sub">Academy Admin</div>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-page="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Dashboard
+      </button>
+      <button class="nav-item" data-page="employees">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Employees
+        <span class="badge" id="emp-count-badge">0</span>
+      </button>
+      <button class="nav-item" data-page="courses">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Courses
+      </button>
+      <button class="nav-item" data-page="certificates">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        Certificates
+      </button>
+      <button class="nav-item" data-page="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="index.html">← Back to Academy</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger" id="hamburger">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <span class="page-title" id="page-title">Dashboard</span>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-btn" id="btn-export" title="Export Data">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export
+        </button>
+        <button class="topbar-btn" id="btn-import" title="Import Data">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Import
+        </button>
+        <button class="topbar-btn" id="btn-logout" title="Lock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Lock
+        </button>
+      </div>
+    </div>
+
+    <!-- DASHBOARD PAGE -->
+    <div class="page active" id="page-dashboard">
+      <div class="stats-grid" id="stats-grid"></div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div class="panel" style="grid-column:1/-1;">
+          <div class="panel-header">
+            <span class="panel-title">Employee Progress</span>
+            <div class="filter-tabs" id="dash-role-filter">
+              <button class="filter-tab active" data-role="all">All</button>
+              <button class="filter-tab" data-role="installer">Installer</button>
+              <button class="filter-tab" data-role="sales">Sales</button>
+              <button class="filter-tab" data-role="manager">Manager</button>
+              <button class="filter-tab" data-role="admin">Admin</button>
+            </div>
+          </div>
+          <div class="panel-body no-pad">
+            <div class="table-wrap">
+              <table id="dash-progress-table">
+                <thead>
+                  <tr>
+                    <th>Employee</th>
+                    <th>Role</th>
+                    <th>Progress</th>
+                    <th>Lessons Done</th>
+                    <th>Last Activity</th>
+                  </tr>
+                </thead>
+                <tbody id="dash-progress-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
+        <div class="panel">
+          <div class="panel-header"><span class="panel-title">Course Completion Rates</span></div>
+          <div class="panel-body" id="course-completion-rates"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-header"><span class="panel-title">Recent Activity</span></div>
+          <div class="panel-body">
+            <div class="activity-list" id="activity-feed"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPLOYEES PAGE -->
+    <div class="page" id="page-employees">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="emp-search" placeholder="Search employees...">
+          </div>
+          <div class="filter-tabs" id="emp-role-filter">
+            <button class="filter-tab active" data-role="all">All</button>
+            <button class="filter-tab" data-role="installer">Installer</button>
+            <button class="filter-tab" data-role="sales">Sales</button>
+            <button class="filter-tab" data-role="manager">Manager</button>
+            <button class="filter-tab" data-role="admin">Admin</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="btn-add-employee">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Employee
+        </button>
+      </div>
+
+      <div class="panel">
+        <div class="panel-body no-pad">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th data-sort="name">Employee <span class="sort-icon">↕</span></th>
+                  <th data-sort="role">Role <span class="sort-icon">↕</span></th>
+                  <th data-sort="courses">Courses <span class="sort-icon">↕</span></th>
+                  <th data-sort="progress">Progress <span class="sort-icon">↕</span></th>
+                  <th data-sort="lastActivity">Last Activity <span class="sort-icon">↕</span></th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="emp-table-body"></tbody>
+            </table>
+          </div>
+          <div class="empty-state" id="emp-empty" style="display:none;">
+            <div class="empty-icon">👥</div>
+            <div class="empty-title">No employees yet</div>
+            <div class="empty-desc">Add your first team member to get started</div>
+            <button class="btn btn-primary" onclick="openAddEmployeeModal()">Add Employee</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COURSES PAGE -->
+    <div class="page" id="page-courses">
+      <div class="course-grid" id="courses-grid"></div>
+
+      <div class="panel" style="margin-top:24px;">
+        <div class="panel-header">
+          <span class="panel-title">Quiz Results by Employee</span>
+          <select class="form-select" id="quiz-emp-select" style="width:auto;">
+            <option value="">Select employee...</option>
+          </select>
+        </div>
+        <div class="panel-body no-pad">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Lesson</th>
+                  <th>Course</th>
+                  <th>Score</th>
+                  <th>Status</th>
+                  <th>Completed</th>
+                </tr>
+              </thead>
+              <tbody id="quiz-results-body"></tbody>
+            </table>
+          </div>
+          <div id="quiz-empty" class="empty-state" style="display:none;">
+            <div class="empty-icon">📝</div>
+            <div class="empty-title">Select an employee</div>
+            <div class="empty-desc">Choose an employee above to view their quiz results</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATES PAGE -->
+    <div class="page" id="page-certificates">
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Eligible for Certification</span>
+        </div>
+        <div class="panel-body no-pad">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Employee</th>
+                  <th>Track Completed</th>
+                  <th>Completion Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="cert-table-body"></tbody>
+            </table>
+          </div>
+          <div id="cert-empty" class="empty-state" style="display:none;">
+            <div class="empty-icon">🏆</div>
+            <div class="empty-title">No certificates available yet</div>
+            <div class="empty-desc">Employees who complete all lessons in a track will appear here</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS PAGE -->
+    <div class="page" id="page-settings">
+      <div class="panel">
+        <div class="panel-header"><span class="panel-title">Company Settings</span></div>
+        <div class="panel-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Company Name</label>
+              <input class="form-input" id="setting-company" value="TM Energy">
+            </div>
+            <div class="form-group">
+              <label class="form-label">CEO Name</label>
+              <input class="form-input" id="setting-ceo" value="Kaniel Tordjman">
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <button class="btn btn-primary" id="btn-save-settings">Save Settings</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header"><span class="panel-title">Data Management</span></div>
+        <div class="panel-body">
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button class="btn btn-secondary" id="btn-export-settings">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export All Data (JSON)
+            </button>
+            <button class="btn btn-secondary" id="btn-import-settings">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Import Data (JSON)
+            </button>
+            <button class="btn btn-danger" id="btn-reset-data">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              Reset All Data
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header"><span class="panel-title">Add Demo Data</span></div>
+        <div class="panel-body">
+          <p style="font-size:14px;color:var(--text-dim);margin-bottom:16px;">Generate sample employees with random progress data for testing.</p>
+          <button class="btn btn-gold" id="btn-demo-data">Generate Demo Data</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- MODAL: Add/Edit Employee -->
+<div class="modal-overlay" id="modal-employee">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="modal-emp-title">Add Employee</span>
+      <button class="modal-close" onclick="closeModal('modal-employee')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="emp-edit-id">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input class="form-input" id="emp-name" placeholder="e.g. Lars Jensen">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email *</label>
+          <input class="form-input" id="emp-email" type="email" placeholder="lars@tmenergy.dk">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input class="form-input" id="emp-phone" placeholder="+45 12 34 56 78">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Role *</label>
+          <select class="form-select" id="emp-role">
+            <option value="installer">Installer</option>
+            <option value="sales">Sales</option>
+            <option value="manager">Manager</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Start Date</label>
+          <input class="form-input" id="emp-start-date" type="date">
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <label class="form-label" style="margin-bottom:10px;display:block;">Assign Courses</label>
+        <div style="margin-bottom:10px;">
+          <button class="btn btn-sm btn-secondary" id="btn-assign-defaults">Assign defaults for role</button>
+        </div>
+        <div class="checkbox-group" id="course-checkboxes"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-employee')">Cancel</button>
+      <button class="btn btn-primary" id="btn-save-employee">Save Employee</button>
+    </div>
   </div>
 </div>
+
+<!-- MODAL: Employee Profile -->
+<div class="modal-overlay" id="modal-profile">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Employee Profile</span>
+      <button class="modal-close" onclick="closeModal('modal-profile')">&times;</button>
+    </div>
+    <div class="modal-body" id="profile-content"></div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-profile')">Close</button>
+      <button class="btn btn-primary" id="btn-edit-from-profile">Edit</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Certificate -->
+<div class="modal-overlay cert-modal" id="modal-certificate">
+  <div class="modal" style="max-width:700px;">
+    <div class="modal-header">
+      <span class="modal-title">Certificate Preview</span>
+      <button class="modal-close" onclick="closeModal('modal-certificate')">&times;</button>
+    </div>
+    <div class="modal-body" id="cert-content"></div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-certificate')">Close</button>
+      <button class="btn btn-gold" id="btn-print-cert" onclick="printCertificate()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print Certificate
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Confirm -->
+<div class="modal-overlay" id="modal-confirm">
+  <div class="modal" style="max-width:420px;">
+    <div class="modal-header">
+      <span class="modal-title" id="confirm-title">Confirm</span>
+      <button class="modal-close" onclick="closeModal('modal-confirm')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p class="confirm-text" id="confirm-text"></p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-confirm')">Cancel</button>
+      <button class="btn btn-danger" id="confirm-btn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden file input -->
+<input type="file" id="file-import" accept=".json" style="display:none">
 
 <script>
-const lessons = [
-  // Solar Fundamentals
-  { id:'sf-01', track:'solar', file:'solar-fundamentals-01.html', title:'What is Solar Energy?', kb:33, images:1, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sf-02', track:'solar', file:'solar-fundamentals-02.html', title:'Solar Panel Types & Technology', kb:28, images:2, videos:1, quiz:4, tables:1, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sf-03', track:'solar', file:'solar-fundamentals-03.html', title:'System Components', kb:36, images:1, videos:3, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sf-04', track:'solar', file:'solar-fundamentals-04.html', title:'System Types & Grid Connection', kb:35, images:1, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sf-05', track:'solar', file:'solar-fundamentals-05.html', title:'Site Assessment & Shading', kb:46, images:3, videos:6, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sf-06', track:'solar', file:'solar-fundamentals-06.html', title:'System Sizing & Design', kb:49, images:0, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sf-07', track:'solar', file:'solar-fundamentals-07.html', title:'Energy Economics', kb:46, images:0, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sf-08', track:'solar', file:'solar-fundamentals-08.html', title:'Maintenance & Monitoring', kb:43, images:1, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:false, kc:false },
+// ============================================================
+// DATA & CONSTANTS
+// ============================================================
+const COURSES = {
+  'solar-fundamentals': {
+    name: 'Solar Fundamentals',
+    icon: '☀️',
+    desc: 'Core solar energy concepts, panel types, and system design basics.',
+    lessons: [
+      'solar-fundamentals-01', 'solar-fundamentals-02', 'solar-fundamentals-03',
+      'solar-fundamentals-04', 'solar-fundamentals-05', 'solar-fundamentals-06',
+      'solar-fundamentals-07', 'solar-fundamentals-08'
+    ],
+    lessonNames: [
+      'Introduction to Solar Energy', 'Solar Panel Types', 'System Components',
+      'Site Assessment', 'Energy Calculations', 'Grid Connection', 'Safety Standards', 'Final Review'
+    ]
+  },
+  'technical': {
+    name: 'Technical Installation',
+    icon: '🔧',
+    desc: 'Hands-on installation techniques, wiring, and commissioning procedures.',
+    lessons: ['technical-01', 'technical-02', 'technical-03'],
+    lessonNames: ['Mounting Systems', 'Electrical Wiring', 'Commissioning & Testing']
+  },
+  'sales-bd': {
+    name: 'Sales & Business Development',
+    icon: '💼',
+    desc: 'Customer acquisition, proposal creation, and closing techniques.',
+    lessons: ['sales-bd-01', 'sales-bd-02', 'sales-bd-03', 'sales-bd-04'],
+    lessonNames: ['Lead Generation', 'Customer Consultation', 'Proposal Building', 'Closing the Deal']
+  }
+};
 
-  // Sales
-  { id:'sales-01', track:'sales', file:'sales-bd-01.html', title:'Understanding the Solar Customer', kb:45, images:0, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sales-02', track:'sales', file:'sales-bd-02.html', title:'The Sales Process', kb:49, images:0, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'sales-03', track:'sales', file:'sales-bd-03.html', title:'Pricing, Proposals & Closing', kb:42, images:0, videos:0, quiz:4, tables:4, sections:6, nav:true, dyk:true, kc:true },
+const ROLE_DEFAULTS = {
+  installer: ['solar-fundamentals', 'technical'],
+  sales: ['solar-fundamentals', 'sales-bd'],
+  manager: ['solar-fundamentals', 'technical', 'sales-bd'],
+  admin: ['solar-fundamentals', 'technical', 'sales-bd']
+};
 
-  // Technical
-  { id:'tech-01', track:'technical', file:'technical-01.html', title:'Rooftop Mounting Systems', kb:53, images:1, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'tech-02', track:'technical', file:'technical-02.html', title:'DC Wiring & String Config', kb:43, images:2, videos:2, quiz:4, tables:0, sections:0, nav:false, dyk:false, kc:false },
-  { id:'tech-03', track:'technical', file:'technical-03.html', title:'Inverter Install & Commissioning', kb:40, images:2, videos:0, quiz:4, tables:3, sections:5, nav:true, dyk:true, kc:true },
+const PIN = '2626';
+let currentSort = { col: null, asc: true };
+let currentDashRole = 'all';
+let currentEmpRole = 'all';
 
-  // EV & Storage
-  { id:'ev-01', track:'ev', file:'ev-storage-01.html', title:'Battery Storage Fundamentals', kb:50, images:1, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'ev-02', track:'ev', file:'ev-storage-02.html', title:'EV Charging Basics', kb:46, images:2, videos:0, quiz:4, tables:0, sections:0, nav:false, dyk:true, kc:false },
-  { id:'ev-03', track:'ev', file:'ev-storage-03.html', title:'Solar+EV+Storage Integration', kb:34, images:1, videos:0, quiz:4, tables:4, sections:5, nav:true, dyk:false, kc:true },
-];
+// ============================================================
+// STORAGE
+// ============================================================
+function getData() {
+  const raw = localStorage.getItem('tm-academy-admin');
+  if (!raw) return { employees: [], settings: { companyName: 'TM Energy', ceoName: 'Kaniel Tordjman' }, activities: [] };
+  try { return JSON.parse(raw); } catch { return { employees: [], settings: { companyName: 'TM Energy', ceoName: 'Kaniel Tordjman' }, activities: [] }; }
+}
+function saveData(data) { localStorage.setItem('tm-academy-admin', JSON.stringify(data)); }
 
-function scoreLesson(l) {
-  let score = 0;
-  // Base content (40pts)
-  score += l.kb > 25 ? 10 : 5;
-  score += l.quiz >= 4 ? 15 : (l.quiz > 0 ? 8 : 0);
-  score += l.dyk ? 5 : 0;
-  score += l.kc ? 5 : 0;
-  score += l.sections > 0 ? 5 : 0;
-  // Media (30pts)
-  score += l.images >= 2 ? 15 : (l.images >= 1 ? 10 : 0);
-  score += l.videos >= 2 ? 15 : (l.videos >= 1 ? 10 : 0);
-  // Structure (20pts)
-  score += l.nav ? 10 : 0;
-  score += l.tables >= 2 ? 10 : (l.tables >= 1 ? 5 : 0);
-  // Trilingual bonus (10pts)
-  score += 10; // all have trilingual
-  return Math.min(score, 100);
+// ============================================================
+// PIN
+// ============================================================
+(function initPin() {
+  const digits = document.querySelectorAll('.pin-digit');
+  digits.forEach((d, i) => {
+    d.addEventListener('input', () => {
+      if (d.value && i < 3) digits[i + 1].focus();
+      const pin = Array.from(digits).map(x => x.value).join('');
+      if (pin.length === 4) {
+        if (pin === PIN) {
+          document.getElementById('pin-screen').classList.add('hidden');
+          document.getElementById('app').style.display = 'flex';
+          renderAll();
+        } else {
+          document.getElementById('pin-error').textContent = 'Incorrect PIN';
+          digits.forEach(x => { x.classList.add('error'); x.value = ''; });
+          digits[0].focus();
+          setTimeout(() => digits.forEach(x => x.classList.remove('error')), 600);
+        }
+      }
+    });
+    d.addEventListener('keydown', e => {
+      if (e.key === 'Backspace' && !d.value && i > 0) { digits[i - 1].focus(); }
+    });
+  });
+})();
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+const pageTitles = { dashboard: 'Dashboard', employees: 'Employees', courses: 'Courses', certificates: 'Certificates', settings: 'Settings' };
+
+document.querySelectorAll('.nav-item[data-page]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const page = btn.dataset.page;
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    document.getElementById('page-title').textContent = pageTitles[page];
+    // Close sidebar on mobile
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebar-overlay').classList.remove('show');
+  });
+});
+
+// Hamburger
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebar-overlay').classList.toggle('show');
+});
+document.getElementById('sidebar-overlay').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('show');
+});
+
+// Lock
+document.getElementById('btn-logout').addEventListener('click', () => {
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('pin-screen').classList.remove('hidden');
+  document.querySelectorAll('.pin-digit').forEach(d => d.value = '');
+  document.querySelector('.pin-digit').focus();
+  document.getElementById('pin-error').textContent = '';
+});
+
+// ============================================================
+// TOAST
+// ============================================================
+function toast(msg, type = 'success') {
+  const c = document.getElementById('toast-container');
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  t.textContent = msg;
+  c.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 3000);
 }
 
-function chipFor(val, good, warn) {
-  if (val >= good) return `<span class="chip chip-green">${val}</span>`;
-  if (val >= warn) return `<span class="chip chip-gold">${val}</span>`;
-  return `<span class="chip chip-red">${val}</span>`;
+// ============================================================
+// MODAL
+// ============================================================
+function openModal(id) { document.getElementById(id).classList.add('show'); }
+function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('show'); });
+});
+
+// ============================================================
+// HELPERS
+// ============================================================
+function genId() { return 'emp_' + Date.now().toString(36) + Math.random().toString(36).substr(2, 4); }
+
+function getInitials(name) {
+  return name.split(' ').map(w => w[0]).join('').toUpperCase().substr(0, 2);
 }
 
-function boolChip(val) {
-  return val ? '<span class="check">✓</span>' : '<span class="miss">✗</span>';
+function getProgress(emp) {
+  if (!emp.assignedCourses || !emp.assignedCourses.length) return 0;
+  let total = 0, done = 0;
+  emp.assignedCourses.forEach(cid => {
+    const c = COURSES[cid];
+    if (c) {
+      total += c.lessons.length;
+      c.lessons.forEach(lid => {
+        if (emp.progress && emp.progress[lid] && emp.progress[lid].completed) done++;
+      });
+    }
+  });
+  return total ? Math.round((done / total) * 100) : 0;
 }
 
-function renderTrack(trackId, tableId) {
-  const trackLessons = lessons.filter(l => l.track === trackId);
-  const table = document.getElementById(tableId);
-  let html = `<thead><tr>
-    <th>Lesson</th><th>Title</th><th>KB</th><th>Imgs</th><th>Vids</th><th>Quiz</th><th>Tables</th><th>Sections</th><th>Nav</th><th>DYK</th><th>KC</th><th>Score</th>
-  </tr></thead><tbody>`;
+function getLessonsDone(emp) {
+  let done = 0;
+  if (emp.progress) Object.values(emp.progress).forEach(p => { if (p.completed) done++; });
+  return done;
+}
 
-  trackLessons.forEach(l => {
-    const s = scoreLesson(l);
-    const scoreColor = s >= 80 ? 'var(--green)' : s >= 60 ? 'var(--gold)' : 'var(--red)';
-    html += `<tr>
-      <td><a href="courses/${l.file}" style="color:var(--green);text-decoration:none">${l.id}</a></td>
-      <td>${l.title}</td>
-      <td>${l.kb}</td>
-      <td>${chipFor(l.images,2,1)}</td>
-      <td>${chipFor(l.videos,2,1)}</td>
-      <td>${chipFor(l.quiz,4,2)}</td>
-      <td>${chipFor(l.tables,2,1)}</td>
-      <td>${chipFor(l.sections,3,1)}</td>
-      <td>${boolChip(l.nav)}</td>
-      <td>${boolChip(l.dyk)}</td>
-      <td>${boolChip(l.kc)}</td>
-      <td style="font-weight:700;color:${scoreColor}">${s}%</td>
+function getTotalLessons(emp) {
+  let total = 0;
+  if (emp.assignedCourses) emp.assignedCourses.forEach(cid => { if (COURSES[cid]) total += COURSES[cid].lessons.length; });
+  return total;
+}
+
+function getLastActivity(emp) {
+  if (!emp.progress) return null;
+  let latest = null;
+  Object.values(emp.progress).forEach(p => {
+    if (p.completedAt) {
+      const d = new Date(p.completedAt);
+      if (!latest || d > latest) latest = d;
+    }
+  });
+  return latest;
+}
+
+function formatDate(d) {
+  if (!d) return '—';
+  const dt = d instanceof Date ? d : new Date(d);
+  return dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function formatRelative(d) {
+  if (!d) return 'Never';
+  const now = new Date(), diff = now - d;
+  if (diff < 60000) return 'Just now';
+  if (diff < 3600000) return Math.floor(diff / 60000) + 'm ago';
+  if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago';
+  if (diff < 604800000) return Math.floor(diff / 86400000) + 'd ago';
+  return formatDate(d);
+}
+
+function progressColor(p) { return p < 30 ? 'red' : p < 70 ? 'yellow' : 'green'; }
+
+function isTrackComplete(emp, courseId) {
+  const c = COURSES[courseId];
+  if (!c || !emp.progress) return false;
+  return c.lessons.every(lid => emp.progress[lid] && emp.progress[lid].completed);
+}
+
+function getTrackCompletionDate(emp, courseId) {
+  const c = COURSES[courseId];
+  if (!c || !emp.progress) return null;
+  let latest = null;
+  c.lessons.forEach(lid => {
+    if (emp.progress[lid] && emp.progress[lid].completedAt) {
+      const d = new Date(emp.progress[lid].completedAt);
+      if (!latest || d > latest) latest = d;
+    }
+  });
+  return latest;
+}
+
+function addActivity(data, text, type = 'green') {
+  if (!data.activities) data.activities = [];
+  data.activities.unshift({ text, type, time: new Date().toISOString() });
+  if (data.activities.length > 50) data.activities = data.activities.slice(0, 50);
+}
+
+// ============================================================
+// RENDER ALL
+// ============================================================
+function renderAll() {
+  renderDashboard();
+  renderEmployees();
+  renderCourses();
+  renderCertificates();
+  renderSettings();
+  updateBadges();
+}
+
+function updateBadges() {
+  const data = getData();
+  document.getElementById('emp-count-badge').textContent = data.employees.length;
+}
+
+// ============================================================
+// DASHBOARD
+// ============================================================
+function renderDashboard() {
+  const data = getData();
+  const emps = data.employees;
+  const totalEmps = emps.length;
+  const avgProgress = totalEmps ? Math.round(emps.reduce((s, e) => s + getProgress(e), 0) / totalEmps) : 0;
+  const totalCompleted = emps.reduce((s, e) => s + getLessonsDone(e), 0);
+
+  const today = new Date().toDateString();
+  const activeToday = emps.filter(e => {
+    const la = getLastActivity(e);
+    return la && la.toDateString() === today;
+  }).length;
+
+  document.getElementById('stats-grid').innerHTML = `
+    <div class="stat-card">
+      <div class="stat-label">Total Employees</div>
+      <div class="stat-value blue">${totalEmps}</div>
+      <div class="stat-sub">${Object.keys(ROLE_DEFAULTS).map(r => emps.filter(e => e.role === r).length + ' ' + r + 's').join(', ')}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Avg. Progress</div>
+      <div class="stat-value ${progressColor(avgProgress)}">${avgProgress}%</div>
+      <div class="stat-sub">across all employees</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Lessons Completed</div>
+      <div class="stat-value green">${totalCompleted}</div>
+      <div class="stat-sub">out of ${emps.reduce((s, e) => s + getTotalLessons(e), 0)} assigned</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Active Today</div>
+      <div class="stat-value gold">${activeToday}</div>
+      <div class="stat-sub">employees with activity today</div>
+    </div>
+  `;
+
+  renderDashProgress();
+  renderCourseRates();
+  renderActivityFeed();
+}
+
+// Dashboard role filter
+document.getElementById('dash-role-filter').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-tab');
+  if (!btn) return;
+  currentDashRole = btn.dataset.role;
+  document.querySelectorAll('#dash-role-filter .filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderDashProgress();
+});
+
+function renderDashProgress() {
+  const data = getData();
+  let emps = data.employees;
+  if (currentDashRole !== 'all') emps = emps.filter(e => e.role === currentDashRole);
+
+  const body = document.getElementById('dash-progress-body');
+  if (!emps.length) {
+    body.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:32px;color:var(--text-dim);">No employees found</td></tr>';
+    return;
+  }
+
+  body.innerHTML = emps.sort((a, b) => getProgress(b) - getProgress(a)).map(e => {
+    const p = getProgress(e);
+    const la = getLastActivity(e);
+    return `<tr>
+      <td><div class="employee-cell"><div class="avatar ${e.role}">${getInitials(e.name)}</div><div class="employee-info"><div class="emp-name">${e.name}</div><div class="emp-email">${e.email}</div></div></div></td>
+      <td><span class="role-badge ${e.role}">${e.role}</span></td>
+      <td><div class="progress-bar"><div class="progress-fill ${progressColor(p)}" style="width:${p}%"></div></div><div class="progress-text" style="color:var(--${progressColor(p)})">${p}%</div></td>
+      <td>${getLessonsDone(e)} / ${getTotalLessons(e)}</td>
+      <td style="color:var(--text-dim)">${formatRelative(la)}</td>
     </tr>`;
-  });
-
-  html += '</tbody>';
-  table.innerHTML = html;
+  }).join('');
 }
 
-function runAudit() {
-  renderTrack('solar', 'track-solar');
-  renderTrack('sales', 'track-sales');
-  renderTrack('technical', 'track-technical');
-  renderTrack('ev', 'track-ev');
+function renderCourseRates() {
+  const data = getData();
+  const el = document.getElementById('course-completion-rates');
+  if (!data.employees.length) { el.innerHTML = '<p style="color:var(--text-dim);">Add employees to see completion rates.</p>'; return; }
 
-  // Compute stats
-  let totalScore = 0, issues = 0;
-  lessons.forEach(l => {
-    const s = scoreLesson(l);
-    totalScore += s;
-    if (!l.nav) issues++;
-    if (l.images === 0) issues++;
-    if (l.videos === 0) issues++;
-    if (l.sections === 0) issues++;
-    if (!l.kc) issues++;
-    if (l.tables === 0) issues++;
-    if (!l.dyk) issues++;
-  });
-
-  const avg = Math.round(totalScore / lessons.length);
-  document.getElementById('avgScore').textContent = avg + '%';
-  document.getElementById('issueCount').textContent = issues;
-  document.getElementById('avgScoreBar').style.width = avg + '%';
-  document.getElementById('avgScoreBar').style.background =
-    avg >= 80 ? 'var(--green)' : avg >= 60 ? 'var(--gold)' : 'var(--red)';
-
-  document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
-
-  // Save checkbox state
-  document.querySelectorAll('.plan-item input[type=checkbox]').forEach((cb, i) => {
-    cb.checked = localStorage.getItem('plan-' + i) === 'true';
-    cb.addEventListener('change', () => localStorage.setItem('plan-' + i, cb.checked));
-  });
+  el.innerHTML = Object.entries(COURSES).map(([cid, c]) => {
+    const assigned = data.employees.filter(e => e.assignedCourses && e.assignedCourses.includes(cid));
+    const completed = assigned.filter(e => isTrackComplete(e, cid));
+    const rate = assigned.length ? Math.round((completed.length / assigned.length) * 100) : 0;
+    return `<div style="margin-bottom:16px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+        <span style="font-size:14px;">${c.icon} ${c.name}</span>
+        <span style="font-size:13px;color:var(--text-dim);">${completed.length}/${assigned.length} complete (${rate}%)</span>
+      </div>
+      <div class="progress-bar" style="width:100%;height:10px;">
+        <div class="progress-fill ${progressColor(rate)}" style="width:${rate}%"></div>
+      </div>
+    </div>`;
+  }).join('');
 }
 
-// Run on load
-runAudit();
+function renderActivityFeed() {
+  const data = getData();
+  const feed = document.getElementById('activity-feed');
+  if (!data.activities || !data.activities.length) {
+    feed.innerHTML = '<p style="color:var(--text-dim);font-size:14px;">No activity yet. Add employees and track progress.</p>';
+    return;
+  }
+  feed.innerHTML = data.activities.slice(0, 15).map(a => `
+    <div class="activity-item">
+      <div class="activity-dot ${a.type}"></div>
+      <div>
+        <div class="activity-text">${a.text}</div>
+        <div class="activity-time">${formatRelative(new Date(a.time))}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// EMPLOYEES
+// ============================================================
+function renderEmployees() {
+  const data = getData();
+  let emps = data.employees;
+  const search = document.getElementById('emp-search').value.toLowerCase();
+  if (search) emps = emps.filter(e => e.name.toLowerCase().includes(search) || e.email.toLowerCase().includes(search));
+  if (currentEmpRole !== 'all') emps = emps.filter(e => e.role === currentEmpRole);
+
+  // Sort
+  if (currentSort.col) {
+    emps.sort((a, b) => {
+      let va, vb;
+      switch (currentSort.col) {
+        case 'name': va = a.name.toLowerCase(); vb = b.name.toLowerCase(); break;
+        case 'role': va = a.role; vb = b.role; break;
+        case 'courses': va = (a.assignedCourses || []).length; vb = (b.assignedCourses || []).length; break;
+        case 'progress': va = getProgress(a); vb = getProgress(b); break;
+        case 'lastActivity': va = getLastActivity(a) || new Date(0); vb = getLastActivity(b) || new Date(0); break;
+        default: return 0;
+      }
+      if (va < vb) return currentSort.asc ? -1 : 1;
+      if (va > vb) return currentSort.asc ? 1 : -1;
+      return 0;
+    });
+  }
+
+  const body = document.getElementById('emp-table-body');
+  const empty = document.getElementById('emp-empty');
+
+  if (!emps.length) {
+    body.innerHTML = '';
+    empty.style.display = data.employees.length ? 'none' : 'block';
+    if (data.employees.length && !emps.length) {
+      body.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:32px;color:var(--text-dim);">No matching employees</td></tr>';
+    }
+    return;
+  }
+  empty.style.display = 'none';
+
+  body.innerHTML = emps.map(e => {
+    const p = getProgress(e);
+    const la = getLastActivity(e);
+    return `<tr>
+      <td>
+        <div class="employee-cell" style="cursor:pointer" onclick="openProfile('${e.id}')">
+          <div class="avatar ${e.role}">${getInitials(e.name)}</div>
+          <div class="employee-info"><div class="emp-name">${e.name}</div><div class="emp-email">${e.email}</div></div>
+        </div>
+      </td>
+      <td><span class="role-badge ${e.role}">${e.role}</span></td>
+      <td>${(e.assignedCourses || []).length} tracks</td>
+      <td>
+        <div class="progress-bar"><div class="progress-fill ${progressColor(p)}" style="width:${p}%"></div></div>
+        <div class="progress-text" style="color:var(--${progressColor(p)})">${p}%</div>
+      </td>
+      <td style="color:var(--text-dim)">${formatRelative(la)}</td>
+      <td>
+        <div style="display:flex;gap:6px;">
+          <button class="btn-icon" onclick="editEmployee('${e.id}')" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+          <button class="btn-icon" onclick="confirmDeleteEmployee('${e.id}')" title="Delete" style="color:var(--red);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+
+  // Update quiz employee select
+  const sel = document.getElementById('quiz-emp-select');
+  const curVal = sel.value;
+  sel.innerHTML = '<option value="">Select employee...</option>' + data.employees.map(e => `<option value="${e.id}">${e.name}</option>`).join('');
+  sel.value = curVal;
+}
+
+// Search
+document.getElementById('emp-search').addEventListener('input', renderEmployees);
+
+// Role filter
+document.getElementById('emp-role-filter').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-tab');
+  if (!btn) return;
+  currentEmpRole = btn.dataset.role;
+  document.querySelectorAll('#emp-role-filter .filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderEmployees();
+});
+
+// Sort
+document.querySelectorAll('th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.sort;
+    if (currentSort.col === col) currentSort.asc = !currentSort.asc;
+    else { currentSort.col = col; currentSort.asc = true; }
+    document.querySelectorAll('th[data-sort]').forEach(t => t.classList.remove('sorted'));
+    th.classList.add('sorted');
+    th.querySelector('.sort-icon').textContent = currentSort.asc ? '↑' : '↓';
+    renderEmployees();
+  });
+});
+
+// Add Employee
+document.getElementById('btn-add-employee').addEventListener('click', openAddEmployeeModal);
+
+function openAddEmployeeModal() {
+  document.getElementById('modal-emp-title').textContent = 'Add Employee';
+  document.getElementById('emp-edit-id').value = '';
+  document.getElementById('emp-name').value = '';
+  document.getElementById('emp-email').value = '';
+  document.getElementById('emp-phone').value = '';
+  document.getElementById('emp-role').value = 'installer';
+  document.getElementById('emp-start-date').value = new Date().toISOString().split('T')[0];
+  renderCourseCheckboxes([]);
+  openModal('modal-employee');
+}
+
+function renderCourseCheckboxes(selected) {
+  const el = document.getElementById('course-checkboxes');
+  el.innerHTML = Object.entries(COURSES).map(([cid, c]) => `
+    <label class="checkbox-item">
+      <input type="checkbox" value="${cid}" ${selected.includes(cid) ? 'checked' : ''}>
+      <div>
+        <div class="checkbox-label">${c.icon} ${c.name}</div>
+        <div class="checkbox-sub">${c.lessons.length} lessons</div>
+      </div>
+    </label>
+  `).join('');
+}
+
+// Assign defaults for role
+document.getElementById('btn-assign-defaults').addEventListener('click', () => {
+  const role = document.getElementById('emp-role').value;
+  const defaults = ROLE_DEFAULTS[role] || [];
+  document.querySelectorAll('#course-checkboxes input[type="checkbox"]').forEach(cb => {
+    cb.checked = defaults.includes(cb.value);
+  });
+  toast('Default courses assigned for ' + role, 'info');
+});
+
+// Save employee
+document.getElementById('btn-save-employee').addEventListener('click', () => {
+  const name = document.getElementById('emp-name').value.trim();
+  const email = document.getElementById('emp-email').value.trim();
+  const phone = document.getElementById('emp-phone').value.trim();
+  const role = document.getElementById('emp-role').value;
+  const startDate = document.getElementById('emp-start-date').value;
+  const editId = document.getElementById('emp-edit-id').value;
+
+  if (!name || !email) { toast('Name and email are required', 'error'); return; }
+
+  const courses = [];
+  document.querySelectorAll('#course-checkboxes input:checked').forEach(cb => courses.push(cb.value));
+
+  const data = getData();
+
+  if (editId) {
+    const emp = data.employees.find(e => e.id === editId);
+    if (emp) {
+      emp.name = name; emp.email = email; emp.phone = phone;
+      emp.role = role; emp.startDate = startDate; emp.assignedCourses = courses;
+      addActivity(data, `Updated employee: ${name}`, 'blue');
+      toast('Employee updated');
+    }
+  } else {
+    const emp = { id: genId(), name, email, phone, role, startDate, assignedCourses: courses, progress: {} };
+    data.employees.push(emp);
+    addActivity(data, `New employee added: ${name} (${role})`, 'green');
+    toast('Employee added');
+  }
+
+  saveData(data);
+  closeModal('modal-employee');
+  renderAll();
+});
+
+function editEmployee(id) {
+  const data = getData();
+  const emp = data.employees.find(e => e.id === id);
+  if (!emp) return;
+
+  document.getElementById('modal-emp-title').textContent = 'Edit Employee';
+  document.getElementById('emp-edit-id').value = emp.id;
+  document.getElementById('emp-name').value = emp.name;
+  document.getElementById('emp-email').value = emp.email;
+  document.getElementById('emp-phone').value = emp.phone || '';
+  document.getElementById('emp-role').value = emp.role;
+  document.getElementById('emp-start-date').value = emp.startDate || '';
+  renderCourseCheckboxes(emp.assignedCourses || []);
+  openModal('modal-employee');
+}
+
+function confirmDeleteEmployee(id) {
+  const data = getData();
+  const emp = data.employees.find(e => e.id === id);
+  if (!emp) return;
+  document.getElementById('confirm-title').textContent = 'Delete Employee';
+  document.getElementById('confirm-text').innerHTML = `Are you sure you want to delete <strong>${emp.name}</strong>? <br><span class="confirm-warn">This action cannot be undone.</span>`;
+  const btn = document.getElementById('confirm-btn');
+  btn.textContent = 'Delete';
+  btn.className = 'btn btn-danger';
+  btn.onclick = () => {
+    data.employees = data.employees.filter(e => e.id !== id);
+    addActivity(data, `Deleted employee: ${emp.name}`, 'red');
+    saveData(data);
+    closeModal('modal-confirm');
+    renderAll();
+    toast('Employee deleted');
+  };
+  openModal('modal-confirm');
+}
+
+// ============================================================
+// EMPLOYEE PROFILE
+// ============================================================
+function openProfile(id) {
+  const data = getData();
+  const emp = data.employees.find(e => e.id === id);
+  if (!emp) return;
+
+  const p = getProgress(emp);
+  const la = getLastActivity(emp);
+
+  let courseProgress = '';
+  (emp.assignedCourses || []).forEach(cid => {
+    const c = COURSES[cid];
+    if (!c) return;
+    const done = c.lessons.filter(lid => emp.progress && emp.progress[lid] && emp.progress[lid].completed).length;
+    const pct = Math.round((done / c.lessons.length) * 100);
+    courseProgress += `
+      <div style="margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <span style="font-size:13px;">${c.icon} ${c.name}</span>
+          <span style="font-size:12px;color:var(--${progressColor(pct)})">${done}/${c.lessons.length} (${pct}%)</span>
+        </div>
+        <div class="progress-bar" style="width:100%"><div class="progress-fill ${progressColor(pct)}" style="width:${pct}%"></div></div>
+      </div>`;
+  });
+
+  document.getElementById('profile-content').innerHTML = `
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <div class="avatar ${emp.role}" style="width:56px;height:56px;font-size:20px;">${getInitials(emp.name)}</div>
+      <div>
+        <div style="font-size:18px;font-weight:600;">${emp.name}</div>
+        <span class="role-badge ${emp.role}">${emp.role}</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+      <div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;">Email</div><div style="font-size:14px;">${emp.email}</div></div>
+      <div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;">Phone</div><div style="font-size:14px;">${emp.phone || '—'}</div></div>
+      <div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;">Start Date</div><div style="font-size:14px;">${formatDate(emp.startDate)}</div></div>
+      <div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;">Overall Progress</div><div style="font-size:14px;font-weight:600;color:var(--${progressColor(p)})">${p}%</div></div>
+    </div>
+    <div style="font-size:14px;font-weight:600;margin-bottom:12px;">Course Progress</div>
+    ${courseProgress || '<p style="color:var(--text-dim);font-size:14px;">No courses assigned</p>'}
+  `;
+
+  document.getElementById('btn-edit-from-profile').onclick = () => { closeModal('modal-profile'); editEmployee(id); };
+  openModal('modal-profile');
+}
+
+// ============================================================
+// COURSES
+// ============================================================
+function renderCourses() {
+  const data = getData();
+  const grid = document.getElementById('courses-grid');
+
+  grid.innerHTML = Object.entries(COURSES).map(([cid, c]) => {
+    const assigned = data.employees.filter(e => e.assignedCourses && e.assignedCourses.includes(cid)).length;
+    const completed = data.employees.filter(e => isTrackComplete(e, cid)).length;
+    return `<div class="course-card">
+      <div class="course-icon">${c.icon}</div>
+      <div class="course-name">${c.name}</div>
+      <div class="course-desc">${c.desc}</div>
+      <div class="course-meta">
+        <span>📚 ${c.lessons.length} lessons</span>
+        <span>👥 ${assigned} assigned</span>
+        <span>✅ ${completed} completed</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  renderQuizResults();
+}
+
+// Quiz results
+document.getElementById('quiz-emp-select').addEventListener('change', renderQuizResults);
+
+function renderQuizResults() {
+  const empId = document.getElementById('quiz-emp-select').value;
+  const body = document.getElementById('quiz-results-body');
+  const empty = document.getElementById('quiz-empty');
+
+  if (!empId) { body.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+
+  const data = getData();
+  const emp = data.employees.find(e => e.id === empId);
+  if (!emp) { body.innerHTML = ''; return; }
+
+  let rows = '';
+  (emp.assignedCourses || []).forEach(cid => {
+    const c = COURSES[cid];
+    if (!c) return;
+    c.lessons.forEach((lid, i) => {
+      const prog = emp.progress && emp.progress[lid];
+      const score = prog ? prog.quizScore : null;
+      const pass = score !== null && score >= 70;
+      rows += `<tr>
+        <td>${c.lessonNames[i] || lid}</td>
+        <td>${c.name}</td>
+        <td>${score !== null ? `<span class="quiz-score ${pass ? 'pass' : 'fail'}">${score}%</span>` : '<span style="color:var(--text-muted)">—</span>'}</td>
+        <td>${score !== null ? (pass ? '<span style="color:var(--green)">Pass</span>' : '<span style="color:var(--red)">Fail</span>') : '<span style="color:var(--text-muted)">Not taken</span>'}</td>
+        <td style="color:var(--text-dim)">${prog && prog.completedAt ? formatDate(prog.completedAt) : '—'}</td>
+      </tr>`;
+    });
+  });
+
+  body.innerHTML = rows || '<tr><td colspan="5" style="text-align:center;padding:32px;color:var(--text-dim);">No courses assigned</td></tr>';
+}
+
+// ============================================================
+// CERTIFICATES
+// ============================================================
+function renderCertificates() {
+  const data = getData();
+  const body = document.getElementById('cert-table-body');
+  const empty = document.getElementById('cert-empty');
+  let rows = '';
+
+  data.employees.forEach(emp => {
+    (emp.assignedCourses || []).forEach(cid => {
+      if (isTrackComplete(emp, cid)) {
+        const c = COURSES[cid];
+        const completionDate = getTrackCompletionDate(emp, cid);
+        rows += `<tr>
+          <td><div class="employee-cell"><div class="avatar ${emp.role}">${getInitials(emp.name)}</div><div class="employee-info"><div class="emp-name">${emp.name}</div><div class="emp-email">${emp.email}</div></div></div></td>
+          <td>${c.icon} ${c.name}</td>
+          <td>${formatDate(completionDate)}</td>
+          <td><button class="btn btn-sm btn-gold" onclick="generateCertificate('${emp.id}','${cid}')">Generate Certificate</button></td>
+        </tr>`;
+      }
+    });
+  });
+
+  if (!rows) { body.innerHTML = ''; empty.style.display = 'block'; }
+  else { empty.style.display = 'none'; body.innerHTML = rows; }
+}
+
+function generateCertificate(empId, courseId) {
+  const data = getData();
+  const emp = data.employees.find(e => e.id === empId);
+  const course = COURSES[courseId];
+  const settings = data.settings || {};
+  if (!emp || !course) return;
+
+  const completionDate = getTrackCompletionDate(emp, courseId);
+
+  document.getElementById('cert-content').innerHTML = `
+    <div class="certificate" id="printable-cert">
+      <div class="cert-header">${settings.companyName || 'TM Energy'} Academy</div>
+      <div class="cert-title">Certificate of Completion</div>
+      <div class="cert-label">This certifies that</div>
+      <div class="cert-name">${emp.name}</div>
+      <div class="cert-label">has successfully completed</div>
+      <div class="cert-track">${course.icon} ${course.name}</div>
+      <div class="cert-date">${formatDate(completionDate)}</div>
+      <div class="cert-footer">
+        <div class="cert-sign">
+          <div class="cert-sign-line">
+            <div class="cert-sign-name">${settings.ceoName || 'Kaniel Tordjman'}</div>
+            <div class="cert-sign-role">CEO, ${settings.companyName || 'TM Energy'}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  addActivity(data, `Certificate generated for ${emp.name} — ${course.name}`, 'gold');
+  saveData(data);
+  renderActivityFeed();
+  openModal('modal-certificate');
+}
+
+function printCertificate() {
+  window.print();
+}
+
+// ============================================================
+// SETTINGS
+// ============================================================
+function renderSettings() {
+  const data = getData();
+  document.getElementById('setting-company').value = data.settings?.companyName || 'TM Energy';
+  document.getElementById('setting-ceo').value = data.settings?.ceoName || 'Kaniel Tordjman';
+}
+
+document.getElementById('btn-save-settings').addEventListener('click', () => {
+  const data = getData();
+  data.settings = data.settings || {};
+  data.settings.companyName = document.getElementById('setting-company').value.trim();
+  data.settings.ceoName = document.getElementById('setting-ceo').value.trim();
+  saveData(data);
+  toast('Settings saved');
+});
+
+// ============================================================
+// EXPORT / IMPORT
+// ============================================================
+function exportData() {
+  const data = getData();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'tm-academy-data-' + new Date().toISOString().split('T')[0] + '.json';
+  a.click(); URL.revokeObjectURL(url);
+  toast('Data exported');
+}
+
+function importData(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data.employees) {
+        saveData(data);
+        renderAll();
+        toast('Data imported: ' + data.employees.length + ' employees');
+      } else { toast('Invalid data format', 'error'); }
+    } catch { toast('Failed to parse JSON', 'error'); }
+  };
+  reader.readAsText(file);
+}
+
+document.getElementById('btn-export').addEventListener('click', exportData);
+document.getElementById('btn-export-settings').addEventListener('click', exportData);
+document.getElementById('btn-import').addEventListener('click', () => document.getElementById('file-import').click());
+document.getElementById('btn-import-settings').addEventListener('click', () => document.getElementById('file-import').click());
+document.getElementById('file-import').addEventListener('change', e => { if (e.target.files[0]) importData(e.target.files[0]); e.target.value = ''; });
+
+// Reset
+document.getElementById('btn-reset-data').addEventListener('click', () => {
+  document.getElementById('confirm-title').textContent = 'Reset All Data';
+  document.getElementById('confirm-text').innerHTML = 'This will <span class="confirm-warn">permanently delete all employees, progress, and settings</span>. Are you sure?';
+  const btn = document.getElementById('confirm-btn');
+  btn.textContent = 'Reset Everything';
+  btn.className = 'btn btn-danger';
+  btn.onclick = () => {
+    localStorage.removeItem('tm-academy-admin');
+    closeModal('modal-confirm');
+    renderAll();
+    toast('All data has been reset');
+  };
+  openModal('modal-confirm');
+});
+
+// ============================================================
+// DEMO DATA
+// ============================================================
+document.getElementById('btn-demo-data').addEventListener('click', () => {
+  const names = [
+    { name: 'Lars Jensen', role: 'installer' },
+    { name: 'Mette Nielsen', role: 'sales' },
+    { name: 'Frederik Andersen', role: 'installer' },
+    { name: 'Sofie Petersen', role: 'manager' },
+    { name: 'Mikkel Hansen', role: 'installer' },
+    { name: 'Emma Christensen', role: 'sales' },
+    { name: 'Oliver Larsen', role: 'admin' },
+    { name: 'Ida Sorensen', role: 'installer' },
+    { name: 'Noah Rasmussen', role: 'sales' },
+    { name: 'Freja Jorgensen', role: 'manager' }
+  ];
+
+  const data = getData();
+
+  names.forEach(n => {
+    const courses = ROLE_DEFAULTS[n.role];
+    const progress = {};
+    courses.forEach(cid => {
+      const c = COURSES[cid];
+      c.lessons.forEach((lid, i) => {
+        if (Math.random() > 0.3) {
+          const score = Math.floor(Math.random() * 40) + 60;
+          const daysAgo = Math.floor(Math.random() * 30);
+          progress[lid] = {
+            completed: true,
+            quizScore: score,
+            completedAt: new Date(Date.now() - daysAgo * 86400000).toISOString()
+          };
+        }
+      });
+    });
+
+    data.employees.push({
+      id: genId(),
+      name: n.name,
+      email: n.name.toLowerCase().replace(' ', '.') + '@tmenergy.dk',
+      phone: '+45 ' + Math.floor(10000000 + Math.random() * 90000000),
+      role: n.role,
+      startDate: new Date(Date.now() - Math.floor(Math.random() * 90) * 86400000).toISOString().split('T')[0],
+      assignedCourses: courses,
+      progress
+    });
+  });
+
+  addActivity(data, 'Demo data generated: 10 employees added', 'blue');
+  saveData(data);
+  renderAll();
+  toast('10 demo employees added');
+});
+
+// ============================================================
+// INIT
+// ============================================================
 </script>
-
 </body>
 </html>
