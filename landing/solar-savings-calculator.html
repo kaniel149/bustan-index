@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Savings Calculator — TM Energy Koh Phangan</title>
+  <meta name="description" content="Calculate how much you can save with solar energy on Koh Phangan. Free instant estimate for homes, businesses, and hotels.">
+  <meta property="og:title" content="Solar Savings Calculator — TM Energy">
+  <meta property="og:description" content="Find out how much you can save with solar on Koh Phangan. Instant free estimate.">
+  <meta property="og:type" content="website">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0A1628;
+      --navy-light: #121E33;
+      --navy-card: #162240;
+      --green: #00D68F;
+      --green-hover: #00B377;
+      --green-glow: rgba(0, 214, 143, 0.15);
+      --white: #FFFFFF;
+      --gray: #8B95A5;
+      --gray-light: #C5CDD8;
+      --orange: #FF9F43;
+      --blue: #3B82F6;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .header p {
+      color: var(--gray-light);
+      font-size: 0.95rem;
+    }
+
+    /* Progress bar */
+    .progress {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .progress-step {
+      flex: 1;
+      height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .progress-step.active {
+      background: var(--green);
+    }
+
+    /* Steps */
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-subtitle {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Bill input */
+    .bill-input-wrap {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .bill-input-wrap .currency {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .bill-input {
+      width: 100%;
+      background: var(--navy-card);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1rem 1rem 1rem 3.5rem;
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: 700;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .bill-input:focus {
+      border-color: var(--green);
+    }
+
+    .bill-input::placeholder {
+      color: var(--gray);
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    .quick-amounts {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .quick-btn {
+      background: var(--navy-card);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--gray-light);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .quick-btn:hover, .quick-btn.selected {
+      background: var(--green);
+      color: var(--navy);
+      border-color: var(--green);
+      font-weight: 600;
+    }
+
+    /* Option cards */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .option {
+      background: var(--navy-card);
+      border: 2px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.15rem 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.2s;
+    }
+
+    .option:hover {
+      border-color: rgba(0, 214, 143, 0.4);
+    }
+
+    .option.selected {
+      border-color: var(--green);
+      background: rgba(0, 214, 143, 0.08);
+    }
+
+    .option-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .option-text h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .option-text p {
+      color: var(--gray);
+      font-size: 0.82rem;
+    }
+
+    .option-check {
+      margin-left: auto;
+      width: 22px;
+      height: 22px;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .option.selected .option-check {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .option.selected .option-check::after {
+      content: '✓';
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      margin-top: 1.5rem;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-hover);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .btn-back {
+      background: transparent;
+      color: var(--gray-light);
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-top: 0.75rem;
+    }
+
+    .btn-back:hover {
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    /* Results */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .result-card {
+      background: var(--navy-card);
+      border-radius: 14px;
+      padding: 1.25rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .result-card.highlight {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(0,214,143,0.12), rgba(0,214,143,0.04));
+      border-color: rgba(0,214,143,0.3);
+    }
+
+    .result-label {
+      font-size: 0.78rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.35rem;
+    }
+
+    .result-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .result-card.highlight .result-value {
+      font-size: 2rem;
+    }
+
+    .result-unit {
+      font-size: 0.8rem;
+      color: var(--gray-light);
+    }
+
+    .cta-section {
+      margin-top: 2rem;
+    }
+
+    .wa-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 1rem;
+      background: #25D366;
+      color: var(--white);
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: background 0.2s;
+    }
+
+    .wa-cta:hover { background: #1EBE5A; }
+
+    .wa-cta svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .phone-cta {
+      display: block;
+      text-align: center;
+      margin-top: 0.75rem;
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .phone-cta:hover { color: var(--white); }
+
+    .disclaimer {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.75rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-brand {
+      text-align: center;
+      margin-top: 1rem;
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    .footer-brand a { color: var(--green); text-decoration: none; }
+
+    @media (min-width: 500px) {
+      .header h1 { font-size: 1.85rem; }
+      .quick-amounts { gap: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">TM Energy</div>
+      <h1>Solar Savings Calculator</h1>
+      <p>See how much you can save in 60 seconds</p>
+    </div>
+
+    <div class="progress">
+      <div class="progress-step active" id="prog1"></div>
+      <div class="progress-step" id="prog2"></div>
+      <div class="progress-step" id="prog3"></div>
+      <div class="progress-step" id="prog4"></div>
+    </div>
+
+    <!-- STEP 1: Monthly Bill -->
+    <div class="step active" id="step1">
+      <div class="step-title">What's your monthly electricity bill?</div>
+      <div class="step-subtitle">Enter your average PEA bill in Thai Baht</div>
+
+      <div class="bill-input-wrap">
+        <span class="currency">฿</span>
+        <input type="number" class="bill-input" id="billInput" placeholder="e.g. 8,000" min="500" step="100">
+      </div>
+
+      <div class="quick-amounts">
+        <button class="quick-btn" onclick="setBill(3000)">฿3,000</button>
+        <button class="quick-btn" onclick="setBill(5000)">฿5,000</button>
+        <button class="quick-btn" onclick="setBill(8000)">฿8,000</button>
+        <button class="quick-btn" onclick="setBill(15000)">฿15,000</button>
+        <button class="quick-btn" onclick="setBill(30000)">฿30,000</button>
+        <button class="quick-btn" onclick="setBill(60000)">฿60,000</button>
+      </div>
+
+      <button class="btn btn-primary" id="btn1" onclick="goStep(2)" disabled>Continue →</button>
+    </div>
+
+    <!-- STEP 2: Property Type -->
+    <div class="step" id="step2">
+      <div class="step-title">What type of property?</div>
+      <div class="step-subtitle">This helps us recommend the right system</div>
+
+      <div class="options">
+        <div class="option" onclick="selectProperty(this, 'home')">
+          <div class="option-icon">🏠</div>
+          <div class="option-text">
+            <h3>Home / Villa</h3>
+            <p>Residential property</p>
+          </div>
+          <div class="option-check"></div>
+        </div>
+        <div class="option" onclick="selectProperty(this, 'business')">
+          <div class="option-icon">🏢</div>
+          <div class="option-text">
+            <h3>Business / Office</h3>
+            <p>Commercial property</p>
+          </div>
+          <div class="option-check"></div>
+        </div>
+        <div class="option" onclick="selectProperty(this, 'hotel')">
+          <div class="option-icon">🏨</div>
+          <div class="option-text">
+            <h3>Hotel / Resort</h3>
+            <p>Hospitality property</p>
+          </div>
+          <div class="option-check"></div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="btn2" onclick="goStep(3)" disabled>Continue →</button>
+      <button class="btn btn-back" onclick="goStep(1)">← Back</button>
+    </div>
+
+    <!-- STEP 3: Roof Type -->
+    <div class="step" id="step3">
+      <div class="step-title">What's your roof type?</div>
+      <div class="step-subtitle">Different roofs need different mounting systems</div>
+
+      <div class="options">
+        <div class="option" onclick="selectRoof(this, 'tile')">
+          <div class="option-icon">🏗️</div>
+          <div class="option-text">
+            <h3>Tile Roof</h3>
+            <p>Clay or concrete tiles</p>
+          </div>
+          <div class="option-check"></div>
+        </div>
+        <div class="option" onclick="selectRoof(this, 'metal')">
+          <div class="option-icon">🔩</div>
+          <div class="option-text">
+            <h3>Metal Roof</h3>
+            <p>Standing seam or corrugated</p>
+          </div>
+          <div class="option-check"></div>
+        </div>
+        <div class="option" onclick="selectRoof(this, 'concrete')">
+          <div class="option-icon">🧱</div>
+          <div class="option-text">
+            <h3>Flat Concrete</h3>
+            <p>Flat concrete slab roof</p>
+          </div>
+          <div class="option-check"></div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="btn3" onclick="calculate()" disabled>Calculate My Savings →</button>
+      <button class="btn btn-back" onclick="goStep(2)">← Back</button>
+    </div>
+
+    <!-- STEP 4: Results -->
+    <div class="step" id="step4">
+      <div class="step-title">Your Solar Savings Estimate</div>
+      <div class="step-subtitle">Based on your ฿<span id="billDisplay">0</span>/month electricity bill</div>
+
+      <div class="results-grid">
+        <div class="result-card highlight">
+          <div class="result-label">25-Year Total Savings</div>
+          <div class="result-value" id="savings25">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label">System Size</div>
+          <div class="result-value" id="systemSize">—</div>
+          <div class="result-unit">kWp</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label">Estimated Cost</div>
+          <div class="result-value" id="systemCost">—</div>
+          <div class="result-unit">THB</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label">Monthly Savings</div>
+          <div class="result-value" id="monthlySavings">—</div>
+          <div class="result-unit">THB/month</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label">Payback Period</div>
+          <div class="result-value" id="payback">—</div>
+          <div class="result-unit">years</div>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <a class="wa-cta" id="waCta" href="#" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Get Your Detailed Quote on WhatsApp
+        </a>
+        <a class="phone-cta" href="tel:+66997044944">📞 Or call us: +66 99 704 4944</a>
+      </div>
+
+      <button class="btn btn-back" onclick="goStep(1)">↻ Start Over</button>
+    </div>
+
+    <div class="disclaimer">
+      * Estimates based on average solar irradiance of 4.2 kWh/m²/day on Koh Phangan,
+      82% system efficiency, and current PEA electricity rates. Actual savings may vary.
+      Contact us for an accurate site assessment.
+    </div>
+
+    <div class="footer-brand">
+      <a href="solar-koh-phangan.html">TM Energy</a> — Solar Solutions for Koh Phangan
+    </div>
+  </div>
+
+  <script>
+    let bill = 0;
+    let propertyType = '';
+    let roofType = '';
+
+    function fmt(n) {
+      return Math.round(n).toLocaleString('en-US');
+    }
+
+    function setBill(v) {
+      bill = v;
+      document.getElementById('billInput').value = v;
+      document.querySelectorAll('.quick-btn').forEach(b => b.classList.remove('selected'));
+      event.target.classList.add('selected');
+      document.getElementById('btn1').disabled = false;
+    }
+
+    document.getElementById('billInput').addEventListener('input', function() {
+      bill = parseFloat(this.value) || 0;
+      document.querySelectorAll('.quick-btn').forEach(b => b.classList.remove('selected'));
+      document.getElementById('btn1').disabled = bill < 500;
+    });
+
+    function selectProperty(el, type) {
+      propertyType = type;
+      el.closest('.options').querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('btn2').disabled = false;
+    }
+
+    function selectRoof(el, type) {
+      roofType = type;
+      el.closest('.options').querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('btn3').disabled = false;
+    }
+
+    function goStep(n) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById('step' + n).classList.add('active');
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('prog' + i).classList.toggle('active', i <= n);
+      }
+    }
+
+    function calculate() {
+      // Core calculations
+      const monthlyKwh = bill / 6;
+      const systemKwp = monthlyKwh / 103.32;
+      const cost = systemKwp * 29000;
+      const monthlySavings = monthlyKwh * 5;
+      const paybackYears = cost / (monthlySavings * 12);
+      const savings25yr = monthlySavings * 12 * 25 * 1.3;
+
+      // Round system size to nearest 0.5
+      const roundedKwp = Math.round(systemKwp * 2) / 2;
+
+      // Display
+      document.getElementById('billDisplay').textContent = fmt(bill);
+      document.getElementById('systemSize').textContent = roundedKwp.toFixed(1);
+      document.getElementById('systemCost').textContent = '฿' + fmt(cost);
+      document.getElementById('monthlySavings').textContent = '฿' + fmt(monthlySavings);
+      document.getElementById('payback').textContent = paybackYears.toFixed(1);
+      document.getElementById('savings25').textContent = '฿' + fmt(savings25yr);
+
+      // WhatsApp CTA with context
+      const waText = encodeURIComponent(
+        `Hi TM Energy! I used your savings calculator. My monthly bill is ฿${fmt(bill)}, ` +
+        `property type: ${propertyType}, roof: ${roofType}. ` +
+        `It estimated a ${roundedKwp.toFixed(1)} kWp system. I'd like a detailed quote please!`
+      );
+      document.getElementById('waCta').href = `https://wa.me/66997044944?text=${waText}`;
+
+      goStep(4);
+    }
+  </script>
+</body>
+</html>
