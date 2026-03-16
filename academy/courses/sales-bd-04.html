@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4: TM Energy Economic Model — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .flow-diagram { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 24px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .flow-step { background: rgba(0,214,143,0.1); border: 1px solid rgba(0,214,143,0.3); border-radius: 8px; padding: 10px 16px; font-size: 0.95em; text-align: center; }
+    .flow-arrow { font-size: 1.3em; color: #00D68F; }
+    .model-card { margin: 20px 0; padding: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .model-card h3 { color: #00D68F; margin-bottom: 12px; }
+    .model-card .model-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600; margin-bottom: 12px; }
+    .badge-epc { background: rgba(0,214,143,0.2); color: #00D68F; }
+    .badge-ppa { background: rgba(100,149,237,0.2); color: #6495ED; }
+    .badge-lease { background: rgba(255,165,0,0.2); color: #FFA500; }
+    .calc-steps { counter-reset: calc-step; list-style: none; padding: 0; }
+    .calc-steps li { counter-increment: calc-step; padding: 12px 16px 12px 48px; position: relative; margin-bottom: 8px; background: rgba(255,255,255,0.02); border-radius: 8px; border-left: 3px solid rgba(0,214,143,0.3); }
+    .calc-steps li::before { content: counter(calc-step); position: absolute; left: 12px; top: 12px; width: 24px; height: 24px; background: rgba(0,214,143,0.15); color: #00D68F; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85em; }
+    .faq-item { margin: 16px 0; padding: 16px 20px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); }
+    .faq-item .faq-q { font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .faq-item .faq-a { color: rgba(255,255,255,0.75); }
+    .highlight-box { margin: 20px 0; padding: 16px 20px; background: rgba(0,214,143,0.08); border-left: 4px solid #00D68F; border-radius: 0 8px 8px 0; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="sales-bd-01.html"><span data-en>Sales & Business Development</span><span data-he>מכירות ופיתוח עסקי</span><span data-th>การขายและพัฒนาธุรกิจ</span></a>
+    <span>›</span>
+    <span data-en>Lesson 4</span><span data-he>שיעור 4</span><span data-th>บทที่ 4</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 4 of 4</span><span data-he>שיעור 4 מתוך 4</span><span data-th>บทที่ 4 จาก 4</span>
+    </div>
+    <h1>
+      <span data-en>The TM Energy Economic Model</span>
+      <span data-he>המודל הכלכלי של TM Energy</span>
+      <span data-th>โมเดลเศรษฐกิจของ TM Energy</span>
+    </h1>
+    <p class="lesson-subtitle">
+      <span data-en>Understand exactly how solar energy makes money — from photons to profit. Everything a new team member needs to know.</span>
+      <span data-he>הבינו בדיוק איך אנרגיה סולארית מייצרת כסף — מפוטונים לרווח. כל מה שחבר צוות חדש צריך לדעת.</span>
+      <span data-th>เข้าใจอย่างแม่นยำว่าพลังงานแสงอาทิตย์สร้างรายได้อย่างไร — จากโฟตอนสู่กำไร ทุกสิ่งที่สมาชิกทีมใหม่ต้องรู้</span>
+    </p>
+  </div>
+
+  <!-- Section 1: How Solar Makes Money -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>☀️ How Solar Energy Makes Money (From Zero)</span>
+      <span data-he>☀️ איך אנרגיה סולארית מייצרת כסף (מאפס)</span>
+      <span data-th>☀️ พลังงานแสงอาทิตย์สร้างรายได้อย่างไร (จากศูนย์)</span>
+    </h2>
+
+    <h3>
+      <span data-en>The Energy Flow</span>
+      <span data-he>זרימת האנרגיה</span>
+      <span data-th>การไหลของพลังงาน</span>
+    </h3>
+    <p>
+      <span data-en>Solar panels convert sunlight into electricity. Here's the complete chain:</span>
+      <span data-he>פאנלים סולאריים ממירים אור שמש לחשמל. הנה השרשרת המלאה:</span>
+      <span data-th>แผงโซลาร์แปลงแสงแดดเป็นไฟฟ้า นี่คือห่วงโซ่ทั้งหมด:</span>
+    </p>
+
+    <div class="flow-diagram">
+      <div class="flow-step">
+        <span data-en>☀️ Sunlight</span>
+        <span data-he>☀️ אור שמש</span>
+        <span data-th>☀️ แสงแดด</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span data-en>⚡ DC Electricity<br>(Solar Panels)</span>
+        <span data-he>⚡ חשמל DC<br>(פאנלים)</span>
+        <span data-th>⚡ ไฟฟ้า DC<br>(แผงโซลาร์)</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span data-en>🔄 Inverter<br>(DC → AC)</span>
+        <span data-he>🔄 ממיר<br>(DC → AC)</span>
+        <span data-th>🔄 อินเวอร์เตอร์<br>(DC → AC)</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span data-en>🏢 Powers<br>the Building</span>
+        <span data-he>🏢 מפעיל<br>את המבנה</span>
+        <span data-th>🏢 จ่ายไฟ<br>ให้อาคาร</span>
+      </div>
+    </div>
+
+    <h3>
+      <span data-en>What Does the Customer Currently Pay?</span>
+      <span data-he>מה הלקוח משלם כרגע?</span>
+      <span data-th>ลูกค้าจ่ายอะไรอยู่ตอนนี้?</span>
+    </h3>
+    <p>
+      <span data-en>In Thailand, electricity is supplied by PEA (Provincial Electricity Authority). The rate is made up of two parts:</span>
+      <span data-he>בתאילנד, חשמל מסופק על ידי PEA (רשות החשמל המחוזית). התעריף מורכב משני חלקים:</span>
+      <span data-th>ในไทย ไฟฟ้าจัดหาโดย PEA (การไฟฟ้าส่วนภูมิภาค) อัตราค่าไฟประกอบด้วยสองส่วน:</span>
+    </p>
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Component</span><span data-he>רכיב</span><span data-th>องค์ประกอบ</span></th>
+            <th><span data-en>Rate</span><span data-he>תעריף</span><span data-th>อัตรา</span></th>
+            <th><span data-en>Description</span><span data-he>תיאור</span><span data-th>คำอธิบาย</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Base Rate</span><span data-he>תעריף בסיס</span><span data-th>ค่าไฟฐาน</span></td>
+            <td>~฿4.00/kWh</td>
+            <td><span data-en>Fixed energy charge per kWh consumed</span><span data-he>תשלום קבוע לפי kWh שנצרך</span><span data-th>ค่าพลังงานคงที่ต่อ kWh ที่ใช้</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Ft Charge (Fuel Adjustment)</span><span data-he>תוספת Ft (התאמת דלק)</span><span data-th>ค่า Ft (ค่าเชื้อเพลิง)</span></td>
+            <td>~฿2.00/kWh</td>
+            <td><span data-en>Variable surcharge — changes every 4 months based on fuel costs</span><span data-he>תוספת משתנה — משתנה כל 4 חודשים לפי עלויות דלק</span><span data-th>ค่าธรรมเนียมแปรผัน — เปลี่ยนทุก 4 เดือนตามต้นทุนเชื้อเพลิง</span></td>
+          </tr>
+          <tr style="font-weight:700; color:#00D68F;">
+            <td><span data-en>Total Effective Rate</span><span data-he>תעריף אפקטיבי כולל</span><span data-th>อัตรารวมที่ใช้จริง</span></td>
+            <td>~฿6.00/kWh</td>
+            <td><span data-en>What the customer actually pays per unit of electricity</span><span data-he>מה שהלקוח בפועל משלם ליחידת חשמל</span><span data-th>ค่าไฟจริงที่ลูกค้าจ่ายต่อหน่วย</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>
+      <span data-en>Where the Money Comes From: Self-Consumption vs Export</span>
+      <span data-he>מאיפה מגיע הכסף: צריכה עצמית מול ייצוא</span>
+      <span data-th>เงินมาจากไหน: การใช้เองเทียบกับการส่งออก</span>
+    </h3>
+    <p>
+      <span data-en>When solar panels produce electricity, the building uses it <strong>first</strong>. This is called <strong>self-consumption</strong> — and it's the most valuable part of solar economics:</span>
+      <span data-he>כשפאנלים סולאריים מייצרים חשמל, המבנה משתמש בו <strong>קודם</strong>. זה נקרא <strong>צריכה עצמית</strong> — וזה החלק הכי בעל ערך בכלכלת הסולארי:</span>
+      <span data-th>เมื่อแผงโซลาร์ผลิตไฟฟ้า อาคารจะใช้ไฟ<strong>ก่อน</strong> นี่เรียกว่า<strong>การใช้เอง (self-consumption)</strong> — และเป็นส่วนที่มีมูลค่ามากที่สุด:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Scenario</span><span data-he>תרחיש</span><span data-th>สถานการณ์</span></th>
+            <th><span data-en>Value per kWh</span><span data-he>ערך ל-kWh</span><span data-th>มูลค่าต่อ kWh</span></th>
+            <th><span data-en>Why</span><span data-he>למה</span><span data-th>ทำไม</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="color:#00D68F;">
+            <td><span data-en>Self-consumption (used on-site)</span><span data-he>צריכה עצמית (שימוש באתר)</span><span data-th>ใช้เอง (ใช้ในอาคาร)</span></td>
+            <td><strong>฿6.00/kWh</strong></td>
+            <td><span data-en>Full retail rate avoided — you don't pay PEA for that electricity</span><span data-he>נמנע מתעריף הקמעונאי המלא — לא משלמים ל-PEA על החשמל הזה</span><span data-th>หลีกเลี่ยงอัตราค่าไฟเต็ม — ไม่ต้องจ่าย PEA สำหรับไฟฟ้านั้น</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Export to grid (excess sold back)</span><span data-he>ייצוא לרשת (עודף נמכר בחזרה)</span><span data-th>ส่งออกสู่กริด (ส่วนเกินขายคืน)</span></td>
+            <td>฿2.70/kWh</td>
+            <td><span data-en>PEA pays back at net billing rate — NOT 1:1 with consumption</span><span data-he>PEA משלם בחזרה בתעריף חיוב נטו — לא 1:1 עם צריכה</span><span data-th>PEA จ่ายคืนในอัตราเน็ตบิลลิ่ง — ไม่ใช่ 1:1 กับการใช้</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-concept">
+      <h4><span data-en>Key Insight: Self-Consumption is 2.2× More Valuable</span><span data-he>תובנת מפתח: צריכה עצמית שווה פי 2.2</span><span data-th>ข้อมูลสำคัญ: การใช้เองมีมูลค่ามากกว่า 2.2 เท่า</span></h4>
+      <p>
+        <span data-en><strong>฿6.00 ÷ ฿2.70 = 2.2×</strong><br>Every kWh the building uses directly from solar is worth 2.2 times more than exporting it. This is why we always size systems to maximize self-consumption first. Thailand uses <strong>net billing</strong> (NOT net metering) — the grid does NOT credit you 1:1.</span>
+        <span data-he><strong>฿6.00 ÷ ฿2.70 = 2.2×</strong><br>כל kWh שהמבנה צורך ישירות מהסולארי שווה פי 2.2 יותר מייצוא לרשת. לכן אנחנו תמיד מתכננים מערכות למקסום צריכה עצמית קודם. תאילנד משתמשת ב<strong>חיוב נטו</strong> (לא מדידה נטו) — הרשת לא מזכה אתכם 1:1.</span>
+        <span data-th><strong>฿6.00 ÷ ฿2.70 = 2.2×</strong><br>ทุก kWh ที่อาคารใช้โดยตรงจากโซลาร์มีมูลค่ามากกว่าการส่งออก 2.2 เท่า นี่คือเหตุผลที่เราออกแบบระบบเพื่อเพิ่มการใช้เองสูงสุดก่อนเสมอ ไทยใช้<strong>เน็ตบิลลิ่ง</strong> (ไม่ใช่เน็ตมิเตอร์ริ่ง) — กริดไม่เครดิตให้ 1:1</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Three Business Models -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>💼 The Three Business Models</span>
+      <span data-he>💼 שלושת המודלים העסקיים</span>
+      <span data-th>💼 สามโมเดลธุรกิจ</span>
+    </h2>
+
+    <div class="model-card">
+      <span class="model-badge badge-epc">EPC</span>
+      <h3>
+        <span data-en>EPC — Engineering, Procurement, Construction</span>
+        <span data-he>EPC — הנדסה, רכש, בנייה</span>
+        <span data-th>EPC — วิศวกรรม จัดซื้อ ก่อสร้าง</span>
+      </h3>
+      <p>
+        <span data-en>The customer pays upfront for the complete system. TM Energy designs, procures equipment, builds, and commissions the installation. After handover, the customer owns the system and receives all the electricity savings.</span>
+        <span data-he>הלקוח משלם מראש עבור המערכת המלאה. TM Energy מתכננת, רוכשת ציוד, בונה ומפעילה את ההתקנה. לאחר המסירה, הלקוח הוא הבעלים של המערכת ומקבל את כל החיסכון בחשמל.</span>
+        <span data-th>ลูกค้าจ่ายเงินล่วงหน้าสำหรับระบบทั้งหมด TM Energy ออกแบบ จัดซื้ออุปกรณ์ สร้าง และเดินระบบ หลังส่งมอบ ลูกค้าเป็นเจ้าของระบบและได้รับการประหยัดค่าไฟทั้งหมด</span>
+      </p>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th><span data-en>Detail</span><span data-he>פרט</span><span data-th>รายละเอียด</span></th>
+              <th><span data-en>Value</span><span data-he>ערך</span><span data-th>ค่า</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span data-en>Pricing Range</span><span data-he>טווח מחירים</span><span data-th>ช่วงราคา</span></td>
+              <td>฿25–35/Wp</td>
+            </tr>
+            <tr>
+              <td><span data-en>Example: 50 kWp System</span><span data-he>דוגמה: מערכת 50 kWp</span><span data-th>ตัวอย่าง: ระบบ 50 kWp</span></td>
+              <td>฿1.25M–1.75M</td>
+            </tr>
+            <tr>
+              <td><span data-en>Our Typical Margin</span><span data-he>המרווח הטיפוסי שלנו</span><span data-th>มาร์จิ้นทั่วไปของเรา</span></td>
+              <td>25–35%</td>
+            </tr>
+            <tr>
+              <td><span data-en>System Ownership</span><span data-he>בעלות על המערכת</span><span data-th>ความเป็นเจ้าของ</span></td>
+              <td><span data-en>Customer</span><span data-he>לקוח</span><span data-th>ลูกค้า</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <span class="model-badge badge-ppa">PPA</span>
+      <h3>
+        <span data-en>PPA — Power Purchase Agreement</span>
+        <span data-he>PPA — הסכם רכישת חשמל</span>
+        <span data-th>PPA — สัญญาซื้อขายไฟฟ้า</span>
+      </h3>
+      <p>
+        <span data-en>The customer pays <strong>ZERO upfront</strong>. TM Energy (or an investor partner) owns the system and sells electricity to the customer at a discounted rate — typically ฿4.50/kWh, which is 25% below PEA's ฿6.00/kWh. The customer saves from Day 1 with zero risk.</span>
+        <span data-he>הלקוח משלם <strong>אפס מראש</strong>. TM Energy (או שותף משקיע) מחזיקה במערכת ומוכרת חשמל ללקוח בתעריף מוזל — בדרך כלל ฿4.50/kWh, שזה 25% מתחת ל-฿6.00/kWh של PEA. הלקוח חוסך מיום ראשון ללא סיכון.</span>
+        <span data-th>ลูกค้า<strong>ไม่ต้องจ่ายล่วงหน้า</strong> TM Energy (หรือพันธมิตรนักลงทุน) เป็นเจ้าของระบบและขายไฟฟ้าให้ลูกค้าในอัตราส่วนลด — โดยทั่วไป ฿4.50/kWh ซึ่งต่ำกว่า PEA 25% ลูกค้าประหยัดตั้งแต่วันแรกโดยไม่มีความเสี่ยง</span>
+      </p>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th><span data-en>Detail</span><span data-he>פרט</span><span data-th>รายละเอียด</span></th>
+              <th><span data-en>Value</span><span data-he>ערך</span><span data-th>ค่า</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span data-en>Customer Upfront Cost</span><span data-he>עלות מראש ללקוח</span><span data-th>ค่าใช้จ่ายล่วงหน้า</span></td>
+              <td><span data-en>฿0 (Zero)</span><span data-he>฿0 (אפס)</span><span data-th>฿0 (ศูนย์)</span></td>
+            </tr>
+            <tr>
+              <td><span data-en>Electricity Rate to Customer</span><span data-he>תעריף חשמל ללקוח</span><span data-th>อัตราค่าไฟให้ลูกค้า</span></td>
+              <td>฿4.50/kWh</td>
+            </tr>
+            <tr>
+              <td><span data-en>Customer Savings vs PEA</span><span data-he>חיסכון לקוח מול PEA</span><span data-th>ลูกค้าประหยัดเทียบ PEA</span></td>
+              <td>25% (~฿1.50/kWh)</td>
+            </tr>
+            <tr>
+              <td><span data-en>Contract Duration</span><span data-he>משך חוזה</span><span data-th>ระยะเวลาสัญญา</span></td>
+              <td><span data-en>15–25 years</span><span data-he>15–25 שנים</span><span data-th>15–25 ปี</span></td>
+            </tr>
+            <tr>
+              <td><span data-en>Revenue Model</span><span data-he>מודל הכנסות</span><span data-th>โมเดลรายได้</span></td>
+              <td><span data-en>Monthly electricity sales</span><span data-he>מכירת חשמל חודשית</span><span data-th>ค่าไฟรายเดือน</span></td>
+            </tr>
+            <tr>
+              <td><span data-en>Best For</span><span data-he>מתאים ל</span><span data-th>เหมาะสำหรับ</span></td>
+              <td><span data-en>Large commercial / industrial</span><span data-he>מסחרי / תעשייתי גדול</span><span data-th>พาณิชย์ / อุตสาหกรรมขนาดใหญ่</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <span class="model-badge badge-lease">LEASE</span>
+      <h3>
+        <span data-en>Lease / Rental Model</span>
+        <span data-he>מודל ליסינג / השכרה</span>
+        <span data-th>โมเดลเช่า / ลีสซิ่ง</span>
+      </h3>
+      <p>
+        <span data-en>The customer pays a fixed monthly fee for the solar system. Simpler than PPA because there's no per-kWh metering — just a flat monthly payment. As long as the monthly fee is lower than their current electricity bill, the customer is guaranteed savings.</span>
+        <span data-he>הלקוח משלם דמי שכירות חודשיים קבועים עבור המערכת הסולארית. פשוט יותר מ-PPA כי אין מדידת kWh — רק תשלום חודשי קבוע. כל עוד התשלום החודשי נמוך מחשבון החשמל הנוכחי, הלקוח מובטח בחיסכון.</span>
+        <span data-th>ลูกค้าจ่ายค่าเช่ารายเดือนคงที่สำหรับระบบโซลาร์ ง่ายกว่า PPA เพราะไม่ต้องวัดต่อ kWh — แค่จ่ายรายเดือนคงที่ ตราบใดที่ค่าเช่ารายเดือนต่ำกว่าค่าไฟปัจจุบัน ลูกค้ารับประกันการประหยัด</span>
+      </p>
+    </div>
+
+    <div class="did-you-know">
+      <p>
+        <span data-en>💡 <strong>Which model to offer?</strong> For customers with budget → EPC (biggest long-term savings). For customers who want zero risk → PPA (save from Day 1). For customers who want simplicity → Lease (predictable monthly cost).</span>
+        <span data-he>💡 <strong>איזה מודל להציע?</strong> ללקוחות עם תקציב → EPC (חיסכון לטווח ארוך הגדול ביותר). ללקוחות שרוצים אפס סיכון → PPA (חיסכון מיום ראשון). ללקוחות שרוצים פשטות → ליסינג (עלות חודשית צפויה).</span>
+        <span data-th>💡 <strong>เสนอโมเดลไหน?</strong> ลูกค้ามีงบ → EPC (ประหยัดระยะยาวมากสุด) ลูกค้าต้องการความเสี่ยงเป็นศูนย์ → PPA (ประหยัดตั้งแต่วันแรก) ลูกค้าต้องการความง่าย → เช่า (ค่าใช้จ่ายรายเดือนคาดเดาได้)</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: Real Numbers -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📊 Real Numbers — TM Energy Projects</span>
+      <span data-he>📊 מספרים אמיתיים — פרויקטים של TM Energy</span>
+      <span data-th>📊 ตัวเลขจริง — โครงการของ TM Energy</span>
+    </h2>
+
+    <h3>
+      <span data-en>Example A: Beamtech Factory (3 Buildings)</span>
+      <span data-he>דוגמה א׳: מפעל Beamtech (3 מבנים)</span>
+      <span data-th>ตัวอย่าง A: โรงงาน Beamtech (3 อาคาร)</span>
+    </h3>
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Metric</span><span data-he>מדד</span><span data-th>ตัวชี้วัด</span></th>
+            <th><span data-en>Value</span><span data-he>ערך</span><span data-th>ค่า</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span data-en>System Size</span><span data-he>גודל מערכת</span><span data-th>ขนาดระบบ</span></td><td>~110 kWp</td></tr>
+          <tr><td><span data-en>EPC Price</span><span data-he>מחיר EPC</span><span data-th>ราคา EPC</span></td><td>~฿29/Wp = ~฿3.2M</td></tr>
+          <tr><td><span data-en>Monthly Production</span><span data-he>ייצור חודשי</span><span data-th>การผลิตรายเดือน</span></td><td>~15,000 kWh</td></tr>
+          <tr><td><span data-en>Monthly Savings</span><span data-he>חיסכון חודשי</span><span data-th>ประหยัดรายเดือน</span></td><td>~฿90,000</td></tr>
+          <tr><td><span data-en>Annual Savings</span><span data-he>חיסכון שנתי</span><span data-th>ประหยัดรายปี</span></td><td>~฿1.08M</td></tr>
+          <tr style="color:#00D68F; font-weight:700;"><td><span data-en>Payback Period</span><span data-he>תקופת החזר</span><span data-th>ระยะคืนทุน</span></td><td>~3 years</td></tr>
+          <tr><td><span data-en>25-Year Total Savings</span><span data-he>חיסכון כולל ב-25 שנה</span><span data-th>ประหยัดรวม 25 ปี</span></td><td>~฿27M</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>
+      <span data-en>Example B: Kaniel Villas (3 Identical Houses)</span>
+      <span data-he>דוגמה ב׳: וילות קניאל (3 בתים זהים)</span>
+      <span data-th>ตัวอย่าง B: Kaniel Villas (บ้าน 3 หลังเหมือนกัน)</span>
+    </h3>
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Metric (per villa)</span><span data-he>מדד (לכל וילה)</span><span data-th>ตัวชี้วัด (ต่อหลัง)</span></th>
+            <th><span data-en>Value</span><span data-he>ערך</span><span data-th>ค่า</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span data-en>Panels</span><span data-he>פאנלים</span><span data-th>แผง</span></td><td>48</td></tr>
+          <tr><td><span data-en>System Size</span><span data-he>גודל מערכת</span><span data-th>ขนาดระบบ</span></td><td>27.8 kWp</td></tr>
+          <tr><td><span data-en>EPC Price</span><span data-he>מחיר EPC</span><span data-th>ราคา EPC</span></td><td>฿807,000</td></tr>
+          <tr><td><span data-en>Monthly Production</span><span data-he>ייצור חודשי</span><span data-th>การผลิตรายเดือน</span></td><td>2,916 kWh</td></tr>
+          <tr><td><span data-en>Monthly Consumption</span><span data-he>צריכה חודשית</span><span data-th>การใช้รายเดือน</span></td><td>2,000 kWh</td></tr>
+          <tr>
+            <td><span data-en>Self-Consumption Savings</span><span data-he>חיסכון צריכה עצמית</span><span data-th>ประหยัดจากใช้เอง</span></td>
+            <td><span data-en>2,000 kWh × ฿6 = <strong>฿12,000</strong></span><span data-he>2,000 kWh × ฿6 = <strong>฿12,000</strong></span><span data-th>2,000 kWh × ฿6 = <strong>฿12,000</strong></span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Export Revenue</span><span data-he>הכנסות ייצוא</span><span data-th>รายได้จากการส่งออก</span></td>
+            <td><span data-en>916 kWh × ฿2.70 = <strong>฿2,473</strong></span><span data-he>916 kWh × ฿2.70 = <strong>฿2,473</strong></span><span data-th>916 kWh × ฿2.70 = <strong>฿2,473</strong></span></td>
+          </tr>
+          <tr style="color:#00D68F; font-weight:700;">
+            <td><span data-en>Total Monthly Benefit</span><span data-he>תועלת חודשית כוללת</span><span data-th>ผลประโยชน์รายเดือนรวม</span></td>
+            <td>฿14,473</td>
+          </tr>
+          <tr><td><span data-en>Annual Savings</span><span data-he>חיסכון שנתי</span><span data-th>ประหยัดรายปี</span></td><td>฿173,676</td></tr>
+          <tr><td><span data-en>Payback Period</span><span data-he>תקופת החזר</span><span data-th>ระยะคืนทุน</span></td><td>4.6 years</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en>Notice how self-consumption (฿12,000) is almost 5× larger than the export revenue (฿2,473). This perfectly illustrates why maximizing self-consumption is critical.</span>
+        <span data-he>שימו לב שהצריכה העצמית (฿12,000) גדולה כמעט פי 5 מהכנסות הייצוא (฿2,473). זה ממחיש בצורה מושלמת למה מקסום צריכה עצמית הוא קריטי.</span>
+        <span data-th>สังเกตว่าการใช้เอง (฿12,000) มากกว่ารายได้จากการส่งออก (฿2,473) เกือบ 5 เท่า นี่แสดงให้เห็นอย่างชัดเจนว่าทำไมการเพิ่มการใช้เองจึงสำคัญ</span>
+      </p>
+    </div>
+
+    <h3>
+      <span data-en>Example C: PPA Model (50 kWp)</span>
+      <span data-he>דוגמה ג׳: מודל PPA (50 kWp)</span>
+      <span data-th>ตัวอย่าง C: โมเดล PPA (50 kWp)</span>
+    </h3>
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Metric</span><span data-he>מדד</span><span data-th>ตัวชี้วัด</span></th>
+            <th><span data-en>TM Energy (Owner)</span><span data-he>TM Energy (בעלים)</span><span data-th>TM Energy (เจ้าของ)</span></th>
+            <th><span data-en>Customer</span><span data-he>לקוח</span><span data-th>ลูกค้า</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Investment</span><span data-he>השקעה</span><span data-th>เงินลงทุน</span></td>
+            <td>฿1,500,000</td>
+            <td><span data-en>฿0 (zero)</span><span data-he>฿0 (אפס)</span><span data-th>฿0 (ศูนย์)</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Monthly Revenue / Savings</span><span data-he>הכנסה / חיסכון חודשי</span><span data-th>รายได้ / ประหยัดรายเดือน</span></td>
+            <td><span data-en>฿27,000 (6,000 kWh × ฿4.50)</span><span data-he>฿27,000 (6,000 kWh × ฿4.50)</span><span data-th>฿27,000 (6,000 kWh × ฿4.50)</span></td>
+            <td><span data-en>฿9,000 saved vs PEA</span><span data-he>฿9,000 נחסכים מול PEA</span><span data-th>ประหยัด ฿9,000 เทียบ PEA</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Annual</span><span data-he>שנתי</span><span data-th>รายปี</span></td>
+            <td>฿324,000</td>
+            <td><span data-en>฿108,000 saved</span><span data-he>฿108,000 נחסכים</span><span data-th>ประหยัด ฿108,000</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Payback Period</span><span data-he>תקופת החזר</span><span data-th>ระยะคืนทุน</span></td>
+            <td>4.6 years</td>
+            <td><span data-en>Immediate (Day 1)</span><span data-he>מיידי (יום 1)</span><span data-th>ทันที (วันที่ 1)</span></td>
+          </tr>
+          <tr style="color:#00D68F; font-weight:700;">
+            <td><span data-en>25-Year Total</span><span data-he>סה״כ 25 שנה</span><span data-th>รวม 25 ปี</span></td>
+            <td>฿8,100,000</td>
+            <td><span data-en>฿2,700,000 saved</span><span data-he>฿2,700,000 נחסכים</span><span data-th>ประหยัด ฿2,700,000</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 4: Key Financial Terms -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📖 Key Financial Terms (Glossary)</span>
+      <span data-he>📖 מונחים פיננסיים מרכזיים (מילון)</span>
+      <span data-th>📖 คำศัพท์ทางการเงินสำคัญ (อภิธานศัพท์)</span>
+    </h2>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Term</span><span data-he>מונח</span><span data-th>คำศัพท์</span></th>
+            <th><span data-en>Definition</span><span data-he>הגדרה</span><span data-th>คำจำกัดความ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>kWp</strong></td>
+            <td><span data-en>Kilowatt-peak — the system's maximum power rating under standard test conditions. Used to describe system size.</span><span data-he>קילוואט-שיא — דירוג ההספק המרבי של המערכת בתנאי בדיקה סטנדרטיים. משמש לתיאור גודל המערכת.</span><span data-th>กิโลวัตต์-พีค — กำลังสูงสุดของระบบภายใต้สภาวะทดสอบมาตรฐาน ใช้อธิบายขนาดระบบ</span></td>
+          </tr>
+          <tr>
+            <td><strong>kWh</strong></td>
+            <td><span data-en>Kilowatt-hour — a unit of energy. 1 kWh = running a 1,000W appliance for 1 hour. This is what's on your electricity bill.</span><span data-he>קילוואט-שעה — יחידת אנרגיה. 1 kWh = הפעלת מכשיר 1,000W במשך שעה. זה מה שמופיע בחשבון החשמל.</span><span data-th>กิโลวัตต์-ชั่วโมง — หน่วยพลังงาน 1 kWh = เปิดเครื่องใช้ไฟฟ้า 1,000W เป็นเวลา 1 ชั่วโมง นี่คือสิ่งที่อยู่ในบิลค่าไฟ</span></td>
+          </tr>
+          <tr>
+            <td><strong>Wp</strong></td>
+            <td><span data-en>Watt-peak — per-watt pricing unit. "฿29/Wp" means ฿29 per watt of installed capacity.</span><span data-he>ואט-שיא — יחידת תמחור לוואט. "฿29/Wp" אומר ฿29 לוואט קיבולת מותקנת.</span><span data-th>วัตต์-พีค — หน่วยราคาต่อวัตต์ "฿29/Wp" หมายถึง ฿29 ต่อวัตต์ของกำลังที่ติดตั้ง</span></td>
+          </tr>
+          <tr>
+            <td><strong>EPC</strong></td>
+            <td><span data-en>Engineering, Procurement, Construction — the full turnkey project delivery model.</span><span data-he>הנדסה, רכש, בנייה — מודל אספקת פרויקט טורנקי מלא.</span><span data-th>วิศวกรรม จัดซื้อ ก่อสร้าง — โมเดลส่งมอบโครงการแบบเบ็ดเสร็จ</span></td>
+          </tr>
+          <tr>
+            <td><strong>PPA</strong></td>
+            <td><span data-en>Power Purchase Agreement — long-term contract to buy electricity at a fixed rate from a system you don't own.</span><span data-he>הסכם רכישת חשמל — חוזה ארוך טווח לרכישת חשמל בתעריף קבוע ממערכת שלא בבעלותך.</span><span data-th>สัญญาซื้อขายไฟฟ้า — สัญญาระยะยาวในการซื้อไฟฟ้าในอัตราคงที่จากระบบที่คุณไม่ได้เป็นเจ้าของ</span></td>
+          </tr>
+          <tr>
+            <td><strong>ROI</strong></td>
+            <td><span data-en>Return on Investment — total profit divided by initial investment, expressed as a percentage.</span><span data-he>החזר על השקעה — רווח כולל חלקי השקעה ראשונית, מבוטא באחוזים.</span><span data-th>ผลตอบแทนจากการลงทุน — กำไรรวมหารด้วยเงินลงทุนเริ่มต้น แสดงเป็นเปอร์เซ็นต์</span></td>
+          </tr>
+          <tr>
+            <td><span data-en><strong>Payback Period</strong></span><span data-he><strong>תקופת החזר</strong></span><span data-th><strong>ระยะคืนทุน</strong></span></td>
+            <td><span data-en>The number of years until cumulative savings equal the initial investment.</span><span data-he>מספר השנים עד שהחיסכון המצטבר שווה להשקעה הראשונית.</span><span data-th>จำนวนปีจนกว่าการประหยัดสะสมจะเท่ากับเงินลงทุนเริ่มต้น</span></td>
+          </tr>
+          <tr>
+            <td><span data-en><strong>Net Billing</strong></span><span data-he><strong>חיוב נטו</strong></span><span data-th><strong>เน็ตบิลลิ่ง</strong></span></td>
+            <td><span data-en>Thailand's export credit system. Excess electricity is credited at ฿2.70/kWh — NOT the full retail rate. This is different from net metering (which would be 1:1).</span><span data-he>מערכת הזיכוי של תאילנד לייצוא חשמל. עודף חשמל מזוכה ב-฿2.70/kWh — לא בתעריף הקמעונאי המלא. זה שונה ממדידה נטו (שהייתה 1:1).</span><span data-th>ระบบเครดิตส่งออกของไทย ไฟฟ้าส่วนเกินเครดิตที่ ฿2.70/kWh — ไม่ใช่อัตราค่าไฟเต็ม แตกต่างจากเน็ตมิเตอร์ริ่ง (ซึ่งจะเป็น 1:1)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Ft</strong></td>
+            <td><span data-en>Fuel Adjustment charge — a variable surcharge on Thai electricity bills that changes every 4 months based on fuel costs. Solar avoids Ft completely.</span><span data-he>תוספת התאמת דלק — תוספת משתנה בחשבונות חשמל תאילנדיים שמשתנה כל 4 חודשים לפי עלויות דלק. סולארי מונע Ft לחלוטין.</span><span data-th>ค่าเชื้อเพลิง (Ft) — ค่าธรรมเนียมแปรผันในบิลค่าไฟไทยที่เปลี่ยนทุก 4 เดือนตามต้นทุนเชื้อเพลิง โซลาร์หลีกเลี่ยง Ft ได้ทั้งหมด</span></td>
+          </tr>
+          <tr>
+            <td><strong>LCOE</strong></td>
+            <td><span data-en>Levelized Cost of Energy — the total lifetime cost of the system divided by total energy produced. Used to compare solar vs grid costs fairly.</span><span data-he>עלות אנרגיה ממושקלת — עלות כוללת של המערכת לאורך חייה חלקי סך האנרגיה שיוצרה. משמש להשוואה הוגנת של סולארי מול רשת.</span><span data-th>ต้นทุนพลังงานถัวเฉลี่ย — ต้นทุนรวมตลอดอายุการใช้งานหารด้วยพลังงานที่ผลิตได้ทั้งหมด ใช้เปรียบเทียบต้นทุนโซลาร์กับกริดอย่างเป็นธรรม</span></td>
+          </tr>
+          <tr>
+            <td><span data-en><strong>Self-consumption ratio</strong></span><span data-he><strong>יחס צריכה עצמית</strong></span><span data-th><strong>อัตราการใช้เอง</strong></span></td>
+            <td><span data-en>The percentage of solar production consumed on-site. Higher = more savings. Target: 70%+ for maximum value.</span><span data-he>אחוז הייצור הסולארי הנצרך באתר. גבוה יותר = חיסכון גדול יותר. יעד: 70%+ לערך מקסימלי.</span><span data-th>เปอร์เซ็นต์การผลิตโซลาร์ที่ใช้ในอาคาร สูงขึ้น = ประหยัดมากขึ้น เป้าหมาย: 70%+ สำหรับมูลค่าสูงสุด</span></td>
+          </tr>
+          <tr>
+            <td><span data-en><strong>Peak Sun Hours</strong></span><span data-he><strong>שעות שיא שמש</strong></span><span data-th><strong>ชั่วโมงแดดสูงสุด</strong></span></td>
+            <td><span data-en>The equivalent number of hours at full sun intensity per day. Koh Phangan average: 4.2 hours/day. Used to estimate production.</span><span data-he>מספר שעות שוות ערך של עוצמת שמש מלאה ביום. ממוצע קו פנגן: 4.2 שעות/יום. משמש להערכת ייצור.</span><span data-th>จำนวนชั่วโมงเทียบเท่าความเข้มแสงแดดเต็มที่ต่อวัน ค่าเฉลี่ยเกาะพะงัน: 4.2 ชั่วโมง/วัน ใช้ประมาณการผลิต</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 5: How to Calculate a Quote -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🧮 How to Calculate a Quote (Step by Step)</span>
+      <span data-he>🧮 איך לחשב הצעת מחיר (שלב אחר שלב)</span>
+      <span data-th>🧮 วิธีคำนวณใบเสนอราคา (ทีละขั้นตอน)</span>
+    </h2>
+
+    <p>
+      <span data-en>Follow these 9 steps to create a quote for any customer:</span>
+      <span data-he>עקבו אחרי 9 השלבים האלה ליצירת הצעת מחיר לכל לקוח:</span>
+      <span data-th>ทำตาม 9 ขั้นตอนนี้เพื่อสร้างใบเสนอราคาสำหรับลูกค้า:</span>
+    </p>
+
+    <ol class="calc-steps">
+      <li>
+        <span data-en><strong>Get the electricity bill</strong> — Ask for the customer's monthly PEA bill. You need both kWh consumed and total ฿ paid.</span>
+        <span data-he><strong>קבלו את חשבון החשמל</strong> — בקשו את חשבון ה-PEA החודשי של הלקוח. אתם צריכים גם kWh שנצרכו וגם סה״כ ฿ ששולם.</span>
+        <span data-th><strong>ขอบิลค่าไฟ</strong> — ขอบิล PEA รายเดือนของลูกค้า ต้องการทั้ง kWh ที่ใช้และ ฿ ที่จ่าย</span>
+      </li>
+      <li>
+        <span data-en><strong>Calculate average monthly consumption</strong> — Best to get 12 months of bills and average them. Seasonal variation is significant in Thailand.</span>
+        <span data-he><strong>חשבו צריכה חודשית ממוצעת</strong> — הכי טוב לקבל 12 חודשי חשבונות ולממוצע. שונות עונתית משמעותית בתאילנד.</span>
+        <span data-th><strong>คำนวณการใช้ไฟเฉลี่ยรายเดือน</strong> — ดีที่สุดคือขอบิล 12 เดือนแล้วเฉลี่ย ความแปรผันตามฤดูกาลมีนัยสำคัญในไทย</span>
+      </li>
+      <li>
+        <span data-en><strong>Size the system</strong> — Formula: Monthly kWh ÷ (4.2 peak sun hours × 30 days × 0.82 efficiency) = kWp needed.<br><em>Example: 6,000 kWh ÷ (4.2 × 30 × 0.82) = 6,000 ÷ 103.3 = ~58 kWp</em></span>
+        <span data-he><strong>תכננו את גודל המערכת</strong> — נוסחה: kWh חודשי ÷ (4.2 שעות שיא שמש × 30 ימים × 0.82 יעילות) = kWp נדרש.<br><em>דוגמה: 6,000 kWh ÷ (4.2 × 30 × 0.82) = 6,000 ÷ 103.3 = ~58 kWp</em></span>
+        <span data-th><strong>กำหนดขนาดระบบ</strong> — สูตร: kWh รายเดือน ÷ (4.2 ชั่วโมงแดดสูงสุด × 30 วัน × 0.82 ประสิทธิภาพ) = kWp ที่ต้องการ<br><em>ตัวอย่าง: 6,000 kWh ÷ (4.2 × 30 × 0.82) = 6,000 ÷ 103.3 = ~58 kWp</em></span>
+      </li>
+      <li>
+        <span data-en><strong>Select panels</strong> — Formula: kWp needed ÷ 0.58 kW per panel = number of 580W panels.<br><em>Example: 58 kWp ÷ 0.58 = 100 panels</em></span>
+        <span data-he><strong>בחרו פאנלים</strong> — נוסחה: kWp נדרש ÷ 0.58 kW לפאנל = מספר פאנלים של 580W.<br><em>דוגמה: 58 kWp ÷ 0.58 = 100 פאנלים</em></span>
+        <span data-th><strong>เลือกแผง</strong> — สูตร: kWp ที่ต้องการ ÷ 0.58 kW ต่อแผง = จำนวนแผง 580W<br><em>ตัวอย่าง: 58 kWp ÷ 0.58 = 100 แผง</em></span>
+      </li>
+      <li>
+        <span data-en><strong>Check roof area</strong> — Formula: Number of panels × 2.58 m² = required roof area.<br><em>Example: 100 panels × 2.58 m² = 258 m² needed</em></span>
+        <span data-he><strong>בדקו שטח גג</strong> — נוסחה: מספר פאנלים × 2.58 מ״ר = שטח גג נדרש.<br><em>דוגמה: 100 פאנלים × 2.58 מ״ר = 258 מ״ר נדרש</em></span>
+        <span data-th><strong>ตรวจพื้นที่หลังคา</strong> — สูตร: จำนวนแผง × 2.58 ตร.ม. = พื้นที่หลังคาที่ต้องการ<br><em>ตัวอย่าง: 100 แผง × 2.58 ตร.ม. = ต้องการ 258 ตร.ม.</em></span>
+      </li>
+      <li>
+        <span data-en><strong>Calculate EPC price</strong> — Formula: kWp × ฿29,000/Wp = total cost (adjust ฿/Wp based on system size).<br><em>Example: 58 kWp × ฿29,000 = ฿1,682,000</em></span>
+        <span data-he><strong>חשבו מחיר EPC</strong> — נוסחה: kWp × ฿29,000/Wp = עלות כוללת (התאימו ฿/Wp לפי גודל מערכת).<br><em>דוגמה: 58 kWp × ฿29,000 = ฿1,682,000</em></span>
+        <span data-th><strong>คำนวณราคา EPC</strong> — สูตร: kWp × ฿29,000/Wp = ต้นทุนรวม (ปรับ ฿/Wp ตามขนาดระบบ)<br><em>ตัวอย่าง: 58 kWp × ฿29,000 = ฿1,682,000</em></span>
+      </li>
+      <li>
+        <span data-en><strong>Calculate monthly savings</strong> — Simplified: monthly production × ฿6/kWh (assumes high self-consumption).<br><em>Example: 6,000 kWh × ฿6 = ฿36,000/month</em></span>
+        <span data-he><strong>חשבו חיסכון חודשי</strong> — פשוט: ייצור חודשי × ฿6/kWh (מניח צריכה עצמית גבוהה).<br><em>דוגמה: 6,000 kWh × ฿6 = ฿36,000/חודש</em></span>
+        <span data-th><strong>คำนวณประหยัดรายเดือน</strong> — แบบง่าย: การผลิตรายเดือน × ฿6/kWh (สมมุติการใช้เองสูง)<br><em>ตัวอย่าง: 6,000 kWh × ฿6 = ฿36,000/เดือน</em></span>
+      </li>
+      <li>
+        <span data-en><strong>Calculate payback</strong> — Formula: Total EPC cost ÷ Annual savings = years to payback.<br><em>Example: ฿1,682,000 ÷ ฿432,000 = 3.9 years</em></span>
+        <span data-he><strong>חשבו תקופת החזר</strong> — נוסחה: עלות EPC כוללת ÷ חיסכון שנתי = שנים להחזר.<br><em>דוגמה: ฿1,682,000 ÷ ฿432,000 = 3.9 שנים</em></span>
+        <span data-th><strong>คำนวณระยะคืนทุน</strong> — สูตร: ต้นทุน EPC รวม ÷ การประหยัดรายปี = ปีที่คืนทุน<br><em>ตัวอย่าง: ฿1,682,000 ÷ ฿432,000 = 3.9 ปี</em></span>
+      </li>
+      <li>
+        <span data-en><strong>Present the ROI chart</strong> — Show a year-by-year cumulative savings chart. This is the most powerful visual in any solar proposal. Show how savings compound over 25 years.</span>
+        <span data-he><strong>הציגו תרשים ROI</strong> — הציגו תרשים חיסכון מצטבר שנה-אחר-שנה. זה הוויזואל הכי חזק בכל הצעת סולארי. הראו איך החיסכון מצטבר לאורך 25 שנה.</span>
+        <span data-th><strong>นำเสนอกราฟ ROI</strong> — แสดงกราฟการประหยัดสะสมรายปี นี่คือภาพที่ทรงพลังที่สุดในทุกข้อเสนอโซลาร์ แสดงให้เห็นว่าการประหยัดสะสมอย่างไรตลอด 25 ปี</span>
+      </li>
+    </ol>
+
+    <div class="key-concept">
+      <h4><span data-en>Quick Formula Cheat Sheet</span><span data-he>דף נוסחאות מהיר</span><span data-th>สูตรลัด</span></h4>
+      <p>
+        <span data-en>
+          <strong>System size:</strong> Monthly kWh ÷ 103.3 = kWp<br>
+          <strong>Panel count:</strong> kWp ÷ 0.58 = panels<br>
+          <strong>Roof area:</strong> panels × 2.58 m²<br>
+          <strong>EPC cost:</strong> kWp × ฿29,000<br>
+          <strong>Payback:</strong> EPC cost ÷ (monthly savings × 12)
+        </span>
+        <span data-he>
+          <strong>גודל מערכת:</strong> kWh חודשי ÷ 103.3 = kWp<br>
+          <strong>מספר פאנלים:</strong> kWp ÷ 0.58 = פאנלים<br>
+          <strong>שטח גג:</strong> פאנלים × 2.58 מ״ר<br>
+          <strong>עלות EPC:</strong> kWp × ฿29,000<br>
+          <strong>תקופת החזר:</strong> עלות EPC ÷ (חיסכון חודשי × 12)
+        </span>
+        <span data-th>
+          <strong>ขนาดระบบ:</strong> kWh รายเดือน ÷ 103.3 = kWp<br>
+          <strong>จำนวนแผง:</strong> kWp ÷ 0.58 = แผง<br>
+          <strong>พื้นที่หลังคา:</strong> แผง × 2.58 ตร.ม.<br>
+          <strong>ต้นทุน EPC:</strong> kWp × ฿29,000<br>
+          <strong>ระยะคืนทุน:</strong> ต้นทุน EPC ÷ (ประหยัดรายเดือน × 12)
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 6: Common Customer Questions -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>❓ Common Customer Questions & Answers</span>
+      <span data-he>❓ שאלות נפוצות של לקוחות ותשובות</span>
+      <span data-th>❓ คำถามที่พบบ่อยและคำตอบ</span>
+    </h2>
+
+    <p>
+      <span data-en>Memorize these — you'll hear them in every sales meeting:</span>
+      <span data-he>שננו את אלה — תשמעו אותן בכל פגישת מכירה:</span>
+      <span data-th>จำไว้ — คุณจะได้ยินในทุกการประชุมขาย:</span>
+    </p>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span data-en>"What happens on cloudy days?"</span>
+        <span data-he>"מה קורה בימים מעוננים?"</span>
+        <span data-th>"วันที่มีเมฆมากเป็นอย่างไร?"</span>
+      </div>
+      <div class="faq-a">
+        <span data-en>Panels still produce 20-40% of their rated capacity on cloudy days. During the rainy season, production runs at 60-70% of peak. Systems are designed around annual averages, not daily peaks — so this is already factored into the financial projections.</span>
+        <span data-he>פאנלים עדיין מייצרים 20-40% מהקיבולת הנקובה בימים מעוננים. בעונת הגשמים, הייצור עומד על 60-70% מהשיא. מערכות מתוכננות לפי ממוצעים שנתיים, לא שיאים יומיים — אז זה כבר מגולם בתחזיות הפיננסיות.</span>
+        <span data-th>แผงยังผลิตได้ 20-40% ของกำลังในวันที่มีเมฆ ในฤดูฝน การผลิตอยู่ที่ 60-70% ของช่วงสูงสุด ระบบออกแบบตามค่าเฉลี่ยรายปี ไม่ใช่สูงสุดรายวัน — จึงรวมอยู่ในประมาณการทางการเงินแล้ว</span>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span data-en>"What about at night?"</span>
+        <span data-he>"מה לגבי הלילה?"</span>
+        <span data-th>"ตอนกลางคืนล่ะ?"</span>
+      </div>
+      <div class="faq-a">
+        <span data-en>No solar production at night. But during the day, your solar panels reduce or eliminate your PEA bill. At night you simply draw from the grid as normal. Your total monthly bill is still dramatically lower.</span>
+        <span data-he>אין ייצור סולארי בלילה. אבל במהלך היום, הפאנלים מפחיתים או מבטלים את חשבון ה-PEA שלכם. בלילה פשוט צורכים מהרשת כרגיל. החשבון החודשי הכולל עדיין נמוך משמעותית.</span>
+        <span data-th>ไม่มีการผลิตตอนกลางคืน แต่ระหว่างวัน แผงโซลาร์ลดหรือกำจัดบิล PEA ของคุณ ตอนกลางคืนก็ดึงไฟจากกริดตามปกติ บิลรายเดือนรวมยังคงลดลงอย่างมาก</span>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span data-en>"What if I use more than I produce?"</span>
+        <span data-he>"מה אם אני צורך יותר ממה שאני מייצר?"</span>
+        <span data-th>"ถ้าใช้ไฟมากกว่าที่ผลิตได้ล่ะ?"</span>
+      </div>
+      <div class="faq-a">
+        <span data-en>You simply pay PEA for the difference — exactly as you do today. Solar just reduces your grid consumption, it doesn't replace it entirely (unless you add batteries). You still have a grid connection as backup.</span>
+        <span data-he>פשוט משלמים ל-PEA על ההפרש — בדיוק כמו היום. סולארי רק מפחית את צריכת הרשת שלכם, לא מחליף אותה לגמרי (אלא אם מוסיפים סוללות). עדיין יש לכם חיבור לרשת כגיבוי.</span>
+        <span data-th>คุณแค่จ่ายค่าไฟ PEA ส่วนที่เกิน — เหมือนที่ทำอยู่ โซลาร์แค่ลดการใช้ไฟจากกริด ไม่ได้แทนที่ทั้งหมด (เว้นแต่เพิ่มแบตเตอรี่) ยังมีการเชื่อมต่อกริดเป็นสำรอง</span>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span data-en>"What if I produce more than I use?"</span>
+        <span data-he>"מה אם אני מייצר יותר ממה שאני צורך?"</span>
+        <span data-th>"ถ้าผลิตได้มากกว่าที่ใช้ล่ะ?"</span>
+      </div>
+      <div class="faq-a">
+        <span data-en>Excess electricity is exported to the grid and PEA credits you at ฿2.70/kWh (net billing). It's not wasted — but remember, self-consumption at ฿6/kWh is much more valuable than export at ฿2.70/kWh.</span>
+        <span data-he>עודף חשמל מיוצא לרשת ו-PEA מזכה אתכם ב-฿2.70/kWh (חיוב נטו). זה לא הולך לאיבוד — אבל זכרו, צריכה עצמית ב-฿6/kWh שווה הרבה יותר מייצוא ב-฿2.70/kWh.</span>
+        <span data-th>ไฟฟ้าส่วนเกินส่งออกสู่กริดและ PEA เครดิตที่ ฿2.70/kWh (เน็ตบิลลิ่ง) ไม่สูญเปล่า — แต่จำไว้ การใช้เองที่ ฿6/kWh มีมูลค่ามากกว่าการส่งออกที่ ฿2.70/kWh มาก</span>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span data-en>"How long do panels last?"</span>
+        <span data-he>"כמה זמן הפאנלים מחזיקים?"</span>
+        <span data-th>"แผงอยู่ได้นานเท่าไร?"</span>
+      </div>
+      <div class="faq-a">
+        <span data-en>25+ years. Modern panels come with a performance warranty guaranteeing at least 80% output at year 25. Many panels continue producing well beyond 30 years. The technology is extremely proven and reliable.</span>
+        <span data-he>25+ שנים. פאנלים מודרניים מגיעים עם אחריות ביצועים שמבטיחה לפחות 80% תפוקה בשנה 25. פאנלים רבים ממשיכים לייצר הרבה מעבר ל-30 שנה. הטכנולוגיה מוכחת ואמינה ביותר.</span>
+        <span data-th>25+ ปี แผงรุ่นใหม่มีการรับประกันประสิทธิภาพอย่างน้อย 80% ในปีที่ 25 แผงจำนวนมากยังผลิตได้ดีเกิน 30 ปี เทคโนโลยีผ่านการพิสูจน์และเชื่อถือได้มาก</span>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span data-en>"What maintenance is needed?"</span>
+        <span data-he>"איזו תחזוקה נדרשת?"</span>
+        <span data-th>"ต้องบำรุงรักษาอย่างไร?"</span>
+      </div>
+      <div class="faq-a">
+        <span data-en>Minimal. Panel cleaning 2× per year (rain handles most of it in Thailand) and an annual inverter checkup. No moving parts means very low maintenance costs. TM Energy offers maintenance packages for peace of mind.</span>
+        <span data-he>מינימלי. ניקוי פאנלים פעמיים בשנה (גשם מטפל ברוב בתאילנד) ובדיקת ממיר שנתית. אין חלקים נעים, מה שאומר עלויות תחזוקה נמוכות מאוד. TM Energy מציעה חבילות תחזוקה לשקט נפשי.</span>
+        <span data-th>น้อยมาก ล้างแผง 2 ครั้ง/ปี (ฝนช่วยได้มากในไทย) และตรวจอินเวอร์เตอร์ปีละครั้ง ไม่มีชิ้นส่วนเคลื่อนไหวจึงมีค่าบำรุงต่ำ TM Energy มีแพ็คเกจบำรุงรักษาให้สบายใจ</span>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span data-en>"What about the Ft charge?"</span>
+        <span data-he>"מה עם תוספת ה-Ft?"</span>
+        <span data-th>"แล้วค่า Ft ล่ะ?"</span>
+      </div>
+      <div class="faq-a">
+        <span data-en>Great question! The Ft (Fuel Adjustment) charge only applies to electricity from PEA. Solar electricity you produce yourself has ZERO Ft charge. As fuel costs rise, your solar savings increase even more. This is a hidden benefit many customers don't realize.</span>
+        <span data-he>שאלה מצוינת! תוספת ה-Ft (התאמת דלק) חלה רק על חשמל מ-PEA. חשמל סולארי שאתם מייצרים בעצמכם ללא תוספת Ft כלל. ככל שעלויות הדלק עולות, החיסכון הסולארי שלכם גדל עוד יותר. זו תועלת נסתרת שלקוחות רבים לא מודעים אליה.</span>
+        <span data-th>คำถามดี! ค่า Ft (ค่าเชื้อเพลิง) ใช้เฉพาะไฟฟ้าจาก PEA ไฟฟ้าโซลาร์ที่ผลิตเองไม่มีค่า Ft เลย เมื่อต้นทุนเชื้อเพลิงเพิ่มขึ้น การประหยัดจากโซลาร์ยิ่งมากขึ้น นี่คือผลประโยชน์ซ่อนเร้นที่ลูกค้าหลายคนไม่รู้</span>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span data-en>"Is it legal?"</span>
+        <span data-he>"זה חוקי?"</span>
+        <span data-th>"ถูกกฎหมายไหม?"</span>
+      </div>
+      <div class="faq-a">
+        <span data-en>Absolutely. PEA has a formal net billing program for rooftop solar. We handle all permit applications and grid connection paperwork. The process is well-established and fully legal in Thailand.</span>
+        <span data-he>בהחלט. ל-PEA יש תוכנית חיוב נטו רשמית לסולארי על גגות. אנחנו מטפלים בכל בקשות ההיתרים ומסמכי חיבור לרשת. התהליך מבוסס היטב וחוקי לחלוטין בתאילנד.</span>
+        <span data-th>แน่นอน PEA มีโปรแกรมเน็ตบิลลิ่งอย่างเป็นทางการสำหรับโซลาร์บนหลังคา เราดำเนินการใบอนุญาตและเอกสารเชื่อมต่อกริดทั้งหมด กระบวนการนี้มั่นคงและถูกกฎหมายในไทย</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <!-- Complete Button -->
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <div class="lesson-nav">
+    <a href="sales-bd-03.html" class="lesson-nav-btn prev">
+      <span data-en>← Previous: Pricing, Proposals & Closing</span>
+      <span data-he>← הקודם: תמחור, הצעות וסגירה</span>
+      <span data-th>← ก่อนหน้า: การตั้งราคาและปิดดีล</span>
+    </a>
+    <a href="../index.html" class="lesson-nav-btn next">
+      <span data-en>Back to Academy →</span>
+      <span data-he>חזרה לאקדמיה →</span>
+      <span data-th>กลับสู่ Academy →</span>
+    </a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p><span data-en>© 2026 TM Energy Academy</span><span data-he>© 2026 TM Energy Academy</span><span data-th>© 2026 TM Energy Academy</span></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('sales-bd', 4);
+  if (typeof initQuiz === 'function') initQuiz('sales-bd', 4, [
+    {
+      question: {
+        en: "How much is 1 kWh of self-consumed solar worth compared to 1 kWh exported to the grid?",
+        he: "כמה שווה 1 kWh של צריכה עצמית סולארית לעומת 1 kWh שמיוצא לרשת?",
+        th: "1 kWh ที่ใช้เองจากโซลาร์มีมูลค่าเท่าไรเทียบกับ 1 kWh ที่ส่งออกสู่กริด?"
+      },
+      options: [
+        { en: "Same value (1:1)", he: "ערך זהה (1:1)", th: "มูลค่าเท่ากัน (1:1)" },
+        { en: "1.5× more valuable", he: "שווה פי 1.5", th: "มีมูลค่ามากกว่า 1.5 เท่า" },
+        { en: "2.2× more valuable (฿6 vs ฿2.70)", he: "שווה פי 2.2 (฿6 מול ฿2.70)", th: "มีมูลค่ามากกว่า 2.2 เท่า (฿6 เทียบ ฿2.70)" },
+        { en: "3× more valuable", he: "שווה פי 3", th: "มีมูลค่ามากกว่า 3 เท่า" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "In a PPA model, how much does the customer pay upfront?",
+        he: "במודל PPA, כמה הלקוח משלם מראש?",
+        th: "ในโมเดล PPA ลูกค้าจ่ายล่วงหน้าเท่าไร?"
+      },
+      options: [
+        { en: "50% of system cost", he: "50% מעלות המערכת", th: "50% ของต้นทุนระบบ" },
+        { en: "฿100,000 deposit", he: "פיקדון ฿100,000", th: "มัดจำ ฿100,000" },
+        { en: "Zero — no upfront cost", he: "אפס — ללא עלות מראש", th: "ศูนย์ — ไม่มีค่าใช้จ่ายล่วงหน้า" },
+        { en: "First month's electricity in advance", he: "חשמל של חודש ראשון מראש", th: "ค่าไฟเดือนแรกล่วงหน้า" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "What is the approximate payback period for the Beamtech Factory project?",
+        he: "מהי תקופת ההחזר המשוערת של פרויקט מפעל Beamtech?",
+        th: "ระยะคืนทุนโดยประมาณของโครงการ Beamtech Factory คือเท่าไร?"
+      },
+      options: [
+        { en: "1 year", he: "שנה", th: "1 ปี" },
+        { en: "~3 years", he: "~3 שנים", th: "~3 ปี" },
+        { en: "7 years", he: "7 שנים", th: "7 ปี" },
+        { en: "10 years", he: "10 שנים", th: "10 ปี" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What formula do you use to calculate the system size (kWp) needed?",
+        he: "איזו נוסחה משתמשים לחשב את גודל המערכת (kWp) הנדרש?",
+        th: "ใช้สูตรอะไรคำนวณขนาดระบบ (kWp) ที่ต้องการ?"
+      },
+      options: [
+        { en: "Monthly kWh × 12", he: "kWh חודשי × 12", th: "kWh รายเดือน × 12" },
+        { en: "Monthly kWh ÷ (peak sun hours × 30 × 0.82)", he: "kWh חודשי ÷ (שעות שיא שמש × 30 × 0.82)", th: "kWh รายเดือน ÷ (ชั่วโมงแดดสูงสุด × 30 × 0.82)" },
+        { en: "Roof area ÷ 10", he: "שטח גג ÷ 10", th: "พื้นที่หลังคา ÷ 10" },
+        { en: "Monthly bill ÷ ฿6", he: "חשבון חודשי ÷ ฿6", th: "บิลรายเดือน ÷ ฿6" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "Why does solar electricity avoid the Ft (Fuel Adjustment) charge?",
+        he: "למה חשמל סולארי מונע את תוספת ה-Ft (התאמת דלק)?",
+        th: "ทำไมไฟฟ้าโซลาร์ไม่ต้องจ่ายค่า Ft (ค่าเชื้อเพลิง)?"
+      },
+      options: [
+        { en: "The government gives a special exemption", he: "הממשלה נותנת פטור מיוחד", th: "รัฐบาลให้การยกเว้นพิเศษ" },
+        { en: "Ft only applies to PEA grid electricity — solar is self-generated", he: "Ft חל רק על חשמל רשת PEA — סולארי מיוצר עצמאית", th: "Ft ใช้เฉพาะไฟฟ้ากริด PEA — โซลาร์ผลิตเอง" },
+        { en: "Solar panels filter out the Ft surcharge", he: "פאנלים סולאריים מסננים את תוספת ה-Ft", th: "แผงโซลาร์กรองค่า Ft ออก" },
+        { en: "You have to apply for Ft exemption separately", he: "צריך להגיש בקשה לפטור Ft בנפרד", th: "ต้องยื่นขอยกเว้น Ft แยกต่างหาก" }
+      ],
+      correct: 1
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>
