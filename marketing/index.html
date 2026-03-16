@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM Energy — Digital Assets & Marketing Hub</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--navy:#0A1628;--green:#00D68F;--gold:#FFB800;--dark:#0D1B2A;--card:#131F33;--border:#1E3048;--text:#CBD5E1;--white:#F1F5F9}
+  body{font-family:'Inter','Helvetica Neue',Arial,sans-serif;background:var(--navy);color:var(--text);min-height:100vh}
+  
+  /* PIN Screen */
+  #pin-screen{position:fixed;inset:0;background:var(--navy);display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;gap:24px}
+  #pin-screen.hidden{display:none}
+  #pin-screen h2{color:var(--white);font-size:1.5rem;font-weight:600}
+  #pin-screen p{color:var(--text);font-size:.9rem}
+  .pin-inputs{display:flex;gap:12px}
+  .pin-inputs input{width:56px;height:64px;background:var(--card);border:2px solid var(--border);border-radius:12px;color:var(--white);font-size:1.8rem;text-align:center;outline:none;transition:.2s}
+  .pin-inputs input:focus{border-color:var(--green)}
+  .pin-error{color:#EF4444;font-size:.85rem;min-height:1.2em}
+  
+  /* Main Content */
+  #main-content{display:none}
+  #main-content.visible{display:block}
+  
+  header{padding:32px 40px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .logo-area{display:flex;align-items:center;gap:16px}
+  .logo-area img{height:48px}
+  .logo-area h1{font-size:1.6rem;color:var(--white);font-weight:700}
+  .logo-area h1 span{color:var(--green);font-weight:400;font-size:.85rem;display:block}
+  .stats-bar{display:flex;gap:24px}
+  .stat{text-align:center}
+  .stat .num{font-size:1.5rem;font-weight:700;color:var(--green)}
+  .stat .label{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--text)}
+  
+  .search-bar{margin:24px 40px;position:relative}
+  .search-bar input{width:100%;padding:14px 20px 14px 48px;background:var(--card);border:1px solid var(--border);border-radius:12px;color:var(--white);font-size:.95rem;outline:none;transition:.2s}
+  .search-bar input:focus{border-color:var(--green)}
+  .search-bar svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text)}
+  
+  .filter-tabs{display:flex;gap:8px;padding:0 40px 24px;flex-wrap:wrap}
+  .filter-tabs button{padding:8px 18px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;font-size:.8rem;transition:.2s}
+  .filter-tabs button.active,
+  .filter-tabs button:hover{background:var(--green);color:var(--navy);border-color:var(--green);font-weight:600}
+  
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:0 40px 60px}
+  
+  .category-header{grid-column:1/-1;display:flex;align-items:center;gap:12px;margin-top:16px}
+  .category-header .icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+  .category-header h2{font-size:1.1rem;color:var(--white);font-weight:600}
+  .category-header .count{background:var(--card);padding:2px 10px;border-radius:12px;font-size:.75rem;color:var(--green)}
+  
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:.25s;cursor:pointer;text-decoration:none;display:block}
+  .card:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,214,143,.08)}
+  .card .card-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px}
+  .card h3{color:var(--white);font-size:1rem;font-weight:600;margin-bottom:6px}
+  .card p{font-size:.82rem;line-height:1.5;color:var(--text)}
+  .card .tag{display:inline-block;margin-top:12px;padding:3px 10px;border-radius:8px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+  
+  .bg-green{background:rgba(0,214,143,.12);color:var(--green)}
+  .bg-gold{background:rgba(255,184,0,.12);color:var(--gold)}
+  .bg-blue{background:rgba(59,130,246,.12);color:#60A5FA}
+  .bg-purple{background:rgba(168,85,247,.12);color:#C084FC}
+  .bg-orange{background:rgba(242,122,26,.12);color:#F27A1A}
+  
+  .brand-colors{display:flex;gap:8px;margin-top:12px}
+  .brand-colors .swatch{width:28px;height:28px;border-radius:6px;border:2px solid var(--border)}
+  
+  footer{text-align:center;padding:24px;color:var(--text);font-size:.75rem;border-top:1px solid var(--border);margin:0 40px}
+  
+  @media(max-width:768px){
+    header,.search-bar,.filter-tabs,.grid,footer{padding-left:16px;padding-right:16px}
+    .grid{grid-template-columns:1fr}
+    .stats-bar{gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<!-- PIN Screen -->
+<div id="pin-screen">
+  <img src="../proposals/tm-logo.png" alt="TM Energy" style="height:64px;margin-bottom:8px">
+  <h2>Marketing Hub</h2>
+  <p>Enter PIN to access</p>
+  <div class="pin-inputs">
+    <input type="password" maxlength="1" inputmode="numeric" autofocus>
+    <input type="password" maxlength="1" inputmode="numeric">
+    <input type="password" maxlength="1" inputmode="numeric">
+    <input type="password" maxlength="1" inputmode="numeric">
+  </div>
+  <div class="pin-error" id="pin-error"></div>
+</div>
+
+<!-- Main Content -->
+<div id="main-content">
+  <header>
+    <div class="logo-area">
+      <img src="../proposals/tm-logo.png" alt="TM Energy">
+      <h1>Digital Assets & Marketing Hub<span>TM Energy — Koh Phangan</span></h1>
+    </div>
+    <div class="stats-bar">
+      <div class="stat"><div class="num">32</div><div class="label">Total Assets</div></div>
+      <div class="stat"><div class="num" style="color:var(--gold)">5</div><div class="label">Categories</div></div>
+      <div class="stat"><div class="num" style="color:#60A5FA">3</div><div class="label">Ready Posts</div></div>
+    </div>
+  </header>
+
+  <div class="search-bar">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="search" placeholder="Search assets, proposals, posts...">
+  </div>
+
+  <div class="filter-tabs">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="social">Social Media</button>
+    <button data-filter="sales">Sales</button>
+    <button data-filter="academy">Academy</button>
+    <button data-filter="website">Website</button>
+    <button data-filter="brand">Brand</button>
+  </div>
+
+  <div class="grid" id="assets-grid">
+
+    <!-- Social Media -->
+    <div class="category-header" data-cat="social">
+      <div class="icon bg-green">📱</div>
+      <h2>Social Media</h2>
+      <span class="count">5 assets</span>
+    </div>
+
+    <a href="social-media-plan.md" class="card" data-cat="social" data-search="content calendar social media plan">
+      <div class="card-icon bg-green">📅</div>
+      <h3>Content Calendar</h3>
+      <p>30-day social media content plan with themes, captions, and posting schedule for Facebook & Instagram.</p>
+      <span class="tag bg-green">Strategy</span>
+    </a>
+
+    <a href="posts/post-001-solar-101.html" class="card" data-cat="social" data-search="solar 101 carousel how solar works">
+      <div class="card-icon bg-green">🎠</div>
+      <h3>Post: How Solar Works</h3>
+      <p>5-slide Instagram carousel explaining solar energy on Koh Phangan. Screenshot-ready at 1080×1080.</p>
+      <span class="tag bg-green">Ready to Post</span>
+    </a>
+
+    <a href="posts/post-003-savings.html" class="card" data-cat="social" data-search="savings split screen monthly bill">
+      <div class="card-icon bg-green">💰</div>
+      <h3>Post: Savings Graphic</h3>
+      <p>Split-screen before/after showing 70% electricity savings with solar. 1080×1080.</p>
+      <span class="tag bg-green">Ready to Post</span>
+    </a>
+
+    <a href="posts/post-004-sun-hours.html" class="card" data-cat="social" data-search="sun hours solar fact koh phangan">
+      <div class="card-icon bg-green">☀️</div>
+      <h3>Post: Sun Hours Fact</h3>
+      <p>Quick-tip graphic — 4.2 peak sun hours/day = ฿90,000+ annual savings. 1080×1080.</p>
+      <span class="tag bg-green">Ready to Post</span>
+    </a>
+
+    <a href="../brand-kit.html" class="card" data-cat="social" data-search="brand guidelines kit colors logo">
+      <div class="card-icon bg-gold">🎨</div>
+      <h3>Brand Guidelines</h3>
+      <p>Complete brand kit — logos, colors, typography, merchandise templates, and usage rules.</p>
+      <span class="tag bg-gold">Reference</span>
+    </a>
+
+    <!-- Sales Materials -->
+    <div class="category-header" data-cat="sales">
+      <div class="icon bg-gold">💼</div>
+      <h2>Sales Materials</h2>
+      <span class="count">8 assets</span>
+    </div>
+
+    <a href="../proposals/beamtech-001.html" class="card" data-cat="sales" data-search="beamtech proposal 001 english">
+      <div class="card-icon bg-gold">📄</div>
+      <h3>Beamtech Proposal (EN)</h3>
+      <p>Full solar proposal for Beamtech — system design, financials, ROI projections, and equipment specs.</p>
+      <span class="tag bg-gold">Proposal</span>
+    </a>
+
+    <a href="../proposals/beamtech-001-th.html" class="card" data-cat="sales" data-search="beamtech proposal thai">
+      <div class="card-icon bg-gold">📄</div>
+      <h3>Beamtech Proposal (TH)</h3>
+      <p>Thai language version of the Beamtech solar proposal with localized pricing and terms.</p>
+      <span class="tag bg-gold">Proposal</span>
+    </a>
+
+    <a href="../proposals/kaniel-villas-001.html" class="card" data-cat="sales" data-search="kaniel villas proposal residential">
+      <div class="card-icon bg-gold">📄</div>
+      <h3>Kaniel Villas Proposal</h3>
+      <p>Residential villa solar proposal with aerial renders and custom system layout.</p>
+      <span class="tag bg-gold">Proposal</span>
+    </a>
+
+    <a href="../proposals/tm-factory-001.html" class="card" data-cat="sales" data-search="factory proposal commercial industrial">
+      <div class="card-icon bg-gold">📄</div>
+      <h3>TM Factory Proposal</h3>
+      <p>Commercial/industrial solar proposal for factory rooftop installation.</p>
+      <span class="tag bg-gold">Proposal</span>
+    </a>
+
+    <a href="../platform/sales/" class="card" data-cat="sales" data-search="sales app platform crm tool">
+      <div class="card-icon bg-gold">🛒</div>
+      <h3>Sales App</h3>
+      <p>Interactive sales platform for on-site client presentations and instant proposal generation.</p>
+      <span class="tag bg-gold">Tool</span>
+    </a>
+
+    <a href="../presentations/ev-charging-koh-phangan.html" class="card" data-cat="sales" data-search="ev charging presentation english">
+      <div class="card-icon bg-gold">⚡</div>
+      <h3>EV Charging Presentation (EN)</h3>
+      <p>EV charging infrastructure opportunities on Koh Phangan — market analysis and business case.</p>
+      <span class="tag bg-gold">Presentation</span>
+    </a>
+
+    <a href="../presentations/ev-charging-koh-phangan-he.html" class="card" data-cat="sales" data-search="ev charging presentation hebrew">
+      <div class="card-icon bg-gold">⚡</div>
+      <h3>EV Charging Presentation (HE)</h3>
+      <p>Hebrew version — EV charging market analysis for Israeli investors and partners.</p>
+      <span class="tag bg-gold">Presentation</span>
+    </a>
+
+    <a href="../equipment-list.html" class="card" data-cat="sales" data-search="equipment list panels inverters batteries">
+      <div class="card-icon bg-gold">🔧</div>
+      <h3>Equipment List</h3>
+      <p>Complete catalog of solar panels, inverters, batteries, and mounting systems with specs and pricing.</p>
+      <span class="tag bg-gold">Reference</span>
+    </a>
+
+    <!-- Academy -->
+    <div class="category-header" data-cat="academy">
+      <div class="icon bg-blue">🎓</div>
+      <h2>Academy</h2>
+      <span class="count">3 assets</span>
+    </div>
+
+    <a href="../academy/index.html" class="card" data-cat="academy" data-search="student portal academy courses learning">
+      <div class="card-icon bg-blue">📚</div>
+      <h3>Student Portal</h3>
+      <p>TM Energy Academy — solar education platform with video lessons, quizzes, and certifications.</p>
+      <span class="tag bg-blue">Portal</span>
+    </a>
+
+    <a href="../academy/admin.html" class="card" data-cat="academy" data-search="admin panel academy management">
+      <div class="card-icon bg-blue">⚙️</div>
+      <h3>Admin Panel</h3>
+      <p>Academy administration — manage students, track progress, update course content, and view analytics.</p>
+      <span class="tag bg-blue">Admin</span>
+    </a>
+
+    <a href="../academy/SYLLABUS.md" class="card" data-cat="academy" data-search="syllabus courses tracks lessons curriculum">
+      <div class="card-icon bg-blue">📋</div>
+      <h3>Course Stats</h3>
+      <p>18 lessons across 4 tracks: Solar Fundamentals, Installation, Business, and Advanced Systems.</p>
+      <span class="tag bg-blue">Curriculum</span>
+    </a>
+
+    <!-- Website -->
+    <div class="category-header" data-cat="website">
+      <div class="icon bg-purple">🌐</div>
+      <h2>Website</h2>
+      <span class="count">13 assets</span>
+    </div>
+
+    <a href="../index.html" class="card" data-cat="website" data-search="homepage main website landing">
+      <div class="card-icon bg-purple">🏠</div>
+      <h3>Homepage</h3>
+      <p>TM Energy main website — hero section, services overview, testimonials, and contact form.</p>
+      <span class="tag bg-purple">Live Page</span>
+    </a>
+
+    <a href="../strategy.html" class="card" data-cat="website" data-search="strategy business plan">
+      <div class="card-icon bg-purple">📊</div>
+      <h3>Strategy & Business Plan</h3>
+      <p>Company strategy document with market analysis, growth targets, and operational roadmap.</p>
+      <span class="tag bg-purple">Strategy</span>
+    </a>
+
+    <a href="../business-plan.html" class="card" data-cat="website" data-search="business plan financial">
+      <div class="card-icon bg-purple">📈</div>
+      <h3>Business Plan</h3>
+      <p>Detailed business plan with financial projections, market sizing, and competitive analysis.</p>
+      <span class="tag bg-purple">Strategy</span>
+    </a>
+
+    <a href="../crm-step1-lead-capture.html" class="card" data-cat="website" data-search="crm step 1 lead capture">
+      <div class="card-icon bg-purple">🔗</div>
+      <h3>CRM: Lead Capture → Installation</h3>
+      <p>Complete 11-step CRM flow — from lead capture through site survey, design, proposal, contract, to installation.</p>
+      <span class="tag bg-purple">11 Pages</span>
+    </a>
+
+    <a href="../financial-dashboard.html" class="card" data-cat="website" data-search="financial dashboard pnl">
+      <div class="card-icon bg-purple">💹</div>
+      <h3>Financial Dashboard</h3>
+      <p>Live P&L tracking, revenue projections, and financial KPIs for the solar business.</p>
+      <span class="tag bg-purple">Dashboard</span>
+    </a>
+
+    <!-- Brand -->
+    <div class="category-header" data-cat="brand">
+      <div class="icon bg-orange">✦</div>
+      <h2>Brand</h2>
+      <span class="count">3 assets</span>
+    </div>
+
+    <a href="../proposals/tm-logo.png" class="card" data-cat="brand" data-search="logo tm energy png image">
+      <div class="card-icon bg-orange">🖼</div>
+      <h3>Logo</h3>
+      <p>TM Energy official logo — PNG format for web and print use.</p>
+      <div style="margin-top:12px"><img src="../proposals/tm-logo.png" alt="TM Logo" style="height:40px;border-radius:6px"></div>
+    </a>
+
+    <div class="card" data-cat="brand" data-search="colors palette navy green gold orange">
+      <div class="card-icon bg-orange">🎨</div>
+      <h3>Brand Colors</h3>
+      <p>Primary palette for all TM Energy materials and digital assets.</p>
+      <div class="brand-colors">
+        <div class="swatch" style="background:#0A1628" title="#0A1628"></div>
+        <div class="swatch" style="background:#00D68F" title="#00D68F"></div>
+        <div class="swatch" style="background:#FFB800" title="#FFB800"></div>
+        <div class="swatch" style="background:#F27A1A" title="#F27A1A"></div>
+        <div class="swatch" style="background:#1B2A4A" title="#1B2A4A"></div>
+      </div>
+    </div>
+
+    <div class="card" data-cat="brand" data-search="contact social links facebook instagram phone email">
+      <div class="card-icon bg-orange">📞</div>
+      <h3>Contact & Social</h3>
+      <p>Official channels and contact information for TM Energy Koh Phangan.</p>
+      <div style="margin-top:10px;font-size:.8rem;line-height:1.8">
+        <div>📘 <a href="https://facebook.com/tmenergykohphangan" style="color:var(--green)">Facebook</a></div>
+        <div>📸 <a href="https://instagram.com/tmenergy.kp" style="color:var(--green)">Instagram</a></div>
+        <div>📧 info@tm.energy</div>
+        <div>📱 +66 XX XXX XXXX</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    TM Energy — Koh Phangan, Thailand · Digital Assets Hub · Last updated March 2026
+  </footer>
+</div>
+
+<script>
+// PIN Protection
+const PIN = '2626';
+const pinInputs = document.querySelectorAll('.pin-inputs input');
+const pinScreen = document.getElementById('pin-screen');
+const mainContent = document.getElementById('main-content');
+const pinError = document.getElementById('pin-error');
+
+if (sessionStorage.getItem('tm-hub-auth') === 'true') {
+  pinScreen.classList.add('hidden');
+  mainContent.classList.add('visible');
+}
+
+pinInputs.forEach((input, i) => {
+  input.addEventListener('input', () => {
+    if (input.value.length === 1 && i < pinInputs.length - 1) {
+      pinInputs[i + 1].focus();
+    }
+    const code = Array.from(pinInputs).map(el => el.value).join('');
+    if (code.length === 4) {
+      if (code === PIN) {
+        sessionStorage.setItem('tm-hub-auth', 'true');
+        pinScreen.classList.add('hidden');
+        mainContent.classList.add('visible');
+      } else {
+        pinError.textContent = 'Incorrect PIN';
+        pinInputs.forEach(el => { el.value = ''; });
+        pinInputs[0].focus();
+        setTimeout(() => { pinError.textContent = ''; }, 2000);
+      }
+    }
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && !input.value && i > 0) {
+      pinInputs[i - 1].focus();
+    }
+  });
+});
+
+// Search
+document.getElementById('search').addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    const text = (card.dataset.search || '') + ' ' + card.textContent.toLowerCase();
+    card.style.display = text.includes(q) ? '' : 'none';
+  });
+  document.querySelectorAll('.category-header').forEach(h => {
+    const cat = h.dataset.cat;
+    const visible = document.querySelectorAll(`.card[data-cat="${cat}"]:not([style*="display: none"])`);
+    h.style.display = visible.length ? '' : 'none';
+  });
+});
+
+// Filter tabs
+document.querySelectorAll('.filter-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.card, .category-header').forEach(el => {
+      el.style.display = (f === 'all' || el.dataset.cat === f) ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

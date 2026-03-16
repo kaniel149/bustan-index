@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Solar Savings — TM Energy</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter','Helvetica Neue',Arial,sans-serif;background:#E5E7EB;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+  .post{width:1080px;height:1080px;background:#F8F9FA;position:relative;overflow:hidden;display:flex;flex-direction:column}
+  
+  .logo{position:absolute;top:36px;right:40px;height:44px;z-index:5}
+  
+  /* Header */
+  .header{padding:40px 60px 0;text-align:center}
+  .header .badge{display:inline-block;background:#1B2A4A;color:#fff;padding:8px 24px;border-radius:20px;font-size:.8rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+  .header h1{font-size:2rem;color:#1B2A4A;font-weight:800}
+  
+  /* Split screen */
+  .split{flex:1;display:flex;padding:40px 60px;gap:32px;align-items:stretch}
+  .side{flex:1;border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 32px;position:relative}
+  
+  .before{background:linear-gradient(160deg,#FEF2F2,#FECACA);border:3px solid #FCA5A5}
+  .after{background:linear-gradient(160deg,#F0FDF4,#BBF7D0);border:3px solid #86EFAC}
+  
+  .side .label{font-size:1rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+  .before .label{color:#991B1B}
+  .after .label{color:#166534}
+  
+  .side .subtitle{font-size:1.1rem;color:#64748B;margin-bottom:24px;text-align:center}
+  
+  .side .amount{font-size:4.5rem;font-weight:900;line-height:1}
+  .before .amount{color:#DC2626}
+  .after .amount{color:#16A34A}
+  
+  .side .currency{font-size:1.8rem;font-weight:700}
+  .before .currency{color:#DC2626}
+  .after .currency{color:#16A34A}
+  
+  .side .period{font-size:1rem;color:#64748B;margin-top:8px}
+  
+  .side .icon{font-size:4rem;margin-bottom:20px}
+  
+  /* Arrow in center */
+  .center-arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:4px}
+  .arrow-circle{width:80px;height:80px;border-radius:50%;background:#F27A1A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;box-shadow:0 4px 24px rgba(242,122,26,.3)}
+  .savings-tag{background:#1B2A4A;color:#00D68F;padding:6px 20px;border-radius:12px;font-size:1rem;font-weight:800;white-space:nowrap}
+  
+  /* Footer CTA */
+  .footer-cta{padding:0 60px 48px;display:flex;align-items:center;justify-content:center;gap:32px}
+  .cta-brand{display:flex;align-items:center;gap:16px}
+  .cta-brand .name{font-size:1.4rem;font-weight:800;color:#1B2A4A}
+  .cta-brand .tagline{font-size:.85rem;color:#64748B}
+  .cta-divider{width:2px;height:48px;background:#E2E8F0;border-radius:1px}
+  .cta-action{display:flex;align-items:center;gap:12px}
+  .cta-pill{background:#00D68F;color:#fff;padding:12px 28px;border-radius:14px;font-weight:700;font-size:1rem}
+  .cta-phone{font-size:.95rem;color:#1B2A4A;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="post">
+  <img class="logo" src="../../proposals/tm-logo.png" alt="TM Energy">
+  
+  <div class="header">
+    <div class="badge">Koh Phangan Solar Savings</div>
+    <h1>Your Electricity Bill — Before & After Solar</h1>
+  </div>
+
+  <div class="split" style="position:relative">
+    <div class="side before">
+      <div class="icon">📄</div>
+      <div class="label">Without Solar</div>
+      <div class="subtitle">Average monthly electricity</div>
+      <div class="amount"><span class="currency">฿</span>45,000</div>
+      <div class="period">per month</div>
+    </div>
+
+    <div class="center-arrow">
+      <div class="arrow-circle">→</div>
+      <div class="savings-tag">SAVE 70%</div>
+    </div>
+
+    <div class="side after">
+      <div class="icon">☀️</div>
+      <div class="label">With Solar</div>
+      <div class="subtitle">After TM Energy installation</div>
+      <div class="amount"><span class="currency">฿</span>13,500</div>
+      <div class="period">per month</div>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <div class="cta-brand">
+      <div>
+        <div class="name">TM Energy</div>
+        <div class="tagline">Solar Solutions — Koh Phangan</div>
+      </div>
+    </div>
+    <div class="cta-divider"></div>
+    <div class="cta-action">
+      <div class="cta-pill">Free Site Survey</div>
+      <div class="cta-phone">+66 XX XXX XXXX</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

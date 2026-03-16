@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>How Solar Actually Works on Koh Phangan — TM Energy</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter','Helvetica Neue',Arial,sans-serif;background:#E5E7EB;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+  .carousel{width:1080px;height:1080px;position:relative;overflow:hidden;background:#F8F9FA;flex-shrink:0}
+  .slide{width:1080px;height:1080px;position:absolute;top:0;left:0;display:none;flex-direction:column;padding:80px;background:#F8F9FA}
+  .slide.active{display:flex}
+
+  /* Navigation */
+  .nav{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:10}
+  .nav .dot{width:12px;height:12px;border-radius:50%;background:#CBD5E1;cursor:pointer;transition:.2s}
+  .nav .dot.active{background:#F27A1A;width:32px;border-radius:6px}
+  .arrows{position:absolute;top:50%;width:100%;display:flex;justify-content:space-between;padding:0 24px;transform:translateY(-50%);z-index:10}
+  .arrows button{width:52px;height:52px;border-radius:50%;border:none;background:rgba(27,42,74,.08);color:#1B2A4A;font-size:1.4rem;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center}
+  .arrows button:hover{background:rgba(242,122,26,.15);color:#F27A1A}
+
+  /* Logo watermark */
+  .logo{position:absolute;top:40px;right:40px;height:48px;z-index:5}
+  .slide-num{position:absolute;top:48px;left:80px;font-size:.75rem;color:#94A3B8;font-weight:600;letter-spacing:2px;z-index:5}
+
+  /* Slide 1 */
+  .s1{align-items:center;justify-content:center;text-align:center}
+  .s1 .badge{background:#F27A1A;color:#fff;padding:8px 24px;border-radius:20px;font-size:.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:40px}
+  .s1 h1{font-size:3.2rem;color:#1B2A4A;font-weight:800;line-height:1.15;max-width:800px}
+  .s1 h1 span{color:#F27A1A}
+  .s1 .sub{color:#64748B;font-size:1.15rem;margin-top:20px;font-weight:400}
+  .s1 .island{margin-top:48px;font-size:4rem}
+
+  /* Slide 2 — Sun to Panels */
+  .s2{align-items:center;justify-content:center;gap:32px}
+  .s2 h2{font-size:2rem;color:#1B2A4A;font-weight:700;text-align:center}
+  .flow{display:flex;align-items:center;gap:24px;justify-content:center;flex-wrap:wrap}
+  .flow-step{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .flow-icon{width:160px;height:160px;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:4.5rem}
+  .flow-icon.sun{background:linear-gradient(135deg,#FFF7ED,#FED7AA);border:2px solid #FDBA74}
+  .flow-icon.panel{background:linear-gradient(135deg,#EFF6FF,#BFDBFE);border:2px solid #93C5FD}
+  .flow-icon.dc{background:linear-gradient(135deg,#F0FDF4,#BBF7D0);border:2px solid #86EFAC}
+  .flow-label{font-size:1rem;color:#1B2A4A;font-weight:600}
+  .flow-sublabel{font-size:.8rem;color:#64748B}
+  .flow-arrow{font-size:2.5rem;color:#F27A1A;font-weight:700}
+  .s2 .explain{text-align:center;color:#64748B;font-size:1.05rem;max-width:700px;line-height:1.6}
+
+  /* Slide 3 — Inverter */
+  .s3{align-items:center;justify-content:center;gap:32px}
+  .s3 h2{font-size:2rem;color:#1B2A4A;font-weight:700;text-align:center}
+  .inverter-flow{display:flex;align-items:center;gap:20px;justify-content:center}
+  .inv-box{width:180px;height:180px;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+  .inv-box .ico{font-size:3.5rem}
+  .inv-box .txt{font-size:1rem;font-weight:700;color:#1B2A4A}
+  .inv-box .sub{font-size:.75rem;color:#64748B}
+  .inv-dc{background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:2px solid #FCD34D}
+  .inv-inv{background:linear-gradient(135deg,#F0FDF4,#BBF7D0);border:2px solid #00D68F}
+  .inv-ac{background:linear-gradient(135deg,#EFF6FF,#BFDBFE);border:2px solid #60A5FA}
+  .inv-arrow{font-size:2.5rem;color:#F27A1A}
+  .s3 .devices{display:flex;gap:32px;margin-top:16px}
+  .s3 .device{text-align:center;font-size:.85rem;color:#64748B}
+  .s3 .device span{display:block;font-size:2.2rem;margin-bottom:4px}
+
+  /* Slide 4 — Net billing */
+  .s4{align-items:center;justify-content:center;gap:28px}
+  .s4 h2{font-size:2rem;color:#1B2A4A;font-weight:700;text-align:center}
+  .net-diagram{display:flex;align-items:center;gap:16px;justify-content:center}
+  .net-box{width:200px;padding:28px 20px;border-radius:20px;text-align:center}
+  .net-box .ico{font-size:3rem;margin-bottom:8px}
+  .net-box .title{font-size:.9rem;font-weight:700;color:#1B2A4A}
+  .net-box .desc{font-size:.75rem;color:#64748B;margin-top:4px}
+  .net-home{background:#EFF6FF;border:2px solid #93C5FD}
+  .net-grid{background:#FEF3C7;border:2px solid #FCD34D}
+  .net-meter{background:#F0FDF4;border:2px solid #00D68F}
+  .net-arrow-right{color:#00D68F;font-size:1.5rem;font-weight:700}
+  .net-arrow-left{color:#F27A1A;font-size:1.5rem;font-weight:700}
+  .s4 .rate-box{background:#1B2A4A;color:#fff;padding:20px 48px;border-radius:16px;text-align:center}
+  .s4 .rate-box .rate{font-size:2.5rem;font-weight:800;color:#00D68F}
+  .s4 .rate-box .rate-label{font-size:.9rem;color:#94A3B8;margin-top:4px}
+  .s4 .note{color:#64748B;font-size:.9rem;text-align:center;max-width:600px;line-height:1.6}
+
+  /* Slide 5 — CTA */
+  .s5{align-items:center;justify-content:center;text-align:center;gap:24px}
+  .s5 .free{background:#00D68F;color:#fff;padding:10px 32px;border-radius:24px;font-size:1rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+  .s5 h2{font-size:2.8rem;color:#1B2A4A;font-weight:800;line-height:1.2}
+  .s5 h2 span{color:#F27A1A}
+  .s5 .desc{color:#64748B;font-size:1.1rem;max-width:600px;line-height:1.6}
+  .s5 .cta-items{display:flex;gap:40px;margin-top:16px}
+  .s5 .cta-item{display:flex;align-items:center;gap:12px;font-size:1.1rem;color:#1B2A4A;font-weight:600}
+  .s5 .cta-item .ci{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+  .s5 .web{margin-top:24px;padding:16px 48px;background:#1B2A4A;color:#fff;border-radius:14px;font-size:1.1rem;font-weight:600}
+  .s5 .web span{color:#00D68F}
+</style>
+</head>
+<body>
+
+<div class="carousel" id="carousel">
+  <img class="logo" src="../../proposals/tm-logo.png" alt="TM Energy">
+
+  <!-- Slide 1 -->
+  <div class="slide s1 active" data-slide="0">
+    <span class="slide-num">01 / 05</span>
+    <div class="badge">Solar Education Series</div>
+    <h1>How Solar <span>Actually</span> Works<br>on Koh Phangan</h1>
+    <div class="sub">Everything you need to know in 5 slides →</div>
+    <div class="island">🏝️</div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide s2" data-slide="1">
+    <span class="slide-num">02 / 05</span>
+    <h2>Step 1: Sunlight → Electricity</h2>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-icon sun">☀️</div>
+        <div class="flow-label">Sunlight</div>
+        <div class="flow-sublabel">Photons hit panels</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon panel">⬛</div>
+        <div class="flow-label">Solar Panels</div>
+        <div class="flow-sublabel">Photovoltaic cells</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon dc">⚡</div>
+        <div class="flow-label">DC Electricity</div>
+        <div class="flow-sublabel">Direct current</div>
+      </div>
+    </div>
+    <div class="explain">Solar panels on your roof convert sunlight directly into DC electricity — no moving parts, no noise, just clean energy.</div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide s3" data-slide="2">
+    <span class="slide-num">03 / 05</span>
+    <h2>Step 2: DC → AC for Your Home</h2>
+    <div class="inverter-flow">
+      <div class="inv-box inv-dc">
+        <div class="ico">⚡</div>
+        <div class="txt">DC Power</div>
+        <div class="sub">From panels</div>
+      </div>
+      <div class="inv-arrow">→</div>
+      <div class="inv-box inv-inv">
+        <div class="ico">🔄</div>
+        <div class="txt">Inverter</div>
+        <div class="sub">Converts power</div>
+      </div>
+      <div class="inv-arrow">→</div>
+      <div class="inv-box inv-ac">
+        <div class="ico">🔌</div>
+        <div class="txt">AC Power</div>
+        <div class="sub">For your home</div>
+      </div>
+    </div>
+    <div class="devices">
+      <div class="device"><span>❄️</span>Air conditioning</div>
+      <div class="device"><span>💡</span>Lights</div>
+      <div class="device"><span>🍳</span>Kitchen</div>
+      <div class="device"><span>💻</span>Electronics</div>
+      <div class="device"><span>🏊</span>Pool pump</div>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide s4" data-slide="3">
+    <span class="slide-num">04 / 05</span>
+    <h2>Step 3: Net Billing — Sell Your Excess</h2>
+    <div class="net-diagram">
+      <div class="net-box net-home">
+        <div class="ico">🏠</div>
+        <div class="title">Your Home</div>
+        <div class="desc">Use what you need</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+        <div class="net-arrow-right">→ Excess</div>
+        <div class="net-arrow-left">← Night</div>
+      </div>
+      <div class="net-box net-meter">
+        <div class="ico">📊</div>
+        <div class="title">Smart Meter</div>
+        <div class="desc">Tracks both ways</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+        <div class="net-arrow-right">→ Sell</div>
+        <div class="net-arrow-left">← Buy</div>
+      </div>
+      <div class="net-box net-grid">
+        <div class="ico">🏭</div>
+        <div class="title">PEA Grid</div>
+        <div class="desc">Provincial electricity</div>
+      </div>
+    </div>
+    <div class="rate-box">
+      <div class="rate">฿2.70 / kWh</div>
+      <div class="rate-label">Sell rate for excess solar energy</div>
+    </div>
+    <div class="note">During the day, your solar powers your home first. Any excess goes to the grid and you get paid. At night, you buy from the grid as normal.</div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide s5" data-slide="4">
+    <span class="slide-num">05 / 05</span>
+    <div class="free">100% Free</div>
+    <h2>Get Your <span>Site Survey</span><br>Today</h2>
+    <div class="desc">We'll assess your roof, calculate your savings, and design a custom solar system — completely free, no obligation.</div>
+    <div class="cta-items">
+      <div class="cta-item">
+        <div class="ci" style="background:#EFF6FF;color:#3B82F6">📞</div>
+        <div>Call or Line<br><span style="color:#F27A1A">+66 XX XXX XXXX</span></div>
+      </div>
+      <div class="cta-item">
+        <div class="ci" style="background:#F0FDF4;color:#00D68F">💬</div>
+        <div>WhatsApp<br><span style="color:#F27A1A">Message us</span></div>
+      </div>
+    </div>
+    <div class="web">tm.energy<span> — Koh Phangan</span></div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="arrows">
+    <button onclick="navigate(-1)">‹</button>
+    <button onclick="navigate(1)">›</button>
+  </div>
+  <div class="nav" id="nav"></div>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const nav = document.getElementById('nav');
+let current = 0;
+
+// Build dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goTo(i);
+  nav.appendChild(dot);
+});
+
+function goTo(i) {
+  slides[current].classList.remove('active');
+  nav.children[current].classList.remove('active');
+  current = (i + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  nav.children[current].classList.add('active');
+}
+
+function navigate(dir) { goTo(current + dir); }
+
+// Swipe support
+let startX = 0;
+const el = document.getElementById('carousel');
+el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+el.addEventListener('touchend', e => {
+  const diff = startX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
+});
+</script>
+</body>
+</html>
