@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #FFFFFF; color: #1B2A4A; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .badge { display: inline-block; background: #00D68F; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 8px; }
+  .subtitle { font-size: 26px; color: #5A6B8A; margin-bottom: 50px; }
+  .steps { display: flex; gap: 20px; flex: 1; align-items: center; }
+  .step { flex: 1; background: #F8F9FA; border-radius: 20px; padding: 32px 24px; text-align: center; position: relative; border: 2px solid #E8ECF2; }
+  .step-num { width: 48px; height: 48px; background: #00D68F; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin: 0 auto 18px; }
+  .step h3 { font-size: 26px; font-weight: 700; margin-bottom: 10px; color: #1B2A4A; }
+  .step p { font-size: 20px; color: #5A6B8A; line-height: 1.4; }
+  .arrow { position: absolute; right: -22px; top: 50%; transform: translateY(-50%); font-size: 28px; color: #00D68F; font-weight: 800; z-index: 2; }
+  .step:last-child .arrow { display: none; }
+  .highlight { color: #F27A1A; font-weight: 800; }
+  .bottom-bar { background: #1B2A4A; color: #fff; padding: 28px 40px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
+  .bottom-bar span { font-size: 24px; font-weight: 600; }
+  .bottom-bar .cta { background: #F27A1A; color: #fff; padding: 12px 28px; border-radius: 10px; font-size: 20px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="badge">Solar Education</div>
+  <h1>What is a PPA?</h1>
+  <p class="subtitle">Power Purchase Agreement — Solar with zero upfront cost</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Zero Investment</h3>
+      <p>You pay nothing upfront. We cover it all.</p>
+      <span class="arrow">→</span>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>We Install</h3>
+      <p>Full system on your roof, maintained by us.</p>
+      <span class="arrow">→</span>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Buy Power</h3>
+      <p>Pay only <span class="highlight">฿4.50/kWh</span> for solar energy.</p>
+      <span class="arrow">→</span>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Save 25%</h3>
+      <p>vs PEA grid rate of ฿6.00/kWh. Every month.</p>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <span>Start saving from day one — no risk, no cost</span>
+    <div class="cta">Learn More</div>
+  </div>
+</div>
+</body>
+</html>

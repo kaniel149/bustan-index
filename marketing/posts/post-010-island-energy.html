@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #FFFFFF; color: #1B2A4A; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .badge { display: inline-block; background: #00D68F; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 6px; }
+  .subtitle { font-size: 24px; color: #5A6B8A; margin-bottom: 48px; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; flex: 1; }
+  .stat-circle { background: #F8F9FA; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; position: relative; border: 2px solid #E8ECF2; }
+  .circle-ring { width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+  .ring-orange { border: 6px solid #F27A1A; }
+  .ring-green { border: 6px solid #00D68F; }
+  .ring-navy { border: 6px solid #1B2A4A; }
+  .circle-ring .val { font-size: 36px; font-weight: 800; }
+  .circle-ring .unit { font-size: 16px; color: #5A6B8A; }
+  .stat-circle h3 { font-size: 22px; font-weight: 700; text-align: center; }
+  .stat-circle p { font-size: 17px; color: #5A6B8A; text-align: center; margin-top: 4px; }
+  .island-footer { position: relative; height: 120px; margin-top: 24px; overflow: hidden; }
+  .island-shape { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+  .wave { position: absolute; bottom: 0; left: 0; right: 0; height: 50px; }
+  .wave svg { width: 100%; height: 100%; }
+  .island-silhouette { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); }
+  .island-svg { fill: #1B2A4A; opacity: 0.08; }
+  .footer-bar { background: #1B2A4A; padding: 24px 36px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+  .footer-bar span { color: #fff; font-size: 20px; font-weight: 600; }
+  .footer-bar .loc { color: #00D68F; font-size: 20px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="badge">Island Living</div>
+  <h1>Koh Phangan<br>Energy Facts</h1>
+  <p class="subtitle">The island's solar potential is enormous</p>
+  <div class="stats-grid">
+    <div class="stat-circle">
+      <div class="circle-ring ring-orange">
+        <div style="text-align:center"><div class="val">4.2</div><div class="unit">hours</div></div>
+      </div>
+      <h3>Peak Sun Hours</h3>
+      <p>Daily average year-round</p>
+    </div>
+    <div class="stat-circle">
+      <div class="circle-ring ring-navy">
+        <div style="text-align:center"><div class="val">฿6</div><div class="unit">/kWh</div></div>
+      </div>
+      <h3>Grid Rate</h3>
+      <p>PEA electricity price</p>
+    </div>
+    <div class="stat-circle">
+      <div class="circle-ring ring-green">
+        <div style="text-align:center"><div class="val">70%</div></div>
+      </div>
+      <h3>Savings Potential</h3>
+      <p>With optimized solar setup</p>
+    </div>
+    <div class="stat-circle">
+      <div class="circle-ring ring-orange">
+        <div style="text-align:center"><div class="val">3–5</div><div class="unit">years</div></div>
+      </div>
+      <h3>Payback Period</h3>
+      <p>Full return on investment</p>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Solar works harder on islands — higher rates, more sun</span>
+    <span class="loc">📍 Koh Phangan</span>
+  </div>
+</div>
+</body>
+</html>

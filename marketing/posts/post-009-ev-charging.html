@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #FFFFFF; color: #1B2A4A; }
+  .container { width: 1080px; height: 1080px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; z-index: 10; }
+  .top-half { flex: 1; background: linear-gradient(135deg, #F27A1A 0%, #E06510 100%); padding: 60px; display: flex; flex-direction: column; justify-content: center; color: #fff; position: relative; overflow: hidden; }
+  .top-half::after { content: ''; position: absolute; right: -60px; top: -60px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.08); }
+  .top-half::before { content: ''; position: absolute; right: 80px; bottom: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .sun-icon { font-size: 80px; margin-bottom: 20px; }
+  .top-half h2 { font-size: 32px; font-weight: 700; opacity: 0.9; margin-bottom: 8px; }
+  .top-half h1 { font-size: 56px; font-weight: 800; line-height: 1.1; }
+  .bottom-half { flex: 1; background: #1B2A4A; padding: 50px 60px; display: flex; flex-direction: column; justify-content: center; color: #fff; position: relative; overflow: hidden; }
+  .bottom-half::after { content: ''; position: absolute; left: -80px; bottom: -80px; width: 250px; height: 250px; border-radius: 50%; background: rgba(0,214,143,0.08); }
+  .ev-icon { font-size: 64px; margin-bottom: 16px; }
+  .bottom-half h2 { font-size: 28px; font-weight: 600; color: #A0AABE; margin-bottom: 28px; }
+  .stats-row { display: flex; gap: 28px; }
+  .stat { flex: 1; }
+  .stat .val { font-size: 44px; font-weight: 800; margin-bottom: 4px; }
+  .stat .val.green { color: #00D68F; }
+  .stat .val.orange { color: #F27A1A; }
+  .stat .label { font-size: 18px; color: #A0AABE; line-height: 1.3; }
+  .divider { height: 4px; background: linear-gradient(90deg, #F27A1A, #00D68F); }
+  .vs-box { display: flex; align-items: center; gap: 24px; margin-top: 32px; background: rgba(255,255,255,0.06); padding: 24px 28px; border-radius: 16px; }
+  .vs-box .cost { text-align: center; }
+  .vs-box .cost .amount { font-size: 40px; font-weight: 800; }
+  .vs-box .cost .per { font-size: 16px; color: #A0AABE; }
+  .vs-box .vs { font-size: 24px; font-weight: 800; color: #5A6B8A; }
+  .vs-box .saving { color: #00D68F; font-size: 22px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="top-half">
+    <div class="sun-icon">☀</div>
+    <h2>Solar Panels on Your Roof</h2>
+    <h1>Power Your Car<br>From the Sun</h1>
+  </div>
+  <div class="divider"></div>
+  <div class="bottom-half">
+    <div class="ev-icon">⚡</div>
+    <h2>EV Charging + Solar — The Perfect Match</h2>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="val">7 kW</div>
+        <div class="label">Home charger<br>power</div>
+      </div>
+      <div class="stat">
+        <div class="val green">Overnight</div>
+        <div class="label">Full charge<br>while you sleep</div>
+      </div>
+    </div>
+    <div class="vs-box">
+      <div class="cost">
+        <div class="amount" style="color:#00D68F">฿15</div>
+        <div class="per">Solar charge</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="cost">
+        <div class="amount" style="color:#F27A1A">฿150</div>
+        <div class="per">Petrol equivalent</div>
+      </div>
+      <div class="saving">Save 90%</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #FFFFFF; color: #1B2A4A; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .badge { display: inline-block; background: #00D68F; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  h1 { font-size: 62px; font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
+  .subtitle { font-size: 24px; color: #5A6B8A; margin-bottom: 48px; }
+  .house-visual { display: flex; align-items: center; justify-content: center; margin-bottom: 48px; position: relative; }
+  .house-container { position: relative; width: 260px; height: 220px; }
+  .house-base { width: 200px; height: 140px; background: #F8F9FA; border: 4px solid #1B2A4A; border-radius: 8px; position: absolute; bottom: 0; left: 30px; }
+  .house-roof { width: 0; height: 0; border-left: 130px solid transparent; border-right: 130px solid transparent; border-bottom: 80px solid #1B2A4A; position: absolute; top: 0; left: 0; }
+  .house-door { width: 40px; height: 60px; background: #F27A1A; border-radius: 4px 4px 0 0; position: absolute; bottom: 0; left: 110px; }
+  .house-window { width: 36px; height: 36px; background: #00D68F30; border: 3px solid #1B2A4A; border-radius: 4px; position: absolute; }
+  .w1 { top: 100px; left: 54px; }
+  .w2 { top: 100px; right: 54px; }
+  .arrow-up { position: absolute; right: -80px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; }
+  .arrow-up .shaft { width: 6px; height: 80px; background: #00D68F; }
+  .arrow-up .head { width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-bottom: 28px solid #00D68F; }
+  .arrow-up .pct { font-size: 36px; font-weight: 800; color: #00D68F; margin-top: 8px; }
+  .points { display: flex; gap: 24px; flex: 1; margin-bottom: 32px; }
+  .point { flex: 1; background: #F8F9FA; border-radius: 20px; padding: 32px 28px; text-align: center; border: 2px solid #E8ECF2; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .point-num { width: 52px; height: 52px; border-radius: 50%; background: #1B2A4A; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; margin-bottom: 16px; }
+  .point h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+  .point p { font-size: 18px; color: #5A6B8A; line-height: 1.4; }
+  .bottom-bar { background: #1B2A4A; padding: 28px 36px; border-radius: 16px; text-align: center; }
+  .bottom-bar .big { font-size: 28px; font-weight: 800; color: #F27A1A; }
+  .bottom-bar .small { font-size: 18px; color: #A0AABE; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="badge">Investment</div>
+  <h1>Solar Adds Value<br>to Your Property</h1>
+  <p class="subtitle">Your system pays for itself — then increases what your home is worth</p>
+  <div class="house-visual">
+    <div class="house-container">
+      <div class="house-roof"></div>
+      <div class="house-base">
+        <div class="house-window w1"></div>
+        <div class="house-window w2"></div>
+        <div class="house-door"></div>
+      </div>
+    </div>
+    <div class="arrow-up">
+      <div class="head"></div>
+      <div class="shaft"></div>
+      <div class="pct">+5–10%</div>
+    </div>
+  </div>
+  <div class="points">
+    <div class="point">
+      <div class="point-num">1</div>
+      <h3>Pays for Itself</h3>
+      <p>System cost recovered in 3–5 years through electricity savings</p>
+    </div>
+    <div class="point">
+      <div class="point-num">2</div>
+      <h3>Adds Value</h3>
+      <p>Properties with solar sell for 5–10% more than comparable homes</p>
+    </div>
+    <div class="point">
+      <div class="point-num">3</div>
+      <h3>Sells Faster</h3>
+      <p>Buyers prefer homes with lower running costs — solar is a selling point</p>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="big">System pays for itself, then ADDS value</div>
+    <div class="small">It's not a cost — it's an investment that keeps appreciating</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #1B2A4A; color: #fff; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .badge { display: inline-block; background: #F27A1A; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  h1 { font-size: 60px; font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
+  .subtitle { font-size: 24px; color: #A0AABE; margin-bottom: 48px; }
+  .battery-visual { display: flex; align-items: center; justify-content: center; margin-bottom: 48px; gap: 40px; }
+  .battery { width: 200px; height: 100px; border: 5px solid #00D68F; border-radius: 12px; position: relative; overflow: hidden; }
+  .battery::after { content: ''; position: absolute; right: -16px; top: 30px; width: 12px; height: 40px; background: #00D68F; border-radius: 0 6px 6px 0; }
+  .battery-fill { position: absolute; left: 4px; top: 4px; bottom: 4px; width: 75%; background: linear-gradient(90deg, #00D68F, #00B377); border-radius: 6px; }
+  .battery-text { font-size: 28px; font-weight: 800; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; }
+  .specs { display: flex; flex-direction: column; gap: 12px; }
+  .specs .spec-item { font-size: 22px; font-weight: 600; }
+  .specs .spec-item span { color: #00D68F; }
+  .cards { display: flex; gap: 24px; flex: 1; margin-bottom: 32px; }
+  .card { flex: 1; background: #243554; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; }
+  .card-icon { font-size: 48px; margin-bottom: 16px; }
+  .card h3 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+  .card p { font-size: 18px; color: #A0AABE; line-height: 1.4; }
+  .card .highlight { color: #00D68F; font-weight: 700; font-size: 32px; display: block; margin-top: 8px; }
+  .bottom-bar { background: #00D68F; padding: 28px 36px; border-radius: 16px; text-align: center; }
+  .bottom-bar .big { font-size: 28px; font-weight: 800; color: #1B2A4A; }
+  .bottom-bar .small { font-size: 18px; color: #1B2A4A; opacity: 0.7; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="badge">Battery Storage</div>
+  <h1>Never Lose<br>Power Again</h1>
+  <p class="subtitle">Battery backup keeps your home running when the grid goes down</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🔋</div>
+      <h3>10 kWh Battery</h3>
+      <p>Enough to power your essentials</p>
+      <span class="highlight">6–8 hours</span>
+      <p>of backup power</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏠</div>
+      <h3>What It Powers</h3>
+      <p>Lights, fridge, WiFi, fans, phone chargers — everything that matters during an outage</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">☀</div>
+      <h3>Solar + Battery</h3>
+      <p>Recharges daily from your panels. Endless cycle of free energy.</p>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="big">฿140,000 investment → Peace of mind forever</div>
+    <div class="small">No generator noise • No fuel costs • Automatic switchover</div>
+  </div>
+</div>
+</body>
+</html>

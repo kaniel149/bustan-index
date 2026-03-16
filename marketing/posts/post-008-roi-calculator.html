@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #F8F9FA; color: #1B2A4A; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .badge { display: inline-block; background: #F27A1A; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  h1 { font-size: 58px; font-weight: 800; line-height: 1.1; margin-bottom: 6px; }
+  .subtitle { font-size: 24px; color: #5A6B8A; margin-bottom: 40px; }
+  .calc-steps { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+  .calc-row { background: #fff; border-radius: 16px; padding: 24px 36px; display: flex; align-items: center; justify-content: space-between; border: 2px solid #E8ECF2; }
+  .calc-row.highlight { border-color: #00D68F; background: linear-gradient(135deg, #00D68F10, #00D68F05); }
+  .calc-row.final { background: #1B2A4A; border-color: #1B2A4A; color: #fff; }
+  .calc-left { display: flex; align-items: center; gap: 18px; }
+  .calc-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; flex-shrink: 0; }
+  .icon-blue { background: #1B2A4A12; color: #1B2A4A; }
+  .icon-orange { background: #F27A1A18; color: #F27A1A; }
+  .icon-green { background: #00D68F18; color: #00D68F; }
+  .icon-gold { background: #F27A1A; color: #fff; }
+  .calc-label { font-size: 22px; color: #5A6B8A; }
+  .calc-row.final .calc-label { color: #A0AABE; }
+  .calc-value { font-size: 36px; font-weight: 800; }
+  .calc-row.highlight .calc-value { color: #00D68F; }
+  .calc-row.final .calc-value { color: #F27A1A; font-size: 42px; }
+  .connector { width: 3px; height: 12px; background: #E0E4EA; margin-left: 82px; }
+  .bottom-note { background: #fff; padding: 24px 36px; border-radius: 16px; margin-top: 20px; text-align: center; font-size: 20px; color: #5A6B8A; border: 2px solid #E8ECF2; }
+  .bottom-note strong { color: #1B2A4A; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="badge">ROI Calculator</div>
+  <h1>Your Solar ROI</h1>
+  <p class="subtitle">Real numbers for a typical 10 kWp residential system</p>
+  <div class="calc-steps">
+    <div class="calc-row">
+      <div class="calc-left">
+        <div class="calc-icon icon-blue">☀</div>
+        <span class="calc-label">System Size</span>
+      </div>
+      <div class="calc-value">10 kWp</div>
+    </div>
+    <div class="connector"></div>
+    <div class="calc-row">
+      <div class="calc-left">
+        <div class="calc-icon icon-orange">฿</div>
+        <span class="calc-label">Total Investment</span>
+      </div>
+      <div class="calc-value">฿290,000</div>
+    </div>
+    <div class="connector"></div>
+    <div class="calc-row highlight">
+      <div class="calc-left">
+        <div class="calc-icon icon-green">↓</div>
+        <span class="calc-label">Monthly Savings</span>
+      </div>
+      <div class="calc-value">฿7,600</div>
+    </div>
+    <div class="connector"></div>
+    <div class="calc-row highlight">
+      <div class="calc-left">
+        <div class="calc-icon icon-green">⟲</div>
+        <span class="calc-label">Payback Period</span>
+      </div>
+      <div class="calc-value">3.2 years</div>
+    </div>
+    <div class="connector"></div>
+    <div class="calc-row final">
+      <div class="calc-left">
+        <div class="calc-icon icon-gold">★</div>
+        <span class="calc-label">25-Year Total Savings</span>
+      </div>
+      <div class="calc-value">฿2.3M</div>
+    </div>
+  </div>
+  <div class="bottom-note">
+    <strong>That's a 7.9x return on investment.</strong> Solar pays for itself, then keeps paying you.
+  </div>
+</div>
+</body>
+</html>

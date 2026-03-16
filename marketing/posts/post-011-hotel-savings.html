@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; background: #1B2A4A; color: #fff; }
+  .container { width: 1080px; height: 1080px; padding: 60px; display: flex; flex-direction: column; position: relative; }
+  .logo { position: absolute; top: 40px; right: 50px; width: 120px; }
+  .badge { display: inline-block; background: #F27A1A; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  h1 { font-size: 58px; font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
+  .subtitle { font-size: 24px; color: #A0AABE; margin-bottom: 48px; }
+  .hotel-icon { width: 120px; height: 100px; margin: 0 auto 40px; position: relative; }
+  .hotel-body { width: 100px; height: 80px; background: #2D3F5E; border-radius: 8px 8px 0 0; position: absolute; bottom: 0; left: 10px; }
+  .hotel-roof { width: 120px; height: 20px; background: #F27A1A; border-radius: 4px; position: absolute; top: 0; }
+  .hotel-windows { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 12px; position: absolute; bottom: 10px; left: 18px; }
+  .hotel-win { width: 20px; height: 16px; background: #F27A1A40; border-radius: 2px; }
+  .savings-flow { display: flex; flex-direction: column; align-items: center; gap: 16px; flex: 1; justify-content: center; }
+  .flow-item { width: 80%; padding: 28px 36px; border-radius: 20px; text-align: center; }
+  .flow-item.before { background: #F27A1A20; border: 2px solid #F27A1A40; }
+  .flow-item.after { background: #00D68F20; border: 2px solid #00D68F40; }
+  .flow-item .label { font-size: 20px; color: #A0AABE; margin-bottom: 8px; }
+  .flow-item .amount { font-size: 52px; font-weight: 800; }
+  .flow-item.before .amount { color: #F27A1A; }
+  .flow-item.after .amount { color: #00D68F; }
+  .flow-item .per { font-size: 22px; color: #A0AABE; }
+  .arrow-down { font-size: 36px; color: #5A6B8A; }
+  .roi-bar { background: #00D68F; padding: 28px 36px; border-radius: 16px; text-align: center; margin-top: 32px; }
+  .roi-bar .big { font-size: 36px; font-weight: 800; color: #1B2A4A; }
+  .roi-bar .small { font-size: 20px; color: #1B2A4A; opacity: 0.7; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="../../proposals/tm-logo.png" alt="TM Energy" class="logo">
+  <div class="badge">Hospitality</div>
+  <h1>Solar for Hotels</h1>
+  <p class="subtitle">Cut your biggest operating cost by 70%</p>
+  <div class="savings-flow">
+    <div class="flow-item before">
+      <div class="label">Your hotel currently pays</div>
+      <div class="amount">฿100,000</div>
+      <div class="per">per month for electricity</div>
+    </div>
+    <div class="arrow-down">↓ With 50 kWp Solar ↓</div>
+    <div class="flow-item after">
+      <div class="label">Your new electricity bill</div>
+      <div class="amount">฿30,000</div>
+      <div class="per">per month — save ฿70,000</div>
+    </div>
+  </div>
+  <div class="roi-bar">
+    <div class="big">ROI: 2.5 Years — Then Pure Profit</div>
+    <div class="small">50 kWp system • 25+ year lifespan • minimal maintenance</div>
+  </div>
+</div>
+</body>
+</html>
