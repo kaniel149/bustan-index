@@ -868,7 +868,7 @@ function openBuildingDetail(id){
   <div class="dp-actions">
    <button class="btn btn-primary" onclick="updateBuilding('${b.id}')">Save Changes</button>
    <button class="btn btn-secondary" onclick="addToPipeline('${b.id}')">Create Lead</button>
-   <button class="btn btn-primary" onclick="generateProposal(currentDetailId)">📄 Generate Proposal</button>
+   <button class="btn btn-primary" onclick="window.open('generate-proposal.html?id='+currentDetailId,'_blank')">📄 Generate Proposal</button>
    <button class="btn btn-secondary" onclick="shareWhatsApp(buildings.find(b=>b.id===currentDetailId))">📱 WhatsApp</button>
   </div>`;
 
