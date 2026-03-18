@@ -2,30 +2,24 @@
    TM Energy Academy — Shared JavaScript
    ============================================ */
 
-// ---- User Auth System ----
-const USERS_KEY = 'tm_academy_users';
+// ---- Supabase Config ----
+const SUPABASE_URL = 'https://rklpcemhaimavneypubr.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbHBjZW1oYWltYXZuZXlwdWJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MTg2NDUsImV4cCI6MjA4ODE5NDY0NX0.xI_hBDpYPc49AidDO_WkA0mzJCg4uZJKwCR2Ds3aiOw';
+
+let _supabase = null;
+function getSupabase() {
+  if (_supabase) return _supabase;
+  if (typeof supabase !== 'undefined' && supabase.createClient) {
+    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  }
+  return _supabase;
+}
+
+// ---- Session Keys ----
 const SESSION_KEY = 'tm_academy_session';
+const STORAGE_KEY = 'tm_academy_progress';
 
-function getUsers() {
-  try { return JSON.parse(localStorage.getItem(USERS_KEY)) || []; }
-  catch { return []; }
-}
-function saveUsers(users) {
-  localStorage.setItem(USERS_KEY, JSON.stringify(users));
-}
-
-function seedDefaultUsers() {
-  let users = getUsers();
-  const defaultUsers = [
-    { id: 'erez', name: 'Erez', pin: '1234', role: 'installer', createdAt: '2026-03-16' },
-    { id: 'kaniel', name: 'Kaniel', pin: '2626', role: 'admin', createdAt: '2026-03-16' }
-  ];
-  defaultUsers.forEach(du => {
-    if (!users.find(u => u.id === du.id)) users.push(du);
-  });
-  saveUsers(users);
-}
-
+// ---- User Auth (Supabase-backed) ----
 function getCurrentUser() {
   try { return JSON.parse(sessionStorage.getItem(SESSION_KEY)); }
   catch { return null; }
@@ -36,6 +30,35 @@ function setCurrentUser(user) {
 function logout() {
   sessionStorage.removeItem(SESSION_KEY);
   location.reload();
+}
+
+async function loginUser(username, pin) {
+  const sb = getSupabase();
+  if (!sb) return { error: 'Supabase not loaded' };
+
+  const { data, error } = await sb
+    .from('academy_users')
+    .select('*')
+    .eq('username', username.toLowerCase())
+    .eq('pin', pin)
+    .eq('active', true)
+    .single();
+
+  if (error || !data) return { error: 'Invalid username or PIN' };
+
+  // Update last_login
+  sb.from('academy_users').update({ last_login: new Date().toISOString() }).eq('id', data.id).then(() => {});
+
+  const user = {
+    id: data.id,
+    username: data.username,
+    name: data.full_name,
+    role: data.role,
+    phone: data.phone,
+    email: data.email
+  };
+  setCurrentUser(user);
+  return { user };
 }
 
 function showLoginGate() {
@@ -63,6 +86,7 @@ function showLoginGate() {
         color:#0A1628; font-size:16px; font-weight:700; cursor:pointer; margin-top:8px;
         transition:transform 0.15s, opacity 0.15s; }
       .login-btn:hover { transform:translateY(-1px); opacity:0.9; }
+      .login-btn:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
       .login-error { color:#ff6b6b; font-size:13px; margin-top:12px; min-height:20px; }
       .login-pin-dots { display:flex; gap:12px; justify-content:center; margin:8px 0 0; }
       .login-pin-dots input { width:48px; height:56px; text-align:center; font-size:24px;
@@ -105,28 +129,35 @@ function showLoginGate() {
     });
   });
 
-  const doLogin = () => {
+  const doLogin = async () => {
     const username = document.getElementById('login-user').value.trim().toLowerCase();
     const pin = Array.from(pins).map(p => p.value).join('');
     const errEl = document.getElementById('login-error');
+    const btn = document.getElementById('login-submit');
 
     if (!username) { errEl.textContent = 'Enter username'; return; }
     if (pin.length < 4) { errEl.textContent = 'Enter 4-digit PIN'; return; }
 
-    const users = getUsers();
-    const user = users.find(u => u.id.toLowerCase() === username && u.pin === pin);
-    if (!user) {
-      errEl.textContent = 'Invalid username or PIN';
+    btn.disabled = true;
+    btn.textContent = 'Logging in...';
+    errEl.textContent = '';
+
+    const result = await loginUser(username, pin);
+
+    if (result.error) {
+      errEl.textContent = result.error;
+      btn.disabled = false;
+      btn.textContent = 'Login';
       pins.forEach(p => { p.value = ''; p.style.borderColor = '#ff6b6b'; });
       pins[0].focus();
       setTimeout(() => pins.forEach(p => p.style.borderColor = ''), 1000);
       return;
     }
 
-    setCurrentUser(user);
     overlay.remove();
     document.body.style.overflow = '';
     initUserUI();
+    await loadProgressFromSupabase();
   };
 
   document.getElementById('login-submit').addEventListener('click', doLogin);
@@ -159,21 +190,20 @@ function initUserUI() {
 }
 
 function checkAuth() {
-  seedDefaultUsers();
   const user = getCurrentUser();
   if (!user) {
     showLoginGate();
   } else {
     initUserUI();
+    loadProgressFromSupabase();
   }
 }
 
-// ---- Progress Store (per-user) ----
-const STORAGE_KEY = 'tm_academy_progress';
+// ---- Progress Store (Supabase + localStorage fallback) ----
 
 function getProgressKey() {
   const user = getCurrentUser();
-  return user ? `tm_academy_progress_${user.id}` : STORAGE_KEY;
+  return user ? `tm_academy_progress_${user.username}` : STORAGE_KEY;
 }
 
 function getProgress() {
@@ -181,26 +211,91 @@ function getProgress() {
     return JSON.parse(localStorage.getItem(getProgressKey())) || {};
   } catch { return {}; }
 }
+
 function saveProgress(data) {
   localStorage.setItem(getProgressKey(), JSON.stringify(data));
-  // Also sync to admin panel data
-  syncToAdmin();
 }
 
-function syncToAdmin() {
+async function loadProgressFromSupabase() {
   const user = getCurrentUser();
-  if (!user) return;
+  const sb = getSupabase();
+  if (!user || !sb) return;
+
   try {
-    const adminData = JSON.parse(localStorage.getItem('tm_academy_admin')) || { employees: [] };
-    let emp = adminData.employees.find(e => e.id === user.id);
-    if (!emp) {
-      emp = { id: user.id, name: user.name, role: user.role, startDate: user.createdAt, progress: {} };
-      adminData.employees.push(emp);
-    }
-    emp.progress = getProgress();
-    emp.lastActivity = new Date().toISOString();
-    localStorage.setItem('tm_academy_admin', JSON.stringify(adminData));
-  } catch(e) {}
+    const { data, error } = await sb
+      .from('academy_progress')
+      .select('*')
+      .eq('user_id', user.id);
+
+    if (error || !data) return;
+
+    // Convert Supabase progress to local format
+    const progress = getProgress();
+    data.forEach(row => {
+      const track = row.track;
+      if (!progress[track]) progress[track] = { completed: [], quizScores: {} };
+
+      // Extract lesson number from lesson_id (e.g. 'solar-fundamentals-01' -> 1)
+      const lessonNum = parseInt(row.lesson_id.split('-').pop(), 10);
+      if (!isNaN(lessonNum) && !progress[track].completed.includes(lessonNum)) {
+        progress[track].completed.push(lessonNum);
+      }
+      if (row.quiz_score !== null) {
+        progress[track].quizScores[lessonNum] = { score: row.quiz_score, total: 100, ts: new Date(row.completed_at).getTime() };
+      }
+    });
+
+    saveProgress(progress);
+
+    // Update UI progress bars if on index page
+    updateProgressBars();
+  } catch (e) {
+    console.warn('Failed to load progress from Supabase:', e);
+  }
+}
+
+async function syncLessonToSupabase(courseId, lessonNum, quizScore) {
+  const user = getCurrentUser();
+  const sb = getSupabase();
+  if (!user || !sb) return;
+
+  const lessonId = `${courseId}-${String(lessonNum).padStart(2, '0')}`;
+
+  try {
+    const row = {
+      user_id: user.id,
+      track: courseId,
+      lesson_id: lessonId,
+      completed_at: new Date().toISOString(),
+      quiz_score: quizScore !== undefined ? quizScore : null
+    };
+
+    const { error } = await sb
+      .from('academy_progress')
+      .upsert(row, { onConflict: 'user_id,lesson_id' });
+
+    if (error) console.warn('Supabase sync error:', error);
+  } catch (e) {
+    console.warn('Failed to sync to Supabase:', e);
+  }
+}
+
+function updateProgressBars() {
+  const cards = document.querySelectorAll('.track-card[data-track]');
+  cards.forEach(card => {
+    const track = card.dataset.track;
+    const total = parseInt(card.dataset.total);
+    const completed = getCompletedCount(track);
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+    const fill = card.querySelector('.progress-bar-fill');
+    const text = card.querySelector('.progress-text');
+    const pctEl = card.querySelector('.progress-pct');
+
+    if (fill) fill.style.width = pct + '%';
+    if (text && !text.querySelector('[data-en]')) text.textContent = `${completed}/${total}`;
+    if (pctEl && pctEl.textContent !== '') pctEl.textContent = pct + '%';
+  });
 }
 
 function markLessonComplete(courseId, lessonNum) {
@@ -210,6 +305,7 @@ function markLessonComplete(courseId, lessonNum) {
     p[courseId].completed.push(lessonNum);
   }
   saveProgress(p);
+  syncLessonToSupabase(courseId, lessonNum);
 }
 
 function isLessonComplete(courseId, lessonNum) {
@@ -227,6 +323,10 @@ function saveQuizScore(courseId, lessonNum, score, total) {
   if (!p[courseId]) p[courseId] = { completed: [], quizScores: {} };
   p[courseId].quizScores[lessonNum] = { score, total, ts: Date.now() };
   saveProgress(p);
+
+  // Sync to Supabase with quiz score as percentage
+  const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+  syncLessonToSupabase(courseId, lessonNum, pct);
 }
 
 // ---- Language Toggle ----
@@ -273,7 +373,6 @@ function initQuiz(courseId, lessonNum, questions) {
     qText.innerHTML = `<span data-en>${qi+1}. ${q.question.en}</span><span data-he>${qi+1}. ${q.question.he}</span><span data-th>${qi+1}. ${q.question.th}</span>`;
     qDiv.appendChild(qText);
 
-    // Make spans visible based on current lang
     const updateQVis = () => {
       qText.querySelectorAll('span').forEach(s => {
         s.style.display = s.dataset[lang()] !== undefined ? 'inline' : 'none';
@@ -303,20 +402,16 @@ function initQuiz(courseId, lessonNum, questions) {
         if (isCorrect) correct++;
 
         optEl.classList.add(isCorrect ? 'correct' : 'incorrect');
-        // Show correct answer
         if (!isCorrect) {
           optContainer.children[q.correct].classList.add('correct');
         }
-        // Disable all options
         Array.from(optContainer.children).forEach(o => o.classList.add('disabled'));
 
-        // Check if quiz complete
         if (answered === questions.length) {
           showQuizResult(correct, questions.length, courseId, lessonNum);
         }
       });
 
-      // Store update function
       optEl._updateVis = updateOptVis;
       optContainer.appendChild(optEl);
     });
@@ -324,7 +419,6 @@ function initQuiz(courseId, lessonNum, questions) {
     qDiv.appendChild(optContainer);
     container.appendChild(qDiv);
 
-    // Observe lang changes
     qText._updateVis = updateQVis;
     qDiv._updateAll = () => {
       updateQVis();
@@ -333,12 +427,10 @@ function initQuiz(courseId, lessonNum, questions) {
     qDiv._updateAll();
   });
 
-  // Re-run visibility on lang change
   const origSetLang = window.setLanguage;
   window.setLanguage = (lang) => {
     origSetLang(lang);
     container.querySelectorAll('.quiz-question').forEach(q => q._updateAll?.());
-    // Update result text if visible
     updateResultText();
   };
 }
@@ -398,7 +490,6 @@ function initCompleteButton(courseId, lessonNum) {
 
   updateBtn();
 
-  // Update on language change
   const origSetLang2 = window.setLanguage;
   window.setLanguage = (lang) => {
     origSetLang2(lang);
@@ -412,7 +503,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initScrollAnimations();
 
-  // Language toggle buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
   });
