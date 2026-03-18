@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4: O&M — Operations & Maintenance — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .metric-card { display: flex; gap: 16px; margin-bottom: 16px; padding: 16px 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .metric-card .metric-icon { flex-shrink: 0; width: 36px; height: 36px; background: rgba(0,214,143,0.15); color: #00D68F; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1em; }
+    .metric-card .metric-content { flex: 1; }
+    .metric-card .metric-content h4 { color: #fff; margin: 0 0 4px 0; font-size: 1em; }
+    .metric-card .metric-content p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.92em; }
+    .schedule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    @media (max-width: 600px) { .schedule-grid { grid-template-columns: 1fr; } }
+    .schedule-card { padding: 16px 20px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); }
+    .schedule-card h4 { color: #00D68F; margin: 0 0 8px 0; font-size: 0.95em; }
+    .schedule-card ul { margin: 0; padding-left: 18px; }
+    .schedule-card li { color: rgba(255,255,255,0.75); font-size: 0.9em; margin-bottom: 4px; }
+    .highlight-box { margin: 20px 0; padding: 16px 20px; background: rgba(0,214,143,0.08); border-left: 4px solid #00D68F; border-radius: 0 8px 8px 0; }
+    .warning-box { margin: 20px 0; padding: 16px 20px; background: rgba(255,165,0,0.08); border-left: 4px solid #FFA500; border-radius: 0 8px 8px 0; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="management-01.html"><span data-en>Management & Operations</span><span data-he>ניהול ותפעול</span><span data-th>การจัดการและการดำเนินงาน</span></a>
+    <span>›</span>
+    <span data-en>Lesson 4</span><span data-he>שיעור 4</span><span data-th>บทที่ 4</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 4 of 6</span><span data-he>שיעור 4 מתוך 6</span><span data-th>บทที่ 4 จาก 6</span>
+    </div>
+    <h1>
+      <span data-en>O&M — Operations & Maintenance</span>
+      <span data-he>O&M — תפעול ותחזוקה</span>
+      <span data-th>O&M — การดำเนินงานและบำรุงรักษา</span>
+    </h1>
+    <p class="lesson-subtitle">
+      <span data-en>Performance equals revenue. Master preventive maintenance schedules, monitoring systems, and O&M contracts to maximize your solar plant's lifetime output in Thailand's tropical climate.</span>
+      <span data-he>ביצועים שווים הכנסות. שלטו בלוחות תחזוקה מונעת, מערכות ניטור וחוזי O&M כדי למקסם את תפוקת מערכת הסולאר לאורך חייה באקלים הטרופי של תאילנד.</span>
+      <span data-th>ประสิทธิภาพเท่ากับรายได้ เรียนรู้ตารางบำรุงรักษาเชิงป้องกัน ระบบมอนิเตอร์ และสัญญา O&M เพื่อเพิ่มผลผลิตตลอดอายุการใช้งานของโรงไฟฟ้าโซลาร์ในสภาพอากาศเขตร้อนของไทย</span>
+    </p>
+  </div>
+
+  <!-- Section 1: What is O&M -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>⚡ What is O&M: Performance = Revenue</span>
+      <span data-he>⚡ מהו O&M: ביצועים = הכנסות</span>
+      <span data-th>⚡ O&M คืออะไร: ประสิทธิภาพ = รายได้</span>
+    </h2>
+
+    <p>
+      <span data-en>Operations & Maintenance (O&M) is everything that happens after your solar plant reaches Commercial Operation Date (COD). Every 1% of performance you lose translates directly to lost revenue — for a 5 MW plant earning ฿2.20/kWh, a 1% drop means roughly ฿150,000 per year in lost income.</span>
+      <span data-he>תפעול ותחזוקה (O&M) הוא כל מה שקורה אחרי שמערכת הסולאר שלכם מגיעה לתאריך הפעלה מסחרית (COD). כל 1% ביצועים שאתם מאבדים מתורגם ישירות להכנסות אבודות — עבור מערכת 5 MW שמרוויחה ฿2.20/kWh, ירידה של 1% משמעה בערך ₪150,000 בשנה בהכנסות אבודות.</span>
+      <span data-th>การดำเนินงานและบำรุงรักษา (O&M) คือทุกสิ่งที่เกิดขึ้นหลังจากโรงไฟฟ้าโซลาร์ถึงวันเปิดดำเนินการเชิงพาณิชย์ (COD) ทุก 1% ที่ประสิทธิภาพลดลงแปลงเป็นรายได้ที่สูญเสียโดยตรง — สำหรับโรงไฟฟ้า 5 MW ที่ได้รับ ฿2.20/kWh การลดลง 1% หมายถึงรายได้ที่สูญเสียประมาณ ฿150,000 ต่อปี</span>
+    </p>
+
+    <p>
+      <span data-en>Good O&M typically costs 1–2% of total CAPEX annually but protects 98%+ of your revenue stream. It covers routine inspections, cleaning, electrical testing, inverter servicing, vegetation management, and 24/7 monitoring. Skipping O&M is the fastest way to turn a profitable project into an underperforming liability.</span>
+      <span data-he>O&M טוב עולה בדרך כלל 1–2% מסך ה-CAPEX בשנה אבל מגן על 98%+ מזרם ההכנסות שלכם. הוא מכסה בדיקות שגרתיות, ניקוי, בדיקות חשמל, שירות ממירים, ניהול צמחייה וניטור 24/7. דילוג על O&M הוא הדרך המהירה ביותר להפוך פרויקט רווחי לנכס בעייתי.</span>
+      <span data-th>O&M ที่ดีมีค่าใช้จ่ายประมาณ 1–2% ของ CAPEX ทั้งหมดต่อปี แต่ปกป้องรายได้มากกว่า 98% ครอบคลุมการตรวจสอบตามปกติ การทำความสะอาด การทดสอบไฟฟ้า การบำรุงรักษาอินเวอร์เตอร์ การจัดการพืชพรรณ และการมอนิเตอร์ตลอด 24 ชั่วโมง การข้าม O&M คือวิธีที่เร็วที่สุดในการเปลี่ยนโครงการที่ทำกำไรให้กลายเป็นภาระ</span>
+    </p>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en>💡 <strong>The O&M Rule of Thumb:</strong> Spend ฿500K–900K per MW per year on O&M to protect ฿5–7M per MW per year in revenue. That's a 7–10x return on maintenance spending.</span>
+        <span data-he>💡 <strong>כלל האצבע של O&M:</strong> השקיעו ฿500K–900K ל-MW בשנה על O&M כדי להגן על ฿5–7M ל-MW בשנה בהכנסות. זה תשואה של 7–10 מכות על הוצאות תחזוקה.</span>
+        <span data-th>💡 <strong>กฎหัวแม่มือ O&M:</strong> ใช้จ่าย ฿500K–900K ต่อ MW ต่อปีสำหรับ O&M เพื่อปกป้องรายได้ ฿5–7M ต่อ MW ต่อปี นั่นคือผลตอบแทน 7–10 เท่าจากค่าบำรุงรักษา</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Preventive Maintenance Schedule -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📋 Preventive Maintenance Schedule</span>
+      <span data-he>📋 לוח זמנים לתחזוקה מונעת</span>
+      <span data-th>📋 ตารางบำรุงรักษาเชิงป้องกัน</span>
+    </h2>
+
+    <p>
+      <span data-en>Preventive maintenance follows a structured daily/weekly/monthly/annual cycle. Consistent scheduling prevents small issues from becoming expensive failures. In Thailand's climate, the schedule must account for monsoon season (May–October) and peak irradiance periods.</span>
+      <span data-he>תחזוקה מונעת עוקבת אחר מחזור מובנה יומי/שבועי/חודשי/שנתי. תזמון עקבי מונע מבעיות קטנות להפוך לתקלות יקרות. באקלים של תאילנד, הלוח צריך להתחשב בעונת המונסון (מאי–אוקטובר) ותקופות קרינה שיא.</span>
+      <span data-th>การบำรุงรักษาเชิงป้องกันดำเนินตามวงจรรายวัน/รายสัปดาห์/รายเดือน/รายปี การจัดตารางอย่างสม่ำเสมอป้องกันปัญหาเล็กน้อยจากการกลายเป็นความเสียหายที่มีค่าใช้จ่ายสูง สภาพอากาศไทยต้องคำนึงถึงฤดูมรสุม (พ.ค.–ต.ค.) และช่วงที่มีความเข้มแสงสูงสุด</span>
+    </p>
+
+    <div class="schedule-grid">
+      <div class="schedule-card">
+        <h4><span data-en>🔄 Daily</span><span data-he>🔄 יומי</span><span data-th>🔄 รายวัน</span></h4>
+        <ul>
+          <li><span data-en>Review monitoring dashboard & alerts</span><span data-he>סקירת לוח ניטור והתראות</span><span data-th>ตรวจสอบแดชบอร์ดมอนิเตอร์และการแจ้งเตือน</span></li>
+          <li><span data-en>Check inverter status (online/offline)</span><span data-he>בדיקת סטטוס ממירים (מקוון/לא מקוון)</span><span data-th>ตรวจสถานะอินเวอร์เตอร์ (ออนไลน์/ออฟไลน์)</span></li>
+          <li><span data-en>Visual site inspection (security, fencing)</span><span data-he>בדיקה ויזואלית של האתר (אבטחה, גדרות)</span><span data-th>ตรวจสอบด้วยสายตา (ความปลอดภัย รั้ว)</span></li>
+        </ul>
+      </div>
+      <div class="schedule-card">
+        <h4><span data-en>📅 Weekly</span><span data-he>📅 שבועי</span><span data-th>📅 รายสัปดาห์</span></h4>
+        <ul>
+          <li><span data-en>Vegetation check around arrays</span><span data-he>בדיקת צמחייה סביב המערכים</span><span data-th>ตรวจพืชพรรณรอบแผง</span></li>
+          <li><span data-en>Check drainage and water flow</span><span data-he>בדיקת ניקוז וזרימת מים</span><span data-th>ตรวจระบายน้ำและการไหล</span></li>
+          <li><span data-en>Performance ratio comparison</span><span data-he>השוואת יחס ביצועים</span><span data-th>เปรียบเทียบ Performance Ratio</span></li>
+        </ul>
+      </div>
+      <div class="schedule-card">
+        <h4><span data-en>📆 Monthly</span><span data-he>📆 חודשי</span><span data-th>📆 รายเดือน</span></h4>
+        <ul>
+          <li><span data-en>Panel cleaning (more in dry season)</span><span data-he>ניקוי פאנלים (יותר בעונה יבשה)</span><span data-th>ทำความสะอาดแผง (มากขึ้นในหน้าแล้ง)</span></li>
+          <li><span data-en>Inverter air filter cleaning</span><span data-he>ניקוי מסנני אוויר ממירים</span><span data-th>ทำความสะอาดฟิลเตอร์อากาศอินเวอร์เตอร์</span></li>
+          <li><span data-en>Cable & connector inspection</span><span data-he>בדיקת כבלים ומחברים</span><span data-th>ตรวจสายเคเบิลและขั้วต่อ</span></li>
+        </ul>
+      </div>
+      <div class="schedule-card">
+        <h4><span data-en>📊 Annual</span><span data-he>📊 שנתי</span><span data-th>📊 รายปี</span></h4>
+        <ul>
+          <li><span data-en>Thermal imaging (IR) scan of all panels</span><span data-he>סריקת הדמיה תרמית (IR) של כל הפאנלים</span><span data-th>สแกนภาพความร้อน (IR) แผงทั้งหมด</span></li>
+          <li><span data-en>IV curve testing on sample strings</span><span data-he>בדיקת עקומת IV על מחרוזות לדוגמה</span><span data-th>ทดสอบ IV curve บนสตริงตัวอย่าง</span></li>
+          <li><span data-en>Transformer oil testing & switchgear inspection</span><span data-he>בדיקת שמן שנאי ובדיקת מתקני מיתוג</span><span data-th>ทดสอบน้ำมันหม้อแปลงและตรวจสวิตช์เกียร์</span></li>
+          <li><span data-en>Grounding system verification</span><span data-he>אימות מערכת הארקה</span><span data-th>ตรวจสอบระบบกราวด์</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Panel Cleaning -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🧹 Panel Cleaning in Tropical Climate</span>
+      <span data-he>🧹 ניקוי פאנלים באקלים טרופי</span>
+      <span data-th>🧹 การทำความสะอาดแผงในสภาพอากาศเขตร้อน</span>
+    </h2>
+
+    <p>
+      <span data-en>In Thailand, soiling losses range from 2–8% depending on location. Dust, pollen, bird droppings, and tropical algae growth are the primary culprits. Coastal sites face salt spray deposits that are particularly stubborn. Cleaning frequency is typically monthly in dry season (November–April) and bi-monthly during monsoon when rain provides natural washing.</span>
+      <span data-he>בתאילנד, הפסדי לכלוך נעים בין 2–8% בהתאם למיקום. אבק, אבקנים, צואת ציפורים וצמיחת אצות טרופיות הם האשמים העיקריים. אתרים חופיים סובלים מהצטברות תרסיסי מלח שקשה במיוחד לנקות. תדירות הניקוי היא בדרך כלל חודשית בעונה היבשה (נובמבר–אפריל) ודו-חודשית במונסון כאשר הגשם מספק שטיפה טבעית.</span>
+      <span data-th>ในไทย การสูญเสียจากสิ่งสกปรกอยู่ที่ 2–8% ขึ้นอยู่กับสถานที่ ฝุ่น ละอองเรณู มูลนก และตะไคร่น้ำเขตร้อนเป็นสาเหตุหลัก พื้นที่ชายฝั่งเผชิญกับคราบเกลือทะเลที่ขจัดยาก ความถี่ในการทำความสะอาดโดยทั่วไปรายเดือนในหน้าแล้ง (พ.ย.–เม.ย.) และทุก 2 เดือนในฤดูมรสุมเมื่อฝนช่วยล้างธรรมชาติ</span>
+    </p>
+
+    <p>
+      <span data-en>Use deionized or purified water — Thailand's hard water leaves mineral deposits that reduce light transmission. Clean early morning (before 8 AM) when panels are cool to avoid thermal shock. For utility-scale, robotic cleaning systems cost ฿2–5M but pay back within 2–3 years through labor savings and consistent cleaning quality.</span>
+      <span data-he>השתמשו במים מזוקקים או מטוהרים — המים הקשים של תאילנד משאירים משקעי מינרלים שמפחיתים העברת אור. נקו מוקדם בבוקר (לפני 8:00) כשהפאנלים קרירים כדי למנוע הלם תרמי. בקנה מידה שירותי, מערכות ניקוי רובוטיות עולות ฿2–5M אבל מחזירות את ההשקעה תוך 2–3 שנים דרך חיסכון בעבודה ואיכות ניקוי עקבית.</span>
+      <span data-th>ใช้น้ำ DI หรือน้ำบริสุทธิ์ — น้ำกระด้างของไทยทิ้งคราบแร่ธาตุที่ลดการส่งผ่านแสง ทำความสะอาดตอนเช้าตรู่ (ก่อน 8:00) เมื่อแผงยังเย็นเพื่อหลีกเลี่ยง thermal shock สำหรับขนาดใหญ่ ระบบทำความสะอาดหุ่นยนต์ราคา ฿2–5M แต่คืนทุนใน 2–3 ปีจากการประหยัดแรงงานและคุณภาพการทำความสะอาดที่สม่ำเสมอ</span>
+    </p>
+  </section>
+
+  <!-- Section 4: Inverter Maintenance -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🔧 Inverter Maintenance</span>
+      <span data-he>🔧 תחזוקת ממירים</span>
+      <span data-th>🔧 การบำรุงรักษาอินเวอร์เตอร์</span>
+    </h2>
+
+    <p>
+      <span data-en>Inverters are the hardest-working component in a solar plant and the most common point of failure. Central inverters (500 kW–2.5 MW) require scheduled downtime for maintenance, while string inverters (50–100 kW) are easier to swap but have more units to manage. Key maintenance tasks include firmware updates, fan replacement (every 3–5 years), capacitor inspection, and log analysis for fault patterns.</span>
+      <span data-he>ממירים הם הרכיב העובד הכי קשה במערכת סולארית ונקודת הכשל הנפוצה ביותר. ממירים מרכזיים (500 kW–2.5 MW) דורשים זמן השבתה מתוכנן לתחזוקה, בעוד ממירי מחרוזות (50–100 kW) קלים יותר להחלפה אבל יש יותר יחידות לנהל. משימות תחזוקה עיקריות כוללות עדכוני קושחה, החלפת מאווררים (כל 3–5 שנים), בדיקת קבלים וניתוח יומנים לדפוסי תקלות.</span>
+      <span data-th>อินเวอร์เตอร์เป็นอุปกรณ์ที่ทำงานหนักที่สุดและเป็นจุดที่มักเกิดความเสียหายมากที่สุด Central inverter (500 kW–2.5 MW) ต้องมีเวลาหยุดตามกำหนดเพื่อบำรุงรักษา ขณะที่ string inverter (50–100 kW) เปลี่ยนง่ายกว่าแต่มีจำนวนมากกว่า งานบำรุงรักษาหลักรวมถึงอัปเดตเฟิร์มแวร์ เปลี่ยนพัดลม (ทุก 3–5 ปี) ตรวจคาปาซิเตอร์ และวิเคราะห์ล็อกหารูปแบบความผิดพลาด</span>
+    </p>
+
+    <div class="warning-box">
+      <p>
+        <span data-en>⚠️ <strong>Thailand Heat Warning:</strong> Inverters in Thailand regularly operate at 45–55°C ambient. Ensure ventilation is unobstructed, air filters are cleaned monthly, and cooling fans are functional. Overheating causes power derating — a central inverter at 55°C may derate 10–20%, costing tens of thousands of baht daily.</span>
+        <span data-he>⚠️ <strong>אזהרת חום תאילנד:</strong> ממירים בתאילנד פועלים באופן קבוע בטמפרטורה סביבתית של 45–55°C. ודאו שהאוורור לא חסום, מסנני אוויר מנוקים חודשית, ומאווררי קירור תפקודיים. התחממות יתר גורמת להפחתת הספק — ממיר מרכזי ב-55°C עלול לאבד 10–20%, בעלות של עשרות אלפי באט ביום.</span>
+        <span data-th>⚠️ <strong>คำเตือนความร้อนไทย:</strong> อินเวอร์เตอร์ในไทยทำงานที่อุณหภูมิแวดล้อม 45–55°C เป็นประจำ ตรวจสอบว่าช่องระบายอากาศไม่ถูกกีดขวาง ฟิลเตอร์อากาศทำความสะอาดรายเดือน และพัดลมระบายความร้อนทำงานปกติ ความร้อนสูงเกินทำให้กำลังลดลง — central inverter ที่ 55°C อาจ derate 10–20% สูญเสียหลายหมื่นบาทต่อวัน</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5: Monitoring Systems -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📡 Monitoring: SCADA & Beyond</span>
+      <span data-he>📡 ניטור: SCADA ומעבר לכך</span>
+      <span data-th>📡 การมอนิเตอร์: SCADA และอื่นๆ</span>
+    </h2>
+
+    <p>
+      <span data-en>Modern solar monitoring operates at three levels. <strong>Plant-level SCADA</strong> tracks total generation, grid export, and equipment status in real-time. <strong>String-level monitoring</strong> compares individual string currents to detect underperforming panels, shading, or wiring faults. <strong>Weather stations</strong> (pyranometer, ambient temperature sensor, module temperature sensor, wind speed) provide reference data for calculating expected vs. actual performance.</span>
+      <span data-he>ניטור סולארי מודרני פועל בשלוש רמות. <strong>SCADA ברמת המערכת</strong> עוקב אחר ייצור כולל, ייצוא לרשת וסטטוס ציוד בזמן אמת. <strong>ניטור ברמת מחרוזת</strong> משווה זרמי מחרוזות בודדים לזיהוי פאנלים חלשים, הצללה או תקלות חיווט. <strong>תחנות מזג אוויר</strong> (פירנומטר, חיישן טמפרטורת סביבה, חיישן טמפרטורת מודול, מהירות רוח) מספקות נתוני ייחוס לחישוב ביצועים צפויים מול בפועל.</span>
+      <span data-th>การมอนิเตอร์โซลาร์สมัยใหม่ทำงาน 3 ระดับ <strong>SCADA ระดับโรงไฟฟ้า</strong>ติดตามการผลิตรวม การส่งออกกริด และสถานะอุปกรณ์แบบเรียลไทม์ <strong>การมอนิเตอร์ระดับสตริง</strong>เปรียบเทียบกระแสสตริงแต่ละเส้นเพื่อตรวจจับแผงที่ทำงานต่ำ เงา หรือสายผิดปกติ <strong>สถานีอากาศ</strong> (ไพรานอมิเตอร์ เซ็นเซอร์อุณหภูมิแวดล้อม เซ็นเซอร์อุณหภูมิโมดูล ความเร็วลม) ให้ข้อมูลอ้างอิงสำหรับคำนวณประสิทธิภาพที่คาดหวังเทียบกับจริง</span>
+    </p>
+
+    <p>
+      <span data-en>For Thailand-based plants, cloud-based monitoring platforms (Huawei FusionSolar, SMA Sunny Portal, SolarEdge) allow remote management from anywhere. Set up automated alerts for: inverter offline > 30 minutes, PR drop > 5% from baseline, communication loss, and grid fault events. A well-monitored plant can achieve 99%+ uptime.</span>
+      <span data-he>למערכות בתאילנד, פלטפורמות ניטור מבוססות ענן (Huawei FusionSolar, SMA Sunny Portal, SolarEdge) מאפשרות ניהול מרחוק מכל מקום. הגדירו התראות אוטומטיות עבור: ממיר לא מקוון > 30 דקות, ירידת PR > 5% מקו הבסיס, אובדן תקשורת ואירועי תקלת רשת. מערכת מנוטרת היטב יכולה להשיג זמינות של 99%+.</span>
+      <span data-th>สำหรับโรงไฟฟ้าในไทย แพลตฟอร์มมอนิเตอร์บนคลาวด์ (Huawei FusionSolar, SMA Sunny Portal, SolarEdge) ช่วยจัดการระยะไกลจากที่ไหนก็ได้ ตั้งการแจ้งเตือนอัตโนมัติสำหรับ: อินเวอร์เตอร์ออฟไลน์ > 30 นาที, PR ลดลง > 5% จากเกณฑ์, สูญเสียการสื่อสาร และเหตุการณ์กริดผิดปกติ โรงไฟฟ้าที่มอนิเตอร์ดีสามารถบรรลุ uptime 99%+</span>
+    </p>
+  </section>
+
+  <!-- Section 6: Performance Metrics -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📊 Performance Metrics</span>
+      <span data-he>📊 מדדי ביצועים</span>
+      <span data-th>📊 ตัวชี้วัดประสิทธิภาพ</span>
+    </h2>
+
+    <div class="metric-card">
+      <div class="metric-icon">PR</div>
+      <div class="metric-content">
+        <h4><span data-en>Performance Ratio (PR)</span><span data-he>יחס ביצועים (PR)</span><span data-th>Performance Ratio (PR)</span></h4>
+        <p><span data-en>Actual energy output ÷ theoretical maximum. A well-maintained plant in Thailand achieves PR of 78–83%. Below 75% signals a problem requiring investigation.</span><span data-he>תפוקת אנרגיה בפועל ÷ מקסימום תיאורטי. מערכת מתוחזקת היטב בתאילנד משיגה PR של 78–83%. מתחת ל-75% מאותת על בעיה הדורשת חקירה.</span><span data-th>พลังงานจริง ÷ สูงสุดทางทฤษฎี โรงไฟฟ้าที่ดูแลดีในไทยได้ PR 78–83% ต่ำกว่า 75% บ่งชี้ปัญหาที่ต้องตรวจสอบ</span></p>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon">SY</div>
+      <div class="metric-content">
+        <h4><span data-en>Specific Yield (kWh/kWp)</span><span data-he>תפוקה סגולית (kWh/kWp)</span><span data-th>Specific Yield (kWh/kWp)</span></h4>
+        <p><span data-en>Annual energy per installed capacity. Thailand averages 1,300–1,500 kWh/kWp depending on region. Central/Northeast Thailand performs best; Southern provinces see more cloud cover.</span><span data-he>אנרגיה שנתית ליחידת קיבולת מותקנת. תאילנד ממוצעת 1,300–1,500 kWh/kWp בהתאם לאזור. מרכז/צפון מזרח תאילנד מבצעים הכי טוב; מחוזות דרום חווים יותר ענן.</span><span data-th>พลังงานรายปีต่อกำลังติดตั้ง ไทยเฉลี่ย 1,300–1,500 kWh/kWp ขึ้นอยู่กับภูมิภาค ภาคกลาง/อีสานดีที่สุด ภาคใต้มีเมฆมากกว่า</span></p>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon">AV</div>
+      <div class="metric-content">
+        <h4><span data-en>Availability (%)</span><span data-he>זמינות (%)</span><span data-th>ความพร้อมใช้งาน (%)</span></h4>
+        <p><span data-en>Percentage of time the plant is operational during sunlight hours. Target: ≥99%. Tracked as both energy-based and time-based availability. Contractual O&M agreements typically guarantee 98–99% availability.</span><span data-he>אחוז הזמן שהמערכת פעילה בשעות שמש. יעד: ≥99%. נעקב כזמינות מבוססת אנרגיה ומבוססת זמן. הסכמי O&M חוזיים בדרך כלל מבטיחים זמינות של 98–99%.</span><span data-th>เปอร์เซ็นต์เวลาที่โรงไฟฟ้าทำงานในช่วงแสงแดด เป้าหมาย: ≥99% ติดตามทั้งแบบพลังงานและเวลา สัญญา O&M มักรับประกันความพร้อม 98–99%</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: O&M Contracts -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📝 O&M Contracts</span>
+      <span data-he>📝 חוזי O&M</span>
+      <span data-th>📝 สัญญา O&M</span>
+    </h2>
+
+    <p>
+      <span data-en>A well-structured O&M contract is essential for bankable solar projects. Lenders require it. The contract should clearly define scope (preventive + corrective maintenance, monitoring, reporting, spare parts management), KPIs (PR guarantee, availability guarantee, response times), and penalties for underperformance. In Thailand, O&M costs range from ฿500,000–900,000 per MW per year depending on plant size and scope.</span>
+      <span data-he>חוזה O&M מובנה היטב חיוני לפרויקטים סולאריים הניתנים למימון. מלווים דורשים זאת. החוזה צריך להגדיר בבירור היקף (תחזוקה מונעת + מתקנת, ניטור, דיווח, ניהול חלקי חילוף), KPIs (ערבות PR, ערבות זמינות, זמני תגובה), וקנסות על ביצועים נמוכים. בתאילנד, עלויות O&M נעות בין ฿500,000–900,000 ל-MW בשנה בהתאם לגודל המערכת וההיקף.</span>
+      <span data-th>สัญญา O&M ที่มีโครงสร้างดีจำเป็นสำหรับโครงการโซลาร์ที่ต้องการเงินกู้ ธนาคารต้องการ สัญญาต้องกำหนดขอบเขตชัดเจน (บำรุงรักษาเชิงป้องกัน + แก้ไข มอนิเตอร์ รายงาน จัดการอะไหล่) KPIs (รับประกัน PR รับประกันความพร้อม เวลาตอบสนอง) และบทลงโทษสำหรับผลงานต่ำ ในไทย ค่า O&M อยู่ที่ ฿500,000–900,000 ต่อ MW ต่อปี ขึ้นอยู่กับขนาดและขอบเขต</span>
+    </p>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en>💡 <strong>Key Contract KPIs:</strong> PR guarantee ≥ 80% (temperature-corrected), availability ≥ 98.5%, emergency response within 4 hours, corrective repair within 48 hours, monthly reporting with loss analysis.</span>
+        <span data-he>💡 <strong>KPIs עיקריים בחוזה:</strong> ערבות PR ≥ 80% (מתוקנן טמפרטורה), זמינות ≥ 98.5%, תגובת חירום תוך 4 שעות, תיקון מתקן תוך 48 שעות, דיווח חודשי עם ניתוח הפסדים.</span>
+        <span data-th>💡 <strong>KPI สำคัญในสัญญา:</strong> รับประกัน PR ≥ 80% (ปรับอุณหภูมิ) ความพร้อม ≥ 98.5% ตอบสนองฉุกเฉินใน 4 ชม. ซ่อมแก้ไขใน 48 ชม. รายงานรายเดือนพร้อมวิเคราะห์การสูญเสีย</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 8: Tropical Challenges -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🌴 Tropical Challenges</span>
+      <span data-he>🌴 אתגרים טרופיים</span>
+      <span data-th>🌴 ความท้าทายเขตร้อน</span>
+    </h2>
+
+    <p>
+      <span data-en><strong>Humidity & corrosion:</strong> Thailand's 70–95% relative humidity accelerates PID (Potential Induced Degradation) and connector corrosion. Use PID-resistant modules, apply anti-corrosion coatings on metal structures, and inspect cable glands quarterly. Coastal sites (Koh Samui, Phuket, Rayong) require marine-grade stainless steel and additional protective coatings.</span>
+      <span data-he><strong>לחות וקורוזיה:</strong> לחות יחסית של 70–95% בתאילנד מאיצה PID (השפלה מושרית פוטנציאל) וקורוזיית מחברים. השתמשו במודולים עמידים ל-PID, הניחו ציפויים נגד קורוזיה על מבנים מתכתיים, ובדקו אטמי כבלים רבעונית. אתרים חופיים (קו סמוי, פוקט, ריונג) דורשים פלדת אל-חלד ימית וציפויי הגנה נוספים.</span>
+      <span data-th><strong>ความชื้นและการกัดกร่อน:</strong> ความชื้นสัมพัทธ์ 70–95% ของไทยเร่ง PID (Potential Induced Degradation) และการกัดกร่อนขั้วต่อ ใช้โมดูลทนPID ทาสารกันกัดกร่อนบนโครงสร้างเหล็ก ตรวจ cable gland ทุก 3 เดือน พื้นที่ชายฝั่ง (เกาะสมุย ภูเก็ต ระยอง) ต้องใช้สแตนเลสเกรดทะเลและสารเคลือบป้องกันเพิ่มเติม</span>
+    </p>
+
+    <p>
+      <span data-en><strong>Lightning:</strong> Thailand is one of the highest lightning-density regions globally. Install surge protection devices (SPDs) on both DC and AC sides, ensure grounding resistance is < 5Ω, and use shielded cables for communication lines. Lightning damage claims are common — verify your insurance covers direct and indirect lightning strikes.</span>
+      <span data-he><strong>ברקים:</strong> תאילנד היא אחד האזורים עם צפיפות הברקים הגבוהה ביותר בעולם. התקינו מכשירי הגנה מנחשולים (SPDs) בצדדי DC ו-AC כאחד, ודאו שהתנגדות הארקה < 5Ω, והשתמשו בכבלים ממוגנים לקווי תקשורת. תביעות נזקי ברק נפוצות — ודאו שהביטוח שלכם מכסה מכות ברק ישירות ועקיפות.</span>
+      <span data-th><strong>ฟ้าผ่า:</strong> ไทยเป็นหนึ่งในภูมิภาคที่มีความหนาแน่นฟ้าผ่าสูงสุดในโลก ติดตั้ง SPD ทั้งฝั่ง DC และ AC ตรวจสอบความต้านทานกราวด์ < 5Ω ใช้สายเคเบิลชีลด์สำหรับสายสื่อสาร การเคลมความเสียหายจากฟ้าผ่าเป็นเรื่องปกติ — ตรวจสอบว่าประกันครอบคลุมฟ้าผ่าทั้งทางตรงและทางอ้อม</span>
+    </p>
+
+    <p>
+      <span data-en><strong>Salt air (coastal):</strong> Salt mist corrodes aluminum frames, steel structures, and electrical connections. For coastal installations within 5 km of the sea, specify C5 corrosion category materials, galvanized or marine-grade mounting systems, and schedule salt residue cleaning every 2 weeks.</span>
+      <span data-he><strong>אוויר מלוח (חופי):</strong> ערפל מלח מחליד מסגרות אלומיניום, מבנים מפלדה וחיבורים חשמליים. להתקנות חופיות עד 5 ק"מ מהים, ציינו חומרים בקטגוריית קורוזיה C5, מערכות הרכבה מגולוונות או ימיות, ותזמנו ניקוי שאריות מלח כל שבועיים.</span>
+      <span data-th><strong>อากาศเค็ม (ชายฝั่ง):</strong> ไอเกลือกัดกร่อนกรอบอลูมิเนียม โครงสร้างเหล็ก และการเชื่อมต่อไฟฟ้า สำหรับการติดตั้งชายฝั่งในรัศมี 5 กม. จากทะเล ระบุวัสดุ C5 ระบบยึดชุบสังกะสีหรือเกรดทะเล และกำหนดทำความสะอาดคราบเกลือทุก 2 สัปดาห์</span>
+    </p>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <!-- Complete Button -->
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <div class="lesson-nav">
+    <a href="management-03.html" class="lesson-nav-btn prev">
+      <span data-en>← Previous: Thai Regulations & Permits</span>
+      <span data-he>← הקודם: רגולציה והיתרים בתאילנד</span>
+      <span data-th>← ก่อนหน้า: กฎระเบียบและใบอนุญาตไทย</span>
+    </a>
+    <a href="management-05.html" class="lesson-nav-btn next">
+      <span data-en>Next: Financial Management & Risk →</span>
+      <span data-he>הבא: ניהול פיננסי וסיכונים →</span>
+      <span data-th>ถัดไป: การจัดการการเงินและความเสี่ยง →</span>
+    </a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p><span data-en>© 2026 TM Energy Academy</span><span data-he>© 2026 TM Energy Academy</span><span data-th>© 2026 TM Energy Academy</span></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('management', 4);
+  if (typeof initQuiz === 'function') initQuiz('management', 4, [
+    {
+      question: {
+        en: "What Performance Ratio (PR) range indicates a well-maintained plant in Thailand?",
+        he: "איזה טווח יחס ביצועים (PR) מצביע על מערכת מתוחזקת היטב בתאילנד?",
+        th: "ช่วง Performance Ratio (PR) เท่าไรที่บ่งชี้โรงไฟฟ้าที่ดูแลดีในไทย?"
+      },
+      options: [
+        { en: "60–70%", he: "60–70%", th: "60–70%" },
+        { en: "78–83%", he: "78–83%", th: "78–83%" },
+        { en: "90–95%", he: "90–95%", th: "90–95%" },
+        { en: "95–100%", he: "95–100%", th: "95–100%" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "How often should panels be cleaned during Thailand's dry season?",
+        he: "כמה פעמים צריך לנקות פאנלים בעונה היבשה של תאילנד?",
+        th: "ควรทำความสะอาดแผงบ่อยแค่ไหนในหน้าแล้งของไทย?"
+      },
+      options: [
+        { en: "Once a year", he: "פעם בשנה", th: "ปีละครั้ง" },
+        { en: "Monthly", he: "חודשי", th: "รายเดือน" },
+        { en: "Daily", he: "יומי", th: "รายวัน" },
+        { en: "Only when it rains", he: "רק כשיורד גשם", th: "เฉพาะเมื่อฝนตก" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the typical O&M cost per MW per year in Thailand?",
+        he: "מהי עלות O&M טיפוסית ל-MW בשנה בתאילנד?",
+        th: "ค่า O&M ต่อ MW ต่อปีโดยทั่วไปในไทยเท่าไร?"
+      },
+      options: [
+        { en: "฿50,000–100,000", he: "฿50,000–100,000", th: "฿50,000–100,000" },
+        { en: "฿500,000–900,000", he: "฿500,000–900,000", th: "฿500,000–900,000" },
+        { en: "฿5,000,000–9,000,000", he: "฿5,000,000–9,000,000", th: "฿5,000,000–9,000,000" },
+        { en: "฿100,000–200,000", he: "฿100,000–200,000", th: "฿100,000–200,000" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "Why is lightning a major concern for Thai solar plants?",
+        he: "למה ברקים הם דאגה מרכזית למערכות סולאריות בתאילנד?",
+        th: "ทำไมฟ้าผ่าจึงเป็นปัญหาหลักสำหรับโรงไฟฟ้าโซลาร์ไทย?"
+      },
+      options: [
+        { en: "Thailand rarely has lightning", he: "בתאילנד כמעט אין ברקים", th: "ไทยแทบไม่มีฟ้าผ่า" },
+        { en: "Lightning only affects wind turbines", he: "ברקים משפיעים רק על טורבינות רוח", th: "ฟ้าผ่ากระทบเฉพาะกังหันลม" },
+        { en: "Thailand has one of the highest lightning densities globally", he: "תאילנד היא אחד האזורים עם צפיפות ברקים גבוהה ביותר בעולם", th: "ไทยเป็นหนึ่งในภูมิภาคที่มีความหนาแน่นฟ้าผ่าสูงสุดในโลก" },
+        { en: "Solar panels are immune to lightning", he: "פאנלים סולאריים חסינים מברקים", th: "แผงโซลาร์ทนฟ้าผ่า" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "What availability target should an O&M contract guarantee?",
+        he: "מהו יעד הזמינות שחוזה O&M צריך לערוב?",
+        th: "สัญญา O&M ควรรับประกันความพร้อมใช้งานเท่าไร?"
+      },
+      options: [
+        { en: "≥ 80%", he: "≥ 80%", th: "≥ 80%" },
+        { en: "≥ 90%", he: "≥ 90%", th: "≥ 90%" },
+        { en: "≥ 98.5%", he: "≥ 98.5%", th: "≥ 98.5%" },
+        { en: "100% at all times", he: "100% בכל עת", th: "100% ตลอดเวลา" }
+      ],
+      correct: 2
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>

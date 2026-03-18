@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2: Financial Modeling — IRR, Payback, LCOE — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .metric-card { margin: 16px 0; padding: 16px 20px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); }
+    .metric-card h4 { color: #00D68F; margin: 0 0 6px 0; }
+    .metric-card p { color: rgba(255,255,255,0.75); margin: 0; font-size: 0.92em; }
+    .highlight-box { margin: 20px 0; padding: 16px 20px; background: rgba(0,214,143,0.08); border-left: 4px solid #00D68F; border-radius: 0 8px 8px 0; }
+    .warning-box { margin: 20px 0; padding: 16px 20px; background: rgba(255,165,0,0.08); border-left: 4px solid #FFA500; border-radius: 0 8px 8px 0; }
+    .case-study-box { margin: 20px 0; padding: 20px; background: rgba(100,149,237,0.08); border-left: 4px solid #6495ED; border-radius: 0 8px 8px 0; }
+    .case-study-box h4 { color: #6495ED; margin: 0 0 12px 0; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="management-01.html"><span data-en>Management & Operations</span><span data-he>ניהול ותפעול</span><span data-th>การจัดการและการดำเนินงาน</span></a>
+    <span>›</span>
+    <span data-en>Lesson 2</span><span data-he>שיעור 2</span><span data-th>บทที่ 2</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 2 of 6</span><span data-he>שיעור 2 מתוך 6</span><span data-th>บทที่ 2 จาก 6</span>
+    </div>
+    <h1>
+      <span data-en>Financial Modeling — IRR, Payback, LCOE</span>
+      <span data-he>מודל פיננסי — IRR, החזר, LCOE</span>
+      <span data-th>แบบจำลองการเงิน — IRR, Payback, LCOE</span>
+    </h1>
+    <p class="lesson-subtitle">
+      <span data-en>Master the key financial metrics that drive solar investment decisions. Learn to build a bankable financial model with real Thai market data.</span>
+      <span data-he>שלטו במדדים הפיננסיים המרכזיים שמניעים החלטות השקעה בסולארי. למדו לבנות מודל פיננסי ברמה בנקאית עם נתוני שוק תאילנדיים אמיתיים.</span>
+      <span data-th>เชี่ยวชาญตัวชี้วัดทางการเงินหลักที่ขับเคลื่อนการตัดสินใจลงทุนโซลาร์ เรียนรู้การสร้างแบบจำลองการเงินที่ธนาคารยอมรับด้วยข้อมูลตลาดไทยจริง</span>
+    </p>
+  </div>
+
+  <!-- Section 1: Key Financial Metrics -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📊 Key Financial Metrics</span>
+      <span data-he>📊 מדדים פיננסיים מרכזיים</span>
+      <span data-th>📊 ตัวชี้วัดทางการเงินหลัก</span>
+    </h2>
+
+    <p>
+      <span data-en>Every solar investment decision relies on five core financial metrics. Understanding these is essential whether you're a developer, investor, or lender.</span>
+      <span data-he>כל החלטת השקעה בסולארי מסתמכת על חמישה מדדים פיננסיים מרכזיים. הבנתם חיונית בין אם אתם מפתחים, משקיעים או מלווים.</span>
+      <span data-th>การตัดสินใจลงทุนโซลาร์ทุกครั้งอาศัยตัวชี้วัดทางการเงิน 5 ตัวหลัก การเข้าใจเหล่านี้จำเป็นไม่ว่าจะเป็นผู้พัฒนา นักลงทุน หรือผู้ให้กู้</span>
+    </p>
+
+    <div class="metric-card">
+      <h4>IRR — <span data-en>Internal Rate of Return</span><span data-he>שיעור תשואה פנימי</span><span data-th>อัตราผลตอบแทนภายใน</span></h4>
+      <p><span data-en>The annualized return on investment over the project's lifetime. Target: <strong>10–15% equity IRR</strong> for Thai solar projects. Banks typically require project IRR ≥8%. Higher leverage (more debt) amplifies equity IRR but increases risk.</span><span data-he>התשואה השנתית על ההשקעה לאורך חיי הפרויקט. יעד: <strong>10–15% IRR הוני</strong> לפרויקטים סולאריים בתאילנד. בנקים דורשים בדרך כלל IRR פרויקט ≥8%. מינוף גבוה יותר (יותר חוב) מגביר את ה-IRR ההוני אך מגדיל סיכון.</span><span data-th>ผลตอบแทนต่อปีจากการลงทุนตลอดอายุโครงการ เป้าหมาย: <strong>IRR ส่วนทุน 10–15%</strong> สำหรับโครงการโซลาร์ไทย ธนาคารมักต้องการ IRR โครงการ ≥8% เลเวอเรจสูง (หนี้มาก) ขยาย IRR ส่วนทุนแต่เพิ่มความเสี่ยง</span></p>
+    </div>
+
+    <div class="metric-card">
+      <h4>NPV — <span data-en>Net Present Value</span><span data-he>ערך נוכחי נקי</span><span data-th>มูลค่าปัจจุบันสุทธิ</span></h4>
+      <p><span data-en>The total value of all future cash flows discounted to today. <strong>NPV > 0 means the project creates value.</strong> Use a discount rate of 8–10% for Thai solar projects. NPV is the single best metric for comparing project alternatives.</span><span data-he>הערך הכולל של כל תזרימי המזומנים העתידיים בערכי היום. <strong>NPV > 0 אומר שהפרויקט יוצר ערך.</strong> השתמשו בשיעור היוון 8–10% לפרויקטים סולאריים בתאילנד. NPV הוא המדד הטוב ביותר להשוואת חלופות פרויקט.</span><span data-th>มูลค่ารวมของกระแสเงินสดในอนาคตทั้งหมดคิดลดมาเป็นวันนี้ <strong>NPV > 0 หมายความว่าโครงการสร้างมูลค่า</strong> ใช้อัตราคิดลด 8–10% สำหรับโครงการโซลาร์ไทย NPV เป็นตัวชี้วัดที่ดีที่สุดสำหรับเปรียบเทียบทางเลือกโครงการ</span></p>
+    </div>
+
+    <div class="metric-card">
+      <h4><span data-en>Payback Period</span><span data-he>תקופת החזר</span><span data-th>ระยะเวลาคืนทุน</span></h4>
+      <p><span data-en>How many years until cumulative cash flows equal the initial investment. Target: <strong>8–12 years</strong> for Thai ground-mount solar. Rooftop self-consumption projects can achieve 5–7 year payback due to higher avoided cost of electricity.</span><span data-he>כמה שנים עד שתזרימי המזומנים המצטברים שווים להשקעה הראשונית. יעד: <strong>8–12 שנים</strong> לסולארי קרקעי בתאילנד. פרויקטי גג לצריכה עצמית יכולים להשיג החזר של 5–7 שנים בזכות עלות חשמל נמנעת גבוהה יותר.</span><span data-th>กี่ปีจนกว่ากระแสเงินสดสะสมจะเท่ากับเงินลงทุนเริ่มต้น เป้าหมาย: <strong>8–12 ปี</strong> สำหรับโซลาร์บนดินในไทย โครงการหลังคาใช้เองสามารถคืนทุนใน 5–7 ปี เพราะต้นทุนค่าไฟฟ้าที่หลีกเลี่ยงได้สูงกว่า</span></p>
+    </div>
+
+    <div class="metric-card">
+      <h4>LCOE — <span data-en>Levelized Cost of Energy</span><span data-he>עלות אנרגיה ממוצעת</span><span data-th>ต้นทุนพลังงานเฉลี่ย</span></h4>
+      <p><span data-en>The all-in cost per kWh over the project lifetime. Includes CapEx, OpEx, financing, and degradation. Thai solar LCOE: <strong>฿1.50–2.50/kWh</strong> — competitive with grid electricity at ฿3.50–4.50/kWh. Lower LCOE = more profitable project.</span><span data-he>העלות הכוללת לקילוואט-שעה לאורך חיי הפרויקט. כולל CapEx, OpEx, מימון ודגרדציה. LCOE סולארי בתאילנד: <strong>฿1.50–2.50/kWh</strong> — תחרותי עם חשמל רשת ב-฿3.50–4.50/kWh. LCOE נמוך יותר = פרויקט רווחי יותר.</span><span data-th>ต้นทุนรวมต่อ kWh ตลอดอายุโครงการ รวม CapEx, OpEx, การเงิน และการเสื่อม LCOE โซลาร์ไทย: <strong>฿1.50–2.50/kWh</strong> — แข่งขันได้กับไฟฟ้ากริดที่ ฿3.50–4.50/kWh LCOE ต่ำ = โครงการกำไรมากขึ้น</span></p>
+    </div>
+
+    <div class="metric-card">
+      <h4>DSCR — <span data-en>Debt Service Coverage Ratio</span><span data-he>יחס כיסוי שירות חוב</span><span data-th>อัตราส่วนความสามารถชำระหนี้</span></h4>
+      <p><span data-en>Net operating income ÷ total debt service (principal + interest). Banks require <strong>DSCR ≥ 1.3x</strong> — meaning the project generates 30% more cash than needed to service debt. Below 1.0x = project cannot cover loan payments.</span><span data-he>הכנסה תפעולית נטו ÷ שירות חוב כולל (קרן + ריבית). בנקים דורשים <strong>DSCR ≥ 1.3x</strong> — כלומר הפרויקט מייצר 30% יותר מזומן מהנדרש לשירות החוב. מתחת ל-1.0x = הפרויקט לא יכול לכסות תשלומי הלוואה.</span><span data-th>รายได้จากการดำเนินงานสุทธิ ÷ ภาระหนี้รวม (เงินต้น + ดอกเบี้ย) ธนาคารต้องการ <strong>DSCR ≥ 1.3x</strong> — หมายความว่าโครงการสร้างเงินสดมากกว่าที่ต้องชำระหนี้ 30% ต่ำกว่า 1.0x = โครงการไม่สามารถจ่ายเงินกู้ได้</span></p>
+    </div>
+  </section>
+
+  <!-- Section 2: Revenue Streams -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>💰 Revenue Streams in Thailand</span>
+      <span data-he>💰 זרמי הכנסה בתאילנד</span>
+      <span data-th>💰 แหล่งรายได้ในไทย</span>
+    </h2>
+
+    <p>
+      <span data-en>Revenue depends on how you sell the electricity. Thailand offers several mechanisms with different rates:</span>
+      <span data-he>ההכנסה תלויה באופן מכירת החשמל. תאילנד מציעה מספר מנגנונים עם תעריפים שונים:</span>
+      <span data-th>รายได้ขึ้นอยู่กับวิธีขายไฟฟ้า ไทยมีกลไกหลายอย่างที่มีอัตราต่างกัน:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Revenue Model</span><span data-he>מודל הכנסה</span><span data-th>รูปแบบรายได้</span></th>
+            <th><span data-en>Rate (฿/kWh)</span><span data-he>תעריף (฿/kWh)</span><span data-th>อัตรา (฿/kWh)</span></th>
+            <th><span data-en>Notes</span><span data-he>הערות</span><span data-th>หมายเหตุ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>FiT — Community Solar</span><span data-he>FiT — סולארי קהילתי</span><span data-th>FiT — โซลาร์ชุมชน</span></td>
+            <td style="color:#00D68F;"><strong>฿2.25</strong></td>
+            <td><span data-en>Fixed 20–25 year contract with PEA</span><span data-he>חוזה קבוע 20–25 שנים עם PEA</span><span data-th>สัญญาคงที่ 20–25 ปีกับ กฟภ.</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>FiT — Hybrid (Solar+BESS)</span><span data-he>FiT — היברידי (סולארי+סוללה)</span><span data-th>FiT — ไฮบริด (โซลาร์+แบตเตอรี่)</span></td>
+            <td style="color:#00D68F;"><strong>฿2.83</strong></td>
+            <td><span data-en>Premium for battery storage integration</span><span data-he>פרמיה לשילוב אגירת סוללה</span><span data-th>เบี้ยเพิ่มสำหรับการรวมแบตเตอรี่</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>PPA — Private Offtaker</span><span data-he>PPA — רוכש פרטי</span><span data-th>PPA — ผู้ซื้อเอกชน</span></td>
+            <td style="color:#00D68F;"><strong>฿3.00–3.80</strong></td>
+            <td><span data-en>Direct sale to factory/commercial buyer, negotiated rate</span><span data-he>מכירה ישירה למפעל/רוכש מסחרי, תעריף מוסכם</span><span data-th>ขายตรงให้โรงงาน/ผู้ซื้อเชิงพาณิชย์ อัตราเจรจา</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Self-Consumption (avoided cost)</span><span data-he>צריכה עצמית (עלות נמנעת)</span><span data-th>ใช้เอง (ต้นทุนที่หลีกเลี่ยง)</span></td>
+            <td style="color:#00D68F;"><strong>฿4.15+</strong></td>
+            <td><span data-en>Highest value — displaces grid electricity purchase</span><span data-he>ערך הגבוה ביותר — מחליף רכישת חשמל מהרשת</span><span data-th>มูลค่าสูงสุด — แทนที่การซื้อไฟฟ้าจากกริด</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en><strong>Self-consumption wins:</strong> At ฿4.15/kWh avoided cost vs. ฿2.25/kWh FiT, self-consumption delivers nearly 2x the value per kWh. This is why rooftop solar for factories and commercial buildings has the fastest payback.</span>
+        <span data-he><strong>צריכה עצמית מנצחת:</strong> בעלות נמנעת ฿4.15/kWh לעומת ฿2.25/kWh FiT, צריכה עצמית מספקת כמעט פי 2 ערך לקילוואט-שעה. לכן סולארי על גג למפעלים ומבנים מסחריים מציע את ההחזר המהיר ביותר.</span>
+        <span data-th><strong>ใช้เองคุ้มที่สุด:</strong> ที่ต้นทุนหลีกเลี่ยง ฿4.15/kWh เทียบกับ FiT ฿2.25/kWh การใช้เองให้มูลค่าเกือบ 2 เท่าต่อ kWh นี่คือเหตุผลที่โซลาร์หลังคาสำหรับโรงงานและอาคารพาณิชย์คืนทุนเร็วที่สุด</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: Cost Structure -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🏗️ Cost Structure</span>
+      <span data-he>🏗️ מבנה עלויות</span>
+      <span data-th>🏗️ โครงสร้างต้นทุน</span>
+    </h2>
+
+    <p>
+      <span data-en>Understanding cost breakdown is critical for accurate financial modeling. Here are current market rates for Thailand (2025–2026):</span>
+      <span data-he>הבנת פירוט העלויות קריטית למודל פיננסי מדויק. להלן תעריפי שוק נוכחיים בתאילנד (2025–2026):</span>
+      <span data-th>การเข้าใจรายละเอียดต้นทุนมีความสำคัญสำหรับแบบจำลองการเงินที่แม่นยำ อัตราตลาดปัจจุบันในไทย (2025–2026):</span>
+    </p>
+
+    <h3><span data-en>Capital Expenditure (CapEx)</span><span data-he>הוצאות הון (CapEx)</span><span data-th>ค่าใช้จ่ายลงทุน (CapEx)</span></h3>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Component</span><span data-he>רכיב</span><span data-th>ส่วนประกอบ</span></th>
+            <th><span data-en>Cost per MW</span><span data-he>עלות ל-MW</span><span data-th>ต้นทุนต่อ MW</span></th>
+            <th><span data-en>% of Total</span><span data-he>% מהסך</span><span data-th>% ของทั้งหมด</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Solar Panels</span><span data-he>פאנלים סולאריים</span><span data-th>แผงโซลาร์</span></td>
+            <td>฿8–12M</td>
+            <td>30–35%</td>
+          </tr>
+          <tr>
+            <td><span data-en>Inverters</span><span data-he>ממירים</span><span data-th>อินเวอร์เตอร์</span></td>
+            <td>฿3–5M</td>
+            <td>10–15%</td>
+          </tr>
+          <tr>
+            <td><span data-en>Mounting & Structure</span><span data-he>מערכת תלייה ומבנה</span><span data-th>โครงสร้างรับแผง</span></td>
+            <td>฿4–6M</td>
+            <td>15–18%</td>
+          </tr>
+          <tr>
+            <td><span data-en>Electrical (BOS)</span><span data-he>חשמל (BOS)</span><span data-th>ไฟฟ้า (BOS)</span></td>
+            <td>฿3–5M</td>
+            <td>10–15%</td>
+          </tr>
+          <tr>
+            <td><span data-en>Civil & Installation</span><span data-he>אזרחי והתקנה</span><span data-th>โยธาและติดตั้ง</span></td>
+            <td>฿4–5M</td>
+            <td>12–15%</td>
+          </tr>
+          <tr>
+            <td><span data-en>Soft Costs (permits, engineering, legal)</span><span data-he>עלויות רכות (היתרים, הנדסה, משפטי)</span><span data-th>ต้นทุนอ่อน (ใบอนุญาต วิศวกรรม กฎหมาย)</span></td>
+            <td>฿2–4M</td>
+            <td>8–12%</td>
+          </tr>
+          <tr style="color:#00D68F; font-weight: 700;">
+            <td><span data-en>Total CapEx</span><span data-he>סה"כ CapEx</span><span data-th>รวม CapEx</span></td>
+            <td>฿26–37M/MW</td>
+            <td>100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3><span data-en>Operating Expenditure (OpEx)</span><span data-he>הוצאות תפעול (OpEx)</span><span data-th>ค่าใช้จ่ายดำเนินงาน (OpEx)</span></h3>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Item</span><span data-he>פריט</span><span data-th>รายการ</span></th>
+            <th><span data-en>Annual Cost per MW</span><span data-he>עלות שנתית ל-MW</span><span data-th>ต้นทุนต่อปีต่อ MW</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>O&M Contract</span><span data-he>חוזה תפעול ותחזוקה</span><span data-th>สัญญา O&M</span></td>
+            <td>฿200–400K</td>
+          </tr>
+          <tr>
+            <td><span data-en>Panel Cleaning (4–6x/year)</span><span data-he>ניקוי פאנלים (4–6 פעמים/שנה)</span><span data-th>ทำความสะอาดแผง (4–6 ครั้ง/ปี)</span></td>
+            <td>฿50–100K</td>
+          </tr>
+          <tr>
+            <td><span data-en>Insurance</span><span data-he>ביטוח</span><span data-th>ประกันภัย</span></td>
+            <td>฿80–150K</td>
+          </tr>
+          <tr>
+            <td><span data-en>Land Lease</span><span data-he>חכירת קרקע</span><span data-th>ค่าเช่าที่ดิน</span></td>
+            <td>฿50–200K</td>
+          </tr>
+          <tr>
+            <td><span data-en>Inverter Reserve / Replacement</span><span data-he>עתודת ממירים / החלפה</span><span data-th>สำรองอินเวอร์เตอร์ / เปลี่ยน</span></td>
+            <td>฿50–100K</td>
+          </tr>
+          <tr style="color:#00D68F; font-weight: 700;">
+            <td><span data-en>Total OpEx</span><span data-he>סה"כ OpEx</span><span data-th>รวม OpEx</span></td>
+            <td>฿500K–900K/MW/yr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 4: Financing Structure -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🏦 Financing Structure</span>
+      <span data-he>🏦 מבנה מימון</span>
+      <span data-th>🏦 โครงสร้างการเงิน</span>
+    </h2>
+
+    <p>
+      <span data-en>Most Thai solar projects are financed through project finance — a mix of debt and equity. Here are the typical parameters:</span>
+      <span data-he>רוב הפרויקטים הסולאריים בתאילנד ממומנים דרך מימון פרויקטים — תמהיל של חוב והון. להלן הפרמטרים האופייניים:</span>
+      <span data-th>โครงการโซลาร์ไทยส่วนใหญ่ใช้การเงินโครงการ — ผสมระหว่างหนี้สินและทุน พารามิเตอร์ทั่วไป:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Parameter</span><span data-he>פרמטר</span><span data-th>พารามิเตอร์</span></th>
+            <th><span data-en>Typical Value</span><span data-he>ערך טיפוסי</span><span data-th>ค่าทั่วไป</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Debt/Equity Ratio</span><span data-he>יחס חוב/הון</span><span data-th>อัตราส่วนหนี้สิน/ทุน</span></td>
+            <td><strong>70/30</strong></td>
+          </tr>
+          <tr>
+            <td><span data-en>Interest Rate</span><span data-he>שיעור ריבית</span><span data-th>อัตราดอกเบี้ย</span></td>
+            <td><span data-en>MLR – 1% to MLR – 2% (~4.5–5.5%)</span><span data-he>MLR – 1% עד MLR – 2% (~4.5–5.5%)</span><span data-th>MLR – 1% ถึง MLR – 2% (~4.5–5.5%)</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Loan Tenor</span><span data-he>תקופת הלוואה</span><span data-th>ระยะเวลากู้</span></td>
+            <td><span data-en>10–15 years</span><span data-he>10–15 שנים</span><span data-th>10–15 ปี</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>DSCR Requirement</span><span data-he>דרישת DSCR</span><span data-th>ข้อกำหนด DSCR</span></td>
+            <td><strong>≥ 1.3x</strong></td>
+          </tr>
+          <tr>
+            <td><span data-en>Grace Period</span><span data-he>תקופת חסד</span><span data-th>ระยะปลอดเงินต้น</span></td>
+            <td><span data-en>6–12 months (construction period)</span><span data-he>6–12 חודשים (תקופת בנייה)</span><span data-th>6–12 เดือน (ช่วงก่อสร้าง)</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Key Lenders</span><span data-he>מלווים מרכזיים</span><span data-th>ผู้ให้กู้หลัก</span></td>
+            <td><span data-en>KBank, BBL, SCB, TISCO, Krungthai</span><span data-he>KBank, BBL, SCB, TISCO, Krungthai</span><span data-th>KBank, BBL, SCB, TISCO, กรุงไทย</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warning-box">
+      <p>
+        <span data-en>⚠️ <strong>Bankability tip:</strong> Lenders want to see PPA or FiT contract, VSPP license, and at least 6 months of operating history (or a strong EPC guarantee) before releasing funds. Use Tier-1 panels and bankable inverter brands (Huawei, Sungrow, SMA) to satisfy lender requirements.</span>
+        <span data-he>⚠️ <strong>טיפ לבנקאביליות:</strong> מלווים רוצים לראות חוזה PPA או FiT, רישיון VSPP, ולפחות 6 חודשי היסטוריית תפעול (או ערבות EPC חזקה) לפני שחרור כספים. השתמשו בפאנלים Tier-1 וממירים בנקאביליים (Huawei, Sungrow, SMA) כדי לעמוד בדרישות המלווים.</span>
+        <span data-th>⚠️ <strong>เคล็ดลับ bankability:</strong> ผู้ให้กู้ต้องการเห็นสัญญา PPA หรือ FiT ใบอนุญาต VSPP และประวัติการดำเนินงานอย่างน้อย 6 เดือน (หรือการค้ำประกัน EPC ที่แข็งแกร่ง) ก่อนปล่อยเงิน ใช้แผง Tier-1 และอินเวอร์เตอร์ที่ธนาคารยอมรับ (Huawei, Sungrow, SMA)</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5: Case Study -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📋 Case Study: 10 MW Ground-Mount Solar Farm</span>
+      <span data-he>📋 מקרה בוחן: חוות סולארי קרקעית 10 MW</span>
+      <span data-th>📋 กรณีศึกษา: โซลาร์ฟาร์มบนดิน 10 MW</span>
+    </h2>
+
+    <p>
+      <span data-en>Let's build a complete financial model for a 10 MW ground-mount solar farm in central Thailand with a FiT contract:</span>
+      <span data-he>בואו נבנה מודל פיננסי מלא לחוות סולארי קרקעית של 10 MW במרכז תאילנד עם חוזה FiT:</span>
+      <span data-th>มาสร้างแบบจำลองการเงินฉบับสมบูรณ์สำหรับโซลาร์ฟาร์มบนดิน 10 MW ในภาคกลางของไทยที่มีสัญญา FiT:</span>
+    </p>
+
+    <div class="case-study-box">
+      <h4><span data-en>Project Parameters</span><span data-he>פרמטרי פרויקט</span><span data-th>พารามิเตอร์โครงการ</span></h4>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <tbody>
+            <tr>
+              <td><span data-en>Capacity</span><span data-he>הספק</span><span data-th>กำลังผลิต</span></td>
+              <td><strong>10 MWp</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>CapEx</span><span data-he>הוצאות הון</span><span data-th>CapEx</span></td>
+              <td><strong>฿280–370M</strong> (฿28–37M/MW)</td>
+            </tr>
+            <tr>
+              <td><span data-en>Annual Generation</span><span data-he>ייצור שנתי</span><span data-th>ผลิตไฟฟ้าต่อปี</span></td>
+              <td><strong>~15,000 MWh</strong> (1,500 kWh/kWp — central Thailand)</td>
+            </tr>
+            <tr>
+              <td><span data-en>Revenue (FiT ฿2.25/kWh)</span><span data-he>הכנסה (FiT ฿2.25/kWh)</span><span data-th>รายได้ (FiT ฿2.25/kWh)</span></td>
+              <td><strong>~฿33.75M/year</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>OpEx</span><span data-he>הוצאות תפעול</span><span data-th>OpEx</span></td>
+              <td><strong>฿5–9M/year</strong> (฿500K–900K/MW)</td>
+            </tr>
+            <tr>
+              <td><span data-en>Financing</span><span data-he>מימון</span><span data-th>การเงิน</span></td>
+              <td><span data-en>70% debt at MLR-1.5%, 15-year tenor</span><span data-he>70% חוב ב-MLR-1.5%, תקופה 15 שנים</span><span data-th>หนี้ 70% ที่ MLR-1.5% ระยะ 15 ปี</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="case-study-box">
+      <h4><span data-en>Financial Results</span><span data-he>תוצאות פיננסיות</span><span data-th>ผลลัพธ์ทางการเงิน</span></h4>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <tbody>
+            <tr>
+              <td><span data-en>Project IRR</span><span data-he>IRR פרויקט</span><span data-th>IRR โครงการ</span></td>
+              <td style="color:#00D68F;"><strong>8–11%</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>Equity IRR</span><span data-he>IRR הוני</span><span data-th>IRR ส่วนทุน</span></td>
+              <td style="color:#00D68F;"><strong>12–16%</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>Payback Period</span><span data-he>תקופת החזר</span><span data-th>ระยะเวลาคืนทุน</span></td>
+              <td style="color:#00D68F;"><strong>8–12 years</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>LCOE</span><span data-he>LCOE</span><span data-th>LCOE</span></td>
+              <td style="color:#00D68F;"><strong>฿1.80–2.20/kWh</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>DSCR (average)</span><span data-he>DSCR (ממוצע)</span><span data-th>DSCR (เฉลี่ย)</span></td>
+              <td style="color:#00D68F;"><strong>1.3–1.5x</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>25-Year NPV (8% discount)</span><span data-he>NPV ל-25 שנה (היוון 8%)</span><span data-th>NPV 25 ปี (คิดลด 8%)</span></td>
+              <td style="color:#00D68F;"><strong>฿50–120M</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en><strong>Key takeaway:</strong> A 10 MW FiT project generates ~฿33.75M/year in revenue against ~฿7M in OpEx and ~฿18M in debt service — leaving ~฿8.75M annual free cash flow. With ฿84–111M equity invested, the equity payback is 10–13 years, with 12–15 years of pure profit after that.</span>
+        <span data-he><strong>תובנה מרכזית:</strong> פרויקט FiT של 10 MW מייצר ~฿33.75M/שנה בהכנסות לעומת ~฿7M ב-OpEx ו-~฿18M בשירות חוב — מותיר ~฿8.75M תזרים מזומנים חופשי שנתי. עם ฿84–111M הון מושקע, החזר ההון הוא 10–13 שנים, עם 12–15 שנות רווח נקי אחרי.</span>
+        <span data-th><strong>สรุปสำคัญ:</strong> โครงการ FiT 10 MW สร้างรายได้ ~฿33.75M/ปี เทียบกับ OpEx ~฿7M และชำระหนี้ ~฿18M — เหลือกระแสเงินสดอิสระ ~฿8.75M/ปี ด้วยทุน ฿84–111M ที่ลงทุน คืนทุนส่วนทุน 10–13 ปี พร้อมกำไรสุทธิอีก 12–15 ปีหลังจากนั้น</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <!-- Complete Button -->
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <div class="lesson-nav">
+    <a href="management-01.html" class="lesson-nav-btn prev">
+      <span data-en>← Previous: Project Management for Solar</span>
+      <span data-he>← הקודם: ניהול פרויקטים סולאריים</span>
+      <span data-th>← ก่อนหน้า: การบริหารโครงการโซลาร์</span>
+    </a>
+    <a href="management-03.html" class="lesson-nav-btn next">
+      <span data-en>Next: Thai Regulations & Permits →</span>
+      <span data-he>הבא: רגולציה והיתרים בתאילנד →</span>
+      <span data-th>ถัดไป: กฎระเบียบและใบอนุญาตไทย →</span>
+    </a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p><span data-en>© 2026 TM Energy Academy</span><span data-he>© 2026 TM Energy Academy</span><span data-th>© 2026 TM Energy Academy</span></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('management', 2);
+  if (typeof initQuiz === 'function') initQuiz('management', 2, [
+    {
+      question: {
+        en: "What DSCR do Thai banks typically require for solar project loans?",
+        he: "איזה DSCR בנקים תאילנדיים דורשים בדרך כלל להלוואות פרויקט סולארי?",
+        th: "ธนาคารไทยมักต้องการ DSCR เท่าไหร่สำหรับสินเชื่อโครงการโซลาร์?"
+      },
+      options: [
+        { en: "≥ 0.8x", he: "≥ 0.8x", th: "≥ 0.8x" },
+        { en: "≥ 1.0x", he: "≥ 1.0x", th: "≥ 1.0x" },
+        { en: "≥ 1.3x", he: "≥ 1.3x", th: "≥ 1.3x" },
+        { en: "≥ 2.0x", he: "≥ 2.0x", th: "≥ 2.0x" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "Which revenue model delivers the highest value per kWh in Thailand?",
+        he: "איזה מודל הכנסה מספק את הערך הגבוה ביותר לקילוואט-שעה בתאילנד?",
+        th: "รูปแบบรายได้ใดให้มูลค่าสูงสุดต่อ kWh ในไทย?"
+      },
+      options: [
+        { en: "FiT — Community Solar at ฿2.25/kWh", he: "FiT — סולארי קהילתי ב-฿2.25/kWh", th: "FiT — โซลาร์ชุมชน ฿2.25/kWh" },
+        { en: "FiT — Hybrid at ฿2.83/kWh", he: "FiT — היברידי ב-฿2.83/kWh", th: "FiT — ไฮบริด ฿2.83/kWh" },
+        { en: "PPA at ฿3.00–3.80/kWh", he: "PPA ב-฿3.00–3.80/kWh", th: "PPA ฿3.00–3.80/kWh" },
+        { en: "Self-consumption at ฿4.15+/kWh (avoided cost)", he: "צריכה עצמית ב-฿4.15+/kWh (עלות נמנעת)", th: "ใช้เอง ฿4.15+/kWh (ต้นทุนหลีกเลี่ยง)" }
+      ],
+      correct: 3
+    },
+    {
+      question: {
+        en: "What is the typical CapEx range for 1 MW of ground-mount solar in Thailand?",
+        he: "מהו טווח ה-CapEx האופייני ל-1 MW של סולארי קרקעי בתאילנד?",
+        th: "ช่วง CapEx ทั่วไปสำหรับโซลาร์บนดิน 1 MW ในไทยเท่าไหร่?"
+      },
+      options: [
+        { en: "฿10–15M per MW", he: "฿10–15M ל-MW", th: "฿10–15M ต่อ MW" },
+        { en: "฿26–37M per MW", he: "฿26–37M ל-MW", th: "฿26–37M ต่อ MW" },
+        { en: "฿50–70M per MW", he: "฿50–70M ל-MW", th: "฿50–70M ต่อ MW" },
+        { en: "฿100M+ per MW", he: "฿100M+ ל-MW", th: "฿100M+ ต่อ MW" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is LCOE and why does it matter?",
+        he: "מהו LCOE ולמה הוא חשוב?",
+        th: "LCOE คืออะไรและทำไมถึงสำคัญ?"
+      },
+      options: [
+        { en: "Largest Cost Of Equipment — the most expensive component", he: "עלות הציוד הגדולה ביותר — הרכיב היקר ביותר", th: "ต้นทุนอุปกรณ์ใหญ่ที่สุด — ส่วนประกอบแพงที่สุด" },
+        { en: "Levelized Cost of Energy — all-in cost per kWh over project lifetime", he: "עלות אנרגיה ממוצעת — עלות כוללת לקילוואט-שעה לאורך חיי הפרויקט", th: "ต้นทุนพลังงานเฉลี่ย — ต้นทุนรวมต่อ kWh ตลอดอายุโครงการ" },
+        { en: "Loan Commitment Of Energy — the bank's lending limit", he: "התחייבות הלוואת אנרגיה — תקרת ההלוואה של הבנק", th: "วงเงินกู้พลังงาน — วงเงินที่ธนาคารปล่อยกู้" },
+        { en: "Local Currency Of Exchange — the payment currency", he: "מטבע חליפין מקומי — מטבע התשלום", th: "สกุลเงินแลกเปลี่ยนท้องถิ่น — สกุลเงินชำระ" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "In a 70/30 debt/equity structure, how much equity is needed for a ฿300M project?",
+        he: "במבנה חוב/הון 70/30, כמה הון נדרש לפרויקט של ฿300M?",
+        th: "ในโครงสร้างหนี้/ทุน 70/30 ต้องใช้ทุนเท่าไหร่สำหรับโครงการ ฿300M?"
+      },
+      options: [
+        { en: "฿30M", he: "฿30M", th: "฿30M" },
+        { en: "฿90M", he: "฿90M", th: "฿90M" },
+        { en: "฿150M", he: "฿150M", th: "฿150M" },
+        { en: "฿210M", he: "฿210M", th: "฿210M" }
+      ],
+      correct: 1
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>

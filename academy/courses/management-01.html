@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1: Project Management for Solar — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .lifecycle-step { display: flex; gap: 16px; margin-bottom: 20px; padding: 16px 20px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); position: relative; }
+    .lifecycle-step .step-number { flex-shrink: 0; width: 36px; height: 36px; background: rgba(0,214,143,0.15); color: #00D68F; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9em; }
+    .lifecycle-step .step-content { flex: 1; }
+    .lifecycle-step .step-content h4 { color: #fff; margin: 0 0 4px 0; font-size: 1em; }
+    .lifecycle-step .step-content p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.92em; }
+    .lifecycle-step .step-timeline { color: #00D68F; font-size: 0.8em; font-weight: 600; margin-top: 4px; }
+    .highlight-box { margin: 20px 0; padding: 16px 20px; background: rgba(0,214,143,0.08); border-left: 4px solid #00D68F; border-radius: 0 8px 8px 0; }
+    .warning-box { margin: 20px 0; padding: 16px 20px; background: rgba(255,165,0,0.08); border-left: 4px solid #FFA500; border-radius: 0 8px 8px 0; }
+    .checklist-item { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-check { color: #00D68F; font-weight: 700; }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="management-01.html"><span data-en>Management & Operations</span><span data-he>ניהול ותפעול</span><span data-th>การจัดการและการดำเนินงาน</span></a>
+    <span>›</span>
+    <span data-en>Lesson 1</span><span data-he>שיעור 1</span><span data-th>บทที่ 1</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 1 of 6</span><span data-he>שיעור 1 מתוך 6</span><span data-th>บทที่ 1 จาก 6</span>
+    </div>
+    <h1>
+      <span data-en>Project Management for Solar</span>
+      <span data-he>ניהול פרויקטים סולאריים</span>
+      <span data-th>การบริหารโครงการโซลาร์</span>
+    </h1>
+    <p class="lesson-subtitle">
+      <span data-en>The complete solar project lifecycle — from development through commissioning to O&M. Timelines, subcontractor management, critical path, and Thailand-specific considerations.</span>
+      <span data-he>מחזור החיים המלא של פרויקט סולארי — מפיתוח דרך הפעלה ועד תפעול ותחזוקה. לוחות זמנים, ניהול קבלני משנה, נתיב קריטי ושיקולים ייחודיים לתאילנד.</span>
+      <span data-th>วงจรชีวิตโครงการโซลาร์ทั้งหมด — จากการพัฒนาผ่านการเปิดดำเนินการจนถึง O&M ระยะเวลา การจัดการผู้รับเหมาช่วง เส้นทางวิกฤต และข้อพิจารณาเฉพาะประเทศไทย</span>
+    </p>
+  </div>
+
+  <!-- Section 1: Solar Project Lifecycle -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🔄 The Solar Project Lifecycle</span>
+      <span data-he>🔄 מחזור חיי פרויקט סולארי</span>
+      <span data-th>🔄 วงจรชีวิตโครงการโซลาร์</span>
+    </h2>
+
+    <p>
+      <span data-en>Every utility-scale solar project follows six core phases. Understanding this lifecycle is essential for managing timelines, budgets, and stakeholder expectations.</span>
+      <span data-he>כל פרויקט סולארי בקנה מידה תשתיתי עובר שישה שלבים מרכזיים. הבנת מחזור החיים הזה חיונית לניהול לוחות זמנים, תקציבים וציפיות בעלי עניין.</span>
+      <span data-th>โครงการโซลาร์ขนาดสาธารณูปโภคทุกโครงการมี 6 ขั้นตอนหลัก การเข้าใจวงจรชีวิตนี้จำเป็นสำหรับการจัดการเวลา งบประมาณ และความคาดหวังของผู้มีส่วนได้ส่วนเสีย</span>
+    </p>
+
+    <div style="padding: 20px 0;">
+      <div class="lifecycle-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4><span data-en>Development</span><span data-he>פיתוח</span><span data-th>การพัฒนา</span></h4>
+          <p><span data-en>Site selection, feasibility study, land acquisition, environmental screening, community engagement, and initial permits.</span><span data-he>בחירת אתר, מחקר היתכנות, רכישת קרקע, סינון סביבתי, מעורבות קהילתית והיתרים ראשוניים.</span><span data-th>เลือกพื้นที่ ศึกษาความเป็นไปได้ จัดหาที่ดิน คัดกรองสิ่งแวดล้อม มีส่วนร่วมชุมชน และใบอนุญาตเบื้องต้น</span></p>
+          <div class="step-timeline"><span data-en>3–12 months</span><span data-he>3–12 חודשים</span><span data-th>3–12 เดือน</span></div>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4><span data-en>Design</span><span data-he>תכנון</span><span data-th>การออกแบบ</span></h4>
+          <p><span data-en>System sizing, panel layout, inverter selection, structural engineering, single-line diagrams, and detailed engineering drawings.</span><span data-he>מידות מערכת, פריסת פאנלים, בחירת ממירים, הנדסת מבנים, תרשימי קו יחיד ושרטוטי הנדסה מפורטים.</span><span data-th>กำหนดขนาดระบบ วางผังแผง เลือกอินเวอร์เตอร์ วิศวกรรมโครงสร้าง แผนภาพเส้นเดียว และแบบวิศวกรรมละเอียด</span></p>
+          <div class="step-timeline"><span data-en>1–3 months</span><span data-he>1–3 חודשים</span><span data-th>1–3 เดือน</span></div>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4><span data-en>Procurement</span><span data-he>רכש</span><span data-th>การจัดซื้อ</span></h4>
+          <p><span data-en>Equipment sourcing (panels, inverters, mounting, transformers, cables), vendor negotiations, logistics and shipping coordination.</span><span data-he>מקור ציוד (פאנלים, ממירים, מערכת תלייה, שנאים, כבלים), משא ומתן עם ספקים, תיאום לוגיסטיקה ומשלוח.</span><span data-th>จัดหาอุปกรณ์ (แผง อินเวอร์เตอร์ โครงสร้าง หม้อแปลง สายไฟ) เจรจาผู้ขาย ประสานโลจิสติกส์และการจัดส่ง</span></p>
+          <div class="step-timeline"><span data-en>2–4 months</span><span data-he>2–4 חודשים</span><span data-th>2–4 เดือน</span></div>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4><span data-en>Construction</span><span data-he>בנייה</span><span data-th>การก่อสร้าง</span></h4>
+          <p><span data-en>Site preparation, piling, mounting installation, panel mounting, inverter/transformer installation, cabling, and grid connection infrastructure.</span><span data-he>הכנת שטח, כלונסאות, התקנת מערכת תלייה, הרכבת פאנלים, התקנת ממירים/שנאים, כבילה ותשתית חיבור לרשת.</span><span data-th>เตรียมพื้นที่ ตอกเสาเข็ม ติดตั้งโครงสร้าง ติดตั้งแผง ติดตั้งอินเวอร์เตอร์/หม้อแปลง เดินสาย และโครงสร้างเชื่อมต่อกริด</span></p>
+          <div class="step-timeline"><span data-en>3–6 months (1–10 MW)</span><span data-he>3–6 חודשים (1–10 MW)</span><span data-th>3–6 เดือน (1–10 MW)</span></div>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4><span data-en>Commissioning</span><span data-he>הפעלה</span><span data-th>การทดสอบระบบ</span></h4>
+          <p><span data-en>System testing, PEA inspection, protection relay testing, performance ratio verification, punch-list completion, and COD declaration.</span><span data-he>בדיקת מערכת, ביקורת PEA, בדיקת ממסרי הגנה, אימות יחס ביצועים, השלמת רשימת ליקויים והכרזת COD.</span><span data-th>ทดสอบระบบ ตรวจสอบโดย PEA ทดสอบรีเลย์ป้องกัน ตรวจสอบอัตราส่วนประสิทธิภาพ แก้ไขข้อบกพร่อง และประกาศ COD</span></p>
+          <div class="step-timeline"><span data-en>2–4 weeks</span><span data-he>2–4 שבועות</span><span data-th>2–4 สัปดาห์</span></div>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <h4><span data-en>O&M (Operations & Maintenance)</span><span data-he>תפעול ותחזוקה (O&M)</span><span data-th>O&M (การดำเนินงานและบำรุงรักษา)</span></h4>
+          <p><span data-en>Monitoring, preventive maintenance, panel cleaning, inverter servicing, vegetation management, performance reporting — for 25+ years.</span><span data-he>ניטור, תחזוקה מונעת, ניקוי פאנלים, שירות ממירים, ניהול צמחייה, דוחות ביצועים — למשך 25+ שנים.</span><span data-th>ติดตาม บำรุงรักษาเชิงป้องกัน ทำความสะอาดแผง ซ่อมบำรุงอินเวอร์เตอร์ จัดการพืชพรรณ รายงานประสิทธิภาพ — เป็นเวลา 25+ ปี</span></p>
+          <div class="step-timeline"><span data-en>25–30 years</span><span data-he>25–30 שנים</span><span data-th>25–30 ปี</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Timelines -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>⏱️ Realistic Project Timelines</span>
+      <span data-he>⏱️ לוחות זמנים ריאליסטיים</span>
+      <span data-th>⏱️ ระยะเวลาโครงการจริง</span>
+    </h2>
+
+    <p>
+      <span data-en>Permitting is the longest phase in most Thai solar projects. Construction itself is relatively fast once all approvals are in place. Here are realistic timelines by project size:</span>
+      <span data-he>שלב ההיתרים הוא הארוך ביותר ברוב הפרויקטים הסולאריים בתאילנד. הבנייה עצמה מהירה יחסית ברגע שכל האישורים בידיים. להלן לוחות זמנים ריאליסטיים לפי גודל פרויקט:</span>
+      <span data-th>การขอใบอนุญาตเป็นขั้นตอนที่ใช้เวลานานที่สุดในโครงการโซลาร์ไทยส่วนใหญ่ การก่อสร้างจริงค่อนข้างเร็วเมื่อได้รับอนุมัติทั้งหมดแล้ว ระยะเวลาจริงตามขนาดโครงการ:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Project Size</span><span data-he>גודל פרויקט</span><span data-th>ขนาดโครงการ</span></th>
+            <th><span data-en>Permitting</span><span data-he>היתרים</span><span data-th>ใบอนุญาต</span></th>
+            <th><span data-en>Construction</span><span data-he>בנייה</span><span data-th>ก่อสร้าง</span></th>
+            <th><span data-en>Total to COD</span><span data-he>סה"כ עד COD</span><span data-th>รวมถึง COD</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Rooftop ≤1 MW</span><span data-he>גג ≤1 MW</span><span data-th>หลังคา ≤1 MW</span></td>
+            <td><span data-en>1–3 months</span><span data-he>1–3 חודשים</span><span data-th>1–3 เดือน</span></td>
+            <td><span data-en>1–2 months</span><span data-he>1–2 חודשים</span><span data-th>1–2 เดือน</span></td>
+            <td><span data-en>3–6 months</span><span data-he>3–6 חודשים</span><span data-th>3–6 เดือน</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Ground-mount 1–10 MW</span><span data-he>קרקעי 1–10 MW</span><span data-th>ติดตั้งบนดิน 1–10 MW</span></td>
+            <td><span data-en>6–12 months</span><span data-he>6–12 חודשים</span><span data-th>6–12 เดือน</span></td>
+            <td><span data-en>3–6 months</span><span data-he>3–6 חודשים</span><span data-th>3–6 เดือน</span></td>
+            <td><span data-en>10–18 months</span><span data-he>10–18 חודשים</span><span data-th>10–18 เดือน</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Large-scale >10 MW</span><span data-he>גדול >10 MW</span><span data-th>ขนาดใหญ่ >10 MW</span></td>
+            <td><span data-en>12–18 months</span><span data-he>12–18 חודשים</span><span data-th>12–18 เดือน</span></td>
+            <td><span data-en>6–12 months</span><span data-he>6–12 חודשים</span><span data-th>6–12 เดือน</span></td>
+            <td><span data-en>18–30 months</span><span data-he>18–30 חודשים</span><span data-th>18–30 เดือน</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en><strong>Key insight:</strong> Many permit phases can run in parallel. Start your ERC license, PEA grid application, and environmental review simultaneously to compress the timeline by 3–6 months.</span>
+        <span data-he><strong>תובנה מרכזית:</strong> שלבי היתרים רבים יכולים לרוץ במקביל. התחילו את רישיון ERC, בקשת רשת PEA וסקירה סביבתית במקביל כדי לקצר את לוח הזמנים ב-3–6 חודשים.</span>
+        <span data-th><strong>จุดสำคัญ:</strong> ขั้นตอนใบอนุญาตหลายอย่างทำพร้อมกันได้ เริ่มขอใบอนุญาต กกพ. สมัครกริด PEA และตรวจสอบสิ่งแวดล้อมพร้อมกันเพื่อลดเวลา 3–6 เดือน</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: Managing Subcontractors -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>👷 Managing Subcontractors</span>
+      <span data-he>👷 ניהול קבלני משנה</span>
+      <span data-th>👷 การจัดการผู้รับเหมาช่วง</span>
+    </h2>
+
+    <p>
+      <span data-en>Solar projects involve multiple specialized contractors. The project manager must coordinate them effectively to avoid delays and quality issues.</span>
+      <span data-he>פרויקטים סולאריים מערבים מספר קבלנים מתמחים. מנהל הפרויקט חייב לתאם ביניהם ביעילות כדי למנוע עיכובים ובעיות איכות.</span>
+      <span data-th>โครงการโซลาร์เกี่ยวข้องกับผู้รับเหมาเฉพาะทางหลายราย ผู้จัดการโครงการต้องประสานงานอย่างมีประสิทธิภาพเพื่อหลีกเลี่ยงความล่าช้าและปัญหาคุณภาพ</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Contractor Type</span><span data-he>סוג קבלן</span><span data-th>ประเภทผู้รับเหมา</span></th>
+            <th><span data-en>Scope</span><span data-he>תחום</span><span data-th>ขอบเขต</span></th>
+            <th><span data-en>Key Risks</span><span data-he>סיכונים עיקריים</span><span data-th>ความเสี่ยงหลัก</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>EPC Contractor</span><span data-he>קבלן EPC</span><span data-th>ผู้รับเหมา EPC</span></td>
+            <td><span data-en>Full turnkey: engineering, procurement, construction</span><span data-he>מפתח: הנדסה, רכש, בנייה</span><span data-th>เบ็ดเสร็จ: วิศวกรรม จัดซื้อ ก่อสร้าง</span></td>
+            <td><span data-en>Cost overruns, schedule delays</span><span data-he>חריגות עלות, עיכובי לוח זמנים</span><span data-th>ต้นทุนเกิน ล่าช้ากว่ากำหนด</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Electrical</span><span data-he>חשמל</span><span data-th>ไฟฟ้า</span></td>
+            <td><span data-en>AC/DC cabling, inverter wiring, transformer, switchgear</span><span data-he>כבילת AC/DC, חיווט ממירים, שנאי, מפסקים</span><span data-th>สาย AC/DC ต่อสายอินเวอร์เตอร์ หม้อแปลง สวิตช์เกียร์</span></td>
+            <td><span data-en>Grounding errors, protection relay misconfiguration</span><span data-he>שגיאות הארקה, תצורת ממסר הגנה שגויה</span><span data-th>ข้อผิดพลาดกราวด์ ตั้งค่ารีเลย์ป้องกันผิด</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Civil Works</span><span data-he>עבודות אזרחיות</span><span data-th>งานโยธา</span></td>
+            <td><span data-en>Site grading, drainage, access roads, fencing, foundations</span><span data-he>פילוס שטח, ניקוז, דרכי גישה, גידור, יסודות</span><span data-th>ปรับพื้นที่ ระบายน้ำ ถนนเข้า รั้ว ฐานราก</span></td>
+            <td><span data-en>Rain delays, soil conditions, drainage failure</span><span data-he>עיכובי גשם, תנאי קרקע, כשל ניקוז</span><span data-th>ฝนล่าช้า สภาพดิน ระบบระบายน้ำล้มเหลว</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Mounting / Structural</span><span data-he>מערכת תלייה / מבנה</span><span data-th>โครงสร้างรับแผง</span></td>
+            <td><span data-en>Racking systems, piling, tracker installation</span><span data-he>מערכות מדפים, כלונסאות, התקנת עוקבים</span><span data-th>ระบบแร็ค ตอกเสาเข็ม ติดตั้งแทรกเกอร์</span></td>
+            <td><span data-en>Wind load calculations, corrosion, alignment</span><span data-he>חישובי עומס רוח, קורוזיה, יישור</span><span data-th>คำนวณรับลม สนิม การจัดแนว</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="did-you-know">
+      <p>
+        <span data-en>💡 <strong>EPC vs. Multi-contract:</strong> For projects under 5 MW, a single EPC contract simplifies management but costs ~10–15% more. For larger projects, splitting into separate civil, electrical, and mounting contracts can save money but requires strong project management.</span>
+        <span data-he>💡 <strong>EPC לעומת רב-חוזי:</strong> לפרויקטים מתחת ל-5 MW, חוזה EPC יחיד מפשט את הניהול אך עולה ~10–15% יותר. לפרויקטים גדולים יותר, פיצול לחוזי אזרחי, חשמלי והרכבה נפרדים יכול לחסוך כסף אך דורש ניהול פרויקט חזק.</span>
+        <span data-th>💡 <strong>EPC เทียบกับหลายสัญญา:</strong> สำหรับโครงการต่ำกว่า 5 MW สัญญา EPC เดียวช่วยลดความซับซ้อนแต่แพงกว่า ~10–15% สำหรับโครงการใหญ่ การแยกสัญญางานโยธา ไฟฟ้า และโครงสร้างสามารถประหยัดเงินแต่ต้องมีการจัดการโครงการที่แข็งแกร่ง</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 4: Critical Path -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🎯 The Critical Path</span>
+      <span data-he>🎯 הנתיב הקריטי</span>
+      <span data-th>🎯 เส้นทางวิกฤต</span>
+    </h2>
+
+    <p>
+      <span data-en>The critical path determines the minimum time to reach COD. Any delay on these items directly delays the entire project. Here is the typical sequence for a ground-mount project in Thailand:</span>
+      <span data-he>הנתיב הקריטי קובע את הזמן המינימלי להגעה ל-COD. כל עיכוב בפריטים אלה מעכב ישירות את כל הפרויקט. להלן הרצף האופייני לפרויקט קרקעי בתאילנד:</span>
+      <span data-th>เส้นทางวิกฤตกำหนดเวลาขั้นต่ำถึง COD ความล่าช้าในรายการเหล่านี้ส่งผลล่าช้าต่อโครงการทั้งหมดโดยตรง ลำดับทั่วไปสำหรับโครงการติดตั้งบนดินในไทย:</span>
+    </p>
+
+    <div style="padding: 10px 0;">
+      <div class="lifecycle-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4><span data-en>Land Secured</span><span data-he>קרקע מובטחת</span><span data-th>ได้ที่ดิน</span></h4>
+          <p><span data-en>Chanote title or registered lease — everything starts here</span><span data-he>בעלות Chanote או חכירה רשומה — הכל מתחיל כאן</span><span data-th>โฉนดหรือสัญญาเช่าจดทะเบียน — ทุกอย่างเริ่มที่นี่</span></p>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4><span data-en>Permits Filed</span><span data-he>היתרים הוגשו</span><span data-th>ยื่นใบอนุญาต</span></h4>
+          <p><span data-en>ERC VSPP, IEE, factory license — file in parallel</span><span data-he>ERC VSPP, IEE, רישיון מפעל — הגישו במקביל</span><span data-th>กกพ. VSPP, IEE, ใบอนุญาตโรงงาน — ยื่นพร้อมกัน</span></p>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4><span data-en>Grid Connection Approved</span><span data-he>חיבור לרשת אושר</span><span data-th>อนุมัติเชื่อมต่อกริด</span></h4>
+          <p><span data-en>PEA interconnection study complete — the biggest bottleneck</span><span data-he>מחקר חיבור PEA הושלם — צוואר הבקבוק הגדול ביותר</span><span data-th>การศึกษาเชื่อมต่อ PEA เสร็จ — คอขวดใหญ่ที่สุด</span></p>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4><span data-en>Equipment Delivered</span><span data-he>ציוד סופק</span><span data-th>อุปกรณ์มาถึง</span></h4>
+          <p><span data-en>Panels, inverters, transformers on-site — 8–16 week lead times</span><span data-he>פאנלים, ממירים, שנאים באתר — זמני אספקה 8–16 שבועות</span><span data-th>แผง อินเวอร์เตอร์ หม้อแปลงถึงไซต์ — เวลานำ 8–16 สัปดาห์</span></p>
+        </div>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4><span data-en>Installation Complete</span><span data-he>התקנה הושלמה</span><span data-th>ติดตั้งเสร็จ</span></h4>
+          <p><span data-en>Construction done, PE certification, ready for PEA inspection</span><span data-he>בנייה הסתיימה, אישור PE, מוכן לביקורת PEA</span><span data-th>ก่อสร้างเสร็จ รับรอง วศ. พร้อมตรวจสอบ PEA</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <p>
+        <span data-en>⚠️ <strong>Biggest delays:</strong> PEA grid connection (2–6 months) and equipment lead times (8–16 weeks from China/SEA). Order equipment as soon as design is finalized — don't wait for all permits.</span>
+        <span data-he>⚠️ <strong>העיכובים הגדולים:</strong> חיבור רשת PEA (2–6 חודשים) וזמני אספקת ציוד (8–16 שבועות מסין/דרום-מזרח אסיה). הזמינו ציוד ברגע שהתכנון סופי — אל תחכו לכל ההיתרים.</span>
+        <span data-th>⚠️ <strong>ความล่าช้าหลัก:</strong> เชื่อมต่อกริด PEA (2–6 เดือน) และเวลานำอุปกรณ์ (8–16 สัปดาห์จากจีน/อาเซียน) สั่งอุปกรณ์ทันทีที่ออกแบบเสร็จ — อย่ารอใบอนุญาตทั้งหมด</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5: Milestones Checklist -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>✅ Project Milestones Checklist</span>
+      <span data-he>✅ רשימת אבני דרך</span>
+      <span data-th>✅ รายการจุดสำคัญของโครงการ</span>
+    </h2>
+
+    <p>
+      <span data-en>Track these milestones to keep your project on schedule. Each milestone should have a target date and responsible party assigned:</span>
+      <span data-he>עקבו אחר אבני הדרך הללו כדי לשמור על הפרויקט בלוח הזמנים. לכל אבן דרך יש לקבוע תאריך יעד וגורם אחראי:</span>
+      <span data-th>ติดตามจุดสำคัญเหล่านี้เพื่อให้โครงการตรงเวลา แต่ละจุดควรมีวันที่เป้าหมายและผู้รับผิดชอบ:</span>
+    </p>
+
+    <div style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: 16px 20px; border: 1px solid rgba(255,255,255,0.08);">
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>Company registered at DBD</span><span data-he>חברה נרשמה ב-DBD</span><span data-th>จดทะเบียนบริษัทที่ DBD</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>Land rights secured (Chanote/lease)</span><span data-he>זכויות קרקע מובטחות (Chanote/חכירה)</span><span data-th>ได้สิทธิ์ที่ดิน (โฉนด/เช่า)</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>Community approval obtained (LAO)</span><span data-he>אישור קהילתי התקבל (LAO)</span><span data-th>ได้รับอนุมัติชุมชน (อบต.)</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>IEE/EIA submitted to ONEP</span><span data-he>IEE/EIA הוגש ל-ONEP</span><span data-th>ยื่น IEE/EIA ต่อ สผ.</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>ERC VSPP license application filed</span><span data-he>בקשת רישיון VSPP הוגשה ל-ERC</span><span data-th>ยื่นขอใบอนุญาต VSPP ต่อ กกพ.</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>PEA grid connection application submitted</span><span data-he>בקשת חיבור רשת הוגשה ל-PEA</span><span data-th>ยื่นขอเชื่อมต่อกริด PEA</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>System design finalized (single-line diagram signed by PE)</span><span data-he>תכנון מערכת סופי (תרשים קו יחיד חתום PE)</span><span data-th>ออกแบบระบบเสร็จ (แผนภาพเส้นเดียวลงนาม วศ.)</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>Equipment ordered (panels, inverters, transformer)</span><span data-he>ציוד הוזמן (פאנלים, ממירים, שנאי)</span><span data-th>สั่งอุปกรณ์ (แผง อินเวอร์เตอร์ หม้อแปลง)</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>Construction permit obtained</span><span data-he>היתר בנייה התקבל</span><span data-th>ได้ใบอนุญาตก่อสร้าง</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>Construction complete — punch-list clear</span><span data-he>בנייה הושלמה — רשימת ליקויים נקייה</span><span data-th>ก่อสร้างเสร็จ — แก้ไขข้อบกพร่องครบ</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>PEA inspection passed</span><span data-he>ביקורת PEA עברה</span><span data-th>ผ่านการตรวจสอบ PEA</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>PPA executed</span><span data-he>PPA נחתם</span><span data-th>ลงนาม PPA</span></div>
+      <div class="checklist-item"><span class="checklist-check">☐</span> <span data-en>COD declared — revenue begins!</span><span data-he>COD הוכרז — הכנסות מתחילות!</span><span data-th>ประกาศ COD — เริ่มมีรายได้!</span></div>
+    </div>
+  </section>
+
+  <!-- Section 6: Thailand-Specific Considerations -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🇹🇭 Thailand-Specific Considerations</span>
+      <span data-he>🇹🇭 שיקולים ייחודיים לתאילנד</span>
+      <span data-th>🇹🇭 ข้อพิจารณาเฉพาะประเทศไทย</span>
+    </h2>
+
+    <p>
+      <span data-en>Thailand's tropical climate and regulatory environment create unique project management challenges. Plan around these factors:</span>
+      <span data-he>האקלים הטרופי של תאילנד והסביבה הרגולטורית יוצרים אתגרי ניהול פרויקטים ייחודיים. תכננו סביב גורמים אלה:</span>
+      <span data-th>สภาพอากาศเขตร้อนและสภาพแวดล้อมด้านกฎระเบียบของไทยสร้างความท้าทายในการจัดการโครงการ วางแผนตามปัจจัยเหล่านี้:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Factor</span><span data-he>גורם</span><span data-th>ปัจจัย</span></th>
+            <th><span data-en>Impact</span><span data-he>השפעה</span><span data-th>ผลกระทบ</span></th>
+            <th><span data-en>Mitigation</span><span data-he>מיטיגציה</span><span data-th>การลดผลกระทบ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Rainy Season (May–Oct)</span><span data-he>עונת גשמים (מאי–אוקטובר)</span><span data-th>ฤดูฝน (พ.ค.–ต.ค.)</span></td>
+            <td><span data-en>Civil works halt, site flooding, access road washout</span><span data-he>עבודות אזרחיות נעצרות, הצפה, שטיפת דרכי גישה</span><span data-th>งานโยธาหยุด น้ำท่วมไซต์ ถนนเข้าถูกน้ำพัด</span></td>
+            <td><span data-en>Schedule civil works Nov–Apr; build drainage first</span><span data-he>תזמנו עבודות אזרחיות נוב–אפר; בנו ניקוז קודם</span><span data-th>จัดงานโยธา พ.ย.–เม.ย.; สร้างระบบระบายน้ำก่อน</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>PEA Scheduling</span><span data-he>תזמון PEA</span><span data-th>ตารางเวลา PEA</span></td>
+            <td><span data-en>Limited inspection slots, regional office backlogs</span><span data-he>חלונות ביקורת מוגבלים, צוואר בקבוק במשרדים אזוריים</span><span data-th>ช่วงตรวจสอบจำกัด สำนักงานภูมิภาคงานค้าง</span></td>
+            <td><span data-en>Apply early; build relationship with local PEA office</span><span data-he>הגישו מוקדם; בנו קשר עם משרד PEA מקומי</span><span data-th>ยื่นแต่เนิ่นๆ สร้างความสัมพันธ์กับสำนักงาน PEA ท้องถิ่น</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Holiday Shutdowns</span><span data-he>חופשות</span><span data-th>วันหยุดราชการ</span></td>
+            <td><span data-en>Songkran (Apr), New Year — government offices close 1–2 weeks</span><span data-he>סונגקראן (אפר), שנה חדשה — משרדי ממשלה סגורים 1–2 שבועות</span><span data-th>สงกรานต์ (เม.ย.) ปีใหม่ — หน่วยงานราชการปิด 1–2 สัปดาห์</span></td>
+            <td><span data-en>File permits before holidays; buffer 2 weeks in schedule</span><span data-he>הגישו היתרים לפני חופשות; הוסיפו 2 שבועות בלוח זמנים</span><span data-th>ยื่นใบอนุญาตก่อนวันหยุด เผื่อเวลา 2 สัปดาห์ในตาราง</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Extreme Heat (Mar–May)</span><span data-he>חום קיצוני (מרץ–מאי)</span><span data-th>ร้อนจัด (มี.ค.–พ.ค.)</span></td>
+            <td><span data-en>Worker productivity drops 20–30%, heat illness risk</span><span data-he>פרודוקטיביות עובדים יורדת 20–30%, סיכון מחלת חום</span><span data-th>ผลผลิตคนงานลด 20–30% เสี่ยงเจ็บป่วยจากความร้อน</span></td>
+            <td><span data-en>Early morning shifts (6 AM–2 PM), shade breaks, water stations</span><span data-he>משמרות בוקר (6:00–14:00), הפסקות צל, עמדות מים</span><span data-th>ทำงานช่วงเช้า (6.00–14.00) พักร่ม จุดน้ำดื่ม</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en><strong>Best construction window:</strong> November–February (cool, dry season). Start civil works then and aim for electrical installation by March–April. This gives you the best weather for every phase.</span>
+        <span data-he><strong>חלון בנייה אופטימלי:</strong> נובמבר–פברואר (עונה קרירה ויבשה). התחילו עבודות אזרחיות אז וכוונו להתקנת חשמל עד מרץ–אפריל. זה נותן מזג אוויר אופטימלי לכל שלב.</span>
+        <span data-th><strong>ช่วงก่อสร้างที่ดีที่สุด:</strong> พ.ย.–ก.พ. (ฤดูเย็น แห้ง) เริ่มงานโยธาช่วงนี้และตั้งเป้าติดตั้งไฟฟ้าภายใน มี.ค.–เม.ย. ให้สภาพอากาศดีที่สุดทุกขั้นตอน</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <!-- Complete Button -->
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <div class="lesson-nav">
+    <a href="../index.html" class="lesson-nav-btn prev">
+      <span data-en>← Back to Academy</span>
+      <span data-he>← חזרה לאקדמיה</span>
+      <span data-th>← กลับสู่ Academy</span>
+    </a>
+    <a href="management-02.html" class="lesson-nav-btn next">
+      <span data-en>Next: Financial Modeling — IRR, Payback, LCOE →</span>
+      <span data-he>הבא: מודל פיננסי — IRR, החזר, LCOE →</span>
+      <span data-th>ถัดไป: แบบจำลองการเงิน — IRR, Payback, LCOE →</span>
+    </a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p><span data-en>© 2026 TM Energy Academy</span><span data-he>© 2026 TM Energy Academy</span><span data-th>© 2026 TM Energy Academy</span></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('management', 1);
+  if (typeof initQuiz === 'function') initQuiz('management', 1, [
+    {
+      question: {
+        en: "What are the six phases of a solar project lifecycle?",
+        he: "מהם ששת השלבים במחזור חיי פרויקט סולארי?",
+        th: "วงจรชีวิตโครงการโซลาร์มี 6 ขั้นตอนอะไรบ้าง?"
+      },
+      options: [
+        { en: "Planning, Building, Testing, Selling, Closing, Archiving", he: "תכנון, בנייה, בדיקה, מכירה, סגירה, ארכיון", th: "วางแผน สร้าง ทดสอบ ขาย ปิด จัดเก็บ" },
+        { en: "Development, Design, Procurement, Construction, Commissioning, O&M", he: "פיתוח, תכנון, רכש, בנייה, הפעלה, תפעול ותחזוקה", th: "พัฒนา ออกแบบ จัดซื้อ ก่อสร้าง ทดสอบระบบ O&M" },
+        { en: "Financing, Permitting, Building, Connecting, Operating, Decommissioning", he: "מימון, היתרים, בנייה, חיבור, תפעול, פירוק", th: "การเงิน ใบอนุญาต สร้าง เชื่อมต่อ ดำเนินการ รื้อถอน" },
+        { en: "Research, Marketing, Sales, Installation, Billing, Support", he: "מחקר, שיווק, מכירות, התקנה, חיוב, תמיכה", th: "วิจัย การตลาด ขาย ติดตั้ง เรียกเก็บเงิน สนับสนุน" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is typically the biggest bottleneck in a Thai solar project?",
+        he: "מהו בדרך כלל צוואר הבקבוק הגדול ביותר בפרויקט סולארי תאילנדי?",
+        th: "อะไรเป็นคอขวดใหญ่ที่สุดในโครงการโซลาร์ไทย?"
+      },
+      options: [
+        { en: "Panel manufacturing delays", he: "עיכובי ייצור פאנלים", th: "ความล่าช้าในการผลิตแผง" },
+        { en: "PEA grid connection approval (2–6 months)", he: "אישור חיבור רשת PEA (2–6 חודשים)", th: "การอนุมัติเชื่อมต่อกริด PEA (2–6 เดือน)" },
+        { en: "Finding workers", he: "מציאת עובדים", th: "หาคนงาน" },
+        { en: "Company registration", he: "רישום חברה", th: "จดทะเบียนบริษัท" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "When is the best construction window in Thailand?",
+        he: "מהו חלון הבנייה האופטימלי בתאילנד?",
+        th: "ช่วงก่อสร้างที่ดีที่สุดในไทยคือเมื่อไหร่?"
+      },
+      options: [
+        { en: "May–October (rainy season, cheaper labor)", he: "מאי–אוקטובר (עונת גשמים, עבודה זולה)", th: "พ.ค.–ต.ค. (ฤดูฝน แรงงานถูก)" },
+        { en: "November–February (cool, dry season)", he: "נובמבר–פברואר (עונה קרירה ויבשה)", th: "พ.ย.–ก.พ. (ฤดูเย็น แห้ง)" },
+        { en: "March–April (hottest, longest days)", he: "מרץ–אפריל (הכי חם, ימים ארוכים)", th: "มี.ค.–เม.ย. (ร้อนสุด วันยาวสุด)" },
+        { en: "Any time — weather doesn't affect solar construction", he: "כל זמן — מזג האוויר לא משפיע על בניית סולארי", th: "เมื่อไหร่ก็ได้ — สภาพอากาศไม่กระทบการก่อสร้างโซลาร์" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the advantage of a single EPC contract for projects under 5 MW?",
+        he: "מהו היתרון של חוזה EPC יחיד לפרויקטים מתחת ל-5 MW?",
+        th: "ข้อดีของสัญญา EPC เดียวสำหรับโครงการต่ำกว่า 5 MW คืออะไร?"
+      },
+      options: [
+        { en: "Always the cheapest option", he: "תמיד האופציה הזולה ביותר", th: "ถูกที่สุดเสมอ" },
+        { en: "Simplifies management — one contractor, one contract", he: "מפשט ניהול — קבלן אחד, חוזה אחד", th: "ลดความซับซ้อน — ผู้รับเหมาเดียว สัญญาเดียว" },
+        { en: "Required by Thai law", he: "נדרש על ידי חוק תאילנדי", th: "กฎหมายไทยกำหนด" },
+        { en: "Eliminates the need for a PE engineer", he: "מבטל את הצורך במהנדס PE", th: "ไม่ต้องมี วศ." }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "How long does construction typically take for a 5 MW ground-mount project?",
+        he: "כמה זמן לוקחת בנייה בדרך כלל לפרויקט קרקעי של 5 MW?",
+        th: "การก่อสร้างโครงการ 5 MW ติดตั้งบนดินใช้เวลาเท่าไหร่?"
+      },
+      options: [
+        { en: "1–2 weeks", he: "1–2 שבועות", th: "1–2 สัปดาห์" },
+        { en: "3–6 months", he: "3–6 חודשים", th: "3–6 เดือน" },
+        { en: "12–18 months", he: "12–18 חודשים", th: "12–18 เดือน" },
+        { en: "2–3 years", he: "2–3 שנים", th: "2–3 ปี" }
+      ],
+      correct: 1
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>

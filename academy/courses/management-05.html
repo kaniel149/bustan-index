@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 5: Safety Management — JSA & Risk Assessment — TM Energy Academy</title>
+  <link rel="stylesheet" href="../assets/academy.css">
+  <script src="../assets/academy.js" defer></script>
+  <style>
+    .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .risk-matrix { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .risk-matrix th, .risk-matrix td { padding: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9em; }
+    .risk-low { background: rgba(0,214,143,0.15); color: #00D68F; }
+    .risk-med { background: rgba(255,165,0,0.15); color: #FFA500; }
+    .risk-high { background: rgba(255,69,0,0.15); color: #FF4500; }
+    .risk-extreme { background: rgba(220,20,60,0.2); color: #DC143C; }
+    .safety-card { margin: 20px 0; padding: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .safety-card h3 { color: #00D68F; margin-bottom: 12px; }
+    .warning-box { margin: 20px 0; padding: 16px 20px; background: rgba(255,69,0,0.08); border-left: 4px solid #FF4500; border-radius: 0 8px 8px 0; }
+    .warning-box strong { color: #FF4500; }
+    .highlight-box { margin: 20px 0; padding: 16px 20px; background: rgba(0,214,143,0.08); border-left: 4px solid #00D68F; border-radius: 0 8px 8px 0; }
+    .jsa-steps { counter-reset: jsa-step; list-style: none; padding: 0; }
+    .jsa-steps li { counter-increment: jsa-step; padding: 12px 16px 12px 48px; position: relative; margin-bottom: 8px; background: rgba(255,255,255,0.02); border-radius: 8px; border-left: 3px solid rgba(0,214,143,0.3); }
+    .jsa-steps li::before { content: counter(jsa-step); position: absolute; left: 12px; top: 12px; width: 24px; height: 24px; background: rgba(0,214,143,0.15); color: #00D68F; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85em; }
+    .ppe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 20px 0; }
+    .ppe-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center; }
+    .ppe-item .ppe-icon { font-size: 2em; margin-bottom: 8px; }
+    .ppe-item .ppe-name { font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .ppe-item .ppe-desc { font-size: 0.85em; color: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body data-lang="en">
+<div class="bg-ambient"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">
+      <img src="../../proposals/tm-logo.png" alt="TM Energy">
+      <span>Academy</span>
+    </a>
+    <nav class="header-nav">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="he">עב</button>
+        <button class="lang-btn" data-lang="th">ไทย</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="lesson-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html"><span data-en>Academy</span><span data-he>אקדמיה</span><span data-th>Academy</span></a>
+    <span>›</span>
+    <a href="management-01.html"><span data-en>Management & Operations</span><span data-he>ניהול ותפעול</span><span data-th>การจัดการและปฏิบัติการ</span></a>
+    <span>›</span>
+    <span data-en>Lesson 5</span><span data-he>שיעור 5</span><span data-th>บทที่ 5</span>
+  </div>
+
+  <div class="lesson-header fade-up">
+    <div class="lesson-number">
+      <span data-en>Lesson 5 of 6</span><span data-he>שיעור 5 מתוך 6</span><span data-th>บทที่ 5 จาก 6</span>
+    </div>
+    <h1>
+      <span data-en>Safety Management — JSA & Risk Assessment</span>
+      <span data-he>ניהול בטיחות — JSA והערכת סיכונים</span>
+      <span data-th>การจัดการความปลอดภัย — JSA และการประเมินความเสี่ยง</span>
+    </h1>
+    <p class="lesson-subtitle">
+      <span data-en>Falls are the #1 cause of injury in solar. Learn how to build a safety culture, conduct Job Safety Analysis, and protect your team — from PPE to emergency response.</span>
+      <span data-he>נפילות הן הגורם מספר 1 לפציעות בסולאר. למדו כיצד לבנות תרבות בטיחות, לבצע ניתוח בטיחות עבודה, ולהגן על הצוות — מציוד מגן ועד תגובת חירום.</span>
+      <span data-th>การตกจากที่สูงเป็นสาเหตุอันดับ 1 ของการบาดเจ็บในงานโซลาร์ เรียนรู้วิธีสร้างวัฒนธรรมความปลอดภัย ทำ Job Safety Analysis และปกป้องทีมของคุณ — ตั้งแต่ PPE ถึงการตอบสนองฉุกเฉิน</span>
+    </p>
+  </div>
+
+  <!-- Section 1: Safety Culture -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🛡️ Safety Culture in Solar: Why It Matters</span>
+      <span data-he>🛡️ תרבות בטיחות בסולאר: למה זה חשוב</span>
+      <span data-th>🛡️ วัฒนธรรมความปลอดภัยในโซลาร์: ทำไมจึงสำคัญ</span>
+    </h2>
+
+    <p>
+      <span data-en>Solar installation is one of the fastest-growing trades — but also one of the most dangerous. Workers face a unique combination of hazards: working at heights, handling live electrical systems, and operating in extreme heat. <strong>Falls from roofs are the #1 cause of injury and death in the solar industry.</strong></span>
+      <span data-he>התקנת סולארי היא אחד המקצועות הצומחים ביותר — אבל גם אחד המסוכנים ביותר. עובדים מתמודדים עם שילוב ייחודי של סכנות: עבודה בגובה, טיפול במערכות חשמל חיות, ועבודה בחום קיצוני. <strong>נפילות מגגות הן הגורם מספר 1 לפציעות ומוות בתעשיית הסולאר.</strong></span>
+      <span data-th>การติดตั้งโซลาร์เป็นหนึ่งในอาชีพที่เติบโตเร็วที่สุด — แต่ก็เป็นหนึ่งในอาชีพที่อันตรายที่สุดเช่นกัน คนงานเผชิญกับอันตรายที่ผสมผสานกัน: ทำงานบนที่สูง จัดการระบบไฟฟ้าที่มีกระแส และทำงานในความร้อนจัด <strong>การตกจากหลังคาเป็นสาเหตุอันดับ 1 ของการบาดเจ็บและเสียชีวิตในอุตสาหกรรมโซลาร์</strong></span>
+    </p>
+
+    <div class="warning-box">
+      <p>
+        <span data-en><strong>⚠️ The Reality:</strong> According to OSHA, falls account for over 35% of all construction fatalities. In solar specifically, electrical shock, arc flash, and heat stroke add additional risks that most trades don't face simultaneously.</span>
+        <span data-he><strong>⚠️ המציאות:</strong> לפי OSHA, נפילות מהוות למעלה מ-35% ממקרי המוות בבנייה. בסולאר ספציפית, מכת חשמל, הבזק קשת ומכת חום מוסיפים סיכונים נוספים שרוב המקצועות לא מתמודדים איתם בו-זמנית.</span>
+        <span data-th><strong>⚠️ ความจริง:</strong> ตามข้อมูลของ OSHA การตกจากที่สูงคิดเป็นกว่า 35% ของการเสียชีวิตในงานก่อสร้าง ในงานโซลาร์โดยเฉพาะ ไฟฟ้าช็อต อาร์คแฟลช และฮีทสโตรกเพิ่มความเสี่ยงที่อาชีพอื่นไม่ต้องเผชิญพร้อมกัน</span>
+      </p>
+    </div>
+
+    <p>
+      <span data-en>A strong safety culture means every team member — from the project manager to the newest installer — takes responsibility for safety. It's not about paperwork; it's about going home safe every day.</span>
+      <span data-he>תרבות בטיחות חזקה משמעותה שכל חבר צוות — ממנהל הפרויקט ועד המתקין החדש ביותר — לוקח אחריות על הבטיחות. זה לא עניין של ניירת; זה לחזור הביתה בשלום כל יום.</span>
+      <span data-th>วัฒนธรรมความปลอดภัยที่แข็งแกร่งหมายความว่าสมาชิกทุกคนในทีม — ตั้งแต่ผู้จัดการโครงการไปจนถึงช่างติดตั้งใหม่ล่าสุด — รับผิดชอบเรื่องความปลอดภัย ไม่ใช่เรื่องเอกสาร แต่เป็นเรื่องการกลับบ้านอย่างปลอดภัยทุกวัน</span>
+    </p>
+
+    <div class="key-concept">
+      <h4><span data-en>TM Energy Safety Principle</span><span data-he>עקרון בטיחות TM Energy</span><span data-th>หลักการความปลอดภัย TM Energy</span></h4>
+      <p>
+        <span data-en><strong>"No job is so urgent that it cannot be done safely."</strong> Every worker has the right — and the duty — to stop work if conditions are unsafe. This is non-negotiable.</span>
+        <span data-he><strong>"שום עבודה אינה כל כך דחופה שלא ניתן לבצעה בבטחה."</strong> לכל עובד יש את הזכות — והחובה — לעצור עבודה אם התנאים אינם בטוחים. זה לא ניתן למשא ומתן.</span>
+        <span data-th><strong>"ไม่มีงานไหนเร่งด่วนจนทำอย่างปลอดภัยไม่ได้"</strong> คนงานทุกคนมีสิทธิ์ — และหน้าที่ — ที่จะหยุดงานหากสภาพไม่ปลอดภัย เรื่องนี้ไม่มีข้อยกเว้น</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Job Safety Analysis -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📋 Job Safety Analysis (JSA) — Step by Step</span>
+      <span data-he>📋 ניתוח בטיחות עבודה (JSA) — שלב אחר שלב</span>
+      <span data-th>📋 การวิเคราะห์ความปลอดภัยในงาน (JSA) — ทีละขั้นตอน</span>
+    </h2>
+
+    <p>
+      <span data-en>A Job Safety Analysis (JSA) breaks every task into steps and identifies hazards <strong>before</strong> work begins. Every solar installation must have a completed JSA reviewed by the team.</span>
+      <span data-he>ניתוח בטיחות עבודה (JSA) מפרק כל משימה לשלבים ומזהה סכנות <strong>לפני</strong> שהעבודה מתחילה. כל התקנה סולארית חייבת לכלול JSA שלם שנבדק על ידי הצוות.</span>
+      <span data-th>การวิเคราะห์ความปลอดภัยในงาน (JSA) แบ่งทุกงานเป็นขั้นตอนและระบุอันตราย<strong>ก่อน</strong>เริ่มงาน การติดตั้งโซลาร์ทุกครั้งต้องมี JSA ที่สมบูรณ์และทีมตรวจสอบแล้ว</span>
+    </p>
+
+    <ol class="jsa-steps">
+      <li>
+        <span data-en><strong>Select the job</strong> — Choose the specific task (e.g., "Mounting panels on metal roof at 8m height").</span>
+        <span data-he><strong>בחרו את העבודה</strong> — בחרו את המשימה הספציפית (למשל, "הרכבת פאנלים על גג מתכת בגובה 8 מטר").</span>
+        <span data-th><strong>เลือกงาน</strong> — เลือกงานเฉพาะ (เช่น "ติดตั้งแผงบนหลังคาโลหะสูง 8 เมตร")</span>
+      </li>
+      <li>
+        <span data-en><strong>Break the job into steps</strong> — List each step in sequence: access roof → set up fall protection → transport panels → install mounting rails → mount panels → wire connections.</span>
+        <span data-he><strong>פרקו את העבודה לשלבים</strong> — רשמו כל שלב ברצף: גישה לגג → התקנת הגנת נפילה → העברת פאנלים → התקנת מסילות → הרכבת פאנלים → חיבורי חשמל.</span>
+        <span data-th><strong>แบ่งงานเป็นขั้นตอน</strong> — ลิสต์แต่ละขั้นตอนตามลำดับ: ขึ้นหลังคา → ติดตั้งอุปกรณ์ป้องกันการตก → ขนย้ายแผง → ติดตั้งรางยึด → ติดแผง → เดินสายไฟ</span>
+      </li>
+      <li>
+        <span data-en><strong>Identify hazards for each step</strong> — What could go wrong? Falls, electrical shock, cuts, heat exhaustion, dropped objects, pinch points.</span>
+        <span data-he><strong>זהו סכנות בכל שלב</strong> — מה יכול להשתבש? נפילות, מכת חשמל, חתכים, תשישות חום, נפילת חפצים, נקודות מעיכה.</span>
+        <span data-th><strong>ระบุอันตรายแต่ละขั้นตอน</strong> — อะไรอาจผิดพลาด? ตก ไฟฟ้าช็อต บาดแผล หมดแรงจากความร้อน ของตก จุดหนีบ</span>
+      </li>
+      <li>
+        <span data-en><strong>Determine preventive measures</strong> — For each hazard, what controls eliminate or reduce the risk? Engineering controls → Administrative controls → PPE (in that order of preference).</span>
+        <span data-he><strong>קבעו אמצעי מניעה</strong> — לכל סכנה, אילו בקרות מבטלות או מפחיתות את הסיכון? בקרות הנדסיות → בקרות מנהליות → ציוד מגן אישי (בסדר עדיפות זה).</span>
+        <span data-th><strong>กำหนดมาตรการป้องกัน</strong> — สำหรับแต่ละอันตราย มีการควบคุมอะไรที่กำจัดหรือลดความเสี่ยง? การควบคุมทางวิศวกรรม → การควบคุมด้านการบริหาร → PPE (ตามลำดับความสำคัญ)</span>
+      </li>
+      <li>
+        <span data-en><strong>Review with the entire crew</strong> — Every team member signs the JSA before work starts. If conditions change (weather, scope), update the JSA.</span>
+        <span data-he><strong>סקרו עם כל הצוות</strong> — כל חבר צוות חותם על ה-JSA לפני תחילת העבודה. אם התנאים משתנים (מזג אוויר, היקף), עדכנו את ה-JSA.</span>
+        <span data-th><strong>ทบทวนกับทีมทั้งหมด</strong> — สมาชิกทุกคนเซ็น JSA ก่อนเริ่มงาน หากสภาพเปลี่ยน (สภาพอากาศ ขอบเขตงาน) ต้องอัปเดต JSA</span>
+      </li>
+    </ol>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Job Step</span><span data-he>שלב עבודה</span><span data-th>ขั้นตอนงาน</span></th>
+            <th><span data-en>Hazard</span><span data-he>סכנה</span><span data-th>อันตราย</span></th>
+            <th><span data-en>Control Measure</span><span data-he>אמצעי בקרה</span><span data-th>มาตรการควบคุม</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Access roof via ladder</span><span data-he>גישה לגג דרך סולם</span><span data-th>ขึ้นหลังคาด้วยบันได</span></td>
+            <td><span data-en>Fall from ladder</span><span data-he>נפילה מסולם</span><span data-th>ตกจากบันได</span></td>
+            <td><span data-en>3-point contact, ladder secured, spotter at base</span><span data-he>מגע 3 נקודות, סולם מאובטח, תצפיתן בבסיס</span><span data-th>จุดสัมผัส 3 จุด บันไดยึดแน่น คนดูแลที่ฐาน</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Install mounting rails</span><span data-he>התקנת מסילות</span><span data-th>ติดตั้งรางยึด</span></td>
+            <td><span data-en>Fall from roof edge</span><span data-he>נפילה מקצה הגג</span><span data-th>ตกจากขอบหลังคา</span></td>
+            <td><span data-en>Harness + lanyard, guardrails, safety net</span><span data-he>רתמה + חבל עגינה, מעקות, רשת בטיחות</span><span data-th>สายรัด + เชือกนิรภัย ราวกันตก ตาข่ายนิรภัย</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>DC wiring connections</span><span data-he>חיבורי חשמל DC</span><span data-th>การเดินสาย DC</span></td>
+            <td><span data-en>Electrical shock, arc flash</span><span data-he>מכת חשמל, הבזק קשת</span><span data-th>ไฟฟ้าช็อต อาร์คแฟลช</span></td>
+            <td><span data-en>Insulated gloves, LOTO, cover panels during wiring</span><span data-he>כפפות מבודדות, LOTO, כיסוי פאנלים בזמן חיווט</span><span data-th>ถุงมือฉนวน LOTO คลุมแผงขณะเดินสาย</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Work during midday</span><span data-he>עבודה בצהריים</span><span data-th>ทำงานตอนเที่ยง</span></td>
+            <td><span data-en>Heat stroke, dehydration</span><span data-he>מכת חום, התייבשות</span><span data-th>ฮีทสโตรก ขาดน้ำ</span></td>
+            <td><span data-en>Mandatory water breaks, shade rest, buddy system</span><span data-he>הפסקות מים חובה, מנוחה בצל, מערכת חבר</span><span data-th>พักดื่มน้ำบังคับ พักในร่ม ระบบเพื่อนคู่หู</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 3: Risk Assessment Matrix -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📊 Risk Assessment Matrix: Likelihood × Severity</span>
+      <span data-he>📊 מטריצת הערכת סיכונים: סבירות × חומרה</span>
+      <span data-th>📊 เมทริกซ์ประเมินความเสี่ยง: โอกาส × ความรุนแรง</span>
+    </h2>
+
+    <p>
+      <span data-en>Every hazard is scored by combining how likely it is to happen with how severe the consequences would be. This determines the risk level and required action.</span>
+      <span data-he>כל סכנה מדורגת על ידי שילוב הסבירות שזה יקרה עם חומרת ההשלכות. זה קובע את רמת הסיכון והפעולה הנדרשת.</span>
+      <span data-th>ทุกอันตรายถูกให้คะแนนโดยรวมโอกาสที่จะเกิดกับความรุนแรงของผลที่ตามมา สิ่งนี้กำหนดระดับความเสี่ยงและการดำเนินการที่ต้องทำ</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="risk-matrix">
+        <thead>
+          <tr>
+            <th></th>
+            <th><span data-en>Negligible</span><span data-he>זניח</span><span data-th>เล็กน้อย</span></th>
+            <th><span data-en>Minor</span><span data-he>קל</span><span data-th>เล็กน้อย</span></th>
+            <th><span data-en>Moderate</span><span data-he>בינוני</span><span data-th>ปานกลาง</span></th>
+            <th><span data-en>Major</span><span data-he>חמור</span><span data-th>รุนแรง</span></th>
+            <th><span data-en>Catastrophic</span><span data-he>קטסטרופלי</span><span data-th>หายนะ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><span data-en>Almost Certain</span><span data-he>כמעט ודאי</span><span data-th>เกือบแน่นอน</span></strong></td>
+            <td class="risk-med"><span data-en>Medium</span><span data-he>בינוני</span><span data-th>ปานกลาง</span></td>
+            <td class="risk-high"><span data-en>High</span><span data-he>גבוה</span><span data-th>สูง</span></td>
+            <td class="risk-high"><span data-en>High</span><span data-he>גבוה</span><span data-th>สูง</span></td>
+            <td class="risk-extreme"><span data-en>Extreme</span><span data-he>קיצוני</span><span data-th>รุนแรงมาก</span></td>
+            <td class="risk-extreme"><span data-en>Extreme</span><span data-he>קיצוני</span><span data-th>รุนแรงมาก</span></td>
+          </tr>
+          <tr>
+            <td><strong><span data-en>Likely</span><span data-he>סביר</span><span data-th>เป็นไปได้</span></strong></td>
+            <td class="risk-low"><span data-en>Low</span><span data-he>נמוך</span><span data-th>ต่ำ</span></td>
+            <td class="risk-med"><span data-en>Medium</span><span data-he>בינוני</span><span data-th>ปานกลาง</span></td>
+            <td class="risk-high"><span data-en>High</span><span data-he>גבוה</span><span data-th>สูง</span></td>
+            <td class="risk-high"><span data-en>High</span><span data-he>גבוה</span><span data-th>สูง</span></td>
+            <td class="risk-extreme"><span data-en>Extreme</span><span data-he>קיצוני</span><span data-th>รุนแรงมาก</span></td>
+          </tr>
+          <tr>
+            <td><strong><span data-en>Possible</span><span data-he>אפשרי</span><span data-th>อาจเกิดขึ้น</span></strong></td>
+            <td class="risk-low"><span data-en>Low</span><span data-he>נמוך</span><span data-th>ต่ำ</span></td>
+            <td class="risk-med"><span data-en>Medium</span><span data-he>בינוני</span><span data-th>ปานกลาง</span></td>
+            <td class="risk-med"><span data-en>Medium</span><span data-he>בינוני</span><span data-th>ปานกลาง</span></td>
+            <td class="risk-high"><span data-en>High</span><span data-he>גבוה</span><span data-th>สูง</span></td>
+            <td class="risk-extreme"><span data-en>Extreme</span><span data-he>קיצוני</span><span data-th>รุนแรงมาก</span></td>
+          </tr>
+          <tr>
+            <td><strong><span data-en>Unlikely</span><span data-he>לא סביר</span><span data-th>ไม่น่าจะเกิด</span></strong></td>
+            <td class="risk-low"><span data-en>Low</span><span data-he>נמוך</span><span data-th>ต่ำ</span></td>
+            <td class="risk-low"><span data-en>Low</span><span data-he>נמוך</span><span data-th>ต่ำ</span></td>
+            <td class="risk-med"><span data-en>Medium</span><span data-he>בינוני</span><span data-th>ปานกลาง</span></td>
+            <td class="risk-med"><span data-en>Medium</span><span data-he>בינוני</span><span data-th>ปานกลาง</span></td>
+            <td class="risk-high"><span data-en>High</span><span data-he>גבוה</span><span data-th>สูง</span></td>
+          </tr>
+          <tr>
+            <td><strong><span data-en>Rare</span><span data-he>נדיר</span><span data-th>หายาก</span></strong></td>
+            <td class="risk-low"><span data-en>Low</span><span data-he>נמוך</span><span data-th>ต่ำ</span></td>
+            <td class="risk-low"><span data-en>Low</span><span data-he>נמוך</span><span data-th>ต่ำ</span></td>
+            <td class="risk-low"><span data-en>Low</span><span data-he>נמוך</span><span data-th>ต่ำ</span></td>
+            <td class="risk-med"><span data-en>Medium</span><span data-he>בינוני</span><span data-th>ปานกลาง</span></td>
+            <td class="risk-high"><span data-en>High</span><span data-he>גבוה</span><span data-th>สูง</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en><strong>Action by Risk Level:</strong> 🟢 Low = Monitor, proceed with standard PPE. 🟡 Medium = Additional controls required before starting. 🟠 High = Senior approval required, enhanced controls mandatory. 🔴 Extreme = STOP WORK. Do not proceed until risk is reduced.</span>
+        <span data-he><strong>פעולה לפי רמת סיכון:</strong> 🟢 נמוך = מעקב, המשך עם PPE סטנדרטי. 🟡 בינוני = נדרשות בקרות נוספות לפני התחלה. 🟠 גבוה = נדרש אישור בכיר, בקרות מוגברות חובה. 🔴 קיצוני = עצרו עבודה. אל תמשיכו עד שהסיכון מופחת.</span>
+        <span data-th><strong>การดำเนินการตามระดับความเสี่ยง:</strong> 🟢 ต่ำ = เฝ้าระวัง ดำเนินการด้วย PPE มาตรฐาน 🟡 ปานกลาง = ต้องมีการควบคุมเพิ่มเติมก่อนเริ่ม 🟠 สูง = ต้องได้รับอนุมัติจากผู้บังคับบัญชา การควบคุมเข้มงวดบังคับ 🔴 รุนแรงมาก = หยุดงาน ห้ามดำเนินการจนกว่าจะลดความเสี่ยง</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 4: PPE Requirements -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🦺 PPE Requirements for Solar Work</span>
+      <span data-he>🦺 דרישות ציוד מגן אישי לעבודת סולאר</span>
+      <span data-th>🦺 อุปกรณ์ป้องกันส่วนบุคคล (PPE) สำหรับงานโซลาร์</span>
+    </h2>
+
+    <div class="ppe-grid">
+      <div class="ppe-item">
+        <div class="ppe-icon">⛑️</div>
+        <div class="ppe-name"><span data-en>Hard Hat</span><span data-he>קסדה</span><span data-th>หมวกนิรภัย</span></div>
+        <div class="ppe-desc"><span data-en>Class E electrical rated. Always worn on site.</span><span data-he>דרגה E חשמלית. נלבש תמיד באתר.</span><span data-th>ระดับ E สำหรับไฟฟ้า สวมตลอดเวลาในไซต์</span></div>
+      </div>
+      <div class="ppe-item">
+        <div class="ppe-icon">🥽</div>
+        <div class="ppe-name"><span data-en>Safety Glasses</span><span data-he>משקפי מגן</span><span data-th>แว่นตานิรภัย</span></div>
+        <div class="ppe-desc"><span data-en>UV-rated, ANSI Z87.1. Protects from debris & arc flash.</span><span data-he>מדורג UV, ANSI Z87.1. מגן מפני פסולת והבזק קשת.</span><span data-th>กัน UV, ANSI Z87.1 ป้องกันเศษวัสดุและอาร์คแฟลช</span></div>
+      </div>
+      <div class="ppe-item">
+        <div class="ppe-icon">🧤</div>
+        <div class="ppe-name"><span data-en>Insulated Gloves</span><span data-he>כפפות מבודדות</span><span data-th>ถุงมือฉนวน</span></div>
+        <div class="ppe-desc"><span data-en>Class 0 minimum for DC work. Leather protectors over rubber.</span><span data-he>דרגה 0 מינימום לעבודת DC. מגני עור מעל גומי.</span><span data-th>ระดับ 0 ขั้นต่ำสำหรับงาน DC ถุงมือหนังครอบยาง</span></div>
+      </div>
+      <div class="ppe-item">
+        <div class="ppe-icon">🪢</div>
+        <div class="ppe-name"><span data-en>Safety Harness</span><span data-he>רתמת בטיחות</span><span data-th>สายรัดนิรภัย</span></div>
+        <div class="ppe-desc"><span data-en>Full-body harness + shock-absorbing lanyard. Required above 2m.</span><span data-he>רתמת גוף מלא + חבל עגינה בולם זעזועים. נדרש מעל 2 מטר.</span><span data-th>สายรัดเต็มตัว + เชือกนิรภัยดูดซับแรงกระแทก บังคับเหนือ 2 ม.</span></div>
+      </div>
+      <div class="ppe-item">
+        <div class="ppe-icon">⚡</div>
+        <div class="ppe-name"><span data-en>Arc Flash Suit</span><span data-he>חליפת הבזק קשת</span><span data-th>ชุดป้องกันอาร์คแฟลช</span></div>
+        <div class="ppe-desc"><span data-en>Required for inverter & combiner box work. Cal/cm² rated.</span><span data-he>נדרש לעבודה על ממירים וקופסאות חיבור. מדורג Cal/cm².</span><span data-th>จำเป็นสำหรับงานอินเวอร์เตอร์และตู้รวมสาย ระดับ Cal/cm²</span></div>
+      </div>
+      <div class="ppe-item">
+        <div class="ppe-icon">👢</div>
+        <div class="ppe-name"><span data-en>Safety Boots</span><span data-he>נעלי בטיחות</span><span data-th>รองเท้านิรภัย</span></div>
+        <div class="ppe-desc"><span data-en>Steel-toe, EH rated, non-slip sole. Essential for roof work.</span><span data-he>כיפת פלדה, דרגה EH, סוליה מונעת החלקה. חיוני לעבודת גג.</span><span data-th>หัวเหล็ก ระดับ EH พื้นกันลื่น จำเป็นสำหรับงานบนหลังคา</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Electrical Safety -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>⚡ Electrical Safety: LOTO & DC vs AC Hazards</span>
+      <span data-he>⚡ בטיחות חשמלית: LOTO וסכנות DC מול AC</span>
+      <span data-th>⚡ ความปลอดภัยทางไฟฟ้า: LOTO และอันตราย DC เทียบ AC</span>
+    </h2>
+
+    <div class="safety-card">
+      <h3>
+        <span data-en>Lockout/Tagout (LOTO) Procedure</span>
+        <span data-he>נוהל נעילה/תיוג (LOTO)</span>
+        <span data-th>ขั้นตอน Lockout/Tagout (LOTO)</span>
+      </h3>
+      <p>
+        <span data-en>LOTO ensures all energy sources are isolated before maintenance or repair. <strong>Never</strong> work on energized equipment unless absolutely necessary and authorized.</span>
+        <span data-he>LOTO מבטיח שכל מקורות האנרגיה מבודדים לפני תחזוקה או תיקון. <strong>לעולם אל</strong> תעבדו על ציוד מחושמל אלא אם כן זה הכרחי לחלוטין ומורשה.</span>
+        <span data-th>LOTO รับรองว่าแหล่งพลังงานทั้งหมดถูกตัดก่อนการบำรุงรักษาหรือซ่อมแซม <strong>ห้าม</strong>ทำงานกับอุปกรณ์ที่มีกระแสไฟฟ้าอยู่ เว้นแต่จำเป็นจริงๆ และได้รับอนุญาต</span>
+      </p>
+      <ol class="jsa-steps">
+        <li><span data-en><strong>Notify</strong> all affected personnel</span><span data-he><strong>הודיעו</strong> לכל הצוות המושפע</span><span data-th><strong>แจ้ง</strong>บุคลากรที่เกี่ยวข้องทั้งหมด</span></li>
+        <li><span data-en><strong>Identify</strong> all energy sources (DC strings, AC mains, batteries)</span><span data-he><strong>זהו</strong> את כל מקורות האנרגיה (מחרוזות DC, רשת AC, סוללות)</span><span data-th><strong>ระบุ</strong>แหล่งพลังงานทั้งหมด (สาย DC, ไฟ AC หลัก, แบตเตอรี่)</span></li>
+        <li><span data-en><strong>Isolate</strong> — open disconnects, turn off inverters, open breakers</span><span data-he><strong>בודדו</strong> — פתחו מנתקים, כבו ממירים, פתחו מפסקים</span><span data-th><strong>ตัด</strong> — เปิดสวิตช์ตัด ปิดอินเวอร์เตอร์ เปิดเบรกเกอร์</span></li>
+        <li><span data-en><strong>Lock & Tag</strong> — apply personal padlock and danger tag to each isolation point</span><span data-he><strong>נעלו ותייגו</strong> — הניחו מנעול אישי ותגית סכנה בכל נקודת בידוד</span><span data-th><strong>ล็อคและติดป้าย</strong> — ติดแม่กุญแจส่วนตัวและป้ายอันตรายที่จุดตัดทุกจุด</span></li>
+        <li><span data-en><strong>Verify</strong> — test with a multimeter to confirm zero energy (voltage = 0)</span><span data-he><strong>אמתו</strong> — בדקו עם מולטימטר לאישור אפס אנרגיה (מתח = 0)</span><span data-th><strong>ตรวจสอบ</strong> — ทดสอบด้วยมัลติมิเตอร์ยืนยันว่าไม่มีพลังงาน (แรงดัน = 0)</span></li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <p>
+        <span data-en><strong>⚠️ DC vs AC — Critical Difference:</strong> Solar panels produce DC power that <strong>cannot be turned off</strong> as long as there is light. Unlike AC circuits that can be switched off at a breaker, a solar panel string can produce 600V+ DC voltage even when the inverter is off. DC arcs are harder to extinguish than AC arcs because DC doesn't cross zero. Always cover panels with opaque material when working on DC wiring.</span>
+        <span data-he><strong>⚠️ DC מול AC — הבדל קריטי:</strong> פאנלים סולאריים מייצרים חשמל DC ש<strong>לא ניתן לכבות</strong> כל עוד יש אור. בניגוד למעגלי AC שניתן לכבות במפסק, מחרוזת פאנלים סולאריים יכולה לייצר מתח DC של 600V+ גם כשהממיר כבוי. קשתות DC קשות יותר לכיבוי מקשתות AC כי DC לא חוצה אפס. תמיד כסו פאנלים בחומר אטום כשעובדים על חיווט DC.</span>
+        <span data-th><strong>⚠️ DC เทียบ AC — ความแตกต่างสำคัญ:</strong> แผงโซลาร์ผลิตไฟ DC ที่<strong>ปิดไม่ได้</strong>ตราบใดที่มีแสง ต่างจากวงจร AC ที่ปิดได้ที่เบรกเกอร์ สายแผงโซลาร์สามารถผลิตแรงดัน DC 600V+ แม้อินเวอร์เตอร์ปิดอยู่ อาร์ค DC ดับยากกว่าอาร์ค AC เพราะ DC ไม่ผ่านจุดศูนย์ ต้องคลุมแผงด้วยวัสดุทึบแสงเสมอเมื่อทำงานกับสาย DC</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 6: Working at Heights -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🏗️ Working at Heights</span>
+      <span data-he>🏗️ עבודה בגובה</span>
+      <span data-th>🏗️ การทำงานบนที่สูง</span>
+    </h2>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Protection Method</span><span data-he>שיטת הגנה</span><span data-th>วิธีป้องกัน</span></th>
+            <th><span data-en>When to Use</span><span data-he>מתי להשתמש</span><span data-th>ใช้เมื่อไร</span></th>
+            <th><span data-en>Requirements</span><span data-he>דרישות</span><span data-th>ข้อกำหนด</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Guardrails</span><span data-he>מעקות</span><span data-th>ราวกันตก</span></td>
+            <td><span data-en>Flat roofs, roof edges</span><span data-he>גגות שטוחים, קצוות גג</span><span data-th>หลังคาแบน ขอบหลังคา</span></td>
+            <td><span data-en>Top rail 1.0m, mid-rail, toe board</span><span data-he>מעקה עליון 1.0 מ', מעקה אמצעי, לוח בהונות</span><span data-th>ราวบน 1.0 ม. ราวกลาง แผ่นกันเท้า</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Personal Fall Arrest</span><span data-he>מערכת עצירת נפילה אישית</span><span data-th>ระบบหยุดการตกส่วนบุคคล</span></td>
+            <td><span data-en>Sloped roofs, near edges without guardrails</span><span data-he>גגות משופעים, ליד קצוות ללא מעקות</span><span data-th>หลังคาลาดเอียง ใกล้ขอบที่ไม่มีราวกันตก</span></td>
+            <td><span data-en>Harness + lanyard + anchor point rated 22 kN</span><span data-he>רתמה + חבל עגינה + נקודת עגינה מדורגת 22 kN</span><span data-th>สายรัด + เชือกนิรภัย + จุดยึดที่รับน้ำหนัก 22 kN</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Ladder Safety</span><span data-he>בטיחות סולמות</span><span data-th>ความปลอดภัยบันได</span></td>
+            <td><span data-en>Access to roofs</span><span data-he>גישה לגגות</span><span data-th>การเข้าถึงหลังคา</span></td>
+            <td><span data-en>4:1 angle, extends 1m above roof, secured at top</span><span data-he>זווית 4:1, מתארך 1 מ' מעל הגג, מאובטח למעלה</span><span data-th>มุม 4:1 ยื่นเหนือหลังคา 1 ม. ยึดแน่นที่ด้านบน</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Safety Nets</span><span data-he>רשתות בטיחות</span><span data-th>ตาข่ายนิรภัย</span></td>
+            <td><span data-en>Large commercial installations</span><span data-he>התקנות מסחריות גדולות</span><span data-th>การติดตั้งเชิงพาณิชย์ขนาดใหญ่</span></td>
+            <td><span data-en>Max 9m below work surface, certified nets</span><span data-he>מקסימום 9 מ' מתחת למשטח העבודה, רשתות מאושרות</span><span data-th>สูงสุด 9 ม. ใต้พื้นผิวทำงาน ตาข่ายที่ได้รับการรับรอง</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 7: Heat Stress -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🌡️ Heat Stress Management</span>
+      <span data-he>🌡️ ניהול עקת חום</span>
+      <span data-th>🌡️ การจัดการความเครียดจากความร้อน</span>
+    </h2>
+
+    <p>
+      <span data-en>Thailand's tropical climate makes heat stress a constant threat. Working on roofs amplifies the danger — roof surface temperatures can exceed 60°C. Heat stroke kills quickly and must be treated as a medical emergency.</span>
+      <span data-he>האקלים הטרופי של תאילנד הופך עקת חום לאיום מתמיד. עבודה על גגות מגבירה את הסכנה — טמפרטורת משטח הגג יכולה לעלות על 60°C. מכת חום הורגת מהר וחייבים להתייחס אליה כמצב חירום רפואי.</span>
+      <span data-th>สภาพอากาศเขตร้อนของไทยทำให้ความเครียดจากความร้อนเป็นภัยคุกคามตลอดเวลา การทำงานบนหลังคาเพิ่มอันตราย — อุณหภูมิผิวหลังคาอาจเกิน 60°C ฮีทสโตรกฆ่าได้เร็วและต้องถือเป็นเหตุฉุกเฉินทางการแพทย์</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Condition</span><span data-he>מצב</span><span data-th>อาการ</span></th>
+            <th><span data-en>Signs</span><span data-he>סימנים</span><span data-th>สัญญาณ</span></th>
+            <th><span data-en>Action</span><span data-he>פעולה</span><span data-th>การดำเนินการ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Heat Cramps</span><span data-he>התכווצויות חום</span><span data-th>ตะคริวจากความร้อน</span></td>
+            <td><span data-en>Muscle cramps, heavy sweating</span><span data-he>התכווצויות שרירים, הזעה כבדה</span><span data-th>ตะคริวกล้ามเนื้อ เหงื่อออกมาก</span></td>
+            <td><span data-en>Rest, drink water with electrolytes, cool area</span><span data-he>מנוחה, שתיית מים עם אלקטרוליטים, אזור קריר</span><span data-th>พัก ดื่มน้ำผสมเกลือแร่ อยู่ในที่เย็น</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Heat Exhaustion</span><span data-he>תשישות חום</span><span data-th>อ่อนเพลียจากความร้อน</span></td>
+            <td><span data-en>Nausea, dizziness, weak pulse, pale skin</span><span data-he>בחילה, סחרחורת, דופק חלש, עור חיוור</span><span data-th>คลื่นไส้ เวียนศีรษะ ชีพจรอ่อน ผิวซีด</span></td>
+            <td><span data-en>Move to shade, loosen clothing, cool with water, seek medical help</span><span data-he>העבירו לצל, שחררו בגדים, קררו עם מים, חפשו עזרה רפואית</span><span data-th>ย้ายเข้าร่ม คลายเสื้อผ้า ลดอุณหภูมิด้วยน้ำ พบแพทย์</span></td>
+          </tr>
+          <tr style="color: #FF4500;">
+            <td><span data-en>Heat Stroke ⚠️</span><span data-he>מכת חום ⚠️</span><span data-th>ฮีทสโตรก ⚠️</span></td>
+            <td><span data-en>Confusion, no sweating, hot skin, seizures, unconsciousness</span><span data-he>בלבול, ללא הזעה, עור חם, פרכוסים, אובדן הכרה</span><span data-th>สับสน ไม่มีเหงื่อ ผิวร้อน ชัก หมดสติ</span></td>
+            <td><span data-en><strong>CALL EMERGENCY (1669 Thailand)</strong>. Cool body with ice/water immediately. This is life-threatening.</span><span data-he><strong>התקשרו לחירום (1669 תאילנד)</strong>. קררו גוף עם קרח/מים מיידית. זה מסכן חיים.</span><span data-th><strong>โทร 1669 ทันที</strong> ลดอุณหภูมิร่างกายด้วยน้ำแข็ง/น้ำ ทันที อันตรายถึงชีวิต</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <span data-en><strong>TM Energy Heat Protocol:</strong> Mandatory 15-minute water break every hour. No rooftop work between 12:00–14:00 when temperature exceeds 35°C. Minimum 4 liters of water per worker per day. Buddy system — watch each other for signs of heat illness.</span>
+        <span data-he><strong>פרוטוקול חום TM Energy:</strong> הפסקת מים חובה של 15 דקות כל שעה. אין עבודת גג בין 12:00–14:00 כשהטמפרטורה עולה על 35°C. מינימום 4 ליטרים מים לעובד ביום. מערכת חבר — שימרו זה על זה מסימני מחלת חום.</span>
+        <span data-th><strong>ระเบียบความร้อน TM Energy:</strong> พักดื่มน้ำ 15 นาทีทุกชั่วโมง ห้ามทำงานบนหลังคา 12:00–14:00 เมื่ออุณหภูมิเกิน 35°C น้ำดื่มขั้นต่ำ 4 ลิตร/คน/วัน ระบบเพื่อนคู่หู — สังเกตอาการป่วยจากความร้อนให้กัน</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 8: Thailand-Specific Safety -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🇹🇭 Thailand-Specific Safety Considerations</span>
+      <span data-he>🇹🇭 שיקולי בטיחות ספציפיים לתאילנד</span>
+      <span data-th>🇹🇭 ข้อพิจารณาด้านความปลอดภัยเฉพาะประเทศไทย</span>
+    </h2>
+
+    <div class="safety-card">
+      <h3>
+        <span data-en>🌧️ Monsoon Season Work Restrictions</span>
+        <span data-he>🌧️ הגבלות עבודה בעונת המונסון</span>
+        <span data-th>🌧️ ข้อจำกัดการทำงานในฤดูมรสุม</span>
+      </h3>
+      <p>
+        <span data-en>Thailand's monsoon season (May–November) brings heavy rains, high winds, and slippery surfaces. <strong>Rules:</strong> No rooftop work during active rain. Stop work when wind exceeds 40 km/h. Wait 30 minutes after rain stops before returning to roof (slip risk). Check weather forecast every morning before dispatching crews.</span>
+        <span data-he>עונת המונסון בתאילנד (מאי–נובמבר) מביאה גשמים כבדים, רוחות חזקות ומשטחים חלקלקים. <strong>כללים:</strong> אין עבודת גג בזמן גשם פעיל. הפסיקו עבודה כשרוח עולה על 40 קמ"ש. חכו 30 דקות אחרי שהגשם נפסק לפני חזרה לגג (סיכון החלקה). בדקו תחזית מזג אוויר כל בוקר לפני שליחת צוותים.</span>
+        <span data-th>ฤดูมรสุมของไทย (พฤษภาคม–พฤศจิกายน) มีฝนตกหนัก ลมแรง และพื้นผิวลื่น <strong>กฎ:</strong> ห้ามทำงานบนหลังคาขณะฝนตก หยุดงานเมื่อลมเกิน 40 กม./ชม. รอ 30 นาทีหลังฝนหยุดก่อนขึ้นหลังคา (เสี่ยงลื่น) ตรวจพยากรณ์อากาศทุกเช้าก่อนส่งทีม</span>
+      </p>
+    </div>
+
+    <div class="safety-card">
+      <h3>
+        <span data-en>⚡ Lightning Protocols</span>
+        <span data-he>⚡ פרוטוקולי ברקים</span>
+        <span data-th>⚡ ขั้นตอนเรื่องฟ้าผ่า</span>
+      </h3>
+      <p>
+        <span data-en>Thailand has one of the highest lightning strike rates in the world. <strong>30/30 Rule:</strong> If the time between lightning flash and thunder is less than 30 seconds, ALL outdoor work stops immediately. Do not resume until 30 minutes after the last thunder. Workers on metal roofs with solar panels are at extreme risk — evacuate immediately when lightning is detected.</span>
+        <span data-he>תאילנד עם אחד משיעורי פגיעות הברק הגבוהים בעולם. <strong>חוק 30/30:</strong> אם הזמן בין הבזק ברק ורעם קצר מ-30 שניות, כל העבודה החיצונית נעצרת מיידית. אל תחדשו עד 30 דקות אחרי הרעם האחרון. עובדים על גגות מתכת עם פאנלים סולאריים בסיכון קיצוני — פנו מיידית כשמזהים ברקים.</span>
+        <span data-th>ไทยมีอัตราฟ้าผ่าสูงที่สุดในโลก <strong>กฎ 30/30:</strong> หากเวลาระหว่างแสงฟ้าแลบกับเสียงฟ้าร้องน้อยกว่า 30 วินาที หยุดงานกลางแจ้งทั้งหมดทันที ห้ามกลับมาทำงานจนกว่า 30 นาทีหลังฟ้าร้องครั้งสุดท้าย คนงานบนหลังคาโลหะกับแผงโซลาร์มีความเสี่ยงสูงมาก — อพยพทันทีเมื่อตรวจพบฟ้าผ่า</span>
+      </p>
+    </div>
+
+    <div class="safety-card">
+      <h3>
+        <span data-en>🐍 Snake Awareness</span>
+        <span data-he>🐍 מודעות לנחשים</span>
+        <span data-th>🐍 ระวังงู</span>
+      </h3>
+      <p>
+        <span data-en>Thailand is home to several venomous snake species commonly found near buildings — cobras, kraits, and pit vipers. <strong>Precautions:</strong> Inspect work areas before starting, especially ground-level cable runs and equipment storage. Wear closed-toe boots. Never reach into dark spaces without looking first. Keep a first aid kit with pressure bandages on site. Know the nearest hospital with antivenom (โรงพยาบาลที่มียาแก้พิษงู). Emergency: 1669.</span>
+        <span data-he>תאילנד ביתם של מספר מיני נחשים ארסיים שנמצאים בדרך כלל ליד מבנים — קוברות, קרייטים ואפעי בור. <strong>אמצעי זהירות:</strong> בדקו אזורי עבודה לפני שמתחילים, במיוחד הולכת כבלים בגובה הקרקע ואחסון ציוד. לבשו נעליים סגורות. לעולם אל תכניסו ידיים לחללים חשוכים בלי להסתכל קודם. שמרו ערכת עזרה ראשונה עם תחבושות לחץ באתר. דעו את בית החולים הקרוב ביותר עם אנטי-ונום. חירום: 1669.</span>
+        <span data-th>ไทยมีงูพิษหลายชนิดที่พบใกล้อาคาร — งูเห่า งูสามเหลี่ยม และงูเขียวหางไหม้ <strong>ข้อควรระวัง:</strong> ตรวจสอบพื้นที่ทำงานก่อนเริ่ม โดยเฉพาะแนวสายเคเบิลระดับพื้นดินและที่เก็บอุปกรณ์ สวมรองเท้าหุ้มส้น ห้ามล้วงมือเข้าที่มืดโดยไม่ดูก่อน มีชุดปฐมพยาบาลพร้อมผ้าพันแผลกดในไซต์ รู้โรงพยาบาลที่ใกล้ที่สุดที่มียาแก้พิษงู ฉุกเฉิน: 1669</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 9: First Aid & Emergency -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>🏥 First Aid & Emergency Procedures</span>
+      <span data-he>🏥 עזרה ראשונה ונוהלי חירום</span>
+      <span data-th>🏥 ปฐมพยาบาลและขั้นตอนฉุกเฉิน</span>
+    </h2>
+
+    <div class="safety-card">
+      <h3>
+        <span data-en>Electrical Shock Response</span>
+        <span data-he>תגובה למכת חשמל</span>
+        <span data-th>การตอบสนองเมื่อไฟฟ้าช็อต</span>
+      </h3>
+      <ol class="jsa-steps">
+        <li><span data-en><strong>Do NOT touch</strong> the victim if they're still in contact with the electrical source</span><span data-he><strong>אל תגעו</strong> בנפגע אם הוא עדיין במגע עם מקור החשמל</span><span data-th><strong>ห้ามสัมผัส</strong>ผู้ประสบเหตุหากยังสัมผัสแหล่งไฟฟ้าอยู่</span></li>
+        <li><span data-en><strong>Disconnect</strong> the power source if possible (breaker, disconnect switch)</span><span data-he><strong>נתקו</strong> את מקור החשמל אם אפשר (מפסק, מנתק)</span><span data-th><strong>ตัดแหล่งพลังงาน</strong>ถ้าทำได้ (เบรกเกอร์ สวิตช์ตัด)</span></li>
+        <li><span data-en><strong>Call 1669</strong> (Thai emergency services) immediately</span><span data-he><strong>התקשרו 1669</strong> (שירותי חירום תאילנדיים) מיידית</span><span data-th><strong>โทร 1669</strong> (บริการฉุกเฉินไทย) ทันที</span></li>
+        <li><span data-en><strong>Begin CPR</strong> if no pulse. Use AED if available. Continue until paramedics arrive.</span><span data-he><strong>התחילו CPR</strong> אם אין דופק. השתמשו ב-AED אם זמין. המשיכו עד שהחובשים מגיעים.</span><span data-th><strong>เริ่ม CPR</strong> หากไม่มีชีพจร ใช้ AED หากมี ทำต่อจนกว่าเจ้าหน้าที่จะมาถึง</span></li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <p>
+        <span data-en><strong>🔥 Electrical Fire — NEVER USE WATER!</strong> Electrical fires must be extinguished with a Class C (CO₂ or dry chemical) fire extinguisher. Water conducts electricity and can cause electrocution. Every solar installation site must have a CO₂ extinguisher readily accessible.</span>
+        <span data-he><strong>🔥 שריפה חשמלית — לעולם אל תשתמשו במים!</strong> שריפות חשמליות חייבות להיכבות עם מטף כיבוי Class C (CO₂ או אבקה יבשה). מים מוליכים חשמל ויכולים לגרום להתחשמלות. כל אתר התקנה סולארי חייב שיהיה בו מטף CO₂ נגיש.</span>
+        <span data-th><strong>🔥 ไฟไหม้จากไฟฟ้า — ห้ามใช้น้ำเด็ดขาด!</strong> ไฟไหม้จากไฟฟ้าต้องดับด้วยถังดับเพลิง Class C (CO₂ หรือผงเคมีแห้ง) น้ำนำไฟฟ้าและอาจทำให้ถูกไฟฟ้าช็อต ทุกไซต์ติดตั้งโซลาร์ต้องมีถังดับเพลิง CO₂ ที่เข้าถึงได้ง่าย</span>
+      </p>
+    </div>
+
+    <div class="safety-card">
+      <h3>
+        <span data-en>Emergency Communication Protocol</span>
+        <span data-he>פרוטוקול תקשורת חירום</span>
+        <span data-th>ขั้นตอนการสื่อสารฉุกเฉิน</span>
+      </h3>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th><span data-en>Emergency</span><span data-he>חירום</span><span data-th>เหตุฉุกเฉิน</span></th>
+              <th><span data-en>Call</span><span data-he>התקשרו</span><span data-th>โทร</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span data-en>Medical Emergency / Ambulance</span><span data-he>מצב חירום רפואי / אמבולנס</span><span data-th>ฉุกเฉินทางการแพทย์ / รถพยาบาล</span></td>
+              <td><strong>1669</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>Fire Department</span><span data-he>מכבי אש</span><span data-th>หน่วยดับเพลิง</span></td>
+              <td><strong>199</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>Police</span><span data-he>משטרה</span><span data-th>ตำรวจ</span></td>
+              <td><strong>191</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>Tourist Police (English)</span><span data-he>משטרת תיירים (אנגלית)</span><span data-th>ตำรวจท่องเที่ยว (อังกฤษ)</span></td>
+              <td><strong>1155</strong></td>
+            </tr>
+            <tr>
+              <td><span data-en>TM Energy Safety Officer</span><span data-he>קצין בטיחות TM Energy</span><span data-th>เจ้าหน้าที่ความปลอดภัย TM Energy</span></td>
+              <td><span data-en>Site-specific contact card</span><span data-he>כרטיס קשר ספציפי לאתר</span><span data-th>บัตรติดต่อเฉพาะไซต์</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Safety Documentation -->
+  <section class="lesson-section fade-up">
+    <h2>
+      <span data-en>📄 Safety Documentation & Regulations</span>
+      <span data-he>📄 תיעוד בטיחות ותקנות</span>
+      <span data-th>📄 เอกสารความปลอดภัยและกฎระเบียบ</span>
+    </h2>
+
+    <p>
+      <span data-en>Proper documentation protects workers AND the company. Every installation requires:</span>
+      <span data-he>תיעוד נכון מגן על עובדים וגם על החברה. כל התקנה דורשת:</span>
+      <span data-th>เอกสารที่ถูกต้องปกป้องทั้งคนงานและบริษัท การติดตั้งทุกครั้งต้องมี:</span>
+    </p>
+
+    <div class="spec-table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th><span data-en>Document</span><span data-he>מסמך</span><span data-th>เอกสาร</span></th>
+            <th><span data-en>When</span><span data-he>מתי</span><span data-th>เมื่อไร</span></th>
+            <th><span data-en>Purpose</span><span data-he>מטרה</span><span data-th>วัตถุประสงค์</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span data-en>Permit to Work (PTW)</span><span data-he>היתר עבודה</span><span data-th>ใบอนุญาตทำงาน (PTW)</span></td>
+            <td><span data-en>Before starting any work</span><span data-he>לפני תחילת כל עבודה</span><span data-th>ก่อนเริ่มงาน</span></td>
+            <td><span data-en>Authorization to perform specific tasks at specific location</span><span data-he>הרשאה לביצוע משימות ספציפיות במיקום ספציפי</span><span data-th>อนุญาตให้ทำงานเฉพาะในสถานที่เฉพาะ</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Toolbox Talk</span><span data-he>שיחת כלים</span><span data-th>Toolbox Talk</span></td>
+            <td><span data-en>Every morning, before work</span><span data-he>כל בוקר, לפני עבודה</span><span data-th>ทุกเช้า ก่อนทำงาน</span></td>
+            <td><span data-en>5-minute safety briefing on day's specific hazards</span><span data-he>תדרוך בטיחות 5 דקות על סכנות ספציפיות של היום</span><span data-th>บรรยายสั้นเรื่องความปลอดภัย 5 นาที เกี่ยวกับอันตรายเฉพาะของวันนั้น</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>JSA Form</span><span data-he>טופס JSA</span><span data-th>แบบฟอร์ม JSA</span></td>
+            <td><span data-en>Each new task or changed conditions</span><span data-he>כל משימה חדשה או תנאים שהשתנו</span><span data-th>ทุกงานใหม่หรือสภาพเปลี่ยนแปลง</span></td>
+            <td><span data-en>Systematic hazard identification and control</span><span data-he>זיהוי סכנות שיטתי ובקרה</span><span data-th>การระบุอันตรายและควบคุมอย่างเป็นระบบ</span></td>
+          </tr>
+          <tr>
+            <td><span data-en>Incident Report</span><span data-he>דוח אירוע</span><span data-th>รายงานเหตุการณ์</span></td>
+            <td><span data-en>Within 24 hours of any incident</span><span data-he>תוך 24 שעות מכל אירוע</span><span data-th>ภายใน 24 ชั่วโมงหลังเกิดเหตุ</span></td>
+            <td><span data-en>Record injuries, near-misses, and property damage</span><span data-he>רישום פציעות, כמעט-תאונות ונזק לרכוש</span><span data-th>บันทึกการบาดเจ็บ เหตุการณ์เกือบเกิดอุบัติเหตุ และความเสียหายต่อทรัพย์สิน</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="key-concept">
+      <h4><span data-en>Thai Safety Regulations (กฎหมายความปลอดภัย)</span><span data-he>תקנות בטיחות תאילנדיות (กฎหมายความปลอดภัย)</span><span data-th>กฎหมายความปลอดภัยของไทย</span></h4>
+      <p>
+        <span data-en>Thailand's Occupational Safety, Health and Environment Act B.E. 2554 (2011) requires employers to: appoint a safety officer (จป.) for workplaces with 20+ employees, provide safety training to all workers, report accidents to the Department of Labour Protection and Welfare, maintain safety records for at least 5 years. TM Energy follows both OSHA international standards and Thai regulations (กรมสวัสดิการและคุ้มครองแรงงาน) — whichever is stricter.</span>
+        <span data-he>חוק הבטיחות, הבריאות והסביבה התעסוקתית של תאילנד B.E. 2554 (2011) מחייב מעסיקים: למנות קצין בטיחות (จป.) למקומות עבודה עם 20+ עובדים, לספק הכשרת בטיחות לכל העובדים, לדווח על תאונות למחלקת הגנת העבודה והרווחה, לשמור רשומות בטיחות לפחות 5 שנים. TM Energy פועלת לפי תקני OSHA הבינלאומיים וגם תקנות תאילנדיות — מה שמחמיר יותר.</span>
+        <span data-th>พ.ร.บ. ความปลอดภัย อาชีวอนามัย และสภาพแวดล้อมในการทำงาน พ.ศ. 2554 กำหนดให้นายจ้าง: แต่งตั้งเจ้าหน้าที่ความปลอดภัย (จป.) สำหรับสถานที่ที่มีลูกจ้าง 20 คนขึ้นไป จัดอบรมความปลอดภัยให้ลูกจ้างทุกคน รายงานอุบัติเหตุต่อกรมสวัสดิการและคุ้มครองแรงงาน เก็บบันทึกความปลอดภัยอย่างน้อย 5 ปี TM Energy ปฏิบัติตามมาตรฐาน OSHA สากลและกฎหมายไทย — ข้อใดเข้มงวดกว่าใช้ข้อนั้น</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section fade-up">
+    <div class="quiz-title">
+      <span>📝</span>
+      <span data-en>Knowledge Check</span>
+      <span data-he>בדיקת ידע</span>
+      <span data-th>ทดสอบความรู้</span>
+    </div>
+    <div id="quiz-container"></div>
+    <div id="quiz-result" class="quiz-result"></div>
+  </section>
+
+  <!-- Complete Button -->
+  <button id="complete-btn" class="complete-btn">Mark as Complete</button>
+
+  <div class="lesson-nav">
+    <a href="management-04.html" class="lesson-nav-btn prev">
+      <span data-en>← Previous: O&M and Performance Monitoring</span>
+      <span data-he>← הקודם: תפעול ותחזוקה וניטור ביצועים</span>
+      <span data-th>← ก่อนหน้า: O&M และการติดตามประสิทธิภาพ</span>
+    </a>
+    <a href="management-06.html" class="lesson-nav-btn next">
+      <span data-en>Next: Scaling a Solar Business →</span>
+      <span data-he>הבא: הרחבת עסק סולארי →</span>
+      <span data-th>ถัดไป: การขยายธุรกิจโซลาร์ →</span>
+    </a>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <p><span data-en>© 2026 TM Energy Academy</span><span data-he>© 2026 TM Energy Academy</span><span data-th>© 2026 TM Energy Academy</span></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initCompleteButton('management', 5);
+  if (typeof initQuiz === 'function') initQuiz('management', 5, [
+    {
+      question: {
+        en: "What is the #1 cause of injury and death in the solar industry?",
+        he: "מהו הגורם מספר 1 לפציעות ומוות בתעשיית הסולאר?",
+        th: "สาเหตุอันดับ 1 ของการบาดเจ็บและเสียชีวิตในอุตสาหกรรมโซลาร์คืออะไร?"
+      },
+      options: [
+        { en: "Electrical shock", he: "מכת חשמל", th: "ไฟฟ้าช็อต" },
+        { en: "Falls from heights", he: "נפילות מגובה", th: "ตกจากที่สูง" },
+        { en: "Heat stroke", he: "מכת חום", th: "ฮีทสโตรก" },
+        { en: "Equipment malfunction", he: "תקלת ציוד", th: "อุปกรณ์ขัดข้อง" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "Why can't you simply 'turn off' solar panels like an AC circuit?",
+        he: "למה אי אפשר פשוט 'לכבות' פאנלים סולאריים כמו מעגל AC?",
+        th: "ทำไมถึง 'ปิด' แผงโซลาร์ไม่ได้เหมือนวงจร AC?"
+      },
+      options: [
+        { en: "They don't have a switch", he: "אין להם מתג", th: "ไม่มีสวิตช์" },
+        { en: "They produce DC voltage whenever light hits them — can't be switched off", he: "הם מייצרים מתח DC בכל פעם שאור פוגע בהם — לא ניתן לכבות", th: "ผลิตแรงดัน DC เมื่อมีแสงตกกระทบ — ปิดไม่ได้" },
+        { en: "The inverter keeps them running", he: "הממיר שומר אותם פעילים", th: "อินเวอร์เตอร์ทำให้ทำงานต่อ" },
+        { en: "They store energy in batteries", he: "הם מאחסנים אנרגיה בסוללות", th: "เก็บพลังงานในแบตเตอรี่" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What type of fire extinguisher must be used on an electrical fire?",
+        he: "באיזה סוג מטף כיבוי יש להשתמש בשריפה חשמלית?",
+        th: "ต้องใช้ถังดับเพลิงชนิดไหนสำหรับไฟไหม้จากไฟฟ้า?"
+      },
+      options: [
+        { en: "Water extinguisher", he: "מטף מים", th: "ถังดับเพลิงน้ำ" },
+        { en: "Foam extinguisher", he: "מטף קצף", th: "ถังดับเพลิงโฟม" },
+        { en: "Class C — CO₂ or dry chemical", he: "Class C — CO₂ או אבקה יבשה", th: "Class C — CO₂ หรือผงเคมีแห้ง" },
+        { en: "Sand only", he: "חול בלבד", th: "ทรายเท่านั้น" }
+      ],
+      correct: 2
+    },
+    {
+      question: {
+        en: "According to the 30/30 lightning rule, when can workers resume outdoor work?",
+        he: "לפי חוק הברקים 30/30, מתי עובדים יכולים לחדש עבודה בחוץ?",
+        th: "ตามกฎฟ้าผ่า 30/30 คนงานกลับมาทำงานกลางแจ้งได้เมื่อไร?"
+      },
+      options: [
+        { en: "Immediately after rain stops", he: "מיד אחרי שהגשם נפסק", th: "ทันทีหลังฝนหยุด" },
+        { en: "30 minutes after the last thunder", he: "30 דקות אחרי הרעם האחרון", th: "30 นาทีหลังฟ้าร้องครั้งสุดท้าย" },
+        { en: "When the sun comes out", he: "כשהשמש יוצאת", th: "เมื่อแดดออก" },
+        { en: "10 minutes after lightning stops", he: "10 דקות אחרי שהברקים נפסקים", th: "10 นาทีหลังฟ้าแลบหยุด" }
+      ],
+      correct: 1
+    },
+    {
+      question: {
+        en: "What is the correct order of hazard controls (most to least effective)?",
+        he: "מהו הסדר הנכון של בקרות סכנות (מהיעילה ביותר לפחות)?",
+        th: "ลำดับการควบคุมอันตรายที่ถูกต้อง (มีประสิทธิภาพมากไปน้อย) คืออะไร?"
+      },
+      options: [
+        { en: "PPE → Administrative → Engineering", he: "ציוד מגן → מנהליות → הנדסיות", th: "PPE → การบริหาร → วิศวกรรม" },
+        { en: "Engineering → Administrative → PPE", he: "הנדסיות → מנהליות → ציוד מגן", th: "วิศวกรรม → การบริหาร → PPE" },
+        { en: "Administrative → PPE → Engineering", he: "מנהליות → ציוד מגן → הנדסיות", th: "การบริหาร → PPE → วิศวกรรม" },
+        { en: "PPE → Engineering → Administrative", he: "ציוד מגן → הנדסיות → מנהליות", th: "PPE → วิศวกรรม → การบริหาร" }
+      ],
+      correct: 1
+    }
+  ]);
+});
+</script>
+
+</body>
+</html>
