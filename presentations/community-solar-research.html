@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Solar — מחקר מעמיק | TM Energy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #0A1628;
+    --navy-light: #0F2035;
+    --navy-mid: #142840;
+    --green: #00D68F;
+    --green-dim: rgba(0,214,143,0.15);
+    --green-glow: rgba(0,214,143,0.3);
+    --orange: #F27A1A;
+    --orange-dim: rgba(242,122,26,0.15);
+    --white: #FFFFFF;
+    --gray: #8899AA;
+    --light-gray: #C5D0DB;
+    --danger: #FF4757;
+    --danger-dim: rgba(255,71,87,0.12);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Heebo', 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    user-select: none;
+  }
+
+  .presentation {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: none;
+    flex-direction: column;
+    padding: 50px 80px 80px;
+    overflow-y: auto;
+    background: var(--navy);
+  }
+
+  .slide.active { display: flex; }
+
+  /* Scrollbar */
+  .slide::-webkit-scrollbar { width: 6px; }
+  .slide::-webkit-scrollbar-track { background: transparent; }
+  .slide::-webkit-scrollbar-thumb { background: var(--navy-mid); border-radius: 3px; }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 44px;
+    background: rgba(10,22,40,0.95);
+    border-top: 1px solid rgba(0,214,143,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 0.5px;
+    z-index: 100;
+    direction: ltr;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Navigation */
+  .nav-controls {
+    position: fixed;
+    bottom: 54px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+    background: rgba(15,32,53,0.9);
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(0,214,143,0.15);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-btn {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,214,143,0.3);
+    background: transparent;
+    color: var(--green);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .nav-btn:hover { background: var(--green); color: var(--navy); }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-btn:disabled:hover { background: transparent; color: var(--green); }
+
+  .slide-counter {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--gray);
+    min-width: 60px;
+    text-align: center;
+    direction: ltr;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--orange));
+    transition: width 0.4s ease;
+    z-index: 100;
+  }
+
+  /* ============ SLIDE STYLES ============ */
+
+  /* Title slide */
+  .slide-title {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(ellipse at center, var(--navy-light) 0%, var(--navy) 70%);
+    position: relative;
+  }
+  .slide-title::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px; right: -100px; bottom: -100px;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(0,214,143,0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(242,122,26,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .title-badge {
+    display: inline-block;
+    padding: 6px 20px;
+    border: 1px solid var(--green);
+    border-radius: 20px;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1.main-title {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    direction: ltr;
+  }
+  h1.main-title .en { color: var(--green); }
+  h1.main-title .he { color: var(--white); }
+
+  .subtitle {
+    font-size: 22px;
+    color: var(--light-gray);
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+
+  .title-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--gray);
+  }
+
+  /* Section headers */
+  .slide-header {
+    margin-bottom: 30px;
+    flex-shrink: 0;
+  }
+
+  .slide-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .slide-header .accent { color: var(--green); }
+  .slide-header .accent-orange { color: var(--orange); }
+
+  .slide-header .slide-subtitle {
+    font-size: 16px;
+    color: var(--gray);
+    font-weight: 400;
+  }
+
+  /* Content area */
+  .content { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+
+  /* Info cards */
+  .info-card {
+    background: var(--navy-light);
+    border: 1px solid rgba(0,214,143,0.1);
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: border-color 0.2s;
+  }
+  .info-card:hover { border-color: rgba(0,214,143,0.25); }
+
+  .info-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--green);
+  }
+
+  .info-card p, .info-card li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--light-gray);
+  }
+
+  .info-card ul { padding-right: 20px; }
+  .info-card li { margin-bottom: 4px; }
+
+  /* Stat grid */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .stat-box {
+    background: var(--navy-light);
+    border: 1px solid rgba(0,214,143,0.08);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-box .number {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green);
+    display: block;
+    margin-bottom: 6px;
+    direction: ltr;
+  }
+
+  .stat-box .number.orange { color: var(--orange); }
+
+  .stat-box .label {
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  /* Company cards */
+  .company-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    flex: 1;
+  }
+
+  .company-card {
+    background: var(--navy-light);
+    border: 1px solid rgba(0,214,143,0.08);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .company-card.danger { border-color: rgba(255,71,87,0.2); }
+  .company-card.danger .cc-header .cc-ticker { color: var(--danger); border-color: var(--danger); }
+
+  .cc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    direction: ltr;
+  }
+
+  .cc-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .cc-ticker {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--green);
+    border: 1px solid rgba(0,214,143,0.3);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  .cc-mcap {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 10px;
+    direction: ltr;
+  }
+
+  .cc-details { list-style: none; flex: 1; }
+  .cc-details li {
+    font-size: 13px;
+    color: var(--light-gray);
+    line-height: 1.7;
+    padding-right: 14px;
+    position: relative;
+  }
+  .cc-details li::before {
+    content: '→';
+    position: absolute;
+    right: 0;
+    color: var(--green);
+    font-size: 11px;
+  }
+  .company-card.danger .cc-details li::before { color: var(--danger); }
+
+  .cc-lesson {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .cc-lesson.good { color: var(--green); }
+  .cc-lesson.bad { color: var(--danger); }
+
+  /* Model cards */
+  .model-cards { display: flex; flex-direction: column; gap: 14px; }
+
+  .model-card {
+    background: var(--navy-light);
+    border: 1px solid rgba(0,214,143,0.08);
+    border-radius: 12px;
+    padding: 18px 22px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .model-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--green);
+    opacity: 0.4;
+    min-width: 36px;
+    text-align: center;
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .model-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .model-content p {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.6;
+  }
+
+  .model-content .margin-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-top: 6px;
+  }
+  .margin-tag.high { background: var(--green-dim); color: var(--green); }
+  .margin-tag.med { background: var(--orange-dim); color: var(--orange); }
+  .margin-tag.low { background: rgba(255,255,255,0.06); color: var(--gray); }
+
+  /* Econ table */
+  .econ-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .econ-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--navy-light);
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,214,143,0.06);
+  }
+
+  .econ-label {
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  .econ-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green);
+    direction: ltr;
+  }
+  .econ-value.orange { color: var(--orange); }
+  .econ-value.red { color: var(--danger); }
+
+  /* Timeline */
+  .timeline { display: flex; flex-direction: column; gap: 16px; }
+
+  .timeline-phase {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--navy-light);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(0,214,143,0.06);
+    position: relative;
+  }
+
+  .phase-time {
+    font-family: 'Inter', sans-serif;
+    min-width: 100px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .phase-time .months {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+  }
+  .phase-time .label {
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .phase-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .phase-content p {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.6;
+  }
+
+  .timeline-total {
+    text-align: center;
+    padding: 16px;
+    background: var(--green-dim);
+    border-radius: 12px;
+    border: 1px solid rgba(0,214,143,0.2);
+  }
+  .timeline-total .big {
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--green);
+    direction: ltr;
+  }
+  .timeline-total .desc {
+    font-size: 14px;
+    color: var(--light-gray);
+    margin-top: 4px;
+  }
+
+  /* Regulation */
+  .reg-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    flex: 1;
+  }
+
+  .reg-box {
+    background: var(--navy-light);
+    border-radius: 12px;
+    padding: 22px;
+    border: 1px solid rgba(0,214,143,0.08);
+  }
+
+  .reg-box h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .reg-box h3 .flag { font-size: 22px; }
+
+  .reg-box ul { list-style: none; }
+  .reg-box li {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.8;
+    padding-right: 16px;
+    position: relative;
+  }
+  .reg-box li::before {
+    content: '•';
+    position: absolute;
+    right: 0;
+    color: var(--green);
+  }
+
+  .highlight-box {
+    background: var(--orange-dim);
+    border: 1px solid rgba(242,122,26,0.25);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 12px;
+  }
+  .highlight-box p {
+    font-size: 14px;
+    color: var(--orange);
+    font-weight: 500;
+  }
+
+  /* Case study detail */
+  .cs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+
+  .cs-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    direction: ltr;
+  }
+
+  .cs-header .cs-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: var(--green-dim);
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  .cs-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-shrink: 0;
+  }
+
+  .cs-stat {
+    text-align: center;
+    background: var(--navy-light);
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid rgba(0,214,143,0.06);
+  }
+
+  .cs-stat .val {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+    direction: ltr;
+  }
+
+  .cs-stat .lbl {
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+
+  /* Opportunity slide */
+  .opp-highlight {
+    background: linear-gradient(135deg, rgba(0,214,143,0.08), rgba(242,122,26,0.06));
+    border: 1px solid rgba(0,214,143,0.15);
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+    margin-bottom: 18px;
+    flex-shrink: 0;
+  }
+
+  .opp-highlight .big-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  .opp-highlight .sub-text {
+    font-size: 14px;
+    color: var(--light-gray);
+    margin-top: 4px;
+  }
+
+  /* Strategy phases */
+  .strategy-phases {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .strat-phase {
+    background: var(--navy-light);
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid rgba(0,214,143,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .strat-phase::before {
+    content: attr(data-phase);
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(0,214,143,0.06);
+    line-height: 1;
+  }
+
+  .strat-phase h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+
+  .strat-phase .years {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--orange);
+    margin-bottom: 8px;
+  }
+
+  .strat-phase p {
+    font-size: 13px;
+    color: var(--light-gray);
+    line-height: 1.6;
+  }
+
+  .strat-target {
+    grid-column: 1 / -1;
+    background: var(--green-dim);
+    border: 1px solid rgba(0,214,143,0.2);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .strat-target .val {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--green);
+    direction: ltr;
+  }
+
+  .strat-target .lbl {
+    font-size: 14px;
+    color: var(--light-gray);
+    margin-top: 4px;
+  }
+
+  /* Risks */
+  .risk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .risk-item {
+    background: var(--navy-light);
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid rgba(255,71,87,0.08);
+  }
+
+  .risk-item h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--danger);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .risk-item h3::before {
+    content: '⚠';
+    font-size: 12px;
+  }
+
+  .risk-item p {
+    font-size: 13px;
+    color: var(--light-gray);
+    line-height: 1.6;
+  }
+
+  .risk-lesson {
+    grid-column: 1 / -1;
+    background: var(--danger-dim);
+    border: 1px solid rgba(255,71,87,0.2);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .risk-lesson p {
+    font-size: 15px;
+    color: var(--danger);
+    font-weight: 600;
+  }
+  .risk-lesson .sub {
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--light-gray);
+    margin-top: 4px;
+  }
+
+  /* Next steps */
+  .steps-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .step-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--navy-light);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid rgba(0,214,143,0.06);
+  }
+
+  .step-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--green);
+    min-width: 30px;
+    text-align: center;
+    opacity: 0.6;
+  }
+
+  .step-text {
+    font-size: 15px;
+    color: var(--light-gray);
+    line-height: 1.6;
+  }
+
+  .step-target {
+    margin-top: 16px;
+    background: var(--green-dim);
+    border: 1px solid rgba(0,214,143,0.2);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .step-target .val {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  .step-target .lbl {
+    font-size: 14px;
+    color: var(--light-gray);
+    margin-top: 4px;
+  }
+
+  /* Key insight box */
+  .key-insight {
+    background: var(--green-dim);
+    border: 1px solid rgba(0,214,143,0.2);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: auto;
+  }
+
+  .key-insight p {
+    font-size: 14px;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .key-insight .label {
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .slide { padding: 30px 30px 80px; }
+    h1.main-title { font-size: 36px; }
+    .slide-header h2 { font-size: 28px; }
+    .company-cards, .reg-columns, .strategy-phases, .risk-grid { grid-template-columns: 1fr; }
+    .cs-stats { grid-template-columns: repeat(2, 1fr); }
+    .econ-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="presentation">
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- SLIDE 1: Title -->
+  <div class="slide slide-title active" data-slide="1">
+    <div class="title-badge">DEEP RESEARCH</div>
+    <h1 class="main-title">
+      <span class="en">Community Solar</span><br>
+      <span class="he">— מחקר מעמיק</span>
+    </h1>
+    <p class="subtitle">מנוע צמיחה אסטרטגי ל-TM Energy</p>
+    <p class="title-date">March 2026</p>
+  </div>
+
+  <!-- SLIDE 2: What is Community Solar -->
+  <div class="slide" data-slide="2">
+    <div class="slide-header">
+      <h2>מה זה <span class="accent">Community Solar</span>?</h2>
+      <p class="slide-subtitle">Solar farm משותף — אנרגיה סולארית נגישה לכולם</p>
+    </div>
+    <div class="content">
+      <div class="info-card">
+        <h3>הרעיון המרכזי</h3>
+        <p>Solar farm משותף — מאפשר למנויים ליהנות מאנרגיה סולארית בלי להתקין פאנלים על הגג. המנויים מקבלים Virtual Net Metering — קרדיט ישיר על חשבון החשמל שלהם.</p>
+      </div>
+      <div class="info-card">
+        <h3>3 מודלים עיקריים</h3>
+        <ul>
+          <li><strong>Subscription</strong> — תשלום חודשי קבוע, קרדיט על החשבון</li>
+          <li><strong>Ownership</strong> — רכישת פאנלים ספציפיים ב-farm</li>
+          <li><strong>Utility-Led</strong> — חברת החשמל מפעילה, הלקוח רק נרשם</li>
+        </ul>
+      </div>
+      <div class="opp-highlight">
+        <div class="big-text">80% מהאמריקאים לא יכולים להתקין סולאר</div>
+        <div class="sub-text">שוכרים, גגות לא מתאימים, בנייני מגורים — Community Solar פותר את הבעיה</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Market Size -->
+  <div class="slide" data-slide="3">
+    <div class="slide-header">
+      <h2>גודל השוק — <span class="accent">מספרים אמיתיים</span></h2>
+      <p class="slide-subtitle">NREL Data, December 2024</p>
+    </div>
+    <div class="content">
+      <div class="stat-grid">
+        <div class="stat-box">
+          <span class="number">7,800+</span>
+          <span class="label">MW Installed (US)</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">44</span>
+          <span class="label">States with Projects</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">$7.1B</span>
+          <span class="label">Global Market (2024)</span>
+        </div>
+        <div class="stat-box">
+          <span class="number orange">$28B</span>
+          <span class="label">Projected 2030</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">~26%</span>
+          <span class="label">CAGR</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">$400</span>
+          <span class="label">Avg Savings/Year/Household</span>
+        </div>
+      </div>
+      <div class="info-card" style="margin-top:14px">
+        <h3>ריכוזי פעילות</h3>
+        <p>Florida, New York, Massachusetts, Minnesota — 4 מדינות שמובילות את השוק האמריקאי. Florida בראש בזכות NextEra/FPL.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Public Companies -->
+  <div class="slide" data-slide="4">
+    <div class="slide-header">
+      <h2>חברות בורסאיות — <span class="accent">Case Studies</span></h2>
+    </div>
+    <div class="company-cards">
+      <div class="company-card">
+        <div class="cc-header">
+          <span class="cc-name">NextEra Energy</span>
+          <span class="cc-ticker">NYSE: NEE</span>
+        </div>
+        <div class="cc-mcap">Market Cap ~$160B</div>
+        <ul class="cc-details">
+          <li>FPL SolarTogether: 1,790 MW community solar</li>
+          <li>Largest utility program in US</li>
+          <li>2.5M subscribers</li>
+          <li>Subscription credits on utility bill</li>
+          <li>600% growth 2020-2024</li>
+        </ul>
+        <div class="cc-lesson good">✦ Utility-backed = guaranteed scale</div>
+      </div>
+
+      <div class="company-card">
+        <div class="cc-header">
+          <span class="cc-name">Clearway Energy</span>
+          <span class="cc-ticker">NYSE: CWEN</span>
+        </div>
+        <div class="cc-mcap">Market Cap ~$6B</div>
+        <ul class="cc-details">
+          <li>2.3 GW portfolio (largest pure-play)</li>
+          <li>Operating in 16 states</li>
+          <li>Revenue: $1.3B (2024)</li>
+          <li>Long-term PPAs + subscriber platforms</li>
+          <li>Acquired by TotalEnergies ($25.9B, 2024)</li>
+        </ul>
+        <div class="cc-lesson good">✦ Pure-play attracts major acquirers</div>
+      </div>
+
+      <div class="company-card">
+        <div class="cc-header">
+          <span class="cc-name">Arcadia</span>
+          <span class="cc-ticker">PRIVATE</span>
+        </div>
+        <div class="cc-mcap">Valuation ~$1.5B</div>
+        <ul class="cc-details">
+          <li>2 GW+ solar under management</li>
+          <li>200,000+ homes connected</li>
+          <li>2,500+ organizations</li>
+          <li>Software layer: developer ↔ consumer</li>
+          <li>SaaS model — no hardware ownership</li>
+        </ul>
+        <div class="cc-lesson good">✦ SaaS = light on capital, high margins</div>
+      </div>
+
+      <div class="company-card danger">
+        <div class="cc-header">
+          <span class="cc-name">Sunnova Energy</span>
+          <span class="cc-ticker">BANKRUPT</span>
+        </div>
+        <div class="cc-mcap">Was $3B+ → Chapter 11 (2025)</div>
+        <ul class="cc-details">
+          <li>Community solar + residential</li>
+          <li>Filed Chapter 11</li>
+          <li>Assets acquired by Solaris</li>
+          <li>Over-leveraged balance sheet</li>
+          <li>Customer acquisition costs too high</li>
+        </ul>
+        <div class="cc-lesson bad">✦ LESSON: Unit economics > growth at all costs</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: Business Models -->
+  <div class="slide" data-slide="5">
+    <div class="slide-header">
+      <h2>מודלים עסקיים — <span class="accent">4 דרכים להרוויח</span></h2>
+    </div>
+    <div class="model-cards">
+      <div class="model-card">
+        <div class="model-num">01</div>
+        <div class="model-content">
+          <h3>Developer Model</h3>
+          <p>בונה farm, מוכר subscriptions, מרוויח spread בין עלות ייצור למחיר מנוי.</p>
+          <span class="margin-tag high">Margin: 15-25%</span>
+        </div>
+      </div>
+      <div class="model-card">
+        <div class="model-num">02</div>
+        <div class="model-content">
+          <h3>Utility Partnership</h3>
+          <p>שותפות עם חברת חשמל. החברה בונה, utility מנהלת billing. סיכון נמוך, מרווח נמוך יותר.</p>
+          <span class="margin-tag low">Lower risk, lower margin</span>
+        </div>
+      </div>
+      <div class="model-card">
+        <div class="model-num">03</div>
+        <div class="model-content">
+          <h3>Platform / SaaS Model <span style="color:var(--gray);font-weight:400">(Arcadia)</span></h3>
+          <p>לא בונה, מחבר בין developers ל-subscribers. Fee per subscriber/month.</p>
+          <span class="margin-tag high">High margin, low capex</span>
+        </div>
+      </div>
+      <div class="model-card">
+        <div class="model-num">04</div>
+        <div class="model-content">
+          <h3>Own & Operate (PPA)</h3>
+          <p>בונה, מחזיק, מוכר חשמל. Capital intensive אבל recurring revenue ל-20-25 שנים.</p>
+          <span class="margin-tag med">Capital intensive, 20-25yr recurring</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: Unit Economics -->
+  <div class="slide" data-slide="6">
+    <div class="slide-header">
+      <h2>Unit Economics — <span class="accent">המספרים האמיתיים</span></h2>
+    </div>
+    <div class="content">
+      <div class="econ-grid">
+        <div class="econ-row">
+          <span class="econ-label">Average project size</span>
+          <span class="econ-value">2-5 MW</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">Cost/Watt (ground mount)</span>
+          <span class="econ-value">$0.80-1.20/W</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">5 MW project investment</span>
+          <span class="econ-value orange">$4-6M</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">Revenue per subscriber</span>
+          <span class="econ-value">$15-25/mo</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">Subscribers per 5 MW</span>
+          <span class="econ-value">~500</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">Annual revenue per MW</span>
+          <span class="econ-value">$90-150K</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">Payback period</span>
+          <span class="econ-value">5-7 years</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">IRR (unlevered)</span>
+          <span class="econ-value">8-15%</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">IRR (with leverage)</span>
+          <span class="econ-value">12-20%</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">LCOE</span>
+          <span class="econ-value">$0.03-0.05/kWh</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">Customer churn</span>
+          <span class="econ-value red">5-15%/yr</span>
+        </div>
+        <div class="econ-row">
+          <span class="econ-label">Gross Margin</span>
+          <span class="econ-value">15-25%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: Timeline -->
+  <div class="slide" data-slide="7">
+    <div class="slide-header">
+      <h2>Timeline — <span class="accent">כמה זמן לוקח?</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-phase">
+        <div class="phase-time">
+          <div class="months">3-6</div>
+          <div class="label">Months</div>
+        </div>
+        <div class="phase-content">
+          <h3>Phase 1 — Planning</h3>
+          <p>Site selection, permitting, interconnection application. בחירת אתר, רישיונות וחיבור לרשת.</p>
+        </div>
+      </div>
+      <div class="timeline-phase">
+        <div class="phase-time">
+          <div class="months">6-12</div>
+          <div class="label">Months</div>
+        </div>
+        <div class="phase-content">
+          <h3>Phase 2 — Construction</h3>
+          <p>Engineering, procurement, construction. תכנון הנדסי, רכש ובנייה.</p>
+        </div>
+      </div>
+      <div class="timeline-phase">
+        <div class="phase-time">
+          <div class="months">1-3</div>
+          <div class="label">Months</div>
+        </div>
+        <div class="phase-content">
+          <h3>Phase 3 — Launch</h3>
+          <p>Testing, commissioning, subscriber enrollment. בדיקות, הפעלה וגיוס מנויים.</p>
+        </div>
+      </div>
+      <div class="timeline-total">
+        <div class="big">12-18 Months</div>
+        <div class="desc">From concept to revenue — ה-MW הראשון לוקח 18 חודשים, כל MW נוסף 6-9 חודשים</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: Regulation -->
+  <div class="slide" data-slide="8">
+    <div class="slide-header">
+      <h2>רגולציה — <span class="accent">מה צריך?</span></h2>
+    </div>
+    <div class="reg-columns">
+      <div class="reg-box">
+        <h3><span class="flag">🇺🇸</span> United States</h3>
+        <ul>
+          <li>24 states + DC with active community solar policies</li>
+          <li>Virtual Net Metering legislation in most states</li>
+          <li>ITC (Investment Tax Credit) — 30%</li>
+          <li>State-level RPS mandates driving adoption</li>
+          <li>Mature regulatory framework</li>
+        </ul>
+      </div>
+      <div class="reg-box">
+        <h3><span class="flag">🇹🇭</span> Thailand</h3>
+        <ul>
+          <li>No specific community solar regulation YET</li>
+          <li>Net billing: 2.70 THB/kWh export rate</li>
+          <li>PEA grid connection available</li>
+          <li>BOI incentives for renewable energy</li>
+          <li>Key need: Virtual Net Metering legislation</li>
+        </ul>
+        <div class="highlight-box">
+          <p>First mover opportunity — Community Solar בתאילנד הוא Blue Ocean. מי שיכנס ראשון יגדיר את הכללים.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 9: FPL SolarTogether Case Study -->
+  <div class="slide" data-slide="9">
+    <div class="slide-header">
+      <h2>Case Study מפורט</h2>
+    </div>
+    <div class="content">
+      <div class="cs-header">
+        <h3>FPL SolarTogether — NextEra Energy</h3>
+        <span class="cs-tag">UTILITY-LED MODEL</span>
+      </div>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <div class="val">1,790 MW</div>
+          <div class="lbl">Capacity</div>
+        </div>
+        <div class="cs-stat">
+          <div class="val">37</div>
+          <div class="lbl">Solar Centers</div>
+        </div>
+        <div class="cs-stat">
+          <div class="val">2.5M</div>
+          <div class="lbl">Subscribers</div>
+        </div>
+        <div class="cs-stat">
+          <div class="val">$2.5B+</div>
+          <div class="lbl">Investment</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>איך זה עובד</h3>
+        <ul>
+          <li>Launched in 2019 in Florida</li>
+          <li>$0 upfront — אין עלות הצטרפות</li>
+          <li>Monthly subscription credit — קרדיט חודשי על חשבון החשמל</li>
+          <li>50-75% solar generation credit on bill</li>
+          <li>ROI: Regulated utility return (~10% ROE)</li>
+        </ul>
+      </div>
+      <div class="key-insight">
+        <div class="label">KEY INSIGHT</div>
+        <p>Utility-backed = guaranteed subscriber base. כשחברת החשמל עצמה מנהלת את התוכנית, אין בעיית customer acquisition.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 10: Nexamp Case Study -->
+  <div class="slide" data-slide="10">
+    <div class="slide-header">
+      <h2>Case Study</h2>
+    </div>
+    <div class="content">
+      <div class="cs-header">
+        <h3>Nexamp — Pure Developer Model</h3>
+        <span class="cs-tag">DEVELOPER MODEL</span>
+      </div>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <div class="val">1.5+ GW</div>
+          <div class="lbl">Developed</div>
+        </div>
+        <div class="cs-stat">
+          <div class="val">12</div>
+          <div class="lbl">States</div>
+        </div>
+        <div class="cs-stat">
+          <div class="val">125K+</div>
+          <div class="lbl">Subscribers</div>
+        </div>
+        <div class="cs-stat">
+          <div class="val">$450M+</div>
+          <div class="lbl">Project Finance</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>המודל</h3>
+        <ul>
+          <li>Founded 2007 in Boston</li>
+          <li>Revenue model: Develop → Subscribe → Manage</li>
+          <li>Average project: 5 MW, 400 subscribers, $5M investment</li>
+          <li>No utility partnership needed — independent developer</li>
+          <li>Raised $450M+ in project finance</li>
+        </ul>
+      </div>
+      <div class="key-insight">
+        <div class="label">KEY INSIGHT</div>
+        <p>Pure developer model works — אין צורך בשותפות עם חברת חשמל. מפתח עצמאי יכול לבנות, לנהל מנויים ולהרוויח.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 11: Thailand Opportunity -->
+  <div class="slide" data-slide="11">
+    <div class="slide-header">
+      <h2>Community Solar בתאילנד — <span class="accent-orange">ההזדמנות</span></h2>
+    </div>
+    <div class="content">
+      <div class="opp-highlight">
+        <div class="big-text">Blue Ocean — אין עדיין Community Solar בתאילנד</div>
+        <div class="sub-text">PEA serves 20M customers, 80%+ cannot install rooftop solar</div>
+      </div>
+      <div class="stat-grid" style="margin-bottom:14px">
+        <div class="stat-box">
+          <span class="number">3,500+</span>
+          <span class="label">MW Rooftop Installed (TH)</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">20M</span>
+          <span class="label">PEA Customers</span>
+        </div>
+        <div class="stat-box">
+          <span class="number orange">80%+</span>
+          <span class="label">Can't Install Rooftop</span>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>Koh Phangan — יתרונות ייחודיים</h3>
+        <ul>
+          <li>Island grid — עלויות חשמל גבוהות</li>
+          <li>Eco-tourism market — ביקוש לאנרגיה ירוקה</li>
+          <li>Hotels, resorts, residents — בסיס מנויים מובנה</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>מודל TM Energy</h3>
+        <p>Build solar farm on available land → sell subscriptions to hotels/resorts/residents</p>
+        <p style="margin-top:8px;color:var(--orange);font-weight:600;direction:ltr">5 MW farm = ฿150-200M investment = ฿30-40M annual revenue</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 12: TM Energy Strategy -->
+  <div class="slide" data-slide="12">
+    <div class="slide-header">
+      <h2>מודל TM Energy — <span class="accent">Community Solar Strategy</span></h2>
+    </div>
+    <div class="content">
+      <div class="strategy-phases">
+        <div class="strat-phase" data-phase="1">
+          <h3>Phase 1 — Rooftop EPC</h3>
+          <div class="years">Year 1-2</div>
+          <p>בניית הכנסה ומוניטין דרך התקנות גגות. תזרים מזומנים + track record.</p>
+        </div>
+        <div class="strat-phase" data-phase="2">
+          <h3>Phase 2 — Pilot</h3>
+          <div class="years">Year 2-3</div>
+          <p>פיילוט community solar ראשון — 500 kWp על קרקע בבעלות או חכירה.</p>
+        </div>
+        <div class="strat-phase" data-phase="3">
+          <h3>Phase 3 — Scale</h3>
+          <div class="years">Year 3-5</div>
+          <p>הרחבה ל-5 MW community farm מלא. גיוס מנויים בקנה מידה.</p>
+        </div>
+        <div class="strat-phase" data-phase="4">
+          <h3>Phase 4 — Expand</h3>
+          <div class="years">Year 5+</div>
+          <p>הרחבה לקוסמוי, סורט תאני ומעבר לאי. רפליקציית המודל.</p>
+        </div>
+        <div class="strat-target">
+          <div class="val">฿10M ARR by Year 5</div>
+          <div class="lbl">Capital strategy: PPA model — own the asset, sell the kWh</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 13: Risks -->
+  <div class="slide" data-slide="13">
+    <div class="slide-header">
+      <h2>סיכונים <span class="accent-orange">ואתגרים</span></h2>
+    </div>
+    <div class="content">
+      <div class="risk-grid">
+        <div class="risk-item">
+          <h3>Regulatory</h3>
+          <p>אין חוק VNM בתאילנד עדיין. בלי Virtual Net Metering, המודל מוגבל.</p>
+        </div>
+        <div class="risk-item">
+          <h3>Capital</h3>
+          <p>5 MW = ฿150-200M. צריך project finance — הון עצמי לבד לא מספיק.</p>
+        </div>
+        <div class="risk-item">
+          <h3>Land</h3>
+          <p>קרקע באי יקרה ומוגבלת. צריך למצוא אופציות חכירה ארוכת טווח.</p>
+        </div>
+        <div class="risk-item">
+          <h3>Customer Acquisition</h3>
+          <p>עלות שיווק למנוי. צריך אסטרטגיית גיוס יעילה.</p>
+        </div>
+        <div class="risk-item">
+          <h3>Churn</h3>
+          <p>שימור מנויים — 5-15% churn שנתי. צריך lock-in ו-value proposition חזק.</p>
+        </div>
+        <div class="risk-item">
+          <h3>Grid Capacity</h3>
+          <p>PEA interconnection capacity — הרשת באי מוגבלת. צריך לוודא קיבולת.</p>
+        </div>
+        <div class="risk-lesson">
+          <p>Sunnova Lesson: Don't Over-Leverage</p>
+          <p class="sub">$3B+ market cap → Chapter 11. Unit economics חייבים לעבוד לפני שמגדילים.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 14: Recommendations -->
+  <div class="slide" data-slide="14">
+    <div class="slide-header">
+      <h2>המלצות + <span class="accent">Next Steps</span></h2>
+    </div>
+    <div class="content">
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text">Monitor Thailand ERC לקידום רגולציית Virtual Net Metering</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text">Start lobbying through Thai Solar Association — להשפיע על חקיקה</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text">Build PPA portfolio (rooftop) — להוכיח track record לפני community solar</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text">Identify land options — אופציות קרקע ל-500 kWp pilot בקופנגן</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-text">Apply for BOI promotion (Section 7.1) — הטבות מס להשקעות אנרגיה מתחדשת</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">6</div>
+          <div class="step-text">Engage project finance partners — בנקים תאילנדיים ו-DFIs</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">7</div>
+          <div class="step-text">Community solar pilot — יעד: Q4 2027</div>
+        </div>
+      </div>
+      <div class="step-target">
+        <div class="val">Target: Community Solar Pilot by Q4 2027</div>
+        <div class="lbl">From rooftop EPC → community farm — שלב אחרי שלב</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Navigation -->
+<div class="nav-controls">
+  <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">◀</button>
+  <span class="slide-counter" id="slideCounter">1 / 14</span>
+  <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">▶</button>
+</div>
+
+<div class="slide-footer">TM Energy — Community Solar Research — March 2026 — Confidential</div>
+
+<script>
+  let current = 1;
+  const total = 14;
+
+  function showSlide(n) {
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+    const target = document.querySelector(`[data-slide="${n}"]`);
+    if (target) {
+      target.classList.add('active');
+      target.scrollTop = 0;
+    }
+    current = n;
+    document.getElementById('slideCounter').textContent = `${n} / ${total}`;
+    document.getElementById('prevBtn').disabled = n === 1;
+    document.getElementById('nextBtn').disabled = n === total;
+    document.getElementById('progressBar').style.width = `${(n / total) * 100}%`;
+  }
+
+  function changeSlide(dir) {
+    const next = current + dir;
+    if (next >= 1 && next <= total) showSlide(next);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      // RTL: right arrow = previous, left arrow = next
+      changeSlide(e.key === 'ArrowLeft' ? 1 : -1);
+    } else if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      changeSlide(1);
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault();
+      changeSlide(-1);
+    } else if (e.key === 'Home') {
+      showSlide(1);
+    } else if (e.key === 'End') {
+      showSlide(total);
+    }
+  });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) changeSlide(diff > 0 ? -1 : 1); // RTL swipe
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>
