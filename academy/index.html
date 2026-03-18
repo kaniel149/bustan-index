@@ -3,9 +3,405 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TM Energy Academy</title>
+  <title>TM Energy Academy — Solar Training Platform</title>
+  <meta name="description" content="Master solar energy, sales, installation, EV charging, and management. Professional training in English, Hebrew, and Thai by TM Energy.">
+  <link rel="icon" type="image/png" href="../proposals/tm-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TM Energy Academy — Solar Training Platform">
+  <meta property="og:description" content="Master solar energy, sales, installation, EV charging, and management. Professional training in 3 languages.">
+  <meta property="og:image" content="https://index.energy-tm.com/proposals/tm-logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://index.energy-tm.com/academy/">
+
   <link rel="stylesheet" href="assets/academy.css">
   <script src="assets/academy.js" defer></script>
+
+  <style>
+    /* ========== Hero Upgrade ========== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 2rem 4rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 40px,
+          rgba(0,214,143,0.015) 40px,
+          rgba(0,214,143,0.015) 42px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,184,0,0.01) 40px,
+          rgba(255,184,0,0.01) 42px
+        ),
+        linear-gradient(180deg, rgba(0,214,143,0.06) 0%, transparent 40%, rgba(255,184,0,0.04) 100%);
+      z-index: 0;
+    }
+    .hero > * { position: relative; z-index: 2; }
+
+    /* Floating particles */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-particles .dot {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation: float-dot linear infinite;
+    }
+    @keyframes float-dot {
+      0% { opacity: 0; transform: translateY(0) scale(0.5); }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-300px) scale(1.2); }
+    }
+
+    /* Hero CTA */
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #00D68F, #00B377);
+      color: #0A1628;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(0,214,143,0.3);
+    }
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,214,143,0.4);
+    }
+    .hero-admin-link {
+      color: #5A6B7D;
+      font-size: 0.82rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .hero-admin-link:hover { color: #8899AA; }
+
+    /* ========== Learning Path Section ========== */
+    .learning-path-section {
+      padding: 3rem 2rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .path-label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      color: #FFB800;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .path-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+    .path-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(13,27,48,0.7);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      min-width: 120px;
+      backdrop-filter: blur(8px);
+      transition: 0.3s;
+    }
+    .path-step:hover {
+      border-color: rgba(0,214,143,0.3);
+      transform: translateY(-2px);
+    }
+    .path-step-icon { font-size: 1.6rem; }
+    .path-step-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #F0F4F8;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .path-step-num {
+      font-size: 0.65rem;
+      color: #5A6B7D;
+      font-weight: 500;
+    }
+    .path-arrow {
+      font-size: 1.2rem;
+      color: #00D68F;
+      padding: 0 8px;
+      flex-shrink: 0;
+    }
+    .path-step.coming-soon { opacity: 0.5; }
+
+    @media (max-width: 768px) {
+      .path-flow { flex-direction: column; gap: 0; }
+      .path-arrow { transform: rotate(90deg); padding: 4px 0; }
+    }
+
+    /* ========== Track Card Upgrades ========== */
+    .track-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .track-card .track-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
+
+    /* Track accent colors */
+    .track-card[data-track="solar-fundamentals"] .track-icon-wrap {
+      background: linear-gradient(135deg, #FF8C00, #FFB800);
+      box-shadow: 0 4px 16px rgba(255,140,0,0.25);
+    }
+    .track-card[data-track="sales-bd"] .track-icon-wrap {
+      background: linear-gradient(135deg, #4F46E5, #7C3AED);
+      box-shadow: 0 4px 16px rgba(124,58,237,0.25);
+    }
+    .track-card[data-track="technical"] .track-icon-wrap {
+      background: linear-gradient(135deg, #059669, #10B981);
+      box-shadow: 0 4px 16px rgba(16,185,129,0.25);
+    }
+    .track-card[data-track="ev-storage"] .track-icon-wrap {
+      background: linear-gradient(135deg, #0891B2, #06B6D4);
+      box-shadow: 0 4px 16px rgba(6,182,212,0.25);
+    }
+    .track-card[data-track="management"] .track-icon-wrap {
+      background: linear-gradient(135deg, #4B5563, #6B7280);
+      box-shadow: 0 4px 16px rgba(107,114,128,0.15);
+    }
+
+    /* Difficulty badge */
+    .difficulty-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+    }
+    body[data-lang="he"] .difficulty-badge { right: auto; left: 1.25rem; }
+    .difficulty-badge.beginner {
+      background: rgba(16,185,129,0.15);
+      color: #10B981;
+      border: 1px solid rgba(16,185,129,0.25);
+    }
+    .difficulty-badge.intermediate {
+      background: rgba(255,184,0,0.15);
+      color: #FFB800;
+      border: 1px solid rgba(255,184,0,0.25);
+    }
+    .difficulty-badge.advanced {
+      background: rgba(239,68,68,0.15);
+      color: #EF4444;
+      border: 1px solid rgba(239,68,68,0.25);
+    }
+
+    /* Lesson preview list */
+    .lesson-preview {
+      margin: 0.75rem 0 1rem;
+      padding: 0;
+      list-style: none;
+    }
+    .lesson-preview li {
+      font-size: 0.78rem;
+      color: #5A6B7D;
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+    body[data-lang="he"] .lesson-preview li { padding-left: 0; padding-right: 16px; }
+    .lesson-preview li::before {
+      content: '›';
+      position: absolute;
+      left: 4px;
+      color: #00D68F;
+      font-weight: 700;
+    }
+    body[data-lang="he"] .lesson-preview li::before { left: auto; right: 4px; content: '‹'; }
+    .lesson-preview .more {
+      font-size: 0.72rem;
+      color: #00D68F;
+      font-weight: 500;
+      padding-left: 16px;
+    }
+    body[data-lang="he"] .lesson-preview .more { padding-left: 0; padding-right: 16px; }
+    .lesson-preview .more::before { display: none; }
+
+    /* ========== Certificate Section ========== */
+    .certificate-section {
+      padding: 3rem 2rem 4rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .certificate-card {
+      background: rgba(13,27,48,0.7);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+    }
+    .certificate-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,214,143,0.05), rgba(255,184,0,0.05));
+      z-index: 0;
+    }
+    .certificate-card > * { position: relative; z-index: 1; }
+    .cert-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .cert-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .cert-desc {
+      font-size: 0.95rem;
+      color: #8899AA;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+    .cert-mockup {
+      display: inline-block;
+      border: 2px solid rgba(255,184,0,0.3);
+      border-radius: 8px;
+      padding: 20px 36px;
+      background: rgba(10,22,40,0.6);
+      position: relative;
+    }
+    .cert-mockup-inner {
+      text-align: center;
+    }
+    .cert-mockup-title {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #FFB800;
+      margin-bottom: 4px;
+    }
+    .cert-mockup-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #F0F4F8;
+      margin-bottom: 2px;
+    }
+    .cert-mockup-track {
+      font-size: 0.72rem;
+      color: #5A6B7D;
+    }
+    .cert-mockup-seal {
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #FFB800, #E6A600);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(255,184,0,0.3);
+    }
+
+    /* ========== Footer Upgrade ========== */
+    .footer-main-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-main-links a {
+      color: #8899AA;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-main-links a:hover { color: #00D68F; }
+    .footer-powered {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: #5A6B7D;
+    }
+    .footer-powered img {
+      height: 18px;
+      width: auto;
+      opacity: 0.5;
+    }
+    .footer-admin {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      color: #3A4B5D;
+      text-decoration: none;
+    }
+    .footer-admin:hover { color: #5A6B7D; }
+
+    /* ========== Responsive tweaks ========== */
+    @media (max-width: 768px) {
+      .hero { padding: 4rem 1.5rem 3rem; }
+      .hero-actions { gap: 1rem; }
+      .certificate-card { padding: 2rem 1.5rem; }
+      .cert-mockup { padding: 14px 24px; }
+    }
+  </style>
 </head>
 <body data-lang="en">
 <div class="bg-ambient"></div>
@@ -32,6 +428,9 @@
 
   <!-- Hero -->
   <section class="hero fade-up">
+    <!-- Floating particles -->
+    <div class="hero-particles" id="hero-particles"></div>
+
     <div class="hero-badge">
       <span data-en>Learning Platform</span>
       <span data-he>פלטפורמת למידה</span>
@@ -43,10 +442,63 @@
     <p class="hero-subtitle" data-en>Master solar energy, sales, installation, EV charging, and management. Your complete training hub — in English, Hebrew, and Thai.</p>
     <p class="hero-subtitle" data-he>לימדו אנרגיה סולארית, מכירות, התקנה, טעינת רכב חשמלי וניהול. מרכז ההדרכה המלא שלכם — באנגלית, עברית ותאילנדית.</p>
     <p class="hero-subtitle" data-th>เรียนรู้พลังงานแสงอาทิตย์ การขาย การติดตั้ง การชาร์จ EV และการจัดการ ศูนย์ฝึกอบรมของคุณ — ภาษาอังกฤษ ฮีบรู และไทย</p>
+
+    <div class="hero-actions">
+      <a href="#tracks-section" class="hero-cta">
+        <span data-en>Start Learning ↓</span>
+        <span data-he>התחילו ללמוד ↓</span>
+        <span data-th>เริ่มเรียน ↓</span>
+      </a>
+      <a href="admin.html" class="hero-admin-link">
+        <span data-en>Admin Dashboard</span>
+        <span data-he>לוח ניהול</span>
+        <span data-th>แดชบอร์ดผู้ดูแล</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Recommended Learning Path -->
+  <section class="learning-path-section fade-up">
+    <div class="path-label">
+      <span data-en>Recommended Learning Order</span>
+      <span data-he>סדר למידה מומלץ</span>
+      <span data-th>ลำดับการเรียนรู้แนะนำ</span>
+    </div>
+    <div class="path-flow">
+      <div class="path-step">
+        <span class="path-step-icon">☀️</span>
+        <span class="path-step-label"><span data-en>Fundamentals</span><span data-he>מבוא</span><span data-th>พื้นฐาน</span></span>
+        <span class="path-step-num">1</span>
+      </div>
+      <span class="path-arrow">→</span>
+      <div class="path-step">
+        <span class="path-step-icon">⚡</span>
+        <span class="path-step-label"><span data-en>Technical</span><span data-he>טכני</span><span data-th>เทคนิค</span></span>
+        <span class="path-step-num">2</span>
+      </div>
+      <span class="path-arrow">→</span>
+      <div class="path-step">
+        <span class="path-step-icon">💼</span>
+        <span class="path-step-label"><span data-en>Sales & BD</span><span data-he>מכירות</span><span data-th>การขาย</span></span>
+        <span class="path-step-num">3</span>
+      </div>
+      <span class="path-arrow">→</span>
+      <div class="path-step">
+        <span class="path-step-icon">🔋</span>
+        <span class="path-step-label"><span data-en>EV & Storage</span><span data-he>EV ואגירה</span><span data-th>EV</span></span>
+        <span class="path-step-num">4</span>
+      </div>
+      <span class="path-arrow">→</span>
+      <div class="path-step coming-soon">
+        <span class="path-step-icon">📊</span>
+        <span class="path-step-label"><span data-en>Management</span><span data-he>ניהול</span><span data-th>จัดการ</span></span>
+        <span class="path-step-num">5</span>
+      </div>
+    </div>
   </section>
 
   <!-- Tracks -->
-  <section class="tracks-section">
+  <section class="tracks-section" id="tracks-section">
     <p class="section-label fade-up">
       <span data-en>Learning Tracks</span>
       <span data-he>מסלולי למידה</span>
@@ -61,13 +513,24 @@
 
       <!-- Track 1: Solar Fundamentals -->
       <a href="courses/solar-fundamentals-01.html" class="glass-card track-card fade-up" data-track="solar-fundamentals" data-total="8">
-        <span class="track-icon">☀️</span>
+        <span class="difficulty-badge beginner">
+          <span data-en>Beginner</span><span data-he>מתחילים</span><span data-th>เริ่มต้น</span>
+        </span>
+        <div class="track-icon-wrap">
+          <span class="track-icon">☀️</span>
+        </div>
         <div class="track-title" data-en>Solar Fundamentals</div>
         <div class="track-title" data-he>מבוא לסולאר</div>
         <div class="track-title" data-th>พื้นฐานพลังงานแสงอาทิตย์</div>
         <div class="track-title-sub" data-en>Everything you need to know about solar energy</div>
         <div class="track-title-sub" data-he>כל מה שצריך לדעת על אנרגיה סולארית</div>
         <div class="track-title-sub" data-th>ทุกอย่างที่คุณต้องรู้เกี่ยวกับพลังงานแสงอาทิตย์</div>
+        <ul class="lesson-preview">
+          <li>Solar Energy Basics</li>
+          <li>Panel Types & Technology</li>
+          <li>System Components</li>
+          <li class="more">+5 more lessons</li>
+        </ul>
         <div class="track-meta">
           <span>📚 <span data-en>8 Lessons</span><span data-he>8 שיעורים</span><span data-th>8 บทเรียน</span></span>
           <span>⏱ <span data-en>~4 Hours</span><span data-he>~4 שעות</span><span data-th>~4 ชั่วโมง</span></span>
@@ -78,13 +541,24 @@
 
       <!-- Track 2: Sales & BD -->
       <a href="courses/sales-bd-01.html" class="glass-card track-card fade-up" data-track="sales-bd" data-total="4">
-        <span class="track-icon">💼</span>
+        <span class="difficulty-badge intermediate">
+          <span data-en>Intermediate</span><span data-he>בינוני</span><span data-th>ระดับกลาง</span>
+        </span>
+        <div class="track-icon-wrap">
+          <span class="track-icon">💼</span>
+        </div>
         <div class="track-title" data-en>Sales & Business Development</div>
         <div class="track-title" data-he>מכירות ופיתוח עסקי</div>
         <div class="track-title" data-th>การขายและพัฒนาธุรกิจ</div>
         <div class="track-title-sub" data-en>Win clients and close deals</div>
         <div class="track-title-sub" data-he>רכשו לקוחות וסגרו עסקאות</div>
         <div class="track-title-sub" data-th>ชนะลูกค้าและปิดดีล</div>
+        <ul class="lesson-preview">
+          <li>Solar Sales Fundamentals</li>
+          <li>Site Assessment & Proposals</li>
+          <li>Pricing, Proposals & Closing</li>
+          <li class="more">+1 more lesson</li>
+        </ul>
         <div class="track-meta">
           <span>📚 <span data-en>4 Lessons</span><span data-he>4 שיעורים</span><span data-th>4 บทเรียน</span></span>
           <span>⏱ <span data-en>~3 Hours</span><span data-he>~3 שעות</span><span data-th>~3 ชั่วโมง</span></span>
@@ -97,13 +571,23 @@
 
       <!-- Track 3: Technical -->
       <a href="courses/technical-01.html" class="glass-card track-card fade-up" data-track="technical" data-total="3">
-        <span class="track-icon">⚡</span>
+        <span class="difficulty-badge advanced">
+          <span data-en>Advanced</span><span data-he>מתקדם</span><span data-th>ขั้นสูง</span>
+        </span>
+        <div class="track-icon-wrap">
+          <span class="track-icon">⚡</span>
+        </div>
         <div class="track-title" data-en>Technical — Installation & Electrical</div>
         <div class="track-title" data-he>טכני — התקנה וחשמל</div>
         <div class="track-title" data-th>เทคนิค — การติดตั้งและไฟฟ้า</div>
         <div class="track-title-sub" data-en>Hands-on installation and wiring</div>
         <div class="track-title-sub" data-he>התקנה וחיווט מעשי</div>
         <div class="track-title-sub" data-th>การติดตั้งและเดินสายไฟ</div>
+        <ul class="lesson-preview">
+          <li>Electrical Fundamentals for Solar</li>
+          <li>Panel Installation & Mounting</li>
+          <li>Inverter Installation & Commissioning</li>
+        </ul>
         <div class="track-meta">
           <span>📚 <span data-en>3 Lessons</span><span data-he>3 שיעורים</span><span data-th>3 บทเรียน</span></span>
           <span>⏱ <span data-en>~2 Hours</span><span data-he>~2 שעות</span><span data-th>~2 ชั่วโมง</span></span>
@@ -116,13 +600,23 @@
 
       <!-- Track 4: EV & Storage -->
       <a href="courses/ev-storage-01.html" class="glass-card track-card fade-up" data-track="ev-storage" data-total="3">
-        <span class="track-icon">🔋</span>
+        <span class="difficulty-badge intermediate">
+          <span data-en>Intermediate</span><span data-he>בינוני</span><span data-th>ระดับกลาง</span>
+        </span>
+        <div class="track-icon-wrap">
+          <span class="track-icon">🔋</span>
+        </div>
         <div class="track-title" data-en>EV & Energy Storage</div>
         <div class="track-title" data-he>רכב חשמלי ואגירת אנרגיה</div>
         <div class="track-title" data-th>EV และการกักเก็บพลังงาน</div>
         <div class="track-title-sub" data-en>Charging infrastructure and batteries</div>
         <div class="track-title-sub" data-he>תשתית טעינה וסוללות</div>
         <div class="track-title-sub" data-th>โครงสร้างพื้นฐานการชาร์จและแบตเตอรี่</div>
+        <ul class="lesson-preview">
+          <li>EV Charging Fundamentals</li>
+          <li>Battery Storage Systems</li>
+          <li>Solar-EV-Storage Integration</li>
+        </ul>
         <div class="track-meta">
           <span>📚 <span data-en>3 Lessons</span><span data-he>3 שיעורים</span><span data-th>3 บทเรียน</span></span>
           <span>⏱ <span data-en>~4 Hours</span><span data-he>~4 שעות</span><span data-th>~4 ชั่วโมง</span></span>
@@ -135,7 +629,12 @@
 
       <!-- Track 5: Management -->
       <div class="glass-card track-card fade-up" data-track="management" data-total="6" style="opacity:0.6;cursor:default;">
-        <span class="track-icon">📊</span>
+        <span class="difficulty-badge beginner" style="opacity:0.5;">
+          <span data-en>Coming Soon</span><span data-he>בקרוב</span><span data-th>เร็วๆ นี้</span>
+        </span>
+        <div class="track-icon-wrap">
+          <span class="track-icon">📊</span>
+        </div>
         <div class="track-title" data-en>Management & Operations</div>
         <div class="track-title" data-he>ניהול ותפעול</div>
         <div class="track-title" data-th>การจัดการและการดำเนินงาน</div>
@@ -152,6 +651,31 @@
         </span><span class="progress-pct"></span></div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Certificate Section -->
+  <section class="certificate-section fade-up">
+    <div class="certificate-card">
+      <div class="cert-icon">🏆</div>
+      <h2 class="cert-title">
+        <span data-en>Earn Your TM Energy Certificate</span>
+        <span data-he>קבלו תעודת TM Energy</span>
+        <span data-th>รับใบรับรอง TM Energy</span>
+      </h2>
+      <p class="cert-desc">
+        <span data-en>Complete all lessons in a track to earn your TM Energy Professional Certificate. Demonstrate your expertise to clients and employers.</span>
+        <span data-he>השלימו את כל השיעורים במסלול כדי לקבל תעודה מקצועית של TM Energy. הוכיחו את המומחיות שלכם ללקוחות ומעסיקים.</span>
+        <span data-th>เรียนจบทุกบทเรียนในเส้นทางเพื่อรับใบรับรองวิชาชีพ TM Energy แสดงความเชี่ยวชาญต่อลูกค้าและนายจ้าง</span>
+      </p>
+      <div class="cert-mockup">
+        <div class="cert-mockup-inner">
+          <div class="cert-mockup-title">Certificate of Completion</div>
+          <div class="cert-mockup-name">Your Name</div>
+          <div class="cert-mockup-track">Solar Fundamentals Track</div>
+        </div>
+        <div class="cert-mockup-seal">✦</div>
+      </div>
     </div>
   </section>
 
@@ -189,16 +713,47 @@
 
 <!-- Footer -->
 <footer class="footer">
+  <div class="footer-main-links">
+    <a href="https://index.energy-tm.com" target="_blank">🌐 Website</a>
+    <a href="https://www.facebook.com/tmenergy" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/tmenergy" target="_blank">Instagram</a>
+  </div>
   <div class="footer-links">
     <a href="mailto:kaniel@energy-tm.com">kaniel@energy-tm.com</a>
     <a href="tel:+66997044944">+66 99-704-4944</a>
   </div>
-  <p>© 2025 TM Energy Co., Ltd. All rights reserved.</p>
+  <p>© 2026 TM Energy Co., Ltd. All rights reserved.</p>
+  <div class="footer-powered">
+    <img src="../proposals/tm-logo.png" alt="TM Energy">
+    Powered by TM Energy
+  </div>
+  <a href="admin.html" class="footer-admin">Admin</a>
 </footer>
 
-<!-- Progress Update Script -->
+<!-- Particles + Progress Script -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  // Generate floating particles
+  const container = document.getElementById('hero-particles');
+  if (container) {
+    const colors = ['rgba(0,214,143,0.4)', 'rgba(255,184,0,0.3)', 'rgba(0,214,143,0.2)', 'rgba(255,255,255,0.15)'];
+    for (let i = 0; i < 20; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      const size = Math.random() * 4 + 2;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      dot.style.cssText = `
+        width:${size}px;height:${size}px;
+        background:${color};
+        left:${Math.random()*100}%;
+        bottom:${Math.random()*-20}%;
+        animation-duration:${Math.random()*6+4}s;
+        animation-delay:${Math.random()*6}s;
+      `;
+      container.appendChild(dot);
+    }
+  }
+
   // Update progress bars for active tracks
   const cards = document.querySelectorAll('.track-card[data-track]');
   cards.forEach(card => {
