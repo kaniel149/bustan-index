@@ -706,7 +706,17 @@ async function loadZones(){
 }
 async function loadBuildings(){
  showLoading('Loading buildings...');
- const{data}=await sb.from('buildings').select('*').order('potential_grade');
+ // Fetch all buildings (Supabase default limit is 1000, we have 2467)
+ let allBuildings=[];
+ let from=0;const batchSize=1000;
+ while(true){
+  const{data}=await sb.from('buildings').select('*').order('potential_grade').range(from,from+batchSize-1);
+  if(!data||data.length===0)break;
+  allBuildings=allBuildings.concat(data);
+  if(data.length<batchSize)break;
+  from+=batchSize;
+ }
+ const data=allBuildings;
  buildings=data||[];
  const sel=document.getElementById('al-building');
  sel.innerHTML='<option value="">Select...</option>';
