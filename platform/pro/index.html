@@ -400,13 +400,16 @@ function initNav(){
 function initMap(){
  map=L.map('map',{zoomControl:false}).setView([9.7167,100.0333],13);
  L.control.zoom({position:'bottomleft'}).addTo(map);
- const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
-  attribution:'Esri Satellite',maxZoom:19
+ const satelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+  attribution:'Google Satellite',maxZoom:20
  }).addTo(map);
+ const hybridLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',{
+  attribution:'Google Hybrid',maxZoom:20
+ });
  const darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
   attribution:'&copy; OSM &copy; CARTO',maxZoom:19
  });
- L.control.layers({'🛰 Satellite':satelliteLayer,'🌙 Dark':darkLayer},{},{position:'topright',collapsed:true}).addTo(map);
+ L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{},{position:'topright',collapsed:false}).addTo(map);
  markersLayer=L.layerGroup().addTo(map);
  map.on('click',e=>{
   if(addBuildingMode){pendingLatLng=e.latlng;document.getElementById('ab-lat').value=e.latlng.lat.toFixed(5);document.getElementById('ab-lng').value=e.latlng.lng.toFixed(5);showModal('add-building-modal');addBuildingMode=false;document.getElementById('map-add-btn').textContent='+ Add Building'}
