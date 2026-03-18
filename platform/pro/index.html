@@ -842,7 +842,8 @@ function openBuildingDetail(id){
     <div class="dp-field"><label>Grade</label>
      <select id="be-grade">${['A','B','C','D'].map(g=>`<option${b.potential_grade===g?' selected':''}>${g}</option>`).join('')}</select>
     </div>
-    <div class="dp-field"><label>Annual kWh</label><input id="be-kwh" type="number" value="${b.annual_kwh_estimate||''}"></div>
+    <div class="dp-field"><label>Annual kWh</label><input id="be-kwh" type="number" value="${b.potential_annual_kwh||''}"></div>
+    <div class="dp-field"><label>Monthly Savings</label><div class="dp-readonly" style="color:#00D68F;font-weight:700">฿${fmt(b.potential_monthly_savings_thb||0)}</div></div>
    </div>
   </div>
   <div class="dp-section">
