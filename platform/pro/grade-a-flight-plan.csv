@@ -1,0 +1,1045 @@
+zone,id,name,lat,lng,kwp,panels,grade,type,roof_area_sqm
+Thong Sala,479104039,Treechart Hostel,9.708598,99.990975,126.56,270,A,hospitality,994.4
+Thong Sala,479115782,First Western Hospital,9.708147,99.997408,196.25,418,A,healthcare,1542
+Thong Sala,479123096,Phangan Intermational Hospital,9.706146,100.008624,60.93,130,A,healthcare,478.7
+Thong Sala,480080031,Thai Inter Medical Clinic,9.710643,99.991323,50.49,107,A,healthcare,396.7
+Sri Thanu,480885345,Hut Sun Bungalows,9.764928,99.962689,249.28,532,A,hospitality,1958.6
+Haad Rin,482123131,Nap Inn,9.675527,100.065474,50.96,108,A,hospitality,400.4
+Haad Rin,482123132,Baan Talay Guest House,9.675015,100.065678,70.29,150,A,hospitality,552.2
+Thong Sala,483149954,Kohmunity Hostel,9.708222,100.000542,451.33,963,A,hospitality,3546.1
+Thong Sala,483149955,First & Frang Hotel,9.708351,99.998722,100.41,214,A,hospitality,788.9
+Wok Tum,1346917027,Le Grand Bleu Hôtel,9.732123,99.981459,51.85,110,A,hospitality,407.4
+Thong Sala,1409147985,Kuul Villas,9.705168,100.013481,733.47,1565,A,hospitality,5763
+Thong Nai Pan,272201813,Pan Sea,9.776731,100.056767,75.91,162,A,food_beverage,596.5
+Thong Sala,482764901,Moulin Rogue Bar,9.705402,100.010301,67.38,143,A,food_beverage,529.4
+Wok Tum,1473532196,Bustan,9.734847,100.007835,88.37,188,A,food_beverage,694.3
+Thong Sala,360957815,The Hummus Shack,9.712621,99.987082,56.38,120,A,food_beverage,443
+Haad Rin,482141629,Thai Diner,9.680186,100.061568,91.82,196,A,food_beverage,721.5
+Other,387349825,Haad Yao Bay View Resort & Spa,9.778541,99.967398,344.05,734,A,hospitality,2703.2
+Thong Sala,475556346,Pink Panthers Bar,9.708646,100.001163,71.39,152,A,food_beverage,560.9
+Sri Thanu,475618951,Cafe Villa,9.7681,99.961983,50.19,107,A,food_beverage,394.3
+Thong Sala,478356523,Pure Vegan heaven,9.712239,99.987441,129.36,276,A,food_beverage,1016.4
+Thong Sala,478356525,Grill Brothers,9.712492,99.987442,63.32,135,A,food_beverage,497.5
+Thong Sala,478356528,Sweet cafe,9.711171,99.985727,68.95,147,A,food_beverage,541.8
+Thong Sala,478376838,Sunday Bar,9.716144,99.986469,53.48,114,A,food_beverage,420.2
+Thong Sala,478376849,Elly's Gelateria,9.711257,99.987866,58.19,124,A,food_beverage,457.2
+Thong Sala,478377181,Phangan Island View Hotel,9.708982,99.99536,58.21,124,A,hospitality,457.4
+Thong Sala,479104038,Treechart Hostel,9.708458,99.991145,60.31,128,A,hospitality,473.9
+Thong Sala,479115783,Bunk Up,9.708447,99.997766,57.19,122,A,food_beverage,449.4
+Sri Thanu,480922327,Honey Pot,9.75437,99.965768,73.66,157,A,food_beverage,578.8
+Sri Thanu,480950302,Sri Thanu Kitchen,9.758189,99.965859,61.1,130,A,food_beverage,480.1
+Thong Sala,481353325,Phangan Island View Hotel,9.708957,99.994896,131.85,281,A,hospitality,1036
+Other,481449859,Ban Jaidee Guesthouse,9.721682,99.97824,120.47,257,A,hospitality,946.5
+Thong Sala,481709260,Phangan Barsay Hostel,9.713517,99.990674,108.01,230,A,hospitality,848.6
+Wok Tum,481709902,,9.721452,99.995519,63.29,135,A,hospitality,497.3
+Other,482062081,,9.794149,100.013372,70.52,150,A,hospitality,554.1
+Thong Sala,482764902,Mama,9.705252,100.010546,55.39,118,A,food_beverage,435.2
+Thong Sala,483144989,Goodfellas Hacienda Backpackers,9.708185,99.995959,53.3,113,A,hospitality,418.8
+Haad Rin,488867170,Paradise,9.674241,100.06812,55.33,118,A,food_beverage,434.8
+Haad Rin,488867175,Sunrise Resort,9.676403,100.067511,99.8,213,A,hospitality,784.2
+Haad Rin,488867177,Sunset Muse,9.67689,100.062319,70.4,150,A,food_beverage,553.1
+Haad Rin,488867179,The German's,9.675741,100.066757,65.07,138,A,food_beverage,511.3
+Haad Rin,488867180,Dancing Elephant,9.675495,100.065222,80.67,172,A,hospitality,633.9
+Haad Rin,491807892,Addiction Pizzeria,9.675689,100.066246,114.02,243,A,food_beverage,895.9
+Haad Rin,491807893,I Sapori - Great Italian Food,9.674524,100.067927,53.58,114,A,food_beverage,421
+Haad Rin,491807894,Paradise,9.674392,100.068043,51.42,109,A,food_beverage,404
+Haad Rin,491844084,Palio Hostel,9.675926,100.065183,86.6,184,A,hospitality,680.5
+Haad Rin,491844086,Center Guest House,9.675151,100.064543,56.3,120,A,hospitality,442.4
+Haad Rin,491844087,Seventeen Hostel,9.674944,100.064325,53.17,113,A,hospitality,417.8
+Haad Rin,491844198,Pacific,9.677986,100.061484,50.68,108,A,food_beverage,398.2
+Haad Rin,491844201,Drop In Club Resort & Spa,9.677014,100.064265,196.36,419,A,hospitality,1542.9
+Haad Rin,491844202,Phangan Pearl,9.675465,100.063781,183.11,390,A,hospitality,1438.7
+Chaloklum,510925078,Sky Villa,9.785148,99.980066,57.91,123,A,hospitality,455
+Thong Sala,529202085,The Nidhra Boutique Resort,9.707123,99.997012,67.3,143,A,hospitality,528.8
+Thong Sala,529461913,Relax Corner,9.709205,99.997808,80.53,171,A,hospitality,632.7
+Baan Tai,535595498,Thai - Food and Drink,9.700931,100.026567,53.02,113,A,food_beverage,416.6
+Sri Thanu,536097251,Evolution,9.756348,99.965764,50.56,107,A,food_beverage,397.2
+Chaloklum,776102284,Mae Haad Guesthouse,9.795254,99.981915,60.97,130,A,hospitality,479
+Chaloklum,776107136,Sea Side,9.786831,100.003592,69.98,149,A,food_beverage,549.8
+Chaloklum,776107138,kaif,9.786764,100.003844,94.73,202,A,food_beverage,744.3
+Baan Tai,776313595,Alfa Café,9.698914,100.034973,69.14,147,A,food_beverage,543.3
+Baan Tai,776313598,La Terrasse,9.698678,100.034783,59.99,128,A,food_beverage,471.3
+Thong Sala,776313679,Halal Restaurant,9.708933,100.003032,59.19,126,A,food_beverage,465.1
+Baan Tai,776313840,Café DeTee,9.699814,100.026243,90.76,193,A,food_beverage,713.1
+Haad Rin,1155982254,Sunset Cafe,9.677466,100.061908,52.05,111,A,food_beverage,409
+Haad Rin,1155982255,Sunset Beach Club,9.677324,100.061988,80.9,172,A,hospitality,635.7
+Haad Rin,1155983386,Banana Hostel,9.67446,100.066651,61.98,132,A,hospitality,487
+Other,1368284776,Haad Son Resort,9.771686,99.962717,57.84,123,A,hospitality,454.4
+Thong Sala,478376850,FROM20MART,9.711045,99.987986,72.19,154,A,food_beverage,567.2
+Thong Sala,478356529,Sarai scooter rental,9.712072,99.985296,68.74,146,A,food_beverage,540.1
+Thong Nai Pan,524367929,Havana Beach Resort,9.768319,100.061333,27.13,57,A,hospitality,213.2
+Thong Nai Pan,524367930,Havana Beach Resort,9.76816,100.061323,28.79,61,A,hospitality,226.2
+Thong Nai Pan,1231577398,Havana Beach Resort,9.768386,100.061505,26.73,57,A,hospitality,210
+Thong Nai Pan,1231577399,Havana Beach Resort,9.768233,100.061503,28.27,60,A,hospitality,222.1
+Sri Thanu,381975417,Friendship Concept - Meatless Grill,9.761642,99.966127,51.89,110,A,food_beverage,407.7
+Sri Thanu,480950637,Nok's Kitchen,9.758789,99.965682,60.34,128,A,food_beverage,474.1
+Sri Thanu,382045364,Cookies Cafe,9.75716,99.965893,163.55,349,A,food_beverage,1285.1
+Sri Thanu,474678462,Pence Garden,9.757584,99.966859,58.62,125,A,food_beverage,460.6
+Thong Sala,529461917,The Nomad House,9.708261,99.997051,63.95,136,A,hospitality,502.5
+Sri Thanu,536097235,Sri Thanu Kitchen,9.758048,99.966222,53.45,114,A,food_beverage,420
+Wok Tum,479775850,Koh Phangan Hospital,9.736397,99.990878,95.5,203,A,healthcare,750.3
+Chaloklum,255278829,Haadlad Prestige Resort & Spa,9.787623,99.974042,69.34,148,A,hospitality,544.8
+Thong Sala,475556331,Phangan Island View Hotel,9.708932,99.995533,99.51,212,A,hospitality,781.9
+Thong Sala,475556338,The 10 Club Hostel,9.7105,99.988857,77.01,164,A,hospitality,605.1
+Thong Sala,475556345,999,9.708304,100.001148,75.63,161,A,food_beverage,594.3
+Thong Sala,478179684,Vagabond Castle,9.71324,99.992947,107.34,229,A,hospitality,843.4
+Thong Sala,478181492,Ran Rong Si,9.717401,99.995232,54.54,116,A,food_beverage,428.5
+Wok Tum,478182465,Julien's Bakery & Café,9.724521,99.999125,53.17,113,A,food_beverage,417.8
+Thong Sala,478376844,Vagabond Castle,9.713748,99.99322,79.48,169,A,hospitality,624.4
+Thong Sala,479104035,Bamboo Bistrot,9.709475,99.991912,83.19,177,A,food_beverage,653.7
+Wok Tum,479775847,Koh Phangan Hospital,9.736683,99.990946,75.28,160,A,healthcare,591.5
+Chaloklum,480076891,420 Club Phangan,9.79693,99.985565,388.8,829,A,food_beverage,3054.9
+Sri Thanu,480532836,Sunset Hill Resort,9.76739,99.963888,51.54,110,A,hospitality,404.9
+Other,481136543,Haad Son Resort,9.771453,99.962567,106.25,226,A,hospitality,834.8
+Thong Sala,481356036,Unpacked,9.711303,99.991149,91.02,194,A,retail,715.2
+Thong Sala,481709262,Phangan Barsay Hostel,9.713695,99.991051,72.52,154,A,hospitality,569.8
+Thong Sala,481709263,Phangan Barsay Hostel,9.713848,99.990598,109.95,234,A,hospitality,863.9
+Haad Rin,488867174,Haad Rin Station,9.677409,100.065384,71.72,153,A,food_beverage,563.5
+Haad Rin,491844197,Laid Back Bungalows,9.678392,100.062082,59.9,127,A,hospitality,470.7
+Haad Rin,501485969,Sea Breeze Resort,9.672899,100.065536,61.94,132,A,hospitality,486.7
+Thong Sala,529461903,Cha Payom,9.709194,99.993072,50.6,108,A,food_beverage,397.6
+Thong Sala,529461926,Mr Pizza,9.711985,99.990104,57.2,122,A,food_beverage,449.4
+Thong Sala,529480180,Harbour House,9.701676,100.018141,115.21,245,A,food_beverage,905.2
+Sri Thanu,529898897,Bliss Villas,9.751952,99.968217,51.2,109,A,hospitality,402.3
+Sri Thanu,529898898,Bliss Villas,9.751879,99.968051,52.91,112,A,hospitality,415.7
+Thong Sala,776313677,New Susy Bar,9.708365,100.002508,58.1,124,A,food_beverage,456.5
+Thong Sala,1117763083,Relax Corner,9.709749,99.998114,66.13,141,A,hospitality,519.6
+Thong Nai Pan,524367932,Havana Beach Resort,9.768,100.061312,27.81,59,A,hospitality,218.5
+Thong Nai Pan,1231577401,Havana Beach Resort,9.767938,100.061503,31.33,66,A,hospitality,246.2
+Thong Sala,478179683,Greencom,9.712489,99.992404,85.96,183,A,retail,675.4
+Thong Sala,478376848,BB Massage,9.711363,99.98828,91.75,195,A,retail,720.9
+Other,776107320,Golden Hill Backpackers,9.728675,99.977295,31.87,68,A,hospitality,250.4
+Other,776107334,Golden Hill Resort,9.729043,99.977878,35.57,75,A,hospitality,279.5
+Thong Sala,482764900,Adam Big Bike,9.705101,100.010829,67.38,143,A,retail,529.4
+Sri Thanu,381949599,Agama Yoga Srithanu Campus,9.757767,99.969285,61.56,131,A,commercial,483.7
+Thong Nai Pan,1445960380,Yoga Thong Nai Pan Yai,9.768159,100.057566,103.61,221,A,commercial,814.1
+Thong Sala,529461918,Dudka coffeeshop,9.708243,99.996802,110.13,235,A,retail,865.3
+Other,1240717504,Sense Asia Resort,9.781926,99.966806,38.55,82,A,hospitality,302.9
+Thong Sala,171738966,HTMS Phangan 713 Warship Museum,9.712416,99.983969,174.65,372,A,commercial,1372.2
+Chaloklum,255278833,Salad Buri Resort @ Spa,9.783911,99.970896,35.79,76,A,hospitality,281.2
+Thong Sala,360744400,Raja Ferry,9.71027,99.985359,191.71,409,A,retail,1506.3
+Thong Sala,360745196,Tesco Lotus,9.711832,99.990649,285.08,608,A,retail,2239.9
+Thong Sala,360957266,Phantip Plaza,9.712303,99.98633,100.48,214,A,retail,789.5
+Thong Sala,360957267,Food Court,9.709442,99.991256,304.76,650,A,retail,2394.5
+Thong Sala,361057510,Big C Market,9.709212,100.000635,371.14,792,A,retail,2916.1
+Thong Sala,361057512,Makro Food Service,9.709129,99.996376,432.23,922,A,retail,3396.1
+Thong Sala,361057514,Chorenrit Muay Thai Camp & Fitness Gym,9.71276,99.99058,58.16,124,A,commercial,457
+Thong Sala,361067273,Tops,9.708888,99.991329,99.95,213,A,retail,785.3
+Thong Sala,361607272,Phantip IT Mart,9.712384,99.986858,57.74,123,A,retail,453.7
+Sri Thanu,381949600,Shiva Hall,9.757291,99.969248,63.48,135,A,commercial,498.8
+Sri Thanu,381949601,Enlightenment Hall,9.758185,99.969263,88.39,188,A,commercial,694.5
+Thong Sala,475556326,The Learning Tree Nursery & Kindergarten,9.716204,99.992257,56.71,121,A,commercial,445.6
+Thong Sala,475556329,ตรอ,9.709037,100.001349,59.67,127,A,retail,468.8
+Sri Thanu,476887060,Shanti Boutique Hotel,9.752703,99.969532,33.47,71,A,hospitality,263
+Wok Tum,478181489,ที่ว่าการอำเภอเกาะพะงัน,9.7202,99.996239,119.75,255,A,commercial,940.9
+Thong Sala,478376646,Home Mart,9.70935,99.990234,88.8,189,A,retail,697.7
+Thong Sala,478376647,Lim Pi Pong,9.709355,99.990597,118.59,253,A,retail,931.8
+Thong Sala,479115781,The Nomad House,9.708351,99.997206,34.79,74,A,hospitality,273.4
+Thong Sala,480086197,The 1 Boutique Hotel,9.71106,99.989866,36.3,77,A,hospitality,285.2
+Chaloklum,481395527,Viva On The Beach Hotel,9.787213,100.007475,43.34,92,A,hospitality,340.5
+Other,481395534,First Bow & Arrow Club,9.779595,100.007215,122.27,261,A,commercial,960.7
+Sri Thanu,481594857,Srithanu Construction,9.753128,99.974029,59.19,126,A,retail,465.1
+Thong Sala,482025228,Phatchara Boutique Hotel,9.712469,99.99269,34.88,74,A,hospitality,274
+Wok Tum,482025232,Sunisa Kitchenware,9.722653,99.997975,193.16,412,A,retail,1517.7
+Thong Sala,482764890,20 Baht Shop,9.704966,100.010463,68.11,145,A,retail,535.2
+Thong Sala,483144991,Sri Chai,9.708673,99.994362,73.47,156,A,retail,577.3
+Haad Rin,516562033,Phangan Health Hospital,9.679471,100.064598,50.58,107,A,commercial,397.4
+Chaloklum,776102376,Koh Ma Beach Resort,9.795901,99.980493,47.19,100,A,hospitality,370.8
+Chaloklum,776102378,reception,9.795993,99.981259,85.28,182,A,commercial,670.1
+Other,1016173469,Pig Farm,9.742542,100.006377,51.76,110,A,commercial,406.7
+Wok Tum,1346917028,Le Grand Bleu Hôtel,9.731995,99.981467,34.6,73,A,hospitality,271.9
+Thong Sala,1444827356,Raitiaviset Organic Farm,9.714353,100.005483,292.45,624,A,retail,2297.8
+Wok Tum,1472527020,Upside,9.736455,99.992315,65.16,139,A,commercial,511.9
+Thong Sala,1474358749,The 10 Club Hostel,9.710355,99.988476,40.68,86,A,hospitality,319.6
+Thong Sala,360987838,Phangan Souvenir,9.711858,99.987697,114.82,245,A,retail,902.1
+Thong Sala,360987839,Hammock Home,9.711538,99.98803,114.81,245,A,retail,902.1
+Thong Sala,475556330,HomePro,9.708907,99.99913,75.38,160,A,retail,592.3
+Thong Sala,478356533,Phangan Ink,9.711226,99.986565,57.31,122,A,retail,450.3
+Thong Sala,478376645,Winner Furniture,9.709536,99.990441,191.01,407,A,retail,1500.8
+Thong Sala,478376839,Jai Laundry,9.71578,99.986646,79.09,168,A,retail,621.4
+Sri Thanu,480891102,7-Eleven,9.763173,99.963321,51.55,110,A,retail,405
+Chaloklum,481400473,Khao-raa Mansion,9.785804,100.004013,40.55,86,A,hospitality,318.6
+Thong Sala,483142863,Hardware Center,9.7086,99.993238,55.64,118,A,retail,437.2
+Thong Sala,483144992,Sri Chai,9.708651,99.994553,73.29,156,A,retail,575.9
+Haad Rin,488867171,Sun Tattoo Studio,9.675981,100.066701,61.82,131,A,retail,485.7
+Thong Sala,529461911,Gourmet Food Store,9.708806,99.997459,83,177,A,retail,652.1
+Thong Sala,529480170,7-Eleven,9.700934,100.019815,59.52,127,A,retail,467.7
+Hin Kong,529903285,Cheap Laundry 20 thb,9.744492,99.986344,89.83,191,A,retail,705.8
+Thong Sala,533114911,Zuta Shop,9.708754,99.992494,51.45,109,A,retail,404.3
+Baan Tai,535595503,7-Eleven,9.70003,100.026235,56.31,120,A,retail,442.4
+Thong Nai Pan,535598998,,9.772905,100.050867,68.43,146,A,food_beverage,537.7
+Baan Tai,776313839,Cheap & Cheap,9.6998,100.025903,52.58,112,A,retail,413.1
+Thong Sala,1016174359,7-Eleven,9.711454,99.989799,56.1,119,A,retail,440.8
+Other,326682628,Haad Yao Villa,9.774656,99.966761,32.61,69,A,hospitality,256.2
+Thong Sala,479104036,Sandee Backpackers,9.708976,99.991699,45.27,96,A,hospitality,355.7
+Sri Thanu,480891093,Phangan Paragon Resort & Spa,9.76343,99.96319,43.56,92,A,hospitality,342.3
+Wok Tum,481449853,The Villa,9.721363,99.98128,32.59,69,A,hospitality,256.1
+Sri Thanu,481662778,Ananda Yoga & Detox Center,9.746123,99.976746,28.12,60,A,hospitality,220.9
+Thong Sala,482025224,B.S Resort,9.712873,99.992417,39.46,84,A,hospitality,310.1
+Thong Sala,482764886,Phangan Arena,9.705021,100.011206,36.1,77,A,hospitality,283.7
+Haad Rin,491808285,Electro Hostel,9.677761,100.066756,43.04,91,A,hospitality,338.2
+Haad Rin,491844050,Modern Resort,9.676005,100.063781,43.99,93,A,hospitality,345.6
+Haad Rin,491844083,Yoghurt Home 3,9.677714,100.067105,28.55,60,A,hospitality,224.3
+Thong Sala,529461924,Phangan Hometown Resort,9.707744,100.000317,35.46,75,A,hospitality,278.6
+Sri Thanu,529898843,Baan Ya Kha,9.750475,99.97523,34.09,72,A,hospitality,267.8
+Haad Rin,546111032,Cocohut Beach Resort & Spa,9.672032,100.067582,28.09,59,A,hospitality,220.7
+Haad Rin,546111041,Cocohut Beach Resort & Spa,9.672185,100.06773,39.36,84,A,hospitality,309.2
+Chaloklum,776102377,Koh Ma Beach Resort,9.79614,99.98069,41.53,88,A,hospitality,326.3
+Chaloklum,776107282,Mae Haad Guesthouse,9.795169,99.982123,26.26,56,A,hospitality,206.3
+Chaloklum,776107283,Mae Haad Guesthouse,9.795059,99.982121,26.26,56,A,hospitality,206.3
+Chaloklum,776107285,Mae Haad Guesthouse,9.795361,99.982162,41.96,89,A,hospitality,329.7
+Thong Nai Pan,776313639,Satara Village,9.787208,100.058494,27.24,58,A,hospitality,214
+Thong Sala,776313685,Oceanus Resort,9.705782,99.993029,38.39,81,A,hospitality,301.6
+Baan Tai,776313836,The Velvet,9.700045,100.023206,48.9,104,A,hospitality,384.2
+Thong Nai Pan,1136922746,Haad Khuad Resort,9.792238,100.035153,43.47,92,A,hospitality,341.6
+Chaloklum,776102374,Haad Mae Haad,9.79536,99.980369,47.17,100,A,hospitality,370.6
+Chaloklum,776102375,Haad Mae Haad,9.795627,99.980441,47.17,100,A,hospitality,370.6
+Other,387349823,Shitty Scooter rental,9.777999,99.967992,59.2,126,A,retail,465.1
+Haad Rin,488867173,7-Eleven,9.675562,100.066418,51.86,110,A,retail,407.4
+Haad Rin,488867178,Kim Pharmacy 2,9.675576,100.066787,67.92,144,A,retail,533.6
+Haad Rin,1155388300,The Sea Resort Haad Rin,9.680736,100.059988,58.96,125,A,retail,463.3
+Thong Sala,482025223,Kefir Phangan Russian cafe,9.713375,99.992185,43.22,92,A,food_beverage,339.6
+Sri Thanu,762383845,Haad Yao Divers,9.767123,99.9621,42.12,89,A,hospitality,330.9
+Thong Sala,475556352,Lotus Spa,9.710322,99.990434,73.32,156,A,retail,576.1
+Thong Sala,478356530,Phangan Souvenir,9.711626,99.987435,81.34,173,A,retail,639.1
+Wok Tum,481712907,Beta House,9.728492,99.994395,38.9,83,A,hospitality,305.7
+Haad Rin,484279923,Cheap & Cheap,9.677954,100.065792,189.52,404,A,retail,1489.1
+Haad Rin,491844200,7-Eleven,9.678337,100.062717,76.63,163,A,retail,602.1
+Wok Tum,523637984,Pharmacy,9.735551,100.005451,50.54,107,A,retail,397.1
+Thong Sala,529461901,Lotus Spa,9.710117,99.990049,74.39,158,A,retail,584.5
+Thong Sala,480093761,Sukasa Guesthouse,9.711897,99.986738,31.49,67,A,hospitality,247.4
+Haad Rin,491844051,Universal Hostel,9.675762,100.063797,29.67,63,A,hospitality,233.1
+Haad Rin,546111042,Bamboozle Hostel,9.675284,100.065749,31.8,67,A,hospitality,249.9
+Thong Sala,776313712,Phangan Guesthouse,9.708376,99.99533,26.67,56,A,hospitality,209.6
+Wok Tum,479775842,Koh Phangan Hospital,9.736627,99.990509,35.15,75,A,healthcare,276.2
+Chaloklum,255278934,Smile Beach Resort,9.785657,99.973722,26.23,55,A,hospitality,206.1
+Chaloklum,255278963,Asia Bungalows,9.785392,99.973439,32.22,68,A,hospitality,253.2
+Chaloklum,255278969,Haadlad Prestige Resort & Spa,9.787206,99.973959,45,96,A,hospitality,353.6
+Wok Tum,479775841,Koh Phangan Hospital,9.736886,99.990499,37.4,79,A,healthcare,293.8
+Chaloklum,480114947,Khao-raa Mansion,9.785923,100.004263,47.62,101,A,hospitality,374.1
+Sri Thanu,480532838,Sunset Hill Resort,9.766825,99.964213,36.51,77,A,hospitality,286.9
+Other,480847351,Sukphol House,9.777235,99.969187,28.89,61,A,hospitality,227
+Sri Thanu,480887840,Phangan Cabana Resort,9.764279,99.962345,27.81,59,A,hospitality,218.5
+Sri Thanu,480955382,Sookpol Village,9.762321,99.96477,44.94,95,A,hospitality,353.1
+Sri Thanu,481844097,Lipstick Cabana Beachfront Resort,9.751513,99.972477,43.75,93,A,hospitality,343.7
+Other,481891234,Sandy Bay Resort,9.773381,99.964939,49.79,106,A,hospitality,391.2
+Other,481891262,Haad Yao Villa,9.774916,99.966249,34.37,73,A,hospitality,270.1
+Baan Tai,482791842,Morning Star Resort,9.696771,100.030262,39.68,84,A,hospitality,311.8
+Thong Sala,535595517,Tropicana Resort,9.706706,99.996805,33.35,71,A,hospitality,262.1
+Chaloklum,776102262,Utopia Resort,9.796842,99.987163,29.3,62,A,hospitality,230.2
+Thong Sala,776313741,First Villa Beach Resort,9.704392,100.004516,39.18,83,A,hospitality,307.8
+Baan Tai,1117917125,Moon Travel,9.700961,100.029869,48.75,104,A,hospitality,383
+Baan Tai,1117917144,Domingo Hostel,9.700096,100.033904,36.8,78,A,hospitality,289.1
+Haad Rin,1155982250,Drop In Club Resort & Spa,9.676924,100.064693,49.39,105,A,hospitality,388.1
+Haad Rin,1155982251,Drop In Club Resort & Spa,9.677074,100.064683,31.74,67,A,hospitality,249.4
+Other,481211428,Carte blanche,9.778434,99.968216,46.56,99,A,food_beverage,365.8
+Other,481463859,YEP LISTENING BAR,9.727106,99.978644,28.65,61,A,food_beverage,225.1
+Baan Tai,535595496,Chinchilla Restaurant,9.700582,100.026162,35.5,75,A,food_beverage,278.9
+Chaloklum,776107115,Beach Coconuts Bowls take&go,9.78566,100.00328,30.96,66,A,food_beverage,243.2
+Chaloklum,776107116,Beach Coconuts Bowls take&go,9.785671,100.003123,27.19,58,A,food_beverage,213.6
+Sri Thanu,1083523305,Sati Pot,9.749244,99.976204,33.33,71,A,food_beverage,261.9
+Sri Thanu,1388750274,Love Sweet Delicious,9.758259,99.966157,45.73,97,A,food_beverage,359.3
+Chaloklum,255278990,Curry Salad Restaurant,9.78637,99.974257,25.94,55,A,food_beverage,203.8
+Sri Thanu,481848838,Cucina Elementaré,9.752092,99.971626,28.16,60,A,food_beverage,221.3
+Wok Tum,1444829394,Capybara Coffee Phangan,9.738243,100.001202,32.58,69,A,food_beverage,256
+Sri Thanu,480891087,Art in Chai,9.762506,99.964045,38.48,82,A,food_beverage,302.3
+Sri Thanu,481676686,Aree's ayurveda cafe,9.758967,99.969569,48.13,102,A,food_beverage,378.2
+Sri Thanu,481500781,Aree's ayurveda cafe,9.758743,99.970122,34.14,72,A,food_beverage,268.3
+Other,481136539,9 Million View Point,9.772119,99.964478,33.08,70,A,food_beverage,259.9
+Chaloklum,255278825,Doubleduke Restaurant,9.784215,99.970816,28.86,61,A,food_beverage,226.7
+Other,458710771,Haad Yao Restaurant,9.772942,99.966713,36.63,78,A,food_beverage,287.8
+Sri Thanu,480916969,Laem Son,9.756343,99.963347,46.91,100,A,food_beverage,368.6
+Sri Thanu,480924930,The Cool Forest,9.757896,99.965583,38.67,82,A,food_beverage,303.8
+Sri Thanu,480954687,Lake Hut,9.760233,99.965427,26.9,57,A,food_beverage,211.3
+Chaloklum,481145636,Wang Sai,9.794631,99.979988,31.36,66,A,food_beverage,246.4
+Thong Sala,482764903,Memory Restaurant & Bar,9.705129,100.010052,34.16,72,A,food_beverage,268.4
+Other,509843301,Absolute Island,9.772027,99.963602,46.72,99,A,food_beverage,367.1
+Wok Tum,1472527024,Il Toscano,9.734756,99.992668,39.14,83,A,food_beverage,307.6
+Thong Sala,475556336,Batash 5 minutes,9.712837,99.98707,31.83,67,A,food_beverage,250.1
+Thong Sala,475556337,Soul Organics,9.712697,99.986859,37.83,80,A,food_beverage,297.2
+Thong Sala,475556373,Sea Side,9.709637,99.98706,44.22,94,A,food_beverage,347.5
+Thong Sala,475556559,Longshot Bar,9.711635,99.986087,33.71,71,A,food_beverage,264.9
+Thong Sala,478356524,Pancake,9.712645,99.987395,35.02,74,A,food_beverage,275.2
+Thong Sala,478356527,Longshot Bar,9.711481,99.985863,32.76,69,A,food_beverage,257.4
+Thong Sala,478356532,Barone,9.711441,99.986579,29.29,62,A,food_beverage,230.1
+Thong Sala,480093759,SOHO,9.712046,99.986859,42.13,89,A,food_beverage,331
+Chaloklum,480114765,The World's End,9.786533,100.006394,27.35,58,A,food_beverage,214.9
+Chaloklum,480114769,Aunjai,9.786334,100.004788,48.7,103,A,food_beverage,382.7
+Chaloklum,480114946,Mojos,9.786436,100.007626,43.82,93,A,food_beverage,344.3
+Other,480847360,Maddi cafe,9.778325,99.96963,45.56,97,A,food_beverage,358
+Sri Thanu,480891096,Mateo Pizza,9.763055,99.963647,33.15,70,A,food_beverage,260.5
+Sri Thanu,480891098,Mateo Pizza,9.762669,99.963381,30.62,65,A,food_beverage,240.6
+Sri Thanu,480891099,Mateo Pizza,9.762779,99.963664,48.63,103,A,food_beverage,382.1
+Sri Thanu,481662781,Ban Jai,9.745832,99.976401,34.26,73,A,food_beverage,269.2
+Sri Thanu,481662791,Boabab,9.741716,99.977277,42.83,91,A,food_beverage,336.5
+Wok Tum,481709901,,9.721512,99.995285,29.11,62,A,hospitality,228.7
+Sri Thanu,481844100,,9.752044,99.972077,41.22,87,A,hospitality,323.8
+Sri Thanu,481845372,Il Fannullone,9.753123,99.966982,27.64,59,A,food_beverage,217.2
+Other,481867651,Senses Restaurant,9.774437,99.967532,47.02,100,A,food_beverage,369.4
+Other,481867653,Pura Vida,9.774739,99.967635,44.4,94,A,food_beverage,348.9
+Other,481867654,Pura Vida,9.774816,99.967525,46.75,99,A,food_beverage,367.3
+Thong Sala,483268484,Big Beef,9.707032,100.006901,33.82,72,A,food_beverage,265.7
+Thong Sala,483277226,Kao Kloog Kapi Hut,9.709964,99.987219,27.69,59,A,food_beverage,217.6
+Thong Sala,483277227,The Gaia,9.709348,99.987468,29.33,62,A,food_beverage,230.5
+Haad Rin,488867172,No Name Restaurant,9.675936,100.066297,39.69,84,A,food_beverage,311.8
+Haad Rin,491844052,Reggae House,9.675626,100.064347,30.98,66,A,food_beverage,243.4
+Chaloklum,510929039,Big C Restaurant,9.794828,99.982653,45.86,97,A,food_beverage,360.3
+Thong Sala,529461905,Cha Payom,9.709074,99.992973,26.62,56,A,food_beverage,209.1
+Sri Thanu,529898884,Ladda's,9.753137,99.966352,38.5,82,A,food_beverage,302.5
+Hin Kong,529903264,Jaran's Eatery,9.74373,99.995918,44.89,95,A,food_beverage,352.7
+Wok Tum,529911792,CodE 495,9.729928,99.992701,25.79,55,A,food_beverage,202.7
+Thong Nai Pan,530229982,Bungabow Restaurant,9.792014,100.036393,30.58,65,A,food_beverage,240.2
+Baan Tai,535595502,Thai food Esan food,9.700239,100.026374,27.82,59,A,food_beverage,218.6
+Sri Thanu,536097231,Chantilly Caffe,9.75766,99.966277,31.85,67,A,food_beverage,250.3
+Sri Thanu,536097243,Fellini,9.75684,99.966057,31.29,66,A,food_beverage,245.8
+Other,546266864,The Kitchen,9.735229,100.011859,29.39,62,A,food_beverage,231
+Chaloklum,776102346,Sunset Bar,9.796865,99.980996,46.6,99,A,food_beverage,366.1
+Chaloklum,776107128,Cucina Italiana,9.786333,100.00457,44.31,94,A,food_beverage,348.1
+Chaloklum,776107130,Cucina Italiana,9.786537,100.004564,32.25,68,A,food_beverage,253.4
+Chaloklum,776107137,kaif,9.786803,100.003723,40.29,86,A,food_beverage,316.6
+Other,776107335,Awakening,9.727146,99.978362,26.39,56,A,food_beverage,207.3
+Thong Nai Pan,776313616,Saloon,9.777286,100.053755,25.87,55,A,food_beverage,203.2
+Thong Nai Pan,776313620,That's Amore Pizzeria Trattoria,9.777357,100.053933,42.81,91,A,food_beverage,336.4
+Thong Nai Pan,776313625,Baan Muay Thai,9.777802,100.053985,27.87,59,A,food_beverage,219
+Thong Sala,776313683,Biergarten,9.708204,99.989932,28.68,61,A,food_beverage,225.4
+Thong Sala,1117759147,Nittaya's Restaurant,9.712142,99.994066,36.18,77,A,food_beverage,284.3
+Baan Tai,1117917112,Fabio's,9.700649,100.029563,30.76,65,A,food_beverage,241.7
+Baan Tai,1117917114,Blue Top,9.700158,100.029934,34.7,74,A,food_beverage,272.6
+Baan Tai,1117917115,Blue Top,9.700215,100.029726,30.57,65,A,food_beverage,240.2
+Baan Tai,1117917142,Nong View,9.700412,100.033202,26.31,56,A,food_beverage,206.7
+Haad Rin,1155982256,Pacific,9.678103,100.061726,28.9,61,A,food_beverage,227.1
+Thong Sala,361066842,Big Boss,9.710406,99.986344,46.86,100,A,food_beverage,368.2
+Haad Rin,482254631,The Israeli House,9.676565,100.065754,26.59,56,A,commercial,209
+Thong Sala,548997690,St.Seraphim Ortodox Church,9.718374,100.000052,33.84,72,A,commercial,265.9
+Thong Sala,478376846,Clear skin care,9.711137,99.990632,35.57,75,A,retail,279.5
+Thong Sala,478376847,Clear skin care,9.711222,99.990391,38.91,83,A,retail,305.7
+Sri Thanu,536097229,Center Pharmacy 2,9.75748,99.966346,36.18,77,A,food_beverage,284.3
+Haad Rin,1155388280,Reception Sun Beach Bungalow,9.680177,100.059303,26.75,57,A,food_beverage,210.2
+Thong Nai Pan,1231577400,Havana Beach Resort,9.76809,100.061504,24.49,52,A,hospitality,192.4
+Thong Sala,475556374,The Zen Japanese restaurant,9.709766,99.986963,32.34,69,A,food_beverage,254.1
+Chaloklum,478185779,Nong Nook,9.786313,100.005103,44.91,95,A,food_beverage,352.9
+Haad Rin,491807891,Sabra,9.67554,100.066109,39.53,84,A,food_beverage,310.6
+Thong Sala,529410082,Ando Loco,9.708486,99.994781,28.91,61,A,food_beverage,227.2
+Sri Thanu,529898912,Ladda's,9.753441,99.966358,28.03,59,A,food_beverage,220.2
+Sri Thanu,529898913,Ladda's,9.753385,99.96645,33.31,71,A,food_beverage,261.7
+Sri Thanu,536097218,Yum Yum,9.756709,99.965719,28.21,60,A,food_beverage,221.6
+Sri Thanu,536097249,Eat.co,9.756554,99.965941,44.02,93,A,food_beverage,345.9
+Haad Rin,546111043,Paprika,9.675352,100.065846,33.47,71,A,food_beverage,263
+Thong Sala,776313674,Bamboo Bistrot,9.709287,99.991808,34.92,74,A,food_beverage,274.4
+Haad Rin,1155982258,Haad Rin Station,9.677565,100.065585,43.77,93,A,food_beverage,343.9
+Thong Sala,475556343,J&P Steak House,9.708232,100.001602,45.65,97,A,food_beverage,358.6
+Thong Sala,475556383,Soundgarden,9.711347,99.987306,36.88,78,A,food_beverage,289.8
+Other,481596155,Amsterdam Bar,9.724588,99.97878,40.18,85,A,food_beverage,315.7
+Thong Sala,481627863,Je Kum Restaurant ,9.708732,99.988566,43.31,92,A,food_beverage,340.3
+Thong Sala,483140835,Jini's Bar,9.708344,100.002639,42.52,90,A,food_beverage,334.1
+Chaloklum,510925391,Jungle House,9.784432,99.980672,31.57,67,A,food_beverage,248.1
+Chaloklum,776107123,Cucina Italiana,9.78613,100.004519,29.02,61,A,food_beverage,228
+Chaloklum,776107281,Royal Orchid,9.796966,99.981805,27.44,58,A,food_beverage,215.6
+Haad Rin,1155982243,Auntie Pon Thai Food,9.677811,100.064975,29.25,62,A,food_beverage,229.8
+Thong Sala,475556384,Pure Relax Thong Sala,9.71138,99.987742,30.34,64,A,retail,238.4
+Baan Tai,776313838,Rasta Barber Shop,9.700005,100.024441,32.11,68,A,retail,252.3
+Baan Tai,776313841,Mr. Pon - Yoga Massage,9.700851,100.026846,33.12,70,A,retail,260.2
+Thong Sala,1368766747,Aisawan massage and spa,9.711154,99.988545,39.73,84,A,retail,312.1
+Sri Thanu,481676682,Shakti yoga meditation and retreat,9.755354,99.968347,47.03,100,A,commercial,369.6
+Chaloklum,776107127,Turtle tatoo,9.786368,100.004377,31.87,68,A,retail,250.4
+Sri Thanu,381950209,Ganesha Hall,9.757701,99.968849,33.52,71,A,commercial,263.4
+Sri Thanu,475357309,Sri Thanu Primary School,9.756058,99.967598,85.72,182,A,residential,673.5
+Thong Sala,478181500,7-Eleven,9.713691,99.992721,25.56,54,A,retail,200.8
+Sri Thanu,480924931,7-Eleven,9.75762,99.966004,30.67,65,A,retail,241
+Sri Thanu,481268299,7-Eleven,9.748749,99.975528,45.07,96,A,retail,354.1
+Thong Sala,481353322,Winner Furniture,9.709636,99.990403,37.35,79,A,retail,293.5
+Thong Sala,481709903,Noppharat Furniture,9.719994,99.993293,48.69,103,A,retail,382.5
+Thong Sala,482025216,Honda,9.714058,99.992619,45.99,98,A,retail,361.3
+Haad Rin,482114649,7-Eleven,9.677482,100.066031,37.03,79,A,retail,291
+Thong Nai Pan,482500339,Ban Thong Nai Pan School,9.7706,100.055993,50.63,108,A,residential,397.8
+Thong Sala,529480198,Temple Wat Khao Tham,9.707709,100.016222,36.05,76,A,commercial,283.3
+Hin Kong,529898584,Iyengar Yoga,9.747646,99.982105,32.18,68,A,commercial,252.8
+Thong Sala,535595511,Unity Coliving,9.717264,100.007318,22.33,47,A,hospitality,175.5
+Sri Thanu,746282034,Phanont Place,9.753572,99.978243,25.97,55,A,commercial,204
+Chaloklum,776107141,fuel station,9.786109,100.003021,50.94,108,A,residential,400.3
+Thong Sala,776313682,Koh Phangan Suksa School,9.707054,100.005081,75.67,161,A,residential,594.5
+Thong Sala,1156039639,Government Savings Bank,9.708892,99.990368,291.66,622,A,residential,2291.6
+Other,1427012705,BOONLAPRAT HOUSE 58/62,9.720037,100.012713,28.11,60,A,commercial,220.9
+Wok Tum,1444546383,7-Eleven,9.735816,100.005599,42.3,90,A,retail,332.4
+Sri Thanu,1472922251,Paradise Fitness,9.750915,99.975387,34.14,72,A,commercial,268.2
+Thong Sala,361056761,Mac & iPhone sell and repair,9.712381,99.987,34.23,73,A,retail,268.9
+Thong Sala,390272683,Pure Relax,9.716961,99.985527,39.01,83,A,retail,306.5
+Thong Sala,475556357,Thongsala Center,9.711627,99.985614,30.52,65,A,retail,239.8
+Thong Sala,475556358,T & W Travel,9.711526,99.985524,32.13,68,A,retail,252.5
+Thong Sala,475556367,Organic shop,9.711708,99.989037,32.42,69,A,retail,254.7
+Thong Sala,475556369,Organic shop,9.711661,99.989164,29.69,63,A,retail,233.3
+Thong Sala,478356519,Phangan Souvenir,9.712036,99.987471,36.22,77,A,retail,284.6
+Thong Sala,479104041,7-Eleven,9.709394,99.991631,31.85,67,A,retail,250.3
+Thong Sala,479115786,7-Eleven,9.70827,99.996494,35.1,74,A,retail,275.8
+Other,480775065,Blue Horizon Diving,9.77275,99.965868,36.73,78,A,retail,288.6
+Other,480847350,Laundry,9.776621,99.969019,33.25,70,A,retail,261.3
+Sri Thanu,480884964,My Hut,9.764714,99.963148,39.23,83,A,retail,308.3
+Sri Thanu,480892811,Sunflower,9.763667,99.963383,35.96,76,A,retail,282.5
+Sri Thanu,480922324,Ganesh Tattoo,9.755767,99.965708,39.08,83,A,retail,307
+Sri Thanu,481674731,Revive Massage,9.75869,99.969515,49.15,104,A,retail,386.2
+Other,481867647,Fair House Travel,9.774471,99.967372,27.19,58,A,retail,213.6
+Other,481867649,7-Eleven,9.774692,99.967172,31.83,67,A,retail,250.1
+Thong Sala,483268486,Job Mart,9.707781,100.006196,41.66,88,A,retail,327.3
+Thong Sala,483277222,7-Eleven,9.710781,99.986272,37.51,80,A,retail,294.8
+Haad Rin,491844053,FamilyMart,9.675507,100.064227,36.72,78,A,retail,288.5
+Haad Rin,491844081,7-Eleven,9.677951,100.062498,32.01,68,A,retail,251.5
+Wok Tum,523637982,Tops,9.73565,100.006035,31.54,67,A,retail,247.8
+Thong Sala,529410084,New Hair Design,9.708399,99.995178,30.04,64,A,retail,236
+Thong Sala,529461899,Lotus Spa,9.710002,99.990245,42.68,91,A,retail,335.3
+Thong Sala,529461910,Banana,9.708754,99.997278,31.52,67,A,retail,247.7
+Thong Sala,529461912,V Group,9.708851,99.997736,36.19,77,A,retail,284.3
+Thong Sala,529480174,7-Eleven,9.703302,100.013952,43.57,93,A,retail,342.4
+Other,530252238,Home Supermarket,9.736096,100.046461,30.37,64,A,retail,238.6
+Thong Sala,533114910,Zuta Shop,9.708778,99.992371,26.87,57,A,retail,211.2
+Thong Sala,533114921,AIS,9.711622,99.988833,33.48,71,A,retail,263
+Thong Sala,533114922,AIS,9.711541,99.988604,46,98,A,retail,361.4
+Thong Sala,535595515,Natalee,9.708203,99.996107,28.73,61,A,retail,225.7
+Sri Thanu,536097275,Joy Massage,9.754868,99.966159,32.01,68,A,retail,251.5
+Chaloklum,588256229,Pirate Divers,9.786211,99.975282,27.48,58,A,retail,215.9
+Chaloklum,776102291,Supermarket,9.796477,99.982109,26.25,56,A,retail,206.3
+Chaloklum,776102292,Supermarket,9.796316,99.982134,26.24,56,A,retail,206.2
+Chaloklum,776107111,PRIMATE TATOO,9.785428,100.003961,41.19,87,A,retail,323.6
+Chaloklum,776107139,il Chamali,9.786632,100.00275,29.25,62,A,retail,229.9
+Thong Nai Pan,776313631,Chompoo Minimart,9.778296,100.054981,33.45,71,A,retail,262.9
+Thong Sala,776313827,Num Motorcycle,9.702438,100.015532,32.63,69,A,retail,256.4
+Thong Sala,776313832,Thanita Spa & Beauty,9.702304,100.016086,27.47,58,A,retail,215.9
+Thong Sala,776313833,99 Barber,9.702129,100.016324,40.46,86,A,retail,317.9
+Thong Sala,776313834,7-Eleven,9.701032,100.019606,32.93,70,A,retail,258.8
+Chaloklum,828323447,7-Eleven,9.787234,99.999652,49.07,104,A,retail,385.6
+Baan Tai,1117917113,7 Eleven,9.700336,100.029927,35.84,76,A,retail,281.6
+Baan Tai,1117917141,Nuum Coffee,9.700369,100.03339,32.71,69,A,retail,257
+Baan Tai,1117917160,Tops daily,9.699775,100.034794,40.53,86,A,retail,318.4
+Sri Thanu,1346915823,Noay,9.753403,99.972049,31.92,68,A,retail,250.8
+Thong Sala,1472922249,The Pier homestay,9.713035,99.984539,20.81,44,A,hospitality,163.5
+Chaloklum,255278845,Green Papaya Resort,9.786968,99.973888,24.96,53,A,hospitality,196.1
+Sri Thanu,480884960,Hut Sun Bungalows,9.765159,99.962859,23.59,50,A,hospitality,185.4
+Sri Thanu,480887847,Jungle Hut Bungalows,9.764533,99.962675,22.96,49,A,hospitality,180.4
+Other,481891233,Ibiza Bungalows,9.774011,99.965778,22,46,A,hospitality,172.8
+Other,510784033,Dream Hill Q & Kan,9.777589,99.970261,20.38,43,A,hospitality,160.1
+Thong Sala,529202084,The Nidhra Boutique Resort,9.707264,99.996785,23.22,49,A,hospitality,182.5
+Baan Tai,529482634,The One Way hostel,9.700205,100.02203,21.14,45,A,hospitality,166.1
+Baan Tai,529482637,Sor-Lor-Nor Hostel,9.70025,100.022269,21.48,45,A,hospitality,168.7
+Sri Thanu,529898840,Baan Thamarcat,9.750031,99.975411,20.9,44,A,hospitality,164.2
+Chaloklum,529913215,Baan Hin Ngam Holiday Villa,9.797279,99.994239,23.42,49,A,hospitality,184
+Chaloklum,776107245,Lord Jim Retreat Villa,9.799405,99.990533,21.04,44,A,hospitality,165.3
+Wok Tum,776107297,Kanjai House,9.730043,99.9809,21.66,46,A,hospitality,170.2
+Thong Sala,776313684,West Side Story,9.708706,99.989758,21.22,45,A,hospitality,166.7
+Thong Sala,776313782,Power Beach Resort,9.704435,100.005203,24.8,52,A,hospitality,194.9
+Baan Tai,776313835,The Velvet,9.699936,100.023434,20.8,44,A,hospitality,163.4
+Baan Tai,1117917132,Moon Travel,9.700668,100.029826,20.83,44,A,hospitality,163.7
+Baan Tai,1117917140,Rung Phangan,9.700789,100.03287,22.68,48,A,hospitality,178.2
+Haad Rin,1155388282,Sun Beach Bungalow,9.68039,100.059536,23.7,50,A,hospitality,186.2
+Sri Thanu,474678458,Wat Sri Thanu,9.756966,99.967516,99.19,211,A,residential,779.3
+Thong Sala,475556333,Soi Ta Nao 2,9.716844,99.984624,64.11,136,A,residential,503.7
+Thong Sala,475556350,Why Not Family,9.711099,99.990987,63.6,135,A,residential,499.8
+Thong Sala,475556351,Why Not Family,9.711184,99.990855,60.94,130,A,residential,478.8
+Thong Sala,475556353,Soi Anamai,9.710586,99.98907,64.2,137,A,residential,504.4
+Thong Sala,478356531,Center Health Plus,9.711723,99.986257,56.39,120,A,residential,443.1
+Thong Sala,479176516,Chinese Temple,9.708061,99.990248,51.74,110,A,residential,406.5
+Thong Sala,479176518,Chinese Temple,9.707973,99.989752,60.38,128,A,residential,474.4
+Other,480112465,Wat Pa Sang Tham,9.769509,100.006511,53.42,114,A,residential,419.8
+Chaloklum,480113766,Wat Chaloklum,9.78426,100.005189,52.52,112,A,residential,412.6
+Other,480310475,Buddha,9.767817,100.005907,76.09,162,A,residential,597.8
+Thong Sala,480532841,,9.717129,99.984558,53.38,113,A,residential,419.4
+Chaloklum,481139840,reception,9.795713,99.981401,63.66,135,A,residential,500.2
+Baan Tai,482920561,Chumchon Ban Tai School,9.698828,100.026469,102.84,219,A,residential,808
+Wok Tum,523637988,Wat Ma Due Wan,9.738752,100.008055,144.86,309,A,residential,1138.2
+Hin Kong,529903276,Wat Samai Kongka School,9.742684,99.986181,67.94,145,A,residential,533.8
+Hin Kong,529903277,Wat Samai Kongka School,9.742281,99.986487,90.51,193,A,residential,711.2
+Hin Kong,529903296,Wat Samai Kongka,9.743897,99.985743,56.07,119,A,residential,440.5
+Thong Sala,529911748,Koh Pha Ngan Police Station,9.719032,99.994761,66.92,142,A,residential,525.8
+Thong Sala,529911750,Koh Pha Ngan Police Station,9.719675,99.995011,51.63,110,A,residential,405.7
+Thong Sala,529911752,Koh Pha Ngan Police Station,9.719609,99.995293,56.44,120,A,residential,443.5
+Baan Tai,535595510,Wat Pho,9.703353,100.028439,75.99,162,A,residential,597.1
+Thong Nai Pan,535598999,Than Prawet Waterfall,9.77314,100.05054,93.43,199,A,residential,734.1
+Baan Tai,776313843,Khlong Tha Chin,9.699725,100.024809,51.06,109,A,residential,401.2
+Thong Sala,479123097,Get High - Climbing Wall,9.706369,100.008075,38.25,81,A,retail,300.5
+Other,480113311,Guanyin Temple,9.767497,100.006625,26.06,55,A,retail,204.7
+Chaloklum,480114766,Chaloklum Travel Centre,9.786972,100.007067,31.41,67,A,retail,246.8
+Sri Thanu,480924932,7-Eleven,9.757523,99.966073,40.93,87,A,retail,321.6
+Sri Thanu,481268317,Mr. Hinkong Travel,9.746345,99.976106,38.95,83,A,retail,306
+Other,481885969,Blue Horizon Diving,9.772749,99.965619,33.5,71,A,retail,263.2
+Thong Sala,529410083,New Hair Design,9.708454,99.994935,26.18,55,A,retail,205.7
+Other,546119411,Guanyin,9.76758,100.006868,29.24,62,A,retail,229.8
+Chaloklum,776107289,Haad Mae Haad,9.795885,99.982183,30.41,64,A,retail,239
+Chaloklum,776107290,Haad Mae Haad,9.795962,99.982143,25.56,54,A,retail,200.8
+Thong Nai Pan,776313627,Noppond Pharmacy,9.778371,100.054555,29.28,62,A,retail,230
+Thong Sala,776313672,Winner Furniture,9.709801,99.990542,25.73,54,A,retail,202.2
+Chaloklum,776107146,The World's End,9.786486,100.006127,21.69,46,A,food_beverage,170.4
+Baan Tai,1117917135,The Meeting,9.700517,100.02943,22.54,48,A,healthcare,177.1
+Thong Sala,1478525626,La Casa,9.702036,100.016041,21.56,46,A,food_beverage,169.4
+Other,510777734,High Life Bungalows,9.772478,99.963475,21.82,46,A,hospitality,171.5
+Haad Rin,546111039,Cocohut Beach Resort & Spa,9.672075,100.067511,21.63,46,A,hospitality,170
+Thong Sala,475556366,AIS,9.7119,99.988817,46.42,99,A,retail,364.7
+Thong Sala,533114907,Zuta Shop,9.708454,99.992387,29.25,62,A,retail,229.8
+Baan Tai,1117917159,Pumayana Visionary Art,9.699128,100.034318,34.4,73,A,retail,270.3
+Chaloklum,255278935,Salad Grand Bungallow,9.783437,99.971744,21.64,46,A,hospitality,170.1
+Chaloklum,476856393,Maehaad Bay Resort,9.79582,99.981612,23.41,49,A,hospitality,184
+Wok Tum,481449855,The Villa,9.721687,99.981394,23.63,50,A,hospitality,185.6
+Thong Sala,529461914,The Nomad House,9.708039,99.997114,20.3,43,A,hospitality,159.5
+Hin Kong,529898607,Jungle Garden Bungalows,9.748266,99.981351,25,53,A,hospitality,196.4
+Hin Kong,529898692,Coconut Lane Villas,9.749148,99.982704,20.55,43,A,hospitality,161.5
+Sri Thanu,529898734,Pause Phangan Resort,9.754161,99.970822,23.32,49,A,hospitality,183.2
+Thong Nai Pan,530229964,Bottle Beach 1 Resort,9.792342,100.03455,23.72,50,A,hospitality,186.4
+Other,546115579,JS Hut Resort,9.75063,100.073254,24.91,53,A,hospitality,195.7
+Chaloklum,776102251,Utopia Resort,9.796678,99.986938,24.3,51,A,hospitality,191
+Chaloklum,776102286,Maehaad Bay Resort,9.79577,99.98166,22.89,48,A,hospitality,179.9
+Chaloklum,776107151,Rose Villa,9.787652,100.008632,24.36,52,A,hospitality,191.4
+Thong Sala,776313783,Power Beach Resort,9.704321,100.005143,20.51,43,A,hospitality,161.2
+Baan Tai,1117917136,Baantai Nursing Clinic,9.700473,100.029062,21.28,45,A,healthcare,167.2
+Sri Thanu,529898858,Seeds of Dreams,9.749328,99.976022,24.75,52,A,food_beverage,194.5
+Sri Thanu,529898911,Cucina Elementaré,9.752243,99.97126,23.65,50,A,food_beverage,185.8
+Other,762126956,Siri’s Island café,9.726116,99.977581,23.89,51,A,food_beverage,187.7
+Haad Rin,1155982259,Moonlight Restaurant,9.677528,100.065748,25.32,54,A,food_beverage,199
+Sri Thanu,529898611,Genesis Yoga,9.756305,99.977459,13.97,29,A,hospitality,109.8
+Sri Thanu,529898612,Genesis Yoga,9.756284,99.977599,14.08,30,A,hospitality,110.6
+Sri Thanu,529898613,Genesis Yoga,9.75641,99.977718,13.34,28,A,hospitality,104.8
+Sri Thanu,529898908,Cucina Elementaré,9.752648,99.971285,20.55,43,A,food_beverage,161.5
+Thong Sala,1117759152,,9.712934,99.994406,54.45,116,A,residential,427.8
+Thong Sala,480093757,The Masons Arms,9.717015,99.98597,20.11,42,A,food_beverage,158
+Chaloklum,776102380,Maehaad Garden Inn,9.794507,99.983159,16.84,35,A,hospitality,132.3
+Other,776107321,Golden Hill Resort,9.728803,99.977487,18.95,40,A,hospitality,148.9
+Thong Sala,360957265,,9.709949,99.991549,297.25,634,A,residential,2335.5
+Thong Sala,361056763,,9.710201,99.991773,125.11,267,A,residential,983
+Thong Sala,361057517,,9.714225,99.99003,247.09,527,A,residential,1941.5
+Other,387349824,,9.777903,99.967173,43.15,92,A,retail,339
+Wok Tum,387407491,,9.732737,99.983024,55.08,117,A,residential,432.7
+Sri Thanu,475362605,,9.754994,99.966652,69.39,148,A,residential,545.2
+Thong Sala,475556332,,9.709503,99.994637,94.42,201,A,residential,741.9
+Thong Sala,475556344,,9.70817,100.001077,71.32,152,A,residential,560.4
+Thong Sala,475556347,,9.707863,100.004118,143.12,305,A,residential,1124.5
+Thong Sala,475556349,,9.714167,99.990446,54.74,116,A,residential,430.1
+Thong Sala,475556365,,9.712232,99.989595,57.85,123,A,residential,454.5
+Thong Sala,475556368,,9.711612,99.989381,57.76,123,A,residential,453.8
+Thong Sala,478179687,,9.711929,99.991734,51.3,109,A,residential,403.1
+Wok Tum,478181486,,9.720223,99.995518,54.01,115,A,residential,424.4
+Thong Sala,478181497,,9.717874,99.994354,58.85,125,A,residential,462.4
+Wok Tum,478182460,,9.727564,100.00031,92.31,197,A,residential,725.3
+Thong Sala,478356521,,9.712527,99.987994,109.77,234,A,residential,862.5
+Thong Sala,478376837,,9.716077,99.987317,77.97,166,A,residential,612.7
+Thong Sala,478376842,,9.714898,99.98575,72.64,155,A,residential,570.8
+Thong Sala,478376843,,9.715139,99.985614,67.42,143,A,residential,529.7
+Thong Sala,479115774,,9.707195,100.004488,65.99,140,A,residential,518.5
+Thong Sala,479115777,,9.70736,100.00507,123.95,264,A,residential,973.9
+Wok Tum,479778292,,9.732497,99.984768,83.41,178,A,residential,655.4
+Wok Tum,479779022,,9.733567,99.990048,63.46,135,A,residential,498.6
+Chaloklum,480114948,,9.786263,100.003398,83.23,177,A,residential,653.9
+Other,481136542,,9.771661,99.963205,54.18,115,A,residential,425.7
+Sri Thanu,481594859,,9.752613,99.97628,101.81,217,A,residential,800
+Thong Sala,481709256,,9.718305,99.991344,76.76,163,A,residential,603.1
+Thong Sala,481709261,,9.714037,99.990968,75,160,A,residential,589.3
+Wok Tum,481709265,,9.726078,99.993716,73.1,156,A,residential,574.3
+Wok Tum,481712903,,9.733439,99.99285,86.08,183,A,residential,676.4
+Wok Tum,481714185,,9.739094,99.990633,75.99,162,A,residential,597
+Wok Tum,481714186,,9.739071,99.991116,59.33,126,A,residential,466.2
+Other,482053203,,9.74682,100.006731,53.94,115,A,residential,423.8
+Other,482053204,,9.746751,100.007135,53.92,115,A,residential,423.7
+Thong Sala,482728939,,9.716057,99.993733,94.44,201,A,residential,742
+Thong Sala,482728940,,9.715554,99.993407,62.56,133,A,residential,491.5
+Haad Rin,491844080,,9.6784,100.062362,105.29,224,A,residential,827.3
+Haad Rin,491844199,,9.678117,100.062052,57.43,122,A,residential,451.2
+Sri Thanu,529898619,,9.756333,99.978591,69.03,147,A,residential,542.4
+Sri Thanu,529898765,,9.753611,99.973825,79.45,169,A,residential,624.2
+Sri Thanu,529898899,,9.751762,99.967842,50.75,108,A,residential,398.8
+Hin Kong,529903266,,9.744994,99.994515,59.3,126,A,residential,465.9
+Hin Kong,529903297,,9.743677,99.985498,146.73,313,A,residential,1152.9
+Thong Sala,529911738,,9.716275,99.993389,50.24,107,A,residential,394.8
+Wok Tum,529911763,,9.725622,99.993832,275.32,587,A,residential,2163.2
+Thong Nai Pan,530229922,,9.771553,100.04118,51.05,108,A,residential,401.1
+Thong Sala,533114912,,9.710468,99.992928,58.62,125,A,residential,460.6
+Thong Sala,533114920,,9.713087,99.988277,74.86,159,A,residential,588.2
+Chaloklum,776102285,,9.795412,99.981594,124.57,265,A,residential,978.8
+Chaloklum,776102323,,9.794384,99.984528,67.18,143,A,residential,527.8
+Thong Nai Pan,776313634,,9.780335,100.054219,92.11,196,A,residential,723.7
+Thong Nai Pan,776313640,,9.786329,100.057429,83.14,177,A,residential,653.3
+Other,776313644,,9.777292,100.005463,54.39,116,A,residential,427.3
+Chaloklum,776313656,,9.785999,99.999116,79.61,169,A,residential,625.5
+Thong Sala,776313706,,9.706551,99.992162,54.66,116,A,residential,429.5
+Thong Sala,776313713,,9.709793,99.999974,59.88,127,A,residential,470.5
+Thong Sala,776313714,,9.709874,99.999666,57.45,122,A,residential,451.4
+Thong Sala,776313715,,9.709962,99.999365,55.93,119,A,residential,439.4
+Hin Kong,842511146,,9.741097,99.999093,53.71,114,A,residential,422
+Thong Sala,1117759148,,9.712124,99.994398,83.93,179,A,residential,659.4
+Thong Sala,1117759150,,9.71238,99.993682,57.56,122,A,residential,452.2
+Thong Sala,1117759151,,9.712579,99.993887,57.69,123,A,residential,453.2
+Thong Sala,1117759153,,9.713465,99.994629,162.13,346,A,residential,1273.9
+Thong Sala,1117759163,,9.713643,99.995429,115.32,246,A,residential,906.1
+Thong Sala,1117759164,,9.713078,99.994827,68.16,145,A,residential,535.6
+Thong Sala,1117763070,,9.71346,99.997001,88.77,189,A,residential,697.5
+Thong Sala,1117763071,,9.71373,99.997139,118.32,252,A,residential,929.6
+Thong Sala,1117763074,,9.714281,99.997623,51.59,110,A,residential,405.4
+Thong Sala,1117763082,,9.711717,100.001006,84.97,181,A,residential,667.7
+Wok Tum,1117763088,,9.726539,100.001252,60.15,128,A,residential,472.6
+Wok Tum,1117766118,,9.726241,100.006906,58.31,124,A,residential,458.2
+Baan Tai,1117917164,,9.699386,100.032469,118.51,252,A,residential,931.1
+Wok Tum,1346918272,,9.724871,99.981128,65.95,140,A,residential,518.2
+Wok Tum,1346918274,,9.724347,99.981129,170.82,364,A,residential,1342.1
+Wok Tum,1346918275,,9.724469,99.981337,126.85,270,A,residential,996.7
+Sri Thanu,480950630,Mama Pooh's Kitchen,9.759105,99.965584,21.37,45,A,food_beverage,167.9
+Sri Thanu,480950635,Pao,9.759003,99.965597,24.41,52,A,food_beverage,191.8
+Sri Thanu,481268304,L'Alcove,9.746532,99.975846,25.06,53,A,food_beverage,196.9
+Sri Thanu,481268308,Ananda's Love Kitchen,9.746196,99.976186,23.77,50,A,food_beverage,186.8
+Sri Thanu,481893877,Cafe Villa,9.768366,99.961926,22.3,47,A,food_beverage,175.2
+Thong Sala,483268485,Hundred Islands Coffee Bar,9.707684,100.006346,20.77,44,A,food_beverage,163.2
+Thong Nai Pan,1102548759,Thai Food,9.769412,100.055909,21.9,46,A,food_beverage,172
+Sri Thanu,1147976900,Little Cookies,9.752852,99.970067,21.63,46,A,food_beverage,169.9
+Sri Thanu,480891089,,9.762173,99.964152,27.83,59,A,retail,218.7
+Other,481457457,,9.727986,99.97852,27.05,57,A,retail,212.6
+Sri Thanu,481663319,,9.748219,99.97576,39.32,83,A,retail,308.9
+Wok Tum,481712902,,9.732867,99.992882,44.74,95,A,retail,351.5
+Wok Tum,523637981,,9.736559,100.005445,31.28,66,A,retail,245.8
+Thong Sala,529461900,,9.710178,99.989718,30.11,64,A,retail,236.6
+Other,529696143,,9.777209,100.01012,28.04,59,A,retail,220.3
+Baan Tai,1117917100,,9.698131,100.029587,34.61,73,A,retail,271.9
+Sri Thanu,474678454,Sangson,9.761229,99.966332,24.58,52,A,food_beverage,193.1
+Thong Sala,475556378,Sea Mew,9.710852,99.986025,20.48,43,A,food_beverage,160.9
+Sri Thanu,480891088,Art in Chai,9.762297,99.963817,20.95,44,A,food_beverage,164.6
+Sri Thanu,480950636,Tea Leaf Vegan Pizza,9.758924,99.965645,23.07,49,A,food_beverage,181.2
+Sri Thanu,480954788,Il Barracuda,9.761457,99.965952,21.64,46,A,food_beverage,170
+Other,481662790,The Flying Dutchman,9.739031,99.978394,22.7,48,A,food_beverage,178.3
+Chaloklum,510925388,,9.784688,99.980413,22.76,48,A,hospitality,178.8
+Thong Sala,529461906,Bamboo Bistrot,9.709328,99.991714,22.24,47,A,food_beverage,174.7
+Baan Tai,535595499,Thai - Food and Drink,9.700739,100.026728,21.85,46,A,food_beverage,171.7
+Sri Thanu,536097241,Poolom,9.756954,99.966137,23.47,50,A,food_beverage,184.4
+Chaloklum,776102294,Royal Orchid,9.797145,99.982051,21.97,46,A,food_beverage,172.6
+Chaloklum,776107129,Aunjai,9.786563,100.0047,21.17,45,A,food_beverage,166.3
+Chaloklum,776107145,The World's End,9.786515,100.006239,23.28,49,A,food_beverage,182.9
+Baan Tai,1117917111,Fabio's,9.700516,100.029587,22.88,48,A,food_beverage,179.8
+Baan Tai,1117917134,Fabio's,9.700725,100.029574,20.96,44,A,food_beverage,164.7
+Other,1156012119,Locco's PizzaBar,9.774828,99.967219,21.18,45,A,food_beverage,166.4
+Thong Sala,1255894087,Downtown Phangan,9.709773,99.98767,17.97,38,A,hospitality,141.2
+Thong Sala,762380664,Unpacked,9.710963,99.991114,24.73,52,A,retail,194.3
+Thong Sala,776313826,Café Amazon,9.703726,100.013892,21.83,46,A,food_beverage,171.5
+Chaloklum,255278866,Buddha Cafe,9.78623,99.974608,34.08,72,A,residential,267.8
+Chaloklum,255278896,Buddha Cafe,9.785936,99.974836,32.45,69,A,residential,254.9
+Thong Sala,966636739,Diamond Muay Thai,9.71732,99.985936,31,66,A,residential,243.6
+Chaloklum,480114764,The Texas Bar & Restaurant,9.786644,100.007519,21.03,44,A,food_beverage,165.3
+Sri Thanu,480950641,Good Time,9.758425,99.96586,22.94,48,A,food_beverage,180.3
+Sri Thanu,481674732,Evolution Yogi Cafe,9.758525,99.96872,20.94,44,A,food_beverage,164.5
+Other,481867646,Senses Restaurant,9.774553,99.967407,21.07,44,A,food_beverage,165.6
+Thong Sala,482764898,Memory Restaurant & Bar,9.70508,100.010223,21.16,45,A,food_beverage,166.2
+Thong Sala,529461904,Cha Payom,9.708955,99.993073,22.09,47,A,food_beverage,173.6
+Sri Thanu,529898883,Ladda's,9.753131,99.966568,25.28,53,A,food_beverage,198.6
+Chaloklum,776107103,Nong M Seafood,9.786215,100.005336,24.63,52,A,food_beverage,193.5
+Thong Sala,799552237,Shell,9.708886,100.002232,24.05,51,A,food_beverage,188.9
+Thong Sala,483354733,Unpacked,9.711418,99.991257,20.99,44,A,retail,164.9
+Other,509843306,Absolute Island,9.771972,99.963236,21.14,45,A,food_beverage,166.1
+Baan Tai,535595497,Thai - Food and Drink,9.700764,100.026379,22.14,47,A,food_beverage,174
+Baan Tai,1117917143,Nong View,9.700444,100.033032,20.09,42,A,food_beverage,157.8
+Baan Tai,1117917145,Bankai Village Cafe,9.700128,100.034098,20.84,44,A,food_beverage,163.7
+Other,1346918269,Mam Sweden,9.725809,99.978119,23.86,50,A,food_beverage,187.4
+Thong Sala,482764891,Smile Hostel,9.706408,100.008823,18.92,40,A,hospitality,148.6
+Chaloklum,255278931,Haadlad Prestige Resort & Spa,9.787505,99.973941,19.24,41,A,hospitality,151.2
+Chaloklum,255278967,Coral Beach Bungallow,9.785173,99.972327,13.88,29,A,hospitality,109.1
+Chaloklum,255278978,Haadlad Prestige Resort & Spa,9.787501,99.973826,19.27,41,A,hospitality,151.4
+Chaloklum,255278985,Coral Beach Bungallow,9.785105,99.972253,13.89,29,A,hospitality,109.1
+Sri Thanu,476884778,Serenity Lodge,9.750938,99.96635,18.27,39,A,hospitality,143.6
+Sri Thanu,480887838,Phangan Cabana Resort,9.764312,99.962499,19.33,41,A,hospitality,151.9
+Sri Thanu,480887841,Phangan Cabana Resort,9.764213,99.962859,14,29,A,hospitality,110
+Sri Thanu,480887843,Phangan Cabana Resort,9.764214,99.962772,13.45,28,A,hospitality,105.6
+Wok Tum,481449852,The Villa,9.721264,99.98124,13.41,28,A,hospitality,105.4
+Other,481456890,Pimmada Hut Resort,9.723567,99.977258,18.78,40,A,hospitality,147.6
+Haad Rin,516562036,Same same,9.674268,100.066878,18.64,39,A,hospitality,146.4
+Other,520441014,Haad Khom Bungalows,9.798476,100.016433,18.8,40,A,hospitality,147.7
+Baan Tai,529480160,The One Way hostel,9.699955,100.022112,13.1,27,A,hospitality,102.9
+Baan Tai,529480161,The One Way hostel,9.699905,100.02205,19.41,41,A,hospitality,152.5
+Baan Tai,529482633,The One Way hostel,9.700179,100.021943,19.99,42,A,hospitality,157
+Baan Tai,529482635,The One Way hostel,9.700189,100.022122,16.57,35,A,hospitality,130.2
+Sri Thanu,529898637,Phangan Akuna,9.757324,99.973863,14.35,30,A,hospitality,112.8
+Sri Thanu,529898649,Coconut Grove Private Pool Villa,9.755465,99.977559,13.86,29,A,hospitality,108.9
+Sri Thanu,529898650,Coconut Grove Private Pool Villa,9.755505,99.977678,16.98,36,A,hospitality,133.5
+Hin Kong,529898686,Baan Thanompool Villas 2,9.75156,99.980989,18.05,38,A,hospitality,141.8
+Hin Kong,529898702,Sky Palm Villa Resort,9.748511,99.982518,13.34,28,A,hospitality,104.8
+Sri Thanu,529898841,Baan Ya Kha,9.75039,99.975418,13.41,28,A,hospitality,105.3
+Sri Thanu,529898842,Baan Thamarcat,9.750245,99.975279,16.18,34,A,hospitality,127.1
+Sri Thanu,529898889,Serenity Lodge,9.750846,99.966538,14.35,30,A,hospitality,112.8
+Chaloklum,529913214,Baan Hin Ngam Holiday Villa,9.797267,99.993979,15.95,34,A,hospitality,125.3
+Thong Sala,535595516,O Sole Mio Beachfront Resort,9.70672,99.997605,14.71,31,A,hospitality,115.6
+Sri Thanu,762383844,Zama Resort,9.767146,99.961871,17.62,37,A,hospitality,138.4
+Chaloklum,776107244,Lord Jim Retreat Villa,9.799598,99.990528,15.77,33,A,hospitality,123.9
+Sri Thanu,776107293,Sookpol Village,9.762791,99.96455,15.88,33,A,hospitality,124.8
+Sri Thanu,776107294,Sookpol Village,9.762716,99.964584,15.89,33,A,hospitality,124.9
+Sri Thanu,776107295,Sookpol Village,9.762641,99.964618,15.88,33,A,hospitality,124.8
+Sri Thanu,776107296,Sookpol Village,9.762565,99.964652,15.87,33,A,hospitality,124.7
+Other,776107301,Golden Hill Backpackers,9.728719,99.977004,16.27,34,A,hospitality,127.9
+Thong Sala,776313711,Phangan Guesthouse,9.708439,99.995491,14.76,31,A,hospitality,116
+Thong Sala,776313736,First Villa Beach Resort,9.704565,100.004172,13.56,28,A,hospitality,106.6
+Wok Tum,1117766132,Rueangrot,9.724126,100.009966,13.24,28,A,hospitality,104.1
+Other,1117766133,Rueangrot,9.7241,100.010125,16.94,36,A,hospitality,133.1
+Other,1117766134,Rueangrot,9.724106,100.010297,14.16,30,A,hospitality,111.2
+Thong Nai Pan,1136951354,Bottle Beach 2 Resort,9.792142,100.037191,18.8,40,A,hospitality,147.7
+Thong Nai Pan,1136952011,Smile Bungalows,9.792941,100.033212,16.17,34,A,hospitality,127.1
+Haad Rin,1155388279,Starlight Haadrin Resort,9.680389,100.059383,16.97,36,A,hospitality,133.3
+Haad Rin,1155982249,Drop In Club Resort & Spa,9.676938,100.064521,17.33,36,A,hospitality,136.2
+Baan Tai,1368766769,Blue Lotus Resort,9.693564,100.03961,19.89,42,A,hospitality,156.3
+Sri Thanu,529898865,Ban Ya Pom,9.749101,99.975653,14.28,30,A,hospitality,112.2
+Thong Sala,546094889,Coco Garden Resort,9.706661,99.997203,18.9,40,A,hospitality,148.5
+Chaloklum,776107149,Rose Villa,9.787602,100.008279,15.4,32,A,hospitality,121
+Thong Sala,1478525627,La Casa,9.701952,100.015997,18.64,39,A,food_beverage,146.4
+Other,1155369068,High Life Bungalows,9.772347,99.963585,13.58,28,A,hospitality,106.7
+Thong Sala,776313710,Phangan Guesthouse,9.708555,99.99535,16.38,34,A,hospitality,128.7
+Chaloklum,776102357,Koh Ma Beach Resort,9.796406,99.980363,14.31,30,A,hospitality,112.4
+Chaloklum,776102360,Koh Ma Beach Resort,9.796168,99.980286,14.31,30,A,hospitality,112.5
+Chaloklum,776102361,Koh Ma Beach Resort,9.795897,99.980258,14.31,30,A,hospitality,112.5
+Wok Tum,481449854,The Villa,9.721638,99.981168,15.92,33,A,hospitality,125.1
+Haad Rin,516562038,Little Paradise,9.67414,100.065857,16.8,35,A,hospitality,132
+Thong Sala,529202081,First Western Hospital,9.707906,99.99729,12.8,27,A,healthcare,100.6
+Hin Kong,529898685,Baan Thanompool Villas 2,9.751868,99.981005,14.66,31,A,hospitality,115.2
+Hin Kong,529898705,Sky Palm Villa Resort,9.748037,99.982823,18.38,39,A,hospitality,144.4
+Sri Thanu,529898724,Pause Phangan Resort,9.753989,99.971306,13.58,28,A,hospitality,106.7
+Sri Thanu,529898795,Coconut Grove Private Pool Villa,9.755061,99.977844,14.56,31,A,hospitality,114.4
+Sri Thanu,529898846,Baan Ya Kha,9.750659,99.975028,12.75,27,A,hospitality,100.2
+Sri Thanu,529898850,Ban Ya Pom,9.749607,99.97598,15.75,33,A,hospitality,123.8
+Wok Tum,529911781,Song Phi Nong Resort,9.729612,99.992432,13.98,29,A,hospitality,109.8
+Chaloklum,529913216,Baan Hin Ngam Holiday Villa,9.796905,99.994235,18.33,39,A,hospitality,144
+Chaloklum,529913217,Baan Hin Ngam Holiday Villa,9.7968,99.99436,18.84,40,A,hospitality,148
+Thong Nai Pan,530229963,Bottle Beach 1 Resort,9.792185,100.034444,14.68,31,A,hospitality,115.4
+Thong Sala,533114906,Hostel Wok & The Much Rooms,9.708343,99.992467,14.51,30,A,hospitality,114
+Chaloklum,776102261,Utopia Resort,9.796558,99.987355,13.92,29,A,hospitality,109.4
+Chaloklum,776102304,Maehaad Bay Resort,9.795872,99.981852,17.19,36,A,hospitality,135.1
+Sri Thanu,776107292,Sookpol Village,9.762866,99.964516,15.88,33,A,hospitality,124.8
+Thong Sala,776313709,Phangan Island View Hotel,9.708713,99.995382,16.1,34,A,hospitality,126.5
+Thong Sala,776313728,Power Beach Resort,9.704492,100.005459,19.62,41,A,hospitality,154.1
+Baan Tai,776313857,Mac Backpacker,9.697745,100.028507,15.8,33,A,hospitality,124.2
+Baan Tai,1117917099,Phatcharee Resort,9.697795,100.028945,14.59,31,A,hospitality,114.6
+Other,762126849,Siri’s Island café,9.72625,99.977615,15.72,33,A,food_beverage,123.5
+Chaloklum,510929040,Sun Shine Restaurant,9.794695,99.983064,15.08,32,A,food_beverage,118.5
+Sri Thanu,529898909,Cucina Elementaré,9.752406,99.971246,15.64,33,A,food_beverage,122.9
+Sri Thanu,529898910,Cucina Elementaré,9.752415,99.971114,15.77,33,A,food_beverage,123.9
+Baan Tai,535595495,Chinchilla Restaurant,9.70041,100.026081,13.72,29,A,food_beverage,107.8
+Baan Tai,776313587,Nina Coffee House,9.695088,100.038127,13.73,29,A,food_beverage,107.9
+Sri Thanu,1071628485,Seeds of Dreams,9.749149,99.976066,16.41,35,A,food_beverage,128.9
+Sri Thanu,529898856,Sati Pot,9.749563,99.976126,13.05,27,A,food_beverage,102.5
+Thong Sala,529461907,Nameless The Italian Job,9.708687,99.996767,20.24,43,A,retail,159
+Thong Sala,529461908,SP Phangan,9.7087,99.996614,21.23,45,A,retail,166.8
+Thong Nai Pan,776313629,Smile Rental,9.77833,100.055306,23.66,50,A,retail,185.9
+Thong Sala,360957017,7-Eleven,9.710662,99.986111,23.75,50,A,retail,186.6
+Thong Sala,478181495,Koh Pha Ngan Pre-School Child Development Centre,9.715918,99.993585,26.03,55,A,residential,204.5
+Thong Sala,480093763,Krunghthai Bank,9.71205,99.986702,37.02,79,A,residential,290.9
+Haad Rin,482122818,7-Eleven,9.674491,100.064391,23.7,50,A,retail,186.2
+Baan Tai,482920559,Chumchon Ban Tai School,9.698867,100.026874,48.23,102,A,residential,379
+Haad Rin,491844203,Baan Haad Rin School,9.676428,100.066676,49.95,106,A,residential,392.5
+Thong Sala,529480172,PTT,9.703355,100.013808,31.3,66,A,residential,245.9
+Baan Tai,530259301,Maya Party,9.711142,100.030105,33.69,71,A,residential,264.7
+Other,530259320,Mr. Pong Fight Club,9.721494,100.037702,31,66,A,residential,243.6
+Thong Sala,533114918,PHANGAN.INFO,9.71486,99.989915,43.33,92,A,residential,340.5
+Thong Sala,546019155,Tourist Assistance Center,9.709987,99.985604,26.92,57,A,residential,211.5
+Other,1427012704,Boonlaprat house 58/61,9.720214,100.012611,23.38,49,A,commercial,183.7
+Thong Sala,1472527022,Luciano Cannabis Club,9.717247,100.007395,22.51,48,A,retail,176.8
+Thong Sala,475556371,Top Charoen Optical,9.711743,99.985876,22.02,46,A,retail,173
+Thong Sala,475556377,Lomprayah,9.710777,99.986078,24.42,52,A,retail,191.9
+Thong Sala,480093752,7-Eleven,9.716964,99.984948,23.36,49,A,retail,183.6
+Sri Thanu,480892810,Sunflower,9.76345,99.963493,23.43,50,A,retail,184.1
+Haad Rin,491808286,Tawan,9.675132,100.067417,24.11,51,A,retail,189.4
+Baan Tai,529480162,Moontribe,9.699894,100.021951,24.96,53,A,retail,196.1
+Hin Kong,529903288,Cheap Laundry 20 thb,9.744384,99.985916,23.42,49,A,retail,184
+Thong Sala,533114923,Songserm,9.711907,99.986159,24.08,51,A,retail,189.2
+Haad Rin,546111052,Baan Karaboon,9.675984,100.067078,23.27,49,A,retail,182.8
+Chaloklum,776107117,Chaloklum Books,9.786448,100.003253,23.62,50,A,retail,185.6
+Chaloklum,776107132,Chaloklum Diving,9.786541,100.004451,22,46,A,retail,172.9
+Baan Tai,776313591,,9.695446,100.036108,20.24,43,A,food_beverage,159
+Baan Tai,1117917161,Tops daily,9.69995,100.034811,23.94,51,A,retail,188.1
+Thong Sala,1368766748,Lomprayah office (Check In),9.710733,99.987159,25.18,53,A,retail,197.8
+Chaloklum,776107134,Foods & Roots,9.786601,100.004107,16,34,A,food_beverage,125.7
+Thong Sala,475556335,Food Court,9.712922,99.987403,29.54,63,A,residential,232.1
+Thong Sala,475556359,Pajampo bike rental,9.713287,99.986893,25.75,54,A,residential,202.3
+Thong Sala,475556360,Pajampo bike rental,9.713208,99.986637,34.98,74,A,residential,274.8
+Hin Kong,476858241,Wat Samai Kongka,9.744126,99.985774,34.25,73,A,residential,269.1
+Thong Sala,478179691,Wat Rat Charoen,9.71087,99.992626,29.33,62,A,residential,230.4
+Wok Tum,479778291,Wat Am Pha Wan,9.732826,99.985368,30.59,65,A,residential,240.3
+Wok Tum,479779023,Wat Phu Khao Noi,9.733485,99.990341,28.03,59,A,residential,220.2
+Thong Sala,480086198,Soi Anamai,9.710448,99.989562,47.72,101,A,residential,374.9
+Thong Sala,480093753,Soi Ta Nao 2,9.71659,99.984844,34.55,73,A,residential,271.4
+Chaloklum,480113540,Wat Chaloklum,9.784834,100.005194,25.67,54,A,residential,201.7
+Chaloklum,480113761,Refill Water 1 25 L / 1 Bath,9.7853,100.006367,41.97,89,A,residential,329.8
+Sri Thanu,481594854,Baan Hin Kong,9.750006,99.978121,29.46,62,A,residential,231.5
+Thong Sala,482764892,Get High - Climbing Wall,9.706612,100.008506,32.11,68,A,residential,252.3
+Thong Sala,482764893,Get High - Climbing Wall,9.70667,100.008265,33.61,71,A,residential,264.1
+Baan Tai,482920557,Chumchon Ban Tai School,9.698563,100.026959,38.35,81,A,residential,301.3
+Haad Rin,501485966,Backyard Pub,9.672986,100.066361,37.82,80,A,residential,297.1
+Wok Tum,523637989,Wat Ma Due Wan,9.738854,100.007694,35.12,74,A,residential,275.9
+Wok Tum,523637991,Wat Ma Due Wan,9.738548,100.007577,26.54,56,A,residential,208.5
+Wok Tum,523637993,Wat Ma Due Wan,9.738424,100.007358,26.53,56,A,residential,208.4
+Hin Kong,529898585,Iyengar Yoga,9.747961,99.982117,45.89,97,A,residential,360.6
+Thong Sala,529911747,Koh Pha Ngan Police Station,9.719158,99.994886,29.36,62,A,residential,230.7
+Thong Sala,529911749,Koh Pha Ngan Police Station,9.719328,99.994709,47.07,100,A,residential,369.8
+Thong Sala,529911751,Koh Pha Ngan Police Station,9.719362,99.995109,42.96,91,A,residential,337.6
+Thong Sala,533114915,PHANGAN.INFO,9.71474,99.990294,29.19,62,A,residential,229.4
+Thong Sala,533114916,PHANGAN.INFO,9.714488,99.990142,41.96,89,A,residential,329.7
+Baan Tai,535595505,Wat Pho,9.703546,100.028758,25.6,54,A,residential,201.1
+Baan Tai,535595506,Wat Pho,9.703971,100.028761,25.97,55,A,residential,204.1
+Chaloklum,776102283,Haad Mae Haad,9.79553,99.981928,31.8,67,A,residential,249.8
+Chaloklum,776107110,Chaloklum Diving,9.785369,100.003043,39.73,84,A,residential,312.2
+Chaloklum,776107286,Haad Mae Haad,9.795556,99.982155,28.89,61,A,residential,227
+Other,1346918267,Koh Phangan International Church,9.727446,99.978253,26.3,56,A,residential,206.6
+Sri Thanu,481594856,Amor Infinito,9.751724,99.976041,21.6,46,A,retail,169.7
+Haad Rin,491844082,Drop In Travel,9.676178,100.064561,22.4,47,A,retail,176
+Sri Thanu,536097276,Joy Massage,9.75471,99.966034,22.58,48,A,retail,177.4
+Haad Rin,516562040,Bubsaba Massage,9.674527,100.06588,24.69,52,A,retail,194
+Chaloklum,776107112,PRIMATE TATOO,9.785524,100.003717,20.81,44,A,retail,163.5
+Sri Thanu,1346915822,Noay,9.753231,99.972165,22.33,47,A,retail,175.4
+Thong Nai Pan,1231577402,,9.767804,100.061509,13.07,27,A,hospitality,102.7
+Sri Thanu,381950210,Evolution Yogi Cafe,9.758324,99.968908,16.56,35,A,food_beverage,130.1
+Sri Thanu,480950633,Nong Elle,9.7584,99.966094,18.12,38,A,food_beverage,142.4
+Sri Thanu,480950638,Nok's Kitchen,9.758693,99.965767,16.85,35,A,food_beverage,132.4
+Sri Thanu,480950639,Chotaha,9.758607,99.965801,17.96,38,A,food_beverage,141.1
+Sri Thanu,480950640,Good Time,9.758513,99.965837,19.62,41,A,food_beverage,154.1
+Other,481893757,Secret Beach Taverna,9.770348,99.962518,19.41,41,A,food_beverage,152.5
+Sri Thanu,481893876,Chao Jom BBQ Buffet,9.76819,99.962237,14.56,31,A,food_beverage,114.4
+Thong Sala,482764896,Chill Up,9.705636,100.009987,17.63,37,A,food_beverage,138.5
+Wok Tum,762383846,Nena Locanda Italiana,9.733064,99.981254,19.94,42,A,food_beverage,156.7
+Sri Thanu,1181510111,2SIS,9.764214,99.963218,16.41,35,A,food_beverage,129
+Other,1242136929,Zoo Cafe,9.735737,100.011728,17.99,38,A,food_beverage,141.3
+Thong Sala,475556354,Jungle Yellow Cafe,9.711355,99.985597,16.66,35,A,food_beverage,130.9
+Thong Sala,475556379,Sea Mew,9.710921,99.98595,18.75,40,A,food_beverage,147.3
+Thong Sala,478179686,Cake  coffee and more,9.711589,99.99169,18.67,39,A,food_beverage,146.7
+Sri Thanu,480891097,Mateo Pizza,9.762852,99.963305,17.07,36,A,food_beverage,134.1
+Sri Thanu,480954686,Lake Hut,9.76009,99.965466,14.22,30,A,food_beverage,111.7
+Other,481885971,Haad Yao Restaurant,9.772877,99.966588,17.97,38,A,food_beverage,141.2
+Thong Sala,482764897,Harmony Bar,9.705788,100.009837,19.04,40,A,food_beverage,149.6
+Thong Sala,483149957,Southway Coffee Bar,9.708937,99.998215,17.61,37,A,food_beverage,138.4
+Other,501485967,Lighthouse Restaurant,9.666667,100.07032,15.1,32,A,food_beverage,118.7
+Other,509843302,Absolute Island,9.771953,99.963419,14.34,30,A,food_beverage,112.7
+Other,509843303,Absolute Island,9.771899,99.963504,14.63,31,A,food_beverage,115
+Hin Kong,529898590,Thai Café,9.747083,99.982819,14.21,30,A,food_beverage,111.7
+Sri Thanu,529898620,,9.756395,99.978335,16.52,35,A,hospitality,129.8
+Sri Thanu,529898814,Ladda's,9.753178,99.966202,14.79,31,A,food_beverage,116.2
+Wok Tum,529903260,,9.738905,99.989664,13.79,29,A,hospitality,108.3
+Wok Tum,529903261,,9.738943,99.989779,12.86,27,A,hospitality,101.1
+Wok Tum,529903262,,9.738988,99.989915,13.26,28,A,hospitality,104.2
+Wok Tum,529911755,,9.721712,99.995533,12.94,27,A,hospitality,101.7
+Thong Nai Pan,530229981,Bungabow Restaurant,9.791798,100.036457,15.39,32,A,food_beverage,120.9
+Baan Tai,535595493,Yoghurt Home 1,9.7001,100.025917,14.92,31,A,food_beverage,117.2
+Baan Tai,535595494,Yoghurt Home 1,9.700234,100.025999,17.02,36,A,food_beverage,133.8
+Baan Tai,535595501,Thai food Esan food,9.700376,100.026433,15.87,33,A,food_beverage,124.7
+Sri Thanu,536097233,Il était une fois,9.757839,99.966254,13.68,29,A,food_beverage,107.5
+Sri Thanu,536097246,Eat.co,9.756694,99.965965,17.74,37,A,food_beverage,139.4
+Other,546115568,Mai Plen Rai Restaurant,9.749248,100.074237,14.88,31,A,food_beverage,116.9
+Chaloklum,776102275,House people,9.790584,99.986617,16.83,35,A,food_beverage,132.2
+Chaloklum,776102293,Royal Orchid,9.797225,99.982107,14.78,31,A,food_beverage,116.1
+Chaloklum,776102345,Koh Ma Beach Bar,9.796928,99.980491,13.23,28,A,food_beverage,103.9
+Chaloklum,776107107,Mister Food,9.787519,99.998824,14.58,31,A,food_beverage,114.5
+Chaloklum,776107135,The Two Brothers,9.786621,100.004009,17.01,36,A,food_beverage,133.6
+Chaloklum,776107142,Sea Side,9.786919,100.003428,17.56,37,A,food_beverage,138
+Chaloklum,776107143,Sea Side,9.786852,100.003374,16.48,35,A,food_beverage,129.5
+Chaloklum,776107186,Rendezvous Restaurant,9.786126,100.0076,12.85,27,A,food_beverage,101
+Baan Tai,776313593,Roots,9.697582,100.035012,16.53,35,A,food_beverage,129.9
+Thong Nai Pan,776313617,Saloon,9.777195,100.053727,13.23,28,A,food_beverage,104
+Thong Nai Pan,776313623,Handsome Sandwiches,9.777901,100.054099,16.94,36,A,food_beverage,133.1
+Thong Sala,776313830,Good View,9.702365,100.015003,16.24,34,A,food_beverage,127.6
+Other,788096098,Shiralea,9.779073,99.968494,13.29,28,A,food_beverage,104.4
+Wok Tum,1117766122,,9.725273,100.009647,13.96,29,A,hospitality,109.7
+Wok Tum,1117766124,,9.725041,100.009577,13,27,A,hospitality,102.1
+Wok Tum,1117766127,,9.724906,100.009833,13.29,28,A,hospitality,104.4
+Wok Tum,1117766136,,9.723662,100.00938,15.24,32,A,hospitality,119.8
+Wok Tum,1117766137,,9.723659,100.009226,14.85,31,A,hospitality,116.6
+Wok Tum,1117766138,,9.723654,100.009073,15.48,33,A,hospitality,121.6
+Baan Tai,1117917133,Fabio's,9.700733,100.029731,17.27,36,A,food_beverage,135.7
+Baan Tai,1117917163,Bankai Village Cafe,9.700456,100.033958,17.24,36,A,food_beverage,135.4
+Haad Rin,1155977841,Pranee Thai Food,9.676903,100.066177,18.57,39,A,food_beverage,145.9
+Haad Rin,1155978314,Pranee Thai Food,9.676903,100.066177,18.57,39,A,food_beverage,145.9
+Haad Rin,1155982257,Haad Rin Station,9.677648,100.065405,16.8,35,A,food_beverage,132
+Thong Sala,475556380,Safari Boat,9.710987,99.985875,16.08,34,A,retail,126.4
+Chaloklum,776107148,The World's End,9.78683,100.006446,19.87,42,A,food_beverage,156.1
+Chaloklum,776107190,Fresh fruits and vegetables stall,9.785432,100.007553,16.77,35,A,food_beverage,131.7
+Thong Sala,776313825,Café Amazon,9.703536,100.014018,14.22,30,A,food_beverage,111.7
+Chaloklum,898247291,SaladHut Ko Pha-ngan,9.784445,99.971524,6.97,14,A,hospitality,54.8
+Chaloklum,898247292,SaladHut Ko Pha-ngan,9.784482,99.971565,7.99,17,A,hospitality,62.7
+Chaloklum,898247293,SaladHut Ko Pha-ngan,9.784525,99.971609,7.89,16,A,hospitality,62
+Chaloklum,898247294,SaladHut Ko Pha-ngan,9.784571,99.971653,7.82,16,A,hospitality,61.4
+Chaloklum,898247295,SaladHut Ko Pha-ngan,9.784617,99.971695,8.04,17,A,hospitality,63.2
+Thong Sala,529461920,Oasis,9.708234,99.99633,19.6,41,A,food_beverage,154
+Chaloklum,776107126,Nong M Seafood,9.786318,100.005326,17.7,37,A,food_beverage,139.1
+Chaloklum,255278923,SaladHut Ko Pha-ngan,9.784449,99.971358,8.27,17,A,hospitality,65
+Chaloklum,255278924,SaladHut Ko Pha-ngan,9.784501,99.97131,12.67,27,A,hospitality,99.6
+Chaloklum,255278966,SaladHut Ko Pha-ngan,9.784409,99.971401,7.42,15,A,hospitality,58.3
+Chaloklum,255278975,Doubleduke Bungalow,9.784371,99.971441,10.4,22,A,hospitality,81.7
+Chaloklum,255278991,Doubleduke Bungalow,9.783868,99.971347,6.84,14,A,hospitality,53.7
+Sri Thanu,529898614,Genesis Yoga,9.756266,99.977715,10.2,21,A,hospitality,80.1
+Sri Thanu,529898615,Genesis Yoga,9.756252,99.977846,8.63,18,A,hospitality,67.8
+Sri Thanu,529898621,Genesis Yoga,9.756399,99.978231,8.37,17,A,hospitality,65.8
+Sri Thanu,529898622,Genesis Yoga,9.756479,99.978146,8.37,17,A,hospitality,65.8
+Chaloklum,255278901,SaladHut Ko Pha-ngan,9.784751,99.971815,6.58,14,A,hospitality,51.7
+Chaloklum,898247296,SaladHut Ko Pha-ngan,9.784659,99.971759,9.22,19,A,hospitality,72.4
+Chaloklum,255278861,SaladHut Ko Pha-ngan,9.784706,99.971837,9.13,19,A,hospitality,71.8
+Sri Thanu,480887844,2SIS,9.764167,99.962953,16.79,35,A,food_beverage,131.9
+Haad Rin,482254630,Pranee Thai Food,9.67672,100.066185,14.79,31,A,food_beverage,116.2
+Thong Sala,483354734,Unpacked,9.711377,99.991513,13.78,29,A,retail,108.2
+Baan Tai,529480157,Summer Stone,9.699727,100.021938,18.15,38,A,food_beverage,142.6
+Sri Thanu,529898874,Little Cookies,9.753145,99.969892,14.32,30,A,food_beverage,112.5
+Sri Thanu,529898888,Il Fannullone,9.752847,99.966673,19.32,41,A,food_beverage,151.8
+Sri Thanu,529898904,Little Cookies,9.752442,99.970006,18.99,40,A,food_beverage,149.2
+Wok Tum,529911790,CodE 495,9.729959,99.992268,12.88,27,A,food_beverage,101.2
+Wok Tum,529911791,CodE 495,9.729946,99.992422,12.88,27,A,food_beverage,101.2
+Baan Tai,776313592,Roots,9.697225,100.035283,16.71,35,A,food_beverage,131.3
+Baan Tai,1117917130,Fabio's,9.700918,100.029596,14.24,30,A,food_beverage,111.9
+Baan Tai,1117917131,Fabio's,9.700855,100.029591,16.98,36,A,food_beverage,133.4
+Haad Rin,1155982252,Rocky,9.677695,100.06333,18.94,40,A,food_beverage,148.9
+Chaloklum,255278930,SaladHut Ko Pha-ngan,9.784416,99.971491,7.67,16,A,hospitality,60.3
+Other,776107306,Golden Hill Backpackers,9.728462,99.977345,8.31,17,A,hospitality,65.3
+Other,776107307,Golden Hill Backpackers,9.728495,99.977435,8.3,17,A,hospitality,65.2
+Other,776107308,Golden Hill Resort,9.728529,99.977549,8.31,17,A,hospitality,65.3
+Other,776107309,Golden Hill Resort,9.728575,99.97767,8.31,17,A,hospitality,65.3
+Other,776107310,Golden Hill Resort,9.728608,99.97777,8.31,17,A,hospitality,65.3
+Other,776107311,Golden Hill Resort,9.728623,99.977899,8.31,17,A,hospitality,65.3
+Other,776107318,Golden Hill Resort,9.728886,99.977882,8.3,17,A,hospitality,65.2
+Other,776107319,Golden Hill Resort,9.728857,99.977766,8.31,17,A,hospitality,65.3
+Other,776107304,Golden Hill Resort,9.729033,99.977502,8.3,17,A,hospitality,65.2
+Other,776107305,Golden Hill Resort,9.729052,99.97767,8.31,17,A,hospitality,65.3
+Other,776107312,Golden Hill Resort,9.728669,99.977996,8.31,17,A,hospitality,65.3
+Other,776107313,Golden Hill Resort,9.728718,99.978083,8.31,17,A,hospitality,65.3
+Other,776107316,Golden Hill Resort,9.728928,99.978088,8.31,17,A,hospitality,65.3
+Other,776107317,Golden Hill Resort,9.728907,99.977987,8.31,17,A,hospitality,65.3
+Chaloklum,776107131,Foods & Roots,9.786544,100.004339,16.95,36,A,retail,133.1
+Wok Tum,387407511,,9.732848,99.982832,48.45,103,A,residential,380.7
+Sri Thanu,474678459,,9.756909,99.967194,40.97,87,A,residential,321.9
+Thong Sala,475556334,,9.713277,99.987782,37.85,80,A,residential,297.4
+Thong Sala,475556342,,9.708091,100.001561,48.26,103,A,residential,379.2
+Hin Kong,476858244,,9.743781,99.986564,29,61,A,residential,227.9
+Sri Thanu,476884779,,9.751544,99.966794,36.24,77,A,residential,284.7
+Thong Sala,478181490,,9.719923,99.995294,48.25,102,A,residential,379.1
+Thong Sala,478181493,,9.717665,99.994786,30.7,65,A,residential,241.2
+Thong Sala,478181494,,9.717122,99.993993,40.97,87,A,residential,321.9
+Thong Sala,478181496,,9.716272,99.993743,40.94,87,A,residential,321.7
+Wok Tum,478182461,,9.728551,100.00132,27.4,58,A,residential,215.3
+Thong Sala,478356522,,9.712236,99.987852,32.05,68,A,residential,251.8
+Thong Sala,478376836,,9.715857,99.987922,47.83,102,A,residential,375.8
+Thong Sala,478376840,,9.714929,99.985917,45.88,97,A,residential,360.5
+Thong Sala,478376841,,9.715125,99.985813,49.66,106,A,residential,390.2
+Wok Tum,479775844,,9.736914,99.990233,27.06,57,A,residential,212.6
+Wok Tum,479775845,,9.736743,99.990193,37.88,80,A,residential,297.7
+Wok Tum,479775846,,9.736507,99.990097,35.86,76,A,residential,281.8
+Other,480113309,,9.768185,100.00629,41.56,88,A,residential,326.5
+Chaloklum,480113762,,9.784976,100.006038,47.7,101,A,residential,374.8
+Chaloklum,480113763,,9.784941,100.005724,40.57,86,A,residential,318.7
+Chaloklum,480113764,,9.78493,100.005452,41.12,87,A,residential,323.1
+Chaloklum,480114763,,9.785752,100.009021,43.43,92,A,residential,341.2
+Sri Thanu,480532837,,9.76743,99.964227,45.58,97,A,residential,358.1
+Sri Thanu,480532839,,9.766889,99.964393,36.51,77,A,residential,286.9
+Other,480847348,,9.776169,99.968437,42.15,89,A,residential,331.2
+Other,480847358,,9.777928,99.969701,46.4,99,A,residential,364.5
+Other,481136540,,9.771277,99.963702,28.79,61,A,residential,226.2
+Thong Sala,481617144,,9.711135,99.984498,28.89,61,A,residential,227
+Sri Thanu,481662792,,9.74219,99.978877,37.47,79,A,residential,294.4
+Sri Thanu,481674733,,9.755014,99.971244,33.13,70,A,residential,260.3
+Sri Thanu,481676684,,9.759278,99.969123,31.19,66,A,residential,245.1
+Thong Sala,481709257,,9.717582,99.991597,28.23,60,A,residential,221.8
+Wok Tum,481709274,,9.729963,99.981776,43.26,92,A,residential,339.9
+Wok Tum,481709899,,9.721687,99.995891,33.03,70,A,residential,259.5
+Wok Tum,481715087,,9.735681,99.991063,29.06,62,A,residential,228.3
+Sri Thanu,481844109,,9.751534,99.973234,26.28,56,A,residential,206.5
+Sri Thanu,481846029,,9.753787,99.968309,40.56,86,A,residential,318.7
+Hin Kong,481896169,,9.742123,99.995649,33.48,71,A,residential,263.1
+Other,481896768,,9.745425,100.00223,43.51,92,A,residential,341.8
+Other,482053205,,9.747312,100.007028,37.69,80,A,residential,296.1
+Thong Sala,482764895,,9.706675,100.009193,27.75,59,A,residential,218.1
+Baan Tai,482920558,,9.698597,100.027251,49.44,105,A,residential,388.4
+Baan Tai,482920560,,9.699149,100.026078,34.72,74,A,residential,272.8
+Haad Rin,484279921,,9.678221,100.065624,37.07,79,A,residential,291.2
+Haad Rin,484279922,,9.67838,100.065703,38.59,82,A,residential,303.2
+Haad Rin,491844204,,9.677212,100.06516,25.91,55,A,residential,203.6
+Other,510782311,,9.775211,99.97129,33.46,71,A,residential,262.9
+Chaloklum,510925394,,9.786331,99.980324,28.36,60,A,residential,222.8
+Haad Rin,516562034,,9.67352,100.065915,33.38,71,A,residential,262.3
+Wok Tum,523637987,,9.738455,100.008351,27.13,57,A,residential,213.2
+Wok Tum,523637992,,9.738294,100.007139,26.09,55,A,residential,205
+Thong Nai Pan,524367925,,9.768939,100.061768,30.09,64,A,residential,236.4
+Thong Nai Pan,524367934,,9.767837,100.061279,29.79,63,A,residential,234
+Thong Sala,529461928,,9.710003,99.992387,25.94,55,A,residential,203.8
+Thong Sala,529461929,,9.710199,99.992828,28.08,59,A,residential,220.6
+Thong Sala,529480178,,9.702116,100.018108,27.11,57,A,residential,213
+Other,529696145,,9.777754,100.008595,28.77,61,A,residential,226.1
+Hin Kong,529898657,,9.754035,99.982424,36.46,77,A,residential,286.5
+Hin Kong,529898709,,9.748825,99.983995,27.12,57,A,residential,213.1
+Sri Thanu,529898769,,9.753066,99.974727,33.06,70,A,residential,259.8
+Sri Thanu,529898875,,9.753425,99.970321,31.34,66,A,residential,246.2
+Wok Tum,529911753,,9.722015,99.995883,47.11,100,A,residential,370.1
+Wok Tum,529911798,,9.729699,99.99354,35.45,75,A,residential,278.6
+Thong Nai Pan,530229920,,9.771032,100.040838,31.34,66,A,residential,246.2
+Thong Nai Pan,530229921,,9.771445,100.040966,35.39,75,A,residential,278.1
+Other,530259322,,9.723092,100.037311,32.18,68,A,residential,252.8
+Baan Tai,535595508,,9.703636,100.028021,49.23,105,A,residential,386.8
+Other,546266863,,9.735234,100.012887,35.19,75,A,residential,276.5
+Chaloklum,776102269,,9.795567,99.986219,27.46,58,A,residential,215.8
+Chaloklum,776102270,,9.795691,99.985992,27.47,58,A,residential,215.8
+Chaloklum,776102271,,9.795826,99.985753,27.46,58,A,residential,215.7
+Chaloklum,776102272,,9.791819,99.987694,27.23,58,A,residential,213.9
+Chaloklum,776102273,,9.791863,99.987481,35.86,76,A,residential,281.7
+Chaloklum,776107104,,9.787997,99.996978,26.06,55,A,residential,204.8
+Chaloklum,776107105,,9.788494,99.997693,23.38,49,A,retail,183.7
+Chaloklum,776107106,,9.788638,99.997357,26.06,55,A,residential,204.8
+Chaloklum,776107114,,9.785566,100.003475,46.33,98,A,residential,364.1
+Chaloklum,776107124,,9.785993,100.004488,37.47,79,A,residential,294.4
+Chaloklum,776107183,,9.785293,100.005623,28.15,60,A,residential,221.2
+Chaloklum,776107207,,9.791345,99.988327,49.05,104,A,residential,385.4
+Chaloklum,776107232,,9.79322,99.994081,33.14,70,A,residential,260.4
+Chaloklum,776107246,,9.79912,99.991086,34.68,74,A,residential,272.4
+Chaloklum,776107247,,9.79883,99.991059,25.69,54,A,residential,201.8
+Chaloklum,776107250,,9.796773,99.990971,31.85,67,A,residential,250.3
+Chaloklum,776107251,,9.796862,99.991318,30.8,65,A,residential,242
+Other,776107336,,9.728422,99.978498,28.72,61,A,residential,225.6
+Baan Tai,776313588,,9.695343,100.038429,36.79,78,A,residential,289.1
+Baan Tai,776313589,,9.695394,100.038178,36.8,78,A,residential,289.1
+Other,776313645,,9.777376,100.005426,43.41,92,A,residential,341.1
+Other,776313646,,9.777521,100.005355,28.22,60,A,residential,221.7
+Other,776313648,,9.777488,100.005014,39.32,83,A,residential,308.9
+Other,776313651,,9.778504,99.978903,28.26,60,A,residential,222
+Chaloklum,776313655,,9.785772,99.998836,46.5,99,A,residential,365.3
+Thong Sala,776313665,,9.710497,100.007732,38.2,81,A,residential,300.1
+Chaloklum,828323449,,9.789065,100.000334,25.74,54,A,residential,202.2
+Wok Tum,842511133,,9.731076,100.002097,26.05,55,A,residential,204.7
+Wok Tum,842511137,,9.733533,100.001521,35.76,76,A,residential,281
+Wok Tum,842511140,,9.736051,99.998271,35.09,74,A,residential,275.7
+Wok Tum,842511141,,9.736019,99.997931,26.08,55,A,residential,204.9
+Wok Tum,842511142,,9.738552,100.000415,42.56,90,A,residential,334.4
+Wok Tum,842511144,,9.738992,99.99969,32.49,69,A,residential,255.3
+Hin Kong,842511150,,9.747486,99.996788,28.69,61,A,residential,225.4
+Other,1016179856,,9.744022,100.007259,45.46,97,A,residential,357.2
+Wok Tum,1016182063,,9.737464,100.007028,21.66,46,A,temple,170.2
+Thong Sala,1117759143,,9.711306,99.994,44.24,94,A,residential,347.6
+Thong Sala,1117759154,,9.713786,99.994286,32.74,69,A,residential,257.3
+Thong Sala,1117763078,,9.712741,99.998854,43.04,91,A,residential,338.2
+Thong Sala,1117763079,,9.711918,99.998482,42.61,90,A,residential,334.8
+Thong Sala,1117763081,,9.711741,99.999274,31.23,66,A,residential,245.4
+Thong Sala,1117763084,,9.710455,99.998022,35.44,75,A,residential,278.4
+Thong Sala,1117763085,,9.711555,99.999869,26.72,57,A,residential,209.9
+Wok Tum,1117763087,,9.726075,100.00404,45.15,96,A,residential,354.7
+Wok Tum,1117763089,,9.726828,100.001286,42.31,90,A,residential,332.4
+Wok Tum,1117763090,,9.726508,100.00028,41.12,87,A,residential,323.1
+Wok Tum,1117763091,,9.726737,100.000391,32.35,69,A,residential,254.2
+Wok Tum,1117763092,,9.726947,100.000514,42,89,A,residential,330
+Wok Tum,1117763093,,9.727158,100.000632,48.19,102,A,residential,378.6
+Wok Tum,1117763094,,9.727358,100.000746,42.95,91,A,residential,337.5
+Wok Tum,1117766119,,9.725954,100.007494,28.41,60,A,residential,223.2
+Wok Tum,1117766120,,9.725463,100.008027,37.67,80,A,residential,296
+Wok Tum,1117766130,,9.724499,100.009702,31.54,67,A,residential,247.8
+Thong Sala,1117766145,,9.718997,100.005973,32.05,68,A,residential,251.9
+Baan Tai,1117917097,,9.698172,100.029093,26.32,56,A,residential,206.8
+Baan Tai,1117917104,,9.701199,100.028551,25.53,54,A,residential,200.6
+Baan Tai,1117917107,,9.700963,100.028841,25.73,54,A,residential,202.2
+Baan Tai,1117917116,,9.700776,100.0309,27,57,A,residential,212.2
+Baan Tai,1117917118,,9.700854,100.03116,35.72,76,A,residential,280.6
+Baan Tai,1117917119,,9.700535,100.031609,48.34,103,A,residential,379.8
+Baan Tai,1117917120,,9.700552,100.031357,33.58,71,A,residential,263.8
+Baan Tai,1117917137,,9.700456,100.032148,35.66,76,A,residential,280.2
+Baan Tai,1117917148,,9.699749,100.034012,28.09,59,A,residential,220.7
+Baan Tai,1117917149,,9.699771,100.033843,28.17,60,A,residential,221.3
+Baan Tai,1117917165,,9.699231,100.032666,49.15,104,A,residential,386.2
+Baan Tai,1117917177,,9.6992,100.028233,36.12,77,A,residential,283.8
+Baan Tai,1117917178,,9.699012,100.028151,36.8,78,A,residential,289.1
+Wok Tum,1346918273,,9.724665,99.980833,33.59,71,A,residential,264
+Other,1240717505,Sense Asia Resort,9.782066,99.966593,8.43,17,A,hospitality,66.2
+Other,1240717506,Sense Asia Resort,9.782132,99.966532,8.41,17,A,hospitality,66.1
+Other,1240717507,Sense Asia Resort,9.782201,99.96647,8.42,17,A,hospitality,66.1
+Other,1240717509,Sense Asia Resort,9.782017,99.966475,8.42,17,A,hospitality,66.1
+Other,1240717510,Sense Asia Resort,9.782081,99.966414,8.41,17,A,hospitality,66.1
+Other,1240717511,Sense Asia Resort,9.782149,99.966353,8.41,17,A,hospitality,66.1
+Chaloklum,255278944,Buddha Cafe,9.786196,99.974711,22.3,47,A,residential,175.2
+Thong Sala,776313700,Phangan Villa Beach Bungalows,9.705899,99.992102,12.12,25,A,hospitality,95.2
+Thong Sala,776313701,Phangan Villa Beach Bungalows,9.705821,99.992073,12.12,25,A,hospitality,95.2
+Thong Sala,776313702,Phangan Villa Beach Bungalows,9.705743,99.992045,12.12,25,A,hospitality,95.2
+Thong Sala,776313703,Phangan Villa Beach Bungalows,9.705664,99.992016,12.13,25,A,hospitality,95.3
+Thong Sala,776313704,Phangan Villa Beach Bungalows,9.705586,99.991988,12.12,25,A,hospitality,95.2
+Thong Sala,776313705,Phangan Villa Beach Bungalows,9.705508,99.991959,12.12,25,A,hospitality,95.2
+Other,1240717508,Sense Asia Resort,9.782269,99.966411,8.42,17,A,hospitality,66.1
+Other,1240717512,Sense Asia Resort,9.782216,99.96629,8.41,17,A,hospitality,66.1

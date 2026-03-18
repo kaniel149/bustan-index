@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0A1628;--card:#0D1B30;--card2:#111E33;--green:#00D68F;--gold:#FFB800;--orange:#F27A1A;--red:#EF4444;--text:#E2E8F0;--text2:#94A3B8;--border:#1E293B;--glass:rgba(13,27,48,0.85)}
@@ -68,6 +70,54 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 .popup-btn.primary{background:var(--green);color:#000}
 .popup-btn.secondary{background:var(--card2);color:var(--text);border:1px solid var(--border)}
 
+/* MARKER CLUSTER DARK THEME */
+.marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:rgba(10,22,40,0.85)!important;border:2px solid var(--green)!important;backdrop-filter:blur(8px)}
+.marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:rgba(0,214,143,0.2)!important;color:var(--green)!important;font-family:'Inter',sans-serif;font-weight:700;font-size:.85rem}
+.marker-cluster-medium{border-color:var(--gold)!important}
+.marker-cluster-medium div{color:var(--gold)!important;background:rgba(255,184,0,0.2)!important}
+.marker-cluster-large{border-color:var(--orange)!important}
+.marker-cluster-large div{color:var(--orange)!important;background:rgba(242,122,26,0.2)!important}
+
+/* MAP SEARCH BAR */
+.map-search-wrap{position:absolute;top:12px;left:50%;transform:translateX(-50%);z-index:1001;width:320px;max-width:calc(100% - 280px)}
+.map-search-input{width:100%;padding:10px 14px 10px 36px;border-radius:10px;border:1px solid var(--border);background:var(--glass);backdrop-filter:blur(12px);color:var(--text);font-size:.85rem;transition:.2s}
+.map-search-input:focus{border-color:var(--green);box-shadow:0 0 0 2px rgba(0,214,143,0.15)}
+.map-search-input::placeholder{color:var(--text2)}
+.map-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text2);font-size:.85rem;pointer-events:none}
+.map-search-results{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:10px;max-height:320px;overflow-y:auto;display:none}
+.map-search-results.open{display:block}
+.map-search-item{padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border);font-size:.8rem;transition:.1s}
+.map-search-item:last-child{border:none}
+.map-search-item:hover{background:rgba(0,214,143,0.08)}
+.map-search-item .msi-name{font-weight:600;margin-bottom:2px}
+.map-search-item .msi-sub{font-size:.7rem;color:var(--text2)}
+.map-search-empty{padding:12px 14px;font-size:.78rem;color:var(--text2);text-align:center}
+
+/* ============ BUILDING DETAIL PANEL (slide-in) ============ */
+.detail-panel-overlay{position:fixed;inset:0;z-index:4999;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity .25s}
+.detail-panel-overlay.open{opacity:1;pointer-events:auto}
+.detail-panel{position:fixed;top:0;right:0;bottom:0;width:420px;max-width:100%;z-index:5000;background:var(--card);border-left:1px solid var(--border);transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column}
+.detail-panel.open{transform:translateX(0)}
+.dp-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);flex-shrink:0;position:sticky;top:0;background:var(--card);z-index:1}
+.dp-header h2{font-size:1rem;font-weight:700}
+.dp-close{background:none;color:var(--text2);font-size:1.4rem;padding:4px 8px;border-radius:6px;transition:.15s}
+.dp-close:hover{color:var(--text);background:var(--card2)}
+.dp-body{padding:20px;flex:1}
+.dp-photo{width:100%;height:180px;border-radius:10px;object-fit:cover;margin-bottom:16px;background:var(--card2);display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:.8rem;border:1px solid var(--border)}
+.dp-photo img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.dp-section{margin-bottom:18px}
+.dp-section h3{font-size:.72rem;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.dp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dp-field{margin-bottom:6px}
+.dp-field label{display:block;font-size:.65rem;color:var(--text2);margin-bottom:2px;text-transform:uppercase}
+.dp-field input,.dp-field select,.dp-field textarea{width:100%;padding:7px 10px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.8rem}
+.dp-field textarea{height:60px;resize:vertical}
+.dp-field .dp-readonly{padding:7px 0;font-size:.85rem;color:var(--text)}
+.dp-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.dp-timeline{margin-top:4px}
+.dp-timeline-item{padding:8px 0;border-bottom:1px solid var(--border);font-size:.78rem}
+.dp-timeline-item:last-child{border:none}
+
 /* ============ SCANNER VIEW ============ */
 #scanner-view{flex-direction:column}
 .scanner-toolbar{padding:12px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border);flex-shrink:0}
@@ -99,7 +149,7 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 .b-card-owner{font-size:.75rem;color:var(--text2)}
 .b-card-action{padding:4px 12px;border-radius:6px;font-size:.7rem;font-weight:600;background:var(--green);color:#000}
 
-/* Detail Modal */
+/* Detail Modal (kept for scanner backward compat) */
 .modal-overlay{position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center}
 .modal-overlay.show{display:flex}
 .modal{background:var(--card);border:1px solid var(--border);border-radius:14px;width:90%;max-width:640px;max-height:85vh;overflow-y:auto;padding:24px}
@@ -115,12 +165,16 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 .btn-primary{background:var(--green);color:#000}
 .btn-secondary{background:var(--card2);color:var(--text);border:1px solid var(--border)}
 .btn-danger{background:var(--red);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
 
 /* ============ PIPELINE VIEW ============ */
 #pipeline-view{flex-direction:column}
 .pipeline-summary{display:flex;gap:16px;padding:12px 16px;border-bottom:1px solid var(--border);flex-shrink:0;flex-wrap:wrap}
 .ps-stat{font-size:.8rem;color:var(--text2)}.ps-stat strong{color:var(--text);font-size:1rem}
-.pipeline-toolbar{padding:8px 16px;display:flex;justify-content:flex-end;flex-shrink:0}
+.pipeline-toolbar{padding:8px 16px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;gap:8px}
+.pipeline-view-toggle{display:flex;gap:2px;background:var(--card2);border-radius:8px;padding:2px}
+.pipeline-view-btn{padding:6px 14px;border-radius:6px;font-size:.75rem;font-weight:500;background:none;color:var(--text2);transition:.15s}
+.pipeline-view-btn.active{background:var(--green);color:#000}
 .pipeline-board{flex:1;display:flex;gap:8px;overflow-x:auto;padding:0 12px 12px;align-items:stretch}
 .pipeline-col{min-width:200px;flex:1;display:flex;flex-direction:column;background:var(--card);border-radius:10px;border:1px solid var(--border)}
 .pipeline-col-header{padding:10px 12px;font-size:.78rem;font-weight:600;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
@@ -135,6 +189,15 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 .lead-card .lc-row{display:flex;justify-content:space-between;margin-top:6px;font-size:.7rem;color:var(--text2)}
 .lead-card .lc-value{color:var(--gold);font-weight:600}
 .lead-card .lc-days{color:var(--text2)}
+
+/* Pipeline List View */
+.pipeline-list{flex:1;overflow-y:auto;padding:12px 16px;display:none}
+.pipeline-list.active{display:block}
+.pipeline-list table{width:100%;border-collapse:collapse}
+.pipeline-list th{text-align:left;padding:8px 10px;font-size:.7rem;color:var(--text2);text-transform:uppercase;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg)}
+.pipeline-list td{padding:10px;font-size:.8rem;border-bottom:1px solid var(--border)}
+.pipeline-list tr:hover td{background:rgba(0,214,143,0.04)}
+.pipeline-list .stage-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
 
 /* ============ DASHBOARD VIEW ============ */
 #dashboard-view{flex-direction:column;overflow-y:auto;padding:20px}
@@ -159,20 +222,48 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 .add-form-overlay{position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center}
 .add-form-overlay.show{display:flex}
 
+/* LOADING SPINNER */
+.loading-overlay{position:fixed;inset:0;z-index:9999;background:rgba(10,22,40,0.9);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;transition:opacity .3s}
+.loading-overlay.hidden{opacity:0;pointer-events:none}
+.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-size:.85rem;color:var(--text2)}
+
+/* MOBILE BOTTOM NAV */
+.mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--card);border-top:1px solid var(--border);padding:6px 0;padding-bottom:max(6px,env(safe-area-inset-bottom))}
+.mobile-bottom-nav .mbn-tabs{display:flex;justify-content:space-around}
+.mobile-bottom-nav .mbn-tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 12px;border-radius:8px;background:none;color:var(--text2);font-size:.6rem;font-weight:500;min-width:60px}
+.mobile-bottom-nav .mbn-tab.active{color:var(--green)}
+.mobile-bottom-nav .mbn-tab svg{width:20px;height:20px}
+
 /* RESPONSIVE */
 @media(max-width:768px){
  .map-filters{width:180px;padding:10px}
+ .map-search-wrap{width:calc(100% - 200px);max-width:none;left:55%;top:8px}
  .scanner-grid{grid-template-columns:1fr}
  .pipeline-col{min-width:170px}
  .dash-row{grid-template-columns:1fr}
- .modal{width:95%;padding:16px}
+ .modal{width:100%;max-width:100%;height:100vh;max-height:100vh;border-radius:0;padding:16px}
  .modal-grid{grid-template-columns:1fr}
+ .detail-panel{width:100%}
+ nav .nav-tabs{display:none}
  .nav-brand{font-size:.85rem;margin-right:12px}
  .nav-tab{padding:6px 10px;font-size:.72rem}
+ .mobile-bottom-nav{display:block}
+ #app{padding-bottom:64px}
+ .map-add-btn{bottom:80px}
+ .dp-grid{grid-template-columns:1fr}
+ .pipeline-list td,.pipeline-list th{padding:8px 6px;font-size:.72rem}
 }
 </style>
 </head>
 <body>
+
+<!-- LOADING SPINNER -->
+<div class="loading-overlay hidden" id="loading">
+ <div class="spinner"></div>
+ <div class="loading-text">Loading data...</div>
+</div>
 
 <!-- PIN LOCK SCREEN -->
 <div id="pin-lock">
@@ -187,7 +278,7 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 <div id="app">
  <nav>
   <div class="nav-brand">⚡ KP Solar Pro</div>
-  <div class="nav-tabs">
+  <div class="nav-tabs" id="desktop-tabs">
    <button class="nav-tab active" data-view="map">Map</button>
    <button class="nav-tab" data-view="scanner">Scanner</button>
    <button class="nav-tab" data-view="pipeline">Pipeline</button>
@@ -202,6 +293,12 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
  <div id="map-view" class="view active">
   <div id="map-container">
    <div id="map"></div>
+   <!-- MAP SEARCH -->
+   <div class="map-search-wrap" id="map-search-wrap">
+    <span class="map-search-icon">🔍</span>
+    <input type="text" class="map-search-input" id="map-search" placeholder="Search buildings..." autocomplete="off">
+    <div class="map-search-results" id="map-search-results"></div>
+   </div>
    <div class="map-filters" id="map-filters">
     <div style="display:flex;justify-content:space-between;align-items:center">
      <h3>Filters</h3>
@@ -235,9 +332,14 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
  <div id="pipeline-view" class="view">
   <div class="pipeline-summary" id="pipeline-summary"></div>
   <div class="pipeline-toolbar">
+   <div class="pipeline-view-toggle">
+    <button class="pipeline-view-btn active" data-pview="kanban" onclick="setPipelineView('kanban')">Kanban</button>
+    <button class="pipeline-view-btn" data-pview="list" onclick="setPipelineView('list')">List</button>
+   </div>
    <button class="btn btn-primary" onclick="showAddLeadModal()">+ Add Lead</button>
   </div>
   <div class="pipeline-board" id="pipeline-board"></div>
+  <div class="pipeline-list" id="pipeline-list"></div>
  </div>
 
  <!-- DASHBOARD VIEW -->
@@ -249,15 +351,38 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
   </div>
   <div class="dash-panel"><h3>Recent Activities</h3><div id="dash-activities"></div></div>
  </div>
+
+ <!-- MOBILE BOTTOM NAV -->
+ <div class="mobile-bottom-nav" id="mobile-nav">
+  <div class="mbn-tabs">
+   <button class="mbn-tab active" data-view="map">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Map
+   </button>
+   <button class="mbn-tab" data-view="scanner">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    Scanner
+   </button>
+   <button class="mbn-tab" data-view="pipeline">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+    Pipeline
+   </button>
+   <button class="mbn-tab" data-view="dashboard">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+    Dashboard
+   </button>
+  </div>
+ </div>
 </div>
 
-<!-- BUILDING DETAIL MODAL -->
-<div class="modal-overlay" id="building-modal">
- <div class="modal">
-  <button class="modal-close" onclick="closeBuildingModal()">&times;</button>
-  <h2 id="bm-title">Building Details</h2>
-  <div id="bm-body"></div>
+<!-- BUILDING DETAIL SLIDE PANEL -->
+<div class="detail-panel-overlay" id="dp-overlay" onclick="closeDetailPanel()"></div>
+<div class="detail-panel" id="detail-panel">
+ <div class="dp-header">
+  <h2 id="dp-title">Building Details</h2>
+  <button class="dp-close" onclick="closeDetailPanel()">&times;</button>
  </div>
+ <div class="dp-body" id="dp-body"></div>
 </div>
 
 <!-- ADD BUILDING MODAL -->
@@ -334,6 +459,7 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 // ==================== CONFIG ====================
 const SUPABASE_URL='https://trvgpgpsqvvdsudpgwpm.supabase.co';
@@ -347,6 +473,16 @@ const GRADE_COLORS={A:'#00D68F',B:'#FFB800',C:'#F97316',D:'#6B7280'};
 const sb=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 let map,markersLayer,buildings=[],leads=[],zones=[],activities=[];
 let addBuildingMode=false,pendingLatLng=null;
+let pipelineViewMode='kanban';
+let markerMap={}; // id -> marker reference for search
+
+// ==================== LOADING ====================
+function showLoading(msg){
+ const el=document.getElementById('loading');
+ el.querySelector('.loading-text').textContent=msg||'Loading data...';
+ el.classList.remove('hidden');
+}
+function hideLoading(){document.getElementById('loading').classList.add('hidden')}
 
 // ==================== PIN LOCK ====================
 (function initPin(){
@@ -380,21 +516,54 @@ let addBuildingMode=false,pendingLatLng=null;
 
 // ==================== INIT ====================
 async function initApp(){
- initMap();initNav();
+ showLoading('Initializing platform...');
+ initMap();initNav();initMapSearch();initMobileNav();initSwipeClose();
  await Promise.all([loadZones(),loadBuildings(),loadLeads(),loadActivities()]);
  renderMap();renderScanner();renderPipeline();renderDashboard();
  initRealtime();
+ hideLoading();
 }
 
 // ==================== NAV ====================
+function switchView(viewName){
+ document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.mbn-tab').forEach(x=>x.classList.remove('active'));
+ const dt=document.querySelector(`.nav-tab[data-view="${viewName}"]`);
+ const mt=document.querySelector(`.mbn-tab[data-view="${viewName}"]`);
+ if(dt)dt.classList.add('active');
+ if(mt)mt.classList.add('active');
+ document.getElementById(viewName+'-view').classList.add('active');
+ if(viewName==='map')setTimeout(()=>map.invalidateSize(),100);
+}
+
 function initNav(){
- document.querySelectorAll('.nav-tab').forEach(t=>t.addEventListener('click',()=>{
-  document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));
-  document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
-  t.classList.add('active');
-  document.getElementById(t.dataset.view+'-view').classList.add('active');
-  if(t.dataset.view==='map')setTimeout(()=>map.invalidateSize(),100);
- }));
+ document.querySelectorAll('.nav-tab').forEach(t=>t.addEventListener('click',()=>switchView(t.dataset.view)));
+}
+
+function initMobileNav(){
+ document.querySelectorAll('.mbn-tab').forEach(t=>t.addEventListener('click',()=>switchView(t.dataset.view)));
+}
+
+// ==================== SWIPE TO CLOSE ====================
+function initSwipeClose(){
+ const panel=document.getElementById('detail-panel');
+ let startX=0,currentX=0,dragging=false;
+ panel.addEventListener('touchstart',e=>{
+  startX=e.touches[0].clientX;currentX=startX;dragging=true;
+ },{passive:true});
+ panel.addEventListener('touchmove',e=>{
+  if(!dragging)return;
+  currentX=e.touches[0].clientX;
+  const dx=currentX-startX;
+  if(dx>0)panel.style.transform=`translateX(${dx}px)`;
+ },{passive:true});
+ panel.addEventListener('touchend',()=>{
+  if(!dragging)return;dragging=false;
+  const dx=currentX-startX;
+  if(dx>100){closeDetailPanel()}
+  else{panel.style.transform=''}
+ });
 }
 
 // ==================== MAP ====================
@@ -411,7 +580,19 @@ function initMap(){
   attribution:'&copy; OSM &copy; CARTO',maxZoom:19
  });
  L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{},{position:'topright',collapsed:false}).addTo(map);
- markersLayer=L.layerGroup().addTo(map);
+
+ // Use MarkerClusterGroup instead of LayerGroup
+ markersLayer=L.markerClusterGroup({
+  maxClusterRadius:60,
+  spiderfyOnMaxZoom:true,
+  showCoverageOnHover:false,
+  zoomToBoundsOnClick:true,
+  disableClusteringAtZoom:18,
+  chunkedLoading:true,
+  chunkInterval:100,
+  chunkDelay:20
+ }).addTo(map);
+
  map.on('click',e=>{
   if(addBuildingMode){pendingLatLng=e.latlng;document.getElementById('ab-lat').value=e.latlng.lat.toFixed(5);document.getElementById('ab-lng').value=e.latlng.lng.toFixed(5);showModal('add-building-modal');addBuildingMode=false;document.getElementById('map-add-btn').textContent='+ Add Building'}
  });
@@ -424,10 +605,12 @@ function initMap(){
 
 function renderMap(){
  markersLayer.clearLayers();
+ markerMap={};
  const fZone=document.getElementById('mf-zone').value;
  const fType=document.getElementById('mf-type').value;
  const fGrade=document.getElementById('mf-grade').value;
  const fStatus=document.getElementById('mf-status').value;
+ const markers=[];
  buildings.filter(b=>{
   if(fZone&&b.zone_id!=fZone)return false;
   if(fType&&b.building_type!==fType)return false;
@@ -450,7 +633,62 @@ function renderMap(){
     <button class="popup-btn secondary" onclick="addToPipeline('${b.id}')">Add to Pipeline</button>
    </div>
   `,{maxWidth:280});
-  markersLayer.addLayer(m);
+  markers.push(m);
+  markerMap[b.id]=m;
+ });
+ markersLayer.addLayers(markers);
+}
+
+// ==================== MAP SEARCH ====================
+function initMapSearch(){
+ const input=document.getElementById('map-search');
+ const results=document.getElementById('map-search-results');
+ let debounceTimer;
+ input.addEventListener('input',()=>{
+  clearTimeout(debounceTimer);
+  debounceTimer=setTimeout(()=>{
+   const q=input.value.trim().toLowerCase();
+   if(q.length<2){results.classList.remove('open');return}
+   const matches=buildings.filter(b=>{
+    return(b.name||'').toLowerCase().includes(q)||
+     (b.address||'').toLowerCase().includes(q)||
+     (b.building_type||'').toLowerCase().includes(q);
+   }).slice(0,10);
+   if(!matches.length){
+    results.innerHTML='<div class="map-search-empty">No buildings found</div>';
+    results.classList.add('open');return;
+   }
+   results.innerHTML=matches.map(b=>{
+    const zone=zones.find(z=>z.id===b.zone_id);
+    return`<div class="map-search-item" data-id="${b.id}">
+     <div class="msi-name">${esc(b.name||'Unnamed')}</div>
+     <div class="msi-sub">${esc(b.address||'—')} · ${b.building_type||'—'} · ${esc(zone?.name||'—')}</div>
+    </div>`;
+   }).join('');
+   results.classList.add('open');
+  },200);
+ });
+ results.addEventListener('click',e=>{
+  const item=e.target.closest('.map-search-item');
+  if(!item)return;
+  const id=item.dataset.id;
+  const b=buildings.find(x=>x.id===id);
+  if(!b||!b.lat||!b.lng)return;
+  // Switch to map view if not already there
+  switchView('map');
+  setTimeout(()=>{
+   map.setView([b.lat,b.lng],18);
+   const m=markerMap[id];
+   if(m){
+    markersLayer.zoomToShowLayer(m,()=>{m.openPopup()});
+   }
+  },150);
+  input.value='';
+  results.classList.remove('open');
+ });
+ // Close on outside click
+ document.addEventListener('click',e=>{
+  if(!e.target.closest('.map-search-wrap'))results.classList.remove('open');
  });
 }
 
@@ -465,11 +703,13 @@ async function loadZones(){
  });
 }
 async function loadBuildings(){
+ showLoading('Loading buildings...');
  const{data}=await sb.from('buildings').select('*').order('potential_grade');
  buildings=data||[];
  const sel=document.getElementById('al-building');
  sel.innerHTML='<option value="">Select...</option>';
  buildings.forEach(b=>{const o=document.createElement('option');o.value=b.id;o.textContent=b.name||b.address||b.id;sel.appendChild(o)});
+ hideLoading();
 }
 async function loadLeads(){const{data}=await sb.from('leads').select('*');leads=data||[]}
 async function loadActivities(){const{data}=await sb.from('activities').select('*').order('created_at',{ascending:false}).limit(30);activities=data||[]}
@@ -526,39 +766,92 @@ function renderScanner(){
  if(el)el.addEventListener(el.tagName==='INPUT'?'input':'change',renderScanner);
 });
 
-// ==================== BUILDING DETAIL ====================
+// ==================== BUILDING DETAIL PANEL (slide-in) ====================
 function openBuildingDetail(id){
  const b=buildings.find(x=>x.id===id);if(!b)return;
  const zone=zones.find(z=>z.id===b.zone_id);
- document.getElementById('bm-title').textContent=b.name||'Building Details';
+ // Close any open modal first
+ closeModal('building-modal');
+
+ document.getElementById('dp-title').textContent=b.name||'Building Details';
+
+ // Load building-specific activities
  const ba=activities.filter(a=>a.building_id===id);
- document.getElementById('bm-body').innerHTML=`
-  <div class="modal-grid">
-   <div class="modal-field"><label>Address</label><input id="be-address" value="${esc(b.address||'')}"></div>
-   <div class="modal-field"><label>Zone</label><span style="padding:8px;display:block;font-size:.85rem">${esc(zone?.name||'—')}</span></div>
-   <div class="modal-field"><label>Building Type</label><input id="be-type" value="${esc(b.building_type||'')}"></div>
-   <div class="modal-field"><label>Roof Type</label><input id="be-roof" value="${esc(b.roof_type||'')}"></div>
-   <div class="modal-field"><label>Roof Area sqm</label><input id="be-area" type="number" value="${b.roof_area_sqm||''}"></div>
-   <div class="modal-field"><label>Orientation</label><input id="be-orient" value="${esc(b.roof_orientation||'')}"></div>
-   <div class="modal-field"><label>Potential kWp</label><input id="be-kwp" type="number" step="0.1" value="${b.potential_kwp||''}"></div>
-   <div class="modal-field"><label>Panels</label><input id="be-panels" type="number" value="${b.potential_panels||''}"></div>
-   <div class="modal-field"><label>Grade</label><input id="be-grade" value="${b.potential_grade||''}"></div>
-   <div class="modal-field"><label>Status</label><input id="be-status" value="${b.status||''}"></div>
-   <div class="modal-field"><label>Owner</label><input id="be-owner" value="${esc(b.owner_name||'')}"></div>
-   <div class="modal-field"><label>Phone</label><input id="be-phone" value="${esc(b.owner_phone||'')}"></div>
+
+ const photoHtml=b.drone_photo_url
+  ?`<div class="dp-photo"><img src="${esc(b.drone_photo_url)}" alt="Building photo" onerror="this.parentElement.innerHTML='📷 Photo unavailable'"></div>`
+  :`<div class="dp-photo">📷 No drone photo available</div>`;
+
+ document.getElementById('dp-body').innerHTML=`
+  ${photoHtml}
+  <div class="dp-section">
+   <h3>Location & Type</h3>
+   <div class="dp-grid">
+    <div class="dp-field"><label>Address</label><input id="be-address" value="${esc(b.address||'')}"></div>
+    <div class="dp-field"><label>Zone</label><div class="dp-readonly">${esc(zone?.name||'—')}</div></div>
+    <div class="dp-field"><label>Building Type</label>
+     <select id="be-type">${['residential','commercial','industrial','resort','government'].map(t=>`<option${b.building_type===t?' selected':''}>${t}</option>`).join('')}</select>
+    </div>
+    <div class="dp-field"><label>Status</label>
+     <select id="be-status">${['new','surveyed','proposal','contracted','installed'].map(s=>`<option${b.status===s?' selected':''}>${s}</option>`).join('')}</select>
+    </div>
+   </div>
   </div>
-  <div class="modal-field"><label>Notes</label><textarea id="be-notes">${esc(b.notes||'')}</textarea></div>
-  ${ba.length?`<h3 style="margin-top:12px;font-size:.8rem;color:var(--text2)">Activity</h3>${ba.map(a=>`<div class="activity-item">${esc(a.description||a.type||'')} <span class="activity-time">${fmtDate(a.created_at)}</span></div>`).join('')}`:''}
-  <div class="modal-actions">
-   <button class="btn btn-secondary" onclick="addToPipeline('${b.id}')">Create Lead</button>
+  <div class="dp-section">
+   <h3>Roof Specifications</h3>
+   <div class="dp-grid">
+    <div class="dp-field"><label>Roof Type</label>
+     <select id="be-roof">${['flat','gable','hip','metal','tile'].map(t=>`<option${b.roof_type===t?' selected':''}>${t}</option>`).join('')}</select>
+    </div>
+    <div class="dp-field"><label>Roof Area (sqm)</label><input id="be-area" type="number" value="${b.roof_area_sqm||''}"></div>
+    <div class="dp-field"><label>Orientation</label><input id="be-orient" value="${esc(b.roof_orientation||'')}"></div>
+   </div>
+  </div>
+  <div class="dp-section">
+   <h3>Solar Potential</h3>
+   <div class="dp-grid">
+    <div class="dp-field"><label>Potential kWp</label><input id="be-kwp" type="number" step="0.1" value="${b.potential_kwp||''}"></div>
+    <div class="dp-field"><label>Panels</label><input id="be-panels" type="number" value="${b.potential_panels||''}"></div>
+    <div class="dp-field"><label>Grade</label>
+     <select id="be-grade">${['A','B','C','D'].map(g=>`<option${b.potential_grade===g?' selected':''}>${g}</option>`).join('')}</select>
+    </div>
+    <div class="dp-field"><label>Annual kWh</label><input id="be-kwh" type="number" value="${b.annual_kwh_estimate||''}"></div>
+   </div>
+  </div>
+  <div class="dp-section">
+   <h3>Owner Information</h3>
+   <div class="dp-grid">
+    <div class="dp-field"><label>Owner Name</label><input id="be-owner" value="${esc(b.owner_name||'')}"></div>
+    <div class="dp-field"><label>Phone</label><input id="be-phone" value="${esc(b.owner_phone||'')}"></div>
+    <div class="dp-field"><label>Email</label><input id="be-email" value="${esc(b.owner_email||'')}"></div>
+   </div>
+  </div>
+  <div class="dp-section">
+   <h3>Notes</h3>
+   <div class="dp-field"><textarea id="be-notes">${esc(b.notes||'')}</textarea></div>
+  </div>
+  ${ba.length?`<div class="dp-section"><h3>Activity Timeline</h3><div class="dp-timeline">${ba.map(a=>`<div class="dp-timeline-item">${esc(a.description||a.type||'')} <span class="activity-time">${fmtDate(a.created_at)}</span></div>`).join('')}</div></div>`:''}
+  <div class="dp-actions">
    <button class="btn btn-primary" onclick="updateBuilding('${b.id}')">Save Changes</button>
+   <button class="btn btn-secondary" onclick="addToPipeline('${b.id}')">Create Lead</button>
+   <button class="btn btn-secondary" disabled title="Coming soon">Generate Proposal</button>
   </div>`;
- showModal('building-modal');
+
+ // Open panel
+ document.getElementById('dp-overlay').classList.add('open');
+ document.getElementById('detail-panel').classList.add('open');
+ document.getElementById('detail-panel').style.transform='';
 }
-function closeBuildingModal(){closeModal('building-modal')}
+
+function closeDetailPanel(){
+ document.getElementById('dp-overlay').classList.remove('open');
+ document.getElementById('detail-panel').classList.remove('open');
+ document.getElementById('detail-panel').style.transform='';
+}
 
 async function updateBuilding(id){
- await sb.from('buildings').update({
+ showLoading('Saving...');
+ const updates={
   address:document.getElementById('be-address').value,
   building_type:document.getElementById('be-type').value,
   roof_type:document.getElementById('be-roof').value,
@@ -571,13 +864,22 @@ async function updateBuilding(id){
   owner_name:document.getElementById('be-owner').value,
   owner_phone:document.getElementById('be-phone').value,
   notes:document.getElementById('be-notes').value
- }).eq('id',id);
- closeModal('building-modal');
+ };
+ // Include optional fields if they exist in the DOM
+ const emailEl=document.getElementById('be-email');
+ if(emailEl)updates.owner_email=emailEl.value;
+ const kwhEl=document.getElementById('be-kwh');
+ if(kwhEl)updates.annual_kwh_estimate=parseFloat(kwhEl.value)||null;
+
+ await sb.from('buildings').update(updates).eq('id',id);
+ closeDetailPanel();
  await loadBuildings();renderMap();renderScanner();
+ hideLoading();
 }
 
 // ==================== ADD BUILDING ====================
 async function saveNewBuilding(){
+ showLoading('Saving building...');
  const obj={
   name:document.getElementById('ab-name').value,
   address:document.getElementById('ab-address').value,
@@ -595,12 +897,21 @@ async function saveNewBuilding(){
   status:'new'
  };
  const{error}=await sb.from('buildings').insert(obj);
- if(error){alert('Error: '+error.message);return}
+ if(error){alert('Error: '+error.message);hideLoading();return}
  closeModal('add-building-modal');
  await loadBuildings();renderMap();renderScanner();
+ hideLoading();
 }
 
 // ==================== PIPELINE ====================
+function setPipelineView(mode){
+ pipelineViewMode=mode;
+ document.querySelectorAll('.pipeline-view-btn').forEach(b=>b.classList.toggle('active',b.dataset.pview===mode));
+ document.getElementById('pipeline-board').style.display=mode==='kanban'?'flex':'none';
+ document.getElementById('pipeline-list').classList.toggle('active',mode==='list');
+ if(mode==='list')renderPipelineList();
+}
+
 function renderPipeline(){
  // Summary
  const total=leads.length;
@@ -638,6 +949,31 @@ function renderPipeline(){
    </div>
   </div>`;
  }).join('');
+
+ // Also render list view if active
+ if(pipelineViewMode==='list')renderPipelineList();
+}
+
+function renderPipelineList(){
+ const list=document.getElementById('pipeline-list');
+ const sortedLeads=[...leads].sort((a,b)=>{
+  const si=STAGES.indexOf(a.stage);const bi=STAGES.indexOf(b.stage);
+  return si-bi;
+ });
+ list.innerHTML=`<table>
+  <thead><tr><th>Contact</th><th>Building</th><th>Stage</th><th>Value</th><th>Days</th></tr></thead>
+  <tbody>${sortedLeads.map(l=>{
+   const b=buildings.find(x=>x.id===l.building_id);
+   const days=Math.floor((Date.now()-new Date(l.updated_at||l.created_at).getTime())/(86400000));
+   const stageColor=STAGE_COLORS[l.stage]||'#fff';
+   return`<tr onclick="openLeadDetail('${l.id}')" style="cursor:pointer">
+    <td><strong>${esc(l.contact_name||'Unknown')}</strong><br><span style="font-size:.7rem;color:var(--text2)">${esc(l.contact_phone||'')}</span></td>
+    <td>${esc(b?.name||'—')}</td>
+    <td><span class="stage-dot" style="background:${stageColor}"></span>${STAGE_LABELS[l.stage]||l.stage}</td>
+    <td style="color:var(--gold);font-weight:600">${l.deal_value_thb?'฿'+fmt(l.deal_value_thb):'—'}</td>
+    <td>${days}d</td>
+   </tr>`;
+  }).join('')}</tbody></table>`;
 }
 
 async function handleDrop(e,newStage){
@@ -673,6 +1009,7 @@ function openLeadDetail(id){
 
 // ==================== ADD LEAD / ADD TO PIPELINE ====================
 function addToPipeline(buildingId){
+ closeDetailPanel();
  closeModal('building-modal');
  document.getElementById('al-building').value=buildingId;
  const b=buildings.find(x=>x.id===buildingId);
@@ -689,6 +1026,7 @@ function showAddLeadModal(){
  showModal('add-lead-modal');
 }
 async function saveNewLead(){
+ showLoading('Saving lead...');
  const obj={
   contact_name:document.getElementById('al-name').value,
   contact_phone:document.getElementById('al-phone').value,
@@ -701,9 +1039,10 @@ async function saveNewLead(){
   stage:'new'
  };
  const{error}=await sb.from('leads').insert(obj);
- if(error){alert('Error: '+error.message);return}
+ if(error){alert('Error: '+error.message);hideLoading();return}
  closeModal('add-lead-modal');
  await loadLeads();renderPipeline();renderDashboard();
+ hideLoading();
 }
 
 // ==================== DASHBOARD ====================
