@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KP Solar Pro 2.0 — TM Energy Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0A1628;--card:#0D1B30;--card2:#111E33;--green:#00D68F;--gold:#FFB800;--orange:#F27A1A;--red:#EF4444;--text:#E2E8F0;--text2:#94A3B8;--border:#1E293B;--glass:rgba(13,27,48,0.85)}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow:hidden;height:100vh;width:100vw}
+button{font-family:inherit;cursor:pointer;border:none;outline:none}
+input,select,textarea{font-family:inherit;outline:none}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+/* PIN LOCK */
+#pin-lock{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column}
+#pin-lock.hidden{display:none}
+#pin-lock h1{font-size:1.5rem;margin-bottom:.5rem;color:var(--green)}
+#pin-lock p{color:var(--text2);margin-bottom:1.5rem;font-size:.85rem}
+.pin-dots{display:flex;gap:12px;margin-bottom:1.5rem}
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--text2);transition:.2s}
+.pin-dot.filled{background:var(--green);border-color:var(--green)}
+.pin-pad{display:grid;grid-template-columns:repeat(3,72px);gap:10px}
+.pin-btn{width:72px;height:56px;border-radius:12px;background:var(--card);color:var(--text);font-size:1.3rem;font-weight:600;border:1px solid var(--border);transition:.15s}
+.pin-btn:hover{background:var(--card2)}
+.pin-btn.wide{grid-column:span 2}
+.pin-error{color:var(--red);font-size:.8rem;margin-top:1rem;min-height:1.2rem}
+
+/* SHELL */
+#app{display:none;height:100vh;flex-direction:column}
+#app.active{display:flex}
+
+/* NAV */
+nav{display:flex;align-items:center;background:var(--card);border-bottom:1px solid var(--border);padding:0 16px;height:52px;flex-shrink:0;z-index:100}
+.nav-brand{font-weight:700;font-size:1rem;color:var(--green);margin-right:24px;white-space:nowrap}
+.nav-tabs{display:flex;gap:2px}
+.nav-tab{padding:8px 16px;border-radius:8px;color:var(--text2);font-size:.8rem;font-weight:500;background:none;transition:.15s}
+.nav-tab:hover{color:var(--text);background:var(--card2)}
+.nav-tab.active{color:var(--green);background:rgba(0,214,143,0.1)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.nav-status{font-size:.7rem;color:var(--text2)}
+.nav-status .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:4px}
+
+/* VIEWS */
+.view{display:none;flex:1;overflow:hidden;position:relative}
+.view.active{display:flex}
+
+/* ============ MAP VIEW ============ */
+#map-container{flex:1;position:relative}
+#map{width:100%;height:100%}
+.map-filters{position:absolute;top:12px;right:12px;z-index:1000;background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:12px;padding:14px;width:240px;display:flex;flex-direction:column;gap:8px}
+.map-filters h3{font-size:.75rem;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.map-filters select,.map-filters input{width:100%;padding:6px 8px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.78rem}
+.map-filters.collapsed .mf-body{display:none}
+.mf-toggle{font-size:.7rem;color:var(--text2);background:none;text-align:right;display:block;width:100%}
+.map-add-btn{position:absolute;bottom:24px;right:12px;z-index:1000;background:var(--green);color:#000;padding:10px 18px;border-radius:10px;font-weight:600;font-size:.85rem;box-shadow:0 4px 16px rgba(0,214,143,0.3)}
+.map-add-btn:hover{transform:translateY(-1px)}
+.leaflet-popup-content-wrapper{background:var(--card)!important;color:var(--text)!important;border-radius:10px!important;border:1px solid var(--border)!important}
+.leaflet-popup-tip{background:var(--card)!important}
+.popup-title{font-weight:600;font-size:.9rem;margin-bottom:6px}
+.popup-row{font-size:.75rem;color:var(--text2);margin:2px 0}
+.popup-btns{display:flex;gap:6px;margin-top:8px}
+.popup-btn{padding:4px 10px;border-radius:6px;font-size:.7rem;font-weight:600}
+.popup-btn.primary{background:var(--green);color:#000}
+.popup-btn.secondary{background:var(--card2);color:var(--text);border:1px solid var(--border)}
+
+/* ============ SCANNER VIEW ============ */
+#scanner-view{flex-direction:column}
+.scanner-toolbar{padding:12px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border);flex-shrink:0}
+.scanner-toolbar input,.scanner-toolbar select{padding:7px 10px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.8rem}
+.scanner-toolbar input{flex:1;min-width:180px}
+.scanner-toolbar select{min-width:120px}
+.scanner-sort{margin-left:auto;display:flex;gap:6px;align-items:center;font-size:.75rem;color:var(--text2)}
+.scanner-sort select{min-width:100px}
+.scanner-grid{flex:1;overflow-y:auto;padding:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;align-content:start}
+.b-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;cursor:pointer;transition:.15s}
+.b-card:hover{border-color:var(--green);transform:translateY(-1px)}
+.b-card-head{display:flex;justify-content:space-between;align-items:start;margin-bottom:8px}
+.b-card-name{font-weight:600;font-size:.9rem}
+.b-card-zone{font-size:.7rem;color:var(--text2)}
+.grade-badge{padding:2px 8px;border-radius:6px;font-size:.7rem;font-weight:700}
+.grade-A{background:rgba(0,214,143,0.15);color:#00D68F}
+.grade-B{background:rgba(255,184,0,0.15);color:#FFB800}
+.grade-C{background:rgba(249,115,22,0.15);color:#F97316}
+.grade-D{background:rgba(107,114,128,0.15);color:#6B7280}
+.status-badge{padding:2px 8px;border-radius:6px;font-size:.65rem;font-weight:600;background:rgba(148,163,184,0.15);color:var(--text2)}
+.status-new{background:rgba(0,214,143,0.12);color:var(--green)}
+.status-surveyed{background:rgba(255,184,0,0.12);color:var(--gold)}
+.status-proposal{background:rgba(242,122,26,0.12);color:var(--orange)}
+.b-card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.b-stat{text-align:center}
+.b-stat-val{font-weight:700;font-size:.9rem}
+.b-stat-label{font-size:.6rem;color:var(--text2);text-transform:uppercase}
+.b-card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)}
+.b-card-owner{font-size:.75rem;color:var(--text2)}
+.b-card-action{padding:4px 12px;border-radius:6px;font-size:.7rem;font-weight:600;background:var(--green);color:#000}
+
+/* Detail Modal */
+.modal-overlay{position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center}
+.modal-overlay.show{display:flex}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:14px;width:90%;max-width:640px;max-height:85vh;overflow-y:auto;padding:24px}
+.modal-close{float:right;background:none;color:var(--text2);font-size:1.2rem}
+.modal h2{font-size:1.1rem;margin-bottom:16px}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal-field{margin-bottom:8px}
+.modal-field label{display:block;font-size:.7rem;color:var(--text2);margin-bottom:3px;text-transform:uppercase}
+.modal-field input,.modal-field select,.modal-field textarea{width:100%;padding:7px 10px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.8rem}
+.modal-field textarea{height:60px;resize:vertical}
+.modal-actions{display:flex;gap:8px;margin-top:16px;justify-content:flex-end}
+.btn{padding:8px 18px;border-radius:8px;font-size:.8rem;font-weight:600}
+.btn-primary{background:var(--green);color:#000}
+.btn-secondary{background:var(--card2);color:var(--text);border:1px solid var(--border)}
+.btn-danger{background:var(--red);color:#fff}
+
+/* ============ PIPELINE VIEW ============ */
+#pipeline-view{flex-direction:column}
+.pipeline-summary{display:flex;gap:16px;padding:12px 16px;border-bottom:1px solid var(--border);flex-shrink:0;flex-wrap:wrap}
+.ps-stat{font-size:.8rem;color:var(--text2)}.ps-stat strong{color:var(--text);font-size:1rem}
+.pipeline-toolbar{padding:8px 16px;display:flex;justify-content:flex-end;flex-shrink:0}
+.pipeline-board{flex:1;display:flex;gap:8px;overflow-x:auto;padding:0 12px 12px;align-items:stretch}
+.pipeline-col{min-width:200px;flex:1;display:flex;flex-direction:column;background:var(--card);border-radius:10px;border:1px solid var(--border)}
+.pipeline-col-header{padding:10px 12px;font-size:.78rem;font-weight:600;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.pipeline-col-header .count{background:var(--card2);padding:1px 8px;border-radius:10px;font-size:.7rem;color:var(--text2)}
+.pipeline-col-body{flex:1;overflow-y:auto;padding:8px;display:flex;flex-direction:column;gap:6px;min-height:60px}
+.pipeline-col-body.drag-over{background:rgba(0,214,143,0.05);border-radius:0 0 10px 10px}
+.lead-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;cursor:grab;transition:.15s;font-size:.78rem}
+.lead-card:active{cursor:grabbing}
+.lead-card:hover{border-color:var(--green)}
+.lead-card .lc-name{font-weight:600;margin-bottom:4px}
+.lead-card .lc-building{color:var(--text2);font-size:.7rem}
+.lead-card .lc-row{display:flex;justify-content:space-between;margin-top:6px;font-size:.7rem;color:var(--text2)}
+.lead-card .lc-value{color:var(--gold);font-weight:600}
+.lead-card .lc-days{color:var(--text2)}
+
+/* ============ DASHBOARD VIEW ============ */
+#dashboard-view{flex-direction:column;overflow-y:auto;padding:20px}
+.dash-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px}
+.dash-stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.dash-stat-label{font-size:.7rem;color:var(--text2);text-transform:uppercase;margin-bottom:4px}
+.dash-stat-value{font-size:1.6rem;font-weight:700}
+.dash-stat-value.green{color:var(--green)}.dash-stat-value.gold{color:var(--gold)}.dash-stat-value.orange{color:var(--orange)}
+.dash-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.dash-panel{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.dash-panel h3{font-size:.85rem;margin-bottom:12px;color:var(--text2)}
+.funnel-bar{display:flex;align-items:center;margin-bottom:6px;gap:8px}
+.funnel-label{width:100px;font-size:.72rem;color:var(--text2);text-align:right;flex-shrink:0}
+.funnel-fill{height:26px;border-radius:6px;display:flex;align-items:center;padding:0 8px;font-size:.7rem;font-weight:600;color:#000;transition:width .5s}
+.activity-item{padding:8px 0;border-bottom:1px solid var(--border);font-size:.78rem}
+.activity-item:last-child{border:none}
+.activity-time{font-size:.65rem;color:var(--text2)}
+.top-lead{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:.8rem}
+.top-lead:last-child{border:none}
+
+/* ADD BUILDING FORM */
+.add-form-overlay{position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center}
+.add-form-overlay.show{display:flex}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+ .map-filters{width:180px;padding:10px}
+ .scanner-grid{grid-template-columns:1fr}
+ .pipeline-col{min-width:170px}
+ .dash-row{grid-template-columns:1fr}
+ .modal{width:95%;padding:16px}
+ .modal-grid{grid-template-columns:1fr}
+ .nav-brand{font-size:.85rem;margin-right:12px}
+ .nav-tab{padding:6px 10px;font-size:.72rem}
+}
+</style>
+</head>
+<body>
+
+<!-- PIN LOCK SCREEN -->
+<div id="pin-lock">
+ <h1>KP Solar Pro</h1>
+ <p>Enter PIN to continue</p>
+ <div class="pin-dots" id="pin-dots"></div>
+ <div class="pin-pad" id="pin-pad"></div>
+ <div class="pin-error" id="pin-error"></div>
+</div>
+
+<!-- APP SHELL -->
+<div id="app">
+ <nav>
+  <div class="nav-brand">⚡ KP Solar Pro</div>
+  <div class="nav-tabs">
+   <button class="nav-tab active" data-view="map">Map</button>
+   <button class="nav-tab" data-view="scanner">Scanner</button>
+   <button class="nav-tab" data-view="pipeline">Pipeline</button>
+   <button class="nav-tab" data-view="dashboard">Dashboard</button>
+  </div>
+  <div class="nav-right">
+   <span class="nav-status"><span class="dot"></span>Live</span>
+  </div>
+ </nav>
+
+ <!-- MAP VIEW -->
+ <div id="map-view" class="view active">
+  <div id="map-container">
+   <div id="map"></div>
+   <div class="map-filters" id="map-filters">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+     <h3>Filters</h3>
+     <button class="mf-toggle" onclick="this.closest('.map-filters').classList.toggle('collapsed')">toggle</button>
+    </div>
+    <div class="mf-body">
+     <select id="mf-zone"><option value="">All Zones</option></select>
+     <select id="mf-type"><option value="">All Types</option><option>residential</option><option>commercial</option><option>industrial</option><option>resort</option><option>government</option></select>
+     <select id="mf-grade"><option value="">All Grades</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select>
+     <select id="mf-status"><option value="">All Status</option><option>new</option><option>surveyed</option><option>proposal</option><option>contracted</option><option>installed</option></select>
+    </div>
+   </div>
+   <button class="map-add-btn" id="map-add-btn">+ Add Building</button>
+  </div>
+ </div>
+
+ <!-- SCANNER VIEW -->
+ <div id="scanner-view" class="view">
+  <div class="scanner-toolbar">
+   <input type="text" id="sc-search" placeholder="Search buildings...">
+   <select id="sc-zone"><option value="">All Zones</option></select>
+   <select id="sc-grade"><option value="">All Grades</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select>
+   <select id="sc-type"><option value="">All Types</option><option>residential</option><option>commercial</option><option>industrial</option><option>resort</option><option>government</option></select>
+   <select id="sc-status"><option value="">All Status</option><option>new</option><option>surveyed</option><option>proposal</option><option>contracted</option><option>installed</option></select>
+   <div class="scanner-sort">Sort: <select id="sc-sort"><option value="potential_grade">Grade</option><option value="roof_area_sqm">Roof Area</option><option value="potential_kwp">kWp</option></select></div>
+  </div>
+  <div class="scanner-grid" id="scanner-grid"></div>
+ </div>
+
+ <!-- PIPELINE VIEW -->
+ <div id="pipeline-view" class="view">
+  <div class="pipeline-summary" id="pipeline-summary"></div>
+  <div class="pipeline-toolbar">
+   <button class="btn btn-primary" onclick="showAddLeadModal()">+ Add Lead</button>
+  </div>
+  <div class="pipeline-board" id="pipeline-board"></div>
+ </div>
+
+ <!-- DASHBOARD VIEW -->
+ <div id="dashboard-view" class="view">
+  <div class="dash-stats" id="dash-stats"></div>
+  <div class="dash-row">
+   <div class="dash-panel"><h3>Pipeline Funnel</h3><div id="dash-funnel"></div></div>
+   <div class="dash-panel"><h3>Top Leads by Value</h3><div id="dash-top-leads"></div></div>
+  </div>
+  <div class="dash-panel"><h3>Recent Activities</h3><div id="dash-activities"></div></div>
+ </div>
+</div>
+
+<!-- BUILDING DETAIL MODAL -->
+<div class="modal-overlay" id="building-modal">
+ <div class="modal">
+  <button class="modal-close" onclick="closeBuildingModal()">&times;</button>
+  <h2 id="bm-title">Building Details</h2>
+  <div id="bm-body"></div>
+ </div>
+</div>
+
+<!-- ADD BUILDING MODAL -->
+<div class="modal-overlay" id="add-building-modal">
+ <div class="modal">
+  <button class="modal-close" onclick="closeModal('add-building-modal')">&times;</button>
+  <h2>Add Building</h2>
+  <div id="ab-body">
+   <div class="modal-grid">
+    <div class="modal-field"><label>Name</label><input id="ab-name"></div>
+    <div class="modal-field"><label>Address</label><input id="ab-address"></div>
+    <div class="modal-field"><label>Zone</label><select id="ab-zone"></select></div>
+    <div class="modal-field"><label>Building Type</label>
+     <select id="ab-type"><option>residential</option><option>commercial</option><option>industrial</option><option>resort</option><option>government</option></select>
+    </div>
+    <div class="modal-field"><label>Roof Type</label>
+     <select id="ab-roof"><option>flat</option><option>gable</option><option>hip</option><option>metal</option><option>tile</option></select>
+    </div>
+    <div class="modal-field"><label>Roof Area (sqm)</label><input id="ab-area" type="number"></div>
+    <div class="modal-field"><label>Potential kWp</label><input id="ab-kwp" type="number" step="0.1"></div>
+    <div class="modal-field"><label>Potential Grade</label>
+     <select id="ab-grade"><option>A</option><option>B</option><option>C</option><option>D</option></select>
+    </div>
+    <div class="modal-field"><label>Latitude</label><input id="ab-lat" type="number" step="0.0001"></div>
+    <div class="modal-field"><label>Longitude</label><input id="ab-lng" type="number" step="0.0001"></div>
+    <div class="modal-field"><label>Owner Name</label><input id="ab-owner"></div>
+    <div class="modal-field"><label>Owner Phone</label><input id="ab-phone"></div>
+   </div>
+   <div class="modal-field"><label>Notes</label><textarea id="ab-notes"></textarea></div>
+   <div class="modal-actions">
+    <button class="btn btn-secondary" onclick="closeModal('add-building-modal')">Cancel</button>
+    <button class="btn btn-primary" onclick="saveNewBuilding()">Save Building</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- LEAD DETAIL MODAL -->
+<div class="modal-overlay" id="lead-modal">
+ <div class="modal">
+  <button class="modal-close" onclick="closeModal('lead-modal')">&times;</button>
+  <h2 id="lm-title">Lead Details</h2>
+  <div id="lm-body"></div>
+ </div>
+</div>
+
+<!-- ADD LEAD MODAL -->
+<div class="modal-overlay" id="add-lead-modal">
+ <div class="modal">
+  <button class="modal-close" onclick="closeModal('add-lead-modal')">&times;</button>
+  <h2>Add Lead</h2>
+  <div id="al-body">
+   <div class="modal-grid">
+    <div class="modal-field"><label>Contact Name</label><input id="al-name"></div>
+    <div class="modal-field"><label>Contact Phone</label><input id="al-phone"></div>
+    <div class="modal-field"><label>Building</label><select id="al-building"></select></div>
+    <div class="modal-field"><label>Source</label>
+     <select id="al-source"><option>scan</option><option>referral</option><option>walk-in</option><option>online</option><option>event</option></select>
+    </div>
+    <div class="modal-field"><label>System Size kWp</label><input id="al-size" type="number" step="0.1"></div>
+    <div class="modal-field"><label>Deal Value (THB)</label><input id="al-value" type="number"></div>
+    <div class="modal-field"><label>Deal Model</label>
+     <select id="al-model"><option>cash</option><option>lease</option><option>ppa</option></select>
+    </div>
+   </div>
+   <div class="modal-field"><label>Notes</label><textarea id="al-notes"></textarea></div>
+   <div class="modal-actions">
+    <button class="btn btn-secondary" onclick="closeModal('add-lead-modal')">Cancel</button>
+    <button class="btn btn-primary" onclick="saveNewLead()">Save Lead</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ==================== CONFIG ====================
+const SUPABASE_URL='https://trvgpgpsqvvdsudpgwpm.supabase.co';
+const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRydmdwZ3BzcXZ2ZHN1ZHBnd3BtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTE3OTIsImV4cCI6MjA4ODk2Nzc5Mn0.iRx9JiEo6dZL8K5sMUKLS8Sbi5QEZ_BSXvWI9rgTENw';
+const PIN='2626';
+const STAGES=['new','contacted','survey_done','proposal_sent','negotiating','won','lost'];
+const STAGE_LABELS={new:'New',contacted:'Contacted',survey_done:'Survey Done',proposal_sent:'Proposal Sent',negotiating:'Negotiating',won:'Won',lost:'Lost'};
+const STAGE_COLORS={new:'var(--green)',contacted:'#3B82F6',survey_done:'var(--gold)',proposal_sent:'var(--orange)',negotiating:'#A855F7',won:'var(--green)',lost:'var(--red)'};
+const GRADE_COLORS={A:'#00D68F',B:'#FFB800',C:'#F97316',D:'#6B7280'};
+
+const sb=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+let map,markersLayer,buildings=[],leads=[],zones=[],activities=[];
+let addBuildingMode=false,pendingLatLng=null;
+
+// ==================== PIN LOCK ====================
+(function initPin(){
+ const dots=document.getElementById('pin-dots');
+ const pad=document.getElementById('pin-pad');
+ const err=document.getElementById('pin-error');
+ let entered='';
+ for(let i=0;i<4;i++){const d=document.createElement('div');d.className='pin-dot';dots.appendChild(d)}
+ const nums=[1,2,3,4,5,6,7,8,9,'C',0,'⏎'];
+ nums.forEach(n=>{
+  const b=document.createElement('button');b.className='pin-btn';b.textContent=n;
+  b.onclick=()=>{
+   if(n==='C'){entered='';updateDots();err.textContent='';return}
+   if(n==='⏎'){
+    if(entered===PIN){document.getElementById('pin-lock').classList.add('hidden');document.getElementById('app').classList.add('active');initApp()}
+    else{err.textContent='Wrong PIN';entered='';updateDots()}
+    return;
+   }
+   if(entered.length<4){entered+=n;updateDots()}
+   if(entered.length===4){
+    setTimeout(()=>{
+     if(entered===PIN){document.getElementById('pin-lock').classList.add('hidden');document.getElementById('app').classList.add('active');initApp()}
+     else{err.textContent='Wrong PIN';entered='';updateDots()}
+    },200);
+   }
+  };
+  pad.appendChild(b);
+ });
+ function updateDots(){dots.querySelectorAll('.pin-dot').forEach((d,i)=>d.classList.toggle('filled',i<entered.length))}
+})();
+
+// ==================== INIT ====================
+async function initApp(){
+ initMap();initNav();
+ await Promise.all([loadZones(),loadBuildings(),loadLeads(),loadActivities()]);
+ renderMap();renderScanner();renderPipeline();renderDashboard();
+ initRealtime();
+}
+
+// ==================== NAV ====================
+function initNav(){
+ document.querySelectorAll('.nav-tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById(t.dataset.view+'-view').classList.add('active');
+  if(t.dataset.view==='map')setTimeout(()=>map.invalidateSize(),100);
+ }));
+}
+
+// ==================== MAP ====================
+function initMap(){
+ map=L.map('map',{zoomControl:false}).setView([9.7167,100.0333],13);
+ L.control.zoom({position:'bottomleft'}).addTo(map);
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+  attribution:'&copy; OSM &copy; CARTO',maxZoom:19
+ }).addTo(map);
+ markersLayer=L.layerGroup().addTo(map);
+ map.on('click',e=>{
+  if(addBuildingMode){pendingLatLng=e.latlng;document.getElementById('ab-lat').value=e.latlng.lat.toFixed(5);document.getElementById('ab-lng').value=e.latlng.lng.toFixed(5);showModal('add-building-modal');addBuildingMode=false;document.getElementById('map-add-btn').textContent='+ Add Building'}
+ });
+ document.getElementById('map-add-btn').addEventListener('click',()=>{
+  addBuildingMode=!addBuildingMode;
+  document.getElementById('map-add-btn').textContent=addBuildingMode?'Click map to place...':'+ Add Building';
+ });
+ ['mf-zone','mf-type','mf-grade','mf-status'].forEach(id=>document.getElementById(id).addEventListener('change',renderMap));
+}
+
+function renderMap(){
+ markersLayer.clearLayers();
+ const fZone=document.getElementById('mf-zone').value;
+ const fType=document.getElementById('mf-type').value;
+ const fGrade=document.getElementById('mf-grade').value;
+ const fStatus=document.getElementById('mf-status').value;
+ buildings.filter(b=>{
+  if(fZone&&b.zone_id!=fZone)return false;
+  if(fType&&b.building_type!==fType)return false;
+  if(fGrade&&b.potential_grade!==fGrade)return false;
+  if(fStatus&&b.status!==fStatus)return false;
+  return true;
+ }).forEach(b=>{
+  if(!b.lat||!b.lng)return;
+  const color=GRADE_COLORS[b.potential_grade]||'#6B7280';
+  const zone=zones.find(z=>z.id===b.zone_id);
+  const m=L.circleMarker([b.lat,b.lng],{radius:8,fillColor:color,color:'#fff',weight:1,fillOpacity:0.85});
+  m.bindPopup(`
+   <div class="popup-title">${esc(b.name||'Unnamed')}</div>
+   <div class="popup-row">Zone: ${esc(zone?.name||'—')}</div>
+   <div class="popup-row">Roof: ${b.roof_area_sqm||0} sqm · ${b.potential_kwp||0} kWp</div>
+   <div class="popup-row">Grade: ${b.potential_grade||'—'} · Status: ${b.status||'—'}</div>
+   <div class="popup-row">Owner: ${esc(b.owner_name||'—')}</div>
+   <div class="popup-btns">
+    <button class="popup-btn primary" onclick="openBuildingDetail('${b.id}')">View Details</button>
+    <button class="popup-btn secondary" onclick="addToPipeline('${b.id}')">Add to Pipeline</button>
+   </div>
+  `,{maxWidth:280});
+  markersLayer.addLayer(m);
+ });
+}
+
+// ==================== DATA ====================
+async function loadZones(){
+ const{data}=await sb.from('zones').select('*');
+ zones=data||[];
+ ['mf-zone','sc-zone','ab-zone'].forEach(id=>{
+  const sel=document.getElementById(id);if(!sel)return;
+  const first=sel.options[0];sel.innerHTML='';sel.appendChild(first);
+  zones.forEach(z=>{const o=document.createElement('option');o.value=z.id;o.textContent=z.name;sel.appendChild(o)});
+ });
+}
+async function loadBuildings(){
+ const{data}=await sb.from('buildings').select('*').order('potential_grade');
+ buildings=data||[];
+ const sel=document.getElementById('al-building');
+ sel.innerHTML='<option value="">Select...</option>';
+ buildings.forEach(b=>{const o=document.createElement('option');o.value=b.id;o.textContent=b.name||b.address||b.id;sel.appendChild(o)});
+}
+async function loadLeads(){const{data}=await sb.from('leads').select('*');leads=data||[]}
+async function loadActivities(){const{data}=await sb.from('activities').select('*').order('created_at',{ascending:false}).limit(30);activities=data||[]}
+
+// ==================== REALTIME ====================
+function initRealtime(){
+ sb.channel('buildings-rt').on('postgres_changes',{event:'*',schema:'public',table:'buildings'},async()=>{await loadBuildings();renderMap();renderScanner();renderDashboard()}).subscribe();
+ sb.channel('leads-rt').on('postgres_changes',{event:'*',schema:'public',table:'leads'},async()=>{await loadLeads();renderPipeline();renderDashboard()}).subscribe();
+ sb.channel('activities-rt').on('postgres_changes',{event:'*',schema:'public',table:'activities'},async()=>{await loadActivities();renderDashboard()}).subscribe();
+}
+
+// ==================== SCANNER ====================
+function renderScanner(){
+ const grid=document.getElementById('scanner-grid');
+ const search=document.getElementById('sc-search').value.toLowerCase();
+ const fZone=document.getElementById('sc-zone').value;
+ const fGrade=document.getElementById('sc-grade').value;
+ const fType=document.getElementById('sc-type').value;
+ const fStatus=document.getElementById('sc-status').value;
+ const sortBy=document.getElementById('sc-sort').value;
+ let list=buildings.filter(b=>{
+  if(search&&!(b.name||'').toLowerCase().includes(search)&&!(b.address||'').toLowerCase().includes(search))return false;
+  if(fZone&&b.zone_id!=fZone)return false;
+  if(fGrade&&b.potential_grade!==fGrade)return false;
+  if(fType&&b.building_type!==fType)return false;
+  if(fStatus&&b.status!==fStatus)return false;
+  return true;
+ });
+ list.sort((a,b)=>{
+  if(sortBy==='potential_grade')return(a.potential_grade||'Z').localeCompare(b.potential_grade||'Z');
+  return(b[sortBy]||0)-(a[sortBy]||0);
+ });
+ grid.innerHTML=list.map(b=>{
+  const zone=zones.find(z=>z.id===b.zone_id);
+  return`<div class="b-card" onclick="openBuildingDetail('${b.id}')">
+   <div class="b-card-head">
+    <div><div class="b-card-name">${esc(b.name||'Unnamed')}</div><div class="b-card-zone">${esc(zone?.name||'—')} · ${b.building_type||'—'}</div></div>
+    <span class="grade-badge grade-${b.potential_grade||'D'}">${b.potential_grade||'—'}</span>
+   </div>
+   <div class="b-card-stats">
+    <div class="b-stat"><div class="b-stat-val">${b.roof_area_sqm||0}</div><div class="b-stat-label">sqm</div></div>
+    <div class="b-stat"><div class="b-stat-val">${b.potential_kwp||0}</div><div class="b-stat-label">kWp</div></div>
+    <div class="b-stat"><div class="b-stat-val">${b.potential_panels||0}</div><div class="b-stat-label">panels</div></div>
+   </div>
+   <div class="b-card-footer">
+    <span class="b-card-owner">${esc(b.owner_name||'No owner')}</span>
+    <span class="status-badge status-${b.status||''}">${b.status||'new'}</span>
+   </div>
+  </div>`;
+ }).join('');
+}
+['sc-search','sc-zone','sc-grade','sc-type','sc-status','sc-sort'].forEach(id=>{
+ const el=document.getElementById(id);
+ if(el)el.addEventListener(el.tagName==='INPUT'?'input':'change',renderScanner);
+});
+
+// ==================== BUILDING DETAIL ====================
+function openBuildingDetail(id){
+ const b=buildings.find(x=>x.id===id);if(!b)return;
+ const zone=zones.find(z=>z.id===b.zone_id);
+ document.getElementById('bm-title').textContent=b.name||'Building Details';
+ const ba=activities.filter(a=>a.building_id===id);
+ document.getElementById('bm-body').innerHTML=`
+  <div class="modal-grid">
+   <div class="modal-field"><label>Address</label><input id="be-address" value="${esc(b.address||'')}"></div>
+   <div class="modal-field"><label>Zone</label><span style="padding:8px;display:block;font-size:.85rem">${esc(zone?.name||'—')}</span></div>
+   <div class="modal-field"><label>Building Type</label><input id="be-type" value="${esc(b.building_type||'')}"></div>
+   <div class="modal-field"><label>Roof Type</label><input id="be-roof" value="${esc(b.roof_type||'')}"></div>
+   <div class="modal-field"><label>Roof Area sqm</label><input id="be-area" type="number" value="${b.roof_area_sqm||''}"></div>
+   <div class="modal-field"><label>Orientation</label><input id="be-orient" value="${esc(b.roof_orientation||'')}"></div>
+   <div class="modal-field"><label>Potential kWp</label><input id="be-kwp" type="number" step="0.1" value="${b.potential_kwp||''}"></div>
+   <div class="modal-field"><label>Panels</label><input id="be-panels" type="number" value="${b.potential_panels||''}"></div>
+   <div class="modal-field"><label>Grade</label><input id="be-grade" value="${b.potential_grade||''}"></div>
+   <div class="modal-field"><label>Status</label><input id="be-status" value="${b.status||''}"></div>
+   <div class="modal-field"><label>Owner</label><input id="be-owner" value="${esc(b.owner_name||'')}"></div>
+   <div class="modal-field"><label>Phone</label><input id="be-phone" value="${esc(b.owner_phone||'')}"></div>
+  </div>
+  <div class="modal-field"><label>Notes</label><textarea id="be-notes">${esc(b.notes||'')}</textarea></div>
+  ${ba.length?`<h3 style="margin-top:12px;font-size:.8rem;color:var(--text2)">Activity</h3>${ba.map(a=>`<div class="activity-item">${esc(a.description||a.type||'')} <span class="activity-time">${fmtDate(a.created_at)}</span></div>`).join('')}`:''}
+  <div class="modal-actions">
+   <button class="btn btn-secondary" onclick="addToPipeline('${b.id}')">Create Lead</button>
+   <button class="btn btn-primary" onclick="updateBuilding('${b.id}')">Save Changes</button>
+  </div>`;
+ showModal('building-modal');
+}
+function closeBuildingModal(){closeModal('building-modal')}
+
+async function updateBuilding(id){
+ await sb.from('buildings').update({
+  address:document.getElementById('be-address').value,
+  building_type:document.getElementById('be-type').value,
+  roof_type:document.getElementById('be-roof').value,
+  roof_area_sqm:parseFloat(document.getElementById('be-area').value)||null,
+  roof_orientation:document.getElementById('be-orient').value,
+  potential_kwp:parseFloat(document.getElementById('be-kwp').value)||null,
+  potential_panels:parseInt(document.getElementById('be-panels').value)||null,
+  potential_grade:document.getElementById('be-grade').value,
+  status:document.getElementById('be-status').value,
+  owner_name:document.getElementById('be-owner').value,
+  owner_phone:document.getElementById('be-phone').value,
+  notes:document.getElementById('be-notes').value
+ }).eq('id',id);
+ closeModal('building-modal');
+ await loadBuildings();renderMap();renderScanner();
+}
+
+// ==================== ADD BUILDING ====================
+async function saveNewBuilding(){
+ const obj={
+  name:document.getElementById('ab-name').value,
+  address:document.getElementById('ab-address').value,
+  zone_id:document.getElementById('ab-zone').value||null,
+  building_type:document.getElementById('ab-type').value,
+  roof_type:document.getElementById('ab-roof').value,
+  roof_area_sqm:parseFloat(document.getElementById('ab-area').value)||null,
+  potential_kwp:parseFloat(document.getElementById('ab-kwp').value)||null,
+  potential_grade:document.getElementById('ab-grade').value,
+  lat:parseFloat(document.getElementById('ab-lat').value)||null,
+  lng:parseFloat(document.getElementById('ab-lng').value)||null,
+  owner_name:document.getElementById('ab-owner').value,
+  owner_phone:document.getElementById('ab-phone').value,
+  notes:document.getElementById('ab-notes').value,
+  status:'new'
+ };
+ const{error}=await sb.from('buildings').insert(obj);
+ if(error){alert('Error: '+error.message);return}
+ closeModal('add-building-modal');
+ await loadBuildings();renderMap();renderScanner();
+}
+
+// ==================== PIPELINE ====================
+function renderPipeline(){
+ // Summary
+ const total=leads.length;
+ const totalVal=leads.reduce((s,l)=>s+(l.deal_value_thb||0),0);
+ const won=leads.filter(l=>l.stage==='won').length;
+ const conv=total?((won/total)*100).toFixed(1):0;
+ document.getElementById('pipeline-summary').innerHTML=`
+  <div class="ps-stat">Leads: <strong>${total}</strong></div>
+  <div class="ps-stat">Pipeline: <strong style="color:var(--gold)">฿${fmt(totalVal)}</strong></div>
+  <div class="ps-stat">Won: <strong style="color:var(--green)">${won}</strong></div>
+  <div class="ps-stat">Conversion: <strong>${conv}%</strong></div>`;
+
+ // Kanban
+ const board=document.getElementById('pipeline-board');
+ board.innerHTML=STAGES.map(stage=>{
+  const stageLeads=leads.filter(l=>l.stage===stage);
+  return`<div class="pipeline-col" data-stage="${stage}">
+   <div class="pipeline-col-header" style="border-left:3px solid ${STAGE_COLORS[stage]||'#fff'}">
+    ${STAGE_LABELS[stage]} <span class="count">${stageLeads.length}</span>
+   </div>
+   <div class="pipeline-col-body" data-stage="${stage}"
+    ondragover="event.preventDefault();this.classList.add('drag-over')"
+    ondragleave="this.classList.remove('drag-over')"
+    ondrop="handleDrop(event,'${stage}')">
+    ${stageLeads.map(l=>{
+     const b=buildings.find(x=>x.id===l.building_id);
+     const days=Math.floor((Date.now()-new Date(l.updated_at||l.created_at).getTime())/(86400000));
+     return`<div class="lead-card" draggable="true" ondragstart="event.dataTransfer.setData('text','${l.id}')" onclick="openLeadDetail('${l.id}')">
+      <div class="lc-name">${esc(l.contact_name||'Unknown')}</div>
+      <div class="lc-building">${esc(b?.name||'—')}</div>
+      <div class="lc-row"><span class="lc-value">${l.deal_value_thb?'฿'+fmt(l.deal_value_thb):'—'}</span><span class="lc-days">${days}d</span></div>
+      ${l.system_size_kwp?`<div style="font-size:.65rem;color:var(--text2);margin-top:2px">${l.system_size_kwp} kWp</div>`:''}
+     </div>`;
+    }).join('')}
+   </div>
+  </div>`;
+ }).join('');
+}
+
+async function handleDrop(e,newStage){
+ e.preventDefault();e.currentTarget.classList.remove('drag-over');
+ const id=e.dataTransfer.getData('text');
+ if(!id)return;
+ await sb.from('leads').update({stage:newStage,updated_at:new Date().toISOString()}).eq('id',id);
+ await loadLeads();renderPipeline();renderDashboard();
+}
+
+// ==================== LEAD DETAIL ====================
+function openLeadDetail(id){
+ const l=leads.find(x=>x.id===id);if(!l)return;
+ const b=buildings.find(x=>x.id===l.building_id);
+ const la=activities.filter(a=>a.lead_id===id);
+ document.getElementById('lm-title').textContent=l.contact_name||'Lead Details';
+ document.getElementById('lm-body').innerHTML=`
+  <div class="modal-grid">
+   <div class="modal-field"><label>Contact</label><span style="padding:8px;display:block">${esc(l.contact_name||'')}</span></div>
+   <div class="modal-field"><label>Phone</label><span style="padding:8px;display:block">${esc(l.contact_phone||'')}</span></div>
+   <div class="modal-field"><label>Building</label><span style="padding:8px;display:block">${esc(b?.name||'—')}</span></div>
+   <div class="modal-field"><label>Stage</label><span style="padding:8px;display:block">${STAGE_LABELS[l.stage]||l.stage}</span></div>
+   <div class="modal-field"><label>System Size</label><span style="padding:8px;display:block">${l.system_size_kwp||'—'} kWp</span></div>
+   <div class="modal-field"><label>Deal Value</label><span style="padding:8px;display:block;color:var(--gold)">${l.deal_value_thb?'฿'+fmt(l.deal_value_thb):'—'}</span></div>
+   <div class="modal-field"><label>Model</label><span style="padding:8px;display:block">${l.deal_model||'—'}</span></div>
+   <div class="modal-field"><label>Source</label><span style="padding:8px;display:block">${l.source||'—'}</span></div>
+  </div>
+  <div class="modal-field"><label>Notes</label><p style="padding:8px;font-size:.8rem;color:var(--text2)">${esc(l.notes||'No notes')}</p></div>
+  ${la.length?`<h3 style="margin-top:12px;font-size:.8rem;color:var(--text2)">Activity</h3>${la.map(a=>`<div class="activity-item">${esc(a.description||a.type||'')} <span class="activity-time">${fmtDate(a.created_at)}</span></div>`).join('')}`:''}
+  ${b?`<div style="margin-top:12px"><button class="btn btn-secondary" onclick="closeModal('lead-modal');openBuildingDetail('${b.id}')">View Building</button></div>`:''}`;
+ showModal('lead-modal');
+}
+
+// ==================== ADD LEAD / ADD TO PIPELINE ====================
+function addToPipeline(buildingId){
+ closeModal('building-modal');
+ document.getElementById('al-building').value=buildingId;
+ const b=buildings.find(x=>x.id===buildingId);
+ if(b){
+  document.getElementById('al-name').value=b.owner_name||'';
+  document.getElementById('al-phone').value=b.owner_phone||'';
+  document.getElementById('al-size').value=b.potential_kwp||'';
+ }
+ showModal('add-lead-modal');
+}
+function showAddLeadModal(){
+ ['al-name','al-phone','al-size','al-value','al-notes'].forEach(id=>document.getElementById(id).value='');
+ document.getElementById('al-building').value='';
+ showModal('add-lead-modal');
+}
+async function saveNewLead(){
+ const obj={
+  contact_name:document.getElementById('al-name').value,
+  contact_phone:document.getElementById('al-phone').value,
+  building_id:document.getElementById('al-building').value||null,
+  source:document.getElementById('al-source').value,
+  system_size_kwp:parseFloat(document.getElementById('al-size').value)||null,
+  deal_value_thb:parseFloat(document.getElementById('al-value').value)||null,
+  deal_model:document.getElementById('al-model').value,
+  notes:document.getElementById('al-notes').value,
+  stage:'new'
+ };
+ const{error}=await sb.from('leads').insert(obj);
+ if(error){alert('Error: '+error.message);return}
+ closeModal('add-lead-modal');
+ await loadLeads();renderPipeline();renderDashboard();
+}
+
+// ==================== DASHBOARD ====================
+function renderDashboard(){
+ const totalB=buildings.length;
+ const totalL=leads.length;
+ const pipeVal=leads.reduce((s,l)=>s+(l.deal_value_thb||0),0);
+ const wonLeads=leads.filter(l=>l.stage==='won');
+ const wonVal=wonLeads.reduce((s,l)=>s+(l.deal_value_thb||0),0);
+ const conv=totalL?((wonLeads.length/totalL)*100).toFixed(1):0;
+
+ document.getElementById('dash-stats').innerHTML=`
+  <div class="dash-stat"><div class="dash-stat-label">Buildings</div><div class="dash-stat-value">${totalB}</div></div>
+  <div class="dash-stat"><div class="dash-stat-label">Leads</div><div class="dash-stat-value green">${totalL}</div></div>
+  <div class="dash-stat"><div class="dash-stat-label">Pipeline Value</div><div class="dash-stat-value gold">฿${fmt(pipeVal)}</div></div>
+  <div class="dash-stat"><div class="dash-stat-label">Won Deals</div><div class="dash-stat-value green">฿${fmt(wonVal)}</div></div>
+  <div class="dash-stat"><div class="dash-stat-label">Conversion</div><div class="dash-stat-value">${conv}%</div></div>`;
+
+ // Funnel
+ const maxFunnel=Math.max(...STAGES.map(s=>leads.filter(l=>l.stage===s).length),1);
+ document.getElementById('dash-funnel').innerHTML=STAGES.map(s=>{
+  const c=leads.filter(l=>l.stage===s).length;
+  const pct=Math.max((c/maxFunnel)*100,4);
+  return`<div class="funnel-bar"><span class="funnel-label">${STAGE_LABELS[s]}</span><div class="funnel-fill" style="width:${pct}%;background:${STAGE_COLORS[s]}">${c}</div></div>`;
+ }).join('');
+
+ // Top leads
+ const top=leads.filter(l=>l.deal_value_thb).sort((a,b)=>(b.deal_value_thb||0)-(a.deal_value_thb||0)).slice(0,8);
+ document.getElementById('dash-top-leads').innerHTML=top.length?top.map(l=>{
+  const b=buildings.find(x=>x.id===l.building_id);
+  return`<div class="top-lead"><span>${esc(l.contact_name||'?')} <span style="color:var(--text2);font-size:.7rem">${esc(b?.name||'')}</span></span><span style="color:var(--gold);font-weight:600">฿${fmt(l.deal_value_thb)}</span></div>`;
+ }).join(''):'<div style="color:var(--text2);font-size:.8rem">No leads yet</div>';
+
+ // Activities
+ document.getElementById('dash-activities').innerHTML=activities.length?activities.slice(0,10).map(a=>`<div class="activity-item">${esc(a.description||a.type||'Activity')} <span class="activity-time">${fmtDate(a.created_at)}</span></div>`).join(''):'<div style="color:var(--text2);font-size:.8rem">No activity yet</div>';
+}
+
+// ==================== UTILS ====================
+function showModal(id){document.getElementById(id).classList.add('show')}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function fmt(n){return n?n.toLocaleString('en-US'):'0'}
+function fmtDate(d){if(!d)return'';const dt=new Date(d);const now=new Date();const diff=now-dt;if(diff<3600000)return Math.floor(diff/60000)+'m ago';if(diff<86400000)return Math.floor(diff/3600000)+'h ago';return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short'})}
+</script>
+</body>
+</html>
