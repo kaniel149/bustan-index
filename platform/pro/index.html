@@ -1110,7 +1110,7 @@ function renderDashboard(){
 
 // ==================== UTILS ====================
 function showModal(id){document.getElementById(id).classList.add('show')}
-function closeModal(id){document.getElementById(id).classList.remove('show')}
+function closeModal(id){const el=document.getElementById(id);if(el)el.classList.remove('show')}
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 function fmt(n){return n?n.toLocaleString('en-US'):'0'}
 function fmtDate(d){if(!d)return'';const dt=new Date(d);const now=new Date();const diff=now-dt;if(diff<3600000)return Math.floor(diff/60000)+'m ago';if(diff<86400000)return Math.floor(diff/3600000)+'h ago';return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short'})}
