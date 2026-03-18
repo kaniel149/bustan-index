@@ -710,7 +710,7 @@ async function loadZones(){
  zones=data||[];
  ['mf-zone','sc-zone','ab-zone'].forEach(id=>{
   const sel=document.getElementById(id);if(!sel)return;
-  const first=sel.options[0];sel.innerHTML='';sel.appendChild(first);
+  const first=sel.options[0];sel.innerHTML='';if(first)sel.appendChild(first);
   zones.forEach(z=>{const o=document.createElement('option');o.value=z.id;o.textContent=z.name;sel.appendChild(o)});
  });
 }
