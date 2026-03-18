@@ -68,6 +68,8 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 .popup-btns{display:flex;gap:6px;margin-top:8px}
 .popup-btn{padding:4px 10px;border-radius:6px;font-size:.7rem;font-weight:600}
 .popup-btn.primary{background:var(--green);color:#000}
+.roof-poly{transition:fill-opacity .15s,stroke-width .15s}
+.roof-poly:hover{fill-opacity:0.9!important;stroke-width:3!important}
 .popup-btn.secondary{background:var(--card2);color:var(--text);border:1px solid var(--border)}
 
 /* MARKER CLUSTER DARK THEME */
@@ -633,7 +635,11 @@ function renderMap(){
   if(!b.lat||!b.lng)return;
   const color=GRADE_COLORS[b.potential_grade]||'#6B7280';
   const zone=zones.find(z=>z.id===b.zone_id);
-  const m=L.circleMarker([b.lat,b.lng],{radius:8,fillColor:color,color:'#fff',weight:1,fillOpacity:0.85});
+  // Use polygon if available (stored in photos field), else circle marker
+  const poly=b.photos&&Array.isArray(b.photos)&&b.photos.length>2&&Array.isArray(b.photos[0]);
+  const m=poly
+   ?L.polygon(b.photos.map(p=>[p[1],p[0]]),{fillColor:color,color:'#fff',weight:1.5,fillOpacity:0.6,className:'roof-poly'})
+   :L.circleMarker([b.lat,b.lng],{radius:8,fillColor:color,color:'#fff',weight:1,fillOpacity:0.85});
   m.bindPopup(`
    <div class="popup-title">${esc(b.name||'Unnamed')}</div>
    <div class="popup-row">Zone: ${esc(zone?.name||'—')}</div>
