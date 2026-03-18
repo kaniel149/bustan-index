@@ -710,7 +710,10 @@ async function loadZones(){
  zones=data||[];
  ['mf-zone','sc-zone','ab-zone'].forEach(id=>{
   const sel=document.getElementById(id);if(!sel)return;
-  const first=sel.options[0];sel.innerHTML='';if(first)sel.appendChild(first);
+  const firstText=sel.options[0]?sel.options[0].textContent:'All Zones';
+  const firstVal=sel.options[0]?sel.options[0].value:'';
+  sel.innerHTML='';
+  const def=document.createElement('option');def.value=firstVal;def.textContent=firstText;sel.appendChild(def);
   zones.forEach(z=>{const o=document.createElement('option');o.value=z.id;o.textContent=z.name;sel.appendChild(o)});
  });
 }
