@@ -324,6 +324,7 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
    <select id="sc-type"><option value="">All Types</option><option>residential</option><option>commercial</option><option>industrial</option><option>resort</option><option>government</option></select>
    <select id="sc-status"><option value="">All Status</option><option>new</option><option>surveyed</option><option>proposal</option><option>contracted</option><option>installed</option></select>
    <div class="scanner-sort">Sort: <select id="sc-sort"><option value="potential_grade">Grade</option><option value="roof_area_sqm">Roof Area</option><option value="potential_kwp">kWp</option></select></div>
+   <button class="btn btn-secondary" onclick="exportBuildingsCSV()" style="padding:6px 12px;font-size:.72rem">⬇ Export CSV</button>
   </div>
   <div class="scanner-grid" id="scanner-grid"></div>
  </div>
@@ -336,6 +337,7 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
     <button class="pipeline-view-btn active" data-pview="kanban" onclick="setPipelineView('kanban')">Kanban</button>
     <button class="pipeline-view-btn" data-pview="list" onclick="setPipelineView('list')">List</button>
    </div>
+   <button class="btn btn-secondary" onclick="exportLeadsCSV()" style="padding:6px 12px;font-size:.72rem">⬇ Export</button>
    <button class="btn btn-primary" onclick="showAddLeadModal()">+ Add Lead</button>
   </div>
   <div class="pipeline-board" id="pipeline-board"></div>
@@ -401,8 +403,8 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
     <div class="modal-field"><label>Roof Type</label>
      <select id="ab-roof"><option>flat</option><option>gable</option><option>hip</option><option>metal</option><option>tile</option></select>
     </div>
-    <div class="modal-field"><label>Roof Area (sqm)</label><input id="ab-area" type="number"></div>
-    <div class="modal-field"><label>Potential kWp</label><input id="ab-kwp" type="number" step="0.1"></div>
+    <div class="modal-field"><label>Roof Area (sqm)</label><input id="ab-area" type="number" oninput="autoCalcSolar(this.value)"></div>
+    <div class="modal-field"><label>Potential kWp (auto)</label><input id="ab-kwp" type="number" step="0.1" readonly style="opacity:.7"></div>
     <div class="modal-field"><label>Potential Grade</label>
      <select id="ab-grade"><option>A</option><option>B</option><option>C</option><option>D</option></select>
     </div>
@@ -767,7 +769,9 @@ function renderScanner(){
 });
 
 // ==================== BUILDING DETAIL PANEL (slide-in) ====================
+let currentDetailId=null;
 function openBuildingDetail(id){
+ currentDetailId=id;
  const b=buildings.find(x=>x.id===id);if(!b)return;
  const zone=zones.find(z=>z.id===b.zone_id);
  // Close any open modal first
@@ -834,7 +838,8 @@ function openBuildingDetail(id){
   <div class="dp-actions">
    <button class="btn btn-primary" onclick="updateBuilding('${b.id}')">Save Changes</button>
    <button class="btn btn-secondary" onclick="addToPipeline('${b.id}')">Create Lead</button>
-   <button class="btn btn-secondary" disabled title="Coming soon">Generate Proposal</button>
+   <button class="btn btn-primary" onclick="generateProposal(currentDetailId)">📄 Generate Proposal</button>
+   <button class="btn btn-secondary" onclick="shareWhatsApp(buildings.find(b=>b.id===currentDetailId))">📱 WhatsApp</button>
   </div>`;
 
  // Open panel
@@ -1086,6 +1091,147 @@ function closeModal(id){document.getElementById(id).classList.remove('show')}
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 function fmt(n){return n?n.toLocaleString('en-US'):'0'}
 function fmtDate(d){if(!d)return'';const dt=new Date(d);const now=new Date();const diff=now-dt;if(diff<3600000)return Math.floor(diff/60000)+'m ago';if(diff<86400000)return Math.floor(diff/3600000)+'h ago';return dt.toLocaleDateString('en-GB',{day:'numeric',month:'short'})}
+
+// ==================== PHASE B: AUTO-CALC SOLAR ====================
+function autoCalcSolar(areaStr){
+ const area=parseFloat(areaStr)||0;
+ const usable=area*0.7;
+ const kwp=+(usable*0.127).toFixed(2);
+ const panels=Math.floor(usable/2.58);
+ const annualKwh=Math.round(kwp*4.2*365*0.82);
+ const monthlySav=Math.round(annualKwh/12*6);
+ const grade=kwp>=100?'A':kwp>=30?'B':kwp>=5?'C':'D';
+ document.getElementById('ab-kwp').value=kwp||'';
+ const gEl=document.getElementById('ab-grade');
+ if(gEl)gEl.value=grade;
+}
+
+// ==================== PHASE B: ACTIVITY LOGGER ====================
+async function logActivity(leadId,buildingId,type,description){
+ await sb.from('activities').insert({lead_id:leadId||null,building_id:buildingId||null,type,description});
+}
+
+// ==================== PHASE B: WHATSAPP SHARE ====================
+function shareWhatsApp(building){
+ const b=building||{};
+ const msg=`TM Energy — Solar Proposal\n\n🏢 ${b.name||'Building'}\n☀️ ${b.potential_kwp||0} kWp system\n📊 ${b.potential_panels||0} panels\n💰 Saves ฿${fmt(b.potential_monthly_savings_thb||0)}/month\n\nContact: kaniel@energy-tm.com\n📞 +66 99-704-4944\n🌐 index.energy-tm.com`;
+ window.open('https://wa.me/66997044944?text='+encodeURIComponent(msg),'_blank');
+}
+
+// ==================== PHASE B: CSV EXPORT ====================
+function exportBuildingsCSV(){
+ const filtered=getFilteredBuildings();
+ if(!filtered.length){alert('No buildings to export');return}
+ const headers='name,lat,lng,building_type,roof_type,roof_area_sqm,potential_kwp,potential_panels,potential_grade,status,owner_name,owner_phone,potential_monthly_savings_thb';
+ const rows=filtered.map(b=>[b.name||'',b.lat,b.lng,b.building_type||'',b.roof_type||'',b.roof_area_sqm||'',b.potential_kwp||'',b.potential_panels||'',b.potential_grade||'',b.status||'',b.owner_name||'',b.owner_phone||'',b.potential_monthly_savings_thb||''].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(','));
+ const csv=headers+'\n'+rows.join('\n');
+ const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tm-energy-buildings-'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+}
+function exportLeadsCSV(){
+ if(!leads.length){alert('No leads to export');return}
+ const headers='contact_name,contact_phone,stage,deal_model,deal_value_thb,system_size_kwp,source,created_at';
+ const rows=leads.map(l=>[l.contact_name||'',l.contact_phone||'',l.stage||'',l.deal_model||'',l.deal_value_thb||'',l.system_size_kwp||'',l.source||'',l.created_at||''].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(','));
+ const csv=headers+'\n'+rows.join('\n');
+ const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tm-energy-leads-'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+}
+function getFilteredBuildings(){return buildings}
+
+// ==================== PHASE B: PROPOSAL GENERATOR ====================
+async function generateProposal(buildingId){
+ const b=buildings.find(x=>x.id===buildingId);
+ if(!b){alert('Building not found');return}
+ const kwp=b.potential_kwp||0;
+ const panels=b.potential_panels||0;
+ const annualKwh=Math.round(kwp*4.2*365*0.82);
+ const monthlySav=Math.round(annualKwh/12*6);
+ const annualSav=monthlySav*12;
+ const epcCost=Math.round(kwp*29000);
+ const payback=(epcCost/annualSav).toFixed(1);
+ const roi=annualSav>0?((annualSav/epcCost)*100).toFixed(1):'0';
+ const refNum='TM-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*9000)+1000);
+ 
+ const proposal={
+  ref_number:refNum,
+  building_id:buildingId,
+  system_size_kwp:kwp,
+  panel_count:panels,
+  panel_model:'LONGi Hi-MO X6 580W',
+  panel_watt:580,
+  inverter_model:kwp>50?'Huawei SUN2000-100KTL':kwp>20?'Huawei SUN2000-50KTL':kwp>8?'Huawei SUN2000-25KTL':'Huawei SUN2000-10KTL',
+  inverter_count:Math.ceil(kwp/(kwp>50?100:kwp>20?50:kwp>8?25:10)),
+  total_price_thb:epcCost,
+  price_per_wp:29,
+  monthly_production_kwh:Math.round(annualKwh/12),
+  annual_production_kwh:annualKwh,
+  monthly_savings_thb:monthlySav,
+  annual_savings_thb:annualSav,
+  payback_years:parseFloat(payback),
+  roi_percent:parseFloat(roi),
+  deal_model:'purchase',
+  status:'draft',
+  html_url:'https://index.energy-tm.com/proposals/',
+  options:[
+   {name:'EPC Purchase',price_per_wp:29,total:epcCost,monthly_savings:monthlySav,payback:payback},
+   {name:'PPA',rate:4.5,savings_vs_pea:'25%',monthly_savings:Math.round(annualKwh/12*(6-4.5))},
+   {name:'Lease',monthly:Math.round(epcCost/120),term:'10 years'}
+  ]
+ };
+ 
+ const{data,error}=await sb.from('proposals').insert(proposal).select().single();
+ if(error){alert('Error: '+error.message);return}
+ 
+ logActivity(null,buildingId,'proposal_sent','Proposal '+refNum+' generated — ฿'+fmt(epcCost));
+ 
+ // Show TM branded preview
+ const modal=document.createElement('div');
+ modal.className='modal-overlay show';
+ modal.style.zIndex='6000';
+ modal.innerHTML=`<div class="modal" style="max-width:580px;padding:0;overflow:hidden">
+  <div style="background:linear-gradient(135deg,#1B2A4A,#0A1628);padding:24px;text-align:center">
+   <img src="https://index.energy-tm.com/proposals/tm-logo.png" style="height:40px;margin-bottom:12px">
+   <h2 style="color:#fff;font-size:1.1rem;margin:0">Solar Proposal ${refNum}</h2>
+   <p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:4px 0 0">${b.name||'Building'} — Koh Phangan</p>
+  </div>
+  <div style="padding:20px">
+   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+    <div style="background:rgba(0,214,143,.08);padding:12px;border-radius:10px;text-align:center">
+     <div style="font-size:1.4rem;font-weight:700;color:#00D68F">${kwp} kWp</div>
+     <div style="font-size:.7rem;color:#8899AA">System Size</div>
+    </div>
+    <div style="background:rgba(255,184,0,.08);padding:12px;border-radius:10px;text-align:center">
+     <div style="font-size:1.4rem;font-weight:700;color:#FFB800">${panels}</div>
+     <div style="font-size:.7rem;color:#8899AA">Panels</div>
+    </div>
+   </div>
+   <h3 style="font-size:.8rem;color:#8899AA;margin-bottom:8px">3 OPTIONS</h3>
+   <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px">
+    <div style="background:rgba(0,214,143,.06);border:1px solid rgba(0,214,143,.2);border-radius:10px;padding:12px">
+     <strong style="color:#00D68F">Option 1: EPC Purchase</strong><br>
+     <span style="font-size:.85rem">฿${fmt(epcCost)} (฿29/Wp) · Saves ฿${fmt(monthlySav)}/mo · Payback ${payback} yrs · ROI ${roi}%</span>
+    </div>
+    <div style="background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);border-radius:10px;padding:12px">
+     <strong style="color:#3B82F6">Option 2: PPA (Zero Upfront)</strong><br>
+     <span style="font-size:.85rem">฿4.50/kWh (25% below PEA) · Saves ฿${fmt(Math.round(annualKwh/12*1.5))}/mo · No investment</span>
+    </div>
+    <div style="background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);border-radius:10px;padding:12px">
+     <strong style="color:#A855F7">Option 3: Lease</strong><br>
+     <span style="font-size:.85rem">฿${fmt(Math.round(epcCost/120))}/month × 10 years · Own after term</span>
+    </div>
+   </div>
+   <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn btn-primary" onclick="shareWhatsApp({name:'${esc(b.name||'')}',potential_kwp:${kwp},potential_panels:${panels},potential_monthly_savings_thb:${monthlySav}})">📱 WhatsApp</button>
+    <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()">Close</button>
+   </div>
+   <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.7rem;color:#5A6B7D">
+    TM Energy Co., Ltd. · kaniel@energy-tm.com · +66 99-704-4944<br>107/5 Moo 1, Koh Phangan
+   </div>
+  </div>
+ </div>`;
+ modal.addEventListener('click',e=>{if(e.target===modal)modal.remove()});
+ document.body.appendChild(modal);
+}
 </script>
 </body>
 </html>
