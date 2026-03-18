@@ -1109,7 +1109,7 @@ function renderDashboard(){
 }
 
 // ==================== UTILS ====================
-function showModal(id){document.getElementById(id).classList.add('show')}
+function showModal(id){const el=document.getElementById(id);if(el)el.classList.add('show');else console.warn('Modal not found:',id)}
 function closeModal(id){const el=document.getElementById(id);if(el)el.classList.remove('show')}
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 function fmt(n){return n?n.toLocaleString('en-US'):'0'}
