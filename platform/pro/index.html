@@ -518,12 +518,22 @@ function hideLoading(){document.getElementById('loading').classList.add('hidden'
 
 // ==================== INIT ====================
 async function initApp(){
- showLoading('Initializing platform...');
- initMap();initNav();initMapSearch();initMobileNav();initSwipeClose();
- await Promise.all([loadZones(),loadBuildings(),loadLeads(),loadActivities()]);
- renderMap();renderScanner();renderPipeline();renderDashboard();
- initRealtime();
- hideLoading();
+ try{
+  showLoading('Initializing platform...');
+  initMap();initNav();
+  try{initMapSearch()}catch(e){console.warn('MapSearch init skipped:',e)}
+  try{initMobileNav()}catch(e){console.warn('MobileNav init skipped:',e)}
+  try{initSwipeClose()}catch(e){console.warn('SwipeClose init skipped:',e)}
+  await Promise.all([loadZones(),loadBuildings(),loadLeads(),loadActivities()]);
+  console.log('Loaded:',buildings.length,'buildings,',leads.length,'leads,',zones.length,'zones');
+  renderMap();renderScanner();renderPipeline();renderDashboard();
+  initRealtime();
+  hideLoading();
+ }catch(err){
+  console.error('initApp error:',err);
+  hideLoading();
+  alert('Error loading platform: '+err.message);
+ }
 }
 
 // ==================== NAV ====================
