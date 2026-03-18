@@ -687,6 +687,109 @@
       </div>
     </div>
 
+    <!-- TRAINEES PAGE (Supabase-backed) -->
+    <div class="page" id="page-trainees">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="trainee-search" placeholder="Search trainees...">
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button class="btn btn-secondary" id="btn-export-trainees">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export Report
+          </button>
+          <button class="btn btn-primary" id="btn-add-trainee">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Trainee
+          </button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Academy Trainees</span>
+        </div>
+        <div class="panel-body no-pad">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Trainee</th>
+                  <th>Username</th>
+                  <th>Role</th>
+                  <th>Lessons Done</th>
+                  <th>Last Login</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="trainee-table-body">
+                <tr><td colspan="7" style="text-align:center;padding:32px;color:var(--text-dim);">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Per-trainee progress detail -->
+      <div class="panel" id="trainee-detail-panel" style="display:none;margin-top:24px;">
+        <div class="panel-header">
+          <span class="panel-title" id="trainee-detail-title">Trainee Progress</span>
+          <button class="btn btn-sm btn-secondary" onclick="document.getElementById('trainee-detail-panel').style.display='none'">Close</button>
+        </div>
+        <div class="panel-body" id="trainee-detail-body"></div>
+      </div>
+    </div>
+
+    <!-- MODAL: Add/Edit Trainee -->
+    <div class="modal-overlay" id="modal-trainee">
+      <div class="modal">
+        <div class="modal-header">
+          <span class="modal-title" id="modal-trainee-title">Add Trainee</span>
+          <button class="modal-close" onclick="closeModal('modal-trainee')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="trainee-edit-id">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input class="form-input" id="trainee-name" placeholder="e.g. ארז (Erez)">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Username *</label>
+              <input class="form-input" id="trainee-username" placeholder="e.g. erez">
+            </div>
+            <div class="form-group">
+              <label class="form-label">4-Digit PIN *</label>
+              <input class="form-input" id="trainee-pin" type="password" maxlength="4" inputmode="numeric" placeholder="e.g. 1234">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Role</label>
+              <select class="form-select" id="trainee-role">
+                <option value="trainee">Trainee</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">WhatsApp (with country code)</label>
+              <input class="form-input" id="trainee-phone" placeholder="+972547768995">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input class="form-input" id="trainee-email" type="email" placeholder="erez@tmenergy.com">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="closeModal('modal-trainee')">Cancel</button>
+          <button class="btn btn-primary" id="btn-save-trainee">Save Trainee</button>
+        </div>
+      </div>
+    </div>
+
     <!-- SETTINGS PAGE -->
     <div class="page" id="page-settings">
       <div class="panel">
@@ -886,7 +989,7 @@ const ROLE_DEFAULTS = {
   admin: ['solar-fundamentals', 'technical', 'sales-bd']
 };
 
-const PIN = '2626';
+const PIN = '2626'; // fallback PIN
 let currentSort = { col: null, asc: true };
 let currentDashRole = 'all';
 let currentEmpRole = 'all';
@@ -932,7 +1035,7 @@ function saveData(data) { localStorage.setItem('tm-academy-admin', JSON.stringif
 // ============================================================
 // NAVIGATION
 // ============================================================
-const pageTitles = { dashboard: 'Dashboard', employees: 'Employees', courses: 'Courses', certificates: 'Certificates', settings: 'Settings' };
+const pageTitles = { dashboard: 'Dashboard', employees: 'Employees', courses: 'Courses', certificates: 'Certificates', trainees: 'Trainees', settings: 'Settings' };
 
 document.querySelectorAll('.nav-item[data-page]').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -1724,6 +1827,256 @@ document.getElementById('btn-demo-data').addEventListener('click', () => {
   renderAll();
   toast('10 demo employees added');
 });
+
+// ============================================================
+// SUPABASE TRAINEE MANAGEMENT
+// ============================================================
+const SB_URL = 'https://rklpcemhaimavneypubr.supabase.co';
+const SB_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbHBjZW1oYWltYXZuZXlwdWJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MTg2NDUsImV4cCI6MjA4ODE5NDY0NX0.xI_hBDpYPc49AidDO_WkA0mzJCg4uZJKwCR2Ds3aiOw';
+const SB_SERVICE = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbHBjZW1oYWltYXZuZXlwdWJyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjYxODY0NSwiZXhwIjoyMDg4MTk0NjQ1fQ.GSE82uCfEtj_1mJKDAcqxNxZQNinUwkFXBag-oJGVi8';
+
+let sbAdmin = null;
+function getSBAdmin() {
+  if (sbAdmin) return sbAdmin;
+  if (typeof supabase !== 'undefined' && supabase.createClient) {
+    sbAdmin = supabase.createClient(SB_URL, SB_SERVICE);
+  }
+  return sbAdmin;
+}
+
+let traineeCache = [];
+let progressCache = {};
+
+async function loadTrainees() {
+  const sb = getSBAdmin();
+  if (!sb) return;
+
+  const { data: users, error } = await sb.from('academy_users').select('*').order('created_at', { ascending: false });
+  if (error) { console.error('Failed to load trainees:', error); return; }
+  traineeCache = users || [];
+
+  // Load all progress
+  const { data: progress } = await sb.from('academy_progress').select('*');
+  progressCache = {};
+  (progress || []).forEach(p => {
+    if (!progressCache[p.user_id]) progressCache[p.user_id] = [];
+    progressCache[p.user_id].push(p);
+  });
+
+  document.getElementById('trainee-count-badge').textContent = traineeCache.length;
+  renderTrainees();
+}
+
+function renderTrainees() {
+  const search = (document.getElementById('trainee-search')?.value || '').toLowerCase();
+  let trainees = traineeCache;
+  if (search) trainees = trainees.filter(t => t.full_name.toLowerCase().includes(search) || t.username.toLowerCase().includes(search));
+
+  const body = document.getElementById('trainee-table-body');
+  if (!trainees.length) {
+    body.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--text-dim);">No trainees found</td></tr>';
+    return;
+  }
+
+  body.innerHTML = trainees.map(t => {
+    const lessons = progressCache[t.id] || [];
+    const lastLogin = t.last_login ? formatRelative(new Date(t.last_login)) : 'Never';
+    const roleBadge = t.role === 'admin' ? 'admin' : 'installer';
+    return `<tr>
+      <td>
+        <div class="employee-cell" style="cursor:pointer" onclick="showTraineeDetail('${t.id}')">
+          <div class="avatar ${roleBadge}">${getInitials(t.full_name)}</div>
+          <div class="employee-info">
+            <div class="emp-name">${t.full_name}</div>
+            <div class="emp-email">${t.phone || t.email || ''}</div>
+          </div>
+        </div>
+      </td>
+      <td style="font-family:monospace;color:var(--text-dim);">${t.username}</td>
+      <td><span class="role-badge ${roleBadge}">${t.role}</span></td>
+      <td>${lessons.length}</td>
+      <td style="color:var(--text-dim);">${lastLogin}</td>
+      <td>${t.active ? '<span style="color:var(--green);">Active</span>' : '<span style="color:var(--red);">Inactive</span>'}</td>
+      <td>
+        <div style="display:flex;gap:6px;">
+          <button class="btn-icon" onclick="editTrainee('${t.id}')" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+          <button class="btn-icon" onclick="toggleTraineeActive('${t.id}', ${!t.active})" title="${t.active ? 'Deactivate' : 'Activate'}" style="color:${t.active ? 'var(--red)' : 'var(--green)'};"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg></button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+async function showTraineeDetail(id) {
+  const trainee = traineeCache.find(t => t.id === id);
+  if (!trainee) return;
+  const lessons = progressCache[id] || [];
+
+  const panel = document.getElementById('trainee-detail-panel');
+  const title = document.getElementById('trainee-detail-title');
+  const body = document.getElementById('trainee-detail-body');
+
+  title.textContent = `Progress — ${trainee.full_name}`;
+
+  // Group by track
+  const tracks = {};
+  lessons.forEach(l => {
+    if (!tracks[l.track]) tracks[l.track] = [];
+    tracks[l.track].push(l);
+  });
+
+  const trackNames = {
+    'solar-fundamentals': { name: 'Solar Fundamentals', icon: '☀️', total: 8 },
+    'sales-bd': { name: 'Sales & BD', icon: '💼', total: 4 },
+    'technical': { name: 'Technical', icon: '⚡', total: 3 },
+    'ev-storage': { name: 'EV & Storage', icon: '🔋', total: 3 },
+    'management': { name: 'Management', icon: '📊', total: 6 }
+  };
+
+  let html = `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px;">
+    <div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;">Username</div><div style="font-size:14px;font-family:monospace;">${trainee.username}</div></div>
+    <div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;">Phone</div><div style="font-size:14px;">${trainee.phone || '—'}</div></div>
+    <div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;">Email</div><div style="font-size:14px;">${trainee.email || '—'}</div></div>
+  </div>`;
+
+  html += '<div style="font-size:14px;font-weight:600;margin-bottom:12px;">Track Progress</div>';
+
+  Object.entries(trackNames).forEach(([trackId, info]) => {
+    const done = tracks[trackId]?.length || 0;
+    const pct = Math.round((done / info.total) * 100);
+    html += `<div style="margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+        <span style="font-size:13px;">${info.icon} ${info.name}</span>
+        <span style="font-size:12px;color:var(--${progressColor(pct)})">${done}/${info.total} (${pct}%)</span>
+      </div>
+      <div class="progress-bar" style="width:100%"><div class="progress-fill ${progressColor(pct)}" style="width:${pct}%"></div></div>
+    </div>`;
+  });
+
+  if (lessons.length > 0) {
+    html += '<div style="font-size:14px;font-weight:600;margin:20px 0 12px;">Completed Lessons</div>';
+    html += '<div class="table-wrap"><table><thead><tr><th>Lesson</th><th>Track</th><th>Quiz Score</th><th>Completed</th></tr></thead><tbody>';
+    lessons.sort((a, b) => new Date(b.completed_at) - new Date(a.completed_at)).forEach(l => {
+      html += `<tr>
+        <td>${l.lesson_id}</td>
+        <td>${trackNames[l.track]?.icon || ''} ${trackNames[l.track]?.name || l.track}</td>
+        <td>${l.quiz_score !== null ? `<span class="quiz-score ${l.quiz_score >= 60 ? 'pass' : 'fail'}">${l.quiz_score}%</span>` : '—'}</td>
+        <td style="color:var(--text-dim);">${formatDate(l.completed_at)}</td>
+      </tr>`;
+    });
+    html += '</tbody></table></div>';
+  }
+
+  body.innerHTML = html;
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Add trainee modal
+document.getElementById('btn-add-trainee').addEventListener('click', () => {
+  document.getElementById('modal-trainee-title').textContent = 'Add Trainee';
+  document.getElementById('trainee-edit-id').value = '';
+  document.getElementById('trainee-name').value = '';
+  document.getElementById('trainee-username').value = '';
+  document.getElementById('trainee-pin').value = '';
+  document.getElementById('trainee-role').value = 'trainee';
+  document.getElementById('trainee-phone').value = '';
+  document.getElementById('trainee-email').value = '';
+  openModal('modal-trainee');
+});
+
+function editTrainee(id) {
+  const t = traineeCache.find(x => x.id === id);
+  if (!t) return;
+  document.getElementById('modal-trainee-title').textContent = 'Edit Trainee';
+  document.getElementById('trainee-edit-id').value = t.id;
+  document.getElementById('trainee-name').value = t.full_name;
+  document.getElementById('trainee-username').value = t.username;
+  document.getElementById('trainee-pin').value = t.pin;
+  document.getElementById('trainee-role').value = t.role;
+  document.getElementById('trainee-phone').value = t.phone || '';
+  document.getElementById('trainee-email').value = t.email || '';
+  openModal('modal-trainee');
+}
+
+document.getElementById('btn-save-trainee').addEventListener('click', async () => {
+  const name = document.getElementById('trainee-name').value.trim();
+  const username = document.getElementById('trainee-username').value.trim().toLowerCase();
+  const pin = document.getElementById('trainee-pin').value.trim();
+  const role = document.getElementById('trainee-role').value;
+  const phone = document.getElementById('trainee-phone').value.trim();
+  const email = document.getElementById('trainee-email').value.trim();
+  const editId = document.getElementById('trainee-edit-id').value;
+
+  if (!name || !username || !pin || pin.length !== 4) {
+    toast('Name, username, and 4-digit PIN are required', 'error');
+    return;
+  }
+
+  const sb = getSBAdmin();
+  if (!sb) { toast('Supabase not available', 'error'); return; }
+
+  const record = { full_name: name, username, pin, role, phone: phone || null, email: email || null };
+
+  if (editId) {
+    const { error } = await sb.from('academy_users').update(record).eq('id', editId);
+    if (error) { toast('Error: ' + error.message, 'error'); return; }
+    toast('Trainee updated');
+  } else {
+    const { error } = await sb.from('academy_users').insert(record);
+    if (error) { toast('Error: ' + error.message, 'error'); return; }
+    toast('Trainee added');
+  }
+
+  closeModal('modal-trainee');
+  await loadTrainees();
+});
+
+async function toggleTraineeActive(id, active) {
+  const sb = getSBAdmin();
+  if (!sb) return;
+  const { error } = await sb.from('academy_users').update({ active }).eq('id', id);
+  if (error) { toast('Error: ' + error.message, 'error'); return; }
+  toast(active ? 'Trainee activated' : 'Trainee deactivated');
+  await loadTrainees();
+}
+
+// Export trainees report
+document.getElementById('btn-export-trainees').addEventListener('click', () => {
+  const rows = [['Name', 'Username', 'Role', 'Phone', 'Email', 'Lessons Done', 'Last Login', 'Active']];
+  traineeCache.forEach(t => {
+    const lessons = progressCache[t.id] || [];
+    rows.push([
+      t.full_name, t.username, t.role, t.phone || '', t.email || '',
+      lessons.length, t.last_login || 'Never', t.active ? 'Yes' : 'No'
+    ]);
+  });
+  const csv = rows.map(r => r.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'trainees-report-' + new Date().toISOString().split('T')[0] + '.csv';
+  a.click(); URL.revokeObjectURL(url);
+  toast('Trainees report exported');
+});
+
+// Search
+document.getElementById('trainee-search').addEventListener('input', renderTrainees);
+
+// Load trainees when page becomes active
+const origNavClick = document.querySelectorAll('.nav-item[data-page]');
+origNavClick.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.page === 'trainees') loadTrainees();
+  });
+});
+
+// Also load on initial render
+const origRenderAll = renderAll;
+renderAll = function() {
+  origRenderAll();
+  loadTrainees();
+};
 
 // ============================================================
 // INIT
