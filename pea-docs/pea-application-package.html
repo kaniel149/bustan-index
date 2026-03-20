@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEA Solar Application Package — 300 kWp Rooftop Solar PV</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 20mm 15mm;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Sarabun', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+    font-size: 11pt;
+    background: #fff;
+  }
+  @media screen {
+    body { max-width: 210mm; margin: 20px auto; }
+    .page { border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+  }
+  .page {
+    min-height: 277mm;
+    padding: 15mm;
+    page-break-after: always;
+    position: relative;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* Brand colors */
+  :root {
+    --navy: #1B2A4A;
+    --green: #2E7D32;
+    --green-light: #4CAF50;
+    --gray: #666;
+    --border: #ddd;
+  }
+
+  /* Header */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--navy);
+    padding-bottom: 8mm;
+    margin-bottom: 8mm;
+  }
+  .page-header .logo-area {
+    display: flex;
+    flex-direction: column;
+  }
+  .page-header .company-name {
+    font-size: 16pt;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+  }
+  .page-header .company-name-th {
+    font-size: 10pt;
+    color: var(--gray);
+  }
+  .page-header .tagline {
+    font-size: 8pt;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: 2mm;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .page-header .doc-info {
+    text-align: right;
+    font-size: 8pt;
+    color: var(--gray);
+  }
+
+  /* Footer */
+  .page-footer {
+    position: absolute;
+    bottom: 10mm;
+    left: 15mm;
+    right: 15mm;
+    border-top: 1px solid var(--border);
+    padding-top: 3mm;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7pt;
+    color: #999;
+  }
+
+  /* Section titles */
+  h1 {
+    font-size: 18pt;
+    color: var(--navy);
+    margin-bottom: 6mm;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 13pt;
+    color: var(--navy);
+    margin: 6mm 0 3mm 0;
+    border-bottom: 1.5px solid var(--green);
+    padding-bottom: 2mm;
+  }
+  h3 {
+    font-size: 11pt;
+    color: var(--green);
+    margin: 4mm 0 2mm 0;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3mm 0 5mm 0;
+    font-size: 9.5pt;
+  }
+  table th {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 600;
+    padding: 2.5mm 3mm;
+    text-align: left;
+    font-size: 9pt;
+  }
+  table td {
+    padding: 2mm 3mm;
+    border-bottom: 0.5px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:nth-child(even) td {
+    background: #f8faf8;
+  }
+  table .label-col {
+    font-weight: 600;
+    width: 40%;
+    color: #333;
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+  .checklist li {
+    padding: 2.5mm 0 2.5mm 8mm;
+    border-bottom: 0.5px solid #eee;
+    position: relative;
+    font-size: 10pt;
+  }
+  .checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 0;
+    font-size: 12pt;
+    line-height: 1.2;
+  }
+  .checklist li.checked::before {
+    content: '☑';
+    color: var(--green);
+  }
+  .checklist .item-en {
+    font-size: 8pt;
+    color: var(--gray);
+    margin-left: 2mm;
+  }
+
+  /* Thai formal letter */
+  .letter-body {
+    font-size: 11pt;
+    line-height: 1.9;
+    text-indent: 10mm;
+  }
+  .letter-body p { margin-bottom: 4mm; }
+  .letter-header {
+    text-align: right;
+    margin-bottom: 5mm;
+    font-size: 10pt;
+    color: var(--gray);
+  }
+  .letter-to {
+    margin-bottom: 6mm;
+  }
+  .letter-closing {
+    margin-top: 10mm;
+    text-align: center;
+  }
+  .letter-closing .sig-line {
+    margin-top: 15mm;
+    font-size: 10pt;
+  }
+
+  /* Green accent bar */
+  .accent-bar {
+    width: 4mm;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--navy), var(--green));
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /* Spec cards */
+  .spec-card {
+    border: 1px solid var(--border);
+    border-radius: 3mm;
+    padding: 4mm;
+    margin: 3mm 0;
+    background: #fafafa;
+  }
+  .spec-card h4 {
+    color: var(--navy);
+    font-size: 10.5pt;
+    margin-bottom: 2mm;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5mm;
+  }
+
+  /* Safety section */
+  .safety-box {
+    border: 1.5px solid #c00;
+    border-radius: 2mm;
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    background: #fff5f5;
+  }
+  .safety-box h4 {
+    color: #c00;
+    font-size: 10pt;
+    margin-bottom: 2mm;
+  }
+  .safety-box ul {
+    padding-left: 5mm;
+    font-size: 9.5pt;
+  }
+  .safety-box li { margin-bottom: 1.5mm; }
+
+  .highlight {
+    background: linear-gradient(135deg, #f0f7f0, #e8f5e9);
+    border-left: 3px solid var(--green);
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    border-radius: 0 2mm 2mm 0;
+  }
+
+  @media print {
+    .page { padding: 0; border: none; box-shadow: none; min-height: auto; }
+    .page-footer { position: running(footer); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1: COVER LETTER ==================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-area">
+      <div class="company-name">TM ENERGY CO., LTD.</div>
+      <div class="company-name-th">บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด</div>
+      <div class="tagline">Solar Energy Solutions</div>
+    </div>
+    <div class="doc-info">
+      Document: TM-PEA-2026-001<br>
+      Date: March 2026<br>
+      Page 1 of 5
+    </div>
+  </div>
+
+  <h1>หนังสือขออนุญาตเชื่อมต่อระบบผลิตไฟฟ้าพลังงานแสงอาทิตย์</h1>
+  <p style="font-size:9pt;color:var(--gray);margin-top:-4mm;margin-bottom:6mm;">Application for Permission to Connect Solar PV Power Generation System to PEA Grid</p>
+
+  <div class="letter-header">
+    วันที่ ______________ พ.ศ. 2569
+  </div>
+
+  <div class="letter-to">
+    <strong>เรียน</strong> ผู้จัดการการไฟฟ้าส่วนภูมิภาค สาขา [____________________]<br>
+    <span style="font-size:9pt;color:var(--gray);">To: Manager, Provincial Electricity Authority, [Branch Name] Branch</span>
+  </div>
+
+  <div class="letter-body">
+    <p>ด้วย บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด ในฐานะผู้ดำเนินการติดตั้งระบบผลิตไฟฟ้าพลังงานแสงอาทิตย์ ขอยื่นคำขออนุญาตติดตั้งและเชื่อมต่อระบบผลิตไฟฟ้าพลังงานแสงอาทิตย์บนหลังคาเข้ากับระบบจำหน่ายไฟฟ้าของการไฟฟ้าส่วนภูมิภาค ในนามของ [ชื่อโรงงาน / Factory Name] โดยมีรายละเอียดดังนี้</p>
+
+    <p><strong>ชื่อผู้ขอ:</strong> [ชื่อโรงงาน / Factory Name]<br>
+    <strong>สถานที่ติดตั้ง:</strong> [ที่อยู่ / Address]<br>
+    <strong>หมายเลขผู้ใช้ไฟฟ้า:</strong> [CA Number ____]<br>
+    <strong>ขนาดมิเตอร์ปัจจุบัน:</strong> [____ A]</p>
+
+    <p><strong>ข้อมูลระบบที่ขอติดตั้ง:</strong></p>
+    <ul style="padding-left:15mm;margin-bottom:4mm;">
+      <li>กำลังการผลิตติดตั้ง: 300 กิโลวัตต์สูงสุด (300 kWp)</li>
+      <li>แผงโซลาร์เซลล์: LONGi Hi-MO X6 รุ่น LR5-72HTH-580M จำนวน 517 แผง (580 วัตต์/แผง)</li>
+      <li>อินเวอร์เตอร์: Huawei SUN2000-50KTL-M3 จำนวน 6 เครื่อง (50 kW/เครื่อง)</li>
+      <li>รูปแบบการใช้งาน: ใช้ไฟฟ้าที่ผลิตได้ภายในสถานที่เป็นหลัก (Self-Consumption) โดยมีไฟฟ้าส่วนเกินไหลย้อนเข้าระบบ (Excess Export)</li>
+      <li>ระบบป้องกัน: ครบถ้วนตามมาตรฐาน กฟภ. และ IEC (รายละเอียดตามแนบ)</li>
+    </ul>
+
+    <p>ระบบดังกล่าวได้รับการออกแบบและจะติดตั้งโดยวิศวกรไฟฟ้าที่ได้รับใบอนุญาตประกอบวิชาชีพวิศวกรรมควบคุม โดยเป็นไปตามมาตรฐานการติดตั้งทางไฟฟ้าสำหรับประเทศไทย (มาตรฐาน วสท.) และข้อกำหนดของการไฟฟ้าส่วนภูมิภาคทุกประการ</p>
+
+    <p>จึงเรียนมาเพื่อโปรดพิจารณาอนุมัติ และขอขอบคุณเป็นอย่างยิ่ง</p>
+  </div>
+
+  <div class="letter-closing">
+    <p>ขอแสดงความนับถือ</p>
+    <div class="sig-line">
+      <p>ลงชื่อ ______________________________</p>
+      <p style="margin-top:3mm;">( ______________________________ )</p>
+      <p style="font-size:9pt;color:var(--gray);">กรรมการผู้จัดการ / Managing Director</p>
+      <p style="font-size:9pt;color:var(--gray);">บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด / TM Energy Co., Ltd.</p>
+      <p style="font-size:9pt;color:var(--gray);">โทร. [____] อีเมล [____]</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>TM Energy Co., Ltd. — Confidential</span>
+    <span>TM-PEA-2026-001 | Page 1 of 5</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2: APPLICATION SUMMARY ==================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-area">
+      <div class="company-name">TM ENERGY CO., LTD.</div>
+      <div class="company-name-th">บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด</div>
+      <div class="tagline">Solar Energy Solutions</div>
+    </div>
+    <div class="doc-info">
+      Document: TM-PEA-2026-001<br>
+      Date: March 2026<br>
+      Page 2 of 5
+    </div>
+  </div>
+
+  <h1>สรุปโครงการ / Project Summary</h1>
+
+  <h2>ข้อมูลทั่วไป / General Information</h2>
+  <table>
+    <tr><td class="label-col">ชื่อโครงการ / Project Name</td><td>300 kWp Rooftop Solar PV System</td></tr>
+    <tr><td class="label-col">เจ้าของโครงการ / Project Owner</td><td>[ชื่อโรงงาน / Factory Name]</td></tr>
+    <tr><td class="label-col">ผู้ดำเนินการ / Installer</td><td>TM Energy Co., Ltd. (บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด)</td></tr>
+    <tr><td class="label-col">สถานที่ติดตั้ง / Location</td><td>[ที่อยู่ / Address]</td></tr>
+    <tr><td class="label-col">ประเภทอาคาร / Building Type</td><td>โรงงานคอนกรีต / Concrete Factory</td></tr>
+    <tr><td class="label-col">หมายเลขผู้ใช้ไฟ / CA Number</td><td>[____]</td></tr>
+    <tr><td class="label-col">สาขา กฟภ. / PEA Branch</td><td>[____]</td></tr>
+    <tr><td class="label-col">รูปแบบ / Connection Type</td><td>Self-Consumption with Excess Export / ใช้เองเป็นหลัก ส่วนเกินจ่ายเข้าระบบ</td></tr>
+  </table>
+
+  <h2>ข้อมูลระบบ / System Specifications</h2>
+  <table>
+    <tr><td class="label-col">กำลังการผลิตสูงสุด / Peak Capacity</td><td>300 kWp (299.86 kWp actual)</td></tr>
+    <tr><td class="label-col">กำลังไฟฟ้า AC / AC Power Output</td><td>300 kW (6 × 50 kW)</td></tr>
+    <tr><td class="label-col">แรงดันไฟฟ้า / Voltage</td><td>400V 3-Phase 50Hz</td></tr>
+    <tr><td class="label-col">คาดการณ์ผลิตไฟฟ้า / Est. Annual Gen.</td><td>~376,000 kWh/year</td></tr>
+    <tr><td class="label-col">Peak Sun Hours (PSH)</td><td>4.2 hours/day (Thailand average)</td></tr>
+    <tr><td class="label-col">Performance Ratio</td><td>0.82 (82%)</td></tr>
+  </table>
+
+  <div class="highlight">
+    <strong>การคำนวณผลผลิตไฟฟ้า / Generation Calculation:</strong><br>
+    300 kWp × 4.2 PSH × 365 days × 0.82 PR = <strong>376,362 kWh/year</strong>
+  </div>
+
+  <h2>รายการอุปกรณ์หลัก / Main Equipment List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:5%">ลำดับ</th>
+        <th style="width:30%">รายการ / Item</th>
+        <th style="width:25%">รุ่น / Model</th>
+        <th style="width:10%">จำนวน / Qty</th>
+        <th style="width:30%">มาตรฐาน / Certification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>แผงโซลาร์เซลล์ / PV Module</td><td>LONGi Hi-MO X6<br>LR5-72HTH-580M</td><td>517</td><td>IEC 61215, IEC 61730<br>TIS 1843, UL 61730</td></tr>
+      <tr><td>2</td><td>อินเวอร์เตอร์ / Inverter</td><td>Huawei SUN2000-50KTL-M3</td><td>6</td><td>IEC 62109-1/2, IEC 62116<br>TIS 2072, EN 50549</td></tr>
+      <tr><td>3</td><td>เบรกเกอร์หลัก / Main Breaker</td><td>MCCB 400A 3P</td><td>1</td><td>IEC 60947-2</td></tr>
+      <tr><td>4</td><td>เบรกเกอร์ย่อย / Branch Breaker</td><td>MCB 80A 3P</td><td>6</td><td>IEC 60898</td></tr>
+      <tr><td>5</td><td>อุปกรณ์ป้องกันฟ้าผ่า DC / DC SPD</td><td>Type II DC SPD</td><td>6</td><td>IEC 61643-31</td></tr>
+      <tr><td>6</td><td>อุปกรณ์ป้องกันฟ้าผ่า AC / AC SPD</td><td>Type II AC SPD</td><td>1</td><td>IEC 61643-11</td></tr>
+      <tr><td>7</td><td>สวิตช์ตัดวงจรฉุกเฉิน / AC Isolator</td><td>Load Break Switch</td><td>1</td><td>IEC 60947-3</td></tr>
+      <tr><td>8</td><td>ตู้สวิตช์บอร์ดโซลาร์ / Solar DB</td><td>IP54 Enclosure</td><td>1</td><td>IEC 61439</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>TM Energy Co., Ltd. — Confidential</span>
+    <span>TM-PEA-2026-001 | Page 2 of 5</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3: EQUIPMENT SPECIFICATIONS ==================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-area">
+      <div class="company-name">TM ENERGY CO., LTD.</div>
+      <div class="company-name-th">บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด</div>
+      <div class="tagline">Solar Energy Solutions</div>
+    </div>
+    <div class="doc-info">
+      Document: TM-PEA-2026-001<br>
+      Date: March 2026<br>
+      Page 3 of 5
+    </div>
+  </div>
+
+  <h1>ข้อมูลจำเพาะอุปกรณ์ / Equipment Specifications</h1>
+
+  <div class="spec-card">
+    <h4>แผงโซลาร์เซลล์ / PV Module — LONGi Hi-MO X6 (LR5-72HTH-580M)</h4>
+    <table>
+      <tr><td class="label-col">Manufacturer / ผู้ผลิต</td><td>LONGi Green Energy Technology Co., Ltd.</td></tr>
+      <tr><td class="label-col">Model / รุ่น</td><td>LR5-72HTH-580M</td></tr>
+      <tr><td class="label-col">Cell Type / ชนิดเซลล์</td><td>HPBC (Hybrid Passivated Back Contact) Monocrystalline</td></tr>
+      <tr><td class="label-col">Rated Power (Pmax)</td><td>580 Wp</td></tr>
+      <tr><td class="label-col">Efficiency / ประสิทธิภาพ</td><td>≥ 22.8%</td></tr>
+      <tr><td class="label-col">Voc (Open Circuit Voltage)</td><td>52.20 V</td></tr>
+      <tr><td class="label-col">Isc (Short Circuit Current)</td><td>14.15 A</td></tr>
+      <tr><td class="label-col">Vmpp</td><td>43.70 V</td></tr>
+      <tr><td class="label-col">Impp</td><td>13.28 A</td></tr>
+      <tr><td class="label-col">Max System Voltage</td><td>1,500 VDC</td></tr>
+      <tr><td class="label-col">Temperature Coefficient (Pmax)</td><td>-0.29%/°C</td></tr>
+      <tr><td class="label-col">Dimensions / ขนาด</td><td>2,278 × 1,134 × 30 mm</td></tr>
+      <tr><td class="label-col">Weight / น้ำหนัก</td><td>28.2 kg</td></tr>
+      <tr><td class="label-col">Certifications / มาตรฐาน</td><td>IEC 61215, IEC 61730, UL 61730, TIS 1843</td></tr>
+      <tr><td class="label-col">Warranty / รับประกัน</td><td>25 years product, 30 years performance</td></tr>
+    </table>
+  </div>
+
+  <div class="spec-card">
+    <h4>อินเวอร์เตอร์ / Inverter — Huawei SUN2000-50KTL-M3</h4>
+    <table>
+      <tr><td class="label-col">Manufacturer / ผู้ผลิต</td><td>Huawei Technologies Co., Ltd.</td></tr>
+      <tr><td class="label-col">Model / รุ่น</td><td>SUN2000-50KTL-M3</td></tr>
+      <tr><td class="label-col">Type / ชนิด</td><td>Three-phase String Inverter</td></tr>
+      <tr><td class="label-col">Max DC Power</td><td>75 kW</td></tr>
+      <tr><td class="label-col">Max AC Output Power</td><td>50 kW</td></tr>
+      <tr><td class="label-col">MPPT Trackers</td><td>4</td></tr>
+      <tr><td class="label-col">Max Strings per MPPT</td><td>4 (16 total)</td></tr>
+      <tr><td class="label-col">MPPT Voltage Range</td><td>200 — 1,000 V</td></tr>
+      <tr><td class="label-col">Max DC Voltage</td><td>1,100 V</td></tr>
+      <tr><td class="label-col">Max DC Current per MPPT</td><td>32 A</td></tr>
+      <tr><td class="label-col">AC Output Voltage</td><td>380/400 V 3P + N + PE</td></tr>
+      <tr><td class="label-col">Max AC Current</td><td>76.0 A</td></tr>
+      <tr><td class="label-col">Max Efficiency</td><td>98.8%</td></tr>
+      <tr><td class="label-col">Euro Efficiency</td><td>98.5%</td></tr>
+      <tr><td class="label-col">Anti-Islanding</td><td>Built-in per IEC 62116</td></tr>
+      <tr><td class="label-col">Protection / ระบบป้องกัน</td><td>DC reverse polarity, AC/DC surge, residual current, overcurrent, overvoltage, insulation monitoring</td></tr>
+      <tr><td class="label-col">IP Rating</td><td>IP66</td></tr>
+      <tr><td class="label-col">Operating Temp / อุณหภูมิใช้งาน</td><td>-25°C to +60°C</td></tr>
+      <tr><td class="label-col">Communication</td><td>RS485, USB, Smart Dongle (4G/WiFi)</td></tr>
+      <tr><td class="label-col">Dimensions / ขนาด</td><td>550 × 360 × 165 mm</td></tr>
+      <tr><td class="label-col">Weight / น้ำหนัก</td><td>27.5 kg</td></tr>
+      <tr><td class="label-col">Certifications / มาตรฐาน</td><td>IEC 62109-1/2, IEC 62116, IEC 61000, EN 50549-1, TIS 2072</td></tr>
+      <tr><td class="label-col">Warranty / รับประกัน</td><td>10 years (extendable to 25 years)</td></tr>
+    </table>
+  </div>
+
+  <h3>อุปกรณ์ป้องกัน / Protection Devices</h3>
+  <table>
+    <thead>
+      <tr><th>อุปกรณ์ / Device</th><th>Specification</th><th>Standard</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>MCCB 400A 3P</td><td>Icu ≥ 36kA, thermal-magnetic trip</td><td>IEC 60947-2</td></tr>
+      <tr><td>MCB 80A 3P (×6)</td><td>Curve C, Icu ≥ 10kA</td><td>IEC 60898</td></tr>
+      <tr><td>DC SPD Type II (×6)</td><td>Uc: 1000VDC, In: 20kA, Imax: 40kA</td><td>IEC 61643-31</td></tr>
+      <tr><td>AC SPD Type II</td><td>Uc: 440VAC, In: 20kA, Imax: 40kA</td><td>IEC 61643-11</td></tr>
+      <tr><td>AC Load Break Switch</td><td>400A, 3P, visible break</td><td>IEC 60947-3</td></tr>
+      <tr><td>RCD / RCMU</td><td>Built-in Huawei inverter (Type A + DC 6mA)</td><td>IEC 62109-2</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>TM Energy Co., Ltd. — Confidential</span>
+    <span>TM-PEA-2026-001 | Page 3 of 5</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4: INSTALLATION SAFETY PLAN ==================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-area">
+      <div class="company-name">TM ENERGY CO., LTD.</div>
+      <div class="company-name-th">บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด</div>
+      <div class="tagline">Solar Energy Solutions</div>
+    </div>
+    <div class="doc-info">
+      Document: TM-PEA-2026-001<br>
+      Date: March 2026<br>
+      Page 4 of 5
+    </div>
+  </div>
+
+  <h1>แผนความปลอดภัยการติดตั้ง / Installation Safety Plan</h1>
+
+  <h2>1. ระบบกราวด์ / Grounding Plan</h2>
+  <table>
+    <tr><td class="label-col">ระบบกราวด์ / Grounding System</td><td>TN-S (Separate Neutral and Earth)</td></tr>
+    <tr><td class="label-col">สายกราวด์อุปกรณ์ / Equipment Ground</td><td>16mm² Cu Green/Yellow — all PV frames, inverters, mounting structures, Solar DB, and metallic conduits bonded to main earth bar</td></tr>
+    <tr><td class="label-col">หลักดิน / Ground Rod</td><td>Copper-bonded steel rod, 16mm × 2.4m, driven minimum 2.4m deep</td></tr>
+    <tr><td class="label-col">ค่าความต้านทานดิน / Earth Resistance</td><td>≤ 5Ω (per PEA requirement)</td></tr>
+    <tr><td class="label-col">การเชื่อมต่อ / Bonding</td><td>All metallic parts bonded with equipotential bonding conductor per IEC 60364-5-54</td></tr>
+    <tr><td class="label-col">การป้องกันฟ้าผ่า / Lightning Protection</td><td>Existing factory lightning protection system utilized; SPD Type II installed at DC and AC sides</td></tr>
+  </table>
+
+  <h2>2. การประสานงานป้องกัน / Protection Coordination</h2>
+  <div class="spec-card">
+    <h4>ลำดับการป้องกัน / Protection Sequence</h4>
+    <table>
+      <thead>
+        <tr><th>Level</th><th>Device</th><th>Function</th><th>Trip Setting</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Inverter Internal</td><td>RCMU, DC overvoltage, ground fault, arc fault detection (AFCI)</td><td>Auto</td></tr>
+        <tr><td>2</td><td>DC SPD Type II</td><td>DC surge protection (each inverter)</td><td>Uc 1000V</td></tr>
+        <tr><td>3</td><td>MCB 80A 3P</td><td>Branch overcurrent protection (per inverter)</td><td>80A Curve C</td></tr>
+        <tr><td>4</td><td>AC SPD Type II</td><td>AC surge protection (Solar DB)</td><td>Uc 440V</td></tr>
+        <tr><td>5</td><td>MCCB 400A</td><td>Main overcurrent protection (Solar DB output)</td><td>400A adjustable</td></tr>
+        <tr><td>6</td><td>AC Isolator</td><td>Emergency disconnect — manual visible break</td><td>Manual</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>3. การป้องกันไฟย้อน / Anti-Islanding Protection</h2>
+  <div class="highlight">
+    <strong>Built-in Protection (Huawei SUN2000-50KTL-M3):</strong>
+    <ul style="padding-left:5mm;margin-top:2mm;">
+      <li><strong>Active Method:</strong> Frequency shift / impedance measurement — inverter continuously monitors grid impedance and shifts frequency to detect island condition</li>
+      <li><strong>Passive Method:</strong> Over/Under Voltage (OVP/UVP), Over/Under Frequency (OFP/UFP) — compliant with IEC 62116 and EN 50549</li>
+      <li><strong>Detection Time:</strong> ≤ 2 seconds from grid disconnection (per PEA requirement ≤ 5 seconds)</li>
+      <li><strong>Reconnection:</strong> Automatic after grid stable for 60 seconds (adjustable per PEA settings)</li>
+    </ul>
+  </div>
+  <p style="font-size:9.5pt;margin-top:3mm;">
+    อินเวอร์เตอร์ Huawei SUN2000-50KTL-M3 ทุกเครื่องมีระบบป้องกันการจ่ายไฟย้อนกลับ (Anti-Islanding) ในตัว ตามมาตรฐาน IEC 62116 โดยจะตัดการเชื่อมต่อกับระบบจำหน่ายไฟฟ้าภายใน 2 วินาที เมื่อตรวจพบว่าระบบจำหน่ายหยุดจ่ายไฟ
+  </p>
+
+  <h2>4. ขั้นตอนฉุกเฉิน / Emergency Procedures</h2>
+  <div class="safety-box">
+    <h4>⚠️ ขั้นตอนปฏิบัติฉุกเฉิน / Emergency Shutdown Procedure</h4>
+    <ol style="padding-left:5mm;font-size:9.5pt;">
+      <li><strong>STEP 1:</strong> ปิดสวิตช์ AC Isolator (Emergency Disconnect) ที่ตู้ Solar DB<br>
+        <em>Turn OFF the AC Isolator (Emergency Disconnect Switch) at Solar DB</em></li>
+      <li><strong>STEP 2:</strong> ปิด MCCB 400A ที่ตู้ Solar DB<br>
+        <em>Turn OFF the MCCB 400A at Solar DB</em></li>
+      <li><strong>STEP 3:</strong> ปิดอินเวอร์เตอร์ทั้ง 6 เครื่อง (DC switch ด้านล่าง)<br>
+        <em>Turn OFF all 6 inverters via DC disconnect switches</em></li>
+      <li><strong>STEP 4:</strong> <span style="color:#c00;font-weight:600;">คำเตือน: แผงโซลาร์ยังคงมีไฟฟ้า DC ตราบใดที่มีแสงแดด ห้ามสัมผัสสายไฟ DC</span><br>
+        <em style="color:#c00;">WARNING: PV panels remain energized with DC voltage whenever exposed to light. Do NOT touch DC cables.</em></li>
+    </ol>
+  </div>
+
+  <div class="safety-box">
+    <h4>🔥 กรณีเพลิงไหม้ / Fire Emergency</h4>
+    <ul>
+      <li>แจ้ง 199 (สายด่วนดับเพลิง) / Call 199 (Fire Department)</li>
+      <li>ปิดสวิตช์ตัดวงจรฉุกเฉินทันที / Activate Emergency Disconnect immediately</li>
+      <li>แจ้งเจ้าหน้าที่ดับเพลิงว่ามีระบบโซลาร์บนหลังคา / Inform firefighters of rooftop solar system</li>
+      <li>ห้ามใช้น้ำฉีดโดยตรงที่แผงโซลาร์เมื่อมีไฟฟ้า / Do not spray water directly on energized PV panels</li>
+    </ul>
+  </div>
+
+  <h3>สัญลักษณ์ความปลอดภัย / Safety Signage Required</h3>
+  <table>
+    <tr><td class="label-col">ป้ายเตือน DC / DC Warning</td><td>"DANGER — Solar DC Voltage" at all DC junction boxes and combiners</td></tr>
+    <tr><td class="label-col">ป้ายสวิตช์ฉุกเฉิน / Emergency Switch</td><td>"SOLAR EMERGENCY DISCONNECT" at AC Isolator location</td></tr>
+    <tr><td class="label-col">ป้ายบนหลังคา / Roof Sign</td><td>"CAUTION — Solar PV System Installed" at roof access points</td></tr>
+    <tr><td class="label-col">ป้ายตู้ MDB / MDB Sign</td><td>"DUAL POWER SOURCE — Solar PV Connected" on MDB door</td></tr>
+  </table>
+
+  <div class="page-footer">
+    <span>TM Energy Co., Ltd. — Confidential</span>
+    <span>TM-PEA-2026-001 | Page 4 of 5</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 5: DOCUMENT CHECKLIST ==================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="logo-area">
+      <div class="company-name">TM ENERGY CO., LTD.</div>
+      <div class="company-name-th">บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด</div>
+      <div class="tagline">Solar Energy Solutions</div>
+    </div>
+    <div class="doc-info">
+      Document: TM-PEA-2026-001<br>
+      Date: March 2026<br>
+      Page 5 of 5
+    </div>
+  </div>
+
+  <h1>รายการเอกสารประกอบคำขอ / Document Checklist</h1>
+  <p style="margin-bottom:5mm;font-size:10pt;color:var(--gray);">
+    เอกสารที่ต้องยื่นประกอบคำขอเชื่อมต่อระบบผลิตไฟฟ้าพลังงานแสงอาทิตย์กับการไฟฟ้าส่วนภูมิภาค<br>
+    Documents required for PEA solar grid connection application
+  </p>
+
+  <ul class="checklist">
+    <li>
+      แบบคำขอเชื่อมต่อระบบผลิตไฟฟ้า (แบบฟอร์ม กฟภ.)
+      <span class="item-en">Application Form (PEA standard form — obtained from PEA branch)</span>
+    </li>
+    <li class="checked">
+      แผนผังไฟฟ้าเส้นเดียว (Single Line Diagram)
+      <span class="item-en">Single Line Diagram — ✓ Attached (Drawing No. TM-SLD-2026-001)</span>
+    </li>
+    <li>
+      สำเนาบัตรประชาชน หรือ หนังสือเดินทาง ของผู้ขอ
+      <span class="item-en">Copy of Applicant's ID Card or Passport</span>
+    </li>
+    <li>
+      สำเนาทะเบียนบ้าน ของสถานที่ติดตั้ง
+      <span class="item-en">Copy of House Registration (Tabien Baan) of installation site</span>
+    </li>
+    <li>
+      สำเนาใบอนุญาตก่อสร้าง (ถ้าจำเป็น)
+      <span class="item-en">Copy of Building Permit (if required by local authority)</span>
+    </li>
+    <li>
+      สำเนาโฉนดที่ดิน
+      <span class="item-en">Copy of Land Title Deed (Chanote)</span>
+    </li>
+    <li>
+      สำเนาหนังสือรับรองบริษัท / ห้างหุ้นส่วน (กรณีนิติบุคคล)
+      <span class="item-en">Copy of Company Registration Certificate (for juristic entities)</span>
+    </li>
+    <li>
+      สำเนาบิลค่าไฟฟ้า 3 เดือนล่าสุด
+      <span class="item-en">Copy of Last 3 Months' Electricity Bills</span>
+    </li>
+    <li>
+      หนังสือยินยอมจากเจ้าของอาคาร (กรณีผู้ขอไม่ใช่เจ้าของ)
+      <span class="item-en">Building Owner Consent Letter (if applicant is not the owner)</span>
+    </li>
+    <li>
+      รายการอุปกรณ์พร้อมใบรับรองมาตรฐาน
+      <span class="item-en">Equipment List with Certification Documents — ✓ See Page 2-3</span>
+    </li>
+    <li>
+      สำเนาใบอนุญาตประกอบวิชาชีพวิศวกรรมควบคุม (วศ.)
+      <span class="item-en">Copy of Licensed Professional Engineer Certificate (Wor Sor.)</span>
+    </li>
+    <li>
+      แผนผังตำแหน่งติดตั้งแผงโซลาร์บนหลังคา
+      <span class="item-en">Rooftop PV Panel Layout / Installation Plan</span>
+    </li>
+    <li>
+      ภาพถ่ายหลังคาและสถานที่ติดตั้ง
+      <span class="item-en">Site Photos (rooftop, electrical room, meter location)</span>
+    </li>
+    <li>
+      หนังสือมอบอำนาจ (กรณีมอบหมายให้บริษัทดำเนินการแทน)
+      <span class="item-en">Power of Attorney (if installer applies on behalf of owner)</span>
+    </li>
+    <li>
+      แผนความปลอดภัยการติดตั้ง
+      <span class="item-en">Installation Safety Plan — ✓ See Page 4</span>
+    </li>
+  </ul>
+
+  <h2 style="margin-top:8mm;">หมายเหตุ / Notes</h2>
+  <div class="highlight">
+    <ol style="padding-left:5mm;font-size:9.5pt;">
+      <li>เอกสารสำเนาทุกฉบับต้องรับรองสำเนาถูกต้อง / All copies must be certified as true copies</li>
+      <li>ระยะเวลาพิจารณาอนุมัติประมาณ 15-30 วันทำการ / Expected approval period: 15-30 business days</li>
+      <li>กฟภ. อาจขอเอกสารเพิ่มเติมตามความจำเป็น / PEA may request additional documents as needed</li>
+      <li>การตรวจสอบระบบหลังติดตั้งจะดำเนินการโดยเจ้าหน้าที่ กฟภ. / Post-installation inspection by PEA officers</li>
+      <li>ค่าธรรมเนียมการเชื่อมต่อเป็นไปตามประกาศ กฟภ. / Connection fees per PEA announcement</li>
+    </ol>
+  </div>
+
+  <h2 style="margin-top:6mm;">ข้อมูลติดต่อผู้ดำเนินการ / Installer Contact</h2>
+  <table>
+    <tr><td class="label-col">บริษัท / Company</td><td>TM Energy Co., Ltd. (บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด)</td></tr>
+    <tr><td class="label-col">ที่อยู่ / Address</td><td>[____]</td></tr>
+    <tr><td class="label-col">โทรศัพท์ / Phone</td><td>[____]</td></tr>
+    <tr><td class="label-col">อีเมล / Email</td><td>[____]</td></tr>
+    <tr><td class="label-col">วิศวกรผู้รับผิดชอบ / Responsible Engineer</td><td>[วศ.____ / ใบอนุญาตเลขที่ ____]</td></tr>
+  </table>
+
+  <div class="page-footer">
+    <span>TM Energy Co., Ltd. — Confidential</span>
+    <span>TM-PEA-2026-001 | Page 5 of 5</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single Line Diagram — 300 kWp Rooftop Solar PV System</title>
+<style>
+  @page {
+    size: A3 landscape;
+    margin: 10mm;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    width: 410mm;
+    height: 287mm;
+    position: relative;
+    overflow: hidden;
+  }
+  @media print {
+    body { width: 410mm; height: 287mm; }
+  }
+  @media screen {
+    body {
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  }
+  .drawing-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  /* Border frame */
+  .frame {
+    position: absolute;
+    top: 5mm;
+    left: 5mm;
+    right: 5mm;
+    bottom: 5mm;
+    border: 0.7mm solid #000;
+  }
+  .inner-frame {
+    position: absolute;
+    top: 2mm;
+    left: 2mm;
+    right: 2mm;
+    bottom: 2mm;
+    border: 0.3mm solid #000;
+  }
+  /* Title block */
+  .title-block {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 180mm;
+    height: 55mm;
+    border-left: 0.7mm solid #000;
+    border-top: 0.7mm solid #000;
+    display: grid;
+    grid-template-rows: 18mm 12mm 12mm 13mm;
+    grid-template-columns: 1fr 1fr;
+  }
+  .title-block .company {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 0.5mm solid #000;
+    padding: 2mm;
+  }
+  .title-block .company .name {
+    font-size: 14pt;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .title-block .company .sub {
+    font-size: 8pt;
+    color: #333;
+    margin-top: 1mm;
+  }
+  .title-block .cell {
+    border-bottom: 0.3mm solid #000;
+    border-right: 0.3mm solid #000;
+    padding: 1.5mm 3mm;
+    font-size: 7.5pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .title-block .cell .label {
+    font-size: 6pt;
+    color: #666;
+    text-transform: uppercase;
+  }
+  .title-block .cell .value {
+    font-weight: 600;
+    font-size: 8pt;
+    margin-top: 0.5mm;
+  }
+  /* Notes block */
+  .notes-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 182mm);
+    height: 55mm;
+    border-top: 0.7mm solid #000;
+    padding: 3mm 5mm;
+    font-size: 7pt;
+    line-height: 1.6;
+  }
+  .notes-block h4 {
+    font-size: 8pt;
+    margin-bottom: 2mm;
+    border-bottom: 0.3mm solid #000;
+    padding-bottom: 1mm;
+  }
+  /* Drawing title */
+  .drawing-title {
+    position: absolute;
+    top: 8mm;
+    left: 10mm;
+    font-size: 14pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .drawing-subtitle {
+    position: absolute;
+    top: 15mm;
+    left: 10mm;
+    font-size: 9pt;
+    color: #444;
+  }
+  /* SVG area */
+  .sld-svg {
+    position: absolute;
+    top: 22mm;
+    left: 5mm;
+    right: 5mm;
+    bottom: 60mm;
+  }
+  svg text {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="drawing-area">
+  <div class="frame">
+    <div class="inner-frame"></div>
+  </div>
+
+  <div class="drawing-title">SINGLE LINE DIAGRAM / แผนผังไฟฟ้าเส้นเดียว</div>
+  <div class="drawing-subtitle">300 kWp Rooftop Solar PV System — ระบบผลิตไฟฟ้าพลังงานแสงอาทิตย์บนหลังคา 300 กิโลวัตต์</div>
+
+  <div class="sld-svg">
+    <svg viewBox="0 0 1520 680" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- PV Panel Symbol -->
+        <symbol id="pv-panel" viewBox="0 0 50 40">
+          <rect x="2" y="2" width="46" height="36" fill="none" stroke="#000" stroke-width="1.5"/>
+          <line x1="2" y1="38" x2="48" y2="2" stroke="#000" stroke-width="1"/>
+          <text x="25" y="24" text-anchor="middle" font-size="8" font-weight="600">PV</text>
+        </symbol>
+        <!-- Inverter Symbol -->
+        <symbol id="inverter" viewBox="0 0 50 50">
+          <rect x="2" y="2" width="46" height="46" fill="none" stroke="#000" stroke-width="1.5" rx="2"/>
+          <text x="14" y="22" font-size="12" font-weight="600">DC</text>
+          <line x1="5" y1="26" x2="45" y2="26" stroke="#000" stroke-width="0.5"/>
+          <text x="14" y="40" font-size="12" font-weight="600">AC</text>
+        </symbol>
+        <!-- MCB Symbol -->
+        <symbol id="mcb" viewBox="0 0 30 40">
+          <line x1="15" y1="0" x2="15" y2="12" stroke="#000" stroke-width="1.5"/>
+          <line x1="15" y1="12" x2="22" y2="28" stroke="#000" stroke-width="2"/>
+          <line x1="15" y1="28" x2="15" y2="40" stroke="#000" stroke-width="1.5"/>
+          <circle cx="15" cy="12" r="2" fill="#000"/>
+          <circle cx="15" cy="28" r="2" fill="#000"/>
+        </symbol>
+        <!-- MCCB Symbol -->
+        <symbol id="mccb" viewBox="0 0 40 50">
+          <rect x="5" y="5" width="30" height="40" fill="none" stroke="#000" stroke-width="1.5"/>
+          <line x1="20" y1="0" x2="20" y2="14" stroke="#000" stroke-width="1.5"/>
+          <line x1="20" y1="14" x2="28" y2="32" stroke="#000" stroke-width="2"/>
+          <line x1="20" y1="36" x2="20" y2="50" stroke="#000" stroke-width="1.5"/>
+          <circle cx="20" cy="14" r="2" fill="#000"/>
+          <circle cx="20" cy="36" r="2" fill="#000"/>
+        </symbol>
+        <!-- Meter Symbol -->
+        <symbol id="meter" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="17" fill="none" stroke="#000" stroke-width="1.5"/>
+          <text x="20" y="24" text-anchor="middle" font-size="10" font-weight="600">kWh</text>
+        </symbol>
+        <!-- SPD Symbol -->
+        <symbol id="spd" viewBox="0 0 20 30">
+          <line x1="10" y1="0" x2="10" y2="8" stroke="#000" stroke-width="1.2"/>
+          <polygon points="4,8 16,8 10,22" fill="none" stroke="#000" stroke-width="1.2"/>
+          <line x1="10" y1="22" x2="10" y2="30" stroke="#000" stroke-width="1.2"/>
+        </symbol>
+        <!-- Ground Symbol -->
+        <symbol id="ground" viewBox="0 0 24 20">
+          <line x1="12" y1="0" x2="12" y2="6" stroke="#000" stroke-width="1.5"/>
+          <line x1="2" y1="6" x2="22" y2="6" stroke="#000" stroke-width="1.5"/>
+          <line x1="5" y1="10" x2="19" y2="10" stroke="#000" stroke-width="1.2"/>
+          <line x1="8" y1="14" x2="16" y2="14" stroke="#000" stroke-width="0.8"/>
+        </symbol>
+        <!-- AC Isolator -->
+        <symbol id="isolator" viewBox="0 0 30 40">
+          <line x1="15" y1="0" x2="15" y2="12" stroke="#000" stroke-width="1.5"/>
+          <line x1="15" y1="12" x2="24" y2="28" stroke="#000" stroke-width="2"/>
+          <line x1="15" y1="28" x2="15" y2="40" stroke="#000" stroke-width="1.5"/>
+          <circle cx="15" cy="12" r="2.5" fill="none" stroke="#000" stroke-width="1.2"/>
+          <circle cx="15" cy="28" r="2.5" fill="none" stroke="#000" stroke-width="1.2"/>
+        </symbol>
+        <!-- Bidirectional Meter -->
+        <symbol id="bi-meter" viewBox="0 0 44 44">
+          <circle cx="22" cy="22" r="19" fill="none" stroke="#000" stroke-width="1.5"/>
+          <text x="22" y="18" text-anchor="middle" font-size="7" font-weight="600">kWh</text>
+          <text x="22" y="28" text-anchor="middle" font-size="6">⟷</text>
+          <text x="22" y="38" text-anchor="middle" font-size="5">PEA</text>
+        </symbol>
+      </defs>
+
+      <!-- ========== ROW DEFINITIONS ========== -->
+      <!-- 6 inverter rows, vertically distributed -->
+      <!-- Y positions: 30, 130, 230, 330, 430, 530 -->
+      
+      <!-- Row labels and horizontal bus positions -->
+      <!-- PV: x=20, Combiner: x=180, Inverter: x=340, MCB: x=500, Bus: x=580, MCCB: x=680, Meter: x=790, Isolator: x=900, MDB: x=1020, PEA Meter: x=1160, Grid: x=1340 -->
+
+      <!-- ========== INVERTER ROWS ========== -->
+      <!-- Row 1 -->
+      <g transform="translate(0, 20)">
+        <!-- PV Array -->
+        <use href="#pv-panel" x="20" y="10" width="50" height="40"/>
+        <text x="45" y="62" text-anchor="middle" font-size="7" font-weight="600">PV Array 1</text>
+        <text x="45" y="72" text-anchor="middle" font-size="6" fill="#555">86 × 580W</text>
+        <text x="45" y="81" text-anchor="middle" font-size="5.5" fill="#777">4 MPPT × 6 strings</text>
+        <!-- DC wire to combiner -->
+        <line x1="70" y1="30" x2="130" y2="30" stroke="#000" stroke-width="1.2"/>
+        <text x="100" y="24" text-anchor="middle" font-size="5.5" fill="#c00">DC+/DC−</text>
+        <!-- DC SPD -->
+        <use href="#spd" x="105" y="35" width="14" height="20"/>
+        <text x="112" y="60" text-anchor="middle" font-size="5" fill="#555">DC SPD</text>
+        <!-- String Combiner Box -->
+        <rect x="130" y="10" width="55" height="40" fill="none" stroke="#000" stroke-width="1.2" rx="2"/>
+        <text x="157" y="28" text-anchor="middle" font-size="6.5" font-weight="600">String</text>
+        <text x="157" y="38" text-anchor="middle" font-size="6.5" font-weight="600">Combiner</text>
+        <text x="157" y="62" text-anchor="middle" font-size="5.5" fill="#555">4 MPPT inputs</text>
+        <!-- DC wire to inverter -->
+        <line x1="185" y1="30" x2="290" y2="30" stroke="#000" stroke-width="1.2"/>
+        <text x="237" y="24" text-anchor="middle" font-size="5.5" fill="#c00">DC Bus</text>
+        <!-- Inverter -->
+        <use href="#inverter" x="290" y="5" width="50" height="50"/>
+        <text x="315" y="68" text-anchor="middle" font-size="6.5" font-weight="600">INV-1</text>
+        <text x="315" y="78" text-anchor="middle" font-size="5.5" fill="#555">Huawei 50KTL-M3</text>
+        <text x="315" y="87" text-anchor="middle" font-size="5" fill="#777">50 kW / 4 MPPT</text>
+        <!-- AC wire to MCB -->
+        <line x1="340" y1="30" x2="440" y2="30" stroke="#000" stroke-width="1.5"/>
+        <text x="390" y="24" text-anchor="middle" font-size="5.5" fill="#00c">3P+N 400V AC</text>
+        <!-- AC SPD on inverter output -->
+        <use href="#spd" x="363" y="35" width="14" height="20"/>
+        <text x="370" y="60" text-anchor="middle" font-size="5" fill="#555">AC SPD</text>
+        <!-- MCB -->
+        <use href="#mcb" x="440" y="10" width="30" height="40"/>
+        <text x="455" y="62" text-anchor="middle" font-size="6" font-weight="600">MCB</text>
+        <text x="455" y="72" text-anchor="middle" font-size="5.5" fill="#555">80A 3P</text>
+        <!-- Wire to bus -->
+        <line x1="470" y1="30" x2="530" y2="30" stroke="#000" stroke-width="1.5"/>
+        <!-- Ground on inverter -->
+        <use href="#ground" x="303" y="88" width="24" height="16"/>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(0, 120)">
+        <use href="#pv-panel" x="20" y="10" width="50" height="40"/>
+        <text x="45" y="62" text-anchor="middle" font-size="7" font-weight="600">PV Array 2</text>
+        <text x="45" y="72" text-anchor="middle" font-size="6" fill="#555">86 × 580W</text>
+        <line x1="70" y1="30" x2="130" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#spd" x="105" y="35" width="14" height="20"/>
+        <rect x="130" y="10" width="55" height="40" fill="none" stroke="#000" stroke-width="1.2" rx="2"/>
+        <text x="157" y="28" text-anchor="middle" font-size="6.5" font-weight="600">String</text>
+        <text x="157" y="38" text-anchor="middle" font-size="6.5" font-weight="600">Combiner</text>
+        <line x1="185" y1="30" x2="290" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#inverter" x="290" y="5" width="50" height="50"/>
+        <text x="315" y="68" text-anchor="middle" font-size="6.5" font-weight="600">INV-2</text>
+        <text x="315" y="78" text-anchor="middle" font-size="5.5" fill="#555">Huawei 50KTL-M3</text>
+        <line x1="340" y1="30" x2="440" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#spd" x="363" y="35" width="14" height="20"/>
+        <use href="#mcb" x="440" y="10" width="30" height="40"/>
+        <text x="455" y="62" text-anchor="middle" font-size="6" font-weight="600">MCB</text>
+        <text x="455" y="72" text-anchor="middle" font-size="5.5" fill="#555">80A 3P</text>
+        <line x1="470" y1="30" x2="530" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#ground" x="303" y="88" width="24" height="16"/>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(0, 220)">
+        <use href="#pv-panel" x="20" y="10" width="50" height="40"/>
+        <text x="45" y="62" text-anchor="middle" font-size="7" font-weight="600">PV Array 3</text>
+        <text x="45" y="72" text-anchor="middle" font-size="6" fill="#555">86 × 580W</text>
+        <line x1="70" y1="30" x2="130" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#spd" x="105" y="35" width="14" height="20"/>
+        <rect x="130" y="10" width="55" height="40" fill="none" stroke="#000" stroke-width="1.2" rx="2"/>
+        <text x="157" y="28" text-anchor="middle" font-size="6.5" font-weight="600">String</text>
+        <text x="157" y="38" text-anchor="middle" font-size="6.5" font-weight="600">Combiner</text>
+        <line x1="185" y1="30" x2="290" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#inverter" x="290" y="5" width="50" height="50"/>
+        <text x="315" y="68" text-anchor="middle" font-size="6.5" font-weight="600">INV-3</text>
+        <text x="315" y="78" text-anchor="middle" font-size="5.5" fill="#555">Huawei 50KTL-M3</text>
+        <line x1="340" y1="30" x2="440" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#spd" x="363" y="35" width="14" height="20"/>
+        <use href="#mcb" x="440" y="10" width="30" height="40"/>
+        <text x="455" y="62" text-anchor="middle" font-size="6" font-weight="600">MCB</text>
+        <text x="455" y="72" text-anchor="middle" font-size="5.5" fill="#555">80A 3P</text>
+        <line x1="470" y1="30" x2="530" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#ground" x="303" y="88" width="24" height="16"/>
+      </g>
+
+      <!-- Row 4 -->
+      <g transform="translate(0, 320)">
+        <use href="#pv-panel" x="20" y="10" width="50" height="40"/>
+        <text x="45" y="62" text-anchor="middle" font-size="7" font-weight="600">PV Array 4</text>
+        <text x="45" y="72" text-anchor="middle" font-size="6" fill="#555">87 × 580W</text>
+        <line x1="70" y1="30" x2="130" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#spd" x="105" y="35" width="14" height="20"/>
+        <rect x="130" y="10" width="55" height="40" fill="none" stroke="#000" stroke-width="1.2" rx="2"/>
+        <text x="157" y="28" text-anchor="middle" font-size="6.5" font-weight="600">String</text>
+        <text x="157" y="38" text-anchor="middle" font-size="6.5" font-weight="600">Combiner</text>
+        <line x1="185" y1="30" x2="290" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#inverter" x="290" y="5" width="50" height="50"/>
+        <text x="315" y="68" text-anchor="middle" font-size="6.5" font-weight="600">INV-4</text>
+        <text x="315" y="78" text-anchor="middle" font-size="5.5" fill="#555">Huawei 50KTL-M3</text>
+        <line x1="340" y1="30" x2="440" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#spd" x="363" y="35" width="14" height="20"/>
+        <use href="#mcb" x="440" y="10" width="30" height="40"/>
+        <text x="455" y="62" text-anchor="middle" font-size="6" font-weight="600">MCB</text>
+        <text x="455" y="72" text-anchor="middle" font-size="5.5" fill="#555">80A 3P</text>
+        <line x1="470" y1="30" x2="530" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#ground" x="303" y="88" width="24" height="16"/>
+      </g>
+
+      <!-- Row 5 -->
+      <g transform="translate(0, 420)">
+        <use href="#pv-panel" x="20" y="10" width="50" height="40"/>
+        <text x="45" y="62" text-anchor="middle" font-size="7" font-weight="600">PV Array 5</text>
+        <text x="45" y="72" text-anchor="middle" font-size="6" fill="#555">86 × 580W</text>
+        <line x1="70" y1="30" x2="130" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#spd" x="105" y="35" width="14" height="20"/>
+        <rect x="130" y="10" width="55" height="40" fill="none" stroke="#000" stroke-width="1.2" rx="2"/>
+        <text x="157" y="28" text-anchor="middle" font-size="6.5" font-weight="600">String</text>
+        <text x="157" y="38" text-anchor="middle" font-size="6.5" font-weight="600">Combiner</text>
+        <line x1="185" y1="30" x2="290" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#inverter" x="290" y="5" width="50" height="50"/>
+        <text x="315" y="68" text-anchor="middle" font-size="6.5" font-weight="600">INV-5</text>
+        <text x="315" y="78" text-anchor="middle" font-size="5.5" fill="#555">Huawei 50KTL-M3</text>
+        <line x1="340" y1="30" x2="440" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#spd" x="363" y="35" width="14" height="20"/>
+        <use href="#mcb" x="440" y="10" width="30" height="40"/>
+        <text x="455" y="62" text-anchor="middle" font-size="6" font-weight="600">MCB</text>
+        <text x="455" y="72" text-anchor="middle" font-size="5.5" fill="#555">80A 3P</text>
+        <line x1="470" y1="30" x2="530" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#ground" x="303" y="88" width="24" height="16"/>
+      </g>
+
+      <!-- Row 6 -->
+      <g transform="translate(0, 520)">
+        <use href="#pv-panel" x="20" y="10" width="50" height="40"/>
+        <text x="45" y="62" text-anchor="middle" font-size="7" font-weight="600">PV Array 6</text>
+        <text x="45" y="72" text-anchor="middle" font-size="6" fill="#555">86 × 580W</text>
+        <line x1="70" y1="30" x2="130" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#spd" x="105" y="35" width="14" height="20"/>
+        <rect x="130" y="10" width="55" height="40" fill="none" stroke="#000" stroke-width="1.2" rx="2"/>
+        <text x="157" y="28" text-anchor="middle" font-size="6.5" font-weight="600">String</text>
+        <text x="157" y="38" text-anchor="middle" font-size="6.5" font-weight="600">Combiner</text>
+        <line x1="185" y1="30" x2="290" y2="30" stroke="#000" stroke-width="1.2"/>
+        <use href="#inverter" x="290" y="5" width="50" height="50"/>
+        <text x="315" y="68" text-anchor="middle" font-size="6.5" font-weight="600">INV-6</text>
+        <text x="315" y="78" text-anchor="middle" font-size="5.5" fill="#555">Huawei 50KTL-M3</text>
+        <line x1="340" y1="30" x2="440" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#spd" x="363" y="35" width="14" height="20"/>
+        <use href="#mcb" x="440" y="10" width="30" height="40"/>
+        <text x="455" y="62" text-anchor="middle" font-size="6" font-weight="600">MCB</text>
+        <text x="455" y="72" text-anchor="middle" font-size="5.5" fill="#555">80A 3P</text>
+        <line x1="470" y1="30" x2="530" y2="30" stroke="#000" stroke-width="1.5"/>
+        <use href="#ground" x="303" y="88" width="24" height="16"/>
+      </g>
+
+      <!-- ========== SOLAR AC DISTRIBUTION BOARD (BUS BAR) ========== -->
+      <!-- Vertical bus bar connecting all 6 MCB outputs -->
+      <rect x="528" y="40" width="6" height="520" fill="#000"/>
+      <text x="550" y="35" font-size="8" font-weight="700">SOLAR DB</text>
+      <text x="550" y="45" font-size="6" fill="#555">ตู้สวิตช์บอร์ดโซลาร์</text>
+      <text x="550" y="55" font-size="5.5" fill="#555">AC Distribution Board</text>
+
+      <!-- AC SPD on Solar DB -->
+      <use href="#spd" x="538" y="510" width="16" height="24"/>
+      <text x="558" y="528" font-size="5" fill="#555">AC SPD</text>
+      <text x="558" y="536" font-size="5" fill="#555">Type II</text>
+      <!-- Ground on Solar DB -->
+      <use href="#ground" x="534" y="545" width="24" height="16"/>
+
+      <!-- Bus junction dots -->
+      <circle cx="531" cy="50" r="3" fill="#000"/>
+      <circle cx="531" cy="150" r="3" fill="#000"/>
+      <circle cx="531" cy="250" r="3" fill="#000"/>
+      <circle cx="531" cy="350" r="3" fill="#000"/>
+      <circle cx="531" cy="450" r="3" fill="#000"/>
+      <circle cx="531" cy="550" r="3" fill="#000"/>
+
+      <!-- ========== MAIN OUTPUT FROM SOLAR DB ========== -->
+      <!-- Horizontal line from bus center to MCCB -->
+      <line x1="534" y1="300" x2="620" y2="300" stroke="#000" stroke-width="2"/>
+      <circle cx="531" cy="300" r="3" fill="#000"/>
+
+      <!-- MCCB 400A -->
+      <use href="#mccb" x="620" y="275" width="40" height="50"/>
+      <text x="640" y="338" text-anchor="middle" font-size="7" font-weight="700">MCCB</text>
+      <text x="640" y="348" text-anchor="middle" font-size="6" fill="#555">400A 3P</text>
+      <text x="640" y="358" text-anchor="middle" font-size="5" fill="#777">เมนเบรกเกอร์โซลาร์</text>
+
+      <!-- Wire MCCB to Solar kWh Meter -->
+      <line x1="660" y1="300" x2="730" y2="300" stroke="#000" stroke-width="2"/>
+
+      <!-- Solar Generation Meter -->
+      <use href="#meter" x="730" y="280" width="40" height="40"/>
+      <text x="750" y="332" text-anchor="middle" font-size="6.5" font-weight="600">Solar kWh</text>
+      <text x="750" y="342" text-anchor="middle" font-size="5.5" fill="#555">มิเตอร์ผลิตไฟฟ้า</text>
+      <text x="750" y="352" text-anchor="middle" font-size="5" fill="#555">Generation Meter</text>
+
+      <!-- Wire Meter to AC Isolator -->
+      <line x1="770" y1="300" x2="840" y2="300" stroke="#000" stroke-width="2"/>
+
+      <!-- Emergency AC Isolator / Disconnect Switch -->
+      <use href="#isolator" x="840" y="280" width="30" height="40"/>
+      <text x="855" y="332" text-anchor="middle" font-size="6.5" font-weight="600">AC Isolator</text>
+      <text x="855" y="342" text-anchor="middle" font-size="5.5" fill="#555">สวิตช์ตัดวงจร</text>
+      <text x="855" y="352" text-anchor="middle" font-size="5" fill="#c00">Emergency Disconnect</text>
+
+      <!-- Wire to Existing MDB -->
+      <line x1="870" y1="300" x2="960" y2="300" stroke="#000" stroke-width="2"/>
+      <text x="915" y="292" text-anchor="middle" font-size="5.5" fill="#00c">3P+N+PE</text>
+      <text x="915" y="282" text-anchor="middle" font-size="5.5" fill="#00c">400V 50Hz</text>
+
+      <!-- Existing MDB -->
+      <rect x="960" y="260" width="80" height="80" fill="none" stroke="#000" stroke-width="2" rx="3"/>
+      <rect x="963" y="263" width="74" height="74" fill="none" stroke="#000" stroke-width="0.5" rx="2" stroke-dasharray="3,2"/>
+      <text x="1000" y="295" text-anchor="middle" font-size="8" font-weight="700">MDB</text>
+      <text x="1000" y="308" text-anchor="middle" font-size="6" fill="#555">ตู้เมนไฟฟ้า</text>
+      <text x="1000" y="320" text-anchor="middle" font-size="5.5" fill="#555">Main Distribution</text>
+      <text x="1000" y="330" text-anchor="middle" font-size="5.5" fill="#555">Board (Existing)</text>
+      <!-- Factory loads arrow -->
+      <line x1="1000" y1="340" x2="1000" y2="380" stroke="#000" stroke-width="1.5"/>
+      <polygon points="993,375 1007,375 1000,385" fill="#000"/>
+      <text x="1000" y="398" text-anchor="middle" font-size="7" font-weight="600">Factory Loads</text>
+      <text x="1000" y="408" text-anchor="middle" font-size="5.5" fill="#555">โหลดของโรงงาน</text>
+
+      <!-- Ground on MDB -->
+      <use href="#ground" x="988" y="415" width="24" height="16"/>
+
+      <!-- Wire MDB to PEA Meter -->
+      <line x1="1040" y1="300" x2="1130" y2="300" stroke="#000" stroke-width="2"/>
+
+      <!-- CT/PT Metering -->
+      <circle cx="1090" cy="290" r="8" fill="none" stroke="#000" stroke-width="1"/>
+      <text x="1090" y="293" text-anchor="middle" font-size="6">CT</text>
+      <circle cx="1110" cy="290" r="8" fill="none" stroke="#000" stroke-width="1"/>
+      <text x="1110" y="293" text-anchor="middle" font-size="6">CT</text>
+      <text x="1100" y="276" text-anchor="middle" font-size="5" fill="#555">CT/PT</text>
+
+      <!-- PEA Bidirectional Meter -->
+      <use href="#bi-meter" x="1130" y="278" width="44" height="44"/>
+      <text x="1152" y="335" text-anchor="middle" font-size="6.5" font-weight="600">PEA Meter</text>
+      <text x="1152" y="345" text-anchor="middle" font-size="5.5" fill="#555">มิเตอร์ PEA</text>
+      <text x="1152" y="355" text-anchor="middle" font-size="5" fill="#555">Bidirectional</text>
+      <text x="1152" y="365" text-anchor="middle" font-size="5" fill="#555">มิเตอร์สองทิศทาง</text>
+
+      <!-- Wire PEA Meter to Grid -->
+      <line x1="1174" y1="300" x2="1280" y2="300" stroke="#000" stroke-width="2.5"/>
+
+      <!-- PEA Grid Symbol (utility) -->
+      <g transform="translate(1280, 265)">
+        <line x1="0" y1="35" x2="20" y2="35" stroke="#000" stroke-width="2.5"/>
+        <!-- Grid/utility symbol - infinite bus -->
+        <rect x="20" y="10" width="60" height="50" fill="none" stroke="#000" stroke-width="2"/>
+        <text x="50" y="30" text-anchor="middle" font-size="9" font-weight="700">PEA</text>
+        <text x="50" y="42" text-anchor="middle" font-size="7" font-weight="600">GRID</text>
+        <text x="50" y="53" text-anchor="middle" font-size="5.5" fill="#555">การไฟฟ้าส่วนภูมิภาค</text>
+        <!-- Grid lines -->
+        <line x1="25" y1="5" x2="25" y2="65" stroke="#000" stroke-width="1"/>
+        <line x1="75" y1="5" x2="75" y2="65" stroke="#000" stroke-width="1"/>
+        <!-- Lightning bolt -->
+        <text x="50" y="78" text-anchor="middle" font-size="9">⚡</text>
+        <text x="50" y="90" text-anchor="middle" font-size="6" fill="#555">22/33 kV</text>
+      </g>
+
+      <!-- ========== SYSTEM INFO BOX ========== -->
+      <g transform="translate(1280, 20)">
+        <rect x="0" y="0" width="200" height="170" fill="#f8f8f8" stroke="#000" stroke-width="0.8" rx="3"/>
+        <text x="100" y="18" text-anchor="middle" font-size="8" font-weight="700">SYSTEM SPECIFICATIONS</text>
+        <text x="100" y="28" text-anchor="middle" font-size="6" fill="#555">ข้อมูลระบบ</text>
+        <line x1="10" y1="33" x2="190" y2="33" stroke="#000" stroke-width="0.3"/>
+        <text x="10" y="46" font-size="6"><tspan font-weight="600">Total Capacity:</tspan> 300 kWp</text>
+        <text x="10" y="58" font-size="6"><tspan font-weight="600">PV Modules:</tspan> 517 × LONGi Hi-MO X6 580W</text>
+        <text x="10" y="70" font-size="6"><tspan font-weight="600">Inverters:</tspan> 6 × Huawei SUN2000-50KTL-M3</text>
+        <text x="10" y="82" font-size="6"><tspan font-weight="600">AC Output:</tspan> 3P 400V 50Hz</text>
+        <text x="10" y="94" font-size="6"><tspan font-weight="600">Total AC Power:</tspan> 300 kW (6 × 50 kW)</text>
+        <text x="10" y="106" font-size="6"><tspan font-weight="600">Main Breaker:</tspan> MCCB 400A 3P</text>
+        <text x="10" y="118" font-size="6"><tspan font-weight="600">Branch Breaker:</tspan> MCB 80A 3P × 6</text>
+        <text x="10" y="130" font-size="6"><tspan font-weight="600">Protection:</tspan> DC SPD T2 + AC SPD T2</text>
+        <text x="10" y="142" font-size="6"><tspan font-weight="600">Anti-Islanding:</tspan> Built-in (IEC 62116)</text>
+        <text x="10" y="154" font-size="6"><tspan font-weight="600">Grounding:</tspan> TN-S, Equipment + System</text>
+        <text x="10" y="166" font-size="6"><tspan font-weight="600">Est. Generation:</tspan> ~376,000 kWh/year</text>
+      </g>
+
+      <!-- ========== LEGEND ========== -->
+      <g transform="translate(1280, 200)">
+        <rect x="0" y="0" width="200" height="115" fill="#f8f8f8" stroke="#000" stroke-width="0.8" rx="3"/>
+        <text x="100" y="16" text-anchor="middle" font-size="7" font-weight="700">LEGEND / สัญลักษณ์</text>
+        <line x1="10" y1="22" x2="190" y2="22" stroke="#000" stroke-width="0.3"/>
+        
+        <use href="#pv-panel" x="10" y="28" width="25" height="20"/>
+        <text x="42" y="42" font-size="5.5">PV Array / แผงโซลาร์เซลล์</text>
+        
+        <use href="#inverter" x="12" y="50" width="20" height="20"/>
+        <text x="42" y="64" font-size="5.5">Inverter / อินเวอร์เตอร์</text>
+        
+        <use href="#mcb" x="15" y="72" width="15" height="20"/>
+        <text x="42" y="86" font-size="5.5">MCB/MCCB / เบรกเกอร์</text>
+        
+        <use href="#ground" x="12" y="94" width="18" height="12"/>
+        <text x="42" y="104" font-size="5.5">Ground / กราวด์</text>
+      </g>
+
+      <!-- ========== CABLE SCHEDULE note ========== -->
+      <g transform="translate(1280, 420)">
+        <rect x="0" y="0" width="200" height="85" fill="#f8f8f8" stroke="#000" stroke-width="0.8" rx="3"/>
+        <text x="100" y="16" text-anchor="middle" font-size="7" font-weight="700">CABLE SCHEDULE</text>
+        <line x1="10" y1="22" x2="190" y2="22" stroke="#000" stroke-width="0.3"/>
+        <text x="10" y="35" font-size="5.5"><tspan font-weight="600">DC Cable:</tspan> 6mm² PV1-F (TUV certified)</text>
+        <text x="10" y="46" font-size="5.5"><tspan font-weight="600">AC Cable (INV→DB):</tspan> 25mm² NYY 4C</text>
+        <text x="10" y="57" font-size="5.5"><tspan font-weight="600">AC Cable (DB→MDB):</tspan> 185mm² NYY 4C</text>
+        <text x="10" y="68" font-size="5.5"><tspan font-weight="600">Earth Cable:</tspan> 16mm² Green/Yellow</text>
+        <text x="10" y="79" font-size="5.5"><tspan font-weight="600">Conduit:</tspan> IMC / EMT as applicable</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Notes Block -->
+  <div class="notes-block">
+    <h4>NOTES / หมายเหตุ</h4>
+    <ol style="padding-left:4mm;">
+      <li>All equipment shall comply with PEA regulations and Thai Industrial Standards (TIS).</li>
+      <li>อุปกรณ์ทั้งหมดต้องเป็นไปตามมาตรฐาน กฟภ. และ มอก.</li>
+      <li>Anti-islanding protection per IEC 62116 is built into Huawei inverters.</li>
+      <li>ระบบป้องกันการจ่ายไฟย้อนกลับ (Anti-Islanding) ในตัวอินเวอร์เตอร์ Huawei</li>
+      <li>All DC cables shall be UV-resistant PV1-F type, TUV certified.</li>
+      <li>Emergency disconnect switch must be accessible at all times.</li>
+      <li>สวิตช์ตัดวงจรฉุกเฉินต้องสามารถเข้าถึงได้ตลอดเวลา</li>
+      <li>Grounding system: TN-S, ground resistance ≤ 5Ω per PEA requirements.</li>
+      <li>This diagram is for PEA application purposes. Detailed wiring diagrams provided separately.</li>
+    </ol>
+  </div>
+
+  <!-- Title Block -->
+  <div class="title-block">
+    <div class="company">
+      <div class="name">TM ENERGY CO., LTD.</div>
+      <div class="sub">บริษัท ทีเอ็ม เอ็นเนอร์ยี่ จำกัด — Solar Energy Solutions</div>
+    </div>
+    <div class="cell">
+      <span class="label">Project / โครงการ</span>
+      <span class="value">300 kWp Rooftop Solar PV — [ชื่อโรงงาน]</span>
+    </div>
+    <div class="cell">
+      <span class="label">Location / สถานที่</span>
+      <span class="value">[ที่อยู่ / Address]</span>
+    </div>
+    <div class="cell">
+      <span class="label">Drawing No. / เลขที่แบบ</span>
+      <span class="value">TM-SLD-2026-001</span>
+    </div>
+    <div class="cell">
+      <span class="label">Revision / แก้ไขครั้งที่</span>
+      <span class="value">Rev. 0</span>
+    </div>
+    <div class="cell">
+      <span class="label">Date / วันที่</span>
+      <span class="value">March 2026</span>
+    </div>
+    <div class="cell">
+      <span class="label">Scale / มาตราส่วน</span>
+      <span class="value">N.T.S.</span>
+    </div>
+    <div class="cell">
+      <span class="label">Drawn By / ผู้เขียน</span>
+      <span class="value">[Engineer Name / วศ.____]</span>
+    </div>
+    <div class="cell">
+      <span class="label">Approved / อนุมัติ</span>
+      <span class="value">[Approved By / ผู้อนุมัติ]</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
