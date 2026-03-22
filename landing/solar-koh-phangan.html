@@ -20,6 +20,10 @@
   <!-- Facebook Pixel Placeholder -->
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','XXXXXXXXXXXXXXXX');fbq('track','PageView');</script>
 
+  <!-- Leaflet.js -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -588,8 +592,116 @@
     body.th .faq-q [data-lang="th"],
     body.th .faq-a-inner [data-lang="th"] { display: block; }
 
+    /* ===== MAP SECTION ===== */
+    .map-section {
+      background: var(--navy-light);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .map-section h2 {
+      font-size: 1.4rem;
+      text-align: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .map-section .sub {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.88rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #roof-map {
+      width: 100%;
+      height: 400px;
+      border-radius: 14px;
+      border: 2px solid rgba(255,255,255,0.08);
+      z-index: 1;
+    }
+
+    .map-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .map-toggle-layer {
+      background: var(--navy-card);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      color: var(--gray-light);
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .map-toggle-layer:hover,
+    .map-toggle-layer.active {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .map-pin-info {
+      display: none;
+      background: var(--navy-card);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      border: 1px solid rgba(0,214,143,0.2);
+    }
+
+    .map-pin-info.visible { display: block; }
+
+    .pin-detail {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      font-size: 0.88rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .pin-detail:last-child { border-bottom: none; }
+    .pin-detail .pin-label { color: var(--gray); }
+    .pin-detail .pin-value { color: var(--green); font-weight: 600; }
+
+    .btn-quote-location {
+      display: none;
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--green);
+      color: var(--navy);
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+
+    .btn-quote-location.visible { display: block; }
+    .btn-quote-location:hover { background: var(--green-hover); }
+
+    .map-hint {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.8rem;
+      margin-top: 0.75rem;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
+      #roof-map { height: 300px; }
+      .map-section { padding: 1.5rem 1rem; }
       .form-grid { grid-template-columns: 1fr; }
       .form-grid .full { grid-column: 1; }
       .proof-grid { gap: 1.5rem; }
@@ -686,6 +798,60 @@
       </div>
     </div>
   </div>
+
+  <!-- PIN YOUR ROOF MAP -->
+  <section id="pin-roof">
+    <div class="container">
+      <div class="map-section">
+        <h2>
+          <span data-lang="en">📍 Pin Your Roof</span>
+          <span data-lang="th">📍 ปักหมุดหลังคาของคุณ</span>
+        </h2>
+        <p class="sub">
+          <span data-lang="en">Click the map to mark your property — we'll include the location in your quote</span>
+          <span data-lang="th">คลิกบนแผนที่เพื่อระบุตำแหน่งอสังหาริมทรัพย์ของคุณ — เราจะรวมตำแหน่งในใบเสนอราคา</span>
+        </p>
+
+        <div id="roof-map"></div>
+
+        <div class="map-controls">
+          <button class="map-toggle-layer" id="toggleSatellite" onclick="toggleMapLayer()">
+            <span data-lang="en">🛰️ Satellite View</span>
+            <span data-lang="th">🛰️ มุมมองดาวเทียม</span>
+          </button>
+          <p class="map-hint">
+            <span data-lang="en">Tap/click to drop pin • Drag to adjust</span>
+            <span data-lang="th">แตะ/คลิกเพื่อปักหมุด • ลากเพื่อปรับตำแหน่ง</span>
+          </p>
+        </div>
+
+        <div class="map-pin-info" id="pinInfo">
+          <div class="pin-detail">
+            <span class="pin-label">
+              <span data-lang="en">Coordinates</span>
+              <span data-lang="th">พิกัด</span>
+            </span>
+            <span class="pin-value" id="pinCoords">—</span>
+          </div>
+          <div class="pin-detail">
+            <span class="pin-label">
+              <span data-lang="en">Address</span>
+              <span data-lang="th">ที่อยู่</span>
+            </span>
+            <span class="pin-value" id="pinAddress">
+              <span data-lang="en">Looking up...</span>
+              <span data-lang="th">กำลังค้นหา...</span>
+            </span>
+          </div>
+        </div>
+
+        <button class="btn-quote-location" id="btnQuoteLocation" onclick="scrollToQuoteWithLocation()">
+          <span data-lang="en">Get Quote for This Location →</span>
+          <span data-lang="th">ขอใบเสนอราคาสำหรับตำแหน่งนี้ →</span>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- PRICING -->
   <section id="pricing">
@@ -883,7 +1049,14 @@
           <span data-lang="th">เราจะติดต่อกลับภายใน 24 ชั่วโมงพร้อมข้อเสนอที่ปรับให้เหมาะกับคุณ</span>
         </p>
 
+        <div id="locationBadge" style="display:none; text-align:center; margin-bottom:1rem; padding:0.5rem 1rem; background:rgba(0,214,143,0.1); border:1px solid rgba(0,214,143,0.25); border-radius:10px; font-size:0.85rem; color:var(--green);">
+          📍 <span id="locationBadgeText"></span>
+        </div>
+
         <form id="leadForm" onsubmit="submitForm(event)">
+          <input type="hidden" name="lat" id="hiddenLat">
+          <input type="hidden" name="lng" id="hiddenLng">
+          <input type="hidden" name="address" id="hiddenAddress">
           <div class="form-grid">
             <div class="form-group full">
               <label>
@@ -987,6 +1160,103 @@
       if (!wasOpen) item.classList.add('open');
     }
 
+    // ===== MAP =====
+    const SUPABASE_URL = 'https://trvgpgpsqvvdsudpgwpm.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRydmdwZ3BzcXZ2ZHNzdWRwZ3dwbSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzczMzkxNzkyLCJleHAiOjIwODg5Njc3OTJ9.iRx9JiEo6dZL8K5sMUKLS8Sbi5QEZ_BSXvWI9rgTENw';
+
+    // Tile layers
+    const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    });
+    const satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '© Esri'
+    });
+
+    // Init map
+    const map = L.map('roof-map', { layers: [osmLayer] }).setView([9.7500, 100.0000], 13);
+    let currentLayer = 'osm';
+    let marker = null;
+
+    function toggleMapLayer() {
+      const btn = document.getElementById('toggleSatellite');
+      if (currentLayer === 'osm') {
+        map.removeLayer(osmLayer);
+        map.addLayer(satLayer);
+        currentLayer = 'sat';
+        btn.classList.add('active');
+      } else {
+        map.removeLayer(satLayer);
+        map.addLayer(osmLayer);
+        currentLayer = 'osm';
+        btn.classList.remove('active');
+      }
+    }
+
+    // Reverse geocode via Nominatim
+    let geocodeTimeout;
+    function reverseGeocode(lat, lng) {
+      clearTimeout(geocodeTimeout);
+      const addrEl = document.getElementById('pinAddress');
+      addrEl.innerHTML = '<span data-lang="en">Looking up...</span><span data-lang="th">กำลังค้นหา...</span>';
+      // Re-apply lang visibility
+      if (document.body.classList.contains('th')) {
+        addrEl.querySelectorAll('[data-lang="en"]').forEach(e => e.style.display = 'none');
+        addrEl.querySelectorAll('[data-lang="th"]').forEach(e => e.style.display = 'initial');
+      }
+
+      geocodeTimeout = setTimeout(() => {
+        fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&zoom=18&addressdetails=1`)
+          .then(r => r.json())
+          .then(data => {
+            const addr = data.display_name || `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+            addrEl.textContent = addr;
+            document.getElementById('hiddenAddress').value = addr;
+          })
+          .catch(() => {
+            const fallback = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+            addrEl.textContent = fallback;
+            document.getElementById('hiddenAddress').value = fallback;
+          });
+      }, 600);
+    }
+
+    function placePin(lat, lng) {
+      if (marker) {
+        marker.setLatLng([lat, lng]);
+      } else {
+        marker = L.marker([lat, lng], { draggable: true }).addTo(map);
+        marker.on('dragend', function () {
+          const pos = marker.getLatLng();
+          updatePinInfo(pos.lat, pos.lng);
+        });
+      }
+      updatePinInfo(lat, lng);
+    }
+
+    function updatePinInfo(lat, lng) {
+      document.getElementById('pinCoords').textContent = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+      document.getElementById('pinInfo').classList.add('visible');
+      document.getElementById('btnQuoteLocation').classList.add('visible');
+      document.getElementById('hiddenLat').value = lat.toFixed(6);
+      document.getElementById('hiddenLng').value = lng.toFixed(6);
+      reverseGeocode(lat, lng);
+    }
+
+    map.on('click', function (e) {
+      placePin(e.latlng.lat, e.latlng.lng);
+    });
+
+    function scrollToQuoteWithLocation() {
+      // Show location badge in form
+      const addr = document.getElementById('hiddenAddress').value;
+      const coords = document.getElementById('pinCoords').textContent;
+      const badge = document.getElementById('locationBadge');
+      document.getElementById('locationBadgeText').textContent = addr || coords;
+      badge.style.display = 'block';
+      // Scroll to form
+      document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+    }
+
     // Form submission
     async function submitForm(e) {
       e.preventDefault();
@@ -995,22 +1265,29 @@
       btn.disabled = true;
       btn.textContent = 'Sending...';
 
+      const notes = [];
+      if (form.property_type.value) notes.push('Property: ' + form.property_type.value);
+      if (form.monthly_bill.value) notes.push('Bill: ฿' + form.monthly_bill.value + '/mo');
+
       const data = {
         name: form.name.value,
         phone: form.phone.value || null,
         email: form.email.value || null,
-        property_type: form.property_type.value || null,
-        monthly_bill: form.monthly_bill.value ? Number(form.monthly_bill.value) : null,
-        source: 'landing-koh-phangan'
+        source: 'landing-koh-phangan',
+        lat: form.lat.value ? parseFloat(form.lat.value) : null,
+        lng: form.lng.value ? parseFloat(form.lng.value) : null,
+        address: form.address.value || null,
+        notes: notes.length ? notes.join(' | ') : null,
+        status: 'new'
       };
 
       try {
-        const res = await fetch('https://ygoiaabzkuvdsyyduvhv.supabase.co/rest/v1/leads', {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/leads', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlnb2lhYWJ6a3V2ZHN5eWR1dmh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2MDM5OTAsImV4cCI6MjA1NzE3OTk5MH0.yPrDMHVTqxMIbFpgXJqDZ0ckWS7PdFWFuBBxGgNtjEQ',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlnb2lhYWJ6a3V2ZHN5eWR1dmh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2MDM5OTAsImV4cCI6MjA1NzE3OTk5MH0.yPrDMHVTqxMIbFpgXJqDZ0ckWS7PdFWFuBBxGgNtjEQ',
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
             'Prefer': 'return=minimal'
           },
           body: JSON.stringify(data)
@@ -1018,8 +1295,8 @@
 
         if (res.ok) {
           form.style.display = 'none';
+          document.getElementById('locationBadge').style.display = 'none';
           document.getElementById('formSuccess').style.display = 'block';
-          // Track conversion
           if (typeof fbq !== 'undefined') fbq('track', 'Lead');
           if (typeof gtag !== 'undefined') gtag('event', 'generate_lead');
         } else {
