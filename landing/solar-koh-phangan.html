@@ -849,6 +849,43 @@
           <span data-lang="en">Get Quote for This Location →</span>
           <span data-lang="th">ขอใบเสนอราคาสำหรับตำแหน่งนี้ →</span>
         </button>
+
+        <!-- Drone Request -->
+        <div style="text-align:center;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);">
+          <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:12px;">
+            <span data-lang="en">🔍 Can't find your roof on the map?</span>
+            <span data-lang="th">🔍 หาหลังคาของคุณไม่เจอบนแผนที่?</span>
+          </p>
+          <button onclick="requestDroneSurvey()" style="background:linear-gradient(135deg,#FF9F43,#F27A1A);color:#fff;border:none;padding:12px 28px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 15px rgba(242,122,26,0.3);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+            <span data-lang="en">🚁 Request Free Drone Survey</span>
+            <span data-lang="th">🚁 ขอสำรวจด้วยโดรนฟรี</span>
+          </button>
+          <p style="color:rgba(255,255,255,0.35);font-size:11px;margin-top:8px;">
+            <span data-lang="en">We'll fly a drone to photograph your roof — no cost, no obligation</span>
+            <span data-lang="th">เราจะบินโดรนถ่ายภาพหลังคาของคุณ — ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด</span>
+          </p>
+        </div>
+
+        <!-- Drone Request Modal -->
+        <div id="droneModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;">
+          <div style="background:#0F1D30;border:1px solid rgba(255,184,0,0.2);border-radius:16px;padding:32px;max-width:420px;width:90%;margin:auto;position:relative;top:50%;transform:translateY(-50%);">
+            <button onclick="closeDroneModal()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:rgba(255,255,255,0.5);font-size:24px;cursor:pointer;">×</button>
+            <h3 style="color:#FF9F43;font-size:20px;font-weight:700;margin-bottom:4px;">🚁 Free Drone Survey</h3>
+            <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:20px;">
+              <span data-lang="en">We'll send a drone to photograph your roof and provide a detailed solar proposal within 48 hours.</span>
+              <span data-lang="th">เราจะส่งโดรนไปถ่ายภาพหลังคาของคุณ และจัดทำข้อเสนอโซลาร์ภายใน 48 ชั่วโมง</span>
+            </p>
+            <form onsubmit="submitDroneRequest(event)">
+              <input type="text" id="droneName" placeholder="Your name / ชื่อของคุณ" required style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:14px;margin-bottom:10px;outline:none;">
+              <input type="tel" id="dronePhone" placeholder="Phone / WhatsApp" required style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:14px;margin-bottom:10px;outline:none;">
+              <input type="text" id="droneLocation" placeholder="Location / area description" style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:14px;margin-bottom:16px;outline:none;">
+              <button type="submit" id="droneSubmitBtn" style="width:100%;background:linear-gradient(135deg,#FF9F43,#F27A1A);color:#fff;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">
+                <span data-lang="en">Request Drone Visit →</span>
+                <span data-lang="th">ขอนัดบินโดรน →</span>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1306,6 +1343,63 @@
         alert('Something went wrong. Please try WhatsApp instead!');
         btn.disabled = false;
         btn.textContent = 'Send My Quote Request →';
+      }
+    }
+
+    // Drone Survey Functions
+    function requestDroneSurvey() {
+      document.getElementById('droneModal').style.display = 'block';
+    }
+    function closeDroneModal() {
+      document.getElementById('droneModal').style.display = 'none';
+    }
+    document.getElementById('droneModal').addEventListener('click', function(e) {
+      if (e.target === this) closeDroneModal();
+    });
+
+    async function submitDroneRequest(e) {
+      e.preventDefault();
+      const btn = document.getElementById('droneSubmitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      const data = {
+        name: document.getElementById('droneName').value,
+        phone: document.getElementById('dronePhone').value || null,
+        source: 'drone-request',
+        address: document.getElementById('droneLocation').value || null,
+        notes: 'DRONE SURVEY REQUEST — customer cannot find roof on satellite map',
+        status: 'new'
+      };
+
+      try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/leads', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          const waLink = 'https://wa.me/66997044944?text=' + encodeURIComponent('Hi TM Energy, I requested a drone survey for my roof at: ' + (data.address || 'Koh Phangan') + '. My name is ' + data.name);
+          document.getElementById('droneModal').querySelector('form').innerHTML = `
+            <div style="text-align:center;padding:20px 0;">
+              <div style="font-size:48px;margin-bottom:12px;">✅</div>
+              <h3 style="color:#00D68F;font-size:18px;margin-bottom:8px;">Request Received!</h3>
+              <p style="color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:16px;">We'll contact you within 24 hours to schedule the drone visit.</p>
+              <a href="${waLink}" target="_blank" style="display:inline-block;background:#25D366;color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">💬 WhatsApp Us Now</a>
+            </div>`;
+          if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'drone_survey' });
+        } else {
+          throw new Error('Failed');
+        }
+      } catch (err) {
+        window.open('https://wa.me/66997044944?text=' + encodeURIComponent('Hi, I need a drone survey for my roof. Name: ' + data.name), '_blank');
+        closeDroneModal();
       }
     }
   </script>
