@@ -28,17 +28,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #0A1628;
-      --navy-light: #0F1D30;
-      --navy-card: #162240;
-      --navy-card-hover: #1A2A4E;
-      --green: #00D68F;
-      --green-hover: #00B377;
-      --green-glow: rgba(0,214,143,0.2);
+      --navy: #0D2137;
+      --navy-light: #132D4A;
+      --navy-card: #162A48;
+      --navy-card-hover: #1A3358;
+      --green: #1A7A5A;
+      --green-hover: #156B4E;
+      --green-glow: rgba(26,122,90,0.15);
+      --gold: #E8A820;
+      --gold-soft: rgba(232,168,32,0.08);
       --white: #FFFFFF;
       --gray: #8B95A5;
       --gray-light: #C5CDD8;
-      --orange: #FF9F43;
+      --orange: #D4845C;
       --blue: #3B82F6;
       --red: #FF6B6B;
     }
@@ -134,8 +136,8 @@
 
     .hero-badge {
       display: inline-block;
-      background: rgba(0,214,143,0.1);
-      border: 1px solid rgba(0,214,143,0.25);
+      background: rgba(26,122,90,0.1);
+      border: 1px solid rgba(26,122,90,0.25);
       color: var(--green);
       padding: 0.35rem 1rem;
       border-radius: 100px;
@@ -249,7 +251,7 @@
     }
 
     .price-card:hover {
-      border-color: rgba(0,214,143,0.3);
+      border-color: rgba(26,122,90,0.3);
       transform: translateY(-3px);
     }
 
@@ -656,7 +658,7 @@
       border-radius: 12px;
       padding: 1rem 1.25rem;
       margin-top: 1rem;
-      border: 1px solid rgba(0,214,143,0.2);
+      border: 1px solid rgba(26,122,90,0.2);
     }
 
     .map-pin-info.visible { display: block; }
@@ -1086,7 +1088,7 @@
           <span data-lang="th">เราจะติดต่อกลับภายใน 24 ชั่วโมงพร้อมข้อเสนอที่ปรับให้เหมาะกับคุณ</span>
         </p>
 
-        <div id="locationBadge" style="display:none; text-align:center; margin-bottom:1rem; padding:0.5rem 1rem; background:rgba(0,214,143,0.1); border:1px solid rgba(0,214,143,0.25); border-radius:10px; font-size:0.85rem; color:var(--green);">
+        <div id="locationBadge" style="display:none; text-align:center; margin-bottom:1rem; padding:0.5rem 1rem; background:rgba(26,122,90,0.1); border:1px solid rgba(26,122,90,0.25); border-radius:10px; font-size:0.85rem; color:var(--green);">
           📍 <span id="locationBadgeText"></span>
         </div>
 
@@ -1389,7 +1391,7 @@
           document.getElementById('droneModal').querySelector('form').innerHTML = `
             <div style="text-align:center;padding:20px 0;">
               <div style="font-size:48px;margin-bottom:12px;">✅</div>
-              <h3 style="color:#00D68F;font-size:18px;margin-bottom:8px;">Request Received!</h3>
+              <h3 style="color:#1A7A5A;font-size:18px;margin-bottom:8px;">Request Received!</h3>
               <p style="color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:16px;">We'll contact you within 24 hours to schedule the drone visit.</p>
               <a href="${waLink}" target="_blank" style="display:inline-block;background:#25D366;color:#fff;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">💬 WhatsApp Us Now</a>
             </div>`;
