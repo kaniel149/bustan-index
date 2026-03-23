@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM Energy — Business Cards</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0D2137;
+  --navy-light: #142d4a;
+  --gold: #E8A820;
+  --green: #1A7A5A;
+  --white: #FFFFFF;
+  --gray-200: #C8CDD4;
+  --gray-400: #8A95A5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #f0f0f0;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  padding: 20px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.page-title strong {
+  color: #555;
+}
+
+.cards-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card-pair {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Card dimensions: 90mm × 55mm at 96dpi ≈ 340px × 208px */
+.card {
+  width: 340px;
+  height: 208px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+/* FRONT */
+.card-front {
+  background: var(--navy);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-front .logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-front .logo-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.card-front .logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1.5px;
+}
+
+.card-front .logo-text span {
+  color: var(--gold);
+}
+
+.card-front .person-info {
+  margin-top: auto;
+}
+
+.card-front .person-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.card-front .person-title {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.card-front .contact-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-front .contact-line {
+  font-size: 10.5px;
+  color: var(--gray-200);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-front .contact-line .icon {
+  width: 14px;
+  color: var(--gold);
+  font-size: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Accent line */
+.card-front::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--green));
+}
+
+/* BACK */
+.card-back {
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 24px;
+  position: relative;
+}
+
+.card-back .logo-circle-lg {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.card-back .tagline {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.card-back .tagline-sub {
+  font-size: 10px;
+  color: var(--gray-400);
+}
+
+.card-back .address {
+  font-size: 9px;
+  color: var(--gray-400);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+.card-back::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--green));
+}
+
+/* Labels */
+.card-label {
+  text-align: center;
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.pair-label {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+
+.pair-label:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Cut marks */
+.card-wrapper {
+  position: relative;
+}
+
+.card-wrapper::before,
+.card-wrapper::after {
+  content: '';
+  position: absolute;
+  background: #ccc;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+  
+  .page-title { color: #aaa; }
+  
+  .card {
+    box-shadow: none;
+    border: 0.5px solid #ddd;
+  }
+  
+  .card-pair {
+    page-break-inside: avoid;
+  }
+
+  /* Print crop marks */
+  .card-wrapper {
+    position: relative;
+  }
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .card-pair {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="page-title">
+  <strong>TM Energy</strong> — Business Cards · 90mm × 55mm · Print-ready
+</div>
+
+<div class="cards-container">
+
+  <!-- Kaniel -->
+  <div class="pair-label">Kaniel Tordjman — CEO & Co-Founder</div>
+  <div class="card-pair">
+    <div>
+      <div class="card-label">Front</div>
+      <div class="card">
+        <div class="card-front">
+          <div class="logo-row">
+            <div class="logo-circle">TM</div>
+            <div class="logo-text"><span>TM</span> ENERGY</div>
+          </div>
+          <div class="person-info">
+            <div class="person-name">Kaniel Tordjman</div>
+            <div class="person-title">CEO & Co-Founder</div>
+            <div class="contact-lines">
+              <div class="contact-line"><span class="icon">✉</span> kaniel@energy-tm.com</div>
+              <div class="contact-line"><span class="icon">☎</span> +66 99-704-4944</div>
+              <div class="contact-line"><span class="icon">⌂</span> energy-tm.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card-label">Back</div>
+      <div class="card">
+        <div class="card-back">
+          <div class="logo-circle-lg">TM</div>
+          <div class="tagline">Solar & EV Solutions</div>
+          <div class="tagline-sub">Koh Phangan, Thailand</div>
+          <div class="address">107/5 Moo 1, Koh Phangan<br>Surat Thani 84280, Thailand</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Yoni -->
+  <div class="pair-label">Yoni — Operations & Development</div>
+  <div class="card-pair">
+    <div>
+      <div class="card-label">Front</div>
+      <div class="card">
+        <div class="card-front">
+          <div class="logo-row">
+            <div class="logo-circle">TM</div>
+            <div class="logo-text"><span>TM</span> ENERGY</div>
+          </div>
+          <div class="person-info">
+            <div class="person-name">Yoni</div>
+            <div class="person-title">Operations & Development</div>
+            <div class="contact-lines">
+              <div class="contact-line"><span class="icon">✉</span> yoni@energy-tm.com</div>
+              <div class="contact-line"><span class="icon">☎</span> +66 __-___-____</div>
+              <div class="contact-line"><span class="icon">⌂</span> energy-tm.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card-label">Back</div>
+      <div class="card">
+        <div class="card-back">
+          <div class="logo-circle-lg">TM</div>
+          <div class="tagline">Solar & EV Solutions</div>
+          <div class="tagline-sub">Koh Phangan, Thailand</div>
+          <div class="address">107/5 Moo 1, Koh Phangan<br>Surat Thani 84280, Thailand</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Omer -->
+  <div class="pair-label">Omer — Business Development</div>
+  <div class="card-pair">
+    <div>
+      <div class="card-label">Front</div>
+      <div class="card">
+        <div class="card-front">
+          <div class="logo-row">
+            <div class="logo-circle">TM</div>
+            <div class="logo-text"><span>TM</span> ENERGY</div>
+          </div>
+          <div class="person-info">
+            <div class="person-name">Omer</div>
+            <div class="person-title">Business Development</div>
+            <div class="contact-lines">
+              <div class="contact-line"><span class="icon">✉</span> omer@energy-tm.com</div>
+              <div class="contact-line"><span class="icon">☎</span> +66 __-___-____</div>
+              <div class="contact-line"><span class="icon">⌂</span> energy-tm.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card-label">Back</div>
+      <div class="card">
+        <div class="card-back">
+          <div class="logo-circle-lg">TM</div>
+          <div class="tagline">Solar & EV Solutions</div>
+          <div class="tagline-sub">Koh Phangan, Thailand</div>
+          <div class="address">107/5 Moo 1, Koh Phangan<br>Surat Thani 84280, Thailand</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="text-align:center;margin-top:32px;padding:16px;color:#999;font-size:12px">
+  <p>Print at 100% scale for correct dimensions (90mm × 55mm)</p>
+  <p style="margin-top:4px">Use Ctrl/Cmd + P → Save as PDF for print-ready output</p>
+</div>
+
+</body>
+</html>
