@@ -630,7 +630,19 @@ function initMap(){
  };
 
  droneLayer.addTo(map);
- L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{'📸 Drone Photos':droneLayer},{position:'topright',collapsed:false}).addTo(map);
+
+ // Drone HD orthomosaic tile layers
+ const droneHDLayer = L.layerGroup();
+ const clusters = ['cluster_A','cluster_B','cluster_C','cluster_D','cluster_E','cluster_F','cluster_G'];
+ clusters.forEach(c=>{
+  const tl = L.tileLayer('../../drone-tiles/'+c+'/{z}/{x}/{y}.png',{
+   minZoom:14, maxZoom:20, opacity:0.9, tms:true,
+   attribution:'TM Energy Drone Survey 2026',
+   bounds: null // auto from tiles
+  });
+  droneHDLayer.addLayer(tl);
+ });
+ L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{'📸 Drone Photos':droneLayer,'🛸 Drone HD':droneHDLayer},{position:'topright',collapsed:false}).addTo(map);
 
  // Use MarkerClusterGroup instead of LayerGroup
  markersLayer=L.markerClusterGroup({
