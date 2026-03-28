@@ -593,7 +593,27 @@ function initMap(){
  const darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
   attribution:'&copy; OSM &copy; CARTO',maxZoom:19
  });
- L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{},{position:'topright',collapsed:false}).addTo(map);
+ // Drone imagery overlay layer
+ const droneLayer = L.layerGroup();
+ fetch('../../drone-imagery/index.json').then(r=>r.json()).then(photos=>{
+  photos.forEach(p=>{
+   const bounds = [p.bounds[0], p.bounds[1]];
+   const overlay = L.imageOverlay('../../drone-imagery/'+p.file, bounds, {opacity:0.85, interactive:true});
+   overlay.on('click',()=>{
+    L.popup().setLatLng([p.lat,p.lng]).setContent(
+     `<div style="min-width:200px"><div class="popup-title">📸 Drone Photo</div>`+
+     `<div class="popup-row">${p.file}</div>`+
+     `<div class="popup-row">📍 ${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}</div>`+
+     `<div class="popup-row">🔺 ${p.alt}m altitude</div>`+
+     `<div class="popup-row">🕐 ${p.dt||''}</div>`+
+     `<div class="popup-btns"><a href="../../drone-imagery/${p.file}" target="_blank" class="popup-btn primary">Full Size</a></div></div>`
+    ).openOn(map);
+   });
+   droneLayer.addLayer(overlay);
+  });
+ }).catch(e=>console.warn('Drone imagery not loaded:',e));
+
+ L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{'📸 Drone Photos':droneLayer},{position:'topright',collapsed:false}).addTo(map);
 
  // Use MarkerClusterGroup instead of LayerGroup
  markersLayer=L.markerClusterGroup({
