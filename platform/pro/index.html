@@ -464,6 +464,7 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://unpkg.com/leaflet-imageoverlay-rotated@0.3.0/Leaflet.ImageOverlay.Rotated.js"></script>
 <script>
 // ==================== CONFIG ====================
 const SUPABASE_URL='https://trvgpgpsqvvdsudpgwpm.supabase.co';
@@ -593,18 +594,22 @@ function initMap(){
  const darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
   attribution:'&copy; OSM &copy; CARTO',maxZoom:19
  });
- // Drone imagery overlay layer
+ // Drone imagery overlay layer (rotated by gimbal yaw)
  const droneLayer = L.layerGroup();
  fetch('../../drone-imagery/index.json').then(r=>r.json()).then(photos=>{
   photos.forEach(p=>{
-   const bounds = [p.bounds[0], p.bounds[1]];
-   const overlay = L.imageOverlay('../../drone-imagery/'+p.file, bounds, {opacity:0.85, interactive:true});
+   const tl = L.latLng(p.topLeft[0], p.topLeft[1]);
+   const tr = L.latLng(p.topRight[0], p.topRight[1]);
+   const bl = L.latLng(p.bottomLeft[0], p.bottomLeft[1]);
+   const overlay = L.imageOverlay.rotated('../../drone-imagery/'+p.file, tl, tr, bl, {opacity:0.75, interactive:true});
    overlay.on('click',()=>{
     L.popup().setLatLng([p.lat,p.lng]).setContent(
      `<div style="min-width:200px"><div class="popup-title">📸 Drone Photo</div>`+
-     `<div class="popup-row">${p.file}</div>`+
+     `<div class="popup-row">${p.file.replace('.webp','')}</div>`+
      `<div class="popup-row">📍 ${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}</div>`+
-     `<div class="popup-row">🔺 ${p.alt}m altitude</div>`+
+     `<div class="popup-row">🔺 ${p.agl}m AGL</div>`+
+     `<div class="popup-row">🧭 Yaw: ${p.yaw}°</div>`+
+     `<div class="popup-row">📐 ${p.groundW}x${p.groundH}m</div>`+
      `<div class="popup-row">🕐 ${p.dt||''}</div>`+
      `<div class="popup-btns"><a href="../../drone-imagery/${p.file}" target="_blank" class="popup-btn primary">Full Size</a></div></div>`
     ).openOn(map);
