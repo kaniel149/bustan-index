@@ -618,6 +618,7 @@ function initMap(){
   });
  }).catch(e=>console.warn('Drone imagery not loaded:',e));
 
+ droneLayer.addTo(map); // Enable drone photos by default
  L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{'📸 Drone Photos':droneLayer},{position:'topright',collapsed:false}).addTo(map);
 
  // Use MarkerClusterGroup instead of LayerGroup
