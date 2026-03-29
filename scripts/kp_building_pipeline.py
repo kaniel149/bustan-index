@@ -41,8 +41,9 @@ from PIL import Image
 # Koh Phangan bounding box: [min_lng, min_lat, max_lng, max_lat]
 BBOX = (99.93, 9.68, 100.07, 9.81)
 
-SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
-SUPABASE_ANON_KEY = os.environ.get("SUPABASE_ANON_KEY", "")
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://trvgpgpsqvvdsudpgwpm.supabase.co")
+SUPABASE_ANON_KEY = os.environ.get("SUPABASE_ANON_KEY",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRydmdwZ3BzcXZ2ZHN1ZHBnd3BtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTE3OTIsImV4cCI6MjA4ODk2Nzc5Mn0.iRx9JiEo6dZL8K5sMUKLS8Sbi5QEZ_BSXvWI9rgTENw")
 
 SCRIPTS_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPTS_DIR / "data"
@@ -896,7 +897,7 @@ def upload_to_supabase(buildings: List[dict], clear_first: bool = False):
         "house": "residential", "residential": "residential", "villa": "villa", "yes": "other"}
     rows = []
     for b in buildings:
-        bt = type_map.get(b.get("building_type", "").lower(), "other")
+        bt = type_map.get((b.get("building_type") or "").lower(), "other")
         rows.append({"name": b.get("name") or f"Building ({b.get('roof_area_sqm', 0):.0f}m2)",
             "lat": b["lat"], "lng": b["lng"], "roof_area_sqm": b.get("roof_area_sqm", 80),
             "building_type": bt, "potential_kwp": b.get("potential_kwp", 0),
