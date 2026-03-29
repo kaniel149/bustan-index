@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
     <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
-      <Title>cluster_A_fullres.tif</Title>
+      <Title>cluster_A.tif</Title>
       <Abstract></Abstract>
       <SRS>EPSG:3857</SRS>
-      <BoundingBox minx="99.99554300000000" miny="9.72778969886400" maxx="100.00181326084744" maxy="9.73064399999999"/>
-      <Origin x="99.99554300000000" y="9.72778969886400"/>
+      <BoundingBox minx="99.99482981539622" miny="9.72695983150473" maxx="99.99830408840978" maxy="9.73000608985299"/>
+      <Origin x="99.99482981539622" y="9.72695983150473"/>
       <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
       <TileSets profile="mercator">
         <TileSet href="15" units-per-pixel="4.77731426696777" order="15"/>
