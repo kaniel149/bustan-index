@@ -631,24 +631,15 @@ function initMap(){
 
  droneLayer.addTo(map);
 
- // Drone HD orthomosaic tile layers
+ // Drone HD orthomosaic tile layers (v2 - XYZ scheme, GCP-corrected ODM)
  const droneHDLayer = L.layerGroup();
- const clusterBounds = {
-  odm_area1: [[9.728007,99.995499],[9.731391,99.998932]],
-  odm_area2: [[9.710411,99.982452],[9.720563,99.988632]],
-  odm_area3: [[9.782821,100.012321],[9.785190,100.014725]],
-  odm_area4: [[9.788235,100.008888],[9.789926,100.010948]],
-  odm_area6: [[9.724285,99.994125],[9.725300,99.995155]]
- };
- Object.entries(clusterBounds).forEach(([c,b])=>{
-  const tl = L.tileLayer('../../drone-tiles/'+c+'/{z}/{x}/{y}.png',{
-   minZoom:14, maxZoom:20, opacity:0.85, tms:true,
-   bounds: L.latLngBounds(b[0],b[1]),
-   errorTileUrl: '',
-   attribution:'TM Energy Drone'
-  });
-  droneHDLayer.addLayer(tl);
+ const droneHDTiles = L.tileLayer('../../drone-tiles/v2/{z}/{x}/{y}.png',{
+  minZoom:15, maxZoom:19, opacity:0.85,
+  bounds: L.latLngBounds([9.7098,99.9829],[9.7900,100.0149]),
+  errorTileUrl: '',
+  attribution:'TM Energy Drone v2'
  });
+ droneHDLayer.addLayer(droneHDTiles);
  L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{'📸 Drone Photos':droneLayer,'🛸 Drone HD':droneHDLayer},{position:'topright',collapsed:false}).addTo(map);
 
  // Use MarkerClusterGroup instead of LayerGroup
