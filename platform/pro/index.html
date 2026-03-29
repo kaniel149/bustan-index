@@ -668,7 +668,7 @@ function renderMap(){
   const poly=b.photos&&Array.isArray(b.photos)&&b.photos.length>=3&&Array.isArray(b.photos[0]);
   let m;
   if(poly){
-   m=L.polygon(b.photos.map(p=>[p[1],p[0]]),{fillColor:color,color:'#fff',weight:1.5,fillOpacity:0.55,className:'roof-poly'});
+   m=L.polygon(b.photos.map(p=>[p[1],p[0]]),{fillColor:color,color:'#fff',weight:1.5,fillOpacity:0.15,className:'roof-poly'});
   } else {
    // Generate approximate roof rectangle from roof_area_sqm
    const area=b.roof_area_sqm||80;
@@ -678,7 +678,7 @@ function renderMap(){
    m=L.polygon([
     [b.lat-latOff,b.lng-lngOff],[b.lat-latOff,b.lng+lngOff],
     [b.lat+latOff,b.lng+lngOff],[b.lat+latOff,b.lng-lngOff]
-   ],{fillColor:color,color:'#fff',weight:1.5,fillOpacity:0.55,className:'roof-poly'});
+   ],{fillColor:color,color:'#fff',weight:1.5,fillOpacity:0.15,className:'roof-poly'});
   }
   m.bindPopup(`
    <div class="popup-title">${esc(b.name||'Unnamed')}</div>
