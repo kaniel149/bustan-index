@@ -594,42 +594,24 @@ function initMap(){
  const darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
   attribution:'&copy; OSM &copy; CARTO',maxZoom:19
  });
- // Drone imagery — show photo markers instead of overlays (more reliable positioning)
+ // Drone Photos — camera markers only (no overlays)
  const droneLayer = L.layerGroup();
  const dronePhotos = [];
  fetch('../../drone-imagery/index.json').then(r=>r.json()).then(photos=>{
   dronePhotos.push(...photos);
   photos.forEach(p=>{
-   // Camera icon marker at GPS location
    const icon = L.divIcon({className:'drone-marker',html:'📸',iconSize:[24,24],iconAnchor:[12,12]});
    const marker = L.marker([p.lat, p.lng], {icon}).on('click',()=>{
-    // Show photo in popup with satellite comparison
     L.popup({maxWidth:400,maxHeight:500}).setLatLng([p.lat,p.lng]).setContent(
      `<div style="text-align:center"><img src="../../drone-imagery/${p.file}" style="max-width:380px;max-height:300px;border-radius:8px;border:2px solid var(--green)"><br>`+
      `<div style="font-size:.8rem;color:#94A3B8;margin:6px 0">${p.file.replace('.webp','')} | ${p.agl}m AGL | ${p.groundW}x${p.groundH}m</div>`+
      `<div style="display:flex;gap:6px;justify-content:center;margin-top:4px">`+
-     `<a href="../../drone-imagery/${p.file}" target="_blank" class="popup-btn primary" style="padding:6px 14px;border-radius:6px;background:#00D68F;color:#000;font-weight:600;font-size:.75rem;text-decoration:none">Full Size</a>`+
-     `<button onclick="toggleDroneOverlay('${p.file}')" class="popup-btn secondary" style="padding:6px 14px;border-radius:6px;background:#111E33;color:#E2E8F0;font-size:.75rem;border:1px solid #1E293B">Toggle Overlay</button></div></div>`
+     `<a href="../../drone-imagery/${p.file}" target="_blank" class="popup-btn primary" style="padding:6px 14px;border-radius:6px;background:#00D68F;color:#000;font-weight:600;font-size:.75rem;text-decoration:none">Full Size</a></div></div>`
     ).openOn(map);
    });
    droneLayer.addLayer(marker);
   });
  }).catch(e=>console.warn('Drone imagery not loaded:',e));
- 
- // Individual overlay toggle
- let activeOverlay = null;
- window.toggleDroneOverlay = function(file) {
-  if (activeOverlay) { map.removeLayer(activeOverlay); activeOverlay=null; }
-  const p = dronePhotos.find(x=>x.file===file);
-  if (!p) return;
-  const tl = L.latLng(p.topLeft[0], p.topLeft[1]);
-  const tr = L.latLng(p.topRight[0], p.topRight[1]);
-  const bl = L.latLng(p.bottomLeft[0], p.bottomLeft[1]);
-  activeOverlay = L.imageOverlay.rotated('../../drone-imagery/'+p.file, tl, tr, bl, {opacity:0.6, interactive:false});
-  activeOverlay.addTo(map);
- };
-
- droneLayer.addTo(map);
 
  // Drone HD orthomosaic tile layers (v2 - XYZ scheme, GCP-corrected ODM)
  const droneHDLayer = L.layerGroup();
