@@ -635,7 +635,10 @@ function initMap(){
  const droneHDLayer = L.layerGroup();
  const clusterBounds = {
   odm_area1: [[9.727915,99.995576],[9.733783,99.999375]],
-  odm_area2: [[9.710161,99.982653],[9.719653,99.988583]]
+  odm_area2: [[9.710161,99.982653],[9.719653,99.988583]],
+  odm_area3: [[9.782703,100.012645],[9.784803,100.014700]],
+  odm_area4: [[9.787901,100.009015],[9.789593,100.010774]],
+  odm_area6: [[9.724191,99.994350],[9.724749,99.994993]]
  };
  Object.entries(clusterBounds).forEach(([c,b])=>{
   const tl = L.tileLayer('../../drone-tiles/'+c+'/{z}/{x}/{y}.png',{
