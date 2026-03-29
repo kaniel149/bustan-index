@@ -664,22 +664,7 @@ function renderMap(){
   if(!b.lat||!b.lng)return;
   const color=GRADE_COLORS[b.potential_grade]||'#6B7280';
   const zone=zones.find(z=>z.id===b.zone_id);
-  // Use polygon if available (stored in photos field), else generate rectangle from roof_area
-  const poly=b.photos&&Array.isArray(b.photos)&&b.photos.length>=3&&Array.isArray(b.photos[0]);
-  let m;
-  if(poly){
-   m=L.polygon(b.photos.map(p=>[p[1],p[0]]),{fillColor:color,color:'#fff',weight:1.5,fillOpacity:0.15,className:'roof-poly'});
-  } else {
-   // Generate approximate roof rectangle from roof_area_sqm
-   const area=b.roof_area_sqm||80;
-   const side=Math.sqrt(area)/2;
-   const latOff=side/111320;
-   const lngOff=side/(111320*Math.cos(b.lat*Math.PI/180));
-   m=L.polygon([
-    [b.lat-latOff,b.lng-lngOff],[b.lat-latOff,b.lng+lngOff],
-    [b.lat+latOff,b.lng+lngOff],[b.lat+latOff,b.lng-lngOff]
-   ],{fillColor:color,color:'#fff',weight:1.5,fillOpacity:0.15,className:'roof-poly'});
-  }
+  let m = L.circleMarker([b.lat,b.lng],{radius:6,fillColor:color,color:'#fff',weight:1.5,fillOpacity:0.8});
   m.bindPopup(`
    <div class="popup-title">${esc(b.name||'Unnamed')}</div>
    <div class="popup-row">Zone: ${esc(zone?.name||'—')}</div>
