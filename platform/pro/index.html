@@ -634,7 +634,7 @@ function initMap(){
  // Drone HD orthomosaic tile layers (v2 - XYZ scheme, GCP-corrected ODM)
  const droneHDLayer = L.layerGroup();
  const droneHDTiles = L.tileLayer('../../drone-tiles/v2/{z}/{x}/{y}.png',{
-  minZoom:15, maxZoom:19, opacity:0.85,
+  minZoom:18, maxZoom:19, opacity:0.85,
   bounds: L.latLngBounds([9.7098,99.9829],[9.7900,100.0149]),
   errorTileUrl: '',
   attribution:'TM Energy Drone v2'
