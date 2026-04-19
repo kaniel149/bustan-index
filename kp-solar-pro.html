@@ -339,6 +339,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
       <button id="btn-heatmap" onclick="toggleHeatmap(this)" title="Toggle heatmap">🔥</button>
       <button id="btn-zones-toggle" onclick="toggleZonesLayer()" title="Toggle drone zones">🛸</button>
       <button id="btn-park-toggle" onclick="toggleParkLayer()" title="Toggle national park">🌳</button>
+      <button id="btn-drone-photos" onclick="toggleDronePhotos(this)" title="Toggle drone photos (27 shots)">📸</button>
+      <button id="btn-drone-hd" onclick="toggleDroneHD(this)" title="Toggle HD orthomosaic">🛩️</button>
     </div>
     <div class="map-legend" id="mapLegend">
       <h5>Priority</h5>
@@ -471,12 +473,112 @@ function resetView() { map.flyTo({center:[100.0291,9.7578],zoom:12.5}); }
 
 map.on('load', () => {
   initMapLayers();
+  initDroneLayers();
   renderBuildings();
   renderZones();
   renderAnalytics();
   updateHeaderStats();
   document.getElementById('loading').classList.add('done');
 });
+
+// ── Drone layers (photos + HD orthomosaic) ──
+let dronePhotos = [];
+let dronePhotosVisible = false;
+let droneHDVisible = false;
+
+async function initDroneLayers() {
+  // 1. HD orthomosaic tile layer
+  map.addSource('drone-hd', {
+    type: 'raster',
+    tiles: [window.location.origin + '/drone-tiles/v2/{z}/{x}/{y}.png'],
+    tileSize: 256,
+    minzoom: 18,
+    maxzoom: 19,
+    bounds: [99.9829, 9.7098, 100.0149, 9.7900],
+    attribution: 'TM Energy Drone v2'
+  });
+  map.addLayer({
+    id: 'drone-hd-layer',
+    type: 'raster',
+    source: 'drone-hd',
+    paint: { 'raster-opacity': 0.85 },
+    layout: { visibility: 'none' }
+  });
+
+  // 2. Drone photo markers — fetch index
+  try {
+    const res = await fetch('drone-imagery/index.json');
+    if (res.ok) {
+      dronePhotos = await res.json();
+      const features = dronePhotos.map((p, i) => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [p.lng, p.lat] },
+        properties: { idx: i, file: p.file, agl: p.agl || '—', w: p.groundW, h: p.groundH }
+      }));
+      map.addSource('drone-photos', { type: 'geojson', data: { type: 'FeatureCollection', features } });
+      map.addLayer({
+        id: 'drone-photos-layer',
+        type: 'circle',
+        source: 'drone-photos',
+        layout: { visibility: 'none' },
+        paint: {
+          'circle-radius': ['interpolate',['linear'],['zoom'],10,5,14,8,18,14],
+          'circle-color': '#00D68F',
+          'circle-stroke-color': '#fff',
+          'circle-stroke-width': 2,
+          'circle-opacity': 0.9
+        }
+      });
+      // Click handler for drone photo popups
+      map.on('click', 'drone-photos-layer', (e) => {
+        const f = e.features[0];
+        const p = dronePhotos[f.properties.idx];
+        const url = 'drone-imagery/' + p.file;
+        const html = `
+          <div style="text-align:center">
+            <img src="${url}" style="max-width:360px;max-height:280px;border-radius:8px;border:2px solid #1A7A5A;display:block;margin:0 auto 6px"/>
+            <div style="font-size:11px;color:#94A3B8;margin:4px 0">${p.file.replace('.webp','')}<br>${p.agl||'?'}m AGL · ${p.groundW||''}×${p.groundH||''}m</div>
+            <a href="${url}" target="_blank" style="display:inline-block;padding:6px 14px;border-radius:6px;background:#E8A820;color:#0D2137;font-weight:700;font-size:12px;text-decoration:none;margin-top:6px">📷 Full Size</a>
+          </div>`;
+        new maplibregl.Popup({ maxWidth: '400px' }).setLngLat(e.lngLat).setHTML(html).addTo(map);
+      });
+      map.on('mouseenter', 'drone-photos-layer', () => map.getCanvas().style.cursor = 'pointer');
+      map.on('mouseleave', 'drone-photos-layer', () => map.getCanvas().style.cursor = '');
+      console.log(`✓ Loaded ${dronePhotos.length} drone photos`);
+    }
+  } catch (e) {
+    console.warn('Drone imagery not loaded:', e);
+  }
+}
+
+function toggleDronePhotos(btn) {
+  dronePhotosVisible = !dronePhotosVisible;
+  const vis = dronePhotosVisible ? 'visible' : 'none';
+  if (map.getLayer('drone-photos-layer')) {
+    map.setLayoutProperty('drone-photos-layer', 'visibility', vis);
+  }
+  btn.classList.toggle('active', dronePhotosVisible);
+  if (dronePhotosVisible && dronePhotos.length > 0) {
+    // Fly to the drone photos area on first enable
+    const bounds = dronePhotos.reduce((acc, p) => {
+      acc.extend([p.lng, p.lat]); return acc;
+    }, new maplibregl.LngLatBounds([dronePhotos[0].lng, dronePhotos[0].lat], [dronePhotos[0].lng, dronePhotos[0].lat]));
+    map.fitBounds(bounds, { padding: 60, maxZoom: 16 });
+  }
+}
+
+function toggleDroneHD(btn) {
+  droneHDVisible = !droneHDVisible;
+  const vis = droneHDVisible ? 'visible' : 'none';
+  if (map.getLayer('drone-hd-layer')) {
+    map.setLayoutProperty('drone-hd-layer', 'visibility', vis);
+  }
+  btn.classList.toggle('active', droneHDVisible);
+  if (droneHDVisible) {
+    // Fly to the HD tile coverage area
+    map.fitBounds([[99.9829, 9.7098], [100.0149, 9.7900]], { padding: 40, maxZoom: 19 });
+  }
+}
 
 function initMapLayers() {
   const features = buildings.map(b => ({
