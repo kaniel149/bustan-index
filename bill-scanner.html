@@ -644,5 +644,70 @@ function sendWhatsApp() {
   ✨ Create Proposal (v2)
 </a>
 
+
+<!-- v2: Admin CTA after quote -->
+<style>
+.admin-cta-wrap { margin-top:20px; padding:20px; background:linear-gradient(135deg,rgba(26,122,90,.15),rgba(232,168,32,.1)); border:1px solid rgba(26,122,90,.3); border-radius:12px; }
+.admin-cta-title { color:#1A7A5A; font-weight:800; font-size:15px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.admin-cta-desc { color:rgba(255,255,255,.7); font-size:13px; margin-bottom:14px; line-height:1.6; }
+.admin-cta-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; background:#1A7A5A; color:white; border:none; border-radius:100px; font-weight:800; font-size:14px; text-decoration:none; cursor:pointer; transition:transform .15s; }
+.admin-cta-btn:hover { transform:translateY(-1px); background:#11604B; text-decoration:none; }
+</style>
+<div class="admin-cta-wrap" id="adminCtaWrap" style="display:none">
+  <div class="admin-cta-title">✨ Ready to create the real proposal?</div>
+  <div class="admin-cta-desc">Send a password-protected proposal with digital signature directly to this customer. All the numbers above will be pre-filled.</div>
+  <a id="adminCtaBtn" href="#" target="_blank" class="admin-cta-btn">
+    🎯 Create Branded Proposal (Admin) →
+  </a>
+</div>
+<script>
+(function(){
+  // Hook into existing quote generation: look for a window.__billScanner quote state
+  // Simpler approach: watch for changes to any .quote-result or similar visible element
+  function buildAdminUrl() {
+    try {
+      // Attempt to read from common input IDs if they exist
+      const monthlyBill = document.getElementById('monthly-bill')?.value
+                       || document.getElementById('monthlyBill')?.value
+                       || document.getElementById('bill-amount')?.value
+                       || '';
+      const monthlyKwh = document.getElementById('monthly-kwh')?.value
+                      || document.getElementById('monthlyKwh')?.value
+                      || document.getElementById('consumption')?.value
+                      || '';
+      // Estimate system size: monthly_kwh / (PSH 5.0 * 30 * 0.78) if both available
+      let estKwp = '';
+      if (monthlyKwh) {
+        estKwp = (Number(monthlyKwh) / (5.0 * 30 * 0.78)).toFixed(2);
+      }
+      const params = new URLSearchParams();
+      if (monthlyBill) params.set('monthly_bill_thb', monthlyBill);
+      if (monthlyKwh) params.set('monthly_kwh', monthlyKwh);
+      if (estKwp) params.set('system_size_kwp', estKwp);
+      return 'https://energy-tm.com/admin/proposals/new?' + params.toString();
+    } catch(e) {
+      return 'https://energy-tm.com/admin/proposals/new';
+    }
+  }
+  // Show CTA whenever any element with "quote" or "result" class becomes visible
+  function showCta() {
+    const wrap = document.getElementById('adminCtaWrap');
+    const btn = document.getElementById('adminCtaBtn');
+    if (!wrap || !btn) return;
+    btn.href = buildAdminUrl();
+    wrap.style.display = 'block';
+  }
+  // Observe DOM changes for quote-like sections appearing
+  const observer = new MutationObserver(() => {
+    const indicators = document.querySelectorAll('[class*="quote"],[class*="result"],[id*="savings"]');
+    const anyVisible = Array.from(indicators).some(el => el.offsetParent !== null && el.textContent && el.textContent.trim().length > 10);
+    if (anyVisible) showCta();
+  });
+  observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+  // Also expose a manual trigger
+  window.tmShowAdminCta = showCta;
+})();
+</script>
+
 </body>
 </html>
