@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM Energy — Roof Scanner Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="roof-scanner/app.css">
+<script src="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.js"></script>
+</head>
+<body>
+<script src="auth.js"></script>
+
+<div class="loading-overlay">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">Loading 2,467 buildings...</div>
+</div>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h1>☀️ TM Energy — Roof Scanner Pro</h1>
+    <p id="subtitle">2,467 buildings | 60.2 MWp | 1,576 identified</p>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-box" onclick="setFilter('all')"><div class="stat-val" id="s-total">2,467</div><div class="stat-lbl">Buildings</div></div>
+    <div class="stat-box" onclick="setFilter('A')"><div class="stat-val" id="s-a">-</div><div class="stat-lbl">Grade A</div></div>
+    <div class="stat-box"><div class="stat-val" id="s-kwp">60.2</div><div class="stat-lbl">MWp</div></div>
+    <div class="stat-box"><div class="stat-val" id="s-named">-</div><div class="stat-lbl">Identified</div></div>
+    <div class="stat-box" onclick="togglePipeline()"><div class="stat-val" id="s-pip" style="color:var(--reef)">64</div><div class="stat-lbl">Pipeline</div></div>
+  </div>
+  <div class="tab-row">
+    <button class="tab-btn on" onclick="showTab('list',this)">📋 List</button>
+    <button class="tab-btn" onclick="showTab('analytics',this)">📊 Analytics</button>
+  </div>
+
+  <div class="sidebar-list-content">
+    <div class="filters" id="filtersRow">
+      <div class="filter-group">
+        <span class="filter-label">Priority</span>
+        <div class="filter-chips">
+          <button class="fbtn on" data-f="all">All</button>
+          <button class="fbtn" data-f="A">🥇 A</button>
+          <button class="fbtn" data-f="B">🥈 B</button>
+          <button class="fbtn" data-f="C">🥉 C</button>
+          <button class="fbtn" data-f="D">D</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Type</span>
+        <div class="filter-chips">
+          <button class="fbtn" data-cat="hospitality">🏨</button>
+          <button class="fbtn" data-cat="food_beverage">🍽️</button>
+          <button class="fbtn" data-cat="retail">🛒</button>
+          <button class="fbtn" data-cat="residential">🏠</button>
+          <button class="fbtn" data-cat="bungalow">🛖</button>
+          <button class="fbtn" data-cat="healthcare">🏥</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Size</span>
+        <div class="filter-chips">
+          <button class="fbtn" data-sz="100">100m²+</button>
+          <button class="fbtn" data-sz="500">500m²+</button>
+        </div>
+        <span class="filter-count">0</span>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Contact</span>
+        <div class="filter-chips">
+          <button class="fbtn" data-sp="phone">📞</button>
+          <button class="fbtn" data-sp="email">✉️</button>
+          <button class="fbtn" data-sp="pipeline">🟢 Pipeline</button>
+        </div>
+      </div>
+    </div>
+    <div class="search-sort-row">
+      <input type="text" id="search" placeholder="🔍 Search name, category, phone...">
+      <select id="sortSelect">
+        <option value="score">Score ↓</option>
+        <option value="area">Area ↓</option>
+        <option value="kwp">kWp ↓</option>
+        <option value="savings">Savings ↓</option>
+        <option value="name">Name A-Z</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sidebar-body">
+    <div class="building-list" id="buildingList"></div>
+    <div class="analytics" id="analyticsPanel"></div>
+    <div class="detail-view">
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <div class="compare-bar">
+    <span>Compare: <span class="compare-count">0</span>/5 selected</span>
+    <button class="compare-go" onclick="showComparison()">Compare</button>
+    <button class="compare-clear" onclick="clearCompare()">Clear</button>
+  </div>
+  <div class="export-bar">
+    <button class="xbtn" onclick="exportCSV()">📥 CSV</button>
+    <button class="xbtn" onclick="exportTop()">📋 Top 50</button>
+    <button class="xbtn" onclick="exportPipeline()">🟢 Pipeline</button>
+    <button class="xbtn" onclick="startCompare()">⚖️ Compare</button>
+  </div>
+</div>
+
+<div class="map-container">
+  <div id="map"></div>
+  <div class="map-error">
+    <p>Map failed to load</p>
+    <button onclick="retryMap()">Retry</button>
+  </div>
+  <div class="htgl">
+    <button class="htb on" onclick="setStyle('sat',this)">🛰️</button>
+    <button class="htb" onclick="setStyle('str',this)">🗺️</button>
+    <button class="htb" onclick="toggleHeat(this)">🔥</button>
+    <button class="htb" onclick="togglePolygons(this)">🏗️</button>
+    <button class="htb" onclick="toggleClusters(this)">⚡</button>
+  </div>
+  <div class="map-ctrl">
+    <button class="mbtn" onclick="map.zoomIn()">+</button>
+    <button class="mbtn" onclick="map.zoomOut()">−</button>
+    <button class="mbtn" onclick="resetView()">⌂</button>
+  </div>
+  <div class="legend">
+    <div class="lg-i"><div class="lg-d" style="background:#E8A820"></div>A — High priority</div>
+    <div class="lg-i"><div class="lg-d" style="background:#2ED89A"></div>B — Medium</div>
+    <div class="lg-i"><div class="lg-d" style="background:#6496FF"></div>C — Low</div>
+    <div class="lg-i"><div class="lg-d" style="background:#666"></div>D — Small</div>
+    <div class="lg-i"><div class="lg-d" style="background:#1A7A5A;border:2px solid #2ED89A"></div>Pipeline</div>
+  </div>
+</div>
+
+<div class="compare-panel"></div>
+
+<div class="kbd-hint">
+  <span><kbd>Esc</kbd> Close</span>
+  <span><kbd>/</kbd> Search</span>
+  <span><kbd>H</kbd> Heatmap</span>
+  <span><kbd>P</kbd> Polygons</span>
+  <span><kbd>R</kbd> Reset</span>
+  <span><kbd>C</kbd> Compare</span>
+</div>
+
+<script src="roof-scanner/buildings_data.js"></script>
+<script src="roof-scanner/app.js"></script>
+<!-- ADMIN CTA snippet: floating button → /admin/proposals/new -->
+<style>
+.tm-admin-cta {
+  position: fixed; bottom: 20px; left: 20px; z-index: 9998;
+  background: linear-gradient(135deg, #E8A820 0%, #E85D3A 100%);
+  color: #0D2137; padding: 14px 24px; border-radius: 100px;
+  font-family: 'Heebo', 'Inter', system-ui, sans-serif;
+  font-weight: 800; font-size: 14px; text-decoration: none;
+  box-shadow: 0 6px 24px rgba(232,168,32,.35);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform .15s, box-shadow .15s; direction: rtl;
+}
+.tm-admin-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(232,168,32,.5); text-decoration: none; }
+@media (max-width: 600px) { .tm-admin-cta { bottom: 16px; left: 16px; padding: 12px 18px; font-size: 13px; } }
+</style>
+<a class="tm-admin-cta" href="https://energy-tm.com/admin/proposals/new" target="_blank" title="Create a branded proposal with password gate + digital signature">
+  ✨ Create Proposal (v2)
+</a>
+
+</body>
+</html>

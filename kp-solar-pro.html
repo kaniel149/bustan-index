@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TM Energy — KP Solar Pro</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>TM Energy — KP Solar Pro v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Heebo:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.css">
 <script src="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.js"></script>
 <style>
@@ -18,7 +18,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
 .logo-mark{width:32px;height:32px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:var(--navy)}
 .logo-text{font-size:16px;font-weight:700}.logo-text span{color:var(--gold)}
 .header-stats{display:flex;gap:20px}
-.hstat{text-align:center}
+.hstat{text-align:center;cursor:pointer;padding:2px 6px;border-radius:6px;transition:background .15s}
+.hstat:hover{background:rgba(232,168,32,0.12)}
+.hstat.active-filter{background:rgba(232,168,32,0.18);outline:1px solid var(--gold)}
 .hstat-val{font-size:18px;font-weight:800;color:var(--gold)}
 .hstat-label{font-size:10px;opacity:0.6;text-transform:uppercase;letter-spacing:1px}
 
@@ -34,9 +36,22 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
 
 /* Filters */
 .filters-bar{padding:8px 12px;border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.filter-section-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;opacity:0.4;margin-right:2px;white-space:nowrap}
 .fbtn{background:var(--navy2);border:1px solid var(--border);color:rgba(255,255,255,0.7);padding:4px 10px;border-radius:14px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .15s}
 .fbtn:hover{border-color:var(--gold);color:#fff}
 .fbtn.on{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:600}
+/* Grade-specific chip colors when active */
+.fbtn.on[data-pr="A"]{background:#E8A820;color:var(--navy)}
+.fbtn.on[data-pr="B"]{background:#2ED89A;color:var(--navy)}
+.fbtn.on[data-pr="C"]{background:#6496FF;color:#fff}
+.fbtn.on[data-pr="D"]{background:#666;color:#fff}
+/* Tier chips */
+.fbtn.on[data-tier="high"]{background:#E85D3A;color:#fff}
+.fbtn.on[data-tier="medium"]{background:#E8A820;color:var(--navy)}
+.fbtn.on[data-tier="low"]{background:#6496FF;color:#fff}
+
+.filters-row{padding:4px 12px;border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+
 .search-row{padding:8px 12px;border-bottom:1px solid var(--border);display:flex;gap:6px}
 .search-row input{flex:1;background:var(--navy2);border:1px solid var(--border);color:#fff;padding:6px 10px;border-radius:6px;font-size:12px;font-family:inherit;outline:none}
 .search-row input:focus{border-color:var(--gold)}
@@ -88,12 +103,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
 .analytics-panel{padding:16px}
 .analytics-panel h3{color:var(--gold);font-size:14px;margin-bottom:12px}
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
-.stat-card{background:var(--navy2);border-radius:8px;padding:12px;text-align:center}
+.stat-card{background:var(--navy2);border-radius:8px;padding:12px;text-align:center;cursor:pointer;transition:background .15s}
+.stat-card:hover{background:rgba(232,168,32,0.08)}
 .stat-card .sv{font-size:20px;font-weight:800;color:var(--gold)}
 .stat-card .sl{font-size:10px;opacity:0.5;text-transform:uppercase;margin-top:2px}
 .chart-section{margin-bottom:16px}
 .chart-section h4{font-size:12px;color:var(--gold);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;font-size:11px}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;font-size:11px;cursor:pointer;border-radius:4px;padding:2px 4px;transition:background .12s}
+.bar-row:hover{background:rgba(232,168,32,0.08)}
 .bar-label{width:70px;text-align:right;opacity:0.6;flex-shrink:0}
 .bar-track{flex:1;height:16px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden}
 .bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:6px;font-size:9px;font-weight:600;transition:width .5s}
@@ -120,10 +137,16 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
 .style-toggle button.active{background:var(--gold);color:var(--navy)}
 
 /* Legend */
-.map-legend{position:absolute;bottom:12px;left:12px;background:rgba(13,33,55,0.92);border:1px solid var(--border);border-radius:8px;padding:10px 14px;z-index:10;font-size:11px}
+.map-legend{position:absolute;bottom:12px;left:12px;background:rgba(13,33,55,0.92);border:1px solid var(--border);border-radius:8px;padding:10px 14px;z-index:10;font-size:11px;transition:all .3s}
 .map-legend h5{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
 .lg-i{display:flex;align-items:center;gap:6px;margin-bottom:3px}
 .lg-d{width:10px;height:10px;border-radius:50%}
+
+/* Heatmap legend (hidden by default) */
+.legend-heatmap{display:none}
+.legend-normal{display:block}
+.heatmap-active .legend-heatmap{display:block}
+.heatmap-active .legend-normal{display:none}
 
 /* Popup */
 .maplibregl-popup-content{background:var(--navy)!important;color:#fff!important;border:1px solid var(--gold)!important;border-radius:10px!important;padding:16px!important;min-width:300px;max-width:360px;box-shadow:0 8px 30px rgba(0,0,0,0.5)!important}
@@ -172,6 +195,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading p{margin-top:12px;font-size:13px;opacity:0.6}
 
+/* Active filter badge on header stat */
+.hstat-filter-dot{display:none;width:6px;height:6px;background:var(--gold);border-radius:50%;margin:1px auto 0}
+.hstat.active-filter .hstat-filter-dot{display:block}
+
 /* Mobile */
 @media(max-width:768px){
   .sidebar{width:100%;min-width:unset;position:fixed;bottom:0;left:0;right:0;height:50vh;z-index:500;border-right:none;border-top:2px solid var(--gold)}
@@ -197,14 +224,34 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
 <div class="header">
   <div class="logo">
     <div class="logo-mark">TM</div>
-    <div class="logo-text"><span>KP Solar</span> Pro</div>
+    <div class="logo-text"><span>KP Solar</span> Pro <span style="font-size:10px;opacity:0.5">v2</span></div>
   </div>
   <div class="header-stats">
-    <div class="hstat"><div class="hstat-val" id="h-buildings">0</div><div class="hstat-label">Buildings</div></div>
-    <div class="hstat"><div class="hstat-val" id="h-mwp">0</div><div class="hstat-label">MWp</div></div>
-    <div class="hstat"><div class="hstat-val" id="h-value">0</div><div class="hstat-label">฿M Value</div></div>
-    <div class="hstat"><div class="hstat-val" id="h-pipeline">0</div><div class="hstat-label">Pipeline</div></div>
-    <div class="hstat"><div class="hstat-val" id="h-scanned">0/8</div><div class="hstat-label">Zones</div></div>
+    <div class="hstat" id="hstat-buildings" onclick="clearHeaderFilter()" title="Click to clear filters">
+      <div class="hstat-val" id="h-buildings">0</div>
+      <div class="hstat-label">Buildings</div>
+      <div class="hstat-filter-dot"></div>
+    </div>
+    <div class="hstat" id="hstat-mwp" onclick="clearHeaderFilter()" title="Click to clear filters">
+      <div class="hstat-val" id="h-mwp">0</div>
+      <div class="hstat-label">MWp</div>
+      <div class="hstat-filter-dot"></div>
+    </div>
+    <div class="hstat" id="hstat-value" onclick="clearHeaderFilter()" title="Click to clear filters">
+      <div class="hstat-val" id="h-value">0</div>
+      <div class="hstat-label">฿M Value</div>
+      <div class="hstat-filter-dot"></div>
+    </div>
+    <div class="hstat" id="hstat-pipeline" onclick="headerFilterPipeline()" title="Click to filter pipeline">
+      <div class="hstat-val" id="h-pipeline">0</div>
+      <div class="hstat-label">Pipeline</div>
+      <div class="hstat-filter-dot"></div>
+    </div>
+    <div class="hstat" id="hstat-scanned" onclick="clearHeaderFilter()" title="Click to clear filters">
+      <div class="hstat-val" id="h-scanned">0/8</div>
+      <div class="hstat-label">Zones</div>
+      <div class="hstat-filter-dot"></div>
+    </div>
   </div>
 </div>
 
@@ -218,20 +265,30 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
 
     <!-- Buildings panel -->
     <div id="tab-buildings">
+      <!-- Priority Grade filter -->
       <div class="filters-bar">
+        <span class="filter-section-label">Grade</span>
         <button class="fbtn on" data-pr="all" onclick="filterPriority('all',this)">All</button>
-        <button class="fbtn" data-pr="A" onclick="filterPriority('A',this)">🥇 A</button>
-        <button class="fbtn" data-pr="B" onclick="filterPriority('B',this)">🥈 B</button>
-        <button class="fbtn" data-pr="C" onclick="filterPriority('C',this)">🥉 C</button>
-        <button class="fbtn" data-pr="D" onclick="filterPriority('D',this)">D</button>
-        <span style="margin-left:8px;opacity:0.3">|</span>
-        <button class="fbtn" data-cat="hospitality" onclick="filterCat('hospitality',this)">🏨</button>
-        <button class="fbtn" data-cat="food_beverage" onclick="filterCat('food_beverage',this)">🍽️</button>
-        <button class="fbtn" data-cat="retail" onclick="filterCat('retail',this)">🛒</button>
-        <button class="fbtn" data-cat="residential" onclick="filterCat('residential',this)">🏠</button>
-        <button class="fbtn" data-cat="bungalow" onclick="filterCat('bungalow',this)">🛖</button>
-        <button class="fbtn" data-cat="healthcare" onclick="filterCat('healthcare',this)">🏥</button>
-        <span style="margin-left:4px;opacity:0.3">|</span>
+        <button class="fbtn" data-pr="A" onclick="filterPriority('A',this)" title="Large roofs >15 kWp">🥇 A</button>
+        <button class="fbtn" data-pr="B" onclick="filterPriority('B',this)" title="Medium 10-15 kWp">🥈 B</button>
+        <button class="fbtn" data-pr="C" onclick="filterPriority('C',this)" title="Small 5-10 kWp">🥉 C</button>
+        <button class="fbtn" data-pr="D" onclick="filterPriority('D',this)" title="Under 5 kWp">D</button>
+        <span style="margin-left:6px;opacity:0.3">|</span>
+        <span class="filter-section-label">kWp</span>
+        <button class="fbtn" data-tier="high" onclick="filterTier('high',this)" title=">10 kWp">High</button>
+        <button class="fbtn" data-tier="medium" onclick="filterTier('medium',this)" title="5-10 kWp">Med</button>
+        <button class="fbtn" data-tier="low" onclick="filterTier('low',this)" title="<5 kWp">Low</button>
+      </div>
+      <!-- Type emoji filter -->
+      <div class="filters-row">
+        <span class="filter-section-label">Type</span>
+        <button class="fbtn" data-cat="hospitality" onclick="filterCat('hospitality',this)" title="Hotel/Resort">🏨</button>
+        <button class="fbtn" data-cat="food_beverage" onclick="filterCat('food_beverage',this)" title="Restaurant/Bar">🍽️</button>
+        <button class="fbtn" data-cat="retail" onclick="filterCat('retail',this)" title="Shop/Retail">🛒</button>
+        <button class="fbtn" data-cat="residential" onclick="filterCat('residential',this)" title="Residential">🏠</button>
+        <button class="fbtn" data-cat="bungalow" onclick="filterCat('bungalow',this)" title="Bungalow">🛖</button>
+        <button class="fbtn" data-cat="healthcare" onclick="filterCat('healthcare',this)" title="Healthcare">🏥</button>
+        <span style="opacity:0.3">|</span>
         <button class="fbtn" data-sz="100" onclick="filterSize(100,this)">100m²+</button>
         <button class="fbtn" data-sz="500" onclick="filterSize(500,this)">500m²+</button>
         <button class="fbtn" data-pip="1" onclick="filterPipeline(this)">🟢 Pipeline</button>
@@ -279,16 +336,26 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
       <button onclick="map.zoomIn()" title="Zoom in">+</button>
       <button onclick="map.zoomOut()" title="Zoom out">−</button>
       <button onclick="resetView()" title="Reset view">⌂</button>
+      <button id="btn-heatmap" onclick="toggleHeatmap(this)" title="Toggle heatmap">🔥</button>
       <button id="btn-zones-toggle" onclick="toggleZonesLayer()" title="Toggle drone zones">🛸</button>
       <button id="btn-park-toggle" onclick="toggleParkLayer()" title="Toggle national park">🌳</button>
     </div>
-    <div class="map-legend">
+    <div class="map-legend" id="mapLegend">
       <h5>Priority</h5>
-      <div class="lg-i"><div class="lg-d" style="background:#E8A820"></div> A — High</div>
-      <div class="lg-i"><div class="lg-d" style="background:#2ED89A"></div> B — Medium</div>
-      <div class="lg-i"><div class="lg-d" style="background:#6496FF"></div> C — Low</div>
-      <div class="lg-i"><div class="lg-d" style="background:#666"></div> D — Small</div>
-      <div class="lg-i"><div class="lg-d" style="background:var(--green);border:2px solid #2ED89A"></div> Pipeline</div>
+      <div class="legend-normal">
+        <div class="lg-i"><div class="lg-d" style="background:#E8A820"></div> A — High (&gt;15 kWp)</div>
+        <div class="lg-i"><div class="lg-d" style="background:#2ED89A"></div> B — Medium (10-15)</div>
+        <div class="lg-i"><div class="lg-d" style="background:#6496FF"></div> C — Low (5-10)</div>
+        <div class="lg-i"><div class="lg-d" style="background:#666"></div> D — Small (&lt;5)</div>
+        <div class="lg-i"><div class="lg-d" style="background:var(--green);border:2px solid #2ED89A"></div> Pipeline</div>
+      </div>
+      <div class="legend-heatmap">
+        <div class="lg-i"><div class="lg-d" style="background:#D50000"></div> Very High Potential</div>
+        <div class="lg-i"><div class="lg-d" style="background:#E8A820"></div> High Potential</div>
+        <div class="lg-i"><div class="lg-d" style="background:#2ED89A"></div> Medium Potential</div>
+        <div class="lg-i"><div class="lg-d" style="background:#1A7A5A"></div> Low Potential</div>
+        <div class="lg-i"><div class="lg-d" style="background:#2196F3"></div> Minimal</div>
+      </div>
     </div>
   </div>
 </div>
@@ -320,6 +387,23 @@ const NATIONAL_PARK = [[99.990,9.730],[100.010,9.740],[100.030,9.755],[100.045,9
 const PRIORITY_COLORS = {A:'#E8A820',B:'#2ED89A',C:'#6496FF',D:'#666666'};
 const CAT_ICONS = {hospitality:'🏨',food_beverage:'🍽️',retail:'🛒',residential:'🏠',bungalow:'🛖',healthcare:'🏥',commercial:'🏢',government:'🏛️'};
 
+// kWp tier classification
+function getTier(kwp) {
+  if (kwp >= 10) return 'high';
+  if (kwp >= 5) return 'medium';
+  return 'low';
+}
+
+// Infer category heuristic if not provided or is unknown
+function inferCategory(b) {
+  if (b.c && CAT_ICONS[b.c]) return b.c;
+  const a = b.a || 0;
+  if (a >= 800) return 'hospitality';
+  if (a >= 400) return 'commercial';
+  if (a >= 200) return 'retail';
+  return 'residential';
+}
+
 // Enrich building data
 let buildings = (typeof B !== 'undefined' ? B : []).map(b => {
   const annual_kwh = b.kw * 1350;
@@ -328,22 +412,24 @@ let buildings = (typeof B !== 'undefined' ? B : []).map(b => {
   const payback = b.epc > 0 ? (b.epc / annual_savings) : 99;
   const co2 = annual_kwh * 0.5;
   const storage_cost = b.epc * 1.4;
-  return {...b, annual_kwh, annual_savings, ppa_savings, payback: Math.round(payback*10)/10, co2: Math.round(co2), storage_cost: Math.round(storage_cost)};
+  const tier = getTier(b.kw);
+  const cat = inferCategory(b);
+  return {...b, c: cat, annual_kwh, annual_savings, ppa_savings, payback: Math.round(payback*10)/10, co2: Math.round(co2), storage_cost: Math.round(storage_cost), tier};
 });
 
 // State
-let currentFilter = {priority:'all', category:null, minSize:0, pipeline:false, search:''};
+let currentFilter = {priority:'all', category:null, minSize:0, pipeline:false, search:'', tier:null};
 let compareSet = new Set();
 let notes = {};
 let pipelineState = {};
 let showZonesOnMap = true;
 let showParkOnMap = true;
+let heatmapActive = false;
 
 // Load localStorage
 try {
   notes = JSON.parse(localStorage.getItem('kpsp_notes') || '{}');
   pipelineState = JSON.parse(localStorage.getItem('kpsp_pipeline') || '{}');
-  // Apply pipeline state from localStorage
   buildings.forEach(b => { if (pipelineState[b.i] !== undefined) b.pip = pipelineState[b.i]; });
 } catch(e){}
 
@@ -393,16 +479,15 @@ map.on('load', () => {
 });
 
 function initMapLayers() {
-  // Building points GeoJSON
   const features = buildings.map(b => ({
     type: 'Feature',
     geometry: {type:'Point',coordinates:[b.lo,b.la]},
-    properties: {id:b.i, pr:b.pr, kw:b.kw, pip:b.pip, a:b.a, n:b.n, c:b.c, s:b.s}
+    properties: {id:b.i, pr:b.pr, kw:b.kw, pip:b.pip, a:b.a, n:b.n, c:b.c, s:b.s, tier:b.tier}
   }));
-  
+
   map.addSource('buildings', {type:'geojson', data:{type:'FeatureCollection',features}});
-  
-  // Circle layer — non-pipeline
+
+  // Circle layer — non-pipeline (normal priority coloring)
   map.addLayer({
     id: 'buildings-circles',
     type: 'circle',
@@ -416,7 +501,7 @@ function initMapLayers() {
       'circle-stroke-color': 'rgba(255,255,255,0.4)'
     }
   });
-  
+
   // Pipeline circles
   map.addLayer({
     id: 'buildings-pipeline',
@@ -431,7 +516,30 @@ function initMapLayers() {
       'circle-stroke-color': '#2ED89A'
     }
   });
-  
+
+  // Heatmap layer (hidden by default) — colored by solar score/kWp
+  map.addLayer({
+    id: 'buildings-heatmap',
+    type: 'heatmap',
+    source: 'buildings',
+    layout: {'visibility': 'none'},
+    paint: {
+      'heatmap-weight': ['interpolate',['linear'],['get','s'],0,0,100,1],
+      'heatmap-intensity': ['interpolate',['linear'],['zoom'],10,1,15,3],
+      'heatmap-radius': ['interpolate',['linear'],['zoom'],10,15,15,30],
+      'heatmap-color': [
+        'interpolate',['linear'],['heatmap-density'],
+        0, 'rgba(0,0,0,0)',
+        0.2, '#2196F3',
+        0.4, '#1A7A5A',
+        0.6, '#E8A820',
+        0.8, '#FF5722',
+        1.0, '#D50000'
+      ],
+      'heatmap-opacity': 0.75
+    }
+  });
+
   // Drone zone boundaries
   const zoneFeatures = ZONES.map(z => ({
     type:'Feature',
@@ -444,7 +552,7 @@ function initMapLayers() {
     ]]},
     properties:{id:z.id,name:z.name,color:z.color}
   }));
-  
+
   map.addSource('zones',{type:'geojson',data:{type:'FeatureCollection',features:zoneFeatures}});
   map.addLayer({
     id:'zones-fill',type:'fill',source:'zones',
@@ -454,7 +562,7 @@ function initMapLayers() {
     id:'zones-border',type:'line',source:'zones',
     paint:{'line-color':['get','color'],'line-width':2,'line-dasharray':[6,4]}
   });
-  
+
   // Zone labels
   map.addSource('zone-labels',{type:'geojson',data:{type:'FeatureCollection',features:ZONES.map(z=>({
     type:'Feature',geometry:{type:'Point',coordinates:[z.center[1],z.center[0]]},
@@ -465,7 +573,7 @@ function initMapLayers() {
     layout:{'text-field':['get','label'],'text-size':12,'text-font':['Noto Sans Regular']},
     paint:{'text-color':'#E8A820','text-halo-color':'rgba(13,33,55,0.9)','text-halo-width':2}
   }); } catch(e) { console.warn('Zone labels skipped:', e.message); }
-  
+
   // National Park
   map.addSource('park',{type:'geojson',data:{type:'FeatureCollection',features:[{
     type:'Feature',
@@ -474,8 +582,8 @@ function initMapLayers() {
   }]}});
   map.addLayer({id:'park-fill',type:'fill',source:'park',paint:{'fill-color':'#ff6b6b','fill-opacity':0.04}});
   map.addLayer({id:'park-border',type:'line',source:'park',paint:{'line-color':'#ff6b6b','line-width':1.5,'line-dasharray':[4,4]}});
-  
-  // Click handler
+
+  // Click handlers
   map.on('click','buildings-circles', e => showPopup(e));
   map.on('click','buildings-pipeline', e => showPopup(e));
   map.on('mouseenter','buildings-circles',()=>{map.getCanvas().style.cursor='pointer'});
@@ -484,16 +592,45 @@ function initMapLayers() {
   map.on('mouseleave','buildings-pipeline',()=>{map.getCanvas().style.cursor=''});
 }
 
+// ── Heatmap Toggle ──
+function toggleHeatmap(btn) {
+  heatmapActive = !heatmapActive;
+  btn.classList.toggle('active', heatmapActive);
+  document.getElementById('mapLegend').classList.toggle('heatmap-active', heatmapActive);
+
+  if (!map.getLayer('buildings-heatmap')) return;
+
+  if (heatmapActive) {
+    map.setLayoutProperty('buildings-heatmap', 'visibility', 'visible');
+    map.setLayoutProperty('buildings-circles', 'visibility', 'none');
+    map.setLayoutProperty('buildings-pipeline', 'visibility', 'none');
+  } else {
+    map.setLayoutProperty('buildings-heatmap', 'visibility', 'none');
+    map.setLayoutProperty('buildings-circles', 'visibility', 'visible');
+    map.setLayoutProperty('buildings-pipeline', 'visibility', 'visible');
+  }
+}
+
+// ── Popup ──
 function showPopup(e) {
   const f = e.features[0];
   const bid = f.properties.id;
   const b = buildings.find(x=>x.i===bid);
   if (!b) return;
-  
-  const waLink = `https://wa.me/66997044944?text=${encodeURIComponent(`Hi TM Energy, I saw "${b.n||'Building #'+b.i}" on KP Solar Pro. I'd like a free solar proposal.`)}`;
+
+  // CRM proposal URL with building context
+  const proposalUrl = `https://energy-tm.com/admin/proposals/new?building_id=${b.i}&kwp=${b.kw}&area=${b.a}&lat=${b.la}&lng=${b.lo}`;
+
+  // WhatsApp — use building phone if available, otherwise TM Energy number
+  const phone = b.ph ? b.ph.replace(/[^0-9+]/g, '') : '66997044944';
+  const waMsg = b.ph
+    ? encodeURIComponent(`Hello! I'm from TM Energy.\n\nWe noticed "${b.n||'your building'}" could benefit from a ${b.kw}kWp solar system saving ~฿${Math.round(b.annual_savings/12).toLocaleString()}/month.\n\nInterested in a free consultation?`)
+    : encodeURIComponent(`Hi TM Energy, I saw "${b.n||'Building #'+b.i}" on KP Solar Pro. I'd like a free solar proposal.`);
+  const waLink = `https://wa.me/${phone}?text=${waMsg}`;
+
   const noteVal = notes[b.i] || '';
   const isPip = b.pip ? 'active' : '';
-  
+
   const html = `
     <div class="popup-title">${b.n || 'Building #'+b.i}</div>
     <div class="popup-sub">${CAT_ICONS[b.c]||'📍'} ${b.c} · ${b.a} m² · Grade ${b.pr} · Score ${b.s}</div>
@@ -507,28 +644,28 @@ function showPopup(e) {
     </div>
     <div class="popup-options">
       <div class="popup-opt">
-        <div><div class="popup-opt-name">EPC (Buy)</div><div class="popup-opt-detail">Payback ${b.payback} years</div></div>
+        <div><div class="popup-opt-name">💰 EPC (Buy)</div><div class="popup-opt-detail">Payback ${b.payback} years</div></div>
         <div class="popup-opt-price">฿${b.epc.toLocaleString()}</div>
       </div>
       <div class="popup-opt">
-        <div><div class="popup-opt-name">PPA (฿0 Upfront)</div><div class="popup-opt-detail">Save ฿${Math.round(b.ppa_savings).toLocaleString()}/yr</div></div>
+        <div><div class="popup-opt-name">⚡ PPA (฿0 Upfront)</div><div class="popup-opt-detail">Save ฿${Math.round(b.ppa_savings).toLocaleString()}/yr</div></div>
         <div class="popup-opt-price">฿4.50/kWh</div>
       </div>
       <div class="popup-opt">
-        <div><div class="popup-opt-name">EPC + Storage</div><div class="popup-opt-detail">Battery backup included</div></div>
+        <div><div class="popup-opt-name">🔋 EPC + Storage</div><div class="popup-opt-detail">Battery backup included</div></div>
         <div class="popup-opt-price">฿${b.storage_cost.toLocaleString()}</div>
       </div>
     </div>
     <div class="popup-btns">
-      <a class="wa-btn" href="${waLink}" target="_blank">📱 WhatsApp</a>
-      <button class="proposal-btn" onclick="generateProposal(${b.i})">📄 Proposal</button>
+      <a class="wa-btn" href="${waLink}" target="_blank">📱 WhatsApp${b.ph?' Owner':''}</a>
+      <a class="proposal-btn" href="${proposalUrl}" target="_blank">✨ Create Proposal</a>
     </div>
     <div class="popup-btns" style="margin-top:6px">
       <button class="pip-toggle-btn ${isPip}" onclick="togglePipeline(${b.i},this)">🟢 ${b.pip?'In Pipeline':'Add to Pipeline'}</button>
     </div>
     <textarea class="note-area" placeholder="Add notes..." onchange="saveNote(${b.i},this.value)">${noteVal}</textarea>
   `;
-  
+
   new maplibregl.Popup({maxWidth:'360px'}).setLngLat(e.lngLat).setHTML(html).addTo(map);
 }
 
@@ -539,6 +676,11 @@ function getFilteredBuildings() {
     if (currentFilter.category && b.c !== currentFilter.category) return false;
     if (b.a < currentFilter.minSize) return false;
     if (currentFilter.pipeline && !b.pip) return false;
+    if (currentFilter.tier) {
+      if (currentFilter.tier === 'high' && b.kw < 10) return false;
+      if (currentFilter.tier === 'medium' && (b.kw < 5 || b.kw >= 10)) return false;
+      if (currentFilter.tier === 'low' && b.kw >= 5) return false;
+    }
     if (currentFilter.search) {
       const q = currentFilter.search.toLowerCase();
       if (!(b.n||'').toLowerCase().includes(q) && !(b.c||'').toLowerCase().includes(q) && !(b.ph||'').includes(q))
@@ -563,13 +705,11 @@ function sortBuildings(list) {
 function renderBuildings() {
   const filtered = sortBuildings(getFilteredBuildings());
   const container = document.getElementById('buildingList');
-  
-  // Update map filter
+
   updateMapFilter(filtered);
-  
-  // Limit render for performance
+
   const show = filtered.slice(0, 200);
-  
+
   container.innerHTML = `<div style="padding:8px 12px;font-size:11px;opacity:0.5">${filtered.length} buildings${filtered.length>200?' (showing first 200)':''}</div>` +
     show.map(b => {
       const isCompare = compareSet.has(b.i);
@@ -580,8 +720,8 @@ function renderBuildings() {
         </div>
         <div class="bldg-meta">${CAT_ICONS[b.c]||'📍'} ${b.c} · ${b.a} m²</div>
         <div class="bldg-stats">
-          <span>${b.kw} kWp</span> · 
-          <span>฿${Math.round(b.annual_savings).toLocaleString()}/yr</span> · 
+          <span>${b.kw} kWp</span> ·
+          <span>฿${Math.round(b.annual_savings).toLocaleString()}/yr</span> ·
           Score <span>${b.s}</span>
           ${b.pip?'<span style="color:var(--green)"> · 🟢</span>':''}
         </div>
@@ -596,14 +736,15 @@ function renderBuildings() {
 function updateMapFilter(filtered) {
   if (!map.getLayer('buildings-circles')) return;
   const ids = new Set(filtered.map(b=>b.i));
-  // We'll use a filter approach — show all matching IDs
-  if (currentFilter.priority === 'all' && !currentFilter.category && currentFilter.minSize === 0 && !currentFilter.pipeline && !currentFilter.search) {
+  if (currentFilter.priority === 'all' && !currentFilter.category && currentFilter.minSize === 0 && !currentFilter.pipeline && !currentFilter.search && !currentFilter.tier) {
     map.setFilter('buildings-circles', ['==',['get','pip'],0]);
     map.setFilter('buildings-pipeline', ['==',['get','pip'],1]);
+    if (map.getLayer('buildings-heatmap')) map.setFilter('buildings-heatmap', null);
   } else {
     const idList = [...ids];
     map.setFilter('buildings-circles', ['all',['==',['get','pip'],0],['in',['get','id'],['literal',idList]]]);
     map.setFilter('buildings-pipeline', ['all',['==',['get','pip'],1],['in',['get','id'],['literal',idList]]]);
+    if (map.getLayer('buildings-heatmap')) map.setFilter('buildings-heatmap', ['in',['get','id'],['literal',idList]]);
   }
 }
 
@@ -618,6 +759,7 @@ function filterPriority(pr, btn) {
   currentFilter.priority = pr;
   document.querySelectorAll('.filters-bar [data-pr]').forEach(b => b.classList.toggle('on', b.dataset.pr === pr));
   renderBuildings();
+  updateHeaderStats();
 }
 
 function filterCat(cat, btn) {
@@ -625,7 +767,7 @@ function filterCat(cat, btn) {
     currentFilter.category = null;
     btn.classList.remove('on');
   } else {
-    document.querySelectorAll('.filters-bar [data-cat]').forEach(b => b.classList.remove('on'));
+    document.querySelectorAll('[data-cat]').forEach(b => b.classList.remove('on'));
     currentFilter.category = cat;
     btn.classList.add('on');
   }
@@ -637,8 +779,20 @@ function filterSize(sz, btn) {
     currentFilter.minSize = 0;
     btn.classList.remove('on');
   } else {
-    document.querySelectorAll('.filters-bar [data-sz]').forEach(b => b.classList.remove('on'));
+    document.querySelectorAll('[data-sz]').forEach(b => b.classList.remove('on'));
     currentFilter.minSize = sz;
+    btn.classList.add('on');
+  }
+  renderBuildings();
+}
+
+function filterTier(tier, btn) {
+  if (currentFilter.tier === tier) {
+    currentFilter.tier = null;
+    btn.classList.remove('on');
+  } else {
+    document.querySelectorAll('[data-tier]').forEach(b => b.classList.remove('on'));
+    currentFilter.tier = tier;
     btn.classList.add('on');
   }
   renderBuildings();
@@ -648,11 +802,38 @@ function filterPipeline(btn) {
   currentFilter.pipeline = !currentFilter.pipeline;
   btn.classList.toggle('on', currentFilter.pipeline);
   renderBuildings();
+  updateHeaderStats();
+}
+
+// ── Header stat clickable filters ──
+function headerFilterPipeline() {
+  currentFilter.pipeline = !currentFilter.pipeline;
+  const btn = document.querySelector('[data-pip="1"]');
+  if (btn) btn.classList.toggle('on', currentFilter.pipeline);
+  document.getElementById('hstat-pipeline').classList.toggle('active-filter', currentFilter.pipeline);
+  renderBuildings();
+  updateHeaderStats();
+  // Switch to buildings tab
+  switchTab('buildings', document.querySelector('.sidebar-tabs button'));
+}
+
+function clearHeaderFilter() {
+  currentFilter.priority = 'all';
+  currentFilter.category = null;
+  currentFilter.minSize = 0;
+  currentFilter.pipeline = false;
+  currentFilter.tier = null;
+  currentFilter.search = '';
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.filters-bar [data-pr]').forEach(b => b.classList.toggle('on', b.dataset.pr === 'all'));
+  document.querySelectorAll('[data-cat],[data-sz],[data-tier],[data-pip]').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.hstat').forEach(h => h.classList.remove('active-filter'));
+  renderBuildings();
+  updateHeaderStats();
 }
 
 function flyTo(lng, lat, id) {
   map.flyTo({center:[lng,lat],zoom:17});
-  // Simulate click
   setTimeout(() => {
     const b = buildings.find(x=>x.i===id);
     if (b) {
@@ -696,7 +877,7 @@ function refreshMapData() {
     features: buildings.map(b => ({
       type:'Feature',
       geometry:{type:'Point',coordinates:[b.lo,b.la]},
-      properties:{id:b.i,pr:b.pr,kw:b.kw,pip:b.pip,a:b.a,n:b.n,c:b.c,s:b.s}
+      properties:{id:b.i,pr:b.pr,kw:b.kw,pip:b.pip,a:b.a,n:b.n,c:b.c,s:b.s,tier:b.tier}
     }))
   });
 }
@@ -732,6 +913,7 @@ function showCompare() {
       <div class="cmp-row"><span class="cmp-label">Category</span><span class="cmp-val">${b.c}</span></div>
       <div class="cmp-row"><span class="cmp-label">Area</span><span class="cmp-val">${b.a} m²</span></div>
       <div class="cmp-row"><span class="cmp-label">System</span><span class="cmp-val">${b.kw} kWp</span></div>
+      <div class="cmp-row"><span class="cmp-label">Tier</span><span class="cmp-val">${b.tier}</span></div>
       <div class="cmp-row"><span class="cmp-label">Panels</span><span class="cmp-val">${b.p}</span></div>
       <div class="cmp-row"><span class="cmp-label">Annual kWh</span><span class="cmp-val">${Math.round(b.annual_kwh).toLocaleString()}</span></div>
       <div class="cmp-row"><span class="cmp-label">Annual Savings</span><span class="cmp-val">฿${Math.round(b.annual_savings).toLocaleString()}</span></div>
@@ -746,53 +928,6 @@ function showCompare() {
 }
 
 function closeCompare() { document.getElementById('compareOverlay').classList.remove('show'); }
-
-// ── Proposal ──
-function generateProposal(id) {
-  const b = buildings.find(x=>x.i===id);
-  if (!b) return;
-  const w = window.open('','_blank');
-  w.document.write(`<!DOCTYPE html><html><head><title>Solar Proposal — ${b.n||'Building #'+b.i}</title>
-    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;padding:40px;max-width:800px;margin:0 auto;color:#333}
-    .header{text-align:center;margin-bottom:30px;border-bottom:3px solid #E8A820;padding-bottom:20px}
-    .logo-t{display:inline-block;width:40px;height:40px;background:#E8A820;border-radius:50%;text-align:center;line-height:40px;font-weight:800;font-size:16px;color:#0D2137;margin-bottom:8px}
-    h1{font-size:22px;color:#0D2137}h2{font-size:16px;color:#0D2137;margin:20px 0 10px;border-bottom:1px solid #ddd;padding-bottom:6px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin:10px 0}
-    .grid .label{font-size:12px;color:#888;text-transform:uppercase}.grid .val{font-size:15px;font-weight:600}
-    table{width:100%;border-collapse:collapse;margin:10px 0}th,td{padding:8px 12px;text-align:left;border-bottom:1px solid #eee}
-    th{background:#f5f5f5;font-size:12px;text-transform:uppercase;color:#888}
-    .cta{display:block;text-align:center;background:#1A7A5A;color:#fff;padding:14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;margin:30px 0}
-    .footer{text-align:center;font-size:11px;color:#888;margin-top:30px;border-top:1px solid #ddd;padding-top:15px}
-    @media print{.cta{display:none}}</style></head><body>
-    <div class="header"><div class="logo-t">TM</div><h1>TM Energy — Solar Proposal</h1><p style="color:#888;margin-top:4px">${new Date().toLocaleDateString()}</p></div>
-    <h2>Property Details</h2>
-    <div class="grid">
-      <div><div class="label">Property</div><div class="val">${b.n||'Building #'+b.i}</div></div>
-      <div><div class="label">Category</div><div class="val">${b.c}</div></div>
-      <div><div class="label">Roof Area</div><div class="val">${b.a} m²</div></div>
-      <div><div class="label">Usable Area</div><div class="val">${b.u} m²</div></div>
-      <div><div class="label">Priority Grade</div><div class="val">${b.pr}</div></div>
-      <div><div class="label">Score</div><div class="val">${b.s}/100</div></div>
-    </div>
-    <h2>Solar System</h2>
-    <div class="grid">
-      <div><div class="label">System Size</div><div class="val">${b.kw} kWp</div></div>
-      <div><div class="label">Solar Panels</div><div class="val">${b.p} panels</div></div>
-      <div><div class="label">Annual Output</div><div class="val">${Math.round(b.annual_kwh).toLocaleString()} kWh</div></div>
-      <div><div class="label">Monthly Savings</div><div class="val">฿${Math.round(b.annual_savings/12).toLocaleString()}</div></div>
-      <div><div class="label">Annual Savings</div><div class="val">฿${Math.round(b.annual_savings).toLocaleString()}</div></div>
-      <div><div class="label">CO₂ Offset</div><div class="val">${(b.co2/1000).toFixed(1)} tons/year</div></div>
-    </div>
-    <h2>Investment Options</h2>
-    <table><thead><tr><th>Option</th><th>Cost</th><th>Savings</th><th>Payback</th></tr></thead><tbody>
-      <tr><td><strong>Option A: EPC (Purchase)</strong></td><td>฿${b.epc.toLocaleString()}</td><td>฿${Math.round(b.annual_savings).toLocaleString()}/yr</td><td>${b.payback} years</td></tr>
-      <tr><td><strong>Option B: PPA (฿0 Upfront)</strong></td><td>฿0</td><td>฿${Math.round(b.ppa_savings).toLocaleString()}/yr</td><td>Immediate</td></tr>
-      <tr><td><strong>Option C: EPC + Battery Storage</strong></td><td>฿${b.storage_cost.toLocaleString()}</td><td>฿${Math.round(b.annual_savings*1.15).toLocaleString()}/yr</td><td>${Math.round(b.storage_cost/(b.annual_savings*1.15)*10)/10} years</td></tr>
-    </tbody></table>
-    <a class="cta" href="https://wa.me/66997044944?text=${encodeURIComponent(`Hi TM Energy, I'd like to discuss the solar proposal for "${b.n||'Building #'+b.i}" (${b.kw} kWp).`)}" target="_blank">📱 Contact TM Energy via WhatsApp</a>
-    <div class="footer">TM Energy · Koh Phangan, Thailand · +66 99 704 4944<br>Generated by KP Solar Pro</div>
-    </body></html>`);
-}
 
 // ── Sidebar: Drone Zones ──
 function renderZones() {
@@ -812,7 +947,7 @@ function renderZones() {
       <div class="zone-name">${z.name}</div>
       <div class="zone-meta">${z.priority} priority · Est. ${z.roofs} roofs · ${z.flights} flights</div>
       <div class="zone-stats">
-        <span>${buildingsInZone.length}</span> mapped · 
+        <span>${buildingsInZone.length}</span> mapped ·
         <span>${(zoneKwp/1000).toFixed(1)} MWp</span> potential
       </div>
       <div class="zone-progress"><div class="zone-progress-fill" style="width:${z.progress}%;background:${progressColor}"></div></div>
@@ -832,50 +967,69 @@ function renderAnalytics() {
   const totalEpc = buildings.reduce((s,b)=>s+b.epc,0);
   const totalCo2 = buildings.reduce((s,b)=>s+b.co2,0);
   const pipCount = buildings.filter(b=>b.pip).length;
-  
-  // Priority distribution
+
   const prCounts = {A:0,B:0,C:0,D:0};
   buildings.forEach(b => prCounts[b.pr]=(prCounts[b.pr]||0)+1);
   const maxPr = Math.max(...Object.values(prCounts));
-  
-  // Category distribution
+
+  const tierCounts = {high:0,medium:0,low:0};
+  buildings.forEach(b => tierCounts[b.tier]=(tierCounts[b.tier]||0)+1);
+
   const catCounts = {};
   buildings.forEach(b => catCounts[b.c]=(catCounts[b.c]||0)+1);
   const catSorted = Object.entries(catCounts).sort((a,b)=>b[1]-a[1]).slice(0,8);
   const maxCat = catSorted.length ? catSorted[0][1] : 1;
-  
-  // Top 10
+
   const top10 = [...buildings].sort((a,b)=>b.kw-a.kw).slice(0,10);
-  
+
   document.getElementById('analyticsContent').innerHTML = `
     <h3>📊 Portfolio Analytics</h3>
     <div class="stat-grid">
-      <div class="stat-card"><div class="sv">${buildings.length.toLocaleString()}</div><div class="sl">Total Buildings</div></div>
+      <div class="stat-card" onclick="clearHeaderFilter()" title="Click to clear filters"><div class="sv">${buildings.length.toLocaleString()}</div><div class="sl">Total Buildings</div></div>
       <div class="stat-card"><div class="sv">${(totalKwp/1000).toFixed(1)}</div><div class="sl">MWp Potential</div></div>
       <div class="stat-card"><div class="sv">฿${(totalEpc/1000000).toFixed(0)}M</div><div class="sl">EPC Value</div></div>
       <div class="stat-card"><div class="sv">฿${(totalSavings/1000000).toFixed(1)}M</div><div class="sl">Annual Savings</div></div>
       <div class="stat-card"><div class="sv">${(totalCo2/1000000).toFixed(1)}K</div><div class="sl">Tons CO₂/yr</div></div>
-      <div class="stat-card"><div class="sv">${pipCount}</div><div class="sl">Pipeline</div></div>
+      <div class="stat-card" onclick="headerFilterPipeline()" title="Click to filter pipeline"><div class="sv">${pipCount}</div><div class="sl">Pipeline</div></div>
     </div>
-    
+
     <div class="chart-section">
       <h4>Priority Distribution</h4>
-      ${['A','B','C','D'].map(pr => `<div class="bar-row">
+      ${['A','B','C','D'].map(pr => `<div class="bar-row" onclick="filterPriorityFromAnalytics('${pr}')" title="Filter to Grade ${pr}">
         <div class="bar-label">Grade ${pr}</div>
         <div class="bar-track"><div class="bar-fill" style="width:${(prCounts[pr]/maxPr*100)}%;background:${PRIORITY_COLORS[pr]}">${prCounts[pr]}</div></div>
         <div class="bar-count">${prCounts[pr]}</div>
       </div>`).join('')}
     </div>
-    
+
+    <div class="chart-section">
+      <h4>kWp Tier Breakdown</h4>
+      <div class="bar-row" onclick="filterTierFromAnalytics('high')" title="Filter High kWp (>10)">
+        <div class="bar-label">High &gt;10kWp</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${(tierCounts.high/(buildings.length||1)*100)}%;background:#E85D3A">${tierCounts.high}</div></div>
+        <div class="bar-count">${tierCounts.high}</div>
+      </div>
+      <div class="bar-row" onclick="filterTierFromAnalytics('medium')" title="Filter Medium kWp (5-10)">
+        <div class="bar-label">Med 5-10kWp</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${(tierCounts.medium/(buildings.length||1)*100)}%;background:#E8A820">${tierCounts.medium}</div></div>
+        <div class="bar-count">${tierCounts.medium}</div>
+      </div>
+      <div class="bar-row" onclick="filterTierFromAnalytics('low')" title="Filter Low kWp (<5)">
+        <div class="bar-label">Low &lt;5kWp</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${(tierCounts.low/(buildings.length||1)*100)}%;background:#6496FF">${tierCounts.low}</div></div>
+        <div class="bar-count">${tierCounts.low}</div>
+      </div>
+    </div>
+
     <div class="chart-section">
       <h4>By Category</h4>
-      ${catSorted.map(([cat,cnt]) => `<div class="bar-row">
+      ${catSorted.map(([cat,cnt]) => `<div class="bar-row" onclick="filterCatFromAnalytics('${cat}')" title="Filter to ${cat}">
         <div class="bar-label">${CAT_ICONS[cat]||'📍'} ${cat.replace('_',' ')}</div>
         <div class="bar-track"><div class="bar-fill" style="width:${(cnt/maxCat*100)}%;background:var(--gold)">${cnt}</div></div>
         <div class="bar-count">${cnt}</div>
       </div>`).join('')}
     </div>
-    
+
     <div class="chart-section">
       <h4>Top 10 by kWp</h4>
       <ol class="top-list">${top10.map((b,i) => `<li>
@@ -887,10 +1041,33 @@ function renderAnalytics() {
   `;
 }
 
+// Analytics → filter helpers (switch to buildings tab)
+function filterPriorityFromAnalytics(pr) {
+  filterPriority(pr, document.querySelector(`.filters-bar [data-pr="${pr}"]`));
+  switchTab('buildings', document.querySelector('.sidebar-tabs button'));
+}
+function filterTierFromAnalytics(tier) {
+  filterTier(tier, document.querySelector(`[data-tier="${tier}"]`));
+  switchTab('buildings', document.querySelector('.sidebar-tabs button'));
+}
+function filterCatFromAnalytics(cat) {
+  document.querySelectorAll('[data-cat]').forEach(b => b.classList.toggle('on', b.dataset.cat === cat));
+  currentFilter.category = cat;
+  renderBuildings();
+  switchTab('buildings', document.querySelector('.sidebar-tabs button'));
+}
+
 // ── Tabs ──
 function switchTab(tab, btn) {
   document.querySelectorAll('.sidebar-tabs button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
+  // If called from analytics helpers the btn may be the first button; handle correctly
+  if (!btn) {
+    document.querySelectorAll('.sidebar-tabs button').forEach((b,i) => {
+      if ((tab === 'buildings' && i === 0) || (tab === 'zones' && i === 1) || (tab === 'analytics' && i === 2))
+        b.classList.add('active');
+    });
+  }
   document.getElementById('tab-buildings').style.display = tab === 'buildings' ? '' : 'none';
   document.getElementById('tab-zones').style.display = tab === 'zones' ? '' : 'none';
   document.getElementById('tab-analytics').style.display = tab === 'analytics' ? '' : 'none';
@@ -915,22 +1092,34 @@ function toggleParkLayer() {
 
 // ── Header Stats ──
 function updateHeaderStats() {
-  const totalKwp = buildings.reduce((s,b)=>s+b.kw,0);
-  const totalEpc = buildings.reduce((s,b)=>s+b.epc,0);
-  const pipCount = buildings.filter(b=>b.pip).length;
+  const filtered = getFilteredBuildings();
+  const totalKwp = filtered.reduce((s,b)=>s+b.kw,0);
+  const totalEpc = filtered.reduce((s,b)=>s+b.epc,0);
+  const pipCount = filtered.filter(b=>b.pip).length;
   const scanned = ZONES.filter(z=>z.status==='complete').length;
-  
-  document.getElementById('h-buildings').textContent = buildings.length.toLocaleString();
+
+  const isFiltered = currentFilter.priority !== 'all' || currentFilter.category || currentFilter.minSize > 0 || currentFilter.pipeline || currentFilter.search || currentFilter.tier;
+
+  document.getElementById('h-buildings').textContent = filtered.length.toLocaleString();
   document.getElementById('h-mwp').textContent = (totalKwp/1000).toFixed(1);
   document.getElementById('h-value').textContent = Math.round(totalEpc/1000000);
   document.getElementById('h-pipeline').textContent = pipCount;
   document.getElementById('h-scanned').textContent = `${scanned}/8`;
+
+  // Show active filter indicator on header
+  ['hstat-buildings','hstat-mwp','hstat-value'].forEach(id => {
+    document.getElementById(id).classList.toggle('active-filter', isFiltered);
+  });
+  document.getElementById('hstat-pipeline').classList.toggle('active-filter', currentFilter.pipeline);
 }
 
 // ── Keyboard shortcuts ──
 document.addEventListener('keydown', e => {
-  if (e.key === '/' && !e.ctrlKey) { e.preventDefault(); document.getElementById('searchInput').focus(); }
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  if (e.key === '/') { e.preventDefault(); document.getElementById('searchInput').focus(); }
   if (e.key === 'Escape') { closeCompare(); }
+  if (e.key === 'h' || e.key === 'H') { toggleHeatmap(document.getElementById('btn-heatmap')); }
+  if (e.key === 'r' || e.key === 'R') { resetView(); }
 });
 
 // Initial active states for map toggles
