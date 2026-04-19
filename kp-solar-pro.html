@@ -937,5 +937,24 @@ document.addEventListener('keydown', e => {
 document.getElementById('btn-zones-toggle').classList.add('active');
 document.getElementById('btn-park-toggle').classList.add('active');
 </script>
+<!-- ADMIN CTA snippet: floating button → /admin/proposals/new -->
+<style>
+.tm-admin-cta {
+  position: fixed; bottom: 20px; left: 20px; z-index: 9998;
+  background: linear-gradient(135deg, #E8A820 0%, #E85D3A 100%);
+  color: #0D2137; padding: 14px 24px; border-radius: 100px;
+  font-family: 'Heebo', 'Inter', system-ui, sans-serif;
+  font-weight: 800; font-size: 14px; text-decoration: none;
+  box-shadow: 0 6px 24px rgba(232,168,32,.35);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform .15s, box-shadow .15s; direction: rtl;
+}
+.tm-admin-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(232,168,32,.5); text-decoration: none; }
+@media (max-width: 600px) { .tm-admin-cta { bottom: 16px; left: 16px; padding: 12px 18px; font-size: 13px; } }
+</style>
+<a class="tm-admin-cta" href="https://energy-tm.com/admin/proposals/new" target="_blank" title="Create a branded proposal with password gate + digital signature">
+  ✨ Create Proposal (v2)
+</a>
+
 </body>
 </html>

@@ -51,11 +51,128 @@ details[open] summary{border-color:rgba(232,168,32,.3)}
   <h1>TM Energy — <span class="gold">כל הנכסים</span></h1>
   <p class="subtitle">מצגות, כלים, מסמכים וקישורים | TM Energy</p>
   <div class="stats">
-    <div class="stat"><div class="stat-num">13</div><div class="stat-label">קטגוריות</div></div>
+    <div class="stat"><div class="stat-num">14</div><div class="stat-label">קטגוריות</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">הצעות חיות</div></div>
     <div class="stat"><div class="stat-num">57</div><div class="stat-label">לידים ב-CRM</div></div>
     <div class="stat"><div class="stat-num">165+</div><div class="stat-label">לידים מזוהים</div></div>
     <div class="stat"><div class="stat-num">28</div><div class="stat-label">מודעות</div></div>
   </div>
+  <!-- Quick Links Bar -->
+  <div style="display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap">
+    <a href="https://energy-tm.com/admin" target="_blank" style="padding:10px 20px;background:linear-gradient(135deg,#E8A820,#E85D3A);color:#0D2137;font-weight:700;border-radius:100px;font-size:14px;text-decoration:none">🎯 Admin</a>
+    <a href="https://energy-tm.com/admin/proposals/new" target="_blank" style="padding:10px 20px;background:#1A7A5A;color:white;font-weight:700;border-radius:100px;font-size:14px;text-decoration:none">✨ הצעה חדשה</a>
+    <a href="https://energy-tm.com/crm" target="_blank" style="padding:10px 20px;background:rgba(255,255,255,.1);color:white;font-weight:700;border-radius:100px;font-size:14px;text-decoration:none;border:1px solid rgba(232,168,32,.3)">📋 CRM</a>
+    <a href="https://energy-tm.com/admin/proposals" target="_blank" style="padding:10px 20px;background:rgba(255,255,255,.1);color:white;font-weight:700;border-radius:100px;font-size:14px;text-decoration:none;border:1px solid rgba(232,168,32,.3)">📊 Analytics</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 0. PROPOSAL SYSTEM v2 — LIVE                -->
+<!-- ═══════════════════════════════════════════ -->
+<h2 style="background:linear-gradient(135deg,rgba(232,168,32,.1),rgba(26,122,90,.1));padding:16px 20px;border-radius:12px;border:1px solid rgba(232,168,32,.3);margin-top:16px">🎯 מערכת הצעות דיגיטלית v2 · <span style="color:#5EE0A8;font-size:.7em">LIVE</span></h2>
+<p style="color:rgba(255,255,255,.7);font-size:14px;margin:12px 0 20px">מערכת חתימה דיגיטלית עם password gate, Nano Banana Pro AI overlay, מעקב צפיות, והתראות אימייל אוטומטיות.</p>
+
+<div class="grid">
+  <a class="card" href="https://energy-tm.com/admin" target="_blank" style="border:2px solid #E8A820">
+    <div class="card-icon">🎯</div>
+    <h3>Admin Dashboard — הוצאת הצעות</h3>
+    <p>טופס חכם עם auto-calc (PSH→kWh→חיסכון→ROI) · Magic link login @energy-tm.com · מגן על ידי Supabase Auth</p>
+    <span class="tag tag-crm">Live</span>
+  </a>
+  <a class="card" href="https://energy-tm.com/admin/proposals/new" target="_blank" style="border:2px solid #1A7A5A">
+    <div class="card-icon">✨</div>
+    <h3>New Proposal Form</h3>
+    <p>טופס 6 סקשנים: לקוח · תמונות גג · מפרט · ייצור · מחיר · שפה — HE/TH/EN · Nano Banana overlay</p>
+    <span class="tag tag-crm">כלי</span>
+  </a>
+  <a class="card" href="https://energy-tm.com/admin/proposals" target="_blank">
+    <div class="card-icon">📋</div>
+    <h3>Proposals List</h3>
+    <p>רשימת כל ההצעות · סטטוס · חיפוש · Copy URL + Download PDF בשורה · Signed PDF עם חתימה</p>
+    <span class="tag tag-crm">כלי</span>
+  </a>
+  <a class="card" href="https://energy-tm.com/crm" target="_blank" style="border:2px solid #E8A820">
+    <div class="card-icon">📋</div>
+    <h3>CRM — TM Energy · energy-tm.com</h3>
+    <p>Lead Detail → "Create Proposal" button · Dashboard → 2 quick actions · Property Sidebar integration</p>
+    <span class="tag tag-crm">CRM</span>
+  </a>
+</div>
+
+<details>
+  <summary>⚡ ציוני מפתח של המערכת החדשה — API + רכיבים</summary>
+  <div class="grid" style="margin-top:12px">
+    <div class="card" style="cursor:default">
+      <div class="card-icon">🔐</div>
+      <h3>Password Gate</h3>
+      <p>6 ספרות · SHA-256 · localStorage auto-unlock · מעקב צפיות + IP + user-agent</p>
+    </div>
+    <div class="card" style="cursor:default">
+      <div class="card-icon">✍️</div>
+      <h3>Digital Signature</h3>
+      <p>Canvas signature pad · SHA-256 audit hash · Legal Thai ETA 2544 · Dual email (team + client)</p>
+    </div>
+    <div class="card" style="cursor:default">
+      <div class="card-icon">🍌</div>
+      <h3>Nano Banana Pro</h3>
+      <p>Gemini 3 Pro Image API · drone photo → photorealistic solar panel overlay · server-side secure</p>
+    </div>
+    <div class="card" style="cursor:default">
+      <div class="card-icon">📧</div>
+      <h3>Email Notifications</h3>
+      <p>Resend API · FROM: onboarding@resend.dev (pending DNS) · kaniel@ + erez@ on view/sign events</p>
+    </div>
+    <div class="card" style="cursor:default">
+      <div class="card-icon">⏰</div>
+      <h3>Follow-up Automation</h3>
+      <p>Vercel Cron יומי 10:00 UTC · not_viewed_3d/7d · expiring_soon · Auto-cancel on view</p>
+    </div>
+    <div class="card" style="cursor:default">
+      <div class="card-icon">📊</div>
+      <h3>Analytics</h3>
+      <p>Funnel viz · Conversion % · Timing metrics · Daily trends · Pending followups breakdown</p>
+    </div>
+  </div>
+</details>
+
+<h3 style="margin-top:24px;color:#E8A820;font-size:16px;font-weight:700">📄 הצעות חיות — Live Proposals (password-gated)</h3>
+<div class="grid">
+  <a class="card" href="https://energy-tm.com/p/AMIR-001" target="_blank">
+    <div class="card-icon">🏠</div>
+    <h3>AMIR-001 · אמיר מזרחי</h3>
+    <p>12.76 kWp · ฿450K · Koh Phangan · HE · pw: <code style="background:rgba(232,168,32,.2);padding:2px 6px;border-radius:4px">603485</code></p>
+    <span class="tag tag-crm">Live · HE</span>
+  </a>
+  <a class="card" href="https://energy-tm.com/p/BEAM-001" target="_blank">
+    <div class="card-icon">🏗️</div>
+    <h3>BEAM-001 · Beamtech v1</h3>
+    <p>32.5 kWp · ฿1.1M · Commercial · HE · pw: <code style="background:rgba(232,168,32,.2);padding:2px 6px;border-radius:4px">142857</code></p>
+    <span class="tag tag-crm">Backfilled</span>
+  </a>
+  <a class="card" href="https://energy-tm.com/p/BEAM-002" target="_blank">
+    <div class="card-icon">🏗️</div>
+    <h3>BEAM-002 · Beamtech v2</h3>
+    <p>42 kWp · ฿1.45M · Commercial · EN · pw: <code style="background:rgba(232,168,32,.2);padding:2px 6px;border-radius:4px">762549</code></p>
+    <span class="tag tag-crm">Backfilled</span>
+  </a>
+  <a class="card" href="https://energy-tm.com/p/KNLV-001" target="_blank">
+    <div class="card-icon">🏡</div>
+    <h3>KNLV-001 · Kaniel Villas</h3>
+    <p>18.5 kWp · ฿620K · Residential · EN · pw: <code style="background:rgba(232,168,32,.2);padding:2px 6px;border-radius:4px">450570</code></p>
+    <span class="tag tag-crm">Backfilled</span>
+  </a>
+  <a class="card" href="https://energy-tm.com/p/TMFA-001" target="_blank">
+    <div class="card-icon">🏭</div>
+    <h3>TMFA-001 · TM Factory</h3>
+    <p>85 kWp · ฿2.4M · Industrial · EN · pw: <code style="background:rgba(232,168,32,.2);padding:2px 6px;border-radius:4px">899695</code></p>
+    <span class="tag tag-crm">Backfilled</span>
+  </a>
+  <a class="card" href="https://energy-tm.com/admin/proposals/new" target="_blank" style="border:2px dashed rgba(232,168,32,.4);background:rgba(232,168,32,.05)">
+    <div class="card-icon">➕</div>
+    <h3>הצעה חדשה</h3>
+    <p>יצירת הצעה חדשה — auto-calc + Nano Banana + Supabase + email</p>
+    <span class="tag tag-crm">כלי</span>
+  </a>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
@@ -253,11 +370,17 @@ details[open] summary{border-color:rgba(232,168,32,.3)}
 <!-- ═══════════════════════════════════════════ -->
 <h2>💻 כלים דיגיטליים</h2>
 <div class="grid">
-  <a class="card" href="https://kophangan-solar-crm.vercel.app" target="_blank">
+  <a class="card" href="https://energy-tm.com/crm" target="_blank" style="border:2px solid #E8A820">
     <div class="card-icon">💻</div>
-    <h3>CRM — TM Energy</h3>
-    <p>ניהול לידים, פרויקטים, הצעות מחיר. 57 לידים מיובאים. Login: k@kanielt.com</p>
-    <span class="tag tag-crm">CRM</span>
+    <h3>CRM — TM Energy (עודכן)</h3>
+    <p>ניהול לידים, פרויקטים, הצעות מחיר. 57 לידים מיובאים. כפתורי "Create Proposal" משולבים — Magic link Login @energy-tm.com</p>
+    <span class="tag tag-crm">CRM v2</span>
+  </a>
+  <a class="card" href="https://kophangan-solar-crm.vercel.app" target="_blank" style="opacity:.6">
+    <div class="card-icon">📦</div>
+    <h3>CRM — Legacy (archive)</h3>
+    <p>הגרסה הישנה — עדיין פעילה לקריאה בלבד. כל העבודה החדשה ב-energy-tm.com/crm.</p>
+    <span class="tag tag-doc">Legacy</span>
   </a>
   <a class="card" href="roof-scanner.html" style="border:2px solid #E8A820">
     <div class="card-icon">🛰️</div>
@@ -283,11 +406,17 @@ details[open] summary{border-color:rgba(232,168,32,.3)}
     <p>הזן נתוני חשבון PEA, קבל ניתוח חיסכון + הצעת מחיר מיידית ללקוח — EPC או PPA</p>
     <span class="tag tag-crm">כלי</span>
   </a>
-  <a class="card" href="proposal.html">
+  <a class="card" href="https://energy-tm.com/admin/proposals/new" target="_blank" style="border:2px solid #1A7A5A">
     <div class="card-icon">📄</div>
-    <h3>Proposal Builder — הצעת מחיר</h3>
-    <p>הצעת מחיר אינטראקטיבית ללקוח — EN/TH/HE עם מפה וחישובים</p>
-    <span class="tag tag-crm">כלי</span>
+    <h3>Proposal Builder v2 ⭐</h3>
+    <p>הכלי החדש: טופס אדמין מלא · password gate + חתימה דיגיטלית · Nano Banana AI · מעקב צפיות · HE/TH/EN</p>
+    <span class="tag tag-crm">v2 · Live</span>
+  </a>
+  <a class="card" href="proposal.html" style="opacity:.55">
+    <div class="card-icon">📦</div>
+    <h3>Proposal Builder (Legacy)</h3>
+    <p>⚠️ הגרסה הישנה — עדיין פעילה אבל ללא חתימה/מעקב. השתמש ב-v2 למעלה.</p>
+    <span class="tag tag-doc">Deprecated</span>
   </a>
   <a class="card" href="index.html">
     <div class="card-icon">🌐</div>
@@ -750,9 +879,11 @@ details[open] summary{border-color:rgba(232,168,32,.3)}
   </div>
 </details>
 
-<div style="text-align:center;margin-top:48px;padding:24px;opacity:.4;font-size:13px;border-top:1px solid rgba(255,255,255,.1)">
-  TM Energy — מרץ 2026 — 359 קבצים<br>
-  <a href="https://github.com/kaniel149/copenhagen-solar">GitHub Repository</a>
+<div style="text-align:center;margin-top:48px;padding:24px;opacity:.5;font-size:13px;border-top:1px solid rgba(255,255,255,.1)">
+  TM Energy · <strong style="color:#E8A820">עודכן אפריל 2026</strong> · ~390 קבצים · 14 קטגוריות<br>
+  Proposal System v2 Live · 5 הצעות פעילות · Admin @ <a href="https://energy-tm.com/admin" style="color:#E8A820">energy-tm.com/admin</a><br>
+  <a href="https://github.com/kaniel149/copenhagen-solar">GitHub: copenhagen-solar</a> ·
+  <a href="https://github.com/kaniel149/solar-intelligence">GitHub: solar-intelligence (v2)</a>
 </div>
 <script>
 window.PAGE_TRANSLATIONS = {
