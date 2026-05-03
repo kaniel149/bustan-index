@@ -1,35 +1,7 @@
-# TM Energy - https://index.energy-tm.com
-# Solar & EV Solutions for Koh Phangan, Thailand
+# Bustan Energy internal static archive - https://index.energy-tm.com
+# This site is an internal working index. Public marketing lives on the main website.
 
 User-agent: *
-Allow: /
+Disallow: /
 
-# AI Crawlers - Welcome!
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-Sitemap: https://index.energy-tm.com/sitemap.xml
+X-Robots-Tag: noindex, nofollow, noarchive

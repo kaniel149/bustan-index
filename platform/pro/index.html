@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KP Solar Pro 2.0 — TM Energy Platform</title>
+<title>KP Solar Pro 2.0 — Bustan Energy Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -469,7 +469,7 @@ nav{display:flex;align-items:center;background:var(--card);border-bottom:1px sol
 // ==================== CONFIG ====================
 const SUPABASE_URL='https://trvgpgpsqvvdsudpgwpm.supabase.co';
 const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRydmdwZ3BzcXZ2ZHN1ZHBnd3BtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTE3OTIsImV4cCI6MjA4ODk2Nzc5Mn0.iRx9JiEo6dZL8K5sMUKLS8Sbi5QEZ_BSXvWI9rgTENw';
-const PIN='2626';
+const PIN_HASH='305800b71062b49b350208327a02ec378199b4cf35e60eeb971611bef4928394';
 const STAGES=['new','contacted','survey_done','proposal_sent','negotiating','won','lost'];
 const STAGE_LABELS={new:'New',contacted:'Contacted',survey_done:'Survey Done',proposal_sent:'Proposal Sent',negotiating:'Negotiating',won:'Won',lost:'Lost'};
 const STAGE_COLORS={new:'var(--green)',contacted:'#3B82F6',survey_done:'var(--gold)',proposal_sent:'var(--orange)',negotiating:'#A855F7',won:'var(--green)',lost:'var(--red)'};
@@ -489,12 +489,27 @@ function showLoading(msg){
 }
 function hideLoading(){document.getElementById('loading').classList.add('hidden')}
 
+async function sha256(value){
+ const data=new TextEncoder().encode(value);
+ const hash=await crypto.subtle.digest('SHA-256',data);
+ return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
 // ==================== PIN LOCK ====================
 (function initPin(){
  const dots=document.getElementById('pin-dots');
  const pad=document.getElementById('pin-pad');
  const err=document.getElementById('pin-error');
  let entered='';
+ async function unlockIfPinMatches(pin){
+  if(await sha256(pin)===PIN_HASH){
+   document.getElementById('pin-lock').classList.add('hidden');
+   document.getElementById('app').classList.add('active');
+   initApp();
+   return;
+  }
+  err.textContent='Wrong PIN';entered='';updateDots();
+ }
  for(let i=0;i<4;i++){const d=document.createElement('div');d.className='pin-dot';dots.appendChild(d)}
  const nums=[1,2,3,4,5,6,7,8,9,'C',0,'⏎'];
  nums.forEach(n=>{
@@ -502,16 +517,12 @@ function hideLoading(){document.getElementById('loading').classList.add('hidden'
   b.onclick=()=>{
    if(n==='C'){entered='';updateDots();err.textContent='';return}
    if(n==='⏎'){
-    if(entered===PIN){document.getElementById('pin-lock').classList.add('hidden');document.getElementById('app').classList.add('active');initApp()}
-    else{err.textContent='Wrong PIN';entered='';updateDots()}
+    unlockIfPinMatches(entered)
     return;
    }
    if(entered.length<4){entered+=n;updateDots()}
    if(entered.length===4){
-    setTimeout(()=>{
-     if(entered===PIN){document.getElementById('pin-lock').classList.add('hidden');document.getElementById('app').classList.add('active');initApp()}
-     else{err.textContent='Wrong PIN';entered='';updateDots()}
-    },200);
+    setTimeout(()=>{ unlockIfPinMatches(entered) },200);
    }
   };
   pad.appendChild(b);
@@ -619,7 +630,7 @@ function initMap(){
   minZoom:18, maxZoom:19, opacity:0.85,
   bounds: L.latLngBounds([9.7098,99.9829],[9.7900,100.0149]),
   errorTileUrl: '',
-  attribution:'TM Energy Drone v2'
+  attribution:'Bustan Energy Drone v2'
  });
  droneHDLayer.addLayer(droneHDTiles);
  L.control.layers({'🛰 Satellite':satelliteLayer,'🗺 Hybrid':hybridLayer,'🌙 Dark':darkLayer},{'📸 Drone Photos':droneLayer,'🛸 Drone HD':droneHDLayer},{position:'topright',collapsed:false}).addTo(map);
@@ -1169,7 +1180,7 @@ async function logActivity(leadId,buildingId,type,description){
 // ==================== PHASE B: WHATSAPP SHARE ====================
 function shareWhatsApp(building){
  const b=building||{};
- const msg=`TM Energy — Solar Proposal\n\n🏢 ${b.name||'Building'}\n☀️ ${b.potential_kwp||0} kWp system\n📊 ${b.potential_panels||0} panels\n💰 Saves ฿${fmt(b.potential_monthly_savings_thb||0)}/month\n\nContact: kaniel@energy-tm.com\n📞 +66 99-704-4944\n🌐 index.energy-tm.com`;
+ const msg=`Bustan Energy — Solar Proposal\n\n🏢 ${b.name||'Building'}\n☀️ ${b.potential_kwp||0} kWp system\n📊 ${b.potential_panels||0} panels\n💰 Saves ฿${fmt(b.potential_monthly_savings_thb||0)}/month\n\nContact: kaniel@energy-tm.com\n📞 +66 99-704-4944\n🌐 index.energy-tm.com`;
  window.open('https://wa.me/66997044944?text='+encodeURIComponent(msg),'_blank');
 }
 
@@ -1189,7 +1200,7 @@ function exportLeadsCSV(){
  const rows=leads.map(l=>[l.contact_name||'',l.contact_phone||'',l.stage||'',l.deal_model||'',l.deal_value_thb||'',l.system_size_kwp||'',l.source||'',l.created_at||''].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(','));
  const csv=headers+'\n'+rows.join('\n');
  const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});
- const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tm-energy-leads-'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='bustan-energy-leads-'+new Date().toISOString().slice(0,10)+'.csv';a.click();
 }
 function getFilteredBuildings(){return buildings}
 
@@ -1205,7 +1216,7 @@ async function generateProposal(buildingId){
  const epcCost=Math.round(kwp*29000);
  const payback=(epcCost/annualSav).toFixed(1);
  const roi=annualSav>0?((annualSav/epcCost)*100).toFixed(1):'0';
- const refNum='TM-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*9000)+1000);
+ const refNum='BU-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*9000)+1000);
  
  const proposal={
   ref_number:refNum,
@@ -1280,7 +1291,7 @@ async function generateProposal(buildingId){
     <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()">Close</button>
    </div>
    <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.7rem;color:#5A6B7D">
-    TM Energy Co., Ltd. · kaniel@energy-tm.com · +66 99-704-4944<br>107/5 Moo 1, Koh Phangan
+    Bustan Energy Co., Ltd. · kaniel@energy-tm.com · +66 99-704-4944<br>107/5 Moo 1, Koh Phangan
    </div>
   </div>
  </div>`;
