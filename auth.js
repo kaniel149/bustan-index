@@ -1,92 +1,70 @@
-// TM Energy — Access Control
-// PINs: Kaniel=2626, Omer=3636, Yoni=4646
-(function() {
-  const USERS = {
-    '2626': { name: 'Kaniel', he: 'קניאל' },
-    '3636': { name: 'Omer', he: 'עומר' },
-    '4646': { name: 'Yoni', he: 'יוני' }
+// Bustan Energy — lightweight client-side access notice.
+// This is only a convenience gate for legacy static pages, not real security.
+(function () {
+  const ACCESS_HASHES = {
+    '305800b71062b49b350208327a02ec378199b4cf35e60eeb971611bef4928394': { name: 'Kaniel', he: 'קניאל' },
+    '3cb25825a619415e255ae83eb0cd9c26684de310fb3c377ac289362e043affe7': { name: 'Omer', he: 'עומר' },
+    '2725d2bcfac13cc02f042a2cdec42759659c6ec2ab7877065b82a9ebf813cb85': { name: 'Yoni', he: 'יוני' },
   };
   const SESSION_DAYS = 7;
-  // After deploying Apps Script, paste the URL here:
-  const LOG_SHEET_URL = window.TM_LOG_URL || 'https://script.google.com/macros/s/AKfycbxNKTiczMYnecswhyG_DdZA2MUdrZnBeNAfi8wvKYgE9wmaQ3MrwY6M2Xx00dLzZEI2/exec';
-  const WHATSAPP_NOTIFY = true;
+  const STORAGE_KEY = 'bustan_static_access';
 
   function getAuth() {
-    try { return JSON.parse(localStorage.getItem('tm_auth')); } catch { return null; }
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch { return null; }
   }
 
   function isValid(auth) {
-    if (!auth || !auth.pin || !auth.time) return false;
-    if (!USERS[auth.pin]) return false;
-    if (Date.now() - auth.time > SESSION_DAYS * 24 * 60 * 60 * 1000) return false;
-    return true;
+    if (!auth || !auth.hash || !auth.time) return false;
+    if (!ACCESS_HASHES[auth.hash]) return false;
+    return Date.now() - auth.time <= SESSION_DAYS * 24 * 60 * 60 * 1000;
   }
 
-  function logAccess(user, page) {
-    const entry = {
-      name: user.name,
-      page: page,
-      time: new Date().toISOString(),
-      ua: navigator.userAgent.slice(0, 80)
-    };
-    // Save to local log
-    const log = JSON.parse(localStorage.getItem('tm_access_log') || '[]');
-    log.push(entry);
-    if (log.length > 200) log.splice(0, log.length - 200);
-    localStorage.setItem('tm_access_log', JSON.stringify(log));
-    // Send to Google Sheet if configured
-    if (LOG_SHEET_URL && !LOG_SHEET_URL.includes('PASTE_')) {
-      fetch(LOG_SHEET_URL, {
-        method: 'POST', mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(entry)
-      }).catch(() => {});
-    }
+  async function sha256(value) {
+    const data = new TextEncoder().encode(value);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return [...new Uint8Array(hash)].map((b) => b.toString(16).padStart(2, '0')).join('');
   }
 
   function showGate() {
     document.body.style.overflow = 'hidden';
     const overlay = document.createElement('div');
-    overlay.id = 'tm-auth-gate';
+    overlay.id = 'bustan-auth-gate';
     overlay.innerHTML = `
       <style>
-        #tm-auth-gate {
-          position:fixed;inset:0;z-index:99999;
-          background:linear-gradient(160deg,#0D2137,#0A0A0A 60%);
-          display:flex;align-items:center;justify-content:center;
-          font-family:'Heebo','DM Sans',sans-serif;
+        #bustan-auth-gate {
+          position: fixed; inset: 0; z-index: 99999;
+          background: linear-gradient(160deg, #27342F, #24463E 58%, #1C2824);
+          display: flex; align-items: center; justify-content: center;
+          font-family: 'Heebo', 'DM Sans', sans-serif;
         }
         .gate-box {
-          background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);
-          border-radius:20px;padding:48px 40px;text-align:center;
-          max-width:360px;width:90%;backdrop-filter:blur(20px);
+          width: min(90%, 380px); padding: 40px 34px; text-align: center;
+          background: #FFF4E2; color: #27342F;
+          border: 1px solid rgba(245,184,75,.35); border-radius: 10px;
+          box-shadow: 0 22px 70px rgba(19,35,30,.28);
         }
-        .gate-logo { font-size:32px;font-weight:700;color:#E8A820;margin-bottom:8px; }
-        .gate-sub { color:rgba(255,255,255,.4);font-size:13px;margin-bottom:32px; }
+        .gate-logo { font-size: 30px; font-weight: 900; letter-spacing: -.02em; margin-bottom: 6px; }
+        .gate-sub { color: rgba(39,52,47,.62); font-size: 13px; margin-bottom: 26px; }
         .gate-input {
-          width:100%;padding:16px;font-size:24px;text-align:center;letter-spacing:12px;
-          background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);
-          border-radius:12px;color:#fff;outline:none;font-family:monospace;
-          -webkit-text-security:disc;
+          width: 100%; padding: 15px; font-size: 22px; text-align: center; letter-spacing: 10px;
+          background: #F4EAD8; border: 1px solid rgba(36,70,62,.22);
+          border-radius: 8px; color: #27342F; outline: none; font-family: monospace;
+          -webkit-text-security: disc;
         }
-        .gate-input:focus { border-color:#E8A820; }
-        .gate-input::placeholder { letter-spacing:4px;font-size:14px;color:rgba(255,255,255,.2); }
+        .gate-input:focus { border-color: #008F8A; box-shadow: 0 0 0 3px rgba(0,143,138,.14); }
+        .gate-input::placeholder { letter-spacing: 3px; font-size: 13px; color: rgba(39,52,47,.35); }
         .gate-btn {
-          width:100%;margin-top:16px;padding:14px;font-size:16px;font-weight:600;
-          background:linear-gradient(135deg,#E8A820,#D4941A);color:#0A0A0A;
-          border:none;border-radius:12px;cursor:pointer;transition:all .2s;
+          width: 100%; margin-top: 14px; padding: 13px; font-size: 15px; font-weight: 800;
+          background: #F5B84B; color: #27342F; border: none; border-radius: 8px;
+          cursor: pointer; transition: transform .2s, box-shadow .2s;
         }
-        .gate-btn:hover { transform:translateY(-1px);box-shadow:0 4px 20px rgba(232,168,32,.3); }
-        .gate-error { color:#FF6B6B;font-size:13px;margin-top:12px;min-height:20px; }
-        .gate-welcome {
-          animation:fadeIn .5s ease;color:#2ED89A;font-size:18px;font-weight:600;
-          margin-top:12px;
-        }
-        @keyframes fadeIn { from{opacity:0;transform:scale(.95)} to{opacity:1;transform:scale(1)} }
+        .gate-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(245,184,75,.28); }
+        .gate-error { color: #B94436; font-size: 13px; margin-top: 12px; min-height: 20px; }
+        .gate-welcome { color: #006F6B; font-size: 17px; font-weight: 800; margin-top: 12px; }
       </style>
       <div class="gate-box">
-        <div class="gate-logo">TM Energy</div>
-        <div class="gate-sub">Ko Phangan Solar Division</div>
+        <div class="gate-logo">Bustan Energy</div>
+        <div class="gate-sub">Internal static archive</div>
         <input class="gate-input" id="gate-pin" type="password" inputmode="numeric"
                pattern="[0-9]*" maxlength="4" placeholder="PIN" autofocus>
         <button class="gate-btn" id="gate-submit">Enter</button>
@@ -98,48 +76,42 @@
     const pinInput = document.getElementById('gate-pin');
     const errEl = document.getElementById('gate-error');
 
-    function tryLogin() {
+    async function tryLogin() {
       const pin = pinInput.value.trim();
-      if (!USERS[pin]) {
+      const hash = await sha256(pin);
+      if (!ACCESS_HASHES[hash]) {
         errEl.textContent = 'PIN incorrect';
         pinInput.value = '';
         pinInput.focus();
-        pinInput.style.borderColor = '#FF6B6B';
-        setTimeout(() => { pinInput.style.borderColor = 'rgba(255,255,255,.15)'; }, 1500);
+        pinInput.style.borderColor = '#B94436';
+        setTimeout(() => { pinInput.style.borderColor = 'rgba(36,70,62,.22)'; }, 1500);
         return;
       }
-      const user = USERS[pin];
-      localStorage.setItem('tm_auth', JSON.stringify({ pin, time: Date.now() }));
-      logAccess(user, document.title || location.pathname);
-      // Welcome animation
+
+      const user = ACCESS_HASHES[hash];
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ hash, time: Date.now() }));
       errEl.innerHTML = `<div class="gate-welcome">Welcome, ${user.he}</div>`;
       setTimeout(() => {
-        overlay.style.transition = 'opacity .4s';
+        overlay.style.transition = 'opacity .35s';
         overlay.style.opacity = '0';
         setTimeout(() => {
           overlay.remove();
           document.body.style.overflow = '';
-        }, 400);
-      }, 800);
+        }, 350);
+      }, 650);
     }
 
     document.getElementById('gate-submit').addEventListener('click', tryLogin);
     pinInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') tryLogin();
     });
-    // Auto-submit on 4 digits
     pinInput.addEventListener('input', () => {
-      if (pinInput.value.length === 4) setTimeout(tryLogin, 200);
+      if (pinInput.value.length === 4) setTimeout(tryLogin, 160);
     });
   }
 
-  // --- Main ---
   const auth = getAuth();
-  if (isValid(auth)) {
-    // Valid session — log page view silently
-    logAccess(USERS[auth.pin], document.title || location.pathname);
-  } else {
-    // No valid session — show login gate
+  if (!isValid(auth)) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', showGate);
     } else {
@@ -147,10 +119,11 @@
     }
   }
 
-  // Expose for admin use
-  window.tmAuth = {
-    logout: () => { localStorage.removeItem('tm_auth'); location.reload(); },
-    getLog: () => JSON.parse(localStorage.getItem('tm_access_log') || '[]'),
-    who: () => { const a = getAuth(); return a && USERS[a.pin] ? USERS[a.pin].he : null; }
+  window.bustanStaticAccess = {
+    logout: () => { localStorage.removeItem(STORAGE_KEY); location.reload(); },
+    who: () => {
+      const authState = getAuth();
+      return authState && ACCESS_HASHES[authState.hash] ? ACCESS_HASHES[authState.hash].he : null;
+    },
   };
 })();

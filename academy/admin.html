@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academy Admin — TM Energy</title>
+  <title>Academy Admin — Bustan Energy</title>
   <style>
     :root {
       --navy: #0A1628;
@@ -798,7 +798,7 @@
           <div class="form-grid">
             <div class="form-group">
               <label class="form-label">Company Name</label>
-              <input class="form-input" id="setting-company" value="TM Energy">
+              <input class="form-input" id="setting-company" value="Bustan Energy">
             </div>
             <div class="form-group">
               <label class="form-label">CEO Name</label>
@@ -989,7 +989,7 @@ const ROLE_DEFAULTS = {
   admin: ['solar-fundamentals', 'technical', 'sales-bd']
 };
 
-const PIN = '2626'; // fallback PIN
+const PIN_HASH = '305800b71062b49b350208327a02ec378199b4cf35e60eeb971611bef4928394';
 let currentSort = { col: null, asc: true };
 let currentDashRole = 'all';
 let currentEmpRole = 'all';
@@ -999,10 +999,16 @@ let currentEmpRole = 'all';
 // ============================================================
 function getData() {
   const raw = localStorage.getItem('tm-academy-admin');
-  if (!raw) return { employees: [], settings: { companyName: 'TM Energy', ceoName: 'Kaniel Tordjman' }, activities: [] };
-  try { return JSON.parse(raw); } catch { return { employees: [], settings: { companyName: 'TM Energy', ceoName: 'Kaniel Tordjman' }, activities: [] }; }
+  if (!raw) return { employees: [], settings: { companyName: 'Bustan Energy', ceoName: 'Kaniel Tordjman' }, activities: [] };
+  try { return JSON.parse(raw); } catch { return { employees: [], settings: { companyName: 'Bustan Energy', ceoName: 'Kaniel Tordjman' }, activities: [] }; }
 }
 function saveData(data) { localStorage.setItem('tm-academy-admin', JSON.stringify(data)); }
+
+async function sha256(value) {
+  const data = new TextEncoder().encode(value);
+  const hash = await crypto.subtle.digest('SHA-256', data);
+  return [...new Uint8Array(hash)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
 
 // ============================================================
 // PIN
@@ -1010,11 +1016,11 @@ function saveData(data) { localStorage.setItem('tm-academy-admin', JSON.stringif
 (function initPin() {
   const digits = document.querySelectorAll('.pin-digit');
   digits.forEach((d, i) => {
-    d.addEventListener('input', () => {
+    d.addEventListener('input', async () => {
       if (d.value && i < 3) digits[i + 1].focus();
       const pin = Array.from(digits).map(x => x.value).join('');
       if (pin.length === 4) {
-        if (pin === PIN) {
+        if (await sha256(pin) === PIN_HASH) {
           document.getElementById('pin-screen').classList.add('hidden');
           document.getElementById('app').style.display = 'flex';
           renderAll();
@@ -1677,7 +1683,7 @@ function generateCertificate(empId, courseId) {
 
   document.getElementById('cert-content').innerHTML = `
     <div class="certificate" id="printable-cert">
-      <div class="cert-header">${settings.companyName || 'TM Energy'} Academy</div>
+      <div class="cert-header">${settings.companyName || 'Bustan Energy'} Academy</div>
       <div class="cert-title">Certificate of Completion</div>
       <div class="cert-label">This certifies that</div>
       <div class="cert-name">${emp.name}</div>
@@ -1688,7 +1694,7 @@ function generateCertificate(empId, courseId) {
         <div class="cert-sign">
           <div class="cert-sign-line">
             <div class="cert-sign-name">${settings.ceoName || 'Kaniel Tordjman'}</div>
-            <div class="cert-sign-role">CEO, ${settings.companyName || 'TM Energy'}</div>
+            <div class="cert-sign-role">CEO, ${settings.companyName || 'Bustan Energy'}</div>
           </div>
         </div>
       </div>
@@ -1710,7 +1716,7 @@ function printCertificate() {
 // ============================================================
 function renderSettings() {
   const data = getData();
-  document.getElementById('setting-company').value = data.settings?.companyName || 'TM Energy';
+  document.getElementById('setting-company').value = data.settings?.companyName || 'Bustan Energy';
   document.getElementById('setting-ceo').value = data.settings?.ceoName || 'Kaniel Tordjman';
 }
 
@@ -1833,13 +1839,12 @@ document.getElementById('btn-demo-data').addEventListener('click', () => {
 // ============================================================
 const SB_URL = 'https://rklpcemhaimavneypubr.supabase.co';
 const SB_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbHBjZW1oYWltYXZuZXlwdWJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MTg2NDUsImV4cCI6MjA4ODE5NDY0NX0.xI_hBDpYPc49AidDO_WkA0mzJCg4uZJKwCR2Ds3aiOw';
-const SB_SERVICE = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbHBjZW1oYWltYXZuZXlwdWJyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjYxODY0NSwiZXhwIjoyMDg4MTk0NjQ1fQ.GSE82uCfEtj_1mJKDAcqxNxZQNinUwkFXBag-oJGVi8';
 
 let sbAdmin = null;
 function getSBAdmin() {
   if (sbAdmin) return sbAdmin;
   if (typeof supabase !== 'undefined' && supabase.createClient) {
-    sbAdmin = supabase.createClient(SB_URL, SB_SERVICE);
+    sbAdmin = supabase.createClient(SB_URL, SB_ANON);
   }
   return sbAdmin;
 }
