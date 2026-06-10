@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ko Pha Ngan — Drone Mission Plan | תוכנית סריקה אווירית</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --panel: #131826;
+    --panel-2: #1c2235;
+    --border: #2a3147;
+    --text: #e8ecf4;
+    --muted: #8b95a8;
+    --accent: #fbbf24;
+    --accent-2: #60a5fa;
+    --green: #34d399;
+    --red: #f87171;
+    --yellow: #fbbf24;
+    --priority-1: #ef4444;
+    --priority-2: #f59e0b;
+    --priority-3: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Heebo", "Assistant", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+  }
+  .controller-banner {
+    background: linear-gradient(90deg, #7c2d12, #92400e);
+    border-bottom: 1px solid #f59e0b;
+    padding: 8px 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .controller-banner.litchi { background: linear-gradient(90deg, #14532d, #166534); border-color: #22c55e; }
+  .controller-banner.manual { background: linear-gradient(90deg, #7c2d12, #92400e); border-color: #f59e0b; }
+  .controller-banner b { font-size: 13px; }
+  .ctrl-select { display: flex; gap: 6px; }
+  .ctrl-select button {
+    padding: 4px 10px;
+    font-size: 11px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .ctrl-select button.active { background: rgba(255,255,255,0.2); border-color: white; font-weight: 700; }
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .title-block h1 { font-size: 18px; font-weight: 700; }
+  .title-block .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .progress-block {
+    flex: 1;
+    max-width: 480px;
+    min-width: 240px;
+  }
+  .progress-bar {
+    height: 10px;
+    background: var(--panel-2);
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--accent-2));
+    transition: width 0.3s ease;
+  }
+  .progress-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .progress-stats b { color: var(--text); }
+  .header-actions { display: flex; gap: 8px; }
+  button {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  button:hover { background: var(--border); }
+  button.primary { background: var(--accent); color: #1a1a1a; font-weight: 600; }
+  button.primary:hover { background: #f59e0b; }
+  button.danger { background: var(--red); color: #fff; }
+  /* Main grid */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    overflow: hidden;
+  }
+  #map { width: 100%; height: 100%; background: #1a1d2e; }
+  /* Side panel */
+  aside {
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 16px;
+  }
+  .zone-list { display: flex; flex-direction: column; gap: 8px; }
+  .zone-card {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .zone-card:hover { border-color: var(--accent-2); transform: translateX(-2px); }
+  .zone-card.active { border-color: var(--accent); background: #1e2535; }
+  .zone-card.done { opacity: 0.55; }
+  .zone-card.done::after {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    color: var(--green);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .zone-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .zone-name { font-weight: 600; font-size: 14px; }
+  .zone-name-en { font-size: 11px; color: var(--muted); font-weight: 400; }
+  .priority-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    display: inline-block;
+  }
+  .p1 { background: var(--priority-1); }
+  .p2 { background: var(--priority-2); }
+  .p3 { background: var(--priority-3); }
+  .zone-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .zone-meta span { display: inline-flex; align-items: center; gap: 4px; }
+  /* Detail modal */
+  .detail-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+  }
+  .detail-overlay.show { display: flex; }
+  .detail-modal {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 24px;
+  }
+  .detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .detail-header h2 { font-size: 22px; }
+  .detail-header .sub { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+  }
+  .grid-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    background: var(--panel-2);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+  .stat-card .label { font-size: 10px; color: var(--muted); text-transform: uppercase; }
+  .stat-card .value { font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px; }
+  section.detail-section { margin-bottom: 18px; }
+  section.detail-section h3 {
+    font-size: 13px;
+    color: var(--accent-2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .params-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .params-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .params-table td:first-child { color: var(--muted); width: 40%; }
+  .params-table td:last-child { font-weight: 600; }
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .checklist li:before {
+    content: "☐";
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+  .modal-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  /* Footer */
+  footer {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    padding: 8px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .legend { display: flex; gap: 12px; }
+  .legend span { display: inline-flex; align-items: center; gap: 4px; }
+  /* Mobile */
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; grid-template-rows: 50% 50%; }
+    aside { border-right: none; border-top: 1px solid var(--border); order: 2; }
+    #map { order: 1; }
+    .grid-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  /* Print */
+  @media print {
+    body { background: white; color: black; height: auto; overflow: visible; }
+    header, footer, .header-actions, #map, aside { display: none; }
+    .detail-overlay { display: block !important; position: static; background: none; padding: 0; }
+    .detail-modal { box-shadow: none; border: none; max-height: none; background: white; color: black; }
+    .stat-card { border: 1px solid #ccc; background: white; color: black; }
+    .stat-card .value { color: black; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controller-banner" id="ctrlBanner">
+  <div>
+    <b>🎮 בחר סוג שלט:</b>
+    <span id="ctrlDesc">בחר את השלט שיש לעובד כדי להתאים את ההוראות</span>
+  </div>
+  <div class="ctrl-select">
+    <button id="btnLitchi" onclick="setController('litchi')">RC-N1 + טלפון (Litchi) ⚡</button>
+    <button id="btnManual" onclick="setController('manual')">DJI RC ייעודי (ידני) ⚠️</button>
+  </div>
+</div>
+
+<header>
+  <div class="title-block">
+    <h1>🚁 Ko Pha Ngan — Drone Mission Plan</h1>
+    <div class="sub">תוכנית סריקה אווירית מלאה · Air 2S · 80m AGL · 9 priority zones</div>
+  </div>
+  <div class="progress-block">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-stats">
+      <span>הושלמו: <b id="doneCount">0</b> / <b id="totalCount">9</b> אזורים</span>
+      <span>סוללות שנעשו: <b id="batteriesDone">0</b> / <b id="batteriesTotal">90</b></span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button onclick="exportProgress()">📦 ייצא JSON</button>
+    <button onclick="window.print()">🖨 הדפס</button>
+    <button class="danger" onclick="resetAll()">🔄 איפוס</button>
+  </div>
+</header>
+
+<main>
+  <div id="map"></div>
+  <aside>
+    <h3 style="font-size:13px;color:var(--muted);margin-bottom:10px;text-transform:uppercase;">סדר ביצוע מומלץ</h3>
+    <div class="zone-list" id="zoneList"></div>
+  </aside>
+</main>
+
+<footer>
+  <div class="legend">
+    <span><span class="priority-dot p1"></span> עדיפות 1 (גבוהה)</span>
+    <span><span class="priority-dot p2"></span> עדיפות 2 (בינונית)</span>
+    <span><span class="priority-dot p3"></span> עדיפות 3 (נמוכה)</span>
+  </div>
+  <div style="margin-right:auto;">
+    💡 לחץ על אזור במפה או ברשימה לפתיחת פרטי משימה
+  </div>
+</footer>
+
+<!-- Detail Modal -->
+<div class="detail-overlay" id="detailOverlay" onclick="if(event.target===this)closeDetail()">
+  <div class="detail-modal" id="detailModal"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ========================================
+// KO PHA NGAN — DRONE MISSION ZONES
+// Priority: 1 = highest revenue potential
+// ========================================
+const ZONES = [
+  {
+    id: 'thong-sala',
+    name_he: 'תונג סלה (עיר ראשית)',
+    name_en: 'Thong Sala',
+    name_th: 'ท้องศาลา',
+    priority: 1,
+    area_km2: 2.0,
+    batteries: 20,
+    duration_hours: 8,
+    days: 2,
+    takeoff_lat: 9.7100,
+    takeoff_lon: 100.0050,
+    takeoff_name: 'מגרש חניה ליד טסקו לוטוס',
+    bbox: [[9.7000, 99.9970], [9.7180, 100.0150]],
+    description: 'מרכז העיר — חנויות, משרדים, גגות מסחריים גדולים, פוטנציאל לקוחות מסחריים B2B.',
+    notes: 'הימנע משעות שיא (10:30-11:30 שוק יום שני וחמישי). הרבה אנשים בחוץ.',
+    parking: 'Tesco Lotus / 7-Eleven ליד הנמל',
+  },
+  {
+    id: 'baan-tai',
+    name_he: 'באן טאי (חוף דרום)',
+    name_en: 'Baan Tai',
+    name_th: 'บ้านใต้',
+    priority: 1,
+    area_km2: 1.2,
+    batteries: 12,
+    duration_hours: 5,
+    days: 1.5,
+    takeoff_lat: 9.7080,
+    takeoff_lon: 100.0220,
+    takeoff_name: 'חוף באן טאי — מתחם וילות',
+    bbox: [[9.7020, 100.0150], [9.7140, 100.0300]],
+    description: 'רצועת חוף עם וילות יוקרה ובתי משקיעים. גגות פלטות גדולים — לקוחות פרימיום.',
+    notes: 'הרבה ילדים בחוף — שמור 30m מבני אדם תמיד.',
+    parking: 'כל מסעדת חוף מאפשרת חניה ב-20 THB',
+  },
+  {
+    id: 'baan-kai',
+    name_he: 'באן קאי (חוף דרום מזרח)',
+    name_en: 'Baan Kai',
+    name_th: 'บ้านค่าย',
+    priority: 1,
+    area_km2: 1.3,
+    batteries: 13,
+    duration_hours: 5,
+    days: 1.5,
+    takeoff_lat: 9.7060,
+    takeoff_lon: 100.0420,
+    takeoff_name: 'מרכז באן קאי',
+    bbox: [[9.7000, 100.0340], [9.7120, 100.0500]],
+    description: 'אזור resorts ובוטיק הוטל. גגות בינוניים-גדולים, צריכת חשמל גבוהה (AC + בריכות).',
+    notes: 'בדוק NOTAM — לפעמים יש פעילות מסוקים פרטיים בעונה.',
+    parking: 'מאחורי 7-Eleven באן קאי',
+  },
+  {
+    id: 'hat-rin',
+    name_he: 'האט רין (Full Moon)',
+    name_en: 'Hat Rin',
+    name_th: 'หาดริ้น',
+    priority: 2,
+    area_km2: 1.0,
+    batteries: 10,
+    duration_hours: 4,
+    days: 1,
+    takeoff_lat: 9.6750,
+    takeoff_lon: 100.0700,
+    takeoff_name: 'מגרש מעל Hat Rin Beach',
+    bbox: [[9.6680, 100.0620], [9.6820, 100.0780]],
+    description: 'בארים, מועדונים, hostels. צריכת חשמל מטורפת — לקוחות מעולים, אבל גגות קטנים.',
+    notes: '🚫 אל תטוס בליל ה-Full Moon Party או 2 ימים אחריו. בלאגן שיכורים. צלם בוקר אחרי 09:00.',
+    parking: 'חניון העירייה ליד המעבורת',
+  },
+  {
+    id: 'sri-thanu',
+    name_he: 'סרי תאנו (וגאן/אקסטס)',
+    name_en: 'Sri Thanu / Hin Kong',
+    name_th: 'ศรีธนู',
+    priority: 1,
+    area_km2: 1.5,
+    batteries: 15,
+    duration_hours: 6,
+    days: 2,
+    takeoff_lat: 9.7600,
+    takeoff_lon: 99.9500,
+    takeoff_name: 'מרכז Sri Thanu — בית קפה Karma',
+    bbox: [[9.7500, 99.9420], [9.7700, 99.9580]],
+    description: 'קהילת אקספטים, יוגה, וילות פרימיום. הרבה מערב-אירופאים = פתוחים לסולאר!',
+    notes: 'אזור הכי טוב להמרה. נסה לקבוע צילום + הדגמה באותו יום.',
+    parking: 'חניית Orion Healing',
+  },
+  {
+    id: 'haad-yao',
+    name_he: 'האד יאו + סלאד (חוף מערב)',
+    name_en: 'Haad Yao + Haad Salad',
+    name_th: 'หาดยาว+สลัด',
+    priority: 2,
+    area_km2: 0.9,
+    batteries: 9,
+    duration_hours: 4,
+    days: 1,
+    takeoff_lat: 9.7770,
+    takeoff_lon: 99.9430,
+    takeoff_name: 'חניית Haad Yao View Point',
+    bbox: [[9.7700, 99.9380], [9.7850, 99.9500]],
+    description: 'Resorts בינוניים-גדולים, נוף שקיעה. תיירות יוקרה.',
+    notes: 'רוח מערבית חזקה אחר הצהריים — טוס לפני 14:00.',
+    parking: 'חניית View Point חינמית',
+  },
+  {
+    id: 'chaloklum',
+    name_he: 'צ׳אלוקלום (כפר דייגים)',
+    name_en: 'Chaloklum',
+    name_th: 'โฉลกหลำ',
+    priority: 3,
+    area_km2: 0.8,
+    batteries: 8,
+    duration_hours: 3,
+    days: 1,
+    takeoff_lat: 9.8200,
+    takeoff_lon: 99.9800,
+    takeoff_name: 'נמל הדייגים',
+    bbox: [[9.8130, 99.9720], [9.8270, 99.9880]],
+    description: 'כפר דייגים מסורתי + צמחיית מטיילים. גגות קטנים אבל בעלים מקומיים = quick wins.',
+    notes: 'אזור צבאי קרוב — אל תטוס צפונה מ-9.825.',
+    parking: 'נמל הדייגים — תן 50 THB לפועל',
+  },
+  {
+    id: 'thong-nai-pan',
+    name_he: 'תונג נאי פן (פרימיום)',
+    name_en: 'Thong Nai Pan Noi + Yai',
+    name_th: 'ท้องนายปาน',
+    priority: 1,
+    area_km2: 0.6,
+    batteries: 6,
+    duration_hours: 3,
+    days: 1,
+    takeoff_lat: 9.7700,
+    takeoff_lon: 100.0700,
+    takeoff_name: 'TNP Beach — קצה דרומי',
+    bbox: [[9.7600, 100.0640], [9.7800, 100.0780]],
+    description: 'אזור הכי יוקרתי באי. Anantara, Santhiya, Buri Rasa. גגות ענקיים + AC כל הזמן.',
+    notes: '🎯 אזור עם הכי גבוה ROI לסולאר. תאם מראש עם המנהלים — אל תטוס בלי הודעה.',
+    parking: 'באישור מהמלון',
+  },
+  {
+    id: 'mae-haad',
+    name_he: 'מאי האד + Koh Ma',
+    name_en: 'Mae Haad + Koh Ma',
+    name_th: 'แม่หาด',
+    priority: 3,
+    area_km2: 0.5,
+    batteries: 5,
+    duration_hours: 2,
+    days: 0.5,
+    takeoff_lat: 9.8170,
+    takeoff_lon: 99.9580,
+    takeoff_name: 'חוף Mae Haad — מרכז',
+    bbox: [[9.8120, 99.9500], [9.8230, 99.9650]],
+    description: 'חוף קטן עם resorts בוטיק + האי Koh Ma. אזור קטן אבל מתאים לסיום שבוע.',
+    notes: 'גאות פעמיים ביום מנתקת את Koh Ma — בדוק לוח גאות לפני.',
+    parking: 'מסעדת חוף',
+  },
+];
+
+const COMMON_PARAMS = {
+  drone: 'DJI Air 2S',
+  altitude_agl: '80m',
+  speed: '5 m/s',
+  front_overlap: '80%',
+  side_overlap: '75%',
+  iso: '100 (קבוע)',
+  shutter: 'אוטומטי (1/640-1/1000)',
+  white_balance: 'Sunny',
+  ev: '-0.3 עד -0.7',
+  format: 'JPEG + RAW (DNG)',
+  pattern: 'Nadir grid + Oblique 45° (4 כיוונים)',
+  gcps_per_zone: '8-12 נקודות',
+  battery_minutes: '~22 דקות אפקטיביות',
+};
+
+const CHECKLIST_BEFORE_LITCHI = [
+  'סוללות 4+ טעונות מלא (לפחות 4 לכל יום)',
+  'SD card 128GB ריק + גיבוי',
+  'בדוק NOTAM ב-airmap.com (במיוחד אם קרוב לסמוי)',
+  'הדפס/הכן GCPs (קרטון 60x60 ס"מ שחור/לבן)',
+  '📱 שלט RC-N1 + טלפון מחובר עם USB-C',
+  '📱 אפליקציית Litchi עם המשימה נטענה (Cloud → Download)',
+  '📍 Avenza Maps + מפת קו פנגאן offline',
+  'מים 2 ליטר + כובע + קרם הגנה',
+  'מטען נייד לטלפון (8 שעות עבודה)',
+  'כלי קטן (חוט+סמן) לסימון GCPs בקרקע',
+];
+
+const CHECKLIST_BEFORE_MANUAL = [
+  'סוללות 6+ טעונות מלא (פי 1.5 מ-Litchi — טיסה ידנית פחות יעילה)',
+  'SD card 128GB ריק + גיבוי',
+  'בדוק NOTAM ב-airmap.com (במיוחד אם קרוב לסמוי)',
+  'הדפס/הכן GCPs (קרטון 60x60 ס"מ — 12-16 לאזור, יותר מ-Litchi!)',
+  '🎮 שלט DJI RC ייעודי + סוללה טעונה במלואה',
+  '⚠️ הגדר ב-DJI Fly: Timed Shot → 2 sec לפני יציאה',
+  '📍 Avenza Maps בטלפון נפרד לסימון GCPs',
+  '🗺 הדפס מפת זיגזג של האזור (PDF) — לעובד לדעת לאן לטוס',
+  'מים 3 ליטר + כובע + קרם הגנה (פי 1.5 זמן)',
+  'כלי קטן (חוט+סמן) לסימון GCPs בקרקע',
+];
+
+// ========================================
+// CONTROLLER MODE
+// ========================================
+function getControllerMode() {
+  return localStorage.getItem('kpg-ctrl-mode') || 'litchi';
+}
+function setController(mode) {
+  localStorage.setItem('kpg-ctrl-mode', mode);
+  updateBanner();
+  renderAll();
+  // Close detail if open and re-open with new mode
+  const ov = document.getElementById('detailOverlay');
+  if (ov.classList.contains('show')) {
+    const activeId = document.querySelector('.zone-card.active')?.getAttribute('data-id');
+    if (activeId) openDetail(activeId);
+  }
+}
+function updateBanner() {
+  const mode = getControllerMode();
+  const banner = document.getElementById('ctrlBanner');
+  const desc = document.getElementById('ctrlDesc');
+  document.getElementById('btnLitchi').classList.toggle('active', mode === 'litchi');
+  document.getElementById('btnManual').classList.toggle('active', mode === 'manual');
+  banner.className = `controller-banner ${mode}`;
+  if (mode === 'litchi') {
+    desc.innerHTML = '✅ <b>מצב Litchi:</b> טיסה אוטומטית · 1.5h לאזור · 10 סוללות · המשימה נטענת מ-Cloud';
+  } else {
+    desc.innerHTML = '⚠️ <b>מצב ידני:</b> DJI Fly + Timed Shot · 4-5h לאזור · 15 סוללות · זיגזג ידני 80m קבוע';
+  }
+}
+
+const CHECKLIST_FIELD = [
+  'הגעה: רוח <8 m/s (אם 10+ — חזור הביתה)',
+  'פריסת GCPs לפי המפה (8-12 נקודות פזורות)',
+  'תיעוד GPS של כל GCP בטלפון',
+  'Calibrate compass + IMU (פעם ראשונה באתר)',
+  'טיסת test: 5 תמונות, בדוק GSD בכרטיס',
+  'הפעל Mission Auto + נטר את הטיסה כל הזמן',
+  'אחרי כל סוללה: החלף + המשך מהנקודה האחרונה',
+  'אם רואה ענן גדול מתקרב — נחת מיד והמתן',
+  'בסיום: בדוק שכל התמונות נקלטו ב-SD',
+];
+
+const CHECKLIST_AFTER = [
+  'העלאה ל-Supabase bucket: drone-imagery/koh-phangan/<zone-id>/',
+  'הפעל ODM pipeline (raw → orthomosaic)',
+  'בדוק תוצאות: orthomosaic + DSM + 3D model',
+  'ייצוא PMTiles → tile server',
+  'עדכן ב-CRM: זמין לסקירת לקוחות',
+  'סמן את האזור כ-DONE בכלי הזה',
+  'הכן GeoJSON של גגות מעניינים → KP Solar Pro v2',
+];
+
+// ========================================
+// STATE & STORAGE
+// ========================================
+const STORAGE_KEY = 'kpg-drone-mission-v1';
+let state = loadState();
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch(e) {}
+  return { zones: {} };
+}
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+function getStatus(id) {
+  return (state.zones[id] && state.zones[id].status) || 'pending';
+}
+function setStatus(id, status) {
+  if (!state.zones[id]) state.zones[id] = {};
+  state.zones[id].status = status;
+  state.zones[id].updated = new Date().toISOString();
+  saveState();
+  renderAll();
+}
+
+// ========================================
+// MAP
+// ========================================
+const map = L.map('map', { zoomControl: true }).setView([9.7400, 100.0100], 12);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Esri World Imagery',
+  maxZoom: 19,
+}).addTo(map);
+
+const zoneLayers = {};
+
+function colorForZone(zone) {
+  const status = getStatus(zone.id);
+  if (status === 'done') return '#34d399';
+  if (status === 'active') return '#fbbf24';
+  return zone.priority === 1 ? '#ef4444' : (zone.priority === 2 ? '#f59e0b' : '#3b82f6');
+}
+
+function drawZones() {
+  ZONES.forEach(z => {
+    if (zoneLayers[z.id]) map.removeLayer(zoneLayers[z.id]);
+    const color = colorForZone(z);
+    const rect = L.rectangle(z.bbox, {
+      color: color,
+      weight: 2,
+      fillColor: color,
+      fillOpacity: getStatus(z.id) === 'done' ? 0.15 : 0.35,
+    }).addTo(map);
+    rect.bindTooltip(`${z.name_he}<br><small>${z.batteries} סוללות · ${z.days} ימים</small>`, { permanent: false });
+    rect.on('click', () => openDetail(z.id));
+    // Takeoff marker
+    const takeoffIcon = L.divIcon({
+      html: `<div style="background:${color};border:2px solid white;border-radius:50%;width:14px;height:14px;box-shadow:0 0 8px rgba(0,0,0,0.5);"></div>`,
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+      className: 'takeoff-marker',
+    });
+    L.marker([z.takeoff_lat, z.takeoff_lon], { icon: takeoffIcon })
+      .bindTooltip(`🛫 Takeoff: ${z.takeoff_name}`)
+      .addTo(map);
+    zoneLayers[z.id] = rect;
+  });
+}
+
+// ========================================
+// SIDE PANEL LIST
+// ========================================
+function renderList() {
+  const sorted = [...ZONES].sort((a,b) => {
+    const sa = getStatus(a.id), sb = getStatus(b.id);
+    const order = { active: 0, pending: 1, done: 2 };
+    if (order[sa] !== order[sb]) return order[sa] - order[sb];
+    return a.priority - b.priority;
+  });
+  const html = sorted.map(z => {
+    const status = getStatus(z.id);
+    return `
+      <div class="zone-card ${status === 'done' ? 'done' : ''} ${status === 'active' ? 'active' : ''}" onclick="openDetail('${z.id}')">
+        <div class="zone-card-header">
+          <div>
+            <div class="zone-name">${z.name_he}</div>
+            <div class="zone-name-en">${z.name_en} · ${z.name_th}</div>
+          </div>
+          <span class="priority-dot p${z.priority}" title="עדיפות ${z.priority}"></span>
+        </div>
+        <div class="zone-meta">
+          <span>🔋 ${z.batteries}</span>
+          <span>📐 ${z.area_km2} km²</span>
+          <span>⏱ ${z.days} ${z.days === 1 ? 'יום' : 'ימים'}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('zoneList').innerHTML = html;
+}
+
+// ========================================
+// DETAIL MODAL
+// ========================================
+function openDetail(id) {
+  const z = ZONES.find(x => x.id === id);
+  if (!z) return;
+  const status = getStatus(id);
+  const m = document.getElementById('detailModal');
+  m.innerHTML = `
+    <div class="detail-header">
+      <div>
+        <h2>${z.name_he}</h2>
+        <div class="sub">${z.name_en} · ${z.name_th} · עדיפות ${z.priority}</div>
+      </div>
+      <button class="close-btn" onclick="closeDetail()">×</button>
+    </div>
+
+    <div class="grid-stats">
+      <div class="stat-card"><div class="label">שטח</div><div class="value">${z.area_km2} km²</div></div>
+      <div class="stat-card"><div class="label">סוללות</div><div class="value">${z.batteries}</div></div>
+      <div class="stat-card"><div class="label">שעות</div><div class="value">${z.duration_hours}h</div></div>
+      <div class="stat-card"><div class="label">ימי עבודה</div><div class="value">${z.days}</div></div>
+    </div>
+
+    <section class="detail-section">
+      <h3>📍 נקודת המראה (Takeoff)</h3>
+      <table class="params-table">
+        <tr><td>מיקום</td><td>${z.takeoff_name}</td></tr>
+        <tr><td>קואורדינטות</td><td>${z.takeoff_lat}, ${z.takeoff_lon}</td></tr>
+        <tr><td>חניה</td><td>${z.parking}</td></tr>
+        <tr><td>Google Maps</td><td><a href="https://www.google.com/maps?q=${z.takeoff_lat},${z.takeoff_lon}" target="_blank" style="color:var(--accent-2);">פתח ניווט →</a></td></tr>
+      </table>
+    </section>
+
+    <section class="detail-section">
+      <h3>📝 תיאור האזור</h3>
+      <p style="font-size:13px;line-height:1.6;">${z.description}</p>
+      <p style="font-size:13px;line-height:1.6;margin-top:10px;background:var(--panel-2);padding:10px;border-radius:6px;border-right:3px solid var(--yellow);">
+        ⚠️ <b>שים לב:</b> ${z.notes}
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h3>⚙️ פרמטרי טיסה</h3>
+      <table class="params-table">
+        <tr><td>דרון</td><td>${COMMON_PARAMS.drone}</td></tr>
+        <tr><td>גובה</td><td>${COMMON_PARAMS.altitude_agl} AGL</td></tr>
+        <tr><td>מהירות</td><td>${COMMON_PARAMS.speed}</td></tr>
+        <tr><td>חפיפה קדמית</td><td>${COMMON_PARAMS.front_overlap}</td></tr>
+        <tr><td>חפיפה צדדית</td><td>${COMMON_PARAMS.side_overlap}</td></tr>
+        <tr><td>תבנית</td><td>${COMMON_PARAMS.pattern}</td></tr>
+        <tr><td>ISO / WB / EV</td><td>${COMMON_PARAMS.iso} / ${COMMON_PARAMS.white_balance} / ${COMMON_PARAMS.ev}</td></tr>
+        <tr><td>פורמט</td><td>${COMMON_PARAMS.format}</td></tr>
+        <tr><td>GCPs</td><td>${COMMON_PARAMS.gcps_per_zone}</td></tr>
+      </table>
+    </section>
+
+    ${getControllerMode() === 'manual' ? `
+    <section class="detail-section" style="background:#7c2d1233;padding:12px;border-radius:8px;border:1px solid #f59e0b;">
+      <h3 style="color:#fbbf24;">⚠️ הוראות טיסה ידנית — DJI RC</h3>
+      <ol style="font-size:13px;line-height:1.7;padding-right:18px;">
+        <li>פתח DJI Fly → Camera Mode → <b>Timed Shot</b> → בחר <b>2 sec</b></li>
+        <li>המראה ב-${z.takeoff_name}, עלה לגובה <b>80m AGL</b> (ראה altimeter)</li>
+        <li>תכנן בראש זיגזג — קווים מקבילים, רוחב הגריד ~${Math.round(Math.sqrt(z.area_km2 * 1000000))}m</li>
+        <li>טוס בקו ישר במהירות <b>5 m/s</b> (בדוק מהירות ב-app), עד קצה האזור</li>
+        <li>בקצה: סובב 180° → זוז <b>15m לצד</b> (ספור 3 שניות במהירות 5m/s) → חזור</li>
+        <li>חזור על שלב 4-5 עד שמסיים את כל האזור</li>
+        <li>חזור על כל האזור שוב בזווית <b>45°</b> (oblique pass) לטקסטורה ל-3D</li>
+        <li>אם הסוללה ב-25% → נחת, החלף, המשך מהנקודה האחרונה (סמן ב-Avenza)</li>
+      </ol>
+      <p style="margin-top:10px;font-size:12px;color:#fbbf24;">💡 <b>טיפ:</b> הדפס מפת זיגזג של האזור לפני יציאה. אל תסתמך על זיכרון.</p>
+    </section>
+    ` : `
+    <section class="detail-section" style="background:#14532d33;padding:12px;border-radius:8px;border:1px solid #22c55e;">
+      <h3 style="color:#34d399;">⚡ הוראות טיסה אוטומטית — Litchi</h3>
+      <ol style="font-size:13px;line-height:1.7;padding-right:18px;">
+        <li>פתח Litchi בטלפון → Login (אותו חשבון של המנהל)</li>
+        <li>Missions → Cloud → טען משימה: <b>kpg_${z.id}</b></li>
+        <li>חבר טלפון לשלט RC-N1 ב-USB-C</li>
+        <li>המראה ב-${z.takeoff_name}</li>
+        <li>Litchi → Start Mission → ✅ אישור</li>
+        <li>הדרון טס לבד — אתה רק משגיח ומחזיק את ה-RTH ביד</li>
+        <li>סוללה ב-25% → Litchi עוצר → נחת + החלף → המשך אוטומטית</li>
+        <li>בסיום: Litchi חוזר ומבצע oblique pass אוטומטית</li>
+      </ol>
+      <p style="margin-top:10px;font-size:12px;color:#34d399;">💡 <b>זמן צפוי:</b> ${z.duration_hours} שעות (כולל החלפות סוללה)</p>
+    </section>
+    `}
+
+    <section class="detail-section">
+      <h3>✅ צ׳קליסט לפני יציאה</h3>
+      <ul class="checklist">${(getControllerMode() === 'manual' ? CHECKLIST_BEFORE_MANUAL : CHECKLIST_BEFORE_LITCHI).map(x => `<li>${x}</li>`).join('')}</ul>
+    </section>
+
+    <section class="detail-section">
+      <h3>🛫 צ׳קליסט בשטח</h3>
+      <ul class="checklist">${CHECKLIST_FIELD.map(x => `<li>${x}</li>`).join('')}</ul>
+    </section>
+
+    <section class="detail-section">
+      <h3>📤 צ׳קליסט אחרי</h3>
+      <ul class="checklist">${CHECKLIST_AFTER.map(x => `<li>${x}</li>`).join('')}</ul>
+    </section>
+
+    <div class="modal-actions">
+      ${status !== 'pending' ? `<button onclick="setStatus('${z.id}','pending');closeDetail();">↩ אפס לממתין</button>` : ''}
+      ${status === 'pending' ? `<button class="primary" onclick="setStatus('${z.id}','active');closeDetail();">▶ סמן כפעיל</button>` : ''}
+      ${status !== 'done' ? `<button class="primary" onclick="setStatus('${z.id}','done');closeDetail();">✓ סמן כהושלם</button>` : ''}
+      <button onclick="closeDetail()">סגור</button>
+    </div>
+  `;
+  document.getElementById('detailOverlay').classList.add('show');
+  // Pan map to zone
+  map.fitBounds(L.latLngBounds(z.bbox), { padding: [50, 50] });
+}
+
+function closeDetail() {
+  document.getElementById('detailOverlay').classList.remove('show');
+}
+
+// ========================================
+// PROGRESS
+// ========================================
+function renderProgress() {
+  const done = ZONES.filter(z => getStatus(z.id) === 'done');
+  const totalBatteries = ZONES.reduce((s, z) => s + z.batteries, 0);
+  const doneBatteries = done.reduce((s, z) => s + z.batteries, 0);
+  document.getElementById('doneCount').textContent = done.length;
+  document.getElementById('totalCount').textContent = ZONES.length;
+  document.getElementById('batteriesDone').textContent = doneBatteries;
+  document.getElementById('batteriesTotal').textContent = totalBatteries;
+  document.getElementById('progressFill').style.width = `${(done.length / ZONES.length) * 100}%`;
+}
+
+function renderAll() {
+  drawZones();
+  renderList();
+  renderProgress();
+}
+
+// ========================================
+// ACTIONS
+// ========================================
+function exportProgress() {
+  const data = {
+    project: 'Ko Pha Ngan Drone Mission',
+    exported: new Date().toISOString(),
+    zones: ZONES.map(z => ({
+      id: z.id,
+      name: z.name_en,
+      priority: z.priority,
+      batteries: z.batteries,
+      status: getStatus(z.id),
+      updated: (state.zones[z.id] && state.zones[z.id].updated) || null,
+    })),
+    progress: {
+      zones_done: ZONES.filter(z => getStatus(z.id) === 'done').length,
+      zones_total: ZONES.length,
+      batteries_done: ZONES.filter(z => getStatus(z.id) === 'done').reduce((s,z)=>s+z.batteries,0),
+      batteries_total: ZONES.reduce((s,z)=>s+z.batteries,0),
+    }
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `kpg-drone-progress-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetAll() {
+  if (!confirm('לאפס את כל ההתקדמות? לא ניתן לבטל.')) return;
+  state = { zones: {} };
+  saveState();
+  renderAll();
+}
+
+// ========================================
+// INIT
+// ========================================
+updateBanner();
+renderAll();
+</script>
+</body>
+</html>
