@@ -1,7 +1,28 @@
-# Bustan Energy internal static archive - https://index.energy-tm.com
-# This site is an internal working index. Public marketing lives on the main website.
+# TM Energy — index.energy-tm.com
+# Public sections: / (homepage), /blog/, /landing/, /academy/
+# Internal/business pages and tools are disallowed below.
 
 User-agent: *
-Disallow: /
+Disallow: /business-plan.html
+Disallow: /sales-marketing.html
+Disallow: /proposal.html
+Disallow: /proposals/
+Disallow: /brand-kit.html
+Disallow: /brand-kit/
+Disallow: /financing.html
+Disallow: /installation.html
+Disallow: /equipment-list.html
+Disallow: /monitoring-maintenance.html
+Disallow: /ppa-contract.html
+Disallow: /pea-docs/
+Disallow: /drone-guide.html
+Disallow: /drone-ops.html
+Disallow: /drone-imagery/
+Disallow: /drone-surveys/
+Disallow: /drone-tiles/
+Disallow: /ads/
+Disallow: /ads-pro/
+Disallow: /gis-mapper/
+Disallow: /platform/
 
-X-Robots-Tag: noindex, nofollow, noarchive
+Sitemap: https://index.energy-tm.com/sitemap.xml
