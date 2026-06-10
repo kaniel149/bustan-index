@@ -1,5 +1,5 @@
 /**
- * TM Energy — Proposal System v2
+ * Bustan Energy — Proposal System v2
  * Features: Digital signature, Supabase CRM tracking, option select, expiry, notifications
  */
 (function() {

@@ -6,7 +6,7 @@ Turn 122 DJI drone photos from Koh Phangan into a pixel-accurate orthomosaic ove
 ## Current State (March 29, 2026)
 
 ### What Works
-- **KP Solar Pro platform**: https://index.energy-tm.com/platform/pro/ (PIN: 2626)
+- **KP Solar Pro platform**: https://index.bustan-energy.com/platform/pro/ (PIN: 2626)
 - **122 drone photos** downloaded and available at `/tmp/drone-all-photos/` (1.5GB)
 - **OpenDroneMap** installed via Docker on Mac Mini M2 (16GB RAM)
 - **2 ODM orthomosaics** generated (but with alignment issues)
@@ -24,7 +24,7 @@ Turn 122 DJI drone photos from Koh Phangan into a pixel-accurate orthomosaic ove
 
 ### Repository
 - **GitHub**: https://github.com/kaniel149/copenhagen-solar
-- **Hosted**: GitHub Pages → https://index.energy-tm.com
+- **Hosted**: GitHub Pages → https://index.bustan-energy.com
 - **Platform**: `/platform/pro/index.html` — Leaflet map with dark UI
 
 ### Map Layers (in index.html)
@@ -51,7 +51,7 @@ drone-tiles/
 Tiles are TMS scheme (Y-flipped from Google/OSM), zoom levels 15-19.
 
 ### Supabase Database
-- **Project**: trvgpgpsqvvdsudpgwpm (TM Energy)
+- **Project**: trvgpgpsqvvdsudpgwpm (Bustan Energy)
 - **Table**: `buildings`
 - **Key columns**: name, lat, lng, roof_area_sqm, building_type, roof_type, potential_kwp, source, status
 - **Valid enums**:

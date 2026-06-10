@@ -335,4 +335,4 @@
 ---
 
 *Verification report compiled by Rex (Research & Intelligence Agent), March 18, 2026*
-*For internal use by TM Energy project team*
+*For internal use by Bustan Energy project team*

@@ -1,4 +1,4 @@
-# QA Report — TM Energy Sales App
+# QA Report — Bustan Energy Sales App
 
 **File:** `platform/sales/index.html` (845 lines)  
 **Date:** 2026-03-15  

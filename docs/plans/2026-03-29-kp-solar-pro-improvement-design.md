@@ -88,7 +88,7 @@ After clean data + working pipeline:
 ## Architecture
 
 ```
-Platform: index.energy-tm.com/platform/pro/
+Platform: index.bustan-energy.com/platform/pro/
 Backend: Supabase (trvgpgpsqvvdsudpgwpm)
 Tiles: GitHub Pages (drone-tiles/v2/)
 Photos: drone-imagery/ (122 georeferenced WebP)

@@ -1,6 +1,6 @@
 # 10. Real Case Studies — Thai Solar Farm Projects
 
-## Research Document for TM Energy
+## Research Document for Bustan Energy
 ### Compiled March 2026
 
 ---
@@ -19,7 +19,7 @@
 10. [Koh Phaluai — First Island Micro-Grid](#10-koh-phaluai)
 11. [Koh Tao — Wave + Solar Hybrid](#11-koh-tao)
 12. [Key Lessons Learned](#12-lessons-learned)
-13. [Relevance to TM Energy / Koh Phangan](#13-relevance)
+13. [Relevance to Bustan Energy / Koh Phangan](#13-relevance)
 
 ---
 
@@ -60,7 +60,7 @@
 - Older projects (Adder ฿5.66-6.50) highly profitable
 - Newer Phase 2 projects at ฿2.17 — tighter margins
 
-### Lessons for TM Energy
+### Lessons for Bustan Energy
 - **Scale matters:** TSE's portfolio approach diversifies risk
 - **FiT vintage:** Earlier projects with higher Adder rates are cash cows
 - **Ground-mount economics:** ฿24-29M/MW all-in is realistic benchmark
@@ -134,7 +134,7 @@
 - **Payback:** ~10 years (FiT model)
 - **25-year NPV:** ~฿180M
 
-### Lessons for TM Energy
+### Lessons for Bustan Energy
 - **Trackers boost output 15-20%** but add ฿5-8M/MW cost
 - **Fixed-tilt is better for island projects** (simpler, wind-resistant)
 - **Korat region** has best irradiance in Thailand (1,700+ kWh/m²/yr)
@@ -224,7 +224,7 @@
 - **Status:** Operating since 2014
 - **Annual revenue:** ~฿180M per 8 MW = ฿22.5M/MW/year
 
-### Relevance to TM Energy
+### Relevance to Bustan Energy
 - Gunkul's vertical integration (EPC + equipment) improves margins
 - Early Adder projects show massive returns (฿5.66 vs current ฿2.25)
 - EPC arm could potentially be contracted for KP project
@@ -314,7 +314,7 @@
 - **Toyota pays:** No upfront cost, monthly PPA payment
 - **ROI for Solventia:** ~12-14% IRR
 
-### Lessons for TM Energy
+### Lessons for Bustan Energy
 - **Corporate PPA model works** — Toyota as anchor tenant
 - **Rooftop PPA removes land cost** — better per-kWp economics
 - **Spanish/international EPC expertise** combined with local execution
@@ -359,7 +359,7 @@
 4. **Battery degradation:** Higher than mainland due to heat + humidity
 5. **Community acceptance:** Initially mixed — noise from diesel, visual impact of panels
 
-### Lessons for TM Energy / Koh Phangan
+### Lessons for Bustan Energy / Koh Phangan
 - **Island micro-grid costs are 5-6x mainland** due to logistics + storage
 - **60-70% diesel reduction is realistic** — not 100% elimination
 - **BESS is essential** for island grid stability
@@ -398,7 +398,7 @@
 - BESS proving valuable for frequency regulation
 - Full-scale rollout pending further funding and results
 
-### Relevance to TM Energy
+### Relevance to Bustan Energy
 - **Koh Tao proves island solar demand exists** — even without grid
 - **Wave energy is not ready** — pure solar + BESS is the play
 - **Diesel at ฿8-12/kWh on isolated islands** = massive opportunity
@@ -439,11 +439,11 @@
 
 ---
 
-## 13. Relevance to TM Energy / Koh Phangan Project
+## 13. Relevance to Bustan Energy / Koh Phangan Project
 
 ### How Our Project Compares
 
-| Factor | TSE/SPCG (Mainland) | Koh Phaluai (Island) | TM Energy (KP) |
+| Factor | TSE/SPCG (Mainland) | Koh Phaluai (Island) | Bustan Energy (KP) |
 |--------|---------------------|---------------------|-----------------|
 | Grid | Mainland connected | Isolated | Submarine cable |
 | Model | FiT ฿2.17-2.25 | Government-funded | Private PPA ฿4.50 |
@@ -486,5 +486,5 @@
 
 ---
 
-*Document prepared by Rex (Research Agent) for TM Energy*
+*Document prepared by Rex (Research Agent) for Bustan Energy*
 *March 2026 — Confidential*

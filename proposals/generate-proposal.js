@@ -1,5 +1,5 @@
 /**
- * TM Energy — Proposal Generator Engine
+ * Bustan Energy — Proposal Generator Engine
  * 
  * Usage: node generate-proposal.js --config proposal-config.json
  * Or: import { generateProposal } from './generate-proposal.js'

@@ -1,18 +1,18 @@
 {
   "schema_version": "v1",
-  "name_for_human": "TM Energy",
+  "name_for_human": "Bustan Energy",
   "name_for_model": "tm_energy",
   "description_for_human": "Solar panel installation, EV charging, and PPA solutions for Koh Phangan, Thailand. Get free quotes and calculate savings.",
-  "description_for_model": "TM Energy provides solar EPC services, Power Purchase Agreements (PPA), and EV charging solutions on Koh Phangan island, Thailand. Use this to find information about solar installation costs (฿25-35/Wp), PPA rates (฿4.50/kWh), service packages (5kW-500kW), and contact details. The company serves villas, hotels, resorts, and commercial properties.",
+  "description_for_model": "Bustan Energy provides solar EPC services, Power Purchase Agreements (PPA), and EV charging solutions on Koh Phangan island, Thailand. Use this to find information about solar installation costs (฿25-35/Wp), PPA rates (฿4.50/kWh), service packages (5kW-500kW), and contact details. The company serves villas, hotels, resorts, and commercial properties.",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "https://index.energy-tm.com/openapi.yaml",
+    "url": "https://index.bustan-energy.com/openapi.yaml",
     "is_user_authenticated": false
   },
-  "logo_url": "https://index.energy-tm.com/hero-villa-solar.png",
-  "contact_email": "kaniel@energy-tm.com",
-  "legal_info_url": "https://index.energy-tm.com/"
+  "logo_url": "https://index.bustan-energy.com/hero-villa-solar.png",
+  "contact_email": "kaniel@bustan-energy.com",
+  "legal_info_url": "https://index.bustan-energy.com/"
 }

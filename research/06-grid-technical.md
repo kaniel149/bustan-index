@@ -2,7 +2,7 @@
 
 ## Comprehensive Technical Guide for PEA/EGAT Interconnection
 
-**Document Reference:** TM Energy Research Series — Document 06
+**Document Reference:** Bustan Energy Research Series — Document 06
 **Last Updated:** March 2026
 **Scope:** Technical requirements for connecting solar PV farms (1–90 MW) to Thailand's transmission and distribution grids
 
@@ -1039,4 +1039,4 @@ Current (A) →
 
 ---
 
-*Document prepared for TM Energy research series. Technical requirements are based on published PEA/EGAT standards, IEC/IEEE international standards, and industry practice for solar farm development in Thailand as of 2025–2026. Developers should verify all requirements directly with PEA/EGAT for their specific project location and capacity, as standards are periodically updated.*
+*Document prepared for Bustan Energy research series. Technical requirements are based on published PEA/EGAT standards, IEC/IEEE international standards, and industry practice for solar farm development in Thailand as of 2025–2026. Developers should verify all requirements directly with PEA/EGAT for their specific project location and capacity, as standards are periodically updated.*

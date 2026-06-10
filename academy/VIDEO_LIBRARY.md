@@ -1,4 +1,4 @@
-# TM Energy Academy — Verified Video Library
+# Bustan Energy Academy — Verified Video Library
 
 Curated YouTube videos — all verified with real video IDs from YouTube search.
 

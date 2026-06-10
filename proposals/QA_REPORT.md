@@ -1,4 +1,4 @@
-# QA Report — TM Energy Proposals
+# QA Report — Bustan Energy Proposals
 **Date:** 2026-03-15  
 **Auditor:** Pixel (QA Agent)  
 **Files reviewed:** beamtech-001.html, beamtech-002.html, kaniel-villas-001.html, tm-factory-001.html, proposal-system.js, auth.js
@@ -91,8 +91,8 @@ This means clicking Option A in beamtech-001 records "PPA" when it's actually "E
 
 ### M3. Inconsistent Email Addresses Across Proposals
 **Problem:**
-- beamtech-001 & beamtech-002: `info@tmenergy.asia`
-- tm-factory-001: `kaniel@energy-tm.com`
+- beamtech-001 & beamtech-002: `info@bustan-energy.asia`
+- tm-factory-001: `kaniel@bustan-energy.com`
 - kaniel-villas-001: No email in footer  
 **Recommendation:** Standardize to one email across all proposals.
 

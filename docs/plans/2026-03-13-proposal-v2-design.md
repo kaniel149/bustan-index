@@ -76,7 +76,7 @@ backup_hours        = batkwh / 3  // average load estimate
   - EPC+Battery: all EPC terms + battery warranty, backup specs
 - **Expandable full terms** — `<details>` element with main clauses from relevant contract
 - **"Read Full Contract"** — link to `epc-contract.html` (Option A/C) or `ppa-contract.html` (Option B)
-- **Signature block** — 2 columns (Client / TM Energy), name, title, date, stamp area
+- **Signature block** — 2 columns (Client / Bustan Energy), name, title, date, stamp area
 
 ## Design System
 

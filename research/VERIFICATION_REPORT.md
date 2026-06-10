@@ -1,4 +1,4 @@
-# Verification Report — TM Energy Research Documents
+# Verification Report — Bustan Energy Research Documents
 
 **Verified:** 2026-03-10
 **Documents checked:** 03-on-grid.md, 06-grid-technical.md, 09-financial-models.md

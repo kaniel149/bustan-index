@@ -1,12 +1,12 @@
-# TM Energy
+# Bustan Energy
 
 > Solar & EV Solutions for Koh Phangan, Thailand
 
-TM Energy is a solar EPC (Engineering, Procurement, and Construction) company based on Koh Phangan island in Surat Thani province, Thailand. We specialize in rooftop and ground-mount solar panel installations, Power Purchase Agreements (PPA), EV charging station installations, and solar monitoring & maintenance for residential, hospitality, and commercial properties.
+Bustan Energy is a solar EPC (Engineering, Procurement, and Construction) company based on Koh Phangan island in Surat Thani province, Thailand. We specialize in rooftop and ground-mount solar panel installations, Power Purchase Agreements (PPA), EV charging station installations, and solar monitoring & maintenance for residential, hospitality, and commercial properties.
 
 ## About
 
-TM Energy serves the growing renewable energy needs of Koh Phangan — an island known for its tourism, hospitality industry, and expat community. Electricity on the island is expensive due to reliance on diesel generators and mainland grid infrastructure. Solar energy provides a reliable, cost-effective alternative with typical bill reductions of 50-70%.
+Bustan Energy serves the growing renewable energy needs of Koh Phangan — an island known for its tourism, hospitality industry, and expat community. Electricity on the island is expensive due to reliance on diesel generators and mainland grid infrastructure. Solar energy provides a reliable, cost-effective alternative with typical bill reductions of 50-70%.
 
 We handle the entire solar journey: site survey, system design, equipment procurement (Tier-1 panels from Longi, JA Solar, Canadian Solar), professional installation, PEA net metering paperwork, and ongoing monitoring & maintenance. No permits are required for rooftop installations under 200kW in Thailand.
 
@@ -88,16 +88,16 @@ We handle the entire solar journey: site survey, system design, equipment procur
 
 ## Contact
 
-- **Website:** https://index.energy-tm.com
-- **Email:** kaniel@energy-tm.com
+- **Website:** https://index.bustan-energy.com
+- **Email:** kaniel@bustan-energy.com
 - **Phone/WhatsApp:** +66 99-704-4944
 - **Address:** Koh Phangan, Surat Thani 84280, Thailand
 - **Hours:** Monday-Saturday 8:00-18:00
 - **Facebook:** https://www.facebook.com/share/189ywnsdS6/
-- **Instagram:** https://www.instagram.com/tmenergy.th
+- **Instagram:** https://www.instagram.com/bustan-energy.th
 
 ## Additional Resources
 
-- **Academy:** https://index.energy-tm.com/academy/ — Solar training courses
-- **Blog:** https://index.energy-tm.com/blog/ — Solar energy articles and guides
-- **Savings Calculator:** https://index.energy-tm.com/#calculator — Estimate your solar savings
+- **Academy:** https://index.bustan-energy.com/academy/ — Solar training courses
+- **Blog:** https://index.bustan-energy.com/blog/ — Solar energy articles and guides
+- **Savings Calculator:** https://index.bustan-energy.com/#calculator — Estimate your solar savings

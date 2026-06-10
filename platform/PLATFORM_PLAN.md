@@ -1,12 +1,12 @@
-# TM Energy Platform — Unified Operations System
+# Bustan Energy Platform — Unified Operations System
 
 ## Vision
-One platform. Everything TM Energy needs — from lead capture to maintenance.
+One platform. Everything Bustan Energy needs — from lead capture to maintenance.
 Mobile-first PWA, works on iPad + phone in the field.
 
 ## Architecture
 ```
-index.energy-tm.com/platform/
+index.bustan-energy.com/platform/
 ├── sales/          ← Sales App (THIS SPRINT)
 ├── academy/        ← Training (DONE - 17 lessons)
 ├── ops/            ← Operations & Installation (Phase 2)

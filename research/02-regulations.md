@@ -1,6 +1,6 @@
 # Solar Farm Regulations in Thailand
 
-> Research compiled March 2026 | TM Energy Project
+> Research compiled March 2026 | Bustan Energy Project
 > Sources cited inline; verify critical details with Thai legal counsel before relying on this document.
 
 ---
@@ -388,7 +388,7 @@ In **April 2025**, the Thai Cabinet approved in principle amendments to the FBA:
 
 ### 7.5 Practical Recommendations
 
-For TM Energy (Danish company entering Thailand):
+For Bustan Energy (Danish company entering Thailand):
 
 1. **BOI promotion is the clear path** — Provides foreign ownership, tax benefits, and operational flexibility
 2. **Apply for BOI before company registration** — BOI approval needed before setting up Thai entity

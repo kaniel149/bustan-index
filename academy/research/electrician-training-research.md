@@ -1,4 +1,4 @@
-# TM Energy Academy — Electrician Training Research Document
+# Bustan Energy Academy — Electrician Training Research Document
 
 > **Compiled:** 2026-03-15  
 > **Purpose:** Technical training content for electricians working on solar PV and EV charging installations in Thailand  
@@ -1317,7 +1317,7 @@ Min panels = Ceiling(Inverter Min MPPT V / Panel Vmp at highest temperature)
 
 ---
 
-> **Document maintained by:** TM Energy Academy  
+> **Document maintained by:** Bustan Energy Academy  
 > **Last updated:** 2026-03-15  
 > **Review schedule:** Quarterly — verify Thailand regulatory requirements against current PEA/MEA/ERC publications  
 > **Disclaimer:** While this document is based on established international standards (IEC) and known Thai regulatory frameworks, specific PEA/MEA requirements, approved equipment lists, and ERC licensing procedures should be verified against current official publications before relying on them for permit applications. All electrical specifications (cable sizes, test values, protection ratings) are based on IEC standards and manufacturer datasheets.

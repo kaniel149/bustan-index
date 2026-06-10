@@ -1,7 +1,7 @@
 # Solar Intelligence Platform — Design Document
 
 **Date:** 2026-03-13
-**Author:** Kaniel Tordjman / TM Energy
+**Author:** Kaniel Tordjman / Bustan Energy
 **Status:** Approved
 
 ## Purpose

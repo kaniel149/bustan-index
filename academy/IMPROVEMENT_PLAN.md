@@ -1,4 +1,4 @@
-# TM Energy Academy — Improvement Plan
+# Bustan Energy Academy — Improvement Plan
 
 ## Current Status
 - **17 lessons** across 4 tracks (720KB total)
@@ -72,7 +72,7 @@
 |---|------|
 | 1 | Thai translations review by native speaker |
 | 2 | Update PEA/ERC regulatory data to 2026 |
-| 3 | Replace Gemini images with real TM Energy photos where available |
+| 3 | Replace Gemini images with real Bustan Energy photos where available |
 | 4 | Review all 68 quiz questions for accuracy and difficulty |
 | 5 | Add Huawei SUN2000 real datasheet specs |
 | 6 | Cross-reference electrician training with PEA/MEA guidelines |
@@ -100,7 +100,7 @@
 | 2 | Employee progress dashboard (Supabase) | High |
 | 3 | Certificate PDF generation on completion | Medium |
 | 4 | Final exam mode (timed, 80% pass) | Medium |
-| 5 | academy.energy-tm.com subdomain | Low |
+| 5 | academy.bustan-energy.com subdomain | Low |
 | 6 | Full-text search across all content | Medium |
 
 ---

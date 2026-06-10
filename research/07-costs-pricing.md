@@ -317,7 +317,7 @@ Research from Thai academic studies established maximum viable land costs for VS
 | Medium output (Group 2) | 34,720–73,988 | Positive NPV; 10.67 year payback |
 | Lower output (Group 3) | Up to 356,800 | Matches WACC threshold |
 
-**Recommendation for TM Energy:** Target Northeast Thailand (Nakhon Ratchasima, Udon Thani) at **THB 40,000–80,000/rai** ($1,140–$2,286/rai). Best combination of low land costs, excellent solar irradiance, flat terrain, and proximity to grid infrastructure.
+**Recommendation for Bustan Energy:** Target Northeast Thailand (Nakhon Ratchasima, Udon Thani) at **THB 40,000–80,000/rai** ($1,140–$2,286/rai). Best combination of low land costs, excellent solar irradiance, flat terrain, and proximity to grid infrastructure.
 
 ### 7.3 Land Area Requirements
 

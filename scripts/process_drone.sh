@@ -101,4 +101,4 @@ git commit -m "drone: add new tiles from $(basename $PHOTO_DIR)" --allow-empty
 git push origin main
 
 echo "=== DONE ==="
-echo "Check https://index.energy-tm.com/platform/pro/"
+echo "Check https://index.bustan-energy.com/platform/pro/"

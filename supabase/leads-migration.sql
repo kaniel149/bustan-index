@@ -1,4 +1,4 @@
--- TM Energy Leads Table
+-- Bustan Energy Leads Table
 -- Run this migration in Supabase SQL Editor
 
 CREATE TABLE IF NOT EXISTS leads (

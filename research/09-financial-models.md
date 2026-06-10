@@ -902,7 +902,7 @@ Note: Revenue = Gen × ฿2,250; OPEX +2%/yr; Debt 70% @ 5% 15yr;
 
 ---
 
-## Key Takeaways for TM Energy Project
+## Key Takeaways for Bustan Energy Project
 
 1. **Community Solar FiT (฿2.25/kWh)** provides the lowest risk model with 25-year government PPA, but returns are moderate (9-12% equity IRR). Best for debt-financed conservative approach.
 

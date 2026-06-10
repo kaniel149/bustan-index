@@ -1,6 +1,6 @@
 # 08 — Battery Energy Storage Systems (BESS) in Thailand
 
-> Research Document for TM Energy Project
+> Research Document for Bustan Energy Project
 > Last Updated: March 2026
 
 ---
@@ -21,7 +21,7 @@
 12. [Cost Analysis](#cost-analysis)
 13. [Degradation & Lifecycle](#degradation--lifecycle)
 14. [Battery Recycling & End-of-Life](#battery-recycling--end-of-life)
-15. [Recommendations for TM Energy](#recommendations-for-copenhagen-solar)
+15. [Recommendations for Bustan Energy](#recommendations-for-copenhagen-solar)
 16. [Sources](#sources)
 
 ---
@@ -40,7 +40,7 @@ $820 million loan for 12 renewable projects including solar+BESS installations. 
 players like GPSC, Banpu NEXT, and Gulf Energy are investing heavily in both BESS
 deployment and domestic battery manufacturing.
 
-For the TM Energy project, BESS integration represents both a technical necessity
+For the Bustan Energy project, BESS integration represents both a technical necessity
 (for grid compliance and PPA firmness) and a commercial opportunity (through peak shaving,
 arbitrage, and ancillary services). LFP chemistry is strongly recommended for Thailand's
 tropical climate due to superior thermal stability, longer cycle life, and lower fire risk.
@@ -761,7 +761,7 @@ Before recycling, degraded BESS batteries can serve second-life applications:
 
 ---
 
-## Recommendations for TM Energy
+## Recommendations for Bustan Energy
 
 ### Chemistry Selection
 - **Use LFP exclusively** — optimal for Thailand's climate, cost-effective,
@@ -868,6 +868,6 @@ Before recycling, degraded BESS batteries can serve second-life applications:
 
 ---
 
-*Document prepared for TM Energy project planning. Data sourced from publicly
+*Document prepared for Bustan Energy project planning. Data sourced from publicly
 available reports and industry databases. Costs and projections should be validated
 with current market quotations during project development.*

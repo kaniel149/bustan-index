@@ -806,7 +806,7 @@ Expected output (approximate):
 
 **Step 2: Verify in platform**
 
-Open https://index.energy-tm.com/platform/pro/ (PIN: 2626)
+Open https://index.bustan-energy.com/platform/pro/ (PIN: 2626)
 - Check Scanner tab — buildings should have realistic roof areas (20-500 sqm, not 500,000)
 - Check Map — buildings should cover the whole island
 - Check grades — distribution should be mostly C/D (residential) with some A/B (hotels/resorts)
@@ -939,7 +939,7 @@ git commit -m "drone: add new orthomosaic tiles from $(basename $PHOTO_DIR)"
 git push origin main
 
 echo "=== DONE ==="
-echo "New tiles deployed. Check https://index.energy-tm.com/platform/pro/"
+echo "New tiles deployed. Check https://index.bustan-energy.com/platform/pro/"
 ```
 
 **Step 2: Make executable**

@@ -1,4 +1,4 @@
-# TM Energy — EV Charging & Fleet Research
+# Bustan Energy — EV Charging & Fleet Research
 ## Koh Phangan, Thailand | March 2026
 
 ---
@@ -150,7 +150,7 @@
 - **Revenue:** 100% yours
 - **CAPEX:** Higher upfront
 - **Margin:** ฿5-10/kWh (with solar: ฿8-13/kWh)
-- **Brand:** "TM Energy Charging" — builds your brand
+- **Brand:** "Bustan Energy Charging" — builds your brand
 
 ### Model B: Network Partnership
 - Partner with Evolt, EA Anywhere, or Sharge
@@ -160,7 +160,7 @@
 - **Pros:** Zero CAPEX, professional operation
 - **Cons:** Low margin, their brand not yours
 
-### Model C: Hybrid Solar+EV (BEST FOR TM ENERGY)
+### Model C: Hybrid Solar+EV (BEST FOR BUSTAN ENERGY)
 - Install solar on location roof → feeds chargers
 - Electricity cost drops from ฿4.5 to ฿0-2/kWh
 - Sell both: solar installation + charging revenue
@@ -273,7 +273,7 @@
 - Fuel savings: ฿3-4/km (EV) vs ฿0.8-1.2/km (petrol)
 - Maintenance savings: ~60% less than ICE vehicles
 
-### Recommended Fleet for TM Energy (5 vehicles)
+### Recommended Fleet for Bustan Energy (5 vehicles)
 1. **2× BYD Dolphin** — Service/installation vehicle, good range
 2. **2× BYD Seagull** (or Wuling Mini EV) — Island runabout, client visits
 3. **1× BYD Atto 3** — Premium, client meetings, longer trips to Koh Samui
@@ -343,7 +343,7 @@
 - [ ] Order 4× AC chargers (Delta or Wallbox) — pilot
 - [ ] Order 1× DC charger (Delta 50kW) — Thong Sala
 - [ ] Set up OCPP backend (Evolt partnership or ChargeLab SaaS)
-- [ ] Design branding: "TM Charge" or "TM Energy Charging"
+- [ ] Design branding: "TM Charge" or "Bustan Energy Charging"
 
 ### Month 3: Installation — Phase 1
 - [ ] Install Thong Sala (AC×2 + DC×1) — highest priority

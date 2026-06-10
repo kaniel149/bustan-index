@@ -1,4 +1,4 @@
-# TM Energy Academy Hebrew Translation QA Report
+# Bustan Energy Academy Hebrew Translation QA Report
 
 Date: March 16, 2026
 Reviewer: Hebrew Translation QA Agent
@@ -84,9 +84,9 @@ Files Reviewed: 17 course files in ~/projects/copenhagen-solar/academy/courses/
     - Fix: Added definite article with construct form
 
 17. **solar-fundamentals-08.html line 391** - Fixed awkward phrasing:
-    - "כ-TM Energy" → "עבור TM Energy"
-    - Issue: Literally translates "as-TM Energy" but sounds unnatural
-    - Fix: Better Hebrew introduction "Regarding TM Energy"
+    - "כ-Bustan Energy" → "עבור Bustan Energy"
+    - Issue: Literally translates "as-Bustan Energy" but sounds unnatural
+    - Fix: Better Hebrew introduction "Regarding Bustan Energy"
 
 ### Technical Terminology Refinement
 18. **sales-bd-03.html line 162** - Fixed technical terminology:

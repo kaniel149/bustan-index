@@ -1,7 +1,7 @@
-# TM Energy Academy — Syllabus
+# Bustan Energy Academy — Syllabus
 
 ## Mission
-Digital training platform for TM Energy employees, sales teams, business development, technicians, and managers.
+Digital training platform for Bustan Energy employees, sales teams, business development, technicians, and managers.
 Trilingual: Hebrew (עברית) | English | Thai (ไทย)
 
 ## 5 Learning Tracks
@@ -31,7 +31,7 @@ Duration: 10 lessons (~5 hours)
 | 2 | Discovery Call Framework | Questions, qualifying, needs analysis |
 | 3 | Site Survey for Sales | What to photograph, measure, document |
 | 4 | ROI Calculator | Savings math, payback, IRR presentation |
-| 5 | Proposal Building | Using TM Energy tools, customization |
+| 5 | Proposal Building | Using Bustan Energy tools, customization |
 | 6 | Pricing Models | Direct purchase, PPA, ESCO, leasing |
 | 7 | Handling Objections | "Too expensive", "unreliable", "ROI uncertain" |
 | 8 | Closing Techniques | Urgency, social proof, next steps |
@@ -93,7 +93,7 @@ Duration: 6 lessons (~3 hours)
 - Completion certificates (auto-generated)
 - Trilingual toggle (HE/EN/TH)
 - Mobile-responsive design
-- Dark theme (TM Energy brand: navy/green/gold)
+- Dark theme (Bustan Energy brand: navy/green/gold)
 - Video placeholders (ready for screen recordings)
 - Downloadable checklists and reference cards
 

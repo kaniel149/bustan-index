@@ -1,7 +1,7 @@
 {
-  "name": "TM Energy Sales",
+  "name": "Bustan Energy Sales",
   "short_name": "TM Sales",
-  "description": "Solar sales tool for TM Energy field reps",
+  "description": "Solar sales tool for Bustan Energy field reps",
   "start_url": "/platform/sales/",
   "display": "standalone",
   "background_color": "#0A1628",

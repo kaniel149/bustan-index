@@ -1,4 +1,4 @@
-# TM Energy — 30-Day Social Media Plan
+# Bustan Energy — 30-Day Social Media Plan
 **Prepared by:** Maya (Marketing & Growth)
 **Date:** March 16, 2026
 **Platforms:** Facebook + Instagram
@@ -10,7 +10,7 @@
 
 ### Thai Solar Social Media Landscape
 - **Top-performing content types:** Before/after installation photos, savings breakdowns with real numbers, time-lapse installation videos, educational carousels explaining net billing
-- **Competitor analysis (High Solar — Pattaya):** European-managed solar company targeting expats and businesses. Uses project showcases, testimonials, and CO2 impact stats. Professional but somewhat corporate. Opportunity: TM Energy can differentiate with island lifestyle integration and bilingual content
+- **Competitor analysis (High Solar — Pattaya):** European-managed solar company targeting expats and businesses. Uses project showcases, testimonials, and CO2 impact stats. Professional but somewhat corporate. Opportunity: Bustan Energy can differentiate with island lifestyle integration and bilingual content
 - **Content gaps in Thai solar market:** Very few companies do bilingual EN/TH content well. Most Thai solar pages are either all-Thai (targeting locals) or all-English (targeting expats). Serving both simultaneously is a strong differentiator
 - **What performs well:** Real project photos with specific kWp numbers, savings calculations with actual THB figures, team photos (humanizes the brand), educational content about PEA net billing (high save/share rate)
 
@@ -26,7 +26,7 @@
 - **Self-consumption value:** ฿6/kWh (every kWh you use from solar saves full retail rate)
 - **Peak sun hours (Koh Phangan):** 4.2 hours/day average
 - **EPC pricing:** ~฿29/Wp
-- **PPA rate (TM Energy):** ฿4.50/kWh (25% below PEA — zero upfront cost)
+- **PPA rate (Bustan Energy):** ฿4.50/kWh (25% below PEA — zero upfront cost)
 - **Typical payback:** 3-5 years for residential, 2-4 years for commercial
 - **No permits required** for rooftop solar under 200 kW in Thailand
 
@@ -93,7 +93,7 @@
 **Pillar:** Educational
 **Type:** Carousel (5 slides)
 **Visual:** [TEXT GRAPHIC: 5 slides with clean white/navy/orange design]
-- Slide 1: "How Solar Actually Works on Koh Phangan" (title slide, TM Energy logo)
+- Slide 1: "How Solar Actually Works on Koh Phangan" (title slide, Bustan Energy logo)
 - Slide 2: Diagram — sunlight hits panels, converts to DC electricity
 - Slide 3: Inverter converts DC to AC for your home/business
 - Slide 4: Net billing — use what you need, sell excess to PEA at ฿2.70/kWh
@@ -146,14 +146,14 @@ From site survey to first watt: 2-5 days.
 
 จากสำรวจหน้างานถึงไฟฟ้าหน่วยแรก: 2-5 วัน
 
-**Hashtags:** #SolarInstallation #KohPhangan #LONGi #SolarPanels #โซลาร์เซลล์ #ติดตั้งโซลาร์ #RooftopSolar #TMEnergy #SolarEPC #เกาะพะงัน
+**Hashtags:** #SolarInstallation #KohPhangan #LONGi #SolarPanels #โซลาร์เซลล์ #ติดตั้งโซลาร์ #RooftopSolar #BustanEnergy #SolarEPC #เกาะพะงัน
 
 ---
 
 #### Post 3 — April 3 (Thursday) | Facebook
 **Pillar:** Local Impact
 **Type:** Single Image
-**Visual:** [TEXT GRAPHIC: Split-screen design. Left side: "Average monthly electricity bill on Koh Phangan" with ฿45,000 in large red text. Right side: "With solar" with ฿13,500 in large green text. Bottom: "Save up to 70%. TM Energy." Navy background, clean typography]
+**Visual:** [TEXT GRAPHIC: Split-screen design. Left side: "Average monthly electricity bill on Koh Phangan" with ฿45,000 in large red text. Right side: "With solar" with ฿13,500 in large green text. Bottom: "Save up to 70%. Bustan Energy." Navy background, clean typography]
 
 **Caption (EN):**
 Electricity on Koh Phangan is expensive. Everyone knows it.
@@ -164,7 +164,7 @@ Solar cuts that by 50-70%. Not eventually. Starting month one.
 
 With 4.2 peak sun hours per day and no permits required, Koh Phangan is one of the best places in Thailand for solar.
 
-Get your free savings estimate: index.energy-tm.com
+Get your free savings estimate: index.bustan-energy.com
 
 **Caption (TH):**
 ค่าไฟบนเกาะพะงันแพง ทุกคนรู้
@@ -175,7 +175,7 @@ Get your free savings estimate: index.energy-tm.com
 
 ด้วยแสงแดดเฉลี่ย 4.2 ชั่วโมง/วัน และไม่ต้องขออนุญาต เกาะพะงันเป็นหนึ่งในสถานที่ที่ดีที่สุดในไทยสำหรับโซลาร์
 
-ประเมินการประหยัดฟรี: index.energy-tm.com
+ประเมินการประหยัดฟรี: index.bustan-energy.com
 
 **Hashtags:** #KohPhangan #ค่าไฟแพง #ลดค่าไฟ #SolarSavings #IslandLiving #SolarThailand #โซลาร์เซลล์ #เกาะพะงัน #RenewableEnergy #GoSolar
 
@@ -192,7 +192,7 @@ Get your free savings estimate: index.energy-tm.com
 - 15-25s: Show inverter. "Huawei inverter converts the power. Smart, efficient, monitored 24/7."
 - 25-35s: Show phone app. "Real-time monitoring. You can see exactly how much you're producing and saving."
 - 35-45s: Wide shot of property. "This system pays for itself in under 4 years. After that — free electricity for 25+ years."
-- 45-50s: "DM us or visit index.energy-tm.com for a free quote."
+- 45-50s: "DM us or visit index.bustan-energy.com for a free quote."
 
 **Caption (EN):**
 How a 27.8 kWp system works — from roof to savings.
@@ -208,7 +208,7 @@ Free site survey. Link in bio.
 
 สำรวจหน้างานฟรี ลิงก์ใน bio
 
-**Hashtags:** #SolarReel #KohPhangan #SolarInstallation #โซลาร์เซลล์ #Huawei #LONGi #RooftopSolar #SolarSavings #ประหยัดค่าไฟ #TMEnergy
+**Hashtags:** #SolarReel #KohPhangan #SolarInstallation #โซลาร์เซลล์ #Huawei #LONGi #RooftopSolar #SolarSavings #ประหยัดค่าไฟ #BustanEnergy
 
 ---
 
@@ -286,14 +286,14 @@ Installation time: 4 days. Payback period: under 4 years.
 
 ติดตั้ง: 4 วัน คืนทุน: ไม่ถึง 4 ปี
 
-**Hashtags:** #SolarProject #KohPhangan #CaseStudy #โซลาร์เซลล์ #ประหยัดค่าไฟ #LONGi #Huawei #SolarVilla #TMEnergy #เกาะพะงัน
+**Hashtags:** #SolarProject #KohPhangan #CaseStudy #โซลาร์เซลล์ #ประหยัดค่าไฟ #LONGi #Huawei #SolarVilla #BustanEnergy #เกาะพะงัน
 
 ---
 
 #### Post 7 — April 9 (Wednesday) | Facebook
 **Pillar:** Industry News
 **Type:** Single Image
-**Visual:** [TEXT GRAPHIC: News-style card. Headline: "Thailand's Net Billing: What Property Owners Need to Know in 2026". Subheadline with key stat. TM Energy branding at bottom. Navy/white design]
+**Visual:** [TEXT GRAPHIC: News-style card. Headline: "Thailand's Net Billing: What Property Owners Need to Know in 2026". Subheadline with key stat. Bustan Energy branding at bottom. Navy/white design]
 
 **Caption (EN):**
 Thailand's net billing program lets you sell excess solar power back to PEA at ฿2.70 per kWh.
@@ -354,7 +354,7 @@ This batch is heading to a 27.8 kWp villa installation. Follow along as we take 
 
 ล็อตนี้จะไปติดตั้งวิลล่าระบบ 27.8 kWp ติดตามดูเราเปลี่ยนจากลังไม้เป็นกิโลวัตต์
 
-**Hashtags:** #SolarEquipment #LONGi #Huawei #Tier1Solar #โซลาร์เซลล์ #อุปกรณ์โซลาร์ #KohPhangan #SolarInstallation #TMEnergy #เกาะพะงัน
+**Hashtags:** #SolarEquipment #LONGi #Huawei #Tier1Solar #โซลาร์เซลล์ #อุปกรณ์โซลาร์ #KohPhangan #SolarInstallation #BustanEnergy #เกาะพะงัน
 
 ---
 
@@ -390,7 +390,7 @@ Which one is right for you? Depends on your budget, property type, and goals. We
 
 แบบไหนเหมาะกับคุณ? ขึ้นอยู่กับงบประมาณ ประเภทอสังหาริมทรัพย์ และเป้าหมาย เราจะอธิบายทั้งสองทางเลือกด้วยตัวเลขจริงสำหรับสถานการณ์ของคุณ
 
-**Hashtags:** #SolarPPA #BuySolar #SolarFinancing #โซลาร์เซลล์ #พลังงานแสงอาทิตย์ #GoSolar #KohPhangan #SolarThailand #ประหยัดค่าไฟ #TMEnergy
+**Hashtags:** #SolarPPA #BuySolar #SolarFinancing #โซลาร์เซลล์ #พลังงานแสงอาทิตย์ #GoSolar #KohPhangan #SolarThailand #ประหยัดค่าไฟ #BustanEnergy
 
 ---
 
@@ -485,14 +485,14 @@ Want to see your roof transformed? Start with a free site survey.
 
 อยากเห็นหลังคาของคุณเปลี่ยนโฉม? เริ่มต้นด้วยการสำรวจหน้างานฟรี
 
-**Hashtags:** #SolarTimelapse #Installation #SolarReel #โซลาร์เซลล์ #ติดตั้งโซลาร์ #KohPhangan #RooftopSolar #TMEnergy #SolarEPC #เกาะพะงัน
+**Hashtags:** #SolarTimelapse #Installation #SolarReel #โซลาร์เซลล์ #ติดตั้งโซลาร์ #KohPhangan #RooftopSolar #BustanEnergy #SolarEPC #เกาะพะงัน
 
 ---
 
 #### Post 13 — April 17 (Thursday) | Facebook + Instagram
 **Pillar:** Local Impact (Eco-Tourism)
 **Type:** Single Image
-**Visual:** [TEXT GRAPHIC: Premium card design. Quote: "73% of global travelers say they would choose a sustainable accommodation." Source: Booking.com Sustainable Travel Report. Below: "Solar-powered properties earn higher ratings and command premium rates." TM Energy logo. Green/navy palette]
+**Visual:** [TEXT GRAPHIC: Premium card design. Quote: "73% of global travelers say they would choose a sustainable accommodation." Source: Booking.com Sustainable Travel Report. Below: "Solar-powered properties earn higher ratings and command premium rates." Bustan Energy logo. Green/navy palette]
 
 **Caption (EN):**
 If you run a hotel, resort, or guesthouse on Koh Phangan — this matters.
@@ -574,7 +574,7 @@ Every kWh you use from your own panels saves more than selling it to the grid.
 #### Post 15 — April 22 (Tuesday) | Facebook
 **Pillar:** Industry News (Earth Day)
 **Type:** Single Image
-**Visual:** [TEXT GRAPHIC: Earth Day themed but not cheesy. "Earth Day 2026. Every solar panel on Koh Phangan prevents 1.5 tonnes of CO2 per year." Clean design with island silhouette, navy/green palette, TM Energy logo]
+**Visual:** [TEXT GRAPHIC: Earth Day themed but not cheesy. "Earth Day 2026. Every solar panel on Koh Phangan prevents 1.5 tonnes of CO2 per year." Clean design with island silhouette, navy/green palette, Bustan Energy logo]
 
 **Caption (EN):**
 Earth Day 2026.
@@ -609,7 +609,7 @@ If you've been thinking about it, this is your sign. Free site survey — link i
 - Slide 1: Title slide with EV charger icon and solar panel icon
 - Slide 2: "Charge your EV with free solar power. A 10 kW system produces enough daily to fully charge an EV and power your home."
 - Slide 3: "Cost comparison: Grid charging ~฿6/kWh vs Solar charging ฿0/kWh. Save ฿50,000+/year on fuel AND electricity."
-- Slide 4: "TM Energy installs complete solar + EV charging solutions. One provider. One system. One bill (or none)." CTA
+- Slide 4: "Bustan Energy installs complete solar + EV charging solutions. One provider. One system. One bill (or none)." CTA
 
 **Caption (EN):**
 Solar panels on your roof. EV charger in your carport. Free fuel, free electricity.
@@ -639,7 +639,7 @@ Thailand's EV adoption is accelerating. Your property is ready?
 
 การใช้ EV ในไทยเพิ่มขึ้นอย่างรวดเร็ว ทรัพย์สินของคุณพร้อมหรือยัง?
 
-**Hashtags:** #EVCharging #SolarEV #ElectricVehicle #โซลาร์เซลล์ #รถยนต์ไฟฟ้า #สถานีชาร์จ #KohPhangan #SolarThailand #GreenTransport #TMEnergy
+**Hashtags:** #EVCharging #SolarEV #ElectricVehicle #โซลาร์เซลล์ #รถยนต์ไฟฟ้า #สถานีชาร์จ #KohPhangan #SolarThailand #GreenTransport #BustanEnergy
 
 ---
 
@@ -666,7 +666,7 @@ Savings over 25 years: ~฿7.2 million
 
 These aren't projections. These are actual numbers from a system we installed.
 
-Your property could be next. Free site survey — message us or visit index.energy-tm.com
+Your property could be next. Free site survey — message us or visit index.bustan-energy.com
 
 **Caption (TH):**
 ตัวเลขจริงจากการติดตั้งจริงบนเกาะพะงัน
@@ -686,28 +686,28 @@ Your property could be next. Free site survey — message us or visit index.ener
 
 นี่ไม่ใช่การคาดการณ์ แต่เป็นตัวเลขจริงจากระบบที่เราติดตั้ง
 
-ทรัพย์สินของคุณอาจเป็นรายต่อไป สำรวจหน้างานฟรี — ส่งข้อความหาเราหรือเยี่ยมชม index.energy-tm.com
+ทรัพย์สินของคุณอาจเป็นรายต่อไป สำรวจหน้างานฟรี — ส่งข้อความหาเราหรือเยี่ยมชม index.bustan-energy.com
 
-**Hashtags:** #SolarROI #RealNumbers #SolarSavings #โซลาร์เซลล์ #ประหยัดค่าไฟ #คืนทุน #KohPhangan #SolarInvestment #TMEnergy #เกาะพะงัน
+**Hashtags:** #SolarROI #RealNumbers #SolarSavings #โซลาร์เซลล์ #ประหยัดค่าไฟ #คืนทุน #KohPhangan #SolarInvestment #BustanEnergy #เกาะพะงัน
 
 ---
 
 #### Post 18 — April 26 (Saturday) | Instagram
 **Pillar:** Behind the Scenes / Educational
 **Type:** Reel (30-45 seconds)
-**Visual:** [REAL VIDEO NEEDED: Kaniel or team member giving a quick walkthrough of the TM Energy Academy on a laptop/tablet. Screen recording of the academy pages mixed with talking head]
+**Visual:** [REAL VIDEO NEEDED: Kaniel or team member giving a quick walkthrough of the Bustan Energy Academy on a laptop/tablet. Screen recording of the academy pages mixed with talking head]
 
 **Script:**
 - 0-5s: "Want to learn everything about solar? We built a free academy." (hook)
 - 5-15s: Show academy homepage on screen. "18 lessons. 10 hours of training. English, Thai, and Hebrew."
 - 15-25s: Scroll through learning tracks. "Solar fundamentals, installation, sales, EV charging, and business management."
 - 25-35s: "Whether you're a homeowner who wants to understand your system, or someone looking to work in solar — it's all here."
-- 35-45s: "Link in bio. index.energy-tm.com/academy"
+- 35-45s: "Link in bio. index.bustan-energy.com/academy"
 
 **Caption (EN):**
 We built a free solar academy. 18 lessons. 3 languages.
 
-Whether you want to understand how your solar system works, learn about installation techniques, or explore a career in renewable energy — TM Energy Academy has you covered.
+Whether you want to understand how your solar system works, learn about installation techniques, or explore a career in renewable energy — Bustan Energy Academy has you covered.
 
 5 learning tracks:
 - Solar Fundamentals
@@ -716,12 +716,12 @@ Whether you want to understand how your solar system works, learn about installa
 - EV Charging
 - Management & Operations
 
-100% free. index.energy-tm.com/academy
+100% free. index.bustan-energy.com/academy
 
 **Caption (TH):**
 เราสร้างอะคาเดมีโซลาร์ฟรี 18 บทเรียน 3 ภาษา
 
-ไม่ว่าคุณจะอยากเข้าใจระบบโซลาร์ของคุณ เรียนรู้เทคนิคการติดตั้ง หรือสำรวจอาชีพในพลังงานหมุนเวียน — TM Energy Academy มีให้ครบ
+ไม่ว่าคุณจะอยากเข้าใจระบบโซลาร์ของคุณ เรียนรู้เทคนิคการติดตั้ง หรือสำรวจอาชีพในพลังงานหมุนเวียน — Bustan Energy Academy มีให้ครบ
 
 5 เส้นทางการเรียนรู้:
 - พื้นฐานโซลาร์
@@ -730,9 +730,9 @@ Whether you want to understand how your solar system works, learn about installa
 - การชาร์จ EV
 - การจัดการและปฏิบัติการ
 
-ฟรี 100% index.energy-tm.com/academy
+ฟรี 100% index.bustan-energy.com/academy
 
-**Hashtags:** #SolarAcademy #LearnSolar #FreeEducation #โซลาร์เซลล์ #เรียนรู้ #พลังงานแสงอาทิตย์ #TMEnergy #KohPhangan #SolarTraining #RenewableEnergy
+**Hashtags:** #SolarAcademy #LearnSolar #FreeEducation #โซลาร์เซลล์ #เรียนรู้ #พลังงานแสงอาทิตย์ #BustanEnergy #KohPhangan #SolarTraining #RenewableEnergy
 
 ---
 
@@ -805,7 +805,7 @@ If you want to see real numbers for your property — a custom savings calculati
 
 No pressure, no obligation. Just data.
 
-index.energy-tm.com | +66 99 704 4944
+index.bustan-energy.com | +66 99 704 4944
 
 **Caption (TH):**
 ถ้าคุณติดตามเราตลอดเดือนนี้ ตอนนี้คุณรู้เรื่องโซลาร์มากกว่าเจ้าของอสังหาริมทรัพย์ 95% บนเกาะพะงัน
@@ -825,9 +825,9 @@ index.energy-tm.com | +66 99 704 4944
 
 ไม่กดดัน ไม่มีข้อผูกมัด แค่ข้อมูล
 
-index.energy-tm.com | +66 99 704 4944
+index.bustan-energy.com | +66 99 704 4944
 
-**Hashtags:** #SolarKohPhangan #GoSolar #SolarThailand #โซลาร์เซลล์ #พลังงานแสงอาทิตย์ #ประหยัดค่าไฟ #เกาะพะงัน #TMEnergy #SolarSavings #RenewableEnergy
+**Hashtags:** #SolarKohPhangan #GoSolar #SolarThailand #โซลาร์เซลล์ #พลังงานแสงอาทิตย์ #ประหยัดค่าไฟ #เกาะพะงัน #BustanEnergy #SolarSavings #RenewableEnergy
 
 ---
 
@@ -886,7 +886,7 @@ All text/graphic posts should follow these design specifications for Canva or si
 - **Size:** 1080x1080px (square)
 - **Layout:** Title slide → content slides → CTA slide
 - **Style:** Navy background, white text, orange accents for key numbers
-- **Logo:** TM Energy logo bottom-right on every slide
+- **Logo:** Bustan Energy logo bottom-right on every slide
 - **Slide count:** 4-5 slides
 
 #### 2. Stat/Comparison Card (Posts 3, 7, 15)
@@ -908,7 +908,7 @@ All text/graphic posts should follow these design specifications for Canva or si
 ### Design Rules
 - Maximum 2 fonts per graphic
 - Plenty of white space — don't overcrowd
-- TM Energy logo on every graphic (bottom-right, subtle)
+- Bustan Energy logo on every graphic (bottom-right, subtle)
 - No stock photography — text/data graphics only for these templates
 - Bilingual: EN headline, TH can be smaller below or on separate slide
 - No emoji in graphics

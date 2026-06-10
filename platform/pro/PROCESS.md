@@ -1,4 +1,4 @@
-# TM Energy — Solar Lead Intelligence Process
+# Bustan Energy — Solar Lead Intelligence Process
 ## From Satellite to Signed Contract
 
 ---
@@ -355,10 +355,10 @@ OUTPUT: Customized outreach message
 ### 6.2 Proposal Auto-Generation
 ```
 INPUT:  Building data + selected deal model
-OUTPUT: Branded HTML proposal (TM Energy format)
+OUTPUT: Branded HTML proposal (Bustan Energy format)
 ```
 
-- Uses existing TM Energy proposal templates
+- Uses existing Bustan Energy proposal templates
 - Auto-fills: system specs, financials, ROI
 - 3 options: EPC Purchase, PPA, Lease
 - Digital signature capability
@@ -444,5 +444,5 @@ Every night:
 
 ---
 
-*TM Energy — From Satellite to Contract*
+*Bustan Energy — From Satellite to Contract*
 *Built March 2026, Koh Phangan, Thailand*

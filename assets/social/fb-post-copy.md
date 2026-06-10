@@ -11,7 +11,7 @@ You're not alone. Most villa and resort owners on the island are paying 2-3x mor
 
 We've just launched a **free interactive tool** — drop a pin on your roof, and get an instant solar assessment with real savings numbers:
 
-🔗 **https://index.energy-tm.com/landing/solar-koh-phangan.html**
+🔗 **https://index.bustan-energy.com/landing/solar-koh-phangan.html**
 
 **What you get:**
 → Satellite view of your roof
@@ -21,7 +21,7 @@ We've just launched a **free interactive tool** — drop a pin on your roof, and
 
 **Can't find your roof on the satellite map?** No problem — we'll send a drone to survey it for free. 🚁
 
-**Why TM Energy?**
+**Why Bustan Energy?**
 ✅ LONGi Tier-1 panels + Huawei inverters
 ✅ 25-year warranty
 ✅ 3.8 year average payback

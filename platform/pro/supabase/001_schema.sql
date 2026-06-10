@@ -1,4 +1,4 @@
--- TM Energy Platform — KP Solar Pro 2.0
+-- Bustan Energy Platform — KP Solar Pro 2.0
 -- Phase 1: Core Schema
 -- Supabase: trvgpgpsqvvdsudpgwpm
 
@@ -270,8 +270,8 @@ ON CONFLICT DO NOTHING;
 -- 10. SEED DATA — Initial team
 -- ============================================
 INSERT INTO team_members (email, name, role, phone) VALUES
-  ('kaniel@energy-tm.com', 'Kaniel', 'admin', '+66997044944'),
-  ('erez@energy-tm.com', 'Erez', 'installer', NULL)
+  ('kaniel@bustan-energy.com', 'Kaniel', 'admin', '+66997044944'),
+  ('erez@bustan-energy.com', 'Erez', 'installer', NULL)
 ON CONFLICT (email) DO NOTHING;
 
 -- ============================================

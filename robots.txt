@@ -1,4 +1,4 @@
-# TM Energy — index.energy-tm.com
+# Bustan Energy — index.bustan-energy.com
 # Public sections: / (homepage), /blog/, /landing/, /academy/
 # Internal/business pages and tools are disallowed below.
 
@@ -25,4 +25,4 @@ Disallow: /ads-pro/
 Disallow: /gis-mapper/
 Disallow: /platform/
 
-Sitemap: https://index.energy-tm.com/sitemap.xml
+Sitemap: https://index.bustan-energy.com/sitemap.xml

@@ -1,5 +1,5 @@
 /* ============================================
-   TM Energy Academy — Shared JavaScript
+   Bustan Energy Academy — Shared JavaScript
    ============================================ */
 
 // ---- Supabase Config ----
@@ -95,8 +95,8 @@ function showLoginGate() {
       .login-pin-dots input:focus { border-color:#00D68F; }
     </style>
     <div class="login-box">
-      <img src="${location.pathname.includes('/courses/') ? '../' : ''}../proposals/tm-logo.png" alt="TM Energy" onerror="this.style.display='none'">
-      <h2>TM Energy Academy</h2>
+      <img src="${location.pathname.includes('/courses/') ? '../' : ''}../proposals/tm-logo.png" alt="Bustan Energy" onerror="this.style.display='none'">
+      <h2>Bustan Energy Academy</h2>
       <div class="sub">Employee Login</div>
       <div class="login-field">
         <label>Username</label>

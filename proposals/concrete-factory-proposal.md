@@ -194,5 +194,5 @@ Building 1 (16m × 6.5m):
 
 ---
 
-*TM Energy — Solar & EV Solutions, Koh Phangan*
+*Bustan Energy — Solar & EV Solutions, Koh Phangan*
 *Contact: k@kanielt.com*

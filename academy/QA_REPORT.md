@@ -1,4 +1,4 @@
-# TM Energy Academy — QA Report
+# Bustan Energy Academy — QA Report
 
 **Date:** 2026-03-15  
 **Auditor:** Pixel (QA Agent)  

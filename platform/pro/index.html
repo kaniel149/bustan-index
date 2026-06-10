@@ -1180,7 +1180,7 @@ async function logActivity(leadId,buildingId,type,description){
 // ==================== PHASE B: WHATSAPP SHARE ====================
 function shareWhatsApp(building){
  const b=building||{};
- const msg=`Bustan Energy — Solar Proposal\n\n🏢 ${b.name||'Building'}\n☀️ ${b.potential_kwp||0} kWp system\n📊 ${b.potential_panels||0} panels\n💰 Saves ฿${fmt(b.potential_monthly_savings_thb||0)}/month\n\nContact: kaniel@energy-tm.com\n📞 +66 99-704-4944\n🌐 index.energy-tm.com`;
+ const msg=`Bustan Energy — Solar Proposal\n\n🏢 ${b.name||'Building'}\n☀️ ${b.potential_kwp||0} kWp system\n📊 ${b.potential_panels||0} panels\n💰 Saves ฿${fmt(b.potential_monthly_savings_thb||0)}/month\n\nContact: kaniel@bustan-energy.com\n📞 +66 99-704-4944\n🌐 index.bustan-energy.com`;
  window.open('https://wa.me/66997044944?text='+encodeURIComponent(msg),'_blank');
 }
 
@@ -1237,7 +1237,7 @@ async function generateProposal(buildingId){
   roi_percent:parseFloat(roi),
   deal_model:'purchase',
   status:'draft',
-  html_url:'https://index.energy-tm.com/proposals/',
+  html_url:'https://index.bustan-energy.com/proposals/',
   options:[
    {name:'EPC Purchase',price_per_wp:29,total:epcCost,monthly_savings:monthlySav,payback:payback},
    {name:'PPA',rate:4.5,savings_vs_pea:'25%',monthly_savings:Math.round(annualKwh/12*(6-4.5))},
@@ -1256,7 +1256,7 @@ async function generateProposal(buildingId){
  modal.style.zIndex='6000';
  modal.innerHTML=`<div class="modal" style="max-width:580px;padding:0;overflow:hidden">
   <div style="background:linear-gradient(135deg,#1B2A4A,#0A1628);padding:24px;text-align:center">
-   <img src="https://index.energy-tm.com/proposals/tm-logo.png" style="height:40px;margin-bottom:12px">
+   <img src="https://index.bustan-energy.com/proposals/tm-logo.png" style="height:40px;margin-bottom:12px">
    <h2 style="color:#fff;font-size:1.1rem;margin:0">Solar Proposal ${refNum}</h2>
    <p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:4px 0 0">${b.name||'Building'} — Koh Phangan</p>
   </div>
@@ -1291,7 +1291,7 @@ async function generateProposal(buildingId){
     <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()">Close</button>
    </div>
    <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.7rem;color:#5A6B7D">
-    Bustan Energy Co., Ltd. · kaniel@energy-tm.com · +66 99-704-4944<br>107/5 Moo 1, Koh Phangan
+    Bustan Energy Co., Ltd. · kaniel@bustan-energy.com · +66 99-704-4944<br>107/5 Moo 1, Koh Phangan
    </div>
   </div>
  </div>`;

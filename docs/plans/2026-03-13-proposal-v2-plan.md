@@ -69,7 +69,7 @@ Remove the old `.lang-bar` div and replace with:
 <nav class="nav">
   <div class="nav-logo">
     <div class="logo-mark">TM</div>
-    <div class="nav-brand">TM ENERGY</div>
+    <div class="nav-brand">BUSTAN ENERGY</div>
   </div>
   <div class="nav-ref" id="navRef">#TM-2026-001 · Confidential</div>
   <div style="display:flex;gap:6px;align-items:center;">
@@ -314,7 +314,7 @@ Copy beamtech agreement structure:
 - Key terms list (dynamic based on selected option)
 - Expandable `<details>` with full terms
 - **"Read Full Contract" links** — `<a href="epc-contract.html">` for EPC options, `<a href="ppa-contract.html">` for PPA
-- Signature block: 2 columns (Client / TM Energy), name, title, date, stamp area
+- Signature block: 2 columns (Client / Bustan Energy), name, title, date, stamp area
 - Consent text with ref number
 
 Dynamic: option prices, system specs, ref number.
@@ -336,7 +336,7 @@ git commit -am "feat: add agreement section with option selection and contract l
 
 Gold gradient CTA with WhatsApp + Phone buttons, 3-step process. Dynamic WhatsApp link with ref number.
 
-**Step 2: Add About TM Energy section**
+**Step 2: Add About Bustan Energy section**
 
 Company stats (100+ projects, 10+ years, Tier 1, Local team).
 

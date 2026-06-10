@@ -1,5 +1,5 @@
 # Drone Island Scan — Koh Phangan Solar Mapping
-## TM Energy — Master Plan
+## Bustan Energy — Master Plan
 
 ---
 
@@ -285,7 +285,7 @@ ROI on scan: 1.8 חודשים
 - מדורג לפי פוטנציאל סולארי
 
 ### 7.4 Interactive Solar Map
-- URL ציבורי: tmenergy.asia/map (לאחר רכישת domain)
+- URL ציבורי: bustan-energy.asia/map (לאחר רכישת domain)
 - כל גג לחיץ → הצעה אוטומטית
 - שכבות: אורתומוזאיקה, פוטנציאל סולארי, בעלים, סטטוס
 
@@ -354,4 +354,4 @@ ROI on scan: 1.8 חודשים
 
 ---
 
-*Prepared by G — TM Energy — March 2026*
+*Prepared by G — Bustan Energy — March 2026*

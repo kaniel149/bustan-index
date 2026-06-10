@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TM Energy — KP Solar Pro v2</title>
+<title>Bustan Energy — KP Solar Pro v2</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Heebo:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.css">
 <script src="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.js"></script>
@@ -495,7 +495,7 @@ async function initDroneLayers() {
     minzoom: 18,
     maxzoom: 19,
     bounds: [99.9829, 9.7098, 100.0149, 9.7900],
-    attribution: 'TM Energy Drone v2'
+    attribution: 'Bustan Energy Drone v2'
   });
   map.addLayer({
     id: 'drone-hd-layer',
@@ -721,13 +721,13 @@ function showPopup(e) {
   if (!b) return;
 
   // CRM proposal URL with building context
-  const proposalUrl = `https://energy-tm.com/admin/proposals/new?building_id=${b.i}&kwp=${b.kw}&area=${b.a}&lat=${b.la}&lng=${b.lo}`;
+  const proposalUrl = `https://bustan-energy.com/admin/proposals/new?building_id=${b.i}&kwp=${b.kw}&area=${b.a}&lat=${b.la}&lng=${b.lo}`;
 
-  // WhatsApp — use building phone if available, otherwise TM Energy number
+  // WhatsApp — use building phone if available, otherwise Bustan Energy number
   const phone = b.ph ? b.ph.replace(/[^0-9+]/g, '') : '66997044944';
   const waMsg = b.ph
-    ? encodeURIComponent(`Hello! I'm from TM Energy.\n\nWe noticed "${b.n||'your building'}" could benefit from a ${b.kw}kWp solar system saving ~฿${Math.round(b.annual_savings/12).toLocaleString()}/month.\n\nInterested in a free consultation?`)
-    : encodeURIComponent(`Hi TM Energy, I saw "${b.n||'Building #'+b.i}" on KP Solar Pro. I'd like a free solar proposal.`);
+    ? encodeURIComponent(`Hello! I'm from Bustan Energy.\n\nWe noticed "${b.n||'your building'}" could benefit from a ${b.kw}kWp solar system saving ~฿${Math.round(b.annual_savings/12).toLocaleString()}/month.\n\nInterested in a free consultation?`)
+    : encodeURIComponent(`Hi Bustan Energy, I saw "${b.n||'Building #'+b.i}" on KP Solar Pro. I'd like a free solar proposal.`);
   const waLink = `https://wa.me/${phone}?text=${waMsg}`;
 
   const noteVal = notes[b.i] || '';
@@ -1243,7 +1243,7 @@ document.getElementById('btn-park-toggle').classList.add('active');
 .tm-admin-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(232,168,32,.5); text-decoration: none; }
 @media (max-width: 600px) { .tm-admin-cta { bottom: 16px; left: 16px; padding: 12px 18px; font-size: 13px; } }
 </style>
-<a class="tm-admin-cta" href="https://energy-tm.com/admin/proposals/new" target="_blank" title="Create a branded proposal with password gate + digital signature">
+<a class="tm-admin-cta" href="https://bustan-energy.com/admin/proposals/new" target="_blank" title="Create a branded proposal with password gate + digital signature">
   ✨ Create Proposal (v2)
 </a>
 

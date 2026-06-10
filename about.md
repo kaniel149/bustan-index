@@ -1,8 +1,8 @@
-# TM Energy — Solar & EV Solutions for Koh Phangan, Thailand
+# Bustan Energy — Solar & EV Solutions for Koh Phangan, Thailand
 
 ## Company Overview
 
-TM Energy is a solar EPC (Engineering, Procurement, and Construction) company headquartered on Koh Phangan island in Surat Thani province, Thailand. Founded to address the high electricity costs on Thailand's islands, TM Energy provides end-to-end solar solutions for residential, hospitality, and commercial properties.
+Bustan Energy is a solar EPC (Engineering, Procurement, and Construction) company headquartered on Koh Phangan island in Surat Thani province, Thailand. Founded to address the high electricity costs on Thailand's islands, Bustan Energy provides end-to-end solar solutions for residential, hospitality, and commercial properties.
 
 ## The Problem We Solve
 
@@ -26,7 +26,7 @@ Full-service solar from site survey to commissioning:
 - No permits required for rooftop installations under 200kW in Thailand
 
 ### Power Purchase Agreement (PPA)
-- **Zero upfront cost** — TM Energy finances, installs, and owns the system
+- **Zero upfront cost** — Bustan Energy finances, installs, and owns the system
 - Customer pays a fixed rate of **฿4.50/kWh** for electricity produced
 - Immediate savings vs PEA rates of ฿5-7/kWh
 - Available for properties with monthly bills exceeding ฿30,000
@@ -71,16 +71,16 @@ Solar-powered properties can market themselves as sustainable stays, commanding 
 
 ## Contact Information
 
-- **Website:** [https://index.energy-tm.com](https://index.energy-tm.com)
-- **Email:** kaniel@energy-tm.com
+- **Website:** [https://index.bustan-energy.com](https://index.bustan-energy.com)
+- **Email:** kaniel@bustan-energy.com
 - **Phone/WhatsApp:** +66 99-704-4944
 - **Location:** Koh Phangan, Surat Thani 84280, Thailand
 - **Business Hours:** Monday-Saturday, 8:00 AM - 6:00 PM (ICT)
 - **Facebook:** [facebook.com/share/189ywnsdS6/](https://www.facebook.com/share/189ywnsdS6/)
-- **Instagram:** [instagram.com/tmenergy.th](https://www.instagram.com/tmenergy.th)
+- **Instagram:** [instagram.com/bustan-energy.th](https://www.instagram.com/bustan-energy.th)
 
 ## Online Resources
 
-- **Solar Academy:** [index.energy-tm.com/academy/](https://index.energy-tm.com/academy/) — Free solar energy training courses
-- **Savings Calculator:** [index.energy-tm.com/#calculator](https://index.energy-tm.com/#calculator) — Estimate your solar savings
-- **Blog:** [index.energy-tm.com/blog/](https://index.energy-tm.com/blog/) — Articles on solar energy, EV charging, and sustainability in Thailand
+- **Solar Academy:** [index.bustan-energy.com/academy/](https://index.bustan-energy.com/academy/) — Free solar energy training courses
+- **Savings Calculator:** [index.bustan-energy.com/#calculator](https://index.bustan-energy.com/#calculator) — Estimate your solar savings
+- **Blog:** [index.bustan-energy.com/blog/](https://index.bustan-energy.com/blog/) — Articles on solar energy, EV charging, and sustainability in Thailand
