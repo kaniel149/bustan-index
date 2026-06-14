@@ -724,7 +724,7 @@ function showPopup(e) {
   const proposalUrl = `https://bustan-energy.com/admin/proposals/new?building_id=${b.i}&kwp=${b.kw}&area=${b.a}&lat=${b.la}&lng=${b.lo}`;
 
   // WhatsApp — use building phone if available, otherwise Bustan Energy number
-  const phone = b.ph ? b.ph.replace(/[^0-9+]/g, '') : '66997044944';
+  const phone = b.ph ? b.ph.replace(/[^0-9+]/g, '') : '66946692011';
   const waMsg = b.ph
     ? encodeURIComponent(`Hello! I'm from Bustan Energy.\n\nWe noticed "${b.n||'your building'}" could benefit from a ${b.kw}kWp solar system saving ~฿${Math.round(b.annual_savings/12).toLocaleString()}/month.\n\nInterested in a free consultation?`)
     : encodeURIComponent(`Hi Bustan Energy, I saw "${b.n||'Building #'+b.i}" on KP Solar Pro. I'd like a free solar proposal.`);
