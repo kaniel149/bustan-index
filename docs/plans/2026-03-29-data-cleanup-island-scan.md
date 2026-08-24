@@ -63,8 +63,8 @@ BBOX = (99.960, 9.695, 100.020, 9.800)  # (min_lng, min_lat, max_lng, max_lat)
 
 # Supabase
 SUPABASE_URL = "https://trvgpgpsqvvdsudpgwpm.supabase.co"
-SUPABASE_ANON_KEY = os.environ.get("SUPABASE_ANON_KEY",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRydmdwZ3BzcXZ2ZHN1ZHBnd3BtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTE3OTIsImV4cCI6MjA4ODk2Nzc5Mn0.iRx9JiEo6dZL8K5sMUKLS8Sbi5QEZ_BSXvWI9rgTENw")
+SUPABASE_ANON_KEY = os.environ["SUPABASE_ANON_KEY"]  # no hardcoded fallback:
+# this file is served publicly at index.bustan-energy.com
 
 # Satellite
 TILE_ZOOM = 19  # ~0.3m/pixel

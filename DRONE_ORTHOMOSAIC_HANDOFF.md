@@ -174,9 +174,15 @@ gdalinfo input.tif  # check bounds, CRS, resolution
 ---
 
 ## API Keys & Credentials
-- **Supabase anon key**: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRydmdwZ3BzcXZ2ZHN1ZHBnd3BtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTE3OTIsImV4cCI6MjA4ODk2Nzc5Mn0.iRx9JiEo6dZL8K5sMUKLS8Sbi5QEZ_BSXvWI9rgTENw
+Not listed here. This file is served publicly at
+https://index.bustan-energy.com/DRONE_ORTHOMOSAIC_HANDOFF.md — it previously
+carried a live Gemini key (since rotated) and the Supabase anon JWT in plaintext.
+
 - **Supabase URL**: https://trvgpgpsqvvdsudpgwpm.supabase.co
-- **Gemini API**: AIzaSyCXoQ1be8uSmHY4CGXx-mm4-e-rqyu8NkQ
+- **Supabase anon key**: read from `VITE_SUPABASE_ANON_KEY`. It is public by
+  design (it ships in every browser bundle); RLS is what protects the data, not
+  the key's secrecy — see `bustan-energy/supabase/migrations/021_rls_lockdown.sql`.
+- **Gemini API key**: `GEMINI_API_KEY` env var, server-side only.
 - **GitHub**: kaniel149/copenhagen-solar
 
 ---

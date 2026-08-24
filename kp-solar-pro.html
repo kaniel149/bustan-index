@@ -443,9 +443,23 @@ const map = new maplibregl.Map({
     glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
     sources: {
       'satellite': {
+        // Esri World Imagery. Over Ko Phangan this is Vantor "Vivid Standard
+        // TH02 26Q2" — WorldView Legion, 0.34 m native, captured 2026-01-14 to
+        // 2026-04-07 (verified 2026-08-23 via Esri's metadata service).
+        // Replaces mt0.google.com/vt, an undocumented endpoint whose use is a
+        // Maps ToS violation and can be cut off without notice.
+        //
+        // maxzoom is 18, not 22: Esri answers HTTP 200 at any zoom, but above
+        // z18 over this island it returns a ~2.5 KB "no data" placeholder
+        // instead of imagery. Declaring 18 makes MapLibre upscale the last real
+        // tile rather than paint blank grey exactly when you zoom into a roof.
         type: 'raster',
-        tiles: ['https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}'],
-        tileSize: 256, maxzoom: 22
+        tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+        tileSize: 256, maxzoom: 18,
+        // Covers both tile sets this source can hold — the satellite/street
+        // toggle swaps URLs in place, and MapLibre cannot restyle attribution
+        // per-swap, so both credits stay visible. OSM's licence requires it.
+        attribution: 'Esri, Vantor, Earthstar Geographics · © OpenStreetMap contributors'
       }
     },
     layers: [{id:'satellite-layer',type:'raster',source:'satellite'}]
@@ -462,8 +476,9 @@ function setMapStyle(style) {
   currentStyle = style;
   document.getElementById('btn-sat').classList.toggle('active', style === 'satellite');
   document.getElementById('btn-map').classList.toggle('active', style === 'streets');
-  const lyrs = style === 'satellite' ? 's' : 'm';
-  map.getSource('satellite').tiles = [`https://mt0.google.com/vt/lyrs=${lyrs}&hl=en&x={x}&y={y}&z={z}`];
+  map.getSource('satellite').tiles = [style === 'satellite'
+    ? 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+    : 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'];
   map.style.sourceCaches['satellite'].clearTiles();
   map.style.sourceCaches['satellite'].update(map.transform);
   map.triggerRepaint();
