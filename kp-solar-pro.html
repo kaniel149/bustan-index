@@ -252,6 +252,16 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
       <div class="hstat-label">Zones</div>
       <div class="hstat-filter-dot"></div>
     </div>
+    <div class="hstat" id="hstat-unmapped" onclick="toggleUnmapped()" style="cursor:pointer" title="Roofs seen in 2026 imagery that are in no dataset. Click to show/hide on the map.">
+      <div class="hstat-val" id="h-unmapped">0</div>
+      <div class="hstat-label">Unmapped</div>
+      <div class="hstat-filter-dot"></div>
+    </div>
+    <div class="hstat" id="hstat-solar" title="Roofs detected as already having solar and removed from the prospect list">
+      <div class="hstat-val" id="h-solar">0</div>
+      <div class="hstat-label">Already Solar</div>
+      <div class="hstat-filter-dot"></div>
+    </div>
   </div>
 </div>
 
@@ -406,6 +416,44 @@ function inferCategory(b) {
   return 'residential';
 }
 
+// Roofs that already have solar, from scripts/detect_solar_kp.py (Esri 2026
+// imagery + Gemini, judged against each building's own drawn footprint).
+// Loaded before render so an already-solar building never enters the prospect
+// list. Fetched rather than <script>-included so a missing file degrades to
+// "nothing excluded" instead of a blank page.
+let solarDetected = {};
+let solarExcludedCount = 0;
+
+// Roofs visible in the 2026 Esri imagery that appear in no dataset we hold —
+// found by scripts/find_new_buildings.py, deduped against both the 30k building
+// table and every vertex of the map's own polygons at a 30 m radius. Shown as a
+// separate layer, not merged into the prospect list: these are bounding boxes
+// from a vision model, so the footprint is an upper bound and each one still
+// needs a look before it becomes a lead.
+let unmappedRoofs = [];
+
+async function loadUnmappedRoofs() {
+  try {
+    const r = await fetch('roof-scanner/unmapped_roofs.json', { cache: 'no-cache' });
+    if (r.ok) unmappedRoofs = await r.json();
+  } catch (e) { console.warn('unmapped_roofs.json unavailable', e); }
+}
+
+async function loadSolarDetections() {
+  try {
+    const r = await fetch('roof-scanner/solar_detected.json', { cache: 'no-cache' });
+    if (r.ok) solarDetected = await r.json();
+  } catch (e) { console.warn('solar_detected.json unavailable — excluding nothing', e); }
+}
+
+// A building counts as already-solar only on a confident positive. Anything
+// uncertain stays a prospect: a missed opportunity is cheaper than deleting a
+// real lead off the map.
+function hasExistingSolar(id) {
+  const d = solarDetected[String(id)];
+  return !!(d && d.s && d.c >= 0.5);
+}
+
 // Enrich building data
 let buildings = (typeof B !== 'undefined' ? B : []).map(b => {
   const annual_kwh = b.kw * 1350;
@@ -486,15 +534,96 @@ function setMapStyle(style) {
 
 function resetView() { map.flyTo({center:[100.0291,9.7578],zoom:12.5}); }
 
-map.on('load', () => {
+// MapLibre fires 'load' exactly once, and a handler attached after it has
+// already fired never runs — which leaves the page stuck on its spinner with a
+// perfectly healthy map underneath. Boot from whichever signal is available.
+async function bootMap() {
+  // Drop already-solar roofs before anything renders, so no downstream view
+  // (map, list, analytics, zone counts) can disagree about the prospect count.
+  await loadSolarDetections();
+  const before = buildings.length;
+  buildings = buildings.filter(b => !hasExistingSolar(b.i));
+  solarExcludedCount = before - buildings.length;
+  if (solarExcludedCount) console.log(`Excluded ${solarExcludedCount} roofs that already have solar`);
+
+  await loadUnmappedRoofs();
   initMapLayers();
+  initUnmappedLayer();
   initDroneLayers();
   renderBuildings();
   renderZones();
   renderAnalytics();
   updateHeaderStats();
   document.getElementById('loading').classList.add('done');
-});
+}
+
+let booted = false;
+function bootOnce(why) { if (!booted) { booted = true; console.log('boot via', why); bootMap(); } }
+map.on('error', (e) => console.warn('map error', e && e.error && e.error.message));
+
+// Boot when the style is genuinely ready. Two failure modes are being handled:
+//   - MapLibre's 'load' event did not fire at all here (observed 2026-08-27),
+//     leaving the page on its spinner over a working map;
+//   - booting on a plain timer instead threw "Style is not done loading" from
+//     addSource, because a timer says nothing about readiness.
+// Polling isStyleLoaded() answers the question addSource actually asks.
+(function waitForStyle(tries) {
+  if (map.isStyleLoaded()) { bootOnce('style-ready'); return; }
+  if (tries > 150) { console.error('style never finished loading after 30s'); return; }
+  setTimeout(() => waitForStyle(tries + 1), 200);
+})(0);
+map.on('load', () => bootOnce('load'));
+
+// ── Unmapped roofs (2026 imagery, absent from every dataset) ──
+let unmappedVisible = false;
+
+function initUnmappedLayer() {
+  if (!unmappedRoofs.length) return;
+  map.addSource('unmapped', {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: unmappedRoofs.map(d => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [d.lon, d.lat] },
+        properties: { kwp: d.kwp, roof: d.roof_m2 },
+      })),
+    },
+  });
+  map.addLayer({
+    id: 'unmapped-layer',
+    type: 'circle',
+    source: 'unmapped',
+    layout: { visibility: 'none' },
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['get', 'kwp'], 10, 3, 100, 7, 400, 11],
+      'circle-color': '#E85D3A',
+      'circle-opacity': 0.55,
+      'circle-stroke-width': 1.5,
+      'circle-stroke-color': '#fff',
+    },
+  });
+  map.on('click', 'unmapped-layer', (e) => {
+    const p = e.features[0].properties;
+    new maplibregl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML(`<div style="font:12px system-ui;padding:2px 4px">
+        <b>Unmapped roof</b><br>~${p.roof} m² · ~${p.kwp} kWp<br>
+        <span style="opacity:.6">detected from 2026 imagery — not yet verified</span></div>`)
+      .addTo(map);
+  });
+  map.on('mouseenter', 'unmapped-layer', () => { map.getCanvas().style.cursor = 'pointer'; });
+  map.on('mouseleave', 'unmapped-layer', () => { map.getCanvas().style.cursor = ''; });
+}
+
+function toggleUnmapped() {
+  unmappedVisible = !unmappedVisible;
+  if (map.getLayer('unmapped-layer')) {
+    map.setLayoutProperty('unmapped-layer', 'visibility', unmappedVisible ? 'visible' : 'none');
+  }
+  const el = document.getElementById('hstat-unmapped');
+  if (el) el.style.opacity = unmappedVisible ? '1' : '';
+}
 
 // ── Drone layers (photos + HD orthomosaic) ──
 let dronePhotos = [];
@@ -1222,6 +1351,8 @@ function updateHeaderStats() {
   document.getElementById('h-value').textContent = Math.round(totalEpc/1000000);
   document.getElementById('h-pipeline').textContent = pipCount;
   document.getElementById('h-scanned').textContent = `${scanned}/8`;
+  document.getElementById('h-solar').textContent = solarExcludedCount.toLocaleString();
+  document.getElementById('h-unmapped').textContent = unmappedRoofs.length.toLocaleString();
 
   // Show active filter indicator on header
   ['hstat-buildings','hstat-mwp','hstat-value'].forEach(id => {
