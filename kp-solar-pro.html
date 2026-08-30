@@ -252,6 +252,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:#fff;overflow:hid
       <div class="hstat-label">Zones</div>
       <div class="hstat-filter-dot"></div>
     </div>
+    <div class="hstat" id="hstat-writedown" title="Leads whose kWp was corrected after two models agreed the polygon is not a single roof">
+      <div class="hstat-val" id="h-writedown">0</div>
+      <div class="hstat-label">Resized</div>
+      <div class="hstat-filter-dot"></div>
+    </div>
     <div class="hstat" id="hstat-unmapped" onclick="toggleUnmapped()" style="cursor:pointer" title="Roofs seen in 2026 imagery that are in no dataset. Click to show/hide on the map.">
       <div class="hstat-val" id="h-unmapped">0</div>
       <div class="hstat-label">Unmapped</div>
@@ -432,6 +437,44 @@ let solarExcludedCount = 0;
 // needs a look before it becomes a lead.
 let unmappedRoofs = [];
 
+// What each database polygon actually encloses — a roof, a compound of
+// separate structures, or open land. The map sizes systems from the polygon
+// area, so a polygon drawn round a jungle plot became a 733 kWp grade-A lead.
+// Two models looked: a cheap one over all 2,467, and an adjudicator over the
+// 174 highest-value disagreements. The cheap model was right 64% of the time
+// and its errors ran one way — it calls flat commercial roofs "empty lots" —
+// so a lone flag downgrades nothing. It only earns a badge.
+let footprintQuality = {};
+let writtenDownCount = 0;
+
+async function loadFootprintQuality() {
+  try {
+    const r = await fetch('roof-scanner/footprint_quality_merged.json', { cache: 'no-cache' });
+    if (r.ok) footprintQuality = await r.json();
+  } catch (e) { console.warn('footprint_quality_merged.json unavailable', e); }
+}
+
+/** kWp after correcting for how much of the polygon is genuinely roof. */
+function correctedKwp(b) {
+  const f = footprintQuality[String(b.i)];
+  if (!f || f.src !== 'adjudicated') return b.kw;
+  if (f.k !== 'parcel' && f.k !== 'compound') return b.kw;
+  return Math.round(b.kw * f.roof_pct) / 100;
+}
+
+/** Badge text for a footprint we do not fully trust, or '' when it is clean. */
+function footprintBadge(b) {
+  const f = footprintQuality[String(b.i)];
+  if (!f) return '';
+  if (f.src === 'adjudicated') {
+    if (f.k === 'parcel') return 'land, not a roof';
+    if (f.k === 'compound') return 'several buildings';
+    if (f.k === 'unclear') return 'verify footprint';
+    return '';
+  }
+  return (f.k === 'parcel' || f.k === 'compound' || f.k === 'unclear') ? 'verify footprint' : '';
+}
+
 async function loadUnmappedRoofs() {
   try {
     const r = await fetch('roof-scanner/unmapped_roofs.json', { cache: 'no-cache' });
@@ -537,42 +580,60 @@ function resetView() { map.flyTo({center:[100.0291,9.7578],zoom:12.5}); }
 // MapLibre fires 'load' exactly once, and a handler attached after it has
 // already fired never runs — which leaves the page stuck on its spinner with a
 // perfectly healthy map underneath. Boot from whichever signal is available.
-async function bootMap() {
-  // Drop already-solar roofs before anything renders, so no downstream view
-  // (map, list, analytics, zone counts) can disagree about the prospect count.
+// Two phases. The building list, filters, analytics and header need no map —
+// they must not be held hostage to tile loading, which has been unreliable
+// here. Map layers are added separately and retried, so a throttled tile
+// server costs you the picture but never the leads.
+async function bootData() {
   await loadSolarDetections();
   const before = buildings.length;
   buildings = buildings.filter(b => !hasExistingSolar(b.i));
   solarExcludedCount = before - buildings.length;
-  if (solarExcludedCount) console.log(`Excluded ${solarExcludedCount} roofs that already have solar`);
 
   await loadUnmappedRoofs();
-  initMapLayers();
-  initUnmappedLayer();
-  initDroneLayers();
+  await loadFootprintQuality();
+
+  // Re-rank on the corrected figure so the list stops leading with phantoms.
+  // Idempotent: this may run more than once, and a second pass that corrected
+  // the already-corrected number would compound it.
+  writtenDownCount = 0;
+  buildings.forEach(b => {
+    if (b.kw_raw === undefined) b.kw_raw = b.kw;
+    const kw = correctedKwp({ ...b, kw: b.kw_raw });
+    if (kw < b.kw_raw) writtenDownCount++;
+    b.kw = kw;
+    b.badge = footprintBadge(b);
+    b.tier = getTier(kw);
+    if (kw < 15 && b.pr === 'A') b.pr = kw >= 10 ? 'B' : (kw >= 5 ? 'C' : 'D');
+    b.annual_kwh = kw * 1350;
+    b.annual_savings = b.annual_kwh * 5.5;
+  });
+
   renderBuildings();
-  renderZones();
   renderAnalytics();
   updateHeaderStats();
   document.getElementById('loading').classList.add('done');
 }
 
-let booted = false;
-function bootOnce(why) { if (!booted) { booted = true; console.log('boot via', why); bootMap(); } }
-map.on('error', (e) => console.warn('map error', e && e.error && e.error.message));
+async function bootMapLayers(attempt = 0) {
+  try {
+    initMapLayers();
+    initUnmappedLayer();
+    initDroneLayers();
+    renderBuildings();
+    renderZones();
+  } catch (e) {
+    if (String(e && e.message).includes('Style is not done loading') && attempt < 90) {
+      setTimeout(() => bootMapLayers(attempt + 1), 400);
+      return;
+    }
+    console.error('map layers unavailable — list still usable', e);
+  }
+}
 
-// Boot when the style is genuinely ready. Two failure modes are being handled:
-//   - MapLibre's 'load' event did not fire at all here (observed 2026-08-27),
-//     leaving the page on its spinner over a working map;
-//   - booting on a plain timer instead threw "Style is not done loading" from
-//     addSource, because a timer says nothing about readiness.
-// Polling isStyleLoaded() answers the question addSource actually asks.
-(function waitForStyle(tries) {
-  if (map.isStyleLoaded()) { bootOnce('style-ready'); return; }
-  if (tries > 150) { console.error('style never finished loading after 30s'); return; }
-  setTimeout(() => waitForStyle(tries + 1), 200);
-})(0);
-map.on('load', () => bootOnce('load'));
+let booted = false;
+map.on('error', (e) => console.warn('map error', e && e.error && e.error.message));
+if (!booted) { booted = true; bootData(); bootMapLayers(); }
 
 // ── Unmapped roofs (2026 imagery, absent from every dataset) ──
 let unmappedVisible = false;
@@ -964,7 +1025,7 @@ function renderBuildings() {
           <div class="bldg-name">${b.n || 'Building #'+b.i}</div>
           <div class="bldg-badge badge-${b.pr}">${b.pr}</div>
         </div>
-        <div class="bldg-meta">${CAT_ICONS[b.c]||'📍'} ${b.c} · ${b.a} m²</div>
+        <div class="bldg-meta">${CAT_ICONS[b.c]||'📍'} ${b.c} · ${b.a} m²${b.badge ? `<span title="The database polygon does not cleanly trace one roof. ${b.kw_raw !== b.kw ? `Sized down from ${b.kw_raw} kWp.` : 'kWp left unchanged pending a look.'}" style="margin-left:6px;padding:1px 5px;border-radius:3px;background:#4a2c1a;color:#E8A33A;font-size:10px">⚠ ${b.badge}</span>` : ''}</div>
         <div class="bldg-stats">
           <span>${b.kw} kWp</span> ·
           <span>฿${Math.round(b.annual_savings).toLocaleString()}/yr</span> ·
@@ -1116,7 +1177,10 @@ function togglePipelineFromList(id) {
 }
 
 function refreshMapData() {
-  const src = map.getSource('buildings');
+  // The map layer may not exist yet (tiles throttled, style still loading).
+  // The list above is already rendered; skip the map half rather than throw.
+  const src = map.getSource && map.getSource('buildings');
+  if (!src) return;
   if (!src) return;
   src.setData({
     type:'FeatureCollection',
@@ -1353,6 +1417,7 @@ function updateHeaderStats() {
   document.getElementById('h-scanned').textContent = `${scanned}/8`;
   document.getElementById('h-solar').textContent = solarExcludedCount.toLocaleString();
   document.getElementById('h-unmapped').textContent = unmappedRoofs.length.toLocaleString();
+  document.getElementById('h-writedown').textContent = writtenDownCount.toLocaleString();
 
   // Show active filter indicator on header
   ['hstat-buildings','hstat-mwp','hstat-value'].forEach(id => {
