@@ -9,16 +9,8 @@ Generated 2026-09-03 by `presentations/tools/validate_numbers.py`. **This file r
 
 | Sheet | Cell | A | B |
 |---|---|---|---|
-| Assumptions QA | — | `sheet missing in A` | `` |
-| CapEx | A8 | `'=== EQUIPMENT ==='` | `'TOOLS / SOFTWARE'` |
-| CapEx | A19 | `'=== INITIAL INVENTORY (1 month) ==='` | `'VEHICLES'` |
-| Cash Flow 3yr | A2 | `'=== INFLOWS ==='` | `'OPERATING CASH FLOW'` |
-| Cash Flow 3yr | A10 | `'=== OUTFLOWS ==='` | `'INVESTING / FINANCING'` |
-| Dual Entity Split | A2 | `'=== YEAR 1 ==='` | `'ENTITY SPLIT'` |
-| P&L 3 Years | A8 | `'=== DIRECT COSTS ==='` | `'COST OF GOODS SOLD'` |
-| P&L 3 Years | A18 | `'=== OPEX ==='` | `'OPERATING EXPENSES'` |
 
-Substantive diffs: 13 (label wording only; no numeric cell differs).
+Substantive diffs: 0 (label wording only; no numeric cell differs).
 
 ## 2. Financing deck vs workbook Executive Summary
 
