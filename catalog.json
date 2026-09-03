@@ -24,7 +24,7 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-03",
    "size": 62556,
    "alt": "Community-solar models and their fit for Thailand",
    "thumb": "assets/thumbs/presentations-community-solar-research.webp"
@@ -53,7 +53,7 @@
     "th"
    ],
    "audience": "investor",
-   "updated": "2026-06-14",
+   "updated": "2026-09-03",
    "size": 73992,
    "alt": "Charging-station opportunity, sites, unit economics",
    "thumb": "assets/thumbs/presentations-ev-charging-koh-phangan.webp"
@@ -83,7 +83,7 @@
     "he"
    ],
    "audience": "investor",
-   "updated": "2026-06-14",
+   "updated": "2026-09-03",
    "size": 69669,
    "alt": "EV charging network (Hebrew twin)",
    "thumb": "assets/thumbs/presentations-ev-charging-koh-phangan-he.webp"
@@ -731,7 +731,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-03",
-   "size": 22907,
+   "size": 22917,
    "alt": "24 lessons · 5 tracks · EN/HE/TH",
    "hub": true
   },
@@ -1349,8 +1349,7 @@
    "audience": "internal",
    "updated": "2026-09-03",
    "size": 71397,
-   "alt": "Roof scanner + solar atlas (unified)",
-   "thumb": "assets/thumbs/kp-solar-pro.webp"
+   "alt": "Roof scanner + solar atlas (unified)"
   },
   {
    "title": "Planning vs execution tracker",
@@ -2531,8 +2530,8 @@
     "en"
    ],
    "audience": "client",
-   "updated": "2026-06-10",
-   "size": 17198,
+   "updated": "2026-09-03",
+   "size": 16016,
    "hub": true
   },
   {
