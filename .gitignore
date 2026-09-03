@@ -13,3 +13,11 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+# Added by code-review-graph
+.code-review-graph/
+
+# iCloud duplicates
+* [23].*
+**/* [23].*
+# scanner scratch
+roof-scanner/.new_buildings_progress.json
