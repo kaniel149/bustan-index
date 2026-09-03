@@ -2,208 +2,22 @@
    Bustan Energy Academy — Shared JavaScript
    ============================================ */
 
-// ---- Supabase Config ----
-const SUPABASE_URL = 'https://rklpcemhaimavneypubr.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbHBjZW1oYWltYXZuZXlwdWJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MTg2NDUsImV4cCI6MjA4ODE5NDY0NX0.xI_hBDpYPc49AidDO_WkA0mzJCg4uZJKwCR2Ds3aiOw';
-
-let _supabase = null;
-function getSupabase() {
-  if (_supabase) return _supabase;
-  if (typeof supabase !== 'undefined' && supabase.createClient) {
-    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  }
-  return _supabase;
-}
-
-// ---- Session Keys ----
-const SESSION_KEY = 'tm_academy_session';
-const STORAGE_KEY = 'tm_academy_progress';
-
-// ---- User Auth (Supabase-backed) ----
-function getCurrentUser() {
-  try { return JSON.parse(sessionStorage.getItem(SESSION_KEY)); }
-  catch { return null; }
-}
-function setCurrentUser(user) {
-  sessionStorage.setItem(SESSION_KEY, JSON.stringify(user));
-}
-function logout() {
-  sessionStorage.removeItem(SESSION_KEY);
-  location.reload();
-}
-
-async function loginUser(username, pin) {
-  const sb = getSupabase();
-  if (!sb) return { error: 'Supabase not loaded' };
-
-  const { data, error } = await sb
-    .from('academy_users')
-    .select('*')
-    .eq('username', username.toLowerCase())
-    .eq('pin', pin)
-    .eq('active', true)
-    .single();
-
-  if (error || !data) return { error: 'Invalid username or PIN' };
-
-  // Update last_login
-  sb.from('academy_users').update({ last_login: new Date().toISOString() }).eq('id', data.id).then(() => {});
-
-  const user = {
-    id: data.id,
-    username: data.username,
-    name: data.full_name,
-    role: data.role,
-    phone: data.phone,
-    email: data.email
-  };
-  setCurrentUser(user);
-  return { user };
-}
-
-function showLoginGate() {
-  if (document.getElementById('login-overlay')) return;
-  const overlay = document.createElement('div');
-  overlay.id = 'login-overlay';
-  overlay.innerHTML = `
-    <style>
-      #login-overlay { position:fixed; inset:0; z-index:99999; background:rgba(10,22,40,0.97);
-        display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; }
-      .login-box { background:rgba(255,255,255,0.05); border:1px solid rgba(0,214,143,0.3);
-        border-radius:16px; padding:48px 40px; max-width:380px; width:90%; text-align:center;
-        backdrop-filter:blur(20px); }
-      .login-box img { height:40px; margin-bottom:8px; }
-      .login-box h2 { color:#fff; margin:0 0 4px; font-size:22px; }
-      .login-box .sub { color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:28px; }
-      .login-field { margin-bottom:16px; text-align:left; }
-      .login-field label { display:block; color:rgba(255,255,255,0.6); font-size:12px;
-        text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
-      .login-field input { width:100%; padding:12px 16px; border:1px solid rgba(255,255,255,0.15);
-        border-radius:8px; background:rgba(255,255,255,0.06); color:#fff; font-size:16px;
-        outline:none; transition:border 0.2s; box-sizing:border-box; }
-      .login-field input:focus { border-color:#00D68F; }
-      .login-btn { width:100%; padding:14px; border:none; border-radius:8px; background:#00D68F;
-        color:#0A1628; font-size:16px; font-weight:700; cursor:pointer; margin-top:8px;
-        transition:transform 0.15s, opacity 0.15s; }
-      .login-btn:hover { transform:translateY(-1px); opacity:0.9; }
-      .login-btn:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
-      .login-error { color:#ff6b6b; font-size:13px; margin-top:12px; min-height:20px; }
-      .login-pin-dots { display:flex; gap:12px; justify-content:center; margin:8px 0 0; }
-      .login-pin-dots input { width:48px; height:56px; text-align:center; font-size:24px;
-        font-weight:700; border:2px solid rgba(255,255,255,0.15); border-radius:12px;
-        background:rgba(255,255,255,0.06); color:#fff; outline:none; transition:border 0.2s; }
-      .login-pin-dots input:focus { border-color:#00D68F; }
-    </style>
-    <div class="login-box">
-      <img src="${location.pathname.includes('/courses/') ? '../' : ''}../proposals/tm-logo.png" alt="Bustan Energy" onerror="this.style.display='none'">
-      <h2>Bustan Energy Academy</h2>
-      <div class="sub">Employee Login</div>
-      <div class="login-field">
-        <label>Username</label>
-        <input type="text" id="login-user" placeholder="Enter username" autocomplete="off">
-      </div>
-      <div class="login-field">
-        <label>PIN</label>
-        <div class="login-pin-dots">
-          <input type="password" maxlength="1" inputmode="numeric" class="pin-digit" data-idx="0">
-          <input type="password" maxlength="1" inputmode="numeric" class="pin-digit" data-idx="1">
-          <input type="password" maxlength="1" inputmode="numeric" class="pin-digit" data-idx="2">
-          <input type="password" maxlength="1" inputmode="numeric" class="pin-digit" data-idx="3">
-        </div>
-      </div>
-      <button class="login-btn" id="login-submit">Login</button>
-      <div class="login-error" id="login-error"></div>
-    </div>
-  `;
-  document.body.appendChild(overlay);
-  document.body.style.overflow = 'hidden';
-
-  // PIN digit auto-advance
-  const pins = overlay.querySelectorAll('.pin-digit');
-  pins.forEach((p, i) => {
-    p.addEventListener('input', () => {
-      if (p.value && i < 3) pins[i+1].focus();
-    });
-    p.addEventListener('keydown', (e) => {
-      if (e.key === 'Backspace' && !p.value && i > 0) { pins[i-1].focus(); pins[i-1].value = ''; }
-    });
-  });
-
-  const doLogin = async () => {
-    const username = document.getElementById('login-user').value.trim().toLowerCase();
-    const pin = Array.from(pins).map(p => p.value).join('');
-    const errEl = document.getElementById('login-error');
-    const btn = document.getElementById('login-submit');
-
-    if (!username) { errEl.textContent = 'Enter username'; return; }
-    if (pin.length < 4) { errEl.textContent = 'Enter 4-digit PIN'; return; }
-
-    btn.disabled = true;
-    btn.textContent = 'Logging in...';
-    errEl.textContent = '';
-
-    const result = await loginUser(username, pin);
-
-    if (result.error) {
-      errEl.textContent = result.error;
-      btn.disabled = false;
-      btn.textContent = 'Login';
-      pins.forEach(p => { p.value = ''; p.style.borderColor = '#ff6b6b'; });
-      pins[0].focus();
-      setTimeout(() => pins.forEach(p => p.style.borderColor = ''), 1000);
-      return;
-    }
-
-    overlay.remove();
-    document.body.style.overflow = '';
-    initUserUI();
-    await loadProgressFromSupabase();
-  };
-
-  document.getElementById('login-submit').addEventListener('click', doLogin);
-  pins[3].addEventListener('input', () => setTimeout(doLogin, 100));
-  overlay.addEventListener('keydown', (e) => { if (e.key === 'Enter') doLogin(); });
-  document.getElementById('login-user').focus();
-}
-
-function initUserUI() {
-  const user = getCurrentUser();
-  if (!user) return;
-
-  // Add user badge to header
-  const header = document.querySelector('.header-nav') || document.querySelector('.header-inner');
-  if (header && !document.getElementById('user-badge')) {
-    const badge = document.createElement('div');
-    badge.id = 'user-badge';
-    badge.style.cssText = 'display:flex;align-items:center;gap:8px;margin-left:16px;';
-    badge.innerHTML = `
-      <span style="width:32px;height:32px;border-radius:50%;background:#00D68F;color:#0A1628;
-        display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;">
-        ${user.name.charAt(0).toUpperCase()}</span>
-      <span style="color:rgba(255,255,255,0.7);font-size:13px;">${user.name}</span>
-      <button onclick="logout()" style="background:none;border:1px solid rgba(255,255,255,0.2);
-        color:rgba(255,255,255,0.5);padding:4px 10px;border-radius:6px;font-size:11px;
-        cursor:pointer;margin-left:4px;">Logout</button>
-    `;
-    header.appendChild(badge);
+// ---- Auth (disabled 2026-09-03) ----
+// The Supabase project that backed academy_users/academy_progress no longer exists.
+// Progress is stored per browser in localStorage. admin.html + migrations/ are kept for a future re-enable.
+const STORAGE_KEY = 'bustan_academy_progress';
+const LEGACY_KEYS = ['tm_academy_progress'];
+function getCurrentUser() { return null; }
+function checkAuth() { // only job left: one-time migration of pre-rebrand progress
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    for (const k of LEGACY_KEYS) { const v = localStorage.getItem(k); if (v) { localStorage.setItem(STORAGE_KEY, v); break; } }
   }
 }
 
-function checkAuth() {
-  const user = getCurrentUser();
-  if (!user) {
-    showLoginGate();
-  } else {
-    initUserUI();
-    loadProgressFromSupabase();
-  }
-}
-
-// ---- Progress Store (Supabase + localStorage fallback) ----
+// ---- Progress Store (localStorage) ----
 
 function getProgressKey() {
-  const user = getCurrentUser();
-  return user ? `tm_academy_progress_${user.username}` : STORAGE_KEY;
+  return STORAGE_KEY;
 }
 
 function getProgress() {
@@ -214,70 +28,6 @@ function getProgress() {
 
 function saveProgress(data) {
   localStorage.setItem(getProgressKey(), JSON.stringify(data));
-}
-
-async function loadProgressFromSupabase() {
-  const user = getCurrentUser();
-  const sb = getSupabase();
-  if (!user || !sb) return;
-
-  try {
-    const { data, error } = await sb
-      .from('academy_progress')
-      .select('*')
-      .eq('user_id', user.id);
-
-    if (error || !data) return;
-
-    // Convert Supabase progress to local format
-    const progress = getProgress();
-    data.forEach(row => {
-      const track = row.track;
-      if (!progress[track]) progress[track] = { completed: [], quizScores: {} };
-
-      // Extract lesson number from lesson_id (e.g. 'solar-fundamentals-01' -> 1)
-      const lessonNum = parseInt(row.lesson_id.split('-').pop(), 10);
-      if (!isNaN(lessonNum) && !progress[track].completed.includes(lessonNum)) {
-        progress[track].completed.push(lessonNum);
-      }
-      if (row.quiz_score !== null) {
-        progress[track].quizScores[lessonNum] = { score: row.quiz_score, total: 100, ts: new Date(row.completed_at).getTime() };
-      }
-    });
-
-    saveProgress(progress);
-
-    // Update UI progress bars if on index page
-    updateProgressBars();
-  } catch (e) {
-    console.warn('Failed to load progress from Supabase:', e);
-  }
-}
-
-async function syncLessonToSupabase(courseId, lessonNum, quizScore) {
-  const user = getCurrentUser();
-  const sb = getSupabase();
-  if (!user || !sb) return;
-
-  const lessonId = `${courseId}-${String(lessonNum).padStart(2, '0')}`;
-
-  try {
-    const row = {
-      user_id: user.id,
-      track: courseId,
-      lesson_id: lessonId,
-      completed_at: new Date().toISOString(),
-      quiz_score: quizScore !== undefined ? quizScore : null
-    };
-
-    const { error } = await sb
-      .from('academy_progress')
-      .upsert(row, { onConflict: 'user_id,lesson_id' });
-
-    if (error) console.warn('Supabase sync error:', error);
-  } catch (e) {
-    console.warn('Failed to sync to Supabase:', e);
-  }
 }
 
 function updateProgressBars() {
@@ -305,7 +55,6 @@ function markLessonComplete(courseId, lessonNum) {
     p[courseId].completed.push(lessonNum);
   }
   saveProgress(p);
-  syncLessonToSupabase(courseId, lessonNum);
 }
 
 function isLessonComplete(courseId, lessonNum) {
@@ -324,23 +73,23 @@ function saveQuizScore(courseId, lessonNum, score, total) {
   p[courseId].quizScores[lessonNum] = { score, total, ts: Date.now() };
   saveProgress(p);
 
-  // Sync to Supabase with quiz score as percentage
-  const pct = total > 0 ? Math.round((score / total) * 100) : 0;
-  syncLessonToSupabase(courseId, lessonNum, pct);
 }
 
 // ---- Language Toggle ----
 function initLanguage() {
-  const saved = localStorage.getItem('tm_academy_lang') || 'en';
+  const saved = localStorage.getItem('bustan_academy_lang') || localStorage.getItem('tm_academy_lang') || 'en';
   setLanguage(saved);
 }
 
 function setLanguage(lang) {
   document.body.setAttribute('data-lang', lang);
-  localStorage.setItem('tm_academy_lang', lang);
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  localStorage.setItem('bustan_academy_lang', lang);
+  const t = document.querySelector('title');
+  if (t) { if (!t.dataset.en) t.dataset.en = t.textContent; document.title = t.dataset[lang] || t.dataset.en; }
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+  document.dispatchEvent(new CustomEvent('academy:lang', { detail: lang }));
 }
 
 // ---- Scroll Animations ----

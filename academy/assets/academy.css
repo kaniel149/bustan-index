@@ -451,6 +451,7 @@ section[data-en], section[data-he], section[data-th] {
 body[data-lang="en"] [data-en] { display: block; }
 body[data-lang="he"] [data-he] { display: block; }
 body[data-lang="th"] [data-th] { display: block; }
+body[data-lang="en"] li[data-en], body[data-lang="he"] li[data-he], body[data-lang="th"] li[data-th] { display: list-item; }
 
 /* Inline lang spans */
 body[data-lang="en"] span[data-en],
