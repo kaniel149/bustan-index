@@ -1,0 +1,8 @@
+from,to,reason,date
+archive,_retired/archive,superseded-by-kp-solar-pro,2026-09-03
+platform/pro/index.html,_retired/platform-pro/index.html,parallel-impl-superseded,2026-09-03
+platform/pro/generate-proposal.html,_retired/platform-pro/generate-proposal.html,parallel-impl-superseded,2026-09-03
+platform/pro/grade-a-flight-plan.csv,_retired/platform-pro/grade-a-flight-plan.csv,parallel-impl-superseded,2026-09-03
+platform/pro/supabase,_retired/platform-pro/supabase,parallel-impl-superseded,2026-09-03
+platform/pro/PROCESS.md,SCAN_PROCESS.md,promoted-to-root-doc,2026-09-03
+platform/pro/SCAN_REPORT.md,SCAN_REPORT.md,promoted-to-root-doc,2026-09-03
