@@ -10,13 +10,13 @@ Kaniel: tick each item after reviewing/fixing the HE span in the lesson file. Re
   - HE: שיעור 2: יסודות טעינת רכב חשמלי — Bustan Energy Academy
 - [ ] **ev-storage-03.html** `<title>`
   - EN: Lesson 3: Solar + EV + Storage Integration — Bustan Energy Academy
-  - HE: שיעור 3: שילוב סולארי + EV + אחסון — אקדמיית בוסטן אנרג'י
+  - HE: שיעור 3: שילוב סולארי + EV + אחסון — Bustan Energy Academy
 - [ ] **management-01.html** `<title>`
   - EN: Lesson 1: Project Management for Solar — Bustan Energy Academy
   - HE: שיעור 1: ניהול פרויקטים סולאריים — Bustan Energy Academy
 - [ ] **management-02.html** `<title>`
   - EN: Lesson 2: Financial Modeling — IRR, Payback, LCOE — Bustan Energy Academy
-  - HE: שיעור 2: מודלים פיננסיים — IRR, Payback, LCOE — אקדמיית בוסטן אנרג'י
+  - HE: שיעור 2: מודלים פיננסיים — IRR, Payback, LCOE — Bustan Energy Academy
 - [ ] **management-02.html** `<td>`
   - EN: ~15,000 MWh (1,500 kWh/kWp — central Thailand)
   - HE: ~15,000 MWh (1,500 kWh/kWp — מרכז תאילנד)
@@ -31,7 +31,7 @@ Kaniel: tick each item after reviewing/fixing the HE span in the lesson file. Re
   - HE: 8–12 שנים
 - [ ] **management-03.html** `<title>`
   - EN: Lesson 3: Thai Regulations & Permits — Bustan Energy Academy
-  - HE: שיעור 3: תקנות והיתרים תאילנדיים — אקדמיית בוסטן אנרג'י
+  - HE: שיעור 3: תקנות והיתרים תאילנדיים — Bustan Energy Academy
 - [ ] **management-03.html** `<td>`
   - EN: Chanote
   - HE: צ'אנוט
@@ -43,13 +43,13 @@ Kaniel: tick each item after reviewing/fixing the HE span in the lesson file. Re
   - HE: ONEP
 - [ ] **management-04.html** `<title>`
   - EN: Lesson 4: O&M — Operations & Maintenance — Bustan Energy Academy
-  - HE: שיעור 4: O&M — Operations & Maintenance — אקדמיית בוסטן לאנרגיה
+  - HE: שיעור 4: O&M — Operations & Maintenance — Bustan Energy Academy
 - [ ] **management-05.html** `<title>`
   - EN: Lesson 5: Safety Management — JSA & Risk Assessment — Bustan Energy Academy
-  - HE: שיעור 5: ניהול בטיחות — JSA והערכת סיכונים — אקדמיית בוסטן אנרג'י
+  - HE: שיעור 5: ניהול בטיחות — JSA והערכת סיכונים — Bustan Energy Academy
 - [ ] **management-06.html** `<title>`
   - EN: Lesson 6: Scaling a Solar Business — Bustan Energy Academy
-  - HE: שיעור 6: הגדלת עסק סולארי — אקדמיית בוסטן אנרג'י
+  - HE: שיעור 6: הגדלת עסק סולארי — Bustan Energy Academy
 - [ ] **sales-bd-01.html** `<title>`
   - EN: Lesson 1: Understanding the Solar Customer — Bustan Energy Academy
   - HE: שיעור 1: הבנת הלקוח הסולארי — Bustan Energy Academy
@@ -82,10 +82,10 @@ Kaniel: tick each item after reviewing/fixing the HE span in the lesson file. Re
   - HE: שלוט באמנות ההתגברות על התנגדויות נפוצות במכירות סולאריות — עם דוגמאות ותרחישים אמיתיים
 - [ ] **sales-bd-03.html** `<title>`
   - EN: Lesson 3: Pricing, Proposals & Closing — Bustan Energy Academy
-  - HE: שיעור 3: תמחור, הצעות וסגירה — האקדמיה לאנרגיה בוסטן
+  - HE: שיעור 3: תמחור, הצעות וסגירה — Bustan Energy Academy
 - [ ] **sales-bd-04.html** `<title>`
   - EN: Lesson 4: Bustan Energy Economic Model — Bustan Energy Academy
-  - HE: שיעור 4: מודל כלכלי של Bustan Energy — אקדמיית Bustan Energy
+  - HE: שיעור 4: מודל כלכלי של Bustan Energy — Bustan Energy Academy
 - [ ] **sales-bd-04.html** `<td>`
   - EN: ~3 years
   - HE: ~3 שנים
@@ -115,7 +115,7 @@ Kaniel: tick each item after reviewing/fixing the HE span in the lesson file. Re
   - HE: ראה את התהליך שלב אחר שלב של בניית חוות סולאריות, מהכנת הקרקע ועד לחיבור לרשת (174K צפיות)
 - [ ] **solar-fundamentals-02.html** `<title>`
   - EN: Lesson 2: Solar Panel Technology — Bustan Energy Academy
-  - HE: שיעור 2: טכנולוגיית פאנלים סולאריים — האקדמיה לאנרגיה של בוסטן
+  - HE: שיעור 2: טכנולוגיית פאנלים סולאריים — Bustan Energy Academy
 - [ ] **solar-fundamentals-02.html** `<h3>`
   - EN: 📹 Watch: Solar Panel Wiring — Series vs Parallel
   - HE: 📹 צפה: חיווט פאנלים סולאריים — סדרתי מול מקבילי
@@ -187,7 +187,7 @@ Kaniel: tick each item after reviewing/fixing the HE span in the lesson file. Re
   - HE: צלילה עמוקה לרכיבי חשבון החשמל — צריכת kWh, חיובי ביקוש ומבני תעריפים
 - [ ] **solar-fundamentals-06.html** `<title>`
   - EN: Lesson 6: System Sizing — Bustan Energy Academy
-  - HE: שיעור 6: תכנון גודל המערכת — אקדמיית בוסטן אנרג'י
+  - HE: שיעור 6: תכנון גודל המערכת — Bustan Energy Academy
 - [ ] **solar-fundamentals-07.html** `<title>`
   - EN: Lesson 7: Energy Economics — Bustan Energy Academy
   - HE: שיעור 7: כלכלת אנרגיה — Bustan Energy Academy
