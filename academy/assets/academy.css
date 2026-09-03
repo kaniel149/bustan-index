@@ -467,3 +467,7 @@ body[data-lang="th"] a[data-th] { display: flex; }
 body[data-lang="en"] tr[data-en],
 body[data-lang="he"] tr[data-he],
 body[data-lang="th"] tr[data-th] { display: table-row; }
+
+/* Team-track gate (assets/gate.js) */
+.track-card.locked { opacity: .78; } .track-card.locked .lock-badge { display: inline-block; } .lock-badge { display: none; font-size: .75rem; margin-inline-start: .5rem; padding: .15rem .5rem; border-radius: 999px; background: rgba(255,184,0,.15); color: #FFB800; }
+.gate-box { max-width: 480px; margin: 4rem auto; padding: 2rem; text-align: center; } .gate-box input { display:block; width:100%; margin:.75rem 0 1rem; padding:.6rem; border-radius:8px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05); color:inherit; } .gate-err { color:#ff6b6b; min-height:1.2em; }
