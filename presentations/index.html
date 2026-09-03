@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bustan Energy — Presentations</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Presentations — Bustan Energy" data-he="מצגות — Bustan Energy" data-th="งานนำเสนอ — Bustan Energy">Presentations — Bustan Energy</title>
+  <meta name="description" content="Bustan Energy decks and playbooks — company presentation, EV charging network, financing, community solar, and the long-form business documents behind them.">
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/png" href="../proposals/tm-logo.png">
-  <link rel="stylesheet" href="../academy/assets/academy.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script>document.documentElement.classList.add('js')</script>
   <style>
-    .decks { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-    .deck { display: block; padding: 1.4rem; text-decoration: none; color: inherit; }
-    .deck h3 { margin: .4rem 0 .5rem; font-size: 1.1rem; }
-    .deck p { opacity: .7; font-size: .9rem; margin: 0 0 .8rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .tag { font-size: .72rem; padding: .2rem .55rem; border-radius: 999px; background: rgba(255,255,255,.08); }
-    .tag.lang { background: rgba(0,214,143,.18); color: #00D68F; }
-    .tag.aud { background: rgba(255,184,0,.18); color: #FFB800; }
-    .tag.warn { background: rgba(255,71,87,.18); color: #FF6B7A; }
-    .tag.ext { background: rgba(59,130,246,.18); color: #7EB0FF; }
+    .hero-media img { object-position: center 55%; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 36px; flex-wrap: wrap; }
+    .section-head .lead { max-width: 60ch; }
   </style>
 </head>
-<body data-lang="en">
-<div class="bg-ambient"></div>
-<header class="header"><div class="header-inner">
-  <a href="../assets.html" class="header-logo"><img src="../proposals/tm-logo.png" alt="Bustan Energy"><span>Presentations</span></a>
-</div></header>
-<main class="main">
-  <section class="hero"><h1>Presentations &amp; Decks</h1>
-    <p class="hero-subtitle">All Bustan Energy decks in one place. Numbers in the financing deck are cross-checked against the business-plan workbook in <a href="VALIDATION.md">VALIDATION.md</a>.</p></section>
-  <div class="decks">
-    <a class="glass-card deck" href="bustan-energy-company-2026.html"><h3>Bustan Energy — Company Presentation 2026</h3><p>Who we are, what we do on Koh Phangan, team and track record.</p>
-      <div class="tags"><span class="tag lang">EN</span><span class="tag aud">Partners</span><span class="tag aud">Clients</span></div></a>
-    <a class="glass-card deck" href="ev-charging-koh-phangan.html"><h3>EV Charging Network — Koh Phangan</h3><p>Charging-station opportunity, sites, unit economics.</p>
-      <div class="tags"><span class="tag lang">EN</span><span class="tag lang">TH</span><span class="tag aud">Investors</span><span class="tag aud">Partners</span></div></a>
-    <a class="glass-card deck" href="ev-charging-koh-phangan-he.html"><h3>רשת טעינה לרכב חשמלי — קופנגן</h3><p>Hebrew twin of the EV charging deck.</p>
-      <div class="tags"><span class="tag lang">HE</span><span class="tag aud">Investors</span></div></a>
-    <a class="glass-card deck" href="community-solar-research.html"><h3>Community Solar בתאילנד — מחקר מעמיק</h3><p>Community-solar models and their fit for Thailand.</p>
-      <div class="tags"><span class="tag lang">HE</span><span class="tag aud">Internal</span></div></a>
-    <a class="glass-card deck" href="https://bustan-energy.com/bustan-financing-deck.html"><h3>מימון — בנקים, תנאים, מספרים אמיתיים</h3><p>Financing deep dive: bank ranking, Krungsri solar products, PPA/ESCO math, tax incentives.</p>
-      <div class="tags"><span class="tag lang">HE</span><span class="tag lang">EN</span><span class="tag lang">TH</span><span class="tag aud">Investors</span><span class="tag aud">Internal</span><span class="tag ext">bustan-energy.com</span><span class="tag warn">numbers pending validation</span></div></a>
-    <a class="glass-card deck" href="https://bustan-energy.com/bustan-competitor-research-full-internal-2026-05-31.html"><h3>Competitor Research (full, internal)</h3><p>Koh Phangan / Surat Thani installer landscape, 2026-05-31.</p>
-      <div class="tags"><span class="tag lang">EN</span><span class="tag aud">Internal</span><span class="tag ext">bustan-energy.com</span></div></a>
-  </div>
+<body>
+<div id="site-nav" data-page="presentations"></div>
+
+<main>
+  <section class="hero hero-compact">
+    <div class="hero-media">
+      <img src="../drone-imagery/DJI_20260327112929_0021_D.webp" alt="Drone view of villas on Koh Phangan" width="1600" height="1200" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-body"><div class="wrap">
+      <p class="eyebrow reveal"><span data-en>Presentations</span><span data-he>מצגות</span><span data-th>งานนำเสนอ</span></p>
+      <h1 class="display reveal reveal-d1">
+        <span data-en>Decks and playbooks.</span>
+        <span data-he>מצגות ומדריכים.</span>
+        <span data-th>สไลด์และคู่มือ</span>
+      </h1>
+      <p class="lead reveal reveal-d2">
+        <span data-en>Six slide decks for clients, partners and investors — and the long-form documents behind the numbers.</span>
+        <span data-he>שש מצגות ללקוחות, שותפים ומשקיעים — והמסמכים המלאים שמאחורי המספרים.</span>
+        <span data-th>สไลด์หกชุดสำหรับลูกค้า พันธมิตร และนักลงทุน — พร้อมเอกสารฉบับเต็มที่อยู่เบื้องหลังตัวเลข</span>
+      </p>
+      <div class="hero-actions reveal reveal-d3">
+        <a class="btn btn-primary" href="#decks"><span data-en>Open the decks</span><span data-he>למצגות</span><span data-th>ดูสไลด์</span><svg class="i i-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn" href="#playbooks"><span data-en>Playbooks</span><span data-he>מדריכים</span><span data-th>คู่มือ</span></a>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="decks" class="section-tight">
+    <div class="wrap-wide">
+      <div class="section-head">
+        <h2 class="h2 reveal"><span data-en>Decks</span><span data-he>מצגות</span><span data-th>สไลด์</span></h2>
+        <p class="lead reveal reveal-d1 small" style="font-size:15px">
+          <span data-en>Arrow keys or swipe inside a deck · press F for fullscreen. Numbers in the financing deck are cross-checked against the business-plan workbook in </span>
+          <span data-he>חצים או החלקה בתוך מצגת · F למסך מלא. המספרים במצגת המימון נבדקו מול חוברת התוכנית העסקית ב-</span>
+          <span data-th>ใช้ปุ่มลูกศรหรือปัดในสไลด์ · กด F เพื่อเต็มจอ ตัวเลขในสไลด์การเงินตรวจสอบกับสมุดงานแผนธุรกิจใน </span>
+          <a class="link" href="VALIDATION.md">VALIDATION.md</a>.
+        </p>
+      </div>
+      <div class="grid grid-3" data-list="decks"></div>
+    </div>
+  </section>
+
+  <section id="playbooks" class="section-alt section-tight">
+    <div class="wrap-wide">
+      <div class="section-head">
+        <h2 class="h2 reveal"><span data-en>Playbooks</span><span data-he>מדריכים</span><span data-th>คู่มือ</span></h2>
+        <p class="lead reveal reveal-d1 small" style="font-size:15px">
+          <span data-en>Long-form, deck-style documents — business plan, P&amp;L, strategy, sales, licensing, installation, procurement, financing, legal, value chain, masterclass.</span>
+          <span data-he>מסמכים ארוכים בסגנון מצגת — תוכנית עסקית, P&amp;L, אסטרטגיה, מכירות, רישוי, הקמה, רכש, מימון, משפטי, שרשרת ערך, מאסטרקלאס.</span>
+          <span data-th>เอกสารฉบับยาวสไตล์สไลด์ — แผนธุรกิจ P&amp;L กลยุทธ์ การขาย ใบอนุญาต ติดตั้ง จัดซื้อ การเงิน กฎหมาย ห่วงโซ่คุณค่า มาสเตอร์คลาส</span>
+        </p>
+      </div>
+      <div class="grid grid-3" data-list="playbooks"></div>
+      <p class="small muted" style="margin-top:28px">
+        <span data-en>Looking for something else? The full catalog lives on the</span>
+        <span data-he>מחפשים משהו אחר? הקטלוג המלא נמצא ב</span>
+        <span data-th>กำลังหาอย่างอื่น? แคตตาล็อกฉบับเต็มอยู่ที่</span>
+        <a class="link" href="../index.html#catalog"><span data-en>home page</span><span data-he>דף הבית</span><span data-th>หน้าหลัก</span></a>.
+      </p>
+    </div>
+  </section>
 </main>
-<footer class="footer"><p>© 2026 Bustan Energy Co., Ltd. · <a href="../assets.html">Internal index</a></p></footer>
+
+<div id="site-footer"></div>
+<script src="../assets/site.js" data-root="../" defer></script>
 </body>
 </html>

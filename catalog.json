@@ -1,0 +1,2659 @@
+{
+ "generated": "2026-09-03",
+ "count": 202,
+ "entries": [
+  {
+   "title": "Presentations hub",
+   "path": "presentations/index.html",
+   "kind": "deck",
+   "group": "presentations",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 6226,
+   "hub": true
+  },
+  {
+   "title": "Community Solar בתאילנד — מחקר מעמיק",
+   "path": "presentations/community-solar-research.html",
+   "kind": "deck",
+   "group": "presentations",
+   "lang": [
+    "he"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 62556,
+   "alt": "Community-solar models and their fit for Thailand",
+   "thumb": "assets/thumbs/presentations-community-solar-research.webp"
+  },
+  {
+   "title": "Company presentation 2026",
+   "path": "presentations/bustan-energy-company-2026.html",
+   "kind": "deck",
+   "group": "presentations",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-09-03",
+   "size": 30033,
+   "alt": "Who we are, what we do on Koh Phangan, team and track record",
+   "thumb": "assets/thumbs/presentations-bustan-energy-company-2026.webp"
+  },
+  {
+   "title": "EV charging network — Koh Phangan",
+   "path": "presentations/ev-charging-koh-phangan.html",
+   "kind": "deck",
+   "group": "presentations",
+   "lang": [
+    "en",
+    "th"
+   ],
+   "audience": "investor",
+   "updated": "2026-06-14",
+   "size": 73992,
+   "alt": "Charging-station opportunity, sites, unit economics",
+   "thumb": "assets/thumbs/presentations-ev-charging-koh-phangan.webp"
+  },
+  {
+   "title": "מימון — בנקים, תנאים, מספרים אמיתיים",
+   "alt": "Financing deck (bustan-energy.com)",
+   "path": "https://bustan-energy.com/bustan-financing-deck.html",
+   "kind": "deck",
+   "group": "presentations",
+   "audience": "investor",
+   "lang": [
+    "he",
+    "en",
+    "th"
+   ],
+   "thumb": "assets/thumbs/ext-financing-deck.webp",
+   "note": "numbers pending validation",
+   "external": true
+  },
+  {
+   "title": "רשת טעינה לרכב חשמלי — קופנגן",
+   "path": "presentations/ev-charging-koh-phangan-he.html",
+   "kind": "deck",
+   "group": "presentations",
+   "lang": [
+    "he"
+   ],
+   "audience": "investor",
+   "updated": "2026-06-14",
+   "size": 69669,
+   "alt": "EV charging network (Hebrew twin)",
+   "thumb": "assets/thumbs/presentations-ev-charging-koh-phangan-he.webp"
+  },
+  {
+   "title": "Academy welcome email (Erez)",
+   "path": "academy/emails/welcome-erez.html",
+   "kind": "doc",
+   "group": "academy",
+   "lang": [
+    "he"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-14",
+   "size": 7188
+  },
+  {
+   "title": "CRM Step 1 — ליד נכנס",
+   "path": "crm-step1-lead-capture.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 35710,
+   "alt": "Lead capture & pipeline"
+  },
+  {
+   "title": "CRM Step 2 — סקר ראשוני",
+   "path": "crm-step2-site-survey.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 33815,
+   "alt": "Site survey"
+  },
+  {
+   "title": "CRM Step 3 — ניתוח חשמל",
+   "path": "crm-step3-electricity.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 22270,
+   "alt": "Electricity analysis"
+  },
+  {
+   "title": "CRM Step 4 — עיצוב מערכת",
+   "path": "crm-step4-design.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 16270,
+   "alt": "System design"
+  },
+  {
+   "title": "CRM Step 5 — SLD ו-PEA",
+   "path": "crm-step5-sld.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 15695,
+   "alt": "SLD & PEA"
+  },
+  {
+   "title": "CRM Step 6 — הצעת מחיר",
+   "path": "crm-step6-proposal.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 14879,
+   "alt": "Proposal"
+  },
+  {
+   "title": "CRM Step 7 — חוזה",
+   "path": "crm-step7-contract.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 7268,
+   "alt": "Contract"
+  },
+  {
+   "title": "CRM Step 8 — הזמנת חומר",
+   "path": "crm-step8-inventory.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 7440,
+   "alt": "Inventory & procurement"
+  },
+  {
+   "title": "CRM Step 9 — התקנה",
+   "path": "crm-step9-installation.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 7341,
+   "alt": "Installation"
+  },
+  {
+   "title": "CRM Step 10 — חיבור + O&M",
+   "path": "crm-step10-om.html",
+   "kind": "doc",
+   "group": "crm",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 13964,
+   "alt": "Grid connection + O&M"
+  },
+  {
+   "title": "Drone island scan plan",
+   "path": "DRONE_SCAN_PLAN.md",
+   "kind": "doc",
+   "group": "drone",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 13241
+  },
+  {
+   "title": "Drone orthomosaic handoff",
+   "path": "DRONE_ORTHOMOSAIC_HANDOFF.md",
+   "kind": "doc",
+   "group": "drone",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-08-24",
+   "size": 7047
+  },
+  {
+   "title": "NDA — Bustan Energy & Erez (v2)",
+   "path": "legal/nda-bustan-energy-erez-v2.html",
+   "kind": "doc",
+   "group": "legal",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-09-03",
+   "size": 20208
+  },
+  {
+   "title": "NDA template",
+   "path": "legal/nda-bustan-energy-template.html",
+   "kind": "doc",
+   "group": "legal",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-09-03",
+   "size": 20208
+  },
+  {
+   "title": "הסכם רכישת חשמל (PPA)",
+   "path": "ppa-contract.html",
+   "kind": "doc",
+   "group": "legal",
+   "lang": [
+    "he"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 72653,
+   "alt": "PPA contract"
+  },
+  {
+   "title": "חוזה EPC להקמת מערכת סולארית",
+   "path": "epc-contract.html",
+   "kind": "doc",
+   "group": "legal",
+   "lang": [
+    "he"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 65454,
+   "alt": "EPC contract"
+  },
+  {
+   "title": "משפטי, חוזים והסכמים",
+   "path": "legal-contracts.html",
+   "kind": "doc",
+   "group": "legal",
+   "lang": [
+    "he"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 75568,
+   "alt": "Legal, contracts & agreements",
+   "playbook": true,
+   "thumb": "assets/thumbs/legal-contracts.webp"
+  },
+  {
+   "title": "Solar farm development guide — Koh Phangan (up to 9 MW)",
+   "path": "solar-farm-guide.html",
+   "kind": "doc",
+   "group": "ops",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-14",
+   "size": 41511,
+   "playbook": true,
+   "thumb": "assets/thumbs/solar-farm-guide.webp"
+  },
+  {
+   "title": "Thailand solar farm masterclass",
+   "path": "thailand-solar-farm-masterclass.html",
+   "kind": "doc",
+   "group": "ops",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 176671,
+   "playbook": true,
+   "thumb": "assets/thumbs/thailand-solar-farm-masterclass.webp"
+  },
+  {
+   "title": "מדריך סריקת גגות ברחפן",
+   "path": "drone-guide.html",
+   "kind": "doc",
+   "group": "ops",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 44090,
+   "alt": "Drone roof-scanning guide",
+   "playbook": true,
+   "thumb": "assets/thumbs/drone-guide.webp"
+  },
+  {
+   "title": "ניטור ותחזוקה",
+   "path": "monitoring-maintenance.html",
+   "kind": "doc",
+   "group": "ops",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 64047,
+   "alt": "Monitoring & maintenance",
+   "playbook": true,
+   "thumb": "assets/thumbs/monitoring-maintenance.webp"
+  },
+  {
+   "title": "רישוי ורגולציה",
+   "path": "licensing.html",
+   "kind": "doc",
+   "group": "ops",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 112668,
+   "alt": "Licensing solar systems in Thailand",
+   "playbook": true,
+   "thumb": "assets/thumbs/licensing.webp"
+  },
+  {
+   "title": "רכש והנדסה",
+   "path": "procurement-engineering.html",
+   "kind": "doc",
+   "group": "ops",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 63126,
+   "alt": "Procurement & engineering",
+   "playbook": true,
+   "thumb": "assets/thumbs/procurement-engineering.webp"
+  },
+  {
+   "title": "רשימת ציוד וכלי עבודה",
+   "path": "equipment-list.html",
+   "kind": "doc",
+   "group": "ops",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 78033,
+   "alt": "Equipment & tools list",
+   "playbook": true,
+   "thumb": "assets/thumbs/equipment-list.webp"
+  },
+  {
+   "title": "תהליך הקמה",
+   "path": "installation.html",
+   "kind": "doc",
+   "group": "ops",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 98266,
+   "alt": "Installation process",
+   "playbook": true,
+   "thumb": "assets/thumbs/installation.webp"
+  },
+  {
+   "title": "Drive — project folder",
+   "path": "https://drive.google.com/drive/folders/12hdMH7wDmO3KgEytFPCKR7FoQasSEBNg",
+   "kind": "doc",
+   "group": "plans",
+   "audience": "internal",
+   "lang": [
+    "en"
+   ],
+   "external": true
+  },
+  {
+   "title": "KP Solar Pro — data cleanup & island scan (2026-03-29)",
+   "path": "docs/plans/2026-03-29-data-cleanup-island-scan.md",
+   "kind": "doc",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-08-24",
+   "size": 30580
+  },
+  {
+   "title": "KP Solar Pro — improvement design (2026-03-29)",
+   "path": "docs/plans/2026-03-29-kp-solar-pro-improvement-design.md",
+   "kind": "doc",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 3973
+  },
+  {
+   "title": "Platform plan — unified operations system",
+   "path": "platform/PLATFORM_PLAN.md",
+   "kind": "doc",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 3429
+  },
+  {
+   "title": "Proposal v2 — design (2026-03-13)",
+   "path": "docs/plans/2026-03-13-proposal-v2-design.md",
+   "kind": "doc",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 5138
+  },
+  {
+   "title": "Proposal v2 — implementation plan (2026-03-13)",
+   "path": "docs/plans/2026-03-13-proposal-v2-plan.md",
+   "kind": "doc",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 18585
+  },
+  {
+   "title": "Solar intelligence platform — design (2026-03-13)",
+   "path": "docs/plans/2026-03-13-solar-intelligence-platform-design.md",
+   "kind": "doc",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 6156
+  },
+  {
+   "title": "Solar lead intelligence process",
+   "path": "SCAN_PROCESS.md",
+   "kind": "doc",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-09-03",
+   "size": 13138,
+   "alt": "SCAN_PROCESS.md"
+  },
+  {
+   "title": "Value chain blueprint",
+   "path": "VALUE_CHAIN.md",
+   "kind": "doc",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 20075
+  },
+  {
+   "title": "Presentations — number validation",
+   "path": "presentations/VALIDATION.md",
+   "kind": "doc",
+   "group": "presentations",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-09-03",
+   "size": 3234,
+   "alt": "Financing deck vs business-plan workbook, cell by cell"
+  },
+  {
+   "title": "About Bustan Energy",
+   "path": "about.md",
+   "kind": "doc",
+   "group": "public",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 3994,
+   "alt": "Company one-pager"
+  },
+  {
+   "title": "CRM value chain — Lead to O&M",
+   "path": "crm-value-chain.html",
+   "kind": "doc",
+   "group": "sales",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 68799,
+   "alt": "15 slides",
+   "playbook": true,
+   "thumb": "assets/thumbs/crm-value-chain.webp"
+  },
+  {
+   "title": "אווטרי לקוחות",
+   "path": "customer-avatars.html",
+   "kind": "doc",
+   "group": "sales",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 23461,
+   "alt": "Customer avatars",
+   "playbook": true,
+   "thumb": "assets/thumbs/customer-avatars.webp"
+  },
+  {
+   "title": "ארכיטקטורת Value Chain",
+   "path": "value-chain.html",
+   "kind": "doc",
+   "group": "sales",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 25541,
+   "alt": "Value-chain architecture (CRM)",
+   "playbook": true,
+   "thumb": "assets/thumbs/value-chain.webp"
+  },
+  {
+   "title": "שיווק ומכירות",
+   "path": "sales-marketing.html",
+   "kind": "doc",
+   "group": "sales",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 93574,
+   "alt": "Sales & marketing playbook",
+   "playbook": true,
+   "thumb": "assets/thumbs/sales-marketing.webp"
+  },
+  {
+   "title": "Business plan workbook",
+   "path": "Ko_Phangan_Solar_Business_Plan.xlsx",
+   "kind": "doc",
+   "group": "strategy",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-09-03",
+   "size": 19285,
+   "alt": "Ko Phangan Solar Business Plan (canonical numbers)"
+  },
+  {
+   "title": "אסטרטגיה עסקית",
+   "path": "strategy.html",
+   "kind": "doc",
+   "group": "strategy",
+   "lang": [
+    "he"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 76202,
+   "alt": "Strategy deck",
+   "playbook": true,
+   "thumb": "assets/thumbs/strategy.webp"
+  },
+  {
+   "title": "דשבורד פיננסי",
+   "path": "financial-dashboard.html",
+   "kind": "doc",
+   "group": "strategy",
+   "lang": [
+    "he"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 68594,
+   "alt": "Financial dashboard",
+   "playbook": true,
+   "thumb": "assets/thumbs/financial-dashboard.webp"
+  },
+  {
+   "title": "מימון ובנקים",
+   "path": "financing.html",
+   "kind": "doc",
+   "group": "strategy",
+   "lang": [
+    "he"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 54023,
+   "alt": "Financing deep dive — banks, terms, PPA/ESCO math",
+   "playbook": true,
+   "thumb": "assets/thumbs/financing.webp"
+  },
+  {
+   "title": "פיננסים — P&L ותוכנית הקמה מלאה",
+   "path": "pnl-plan.html",
+   "kind": "doc",
+   "group": "strategy",
+   "lang": [
+    "he"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 110645,
+   "alt": "P&L + full build-out plan",
+   "playbook": true,
+   "thumb": "assets/thumbs/pnl-plan.webp"
+  },
+  {
+   "title": "תוכנית עסקית שנה 1",
+   "path": "business-plan.html",
+   "kind": "doc",
+   "group": "strategy",
+   "lang": [
+    "he"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 96970,
+   "alt": "Business plan — year 1",
+   "playbook": true,
+   "thumb": "assets/thumbs/business-plan.webp"
+  },
+  {
+   "title": "Academy hub",
+   "path": "academy/index.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 22907,
+   "alt": "24 lessons · 5 tracks · EN/HE/TH",
+   "hub": true
+  },
+  {
+   "title": "What is Solar Energy?",
+   "path": "academy/courses/solar-fundamentals-01.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 35203,
+   "track": "solar-fundamentals",
+   "num": 1,
+   "alt": "solar fundamentals · lesson 1"
+  },
+  {
+   "title": "Solar Panel Technology",
+   "path": "academy/courses/solar-fundamentals-02.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 29463,
+   "track": "solar-fundamentals",
+   "num": 2,
+   "alt": "solar fundamentals · lesson 2"
+  },
+  {
+   "title": "Inverters & Components",
+   "path": "academy/courses/solar-fundamentals-03.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 37869,
+   "track": "solar-fundamentals",
+   "num": 3,
+   "alt": "solar fundamentals · lesson 3"
+  },
+  {
+   "title": "System Types",
+   "path": "academy/courses/solar-fundamentals-04.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 35570,
+   "track": "solar-fundamentals",
+   "num": 4,
+   "alt": "solar fundamentals · lesson 4"
+  },
+  {
+   "title": "Site Assessment",
+   "path": "academy/courses/solar-fundamentals-05.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 50555,
+   "track": "solar-fundamentals",
+   "num": 5,
+   "alt": "solar fundamentals · lesson 5"
+  },
+  {
+   "title": "System Sizing",
+   "path": "academy/courses/solar-fundamentals-06.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 52414,
+   "track": "solar-fundamentals",
+   "num": 6,
+   "alt": "solar fundamentals · lesson 6"
+  },
+  {
+   "title": "Energy Economics",
+   "path": "academy/courses/solar-fundamentals-07.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 49526,
+   "track": "solar-fundamentals",
+   "num": 7,
+   "alt": "solar fundamentals · lesson 7"
+  },
+  {
+   "title": "Thailand Solar Landscape",
+   "path": "academy/courses/solar-fundamentals-08.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 47353,
+   "track": "solar-fundamentals",
+   "num": 8,
+   "alt": "solar fundamentals · lesson 8"
+  },
+  {
+   "title": "Rooftop Mounting Systems",
+   "path": "academy/courses/technical-01.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 54428,
+   "track": "technical",
+   "num": 1,
+   "alt": "technical · lesson 1"
+  },
+  {
+   "title": "DC Wiring & String Configuration",
+   "path": "academy/courses/technical-02.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 44346,
+   "track": "technical",
+   "num": 2,
+   "alt": "technical · lesson 2"
+  },
+  {
+   "title": "Inverter Installation & Commissioning",
+   "path": "academy/courses/technical-03.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 41255,
+   "track": "technical",
+   "num": 3,
+   "alt": "technical · lesson 3"
+  },
+  {
+   "title": "Understanding the Solar Customer",
+   "path": "academy/courses/sales-bd-01.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 47511,
+   "track": "sales-bd",
+   "num": 1,
+   "alt": "sales bd · lesson 1"
+  },
+  {
+   "title": "The Solar Sales Process",
+   "path": "academy/courses/sales-bd-02.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 51025,
+   "track": "sales-bd",
+   "num": 2,
+   "alt": "sales bd · lesson 2"
+  },
+  {
+   "title": "Pricing, Proposals & Closing",
+   "path": "academy/courses/sales-bd-03.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 43858,
+   "track": "sales-bd",
+   "num": 3,
+   "alt": "sales bd · lesson 3"
+  },
+  {
+   "title": "Bustan Energy Economic Model",
+   "path": "academy/courses/sales-bd-04.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 71634,
+   "track": "sales-bd",
+   "num": 4,
+   "alt": "sales bd · lesson 4"
+  },
+  {
+   "title": "Battery Storage Fundamentals",
+   "path": "academy/courses/ev-storage-01.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 53067,
+   "track": "ev-storage",
+   "num": 1,
+   "alt": "ev storage · lesson 1"
+  },
+  {
+   "title": "EV Charging Basics",
+   "path": "academy/courses/ev-storage-02.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 47924,
+   "track": "ev-storage",
+   "num": 2,
+   "alt": "ev storage · lesson 2"
+  },
+  {
+   "title": "Solar + EV + Storage Integration",
+   "path": "academy/courses/ev-storage-03.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 35490,
+   "track": "ev-storage",
+   "num": 3,
+   "alt": "ev storage · lesson 3"
+  },
+  {
+   "title": "Project Management for Solar",
+   "path": "academy/courses/management-01.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 47606,
+   "track": "management",
+   "num": 1,
+   "alt": "management · lesson 1"
+  },
+  {
+   "title": "Financial Modeling — IRR, Payback, LCOE",
+   "path": "academy/courses/management-02.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 40741,
+   "track": "management",
+   "num": 2,
+   "alt": "management · lesson 2"
+  },
+  {
+   "title": "Thai Regulations & Permits",
+   "path": "academy/courses/management-03.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 69830,
+   "track": "management",
+   "num": 3,
+   "alt": "management · lesson 3"
+  },
+  {
+   "title": "O&M — Operations & Maintenance",
+   "path": "academy/courses/management-04.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 44494,
+   "track": "management",
+   "num": 4,
+   "alt": "management · lesson 4"
+  },
+  {
+   "title": "Safety Management — JSA & Risk Assessment",
+   "path": "academy/courses/management-05.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 73947,
+   "track": "management",
+   "num": 5,
+   "alt": "management · lesson 5"
+  },
+  {
+   "title": "Scaling a Solar Business",
+   "path": "academy/courses/management-06.html",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en",
+    "he",
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 41809,
+   "track": "management",
+   "num": 6,
+   "alt": "management · lesson 6"
+  },
+  {
+   "title": "Academy syllabus",
+   "path": "academy/SYLLABUS.md",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-09-03",
+   "size": 5055
+  },
+  {
+   "title": "Academy video library",
+   "path": "academy/VIDEO_LIBRARY.md",
+   "kind": "academy",
+   "group": "academy",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3966
+  },
+  {
+   "title": "Academy admin",
+   "path": "academy/admin.html",
+   "kind": "tool",
+   "group": "academy",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 92971,
+   "alt": "Progress dashboard (auth disabled)"
+  },
+  {
+   "title": "CRM",
+   "path": "https://bustan-energy.com/crm",
+   "kind": "tool",
+   "group": "crm",
+   "audience": "team",
+   "lang": [
+    "en"
+   ],
+   "external": true
+  },
+  {
+   "title": "Drone mission plan",
+   "path": "drone-mission-plan.html",
+   "kind": "tool",
+   "group": "drone",
+   "lang": [
+    "he",
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 34214,
+   "alt": "תוכנית סריקה אווירית"
+  },
+  {
+   "title": "Drone ops plan",
+   "path": "drone-ops.html",
+   "kind": "tool",
+   "group": "drone",
+   "lang": [
+    "he"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 43886,
+   "alt": "תוכנית סריקת רחפן"
+  },
+  {
+   "title": "New proposal (v2)",
+   "path": "https://bustan-energy.com/admin/proposals/new",
+   "kind": "tool",
+   "group": "proposals",
+   "audience": "internal",
+   "lang": [
+    "he",
+    "en"
+   ],
+   "external": true
+  },
+  {
+   "title": "Solar savings calculator",
+   "path": "landing/solar-savings-calculator.html",
+   "kind": "tool",
+   "group": "public",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 19134
+  },
+  {
+   "title": "WhatsApp contact links",
+   "path": "landing/whatsapp-links.html",
+   "kind": "tool",
+   "group": "public",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 13837
+  },
+  {
+   "title": "Sales app (PWA)",
+   "path": "platform/sales/index.html",
+   "kind": "tool",
+   "group": "sales",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 46064
+  },
+  {
+   "title": "Bill scanner & proposal generator",
+   "path": "bill-scanner.html",
+   "kind": "tool",
+   "group": "tools",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 33079
+  },
+  {
+   "title": "Bustan Admin",
+   "alt": "Proposals, CRM, analytics",
+   "path": "https://bustan-energy.com/admin",
+   "kind": "tool",
+   "group": "tools",
+   "audience": "internal",
+   "lang": [
+    "en",
+    "he"
+   ],
+   "external": true
+  },
+  {
+   "title": "GIS mapper — land & roofs",
+   "path": "gis-mapper/index.html",
+   "kind": "tool",
+   "group": "tools",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-03-11",
+   "size": 3287,
+   "alt": "Ko Phangan & Samui"
+  },
+  {
+   "title": "GitHub — copenhagen-solar",
+   "path": "https://github.com/kaniel149/copenhagen-solar",
+   "kind": "tool",
+   "group": "tools",
+   "audience": "internal",
+   "lang": [
+    "en"
+   ],
+   "external": true
+  },
+  {
+   "title": "GitHub — solar-intelligence (v2)",
+   "path": "https://github.com/kaniel149/solar-intelligence",
+   "kind": "tool",
+   "group": "tools",
+   "audience": "internal",
+   "lang": [
+    "en"
+   ],
+   "external": true
+  },
+  {
+   "title": "KP Solar Pro (admin scan)",
+   "alt": "bustan-energy.com/admin/scan",
+   "path": "https://bustan-energy.com/admin/scan",
+   "kind": "tool",
+   "group": "tools",
+   "audience": "internal",
+   "lang": [
+    "en"
+   ],
+   "external": true
+  },
+  {
+   "title": "KP Solar Pro v2",
+   "path": "kp-solar-pro.html",
+   "kind": "tool",
+   "group": "tools",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-09-03",
+   "size": 71397,
+   "alt": "Roof scanner + solar atlas (unified)",
+   "thumb": "assets/thumbs/kp-solar-pro.webp"
+  },
+  {
+   "title": "Planning vs execution tracker",
+   "path": "planning-tracker.html",
+   "kind": "tool",
+   "group": "tools",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 15586
+  },
+  {
+   "title": "Power grid map — Koh Phangan",
+   "path": "power-grid-map.html",
+   "kind": "tool",
+   "group": "tools",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 11431
+  },
+  {
+   "title": "Solar farm + storage scout",
+   "path": "solar-farm-scout.html",
+   "kind": "tool",
+   "group": "tools",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 55180
+  },
+  {
+   "title": "RFQ email preview",
+   "path": "rfq-preview.html",
+   "kind": "proposal",
+   "group": "procurement",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-14",
+   "size": 10945
+  },
+  {
+   "title": "Beamtech — aerial panel layout",
+   "path": "proposals/beamtech-aerial.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 19104
+  },
+  {
+   "title": "Beamtech — solar layout plan",
+   "path": "proposals/beamtech-layout.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 20194
+  },
+  {
+   "title": "Beamtech Residences — proposal 001",
+   "path": "proposals/beamtech-001.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 75653
+  },
+  {
+   "title": "Beamtech Residences — proposal 002",
+   "path": "proposals/beamtech-002.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 75624
+  },
+  {
+   "title": "Beamtech Residences — הצעת מחיר",
+   "path": "proposals/beamtech-001-he.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "he"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 67592,
+   "alt": "Proposal 001 (Hebrew)"
+  },
+  {
+   "title": "Beamtech Residences — ข้อเสนอระบบโซลาร์",
+   "path": "proposals/beamtech-001-th.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "th"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 75237,
+   "alt": "Proposal 001 (Thai)"
+  },
+  {
+   "title": "Client proposal portal (example)",
+   "path": "https://bustan-energy.com/p/",
+   "kind": "proposal",
+   "group": "proposals",
+   "audience": "client",
+   "lang": [
+    "en"
+   ],
+   "external": true
+  },
+  {
+   "title": "Concrete factory — PV + battery quote",
+   "path": "proposals/concrete-factory-quote.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "th",
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 10300
+  },
+  {
+   "title": "Kaniel Villas — proposal 001",
+   "path": "proposals/kaniel-villas-001.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 60863
+  },
+  {
+   "title": "Kaniel Villas — proposal 001 (PDF)",
+   "path": "proposals/kaniel-villas-001.pdf",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-03-14",
+   "size": 3116207
+  },
+  {
+   "title": "Proposal builder (legacy)",
+   "path": "proposal.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 89787
+  },
+  {
+   "title": "TM Concrete Factory — proposal 001",
+   "path": "proposals/tm-factory-001.html",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 59456
+  },
+  {
+   "title": "TM Concrete Factory — proposal 001 (PDF)",
+   "path": "proposals/tm-factory-001.pdf",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-03-14",
+   "size": 2200137
+  },
+  {
+   "title": "הצעת מחיר — מערכת סולארית + אגירה",
+   "path": "proposals/concrete-factory-proposal.md",
+   "kind": "proposal",
+   "group": "proposals",
+   "lang": [
+    "he"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 6621,
+   "alt": "Concrete factory proposal (source)"
+  },
+  {
+   "title": "PEA application — 300 kWp concrete factory",
+   "path": "pea-docs/index.html",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3530,
+   "hub": true
+  },
+  {
+   "title": "PEA application package — 300 kWp",
+   "path": "pea-docs/pea-application-package.html",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 34695
+  },
+  {
+   "title": "PEA summary — Beamtech (PDF)",
+   "path": "pea-docs/PEA-Summary-Beamtech-32.5kWp.pdf",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-13",
+   "size": 538345
+  },
+  {
+   "title": "PEA summary — Beamtech 32.5 kWp",
+   "path": "pea-docs/pea-summary-beamtech.html",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-14",
+   "size": 23805
+  },
+  {
+   "title": "Roof layout — Beamtech (PDF)",
+   "path": "pea-docs/Layout-Beamtech-32.5kWp.pdf",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-13",
+   "size": 636368
+  },
+  {
+   "title": "Roof layout — Beamtech 32.5 kWp",
+   "path": "pea-docs/layout-beamtech.html",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 36183
+  },
+  {
+   "title": "SLD — 300 kWp concrete factory",
+   "path": "pea-docs/sld-concrete-factory.html",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "th"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 32655
+  },
+  {
+   "title": "SLD — Beamtech (PDF)",
+   "path": "pea-docs/SLD-Beamtech-32.5kWp.pdf",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-13",
+   "size": 582505
+  },
+  {
+   "title": "SLD — Beamtech 32.5 kWp",
+   "path": "pea-docs/sld-beamtech.html",
+   "kind": "pea",
+   "group": "pea",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 23979
+  },
+  {
+   "title": "Electrician training research",
+   "path": "academy/research/electrician-training-research.md",
+   "kind": "research",
+   "group": "academy",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 59325
+  },
+  {
+   "title": "Drone orthomosaic stitching report",
+   "path": "drone-surveys/stitching-report.md",
+   "kind": "research",
+   "group": "drone",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-03-28",
+   "size": 4080
+  },
+  {
+   "title": "AI building scan report — Koh Phangan",
+   "path": "SCAN_REPORT.md",
+   "kind": "research",
+   "group": "plans",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-09-03",
+   "size": 1043
+  },
+  {
+   "title": "Thailand solar farm research — index",
+   "path": "research/README.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 2040,
+   "hub": true
+  },
+  {
+   "title": "EV charging & fleet research",
+   "path": "ev-charging-research.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 15855
+  },
+  {
+   "title": "Research verification — March 2026",
+   "path": "research/VERIFICATION_2026_03.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 19298
+  },
+  {
+   "title": "Research verification report",
+   "path": "research/VERIFICATION_REPORT.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 18395
+  },
+  {
+   "title": "Research verification report B",
+   "path": "research/VERIFICATION_REPORT_B.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-03-10",
+   "size": 14713
+  },
+  {
+   "title": "Thailand solar research 01 — Market overview",
+   "path": "research/01-market-overview.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 29334
+  },
+  {
+   "title": "Thailand solar research 02 — Regulations",
+   "path": "research/02-regulations.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 31859
+  },
+  {
+   "title": "Thailand solar research 03 — On-grid",
+   "path": "research/03-on-grid.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-03-10",
+   "size": 41621
+  },
+  {
+   "title": "Thailand solar research 04 — Micro-grid island",
+   "path": "research/04-micro-grid-island.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 38851
+  },
+  {
+   "title": "Thailand solar research 05 — Permitting",
+   "path": "research/05-permitting.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-03-10",
+   "size": 44505
+  },
+  {
+   "title": "Thailand solar research 06 — Grid technical",
+   "path": "research/06-grid-technical.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 48702
+  },
+  {
+   "title": "Thailand solar research 07 — Costs & pricing",
+   "path": "research/07-costs-pricing.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 33906
+  },
+  {
+   "title": "Thailand solar research 08 — BESS storage",
+   "path": "research/08-bess-storage.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 34676
+  },
+  {
+   "title": "Thailand solar research 09 — Financial models",
+   "path": "research/09-financial-models.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 37971
+  },
+  {
+   "title": "Thailand solar research 10 — Case studies",
+   "path": "research/10-case-studies.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-06-10",
+   "size": 18610
+  },
+  {
+   "title": "Thailand solar research 11 — Key players",
+   "path": "research/11-key-players.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-03-10",
+   "size": 25389
+  },
+  {
+   "title": "Thailand solar research 12 — Koh Phangan",
+   "path": "research/12-koh-phangan.md",
+   "kind": "research",
+   "group": "research",
+   "lang": [
+    "en"
+   ],
+   "audience": "internal",
+   "updated": "2026-03-10",
+   "size": 32288
+  },
+  {
+   "title": "Competitor research (full, internal)",
+   "alt": "Koh Phangan / Surat Thani installer landscape, 2026-05-31",
+   "path": "https://bustan-energy.com/bustan-competitor-research-full-internal-2026-05-31.html",
+   "kind": "research",
+   "group": "strategy",
+   "audience": "internal",
+   "lang": [
+    "en"
+   ],
+   "thumb": "assets/thumbs/ext-competitor-research.webp",
+   "external": true
+  },
+  {
+   "title": "P&L & business plan",
+   "path": "podcasts/01-pnl-business-plan.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 2629007,
+   "alt": "Podcast 01"
+  },
+  {
+   "title": "Strategy",
+   "path": "podcasts/02-strategy.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1313271,
+   "alt": "Podcast 02"
+  },
+  {
+   "title": "Business plan — year 1",
+   "path": "podcasts/03-business-plan.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1217141,
+   "alt": "Podcast 03"
+  },
+  {
+   "title": "Sales & marketing",
+   "path": "podcasts/04-sales-marketing.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1072527,
+   "alt": "Podcast 04"
+  },
+  {
+   "title": "Installation",
+   "path": "podcasts/05-installation.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1011087,
+   "alt": "Podcast 05"
+  },
+  {
+   "title": "Procurement & engineering",
+   "path": "podcasts/06-procurement.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1058316,
+   "alt": "Podcast 06"
+  },
+  {
+   "title": "Legal & contracts",
+   "path": "podcasts/07-legal.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1169911,
+   "alt": "Podcast 07"
+  },
+  {
+   "title": "Monitoring & maintenance",
+   "path": "podcasts/08-monitoring.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1013595,
+   "alt": "Podcast 08"
+  },
+  {
+   "title": "Licensing",
+   "path": "podcasts/09-licensing.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1178688,
+   "alt": "Podcast 09"
+  },
+  {
+   "title": "Financing",
+   "path": "podcasts/10-financing.mp3",
+   "kind": "podcast",
+   "group": "podcasts",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-03-05",
+   "size": 1194153,
+   "alt": "Podcast 10"
+  },
+  {
+   "title": "Brand kit",
+   "path": "brand-kit.html",
+   "kind": "brand",
+   "group": "brand",
+   "lang": [
+    "he"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 41284
+  },
+  {
+   "title": "Business cards",
+   "path": "assets/business-cards.html",
+   "kind": "brand",
+   "group": "brand",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-14",
+   "size": 10222
+  },
+  {
+   "title": "Print-ready templates",
+   "path": "brand-kit/print-templates.html",
+   "kind": "brand",
+   "group": "brand",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-14",
+   "size": 13221
+  },
+  {
+   "title": "Ads pro — 8 HTML ad creatives",
+   "path": "ads-pro/index.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 2589,
+   "hub": true
+  },
+  {
+   "title": "Marketing hub — digital assets",
+   "path": "marketing/index.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 19534,
+   "hub": true
+  },
+  {
+   "title": "30-day social media plan",
+   "path": "marketing/social-media-plan.md",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 57287
+  },
+  {
+   "title": "Ad creative 21",
+   "path": "ads-pro/ad21.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-14",
+   "size": 3024
+  },
+  {
+   "title": "Ad creative 22",
+   "path": "ads-pro/ad22.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3198
+  },
+  {
+   "title": "Ad creative 23",
+   "path": "ads-pro/ad23.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3468
+  },
+  {
+   "title": "Ad creative 24",
+   "path": "ads-pro/ad24.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3957
+  },
+  {
+   "title": "Ad creative 25",
+   "path": "ads-pro/ad25.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4077
+  },
+  {
+   "title": "Ad creative 26",
+   "path": "ads-pro/ad26.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-14",
+   "size": 3700
+  },
+  {
+   "title": "Ad creative 27",
+   "path": "ads-pro/ad27.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4596
+  },
+  {
+   "title": "Ad creative 28",
+   "path": "ads-pro/ad28.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4622
+  },
+  {
+   "title": "Extended social media plan (posts 21–45)",
+   "path": "marketing/social-media-plan-extended.md",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 74536
+  },
+  {
+   "title": "Facebook post copy — Koh Phangan real-estate group",
+   "path": "assets/social/fb-post-copy.md",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 1170
+  },
+  {
+   "title": "PEA — Facebook post",
+   "path": "pea-docs/fb-post.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3046
+  },
+  {
+   "title": "Post 1 — solar 101",
+   "path": "marketing/posts/post-001-solar-101.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 12259
+  },
+  {
+   "title": "Post 3 — savings",
+   "path": "marketing/posts/post-003-savings.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4523
+  },
+  {
+   "title": "Post 4 — sun hours",
+   "path": "marketing/posts/post-004-sun-hours.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3704
+  },
+  {
+   "title": "Post 5 — ppa explainer",
+   "path": "marketing/posts/post-005-ppa-explainer.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3293
+  },
+  {
+   "title": "Post 6 — panel comparison",
+   "path": "marketing/posts/post-006-panel-comparison.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 5656
+  },
+  {
+   "title": "Post 7 — net billing",
+   "path": "marketing/posts/post-007-net-billing.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4186
+  },
+  {
+   "title": "Post 8 — roi calculator",
+   "path": "marketing/posts/post-008-roi-calculator.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4149
+  },
+  {
+   "title": "Post 9 — ev charging",
+   "path": "marketing/posts/post-009-ev-charging.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3777
+  },
+  {
+   "title": "Post 10 — island energy",
+   "path": "marketing/posts/post-010-island-energy.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4018
+  },
+  {
+   "title": "Post 11 — hotel savings",
+   "path": "marketing/posts/post-011-hotel-savings.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3383
+  },
+  {
+   "title": "Post 12 — eco tourism",
+   "path": "marketing/posts/post-012-eco-tourism.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3875
+  },
+  {
+   "title": "Post 13 — power outage",
+   "path": "marketing/posts/post-013-power-outage.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 3736
+  },
+  {
+   "title": "Post 14 — property value",
+   "path": "marketing/posts/post-014-property-value.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4638
+  },
+  {
+   "title": "Post 15 — read bill",
+   "path": "marketing/posts/post-015-read-bill.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4866
+  },
+  {
+   "title": "Post 16 — free survey",
+   "path": "marketing/posts/post-016-free-survey.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-14",
+   "size": 3781
+  },
+  {
+   "title": "Post 17 — 3 models",
+   "path": "marketing/posts/post-017-3-models.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 5183
+  },
+  {
+   "title": "Post 18 — maintenance",
+   "path": "marketing/posts/post-018-maintenance.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4121
+  },
+  {
+   "title": "Post 19 — testimonial template",
+   "path": "marketing/posts/post-019-testimonial-template.html",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 4278
+  },
+  {
+   "title": "Social media posting guide",
+   "path": "marketing/POSTING-GUIDE.md",
+   "kind": "brand",
+   "group": "marketing",
+   "lang": [
+    "en"
+   ],
+   "audience": "team",
+   "updated": "2026-06-10",
+   "size": 43853
+  },
+  {
+   "title": "Landing — Solar Koh Phangan",
+   "path": "landing/solar-koh-phangan.html",
+   "kind": "brand",
+   "group": "public",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 61435,
+   "alt": "Public lead-gen page"
+  },
+  {
+   "title": "Marketing site",
+   "path": "https://bustan-energy.com",
+   "kind": "brand",
+   "group": "public",
+   "audience": "client",
+   "lang": [
+    "en"
+   ],
+   "external": true
+  },
+  {
+   "title": "Blog hub",
+   "path": "blog/index.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-10",
+   "size": 17198,
+   "hub": true
+  },
+  {
+   "title": "Best Solar Panels for Thailand's Climate in 2026",
+   "path": "blog/best-solar-panels-thailand-2026.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 26536
+  },
+  {
+   "title": "Commercial Solar Installation in Thailand: Factory & Warehouse Guide",
+   "path": "blog/commercial-solar-installation-thailand.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 33303
+  },
+  {
+   "title": "EV Charging Stations on Koh Phangan: What You Need to Know",
+   "path": "blog/ev-charging-station-koh-phangan.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 27028
+  },
+  {
+   "title": "How Much Can Solar Save You in Thailand? Real Numbers",
+   "path": "blog/how-much-solar-save-thailand.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 24700
+  },
+  {
+   "title": "Net Billing in Thailand: How It Works in 2026",
+   "path": "blog/net-billing-thailand-explained.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 23898
+  },
+  {
+   "title": "Solar Battery Storage in Thailand: Is It Worth It in 2026?",
+   "path": "blog/solar-battery-storage-thailand.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 31854
+  },
+  {
+   "title": "Solar for Hotels & Resorts in Thailand: Cut Energy Costs by 70%",
+   "path": "blog/solar-for-hotels-resorts-thailand.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 26955
+  },
+  {
+   "title": "Solar Panels on Koh Phangan: The Complete 2026 Guide",
+   "path": "blog/solar-panels-koh-phangan-guide.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 28363
+  },
+  {
+   "title": "Solar PPA in Thailand: Zero Investment, Instant Savings",
+   "path": "blog/solar-ppa-thailand-zero-investment.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 28828
+  },
+  {
+   "title": "Understanding Your Thai Electricity Bill: A Complete Breakdown",
+   "path": "blog/understand-thai-electricity-bill.html",
+   "kind": "blog",
+   "group": "blog",
+   "lang": [
+    "en"
+   ],
+   "audience": "client",
+   "updated": "2026-06-14",
+   "size": 30139
+  }
+ ]
+}

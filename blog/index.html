@@ -16,86 +16,42 @@
     <meta name="twitter:title" content="Bustan Energy Blog — Solar & EV Insights">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script>document.documentElement.classList.add('js')</script>
     <style>
         :root {
-            --sun: #E8A820;
-            --sun-light: #F5D76E;
+            --sun: #3fb37f;
+            --sun-light: #4cc48e;
             --ocean: #0A3D5C;
             --ocean-deep: #062A40;
             --sand: #FFF8E7;
             --sand-dark: #F5E6C8;
             --white: #FFFFFF;
-            --text: #1A1A1A;
-            --text-light: #5A5A5A;
-            --dark-bg: #0B1426;
-            --dark-card: #111C32;
-            --dark-border: #1E2D4A;
+            --dark-bg: #000000;
+            --dark-card: #111112;
+            --dark-border: rgba(255,255,255,0.08);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            color: #E0E0E0;
+            font-family: var(--font);
+            color: var(--text);
             background: var(--dark-bg);
             min-height: 100vh;
-        }
-
-        /* NAV */
-        .nav {
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.6rem;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .logo span { color: var(--sun); }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--white); }
-
-        .nav-cta {
-            background: var(--sun) !important;
-            color: var(--ocean-deep) !important;
-            padding: 0.6rem 1.4rem;
-            border-radius: 100px;
-            font-weight: 600 !important;
         }
 
         /* HERO */
         .blog-hero {
             text-align: center;
-            padding: 4rem 2rem 3rem;
+            padding: calc(var(--nav-h) + 5rem) 2rem 3rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
         .blog-hero h1 {
-            font-family: 'Instrument Serif', serif;
+            font-family: var(--font); font-weight: 600;
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             color: var(--white);
             letter-spacing: -0.03em;
@@ -130,7 +86,7 @@
             background: transparent;
             color: rgba(255,255,255,0.7);
             font-size: 0.85rem;
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--font);
             cursor: pointer;
             transition: all 0.3s;
         }
@@ -193,7 +149,7 @@
         }
 
         .card-body h3 {
-            font-family: 'Instrument Serif', serif;
+            font-family: var(--font); font-weight: 600;
             font-size: 1.3rem;
             color: var(--white);
             margin-bottom: 0.6rem;
@@ -221,7 +177,7 @@
         }
 
         .empty-state h3 {
-            font-family: 'Instrument Serif', serif;
+            font-family: var(--font); font-weight: 600;
             font-size: 1.5rem;
             color: rgba(255,255,255,0.6);
             margin-bottom: 0.5rem;
@@ -319,15 +275,7 @@
 </head>
 <body>
 
-<nav class="nav" aria-label="Blog navigation">
-    <a href="/" class="logo">TM <span>Energy</span></a>
-    <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/academy/">Academy</a>
-        <a href="/#calculator">Calculator</a>
-        <a href="/#contact" class="nav-cta">Get Quote</a>
-    </div>
-</nav>
+<div id="site-nav" data-page="blog"></div>
 
 <header class="blog-hero">
     <h1>The <em>Solar</em> Blog</h1>
@@ -447,17 +395,8 @@
 
 </main>
 
-<footer role="contentinfo">
-    <div class="logo" style="font-family:'Instrument Serif',serif;font-size:1.4rem;color:#fff;margin-bottom:1rem;">TM <span style="color:#E8A820;">Energy</span></div>
-    <p>Bustan Energy — Powered by the sun, built for the island.</p>
-    <nav style="margin-top:1rem;display:flex;gap:16px;justify-content:center;" aria-label="Footer links">
-        <a href="/">Home</a>
-        <a href="/academy/">Academy</a>
-        <a href="https://www.facebook.com/share/189ywnsdS6/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/bustan-energy.th" target="_blank" rel="noopener">Instagram</a>
-    </nav>
-    <p style="margin-top:1rem;">© 2026 Bustan Energy. Koh Phangan, Thailand.</p>
-</footer>
+<div id="site-footer"></div>
+<script src="../assets/site.js" data-root="../" defer></script>
 
 <script>
 function filterPosts(cat) {

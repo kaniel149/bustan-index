@@ -1011,5 +1011,8 @@ function toggleFullscreen() {
 // Init progress
 document.getElementById('progress').style.width = (1 / total * 100) + '%';
 </script>
+<!-- Bustan index chip (hidden in fullscreen) -->
+<a class="bustan-home" href="index.html" aria-label="Bustan Energy — Presentations">Bustan Energy&nbsp;·&nbsp;Presentations</a>
+<style>.bustan-home{position:fixed;top:14px;left:16px;z-index:9999;font:500 12px/1 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:#8a8a8e;text-decoration:none;letter-spacing:.01em;direction:ltr}.bustan-home:hover{color:#f5f5f7}:fullscreen .bustan-home,:-webkit-full-screen .bustan-home{display:none}@media print{.bustan-home{display:none}}</style>
 </body>
 </html>

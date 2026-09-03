@@ -3,791 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bustan Energy Academy — Solar Training Platform</title>
+  <title data-en="Bustan Energy Academy" data-he="אקדמיית Bustan Energy" data-th="Bustan Energy Academy">Bustan Energy Academy</title>
   <meta name="description" content="Master solar energy, sales, installation, EV charging, and management. Professional training in English, Hebrew, and Thai by Bustan Energy.">
   <link rel="icon" type="image/png" href="../proposals/tm-logo.png">
+  <link rel="canonical" href="https://index.bustan-energy.com/academy/">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Bustan Energy Academy — Solar Training Platform">
-  <meta property="og:description" content="Master solar energy, sales, installation, EV charging, and management. Professional training in 3 languages.">
-  <meta property="og:image" content="https://index.bustan-energy.com/hero-villa-solar.png">
+  <meta property="og:description" content="24 lessons in 5 tracks. Solar fundamentals, technical, sales, EV & storage, management — in English, Hebrew and Thai.">
+  <meta property="og:image" content="https://index.bustan-energy.com/drone-imagery/DJI_20260327112631_0006_D.webp">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://index.bustan-energy.com/academy/">
 
   <link rel="stylesheet" href="assets/academy.css">
+  <script>document.documentElement.classList.add('js')</script>
   <script src="assets/lessons.js"></script>
   <script src="assets/academy.js" defer></script>
 
   <style>
-    /* ========== Hero Upgrade ========== */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 6rem 2rem 4rem;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 40px,
-          rgba(0,214,143,0.015) 40px,
-          rgba(0,214,143,0.015) 42px
-        ),
-        repeating-linear-gradient(
-          -45deg,
-          transparent,
-          transparent 40px,
-          rgba(255,184,0,0.01) 40px,
-          rgba(255,184,0,0.01) 42px
-        ),
-        linear-gradient(180deg, rgba(0,214,143,0.06) 0%, transparent 40%, rgba(255,184,0,0.04) 100%);
-      z-index: 0;
-    }
-    .hero > * { position: relative; z-index: 2; }
-
-    /* Floating particles */
-    .hero-particles {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .hero-particles .dot {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0;
-      animation: float-dot linear infinite;
-    }
-    @keyframes float-dot {
-      0% { opacity: 0; transform: translateY(0) scale(0.5); }
-      15% { opacity: 1; }
-      85% { opacity: 1; }
-      100% { opacity: 0; transform: translateY(-300px) scale(1.2); }
-    }
-
-    /* Hero CTA */
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 36px;
-      background: linear-gradient(135deg, #00D68F, #00B377);
-      color: #0A1628;
-      font-weight: 700;
-      font-size: 1.05rem;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 20px rgba(0,214,143,0.3);
-    }
-    .hero-cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0,214,143,0.4);
-    }
-    .hero-admin-link {
-      color: #5A6B7D;
-      font-size: 0.82rem;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .hero-admin-link:hover { color: #8899AA; }
-
-    /* ========== Learning Path Section ========== */
-    .learning-path-section {
-      padding: 3rem 2rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .path-label {
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      color: #FFB800;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-    .path-flow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      flex-wrap: wrap;
-      margin: 0 auto;
-    }
-    .path-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      padding: 16px 20px;
-      background: rgba(13,27,48,0.7);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      min-width: 120px;
-      backdrop-filter: blur(8px);
-      transition: 0.3s;
-    }
-    .path-step:hover {
-      border-color: rgba(0,214,143,0.3);
-      transform: translateY(-2px);
-    }
-    .path-step-icon { font-size: 1.6rem; }
-    .path-step-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #F0F4F8;
-      text-align: center;
-      line-height: 1.3;
-    }
-    .path-step-num {
-      font-size: 0.65rem;
-      color: #5A6B7D;
-      font-weight: 500;
-    }
-    .path-arrow {
-      font-size: 1.2rem;
-      color: #00D68F;
-      padding: 0 8px;
-      flex-shrink: 0;
-    }
-    .path-step.coming-soon { opacity: 0.5; }
-
-    @media (max-width: 768px) {
-      .path-flow { flex-direction: column; gap: 0; }
-      .path-arrow { transform: rotate(90deg); padding: 4px 0; }
-    }
-
-    /* ========== Track Card Upgrades ========== */
-    .track-icon-wrap {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-    .track-card .track-icon {
-      font-size: 1.8rem;
-      margin-bottom: 0;
-    }
-
-    /* Track accent colors */
-    .track-card[data-track="solar-fundamentals"] .track-icon-wrap {
-      background: linear-gradient(135deg, #FF8C00, #FFB800);
-      box-shadow: 0 4px 16px rgba(255,140,0,0.25);
-    }
-    .track-card[data-track="sales-bd"] .track-icon-wrap {
-      background: linear-gradient(135deg, #4F46E5, #7C3AED);
-      box-shadow: 0 4px 16px rgba(124,58,237,0.25);
-    }
-    .track-card[data-track="technical"] .track-icon-wrap {
-      background: linear-gradient(135deg, #059669, #10B981);
-      box-shadow: 0 4px 16px rgba(16,185,129,0.25);
-    }
-    .track-card[data-track="ev-storage"] .track-icon-wrap {
-      background: linear-gradient(135deg, #0891B2, #06B6D4);
-      box-shadow: 0 4px 16px rgba(6,182,212,0.25);
-    }
-    .track-card[data-track="management"] .track-icon-wrap {
-      background: linear-gradient(135deg, #4B5563, #6B7280);
-      box-shadow: 0 4px 16px rgba(107,114,128,0.15);
-    }
-
-    /* Difficulty badge */
-    .difficulty-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 3px 10px;
-      border-radius: 100px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-    }
-    body[data-lang="he"] .difficulty-badge { right: auto; left: 1.25rem; }
-    .difficulty-badge.beginner {
-      background: rgba(16,185,129,0.15);
-      color: #10B981;
-      border: 1px solid rgba(16,185,129,0.25);
-    }
-    .difficulty-badge.intermediate {
-      background: rgba(255,184,0,0.15);
-      color: #FFB800;
-      border: 1px solid rgba(255,184,0,0.25);
-    }
-    .difficulty-badge.advanced {
-      background: rgba(239,68,68,0.15);
-      color: #EF4444;
-      border: 1px solid rgba(239,68,68,0.25);
-    }
-
-    /* Lesson preview list */
-    .lesson-preview {
-      margin: 0.75rem 0 1rem;
-      padding: 0;
-      list-style: none;
-    }
-    .lesson-preview li {
-      font-size: 0.78rem;
-      color: #5A6B7D;
-      padding: 3px 0;
-      padding-left: 16px;
-      position: relative;
-    }
-    body[data-lang="he"] .lesson-preview li { padding-left: 0; padding-right: 16px; }
-    .lesson-preview li::before {
-      content: '›';
-      position: absolute;
-      left: 4px;
-      color: #00D68F;
-      font-weight: 700;
-    }
-    body[data-lang="he"] .lesson-preview li::before { left: auto; right: 4px; content: '‹'; }
-    .lesson-preview .more {
-      font-size: 0.72rem;
-      color: #00D68F;
-      font-weight: 500;
-      padding-left: 16px;
-    }
-    body[data-lang="he"] .lesson-preview .more { padding-left: 0; padding-right: 16px; }
-    .lesson-preview .more::before { display: none; }
-
-    /* All-lessons section (rendered from assets/lessons.js) */
-    .lessons-section { padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .track-block { margin: 2rem 0; scroll-margin-top: 90px; }
-    .track-block h3 { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; margin-bottom: .75rem; }
-    .track-block .track-progress { margin-inline-start: auto; font-size: .85rem; color: #00D68F; }
-    .lesson-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
-    .lesson-row { display: flex; align-items: center; gap: .9rem; padding: .8rem 1rem; text-decoration: none; color: inherit; }
-    .lesson-row .n { width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-weight: 700; background: rgba(255,255,255,.06); flex: none; }
-    .lesson-row.done .n { background: #00D68F; color: #0A1628; }  .lesson-row .t { flex: 1; }  .lesson-row .arrow { opacity: .5; }
+    .hero-media img { object-position: center 45%; }
+    /* Tracks as large rows: meta | lesson list */
+    .tracks { display: grid; gap: 16px; }
+    .track-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 0; border: 1px solid var(--hair); border-radius: var(--radius); background: var(--surface); overflow: hidden; scroll-margin-top: 72px; }
+    .track-row .track-card { border: 0; border-radius: 0; background: none; padding: 32px; border-inline-end: 1px solid var(--hair); }
+    .track-row .track-card:hover { transform: none; background: var(--surface-2); }
+    .track-row .track-num { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-2); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    body[data-lang="he"] .track-num, body[data-lang="th"] .track-num { letter-spacing: 0; text-transform: none; }
+    .track-row .track-num .i { color: var(--text); }
+    .track-lessons { padding: 14px 20px; list-style: none; margin: 0; }
+    .lesson-row { display: grid; grid-template-columns: 28px minmax(0, 1fr) 16px; align-items: center; gap: 14px; padding: 12px 8px; border-bottom: 1px solid var(--hair); text-decoration: none; color: inherit; border-radius: 10px; transition: background .2s var(--ease); }
+    .lesson-row:last-child { border-bottom: 0; }
+    .lesson-row:hover { background: rgba(255, 255, 255, 0.04); }
+    .lesson-row .n { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 600; border: 1px solid var(--hair-2); color: var(--text-2); font-variant-numeric: tabular-nums; }
+    .lesson-row.done .n { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    .lesson-row .t { font-size: 15px; font-weight: 500; line-height: 1.3; }
+    .lesson-row .arrow { color: var(--text-3); width: 16px; height: 16px; transition: transform .25s var(--ease), color .2s; }
+    .lesson-row:hover .arrow { color: var(--text); transform: translateX(3px); }
     body[data-lang="he"] .lesson-row .arrow { transform: scaleX(-1); }
-
-    /* ========== Certificate Section ========== */
-    .certificate-section {
-      padding: 3rem 2rem 4rem;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
+    body[data-lang="he"] .lesson-row:hover .arrow { transform: scaleX(-1) translateX(3px); }
+    .difficulty-badge { font-size: 11px; font-weight: 500; letter-spacing: 0.02em; color: var(--text-2); border: 1px solid var(--hair); border-radius: 999px; padding: 2px 8px; line-height: 1.5; position: absolute; top: 28px; inset-inline-end: 28px; }
+    .track-card { position: relative; }
+    .path { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 36px; }
+    .path a { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-2); border: 1px solid var(--hair); border-radius: 999px; height: 36px; padding: 0 14px; transition: border-color .2s, color .2s; }
+    .path a:hover { color: var(--text); border-color: var(--hair-2); }
+    .path a b { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+    .path .sep { color: var(--text-3); }
+    body[data-lang="he"] .path .sep { transform: scaleX(-1); display: inline-block; }
+    .overall { display: flex; align-items: center; gap: 16px; margin-top: 28px; font-size: 14px; color: var(--text-2); }
+    .overall .bar { flex: 1; max-width: 320px; height: 3px; background: rgba(255, 255, 255, 0.12); border-radius: 2px; overflow: hidden; }
+    .overall .bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .6s var(--ease); }
+    .cert { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; padding: 36px; border: 1px solid var(--hair); border-radius: var(--radius); background: var(--surface); }
+    .cert .i-l { color: var(--text); }
+    @media (max-width: 900px) {
+      .track-row { grid-template-columns: 1fr; }
+      .track-row .track-card { border-inline-end: 0; border-bottom: 1px solid var(--hair); }
+      .cert { grid-template-columns: 1fr; }
     }
-    .certificate-card {
-      background: rgba(13,27,48,0.7);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-      backdrop-filter: blur(16px);
-      position: relative;
-      overflow: hidden;
-    }
-    .certificate-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,214,143,0.05), rgba(255,184,0,0.05));
-      z-index: 0;
-    }
-    .certificate-card > * { position: relative; z-index: 1; }
-    .cert-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .cert-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-    .cert-desc {
-      font-size: 0.95rem;
-      color: #8899AA;
-      max-width: 500px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.7;
-    }
-    .cert-mockup {
-      display: inline-block;
-      border: 2px solid rgba(255,184,0,0.3);
-      border-radius: 8px;
-      padding: 20px 36px;
-      background: rgba(10,22,40,0.6);
-      position: relative;
-    }
-    .cert-mockup-inner {
-      text-align: center;
-    }
-    .cert-mockup-title {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: #FFB800;
-      margin-bottom: 4px;
-    }
-    .cert-mockup-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #F0F4F8;
-      margin-bottom: 2px;
-    }
-    .cert-mockup-track {
-      font-size: 0.72rem;
-      color: #5A6B7D;
-    }
-    .cert-mockup-seal {
-      position: absolute;
-      bottom: -6px;
-      right: -6px;
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, #FFB800, #E6A600);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 8px rgba(255,184,0,0.3);
-    }
-
-    /* ========== Footer Upgrade ========== */
-    .footer-main-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-    .footer-main-links a {
-      color: #8899AA;
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s;
-    }
-    .footer-main-links a:hover { color: #00D68F; }
-    .footer-powered {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      color: #5A6B7D;
-    }
-    .footer-powered img {
-      height: 18px;
-      width: auto;
-      opacity: 0.5;
-    }
-    .footer-admin {
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.7rem;
-      color: #3A4B5D;
-      text-decoration: none;
-    }
-    .footer-admin:hover { color: #5A6B7D; }
-
-    /* ========== Responsive tweaks ========== */
-    @media (max-width: 768px) {
-      .hero { padding: 4rem 1.5rem 3rem; }
-      .hero-actions { gap: 1rem; }
-      .certificate-card { padding: 2rem 1.5rem; }
-      .cert-mockup { padding: 14px 24px; }
-    }
+    @media (max-width: 734px) { .track-row .track-card { padding: 24px; } .difficulty-badge { top: 24px; inset-inline-end: 24px; } }
   </style>
-  <link rel="canonical" href="https://index.bustan-energy.com/academy/">
 </head>
 <body data-lang="en">
-<div class="bg-ambient"></div>
+<div id="site-nav" data-page="academy"></div>
 
-<!-- Header -->
-<header class="header">
-  <div class="header-inner">
-    <a href="index.html" class="header-logo">
-      <img src="../proposals/tm-logo.png" alt="Bustan Energy">
-      <span>Academy</span>
-    </a>
-    <nav class="header-nav">
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="he">עב</button>
-        <button class="lang-btn" data-lang="th">ไทย</button>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<!-- Main -->
 <main class="main">
 
   <!-- Hero -->
-  <section class="hero fade-up">
-    <!-- Floating particles -->
-    <div class="hero-particles" id="hero-particles"></div>
-
-    <div class="hero-badge">
-      <span data-en>Learning Platform</span>
-      <span data-he>פלטפורמת למידה</span>
-      <span data-th>แพลตฟอร์มการเรียนรู้</span>
+  <section class="hero hero-compact">
+    <div class="hero-media">
+      <img src="../drone-imagery/DJI_20260327112631_0006_D.webp" alt="Drone view of villas with pools on Koh Phangan" width="1600" height="1200" fetchpriority="high" decoding="async">
     </div>
-    <h1 data-en>Bustan Energy Academy</h1>
-    <h1 data-he>אקדמיית Bustan Energy</h1>
-    <h1 data-th>Bustan Energy Academy</h1>
-    <p class="hero-subtitle" data-en>Master solar energy, sales, installation, EV charging, and management. Your complete training hub — in English, Hebrew, and Thai.</p>
-    <p class="hero-subtitle" data-he>לימדו אנרגיה סולארית, מכירות, התקנה, טעינת רכב חשמלי וניהול. מרכז ההדרכה המלא שלכם — באנגלית, עברית ותאילנדית.</p>
-    <p class="hero-subtitle" data-th>เรียนรู้พลังงานแสงอาทิตย์ การขาย การติดตั้ง การชาร์จ EV และการจัดการ ศูนย์ฝึกอบรมของคุณ — ภาษาอังกฤษ ฮีบรู และไทย</p>
-
-    <div class="hero-actions">
-      <a href="#tracks-section" class="hero-cta">
-        <span data-en>Start Learning ↓</span>
-        <span data-he>התחילו ללמוד ↓</span>
-        <span data-th>เริ่มเรียน ↓</span>
-      </a>
-    </div>
+    <div class="hero-body"><div class="wrap">
+      <p class="eyebrow reveal">Bustan Energy Academy</p>
+      <h1 class="display reveal reveal-d1">
+        <span data-en>Learn solar the way we sell and build it.</span>
+        <span data-he>ללמוד סולאר כמו שאנחנו מוכרים ובונים אותו.</span>
+        <span data-th>เรียนรู้โซลาร์แบบที่เราขายและติดตั้งจริง</span>
+      </h1>
+      <p class="lead reveal reveal-d2">
+        <span data-en>Twenty-four lessons across five tracks — fundamentals, technical, sales, EV &amp; storage, management. Each with a quiz. English, Hebrew and Thai.</span>
+        <span data-he>עשרים וארבעה שיעורים בחמישה מסלולים — יסודות, טכני, מכירות, EV ואגירה, ניהול. כל שיעור עם חידון. אנגלית, עברית ותאילנדית.</span>
+        <span data-th>ยี่สิบสี่บทเรียนในห้าเส้นทาง — พื้นฐาน เทคนิค การขาย EV และการกักเก็บ การจัดการ ทุกบทมีแบบทดสอบ อังกฤษ ฮีบรู และไทย</span>
+      </p>
+      <div class="hero-actions reveal reveal-d3">
+        <a class="btn btn-primary" href="courses/solar-fundamentals-01.html"><span data-en>Start with lesson 1</span><span data-he>להתחיל בשיעור 1</span><span data-th>เริ่มบทที่ 1</span><svg class="i i-flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn" href="#tracks-section"><span data-en>All tracks</span><span data-he>כל המסלולים</span><span data-th>ทุกเส้นทาง</span></a>
+      </div>
+      <div class="overall reveal reveal-d4">
+        <span><span data-en>Your progress</span><span data-he>ההתקדמות שלך</span><span data-th>ความคืบหน้าของคุณ</span></span>
+        <div class="bar"><i id="overall-fill"></i></div>
+        <b id="overall-text" style="color:var(--text);font-weight:600">0 / 24</b>
+      </div>
+    </div></div>
   </section>
 
-  <!-- Recommended Learning Path -->
-  <section class="learning-path-section fade-up">
-    <div class="path-label">
-      <span data-en>Recommended Learning Order</span>
-      <span data-he>סדר למידה מומלץ</span>
-      <span data-th>ลำดับการเรียนรู้แนะนำ</span>
-    </div>
-    <div class="path-flow">
-      <div class="path-step">
-        <span class="path-step-icon">☀️</span>
-        <span class="path-step-label"><span data-en>Fundamentals</span><span data-he>מבוא</span><span data-th>พื้นฐาน</span></span>
-        <span class="path-step-num">1</span>
-      </div>
-      <span class="path-arrow">→</span>
-      <div class="path-step">
-        <span class="path-step-icon">⚡</span>
-        <span class="path-step-label"><span data-en>Technical</span><span data-he>טכני</span><span data-th>เทคนิค</span></span>
-        <span class="path-step-num">2</span>
-      </div>
-      <span class="path-arrow">→</span>
-      <div class="path-step">
-        <span class="path-step-icon">💼</span>
-        <span class="path-step-label"><span data-en>Sales & BD</span><span data-he>מכירות</span><span data-th>การขาย</span></span>
-        <span class="path-step-num">3</span>
-      </div>
-      <span class="path-arrow">→</span>
-      <div class="path-step">
-        <span class="path-step-icon">🔋</span>
-        <span class="path-step-label"><span data-en>EV & Storage</span><span data-he>EV ואגירה</span><span data-th>EV</span></span>
-        <span class="path-step-num">4</span>
-      </div>
-      <span class="path-arrow">→</span>
-      <div class="path-step">
-        <span class="path-step-icon">📊</span>
-        <span class="path-step-label"><span data-en>Management</span><span data-he>ניהול</span><span data-th>จัดการ</span></span>
-        <span class="path-step-num">5</span>
+  <!-- Recommended order -->
+  <section class="section-tight">
+    <div class="wrap-wide">
+      <p class="eyebrow reveal"><span data-en>Recommended order</span><span data-he>סדר מומלץ</span><span data-th>ลำดับที่แนะนำ</span></p>
+      <h2 class="h2 reveal reveal-d1"><span data-en>Five tracks, one path.</span><span data-he>חמישה מסלולים, דרך אחת.</span><span data-th>ห้าเส้นทาง หนึ่งเส้นทางเดียว</span></h2>
+      <div class="path reveal reveal-d2">
+        <a href="#track-solar-fundamentals"><b>1</b><span data-en>Fundamentals</span><span data-he>יסודות</span><span data-th>พื้นฐาน</span></a><span class="sep">→</span>
+        <a href="#track-technical"><b>2</b><span data-en>Technical</span><span data-he>טכני</span><span data-th>เทคนิค</span></a><span class="sep">→</span>
+        <a href="#track-sales-bd"><b>3</b><span data-en>Sales &amp; BD</span><span data-he>מכירות</span><span data-th>การขาย</span></a><span class="sep">→</span>
+        <a href="#track-ev-storage"><b>4</b><span data-en>EV &amp; Storage</span><span data-he>EV ואגירה</span><span data-th>EV</span></a><span class="sep">→</span>
+        <a href="#track-management"><b>5</b><span data-en>Management</span><span data-he>ניהול</span><span data-th>การจัดการ</span></a>
       </div>
     </div>
   </section>
 
   <!-- Tracks -->
-  <section class="tracks-section" id="tracks-section">
-    <p class="section-label fade-up">
-      <span data-en>Learning Tracks</span>
-      <span data-he>מסלולי למידה</span>
-      <span data-th>เส้นทางการเรียนรู้</span>
-    </p>
-    <h2 class="section-title fade-up">
-      <span data-en>Choose Your Path</span>
-      <span data-he>בחרו את המסלול</span>
-      <span data-th>เลือกเส้นทางของคุณ</span>
-    </h2>
-    <div class="tracks-grid" id="tracks-grid">
+  <section class="tracks-section section-alt section-tight" id="tracks-section">
+    <div class="wrap-wide">
+      <p class="section-label fade-up"><span data-en>Learning tracks</span><span data-he>מסלולי למידה</span><span data-th>เส้นทางการเรียนรู้</span></p>
+      <h2 class="section-title fade-up"><span data-en>All 24 lessons.</span><span data-he>כל 24 השיעורים.</span><span data-th>บทเรียนทั้ง 24 บท</span></h2>
+      <div class="tracks" id="tracks-grid">
 
-      <!-- Track 1: Solar Fundamentals -->
-      <a href="#track-solar-fundamentals" class="glass-card track-card fade-up" data-track="solar-fundamentals" data-total="8">
-        <span class="difficulty-badge beginner">
-          <span data-en>Beginner</span><span data-he>מתחילים</span><span data-th>เริ่มต้น</span>
-        </span>
-        <div class="track-icon-wrap">
-          <span class="track-icon">☀️</span>
+        <div class="track-row" id="track-solar-fundamentals">
+          <a href="#track-solar-fundamentals" class="track-card" data-track="solar-fundamentals" data-total="8">
+            <span class="difficulty-badge beginner"><span data-en>Beginner</span><span data-he>מתחילים</span><span data-th>เริ่มต้น</span></span>
+            <div class="track-num"><svg class="i" aria-hidden="true"><use href="#i-sun"/></svg><span data-en>Track 1</span><span data-he>מסלול 1</span><span data-th>เส้นทาง 1</span></div>
+            <div class="track-title" data-en>Solar Fundamentals</div>
+            <div class="track-title" data-he>מבוא לסולאר</div>
+            <div class="track-title" data-th>พื้นฐานพลังงานแสงอาทิตย์</div>
+            <div class="track-title-sub" data-en>Everything you need to know about solar energy</div>
+            <div class="track-title-sub" data-he>כל מה שצריך לדעת על אנרגיה סולארית</div>
+            <div class="track-title-sub" data-th>ทุกอย่างที่คุณต้องรู้เกี่ยวกับพลังงานแสงอาทิตย์</div>
+            <div class="track-meta">
+              <span><span data-en>8 lessons</span><span data-he>8 שיעורים</span><span data-th>8 บทเรียน</span></span>
+              <span><span data-en>~4 hours</span><span data-he>~4 שעות</span><span data-th>~4 ชั่วโมง</span></span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+            <div class="progress-label"><span class="progress-text">0/8</span><span class="progress-pct">0%</span></div>
+          </a>
+          <ul class="track-lessons" data-track-lessons="solar-fundamentals"></ul>
         </div>
-        <div class="track-title" data-en>Solar Fundamentals</div>
-        <div class="track-title" data-he>מבוא לסולאר</div>
-        <div class="track-title" data-th>พื้นฐานพลังงานแสงอาทิตย์</div>
-        <div class="track-title-sub" data-en>Everything you need to know about solar energy</div>
-        <div class="track-title-sub" data-he>כל מה שצריך לדעת על אנרגיה סולארית</div>
-        <div class="track-title-sub" data-th>ทุกอย่างที่คุณต้องรู้เกี่ยวกับพลังงานแสงอาทิตย์</div>
-        <div class="track-meta">
-          <span>📚 <span data-en>8 Lessons</span><span data-he>8 שיעורים</span><span data-th>8 บทเรียน</span></span>
-          <span>⏱ <span data-en>~4 Hours</span><span data-he>~4 שעות</span><span data-th>~4 ชั่วโมง</span></span>
-        </div>
-        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
-        <div class="progress-label"><span class="progress-text">0/8</span><span class="progress-pct">0%</span></div>
-      </a>
 
-      <!-- Track 2: Sales & BD -->
-      <a href="#track-sales-bd" class="glass-card track-card fade-up" data-track="sales-bd" data-total="4">
-        <span class="difficulty-badge intermediate">
-          <span data-en>Intermediate</span><span data-he>בינוני</span><span data-th>ระดับกลาง</span>
-        </span>
-        <div class="track-icon-wrap">
-          <span class="track-icon">💼</span>
+        <div class="track-row" id="track-technical">
+          <a href="#track-technical" class="track-card" data-track="technical" data-total="3">
+            <span class="difficulty-badge advanced"><span data-en>Advanced</span><span data-he>מתקדם</span><span data-th>ขั้นสูง</span></span>
+            <div class="track-num"><svg class="i" aria-hidden="true"><use href="#i-bolt"/></svg><span data-en>Track 2</span><span data-he>מסלול 2</span><span data-th>เส้นทาง 2</span></div>
+            <div class="track-title" data-en>Technical — Installation &amp; Electrical</div>
+            <div class="track-title" data-he>טכני — התקנה וחשמל</div>
+            <div class="track-title" data-th>เทคนิค — การติดตั้งและไฟฟ้า</div>
+            <div class="track-title-sub" data-en>Hands-on installation and wiring</div>
+            <div class="track-title-sub" data-he>התקנה וחיווט מעשי</div>
+            <div class="track-title-sub" data-th>การติดตั้งและเดินสายไฟ</div>
+            <div class="track-meta">
+              <span><span data-en>3 lessons</span><span data-he>3 שיעורים</span><span data-th>3 บทเรียน</span></span>
+              <span><span data-en>~2 hours</span><span data-he>~2 שעות</span><span data-th>~2 ชั่วโมง</span></span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+            <div class="progress-label"><span class="progress-text">0/3</span><span class="progress-pct">0%</span></div>
+          </a>
+          <ul class="track-lessons" data-track-lessons="technical"></ul>
         </div>
-        <div class="track-title" data-en>Sales & Business Development</div>
-        <div class="track-title" data-he>מכירות ופיתוח עסקי</div>
-        <div class="track-title" data-th>การขายและพัฒนาธุรกิจ</div>
-        <div class="track-title-sub" data-en>Win clients and close deals</div>
-        <div class="track-title-sub" data-he>רכשו לקוחות וסגרו עסקאות</div>
-        <div class="track-title-sub" data-th>ชนะลูกค้าและปิดดีล</div>
-        <div class="track-meta">
-          <span>📚 <span data-en>4 Lessons</span><span data-he>4 שיעורים</span><span data-th>4 บทเรียน</span></span>
-          <span>⏱ <span data-en>~3 Hours</span><span data-he>~3 שעות</span><span data-th>~3 ชั่วโมง</span></span>
-        </div>
-        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
-        <div class="progress-label"><span class="progress-text">
-          <span data-en>0/4</span><span data-he>0/4</span><span data-th>0/4</span>
-        </span><span class="progress-pct"></span></div>
-      </a>
 
-      <!-- Track 3: Technical -->
-      <a href="#track-technical" class="glass-card track-card fade-up" data-track="technical" data-total="3">
-        <span class="difficulty-badge advanced">
-          <span data-en>Advanced</span><span data-he>מתקדם</span><span data-th>ขั้นสูง</span>
-        </span>
-        <div class="track-icon-wrap">
-          <span class="track-icon">⚡</span>
+        <div class="track-row" id="track-sales-bd">
+          <a href="#track-sales-bd" class="track-card" data-track="sales-bd" data-total="4">
+            <span class="difficulty-badge intermediate"><span data-en>Intermediate</span><span data-he>בינוני</span><span data-th>ระดับกลาง</span></span>
+            <div class="track-num"><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg><span data-en>Track 3</span><span data-he>מסלול 3</span><span data-th>เส้นทาง 3</span></div>
+            <div class="track-title" data-en>Sales &amp; Business Development</div>
+            <div class="track-title" data-he>מכירות ופיתוח עסקי</div>
+            <div class="track-title" data-th>การขายและพัฒนาธุรกิจ</div>
+            <div class="track-title-sub" data-en>Win clients and close deals</div>
+            <div class="track-title-sub" data-he>רכשו לקוחות וסגרו עסקאות</div>
+            <div class="track-title-sub" data-th>ชนะลูกค้าและปิดดีล</div>
+            <div class="track-meta">
+              <span><span data-en>4 lessons</span><span data-he>4 שיעורים</span><span data-th>4 บทเรียน</span></span>
+              <span><span data-en>~3 hours</span><span data-he>~3 שעות</span><span data-th>~3 ชั่วโมง</span></span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+            <div class="progress-label"><span class="progress-text">0/4</span><span class="progress-pct">0%</span></div>
+          </a>
+          <ul class="track-lessons" data-track-lessons="sales-bd"></ul>
         </div>
-        <div class="track-title" data-en>Technical — Installation & Electrical</div>
-        <div class="track-title" data-he>טכני — התקנה וחשמל</div>
-        <div class="track-title" data-th>เทคนิค — การติดตั้งและไฟฟ้า</div>
-        <div class="track-title-sub" data-en>Hands-on installation and wiring</div>
-        <div class="track-title-sub" data-he>התקנה וחיווט מעשי</div>
-        <div class="track-title-sub" data-th>การติดตั้งและเดินสายไฟ</div>
-        <div class="track-meta">
-          <span>📚 <span data-en>3 Lessons</span><span data-he>3 שיעורים</span><span data-th>3 บทเรียน</span></span>
-          <span>⏱ <span data-en>~2 Hours</span><span data-he>~2 שעות</span><span data-th>~2 ชั่วโมง</span></span>
-        </div>
-        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
-        <div class="progress-label"><span class="progress-text">
-          <span data-en>0/3</span><span data-he>0/3</span><span data-th>0/3</span>
-        </span><span class="progress-pct"></span></div>
-      </a>
 
-      <!-- Track 4: EV & Storage -->
-      <a href="#track-ev-storage" class="glass-card track-card fade-up" data-track="ev-storage" data-total="3">
-        <span class="difficulty-badge intermediate">
-          <span data-en>Intermediate</span><span data-he>בינוני</span><span data-th>ระดับกลาง</span>
-        </span>
-        <div class="track-icon-wrap">
-          <span class="track-icon">🔋</span>
+        <div class="track-row" id="track-ev-storage">
+          <a href="#track-ev-storage" class="track-card" data-track="ev-storage" data-total="3">
+            <span class="difficulty-badge intermediate"><span data-en>Intermediate</span><span data-he>בינוני</span><span data-th>ระดับกลาง</span></span>
+            <div class="track-num"><svg class="i" aria-hidden="true"><use href="#i-battery"/></svg><span data-en>Track 4</span><span data-he>מסלול 4</span><span data-th>เส้นทาง 4</span></div>
+            <div class="track-title" data-en>EV &amp; Energy Storage</div>
+            <div class="track-title" data-he>רכב חשמלי ואגירת אנרגיה</div>
+            <div class="track-title" data-th>EV และการกักเก็บพลังงาน</div>
+            <div class="track-title-sub" data-en>Charging infrastructure and batteries</div>
+            <div class="track-title-sub" data-he>תשתית טעינה וסוללות</div>
+            <div class="track-title-sub" data-th>โครงสร้างพื้นฐานการชาร์จและแบตเตอรี่</div>
+            <div class="track-meta">
+              <span><span data-en>3 lessons</span><span data-he>3 שיעורים</span><span data-th>3 บทเรียน</span></span>
+              <span><span data-en>~4 hours</span><span data-he>~4 שעות</span><span data-th>~4 ชั่วโมง</span></span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+            <div class="progress-label"><span class="progress-text">0/3</span><span class="progress-pct">0%</span></div>
+          </a>
+          <ul class="track-lessons" data-track-lessons="ev-storage"></ul>
         </div>
-        <div class="track-title" data-en>EV & Energy Storage</div>
-        <div class="track-title" data-he>רכב חשמלי ואגירת אנרגיה</div>
-        <div class="track-title" data-th>EV และการกักเก็บพลังงาน</div>
-        <div class="track-title-sub" data-en>Charging infrastructure and batteries</div>
-        <div class="track-title-sub" data-he>תשתית טעינה וסוללות</div>
-        <div class="track-title-sub" data-th>โครงสร้างพื้นฐานการชาร์จและแบตเตอรี่</div>
-        <div class="track-meta">
-          <span>📚 <span data-en>3 Lessons</span><span data-he>3 שיעורים</span><span data-th>3 บทเรียน</span></span>
-          <span>⏱ <span data-en>~4 Hours</span><span data-he>~4 שעות</span><span data-th>~4 ชั่วโมง</span></span>
-        </div>
-        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
-        <div class="progress-label"><span class="progress-text">
-          <span data-en>0/3</span><span data-he>0/3</span><span data-th>0/3</span>
-        </span><span class="progress-pct"></span></div>
-      </a>
 
-      <!-- Track 5: Management -->
-      <a href="#track-management" class="glass-card track-card fade-up" data-track="management" data-total="6">
-        <span class="difficulty-badge intermediate">
-          <span data-en>Intermediate</span><span data-he>בינוני</span><span data-th>ระดับกลาง</span>
-        </span>
-        <div class="track-icon-wrap">
-          <span class="track-icon">📊</span>
+        <div class="track-row" id="track-management">
+          <a href="#track-management" class="track-card" data-track="management" data-total="6">
+            <span class="difficulty-badge intermediate"><span data-en>Intermediate</span><span data-he>בינוני</span><span data-th>ระดับกลาง</span></span>
+            <div class="track-num"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg><span data-en>Track 5</span><span data-he>מסלול 5</span><span data-th>เส้นทาง 5</span></div>
+            <div class="track-title" data-en>Management &amp; Operations</div>
+            <div class="track-title" data-he>ניהול ותפעול</div>
+            <div class="track-title" data-th>การจัดการและการดำเนินงาน</div>
+            <div class="track-title-sub" data-en>Run projects, teams, and finances</div>
+            <div class="track-title-sub" data-he>ניהול פרויקטים, צוותים וכספים</div>
+            <div class="track-title-sub" data-th>จัดการโครงการ ทีม และการเงิน</div>
+            <div class="track-meta">
+              <span><span data-en>6 lessons</span><span data-he>6 שיעורים</span><span data-th>6 บทเรียน</span></span>
+              <span><span data-en>~3 hours</span><span data-he>~3 שעות</span><span data-th>~3 ชั่วโมง</span></span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+            <div class="progress-label"><span class="progress-text">0/6</span><span class="progress-pct">0%</span></div>
+          </a>
+          <ul class="track-lessons" data-track-lessons="management"></ul>
         </div>
-        <div class="track-title" data-en>Management & Operations</div>
-        <div class="track-title" data-he>ניהול ותפעול</div>
-        <div class="track-title" data-th>การจัดการและการดำเนินงาน</div>
-        <div class="track-title-sub" data-en>Run projects, teams, and finances</div>
-        <div class="track-title-sub" data-he>ניהול פרויקטים, צוותים וכספים</div>
-        <div class="track-title-sub" data-th>จัดการโครงการ ทีม และการเงิน</div>
-        <div class="track-meta">
-          <span>📚 <span data-en>6 Lessons</span><span data-he>6 שיעורים</span><span data-th>6 บทเรียน</span></span>
-          <span>⏱ <span data-en>~3 Hours</span><span data-he>~3 שעות</span><span data-th>~3 ชั่วโมง</span></span>
-        </div>
-        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
-        <div class="progress-label"><span class="progress-text">0/6</span><span class="progress-pct">0%</span></div>
-      </a>
 
-    </div>
-  </section>
-
-  <!-- All lessons, grouped by track (rendered from assets/lessons.js) -->
-  <section class="lessons-section" id="lessons">
-    <p class="section-label fade-up"><span data-en>Full Curriculum</span><span data-he>תוכנית הלימודים המלאה</span><span data-th>หลักสูตรทั้งหมด</span></p>
-    <h2 class="section-title fade-up"><span data-en>All 24 Lessons</span><span data-he>כל 24 השיעורים</span><span data-th>บทเรียนทั้ง 24 บท</span></h2>
-    <div id="lessons-by-track"></div>
-  </section>
-
-  <!-- Certificate Section -->
-  <section class="certificate-section fade-up">
-    <div class="certificate-card">
-      <div class="cert-icon">🏆</div>
-      <h2 class="cert-title">
-        <span data-en>Earn Your Bustan Energy Certificate</span>
-        <span data-he>קבלו תעודת Bustan Energy</span>
-        <span data-th>รับใบรับรอง Bustan Energy</span>
-      </h2>
-      <p class="cert-desc">
-        <span data-en>Complete all lessons in a track to earn your Bustan Energy Professional Certificate. Demonstrate your expertise to clients and employers.</span>
-        <span data-he>השלימו את כל השיעורים במסלול כדי לקבל תעודה מקצועית של Bustan Energy. הוכיחו את המומחיות שלכם ללקוחות ומעסיקים.</span>
-        <span data-th>เรียนจบทุกบทเรียนในเส้นทางเพื่อรับใบรับรองวิชาชีพ Bustan Energy แสดงความเชี่ยวชาญต่อลูกค้าและนายจ้าง</span>
-      </p>
-      <div class="cert-mockup">
-        <div class="cert-mockup-inner">
-          <div class="cert-mockup-title">Certificate of Completion</div>
-          <div class="cert-mockup-name">Your Name</div>
-          <div class="cert-mockup-track">Solar Fundamentals Track</div>
-        </div>
-        <div class="cert-mockup-seal">✦</div>
       </div>
     </div>
   </section>
 
-  <!-- Stats -->
+  <!-- Certificate + stats -->
+  <section class="section-tight">
+    <div class="wrap-wide">
+      <div class="cert fade-up">
+        <div>
+          <h2 class="h3"><span data-en>Finish a track, earn the Bustan Energy certificate.</span><span data-he>סיימו מסלול וקבלו תעודת Bustan Energy.</span><span data-th>เรียนจบเส้นทาง รับใบรับรอง Bustan Energy</span></h2>
+          <p class="muted" style="margin:10px 0 0;max-width:60ch">
+            <span data-en>Complete every lesson and quiz in a track. Progress is saved in this browser.</span>
+            <span data-he>השלימו את כל השיעורים והחידונים במסלול. ההתקדמות נשמרת בדפדפן הזה.</span>
+            <span data-th>เรียนทุกบทและทำแบบทดสอบให้ครบในเส้นทาง ความคืบหน้าถูกบันทึกในเบราว์เซอร์นี้</span>
+          </p>
+        </div>
+        <svg class="i i-l" aria-hidden="true" style="width:40px;height:40px"><use href="#i-cert"/></svg>
+      </div>
+    </div>
+  </section>
+
   <section class="stats-section">
     <div class="stats-grid">
-      <div class="glass-card stat-card fade-up">
-        <div class="stat-number">24</div>
-        <div class="stat-label">
-          <span data-en>Total Lessons</span><span data-he>שיעורים</span><span data-th>บทเรียนทั้งหมด</span>
-        </div>
-      </div>
-      <div class="glass-card stat-card fade-up">
-        <div class="stat-number gold">~13h</div>
-        <div class="stat-label">
-          <span data-en>Of Training</span><span data-he>שעות הדרכה</span><span data-th>ชั่วโมงการฝึกอบรม</span>
-        </div>
-      </div>
-      <div class="glass-card stat-card fade-up">
-        <div class="stat-number">3</div>
-        <div class="stat-label">
-          <span data-en>Languages</span><span data-he>שפות</span><span data-th>ภาษา</span>
-        </div>
-      </div>
-      <div class="glass-card stat-card fade-up">
-        <div class="stat-number">5</div>
-        <div class="stat-label">
-          <span data-en>Learning Tracks</span><span data-he>מסלולי למידה</span><span data-th>เส้นทางการเรียนรู้</span>
-        </div>
-      </div>
+      <div class="glass-card stat-card fade-up"><div class="stat-number">24</div><div class="stat-label"><span data-en>Lessons</span><span data-he>שיעורים</span><span data-th>บทเรียน</span></div></div>
+      <div class="glass-card stat-card fade-up"><div class="stat-number">~13h</div><div class="stat-label"><span data-en>Of training</span><span data-he>שעות הדרכה</span><span data-th>ชั่วโมงการฝึกอบรม</span></div></div>
+      <div class="glass-card stat-card fade-up"><div class="stat-number">3</div><div class="stat-label"><span data-en>Languages</span><span data-he>שפות</span><span data-th>ภาษา</span></div></div>
+      <div class="glass-card stat-card fade-up"><div class="stat-number">5</div><div class="stat-label"><span data-en>Tracks</span><span data-he>מסלולים</span><span data-th>เส้นทาง</span></div></div>
     </div>
   </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-main-links">
-    <a href="https://index.bustan-energy.com" target="_blank">🌐 Website</a>
-    <a href="https://www.facebook.com/bustan-energy" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/bustan-energy" target="_blank">Instagram</a>
-  </div>
-  <div class="footer-links">
-    <a href="mailto:kaniel@bustan-energy.com">kaniel@bustan-energy.com</a>
-    <a href="tel:+66946692011">+66 94 669 2011</a>
-  </div>
-  <p>© 2026 Bustan Energy Co., Ltd. All rights reserved.</p>
-  <div class="footer-powered">
-    <img src="../proposals/tm-logo.png" alt="Bustan Energy">
-    Powered by Bustan Energy
-  </div>
-</footer>
+<div id="site-footer"></div>
+<script src="../assets/site.js" data-root="../" defer></script>
 
-<!-- Particles + Progress Script -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Generate floating particles
-  const container = document.getElementById('hero-particles');
-  if (container) {
-    const colors = ['rgba(0,214,143,0.4)', 'rgba(255,184,0,0.3)', 'rgba(0,214,143,0.2)', 'rgba(255,255,255,0.15)'];
-    for (let i = 0; i < 20; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'dot';
-      const size = Math.random() * 4 + 2;
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      dot.style.cssText = `
-        width:${size}px;height:${size}px;
-        background:${color};
-        left:${Math.random()*100}%;
-        bottom:${Math.random()*-20}%;
-        animation-duration:${Math.random()*6+4}s;
-        animation-delay:${Math.random()*6}s;
-      `;
-      container.appendChild(dot);
-    }
-  }
-
-  // Render all lessons grouped by track + preview lists in the track cards
   const T = window.ACADEMY_TRACKS || {}, L = window.ACADEMY_LESSONS || [];
   const lang = () => document.body.getAttribute('data-lang') || 'en';
-  const host = document.getElementById('lessons-by-track');
+  const arrow = '<svg class="i arrow" aria-hidden="true"><use href="#i-arrow"/></svg>';
+
+  // Lesson lists per track (from assets/lessons.js) + overall progress
   function renderLessons() {
-    if (!host) return;
-    host.innerHTML = Object.entries(T).sort((a, b) => a[1].order - b[1].order).map(([track, t]) => {
-      const rows = L.filter(l => l.track === track);
-      const done = rows.filter(l => isLessonComplete(track, l.num)).length;
-      return `<div class="glass-card track-block" id="track-${track}">
-        <h3>${t.icon} ${t[lang()]} <span class="track-progress">${done}/${rows.length}</span></h3>
-        <ul class="lesson-list">${rows.map(l => `
-          <li><a class="lesson-row glass-card ${isLessonComplete(track, l.num) ? 'done' : ''}" href="${l.file}">
-            <span class="n">${isLessonComplete(track, l.num) ? '✓' : l.num}</span><span class="t">${l.title[lang()]}</span><span class="arrow">›</span></a></li>`).join('')}
-        </ul></div>`;
-    }).join('');
-    document.querySelectorAll('.track-card[data-track]').forEach(card => {
-      const rows = L.filter(l => l.track === card.dataset.track);
-      let ul = card.querySelector('.lesson-preview');
-      if (!ul) { ul = document.createElement('ul'); ul.className = 'lesson-preview'; card.querySelector('.track-meta').before(ul); }
-      ul.innerHTML = rows.slice(0, 3).map(l => `<li>${l.title[lang()]}</li>`).join('') + (rows.length > 3 ? `<li class="more">+${rows.length - 3}</li>` : '');
+    document.querySelectorAll('[data-track-lessons]').forEach((ul) => {
+      const track = ul.dataset.trackLessons;
+      const rows = L.filter((l) => l.track === track);
+      ul.innerHTML = rows.map((l) => {
+        const done = isLessonComplete(track, l.num);
+        return `<li><a class="lesson-row${done ? ' done' : ''}" href="${l.file}"><span class="n">${done ? '✓' : l.num}</span><span class="t">${l.title[lang()]}</span>${arrow}</a></li>`;
+      }).join('');
     });
+    const done = L.filter((l) => isLessonComplete(l.track, l.num)).length;
+    const fill = document.getElementById('overall-fill'), txt = document.getElementById('overall-text');
+    if (fill) fill.style.width = (L.length ? Math.round(done / L.length * 100) : 0) + '%';
+    if (txt) txt.textContent = `${done} / ${L.length}`;
   }
   renderLessons();
   document.addEventListener('academy:lang', () => { renderLessons(); updateProgressBars(); });
-
-  // Update progress bars for active tracks
-  const cards = document.querySelectorAll('.track-card[data-track]');
-  cards.forEach(card => {
-    const track = card.dataset.track;
-    const total = parseInt(card.dataset.total);
-    const completed = getCompletedCount(track);
-    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
-
-    const fill = card.querySelector('.progress-bar-fill');
-    const text = card.querySelector('.progress-text');
-    const pctEl = card.querySelector('.progress-pct');
-
-    if (fill) fill.style.width = pct + '%';
-    if (text && !text.querySelector('[data-en]')) text.textContent = `${completed}/${total}`;
-    if (pctEl && pctEl.textContent !== '') pctEl.textContent = pct + '%';
-  });
+  updateProgressBars();
 });
 </script>
-
 </body>
 </html>
