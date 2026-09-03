@@ -1,3 +1,5 @@
+> **Status 2026-09-03:** superseded by the live curriculum — 24 lessons in 5 tracks, listed in `assets/lessons.js` (regenerate with `node tools/build-lessons-index.mjs`). Kept for history; lesson counts below are outdated.
+
 # Bustan Energy Academy — Syllabus
 
 ## Mission
