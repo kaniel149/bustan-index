@@ -274,5 +274,35 @@ entries.sort((a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind) |
 
 const out = { generated: new Date().toISOString().slice(0, 10), count: entries.length, entries };
 fs.writeFileSync(path.join(ROOT, 'catalog.json'), JSON.stringify(out, null, 1) + '\n');
+// ---- static (no-JS) catalog markup, spliced into index.html between the catalog:static markers ----
+const KIND_LABEL = { deck: 'Presentations', doc: 'Playbooks & documents', academy: 'Academy', tool: 'Tools', proposal: 'Proposals', pea: 'PEA & grid', research: 'Research', podcast: 'Podcasts', brand: 'Brand & marketing', blog: 'Blog' };
+const KIND_ICON = { deck: 'deck', doc: 'doc', academy: 'academy', tool: 'tool', proposal: 'proposal', pea: 'pea', research: 'research', podcast: 'podcast', brand: 'brand', blog: 'blog' };
+const AUD_LABEL = { internal: 'Internal', team: 'Team', client: 'Client', investor: 'Investor' };
+const GH = 'https://github.com/kaniel149/bustan-index/blob/main/';
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const hrefFor = (e) => e.external ? e.path : /\.md$/i.test(e.path) ? GH + e.path : e.path;
+const dirAttr = (v) => /[\u0590-\u05FF]/.test(v) ? ' dir="rtl"' : ' dir="auto"';
+const ic = (n) => `<svg class="i" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const tags = (e) => `<div class="tags">${e.lang.map((l) => `<span class="tag tag-lang">${l}</span>`).join('')}<span class="tag">${AUD_LABEL[e.audience]}</span>${e.group && e.group !== e.kind ? `<span class="tag">${esc(e.group)}</span>` : ''}${e.note ? `<span class="tag tag-warn">${esc(e.note)}</span>` : ''}</div>`;
+const row = (e) => {
+  const ext = e.external || /\.md$/i.test(e.path);
+  const audio = e.kind === 'podcast' && !e.external ? `<div class="row-audio"><audio controls preload="none" src="${esc(e.path)}"></audio></div>` : '';
+  return `<a class="row" href="${esc(hrefFor(e))}"${ext ? ' target="_blank" rel="noopener"' : ''}>${ic(e.kind === 'podcast' ? 'podcast' : /\.(pdf|xlsx|csv)$/i.test(e.path) ? 'file' : e.hub ? 'globe' : KIND_ICON[e.kind])}<div><div class="row-title"${dirAttr(e.title)}>${esc(e.title)}</div>${e.alt ? `<div class="row-sub"${dirAttr(e.alt)}>${esc(e.alt)}</div>` : ''}</div>${tags(e)}<div class="row-date">${e.updated || ''}</div>${ic(ext ? 'ext' : 'arrow')}${audio}</a>`;
+};
+const deck = (e) => `<div class="card deck-card"><a class="deck-thumb" href="${esc(hrefFor(e))}"${e.external ? ' target="_blank" rel="noopener"' : ''} aria-label="${esc(e.title)}">${e.thumb ? `<img src="${esc(e.thumb)}" alt="" loading="lazy" width="640" height="360">` : ''}</a><div class="deck-body"><h3 class="card-title"${dirAttr(e.title)}>${esc(e.title)}</h3>${e.alt ? `<p class="card-sub"${dirAttr(e.alt)}>${esc(e.alt)}</p>` : ''}<div class="tags" style="margin-top:14px">${e.lang.map((l) => `<span class="tag tag-lang">${l}</span>`).join('')}<span class="tag">${AUD_LABEL[e.audience]}</span>${e.note ? `<span class="tag tag-warn">${esc(e.note)}</span>` : ''}</div><div class="deck-actions"><a class="btn btn-sm" href="${esc(hrefFor(e))}"${e.external ? ' target="_blank" rel="noopener"' : ''}>${ic(e.external ? 'ext' : 'arrow')}<span>Open</span></a></div></div></div>`;
+const staticHTML = KIND_ORDER.map((k) => {
+  const items = entries.filter((e) => e.kind === k);
+  if (!items.length) return '';
+  const body = k === 'deck' ? `<div class="cat-grid">${items.filter((e) => !e.hub).map(deck).join('')}</div>${items.filter((e) => e.hub).map(row).join('')}` : items.map(row).join('');
+  return `<section class="cat-group" id="g-${k}"><div class="cat-head"><div class="cat-head-inner"><h2>${ic(KIND_ICON[k])}${KIND_LABEL[k]}</h2><span class="n">${items.length}</span></div></div><div class="cat-list">${body}</div></section>`;
+}).join('\n');
+const indexPath = path.join(ROOT, 'index.html');
+const indexHTML = fs.readFileSync(indexPath, 'utf8');
+const START = '<!-- catalog:static:start', END = '<!-- catalog:static:end -->';
+const a = indexHTML.indexOf(START), b = indexHTML.indexOf(END);
+if (a < 0 || b < 0) throw new Error('index.html: catalog:static markers not found');
+const startLineEnd = indexHTML.indexOf('-->', a) + 3;
+fs.writeFileSync(indexPath, indexHTML.slice(0, startLineEnd) + '\n' + staticHTML + '\n' + indexHTML.slice(b));
+
 const byKind = {}; for (const e of entries) byKind[e.kind] = (byKind[e.kind] || 0) + 1;
 console.log(`catalog.json: ${entries.length} entries`, byKind);

@@ -211,23 +211,5 @@ body[data-lang="he"] .spec-table th, body[data-lang="th"] .spec-table th { lette
   .lang-btn { padding: 4px 7px; }
 }
 
-/* ---- Lang visibility (body[data-lang] — set by academy.js; html[lang] rules come from site.css) ---- */
-[data-en], [data-he], [data-th] { display: none; }
-body[data-lang="en"] [data-en] { display: unset; }
-body[data-lang="he"] [data-he] { display: unset; }
-body[data-lang="th"] [data-th] { display: unset; }
-
-div[data-en], div[data-he], div[data-th],
-p[data-en], p[data-he], p[data-th],
-h1[data-en], h1[data-he], h1[data-th],
-h2[data-en], h2[data-he], h2[data-th],
-h3[data-en], h3[data-he], h3[data-th],
-li[data-en], li[data-he], li[data-th],
-section[data-en], section[data-he], section[data-th] { display: none; }
-body[data-lang="en"] [data-en] { display: block; }
-body[data-lang="he"] [data-he] { display: block; }
-body[data-lang="th"] [data-th] { display: block; }
-body[data-lang="en"] li[data-en], body[data-lang="he"] li[data-he], body[data-lang="th"] li[data-th] { display: list-item; }
-body[data-lang="en"] span[data-en], body[data-lang="he"] span[data-he], body[data-lang="th"] span[data-th] { display: inline; }
-body[data-lang="en"] a[data-en], body[data-lang="he"] a[data-he], body[data-lang="th"] a[data-th] { display: flex; }
-body[data-lang="en"] tr[data-en], body[data-lang="he"] tr[data-he], body[data-lang="th"] tr[data-th] { display: table-row; }
+/* ---- Lang visibility: owned by ../../assets/site.css (html[lang] + data-en/he/th, !important).
+   academy.js keeps body[data-lang] and document.documentElement.lang in sync. ---- */
