@@ -1,5 +1,7 @@
 # Thailand Solar Farm Research — Bustan Energy
 
+> **Update — 4 September 2026:** research files carry a dated update block at the top; figures below it are as of March 2026. Key changes: PPA 3.80 THB/kWh (not 4.50); EPC ground-mount 17–25 M THB/MW (not 26–37); net billing 2.20 residential only; BOI own-use removed; ฿200K personal deduction enacted; TIS mandatory wave; 230 kV cable 2028/29.
+
 ## 12 Research Documents | 9,240+ Lines | March 2026
 
 Comprehensive research for developing solar farms up to 10 MW on Koh Phangan, Thailand.
@@ -21,8 +23,8 @@ Comprehensive research for developing solar farms up to 10 MW on Koh Phangan, Th
 
 ## Key Findings
 
-- **Best model for KP:** Private PPA at ฿4.50/kWh (2x FiT revenue)
-- **EPC cost benchmark:** ฿26-37M/MW (ground-mount, Thailand)
+- **Best model for KP:** Private PPA at ฿3.80/kWh (1.7x FiT revenue)
+- **EPC cost benchmark:** ฿17-25M/MW (ground-mount, Thailand, ex-land/BESS)
 - **BESS adds value:** Grid stability + ฿6.8M/yr revenue streams
 - **Timeline to COD:** 18-30 months (permits + construction)
 - **First-mover advantage:** No competing solar farms on Koh Phangan

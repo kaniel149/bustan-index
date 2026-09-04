@@ -8,7 +8,7 @@ Bustan Energy is a solar EPC (Engineering, Procurement, and Construction) compan
 
 Koh Phangan relies on diesel generators and an undersea cable connection to the mainland grid. This makes electricity significantly more expensive than on the mainland:
 
-- **PEA grid rates:** ฿5-7 per kWh (and rising)
+- **PEA grid rates:** ฿4.5–4.9 per kWh marginal incl. VAT (Sep 2026; TOU peak ฿6.4). Ft is politically capped, so assume 0–1.5%/yr escalation
 - **Island electricity bills:** Hotels spend ฿50,000-200,000+ per month
 - **Environmental impact:** Diesel generation produces significant CO2 emissions
 - **Unreliable supply:** Power outages are common during storms and peak season
@@ -21,14 +21,14 @@ Full-service solar from site survey to commissioning:
 - **Commercial/Hospitality:** 20-50 kW systems (custom pricing)
 - **Large-scale:** 50-500 kW systems for developments and portfolios
 - **Cost per Watt-peak:** ฿25-35 depending on system size and complexity
-- **Equipment:** Tier-1 panels (Longi, JA Solar, Canadian Solar), inverters from Huawei, Growatt, Enphase
+- **Equipment:** Tier-1 TOPCon panels (JA Solar, Jinko, Trina — TIS 61730-2), inverters from Huawei and Sungrow, LFP batteries (Huawei LUNA / TIS 63056)
 - **Warranty:** 25-year panel warranty, 5-year installation warranty
-- No permits required for rooftop installations under 200kW in Thailand
+- Rooftop systems under 1,000 kVA need only an ERC exemption notification (filed via PEA); no factory licence (since Dec 2024) and no building permit for installations ≤20 kg/m² (since Nov 2025)
 
 ### Power Purchase Agreement (PPA)
 - **Zero upfront cost** — Bustan Energy finances, installs, and owns the system
-- Customer pays a fixed rate of **฿4.50/kWh** for electricity produced
-- Immediate savings vs PEA rates of ฿5-7/kWh
+- Customer pays a fixed rate of **฿3.80/kWh** for electricity produced (15-year term, 0–1.5%/yr escalation)
+- Immediate 16–20% savings vs PEA marginal rates of ฿4.5–4.9/kWh
 - Available for properties with monthly bills exceeding ฿30,000
 
 ### EV Charging
@@ -48,7 +48,7 @@ Full-service solar from site survey to commissioning:
 | Average bill reduction | 70% |
 | Payback period | 3-5 years |
 | Panel warranty | 25 years |
-| Peak sun hours (Koh Phangan) | ~4.5 hours/day |
+| Peak sun hours (Koh Phangan) | ~4.0 hours/day (≈1,450 kWh/kWp/yr, Global Solar Atlas) |
 | Property value increase | 5-10% |
 | System lifetime | 30+ years |
 
@@ -73,7 +73,7 @@ Solar-powered properties can market themselves as sustainable stays, commanding 
 
 - **Website:** [https://index.bustan-energy.com](https://index.bustan-energy.com)
 - **Email:** kaniel@bustan-energy.com
-- **Phone/WhatsApp:** +66 99-704-4944
+- **Phone/WhatsApp:** +66 94 669 2011
 - **Location:** Koh Phangan, Surat Thani 84280, Thailand
 - **Business Hours:** Monday-Saturday, 8:00 AM - 6:00 PM (ICT)
 - **Facebook:** [facebook.com/share/189ywnsdS6/](https://www.facebook.com/share/189ywnsdS6/)

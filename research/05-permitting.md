@@ -1,6 +1,8 @@
 # Topic 5: Permitting Process for Ground-Mount Solar Farms ≤10 MW in Thailand
 
-## Detailed Guide — Updated March 2026
+> **Update — 4 September 2026:** <1,000 kVA systems file an ERC exemption notification electronically (ERC Office Ann. 74-2568, eff. 4 Apr 2025) via the ERC portal or PEA PPIM; 200–999 kVA also require the พค.2 controlled-energy licence after installation. Or.1 waiver for ≤20 kg/m² effective 19 Nov 2025. NEPC 29 Apr 2026 set 7-day (self-use) / 30-day (with sale) approval targets and PEA/MEA one-stop. PEA/MEA installer & equipment registration window 3 Aug – 30 Sep 2026. Mandatory TIS standards for modules (61730-2), PV cable (62930), ESS batteries (63056), inverters (2603-2), fuses, DC breakers (target Sep 2026), DC connectors and switchgear (target Dec 2026). Ground-mount factory licence (Ror.Ngor.4) still required; environmental review for ≤10 MW solar is CoP/ESA (IEE only if triggered).
+
+## Detailed Guide — Updated 4 September 2026
 
 ---
 

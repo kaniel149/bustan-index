@@ -1,8 +1,10 @@
 # Topic 3: On-Grid Solar Farms in Thailand
 
+> **Update — 4 September 2026:** Residential net-billing programme approved by ERC on 24 Jun 2026 (2.20 THB/kWh, 10 yr, ≤5 kW export, Type 1 meters, 500 MW quota, PEA PPIM applications 1 Jul 2026 – 30 Nov 2027). Commercial export remains unpaid. PEA retail tariff Sep–Dec 2026: base 3.69 + Ft 0.1623 → average 3.86 THB/kWh ex-VAT (Jan–Apr 3.88; May–Aug 3.95); Ft held by a 16.1 bn THB claw-back against a true cost of 41.27 satang. PEA serves 74 provinces (all except Bangkok, Nonthaburi, Samut Prakan). EGAT 230 kV Samui cable: circuit 1 Jun 2028, circuit 2 Jun 2029; PEA 115 kV circuit 4 signed Jul 2026. Direct PPA/TPA: draft regulation (data centres) — not yet in force. Private rooftop PPA market rate: 2.50–3.80 THB/kWh (ESCOs); Bustan headline 3.80.
+
 ## Comprehensive Research Report
 
-**Last Updated:** March 2026
+**Last Updated:** 4 September 2026 (see update block)
 **Sources:** ERC regulations, PEA documentation, Watson Farley & Williams, Tilleke & Gibbins, OECD, IEA, Krungsri Research, PV Magazine, Thai-German Cooperation (GIZ)
 
 ---
@@ -34,7 +36,7 @@ Thailand's on-grid solar sector operates under a regulated single-buyer model ma
 | Entity | Role | Coverage |
 |--------|------|----------|
 | **EGAT** (Electricity Generating Authority of Thailand) | Transmission & bulk generation | Nationwide transmission grid |
-| **PEA** (Provincial Electricity Authority) | Distribution | 73 provinces (rural/provincial areas) |
+| **PEA** (Provincial Electricity Authority) | Distribution | 74 provinces (all except Bangkok, Nonthaburi, Samut Prakan) |
 | **MEA** (Metropolitan Electricity Authority) | Distribution | Bangkok, Nonthaburi, Samut Prakan |
 
 ### Producer Categories

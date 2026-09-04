@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-03",
+ "generated": "2026-09-04",
  "count": 202,
  "entries": [
   {
@@ -11,8 +11,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-09-03",
-   "size": 6226,
+   "updated": "2026-09-04",
+   "size": 6229,
    "hub": true
   },
   {
@@ -24,8 +24,8 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-09-03",
-   "size": 62556,
+   "updated": "2026-09-04",
+   "size": 62981,
    "alt": "Community-solar models and their fit for Thailand",
    "thumb": "assets/thumbs/presentations-community-solar-research.webp"
   },
@@ -38,8 +38,8 @@
     "en"
    ],
    "audience": "client",
-   "updated": "2026-09-03",
-   "size": 30033,
+   "updated": "2026-09-04",
+   "size": 30441,
    "alt": "Who we are, what we do on Koh Phangan, team and track record",
    "thumb": "assets/thumbs/presentations-bustan-energy-company-2026.webp"
   },
@@ -53,8 +53,8 @@
     "th"
    ],
    "audience": "investor",
-   "updated": "2026-09-03",
-   "size": 73992,
+   "updated": "2026-09-04",
+   "size": 74088,
    "alt": "Charging-station opportunity, sites, unit economics",
    "thumb": "assets/thumbs/presentations-ev-charging-koh-phangan.webp"
   },
@@ -83,8 +83,8 @@
     "he"
    ],
    "audience": "investor",
-   "updated": "2026-09-03",
-   "size": 69669,
+   "updated": "2026-09-04",
+   "size": 69762,
    "alt": "EV charging network (Hebrew twin)",
    "thumb": "assets/thumbs/presentations-ev-charging-koh-phangan-he.webp"
   },
@@ -109,8 +109,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 35710,
+   "updated": "2026-09-04",
+   "size": 35763,
    "alt": "Lead capture & pipeline"
   },
   {
@@ -122,8 +122,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 33815,
+   "updated": "2026-09-04",
+   "size": 33868,
    "alt": "Site survey"
   },
   {
@@ -135,8 +135,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 22270,
+   "updated": "2026-09-04",
+   "size": 22324,
    "alt": "Electricity analysis"
   },
   {
@@ -148,8 +148,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 16270,
+   "updated": "2026-09-04",
+   "size": 16324,
    "alt": "System design"
   },
   {
@@ -161,8 +161,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 15695,
+   "updated": "2026-09-04",
+   "size": 15749,
    "alt": "SLD & PEA"
   },
   {
@@ -174,8 +174,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 14879,
+   "updated": "2026-09-04",
+   "size": 14933,
    "alt": "Proposal"
   },
   {
@@ -187,8 +187,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 7268,
+   "updated": "2026-09-04",
+   "size": 7322,
    "alt": "Contract"
   },
   {
@@ -200,8 +200,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 7440,
+   "updated": "2026-09-04",
+   "size": 7494,
    "alt": "Inventory & procurement"
   },
   {
@@ -213,8 +213,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 7341,
+   "updated": "2026-09-04",
+   "size": 7395,
    "alt": "Installation"
   },
   {
@@ -226,8 +226,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 13964,
+   "updated": "2026-09-04",
+   "size": 14017,
    "alt": "Grid connection + O&M"
   },
   {
@@ -287,8 +287,8 @@
     "he"
    ],
    "audience": "client",
-   "updated": "2026-06-10",
-   "size": 72653,
+   "updated": "2026-09-04",
+   "size": 71305,
    "alt": "PPA contract"
   },
   {
@@ -300,8 +300,8 @@
     "he"
    ],
    "audience": "client",
-   "updated": "2026-06-10",
-   "size": 65454,
+   "updated": "2026-09-04",
+   "size": 65166,
    "alt": "EPC contract"
   },
   {
@@ -313,8 +313,8 @@
     "he"
    ],
    "audience": "client",
-   "updated": "2026-06-10",
-   "size": 75568,
+   "updated": "2026-09-04",
+   "size": 64363,
    "alt": "Legal, contracts & agreements",
    "playbook": true,
    "thumb": "assets/thumbs/legal-contracts.webp"
@@ -328,8 +328,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-14",
-   "size": 41511,
+   "updated": "2026-09-04",
+   "size": 41863,
    "playbook": true,
    "thumb": "assets/thumbs/solar-farm-guide.webp"
   },
@@ -342,8 +342,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 176671,
+   "updated": "2026-09-04",
+   "size": 177199,
    "playbook": true,
    "thumb": "assets/thumbs/thailand-solar-farm-masterclass.webp"
   },
@@ -356,8 +356,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 44090,
+   "updated": "2026-09-04",
+   "size": 44144,
    "alt": "Drone roof-scanning guide",
    "playbook": true,
    "thumb": "assets/thumbs/drone-guide.webp"
@@ -371,8 +371,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 64047,
+   "updated": "2026-09-04",
+   "size": 58280,
    "alt": "Monitoring & maintenance",
    "playbook": true,
    "thumb": "assets/thumbs/monitoring-maintenance.webp"
@@ -386,8 +386,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 112668,
+   "updated": "2026-09-04",
+   "size": 102391,
    "alt": "Licensing solar systems in Thailand",
    "playbook": true,
    "thumb": "assets/thumbs/licensing.webp"
@@ -401,8 +401,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 63126,
+   "updated": "2026-09-04",
+   "size": 60243,
    "alt": "Procurement & engineering",
    "playbook": true,
    "thumb": "assets/thumbs/procurement-engineering.webp"
@@ -416,8 +416,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 78033,
+   "updated": "2026-09-04",
+   "size": 78417,
    "alt": "Equipment & tools list",
    "playbook": true,
    "thumb": "assets/thumbs/equipment-list.webp"
@@ -431,8 +431,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 98266,
+   "updated": "2026-09-04",
+   "size": 83355,
    "alt": "Installation process",
    "playbook": true,
    "thumb": "assets/thumbs/installation.webp"
@@ -543,7 +543,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 20075
+   "size": 20201
   },
   {
    "title": "Presentations — number validation",
@@ -568,7 +568,7 @@
    ],
    "audience": "client",
    "updated": "2026-06-10",
-   "size": 3994,
+   "size": 4374,
    "alt": "Company one-pager"
   },
   {
@@ -580,8 +580,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 68799,
+   "updated": "2026-09-04",
+   "size": 68879,
    "alt": "15 slides",
    "playbook": true,
    "thumb": "assets/thumbs/crm-value-chain.webp"
@@ -595,8 +595,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 23461,
+   "updated": "2026-09-04",
+   "size": 23660,
    "alt": "Customer avatars",
    "playbook": true,
    "thumb": "assets/thumbs/customer-avatars.webp"
@@ -610,8 +610,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 25541,
+   "updated": "2026-09-04",
+   "size": 25686,
    "alt": "Value-chain architecture (CRM)",
    "playbook": true,
    "thumb": "assets/thumbs/value-chain.webp"
@@ -625,8 +625,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 93574,
+   "updated": "2026-09-04",
+   "size": 77906,
    "alt": "Sales & marketing playbook",
    "playbook": true,
    "thumb": "assets/thumbs/sales-marketing.webp"
@@ -653,8 +653,8 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
-   "size": 76202,
+   "updated": "2026-09-04",
+   "size": 73851,
    "alt": "Strategy deck",
    "playbook": true,
    "thumb": "assets/thumbs/strategy.webp"
@@ -668,8 +668,8 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
-   "size": 68594,
+   "updated": "2026-09-04",
+   "size": 67082,
    "alt": "Financial dashboard",
    "playbook": true,
    "thumb": "assets/thumbs/financial-dashboard.webp"
@@ -683,8 +683,8 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
-   "size": 54023,
+   "updated": "2026-09-04",
+   "size": 46389,
    "alt": "Financing deep dive — banks, terms, PPA/ESCO math",
    "playbook": true,
    "thumb": "assets/thumbs/financing.webp"
@@ -698,8 +698,8 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
-   "size": 110645,
+   "updated": "2026-09-04",
+   "size": 106792,
    "alt": "P&L + full build-out plan",
    "playbook": true,
    "thumb": "assets/thumbs/pnl-plan.webp"
@@ -713,8 +713,8 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
-   "size": 96970,
+   "updated": "2026-09-04",
+   "size": 89148,
    "alt": "Business plan — year 1",
    "playbook": true,
    "thumb": "assets/thumbs/business-plan.webp"
@@ -730,8 +730,8 @@
     "th"
    ],
    "audience": "team",
-   "updated": "2026-09-03",
-   "size": 22917,
+   "updated": "2026-09-04",
+   "size": 22920,
    "alt": "24 lessons · 5 tracks · EN/HE/TH",
    "hub": true
   },
@@ -1086,8 +1086,8 @@
     "th"
    ],
    "audience": "team",
-   "updated": "2026-09-03",
-   "size": 69830,
+   "updated": "2026-09-04",
+   "size": 70761,
    "track": "management",
    "num": 3,
    "alt": "management · lesson 3"
@@ -1215,7 +1215,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 43886,
+   "size": 43885,
    "alt": "תוכנית סריקת רחפן"
   },
   {
@@ -1348,7 +1348,7 @@
    ],
    "audience": "internal",
    "updated": "2026-09-03",
-   "size": 71397,
+   "size": 71396,
    "alt": "Roof scanner + solar atlas (unified)"
   },
   {
@@ -1373,7 +1373,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 11431
+   "size": 11430
   },
   {
    "title": "Solar farm + storage scout",
@@ -1385,7 +1385,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 55180
+   "size": 55179
   },
   {
    "title": "RFQ email preview",
@@ -1397,7 +1397,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-14",
-   "size": 10945
+   "size": 10907
   },
   {
    "title": "Beamtech — aerial panel layout",
@@ -1433,7 +1433,7 @@
    ],
    "audience": "client",
    "updated": "2026-06-14",
-   "size": 75653
+   "size": 75623
   },
   {
    "title": "Beamtech Residences — proposal 002",
@@ -1445,7 +1445,7 @@
    ],
    "audience": "client",
    "updated": "2026-06-14",
-   "size": 75624
+   "size": 75594
   },
   {
    "title": "Beamtech Residences — הצעת מחיר",
@@ -1457,7 +1457,7 @@
    ],
    "audience": "client",
    "updated": "2026-06-14",
-   "size": 67592,
+   "size": 67590,
    "alt": "Proposal 001 (Hebrew)"
   },
   {
@@ -1470,7 +1470,7 @@
    ],
    "audience": "client",
    "updated": "2026-06-14",
-   "size": 75237,
+   "size": 75235,
    "alt": "Proposal 001 (Thai)"
   },
   {
@@ -1531,7 +1531,7 @@
    ],
    "audience": "client",
    "updated": "2026-06-14",
-   "size": 89787
+   "size": 89757
   },
   {
    "title": "TM Concrete Factory — proposal 001",
@@ -1579,8 +1579,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 3530,
+   "updated": "2026-09-04",
+   "size": 3593,
    "hub": true
   },
   {
@@ -1592,8 +1592,8 @@
     "th"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 34695
+   "updated": "2026-09-04",
+   "size": 34857
   },
   {
    "title": "PEA summary — Beamtech (PDF)",
@@ -1605,7 +1605,7 @@
    ],
    "audience": "team",
    "updated": "2026-03-13",
-   "size": 538345
+   "size": 597175
   },
   {
    "title": "PEA summary — Beamtech 32.5 kWp",
@@ -1616,8 +1616,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-14",
-   "size": 23805
+   "updated": "2026-09-04",
+   "size": 24060
   },
   {
    "title": "Roof layout — Beamtech (PDF)",
@@ -1629,7 +1629,7 @@
    ],
    "audience": "team",
    "updated": "2026-03-13",
-   "size": 636368
+   "size": 539749
   },
   {
    "title": "Roof layout — Beamtech 32.5 kWp",
@@ -1640,8 +1640,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 36183
+   "updated": "2026-09-04",
+   "size": 36245
   },
   {
    "title": "SLD — 300 kWp concrete factory",
@@ -1652,8 +1652,8 @@
     "th"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 32655
+   "updated": "2026-09-04",
+   "size": 32714
   },
   {
    "title": "SLD — Beamtech (PDF)",
@@ -1665,7 +1665,7 @@
    ],
    "audience": "team",
    "updated": "2026-03-13",
-   "size": 582505
+   "size": 472452
   },
   {
    "title": "SLD — Beamtech 32.5 kWp",
@@ -1676,8 +1676,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 23979
+   "updated": "2026-09-04",
+   "size": 24041
   },
   {
    "title": "Electrician training research",
@@ -1725,7 +1725,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 2040,
+   "size": 2410,
    "hub": true
   },
   {
@@ -1750,7 +1750,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 19298
+   "size": 20932
   },
   {
    "title": "Research verification report",
@@ -1798,7 +1798,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 31859
+   "size": 33767
   },
   {
    "title": "Thailand solar research 03 — On-grid",
@@ -1810,7 +1810,7 @@
    ],
    "audience": "internal",
    "updated": "2026-03-10",
-   "size": 41621
+   "size": 42444
   },
   {
    "title": "Thailand solar research 04 — Micro-grid island",
@@ -1834,7 +1834,7 @@
    ],
    "audience": "internal",
    "updated": "2026-03-10",
-   "size": 44505
+   "size": 45328
   },
   {
    "title": "Thailand solar research 06 — Grid technical",
@@ -1858,7 +1858,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 33906
+   "size": 34682
   },
   {
    "title": "Thailand solar research 08 — BESS storage",
@@ -1882,7 +1882,7 @@
    ],
    "audience": "internal",
    "updated": "2026-06-10",
-   "size": 37971
+   "size": 38947
   },
   {
    "title": "Thailand solar research 10 — Case studies",
@@ -2072,8 +2072,8 @@
     "he"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 41284
+   "updated": "2026-09-04",
+   "size": 41393
   },
   {
    "title": "Business cards",
@@ -2085,7 +2085,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-14",
-   "size": 10222
+   "size": 10216
   },
   {
    "title": "Print-ready templates",
@@ -2097,7 +2097,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-14",
-   "size": 13221
+   "size": 13228
   },
   {
    "title": "Ads pro — 8 HTML ad creatives",
@@ -2121,8 +2121,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 19534,
+   "updated": "2026-09-04",
+   "size": 19546,
    "hub": true
   },
   {
@@ -2147,7 +2147,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-14",
-   "size": 3024
+   "size": 3023
   },
   {
    "title": "Ad creative 22",
@@ -2159,7 +2159,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-10",
-   "size": 3198
+   "size": 3197
   },
   {
    "title": "Ad creative 23",
@@ -2171,7 +2171,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-10",
-   "size": 3468
+   "size": 3467
   },
   {
    "title": "Ad creative 24",
@@ -2183,7 +2183,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-10",
-   "size": 3957
+   "size": 3956
   },
   {
    "title": "Ad creative 25",
@@ -2195,7 +2195,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-10",
-   "size": 4077
+   "size": 4076
   },
   {
    "title": "Ad creative 26",
@@ -2207,7 +2207,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-14",
-   "size": 3700
+   "size": 3699
   },
   {
    "title": "Ad creative 27",
@@ -2219,7 +2219,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-10",
-   "size": 4596
+   "size": 4595
   },
   {
    "title": "Ad creative 28",
@@ -2231,7 +2231,7 @@
    ],
    "audience": "team",
    "updated": "2026-06-10",
-   "size": 4622
+   "size": 4621
   },
   {
    "title": "Extended social media plan (posts 21–45)",
@@ -2266,8 +2266,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 3046
+   "updated": "2026-09-04",
+   "size": 3096
   },
   {
    "title": "Post 1 — solar 101",
@@ -2278,8 +2278,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 12259
+   "updated": "2026-09-04",
+   "size": 12262
   },
   {
    "title": "Post 3 — savings",
@@ -2290,8 +2290,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 4523
+   "updated": "2026-09-04",
+   "size": 4526
   },
   {
    "title": "Post 4 — sun hours",
@@ -2302,8 +2302,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 3704
+   "updated": "2026-09-04",
+   "size": 3707
   },
   {
    "title": "Post 5 — ppa explainer",
@@ -2314,8 +2314,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 3293
+   "updated": "2026-09-04",
+   "size": 3296
   },
   {
    "title": "Post 6 — panel comparison",
@@ -2326,8 +2326,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 5656
+   "updated": "2026-09-04",
+   "size": 5659
   },
   {
    "title": "Post 7 — net billing",
@@ -2338,8 +2338,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 4186
+   "updated": "2026-09-04",
+   "size": 4189
   },
   {
    "title": "Post 8 — roi calculator",
@@ -2350,8 +2350,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 4149
+   "updated": "2026-09-04",
+   "size": 4152
   },
   {
    "title": "Post 9 — ev charging",
@@ -2362,8 +2362,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 3777
+   "updated": "2026-09-04",
+   "size": 3780
   },
   {
    "title": "Post 10 — island energy",
@@ -2374,8 +2374,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 4018
+   "updated": "2026-09-04",
+   "size": 4021
   },
   {
    "title": "Post 11 — hotel savings",
@@ -2386,8 +2386,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 3383
+   "updated": "2026-09-04",
+   "size": 3386
   },
   {
    "title": "Post 12 — eco tourism",
@@ -2398,8 +2398,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 3875
+   "updated": "2026-09-04",
+   "size": 3878
   },
   {
    "title": "Post 13 — power outage",
@@ -2410,8 +2410,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 3736
+   "updated": "2026-09-04",
+   "size": 3739
   },
   {
    "title": "Post 14 — property value",
@@ -2422,8 +2422,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 4638
+   "updated": "2026-09-04",
+   "size": 4641
   },
   {
    "title": "Post 15 — read bill",
@@ -2434,8 +2434,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 4866
+   "updated": "2026-09-04",
+   "size": 4869
   },
   {
    "title": "Post 16 — free survey",
@@ -2446,8 +2446,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-14",
-   "size": 3781
+   "updated": "2026-09-04",
+   "size": 3784
   },
   {
    "title": "Post 17 — 3 models",
@@ -2458,8 +2458,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 5183
+   "updated": "2026-09-04",
+   "size": 5186
   },
   {
    "title": "Post 18 — maintenance",
@@ -2470,8 +2470,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 4121
+   "updated": "2026-09-04",
+   "size": 4124
   },
   {
    "title": "Post 19 — testimonial template",
@@ -2482,8 +2482,8 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
-   "size": 4278
+   "updated": "2026-09-04",
+   "size": 4281
   },
   {
    "title": "Social media posting guide",

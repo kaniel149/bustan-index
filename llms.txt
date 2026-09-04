@@ -8,7 +8,7 @@ Bustan Energy is a solar EPC (Engineering, Procurement, and Construction) compan
 
 Bustan Energy serves the growing renewable energy needs of Koh Phangan — an island known for its tourism, hospitality industry, and expat community. Electricity on the island is expensive due to reliance on diesel generators and mainland grid infrastructure. Solar energy provides a reliable, cost-effective alternative with typical bill reductions of 50-70%.
 
-We handle the entire solar journey: site survey, system design, equipment procurement (Tier-1 panels from Longi, JA Solar, Canadian Solar), professional installation, PEA net metering paperwork, and ongoing monitoring & maintenance. No permits are required for rooftop installations under 200kW in Thailand.
+We handle the entire solar journey: site survey, system design, equipment procurement (Tier-1 TOPCon panels from JA Solar, Jinko, Trina), professional installation, PEA interconnection & net-billing paperwork, and ongoing monitoring & maintenance. No permits are required for rooftop installations under 200kW in Thailand.
 
 ## Services
 
@@ -18,15 +18,15 @@ We handle the entire solar journey: site survey, system design, equipment procur
 - Commercial/hospitality: 20-50 kW (custom quote)
 - Large-scale: 50-500 kW (custom quote)
 - Tier-1 panels with 25-year warranty
-- Hybrid inverters from Huawei, Growatt, Enphase
+- Inverters from Huawei and Sungrow; LFP batteries (Huawei LUNA)
 - Optional battery storage
-- Net metering setup included
+- Net-billing (residential) / zero-export (commercial) setup included
 - Typical cost: ฿25-35 per Watt-peak installed
 
 ### Power Purchase Agreement (PPA)
 - Zero upfront cost — we install and own the system
 - Customer pays only for electricity produced
-- Rate: ฿4.50/kWh (vs PEA grid rate of ฿5-7/kWh)
+- Rate: ฿3.80/kWh (vs PEA marginal grid rate of ฿4.5-4.9/kWh incl. VAT)
 - Long-term savings with no capital investment
 - Available for commercial properties with significant consumption
 
@@ -46,10 +46,10 @@ We handle the entire solar journey: site survey, system design, equipment procur
 
 ### Island Home (Villa)
 - 5-10 kW system
-- Tier-1 panels (Longi/JA Solar)
+- Tier-1 panels (JA Solar/Jinko)
 - Hybrid inverter
 - Optional battery storage
-- Net metering setup
+- Net-billing / zero-export setup
 - 5-year installation warranty
 - From ฿250,000
 
@@ -67,7 +67,7 @@ We handle the entire solar journey: site survey, system design, equipment procur
 - Full engineering + procurement
 - Battery + energy management
 - Revenue-grade monitoring
-- BOI investment incentives
+- Personal income-tax deduction up to ฿200,000 for home rooftop solar ≤10 kWp (Royal Decree 805, 2026–2028)
 - Dedicated project manager
 - Custom quote
 
@@ -76,8 +76,8 @@ We handle the entire solar journey: site survey, system design, equipment procur
 - Average customer bill reduction: 70%
 - System payback period: 3-5 years
 - Panel warranty: 25 years
-- No permits required for rooftop solar under 200kW
-- Koh Phangan receives ~4.5 peak sun hours per day
+- Rooftop solar under 1,000 kVA: ERC exemption notification only (via PEA); no factory licence, no building permit ≤20 kg/m²
+- Koh Phangan receives ~4.0 peak sun hours per day (≈1,450 kWh/kWp/yr)
 - Property value increase: 5-10% with solar installation
 
 ## Service Area
@@ -90,7 +90,7 @@ We handle the entire solar journey: site survey, system design, equipment procur
 
 - **Website:** https://index.bustan-energy.com
 - **Email:** kaniel@bustan-energy.com
-- **Phone/WhatsApp:** +66 99-704-4944
+- **Phone/WhatsApp:** +66 94 669 2011
 - **Address:** Koh Phangan, Surat Thani 84280, Thailand
 - **Hours:** Monday-Saturday 8:00-18:00
 - **Facebook:** https://www.facebook.com/share/189ywnsdS6/

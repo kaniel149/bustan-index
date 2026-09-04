@@ -170,7 +170,7 @@ Orthomosaic → Roof Detection Model → Polygons per roof
 3. Booking.com / Agoda listings (resorts/hotels)
 4. Facebook business pages
 5. Physical signage (from drone photos)
-6. Local contacts (TM Developers network)
+6. Local contacts (Bustan Energy network)
 ```
 
 ### שלב E: Interactive Map
@@ -249,7 +249,7 @@ Option C (EPC+Storage): ฿2,402,500 — payback 5.2 years
 | Mac Mini processing time | ฿0 (existing) |
 | **סה"כ ציוד** | **฿198,000 (~$5,500)** |
 | | |
-| Drone pilot (TM Dev crew, 6 weeks) | ฿60,000 |
+| Drone pilot (Bustan crew, 6 weeks) | ฿60,000 |
 | Data processing (G + cloud) | ฿15,000 |
 | Map development | ฿0 (G builds) |
 | **סה"כ תפעול** | **฿75,000 (~$2,100)** |
@@ -346,7 +346,7 @@ ROI on scan: 1.8 חודשים
 - [ ] בחירת רחפן (Mini 4 Pro לבאדג'ט / Mavic 3E למקצועי)
 - [ ] רישום CAAT (אם >250g)
 - [ ] אישור DNP לפארק לאומי
-- [ ] גיוס טייס רחפן מצוות TM Dev
+- [ ] גיוס טייס רחפן מצוות Bustan
 - [ ] הגדרת WebODM על Mac Mini
 - [ ] בניית Auto-Proposal Generator (G)
 - [ ] בניית Interactive Map framework (G)

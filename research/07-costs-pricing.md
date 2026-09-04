@@ -1,6 +1,8 @@
 # Topic 7: Costs & Pricing — Solar Farm Development in Thailand
 
-## Research Date: March 2026
+> **Update — 4 September 2026 (market check):** Rooftop direct installed cost in Thailand ≈ 17,000 THB/kWp (5–10 kW), 14,500 (30–100 kW), 13,500–14,500 (500 kWp); no turnkey offer below ~18,000 THB/kWp observed at any size. Tier-1 TOPCon modules 6.5–7.5 THB/W landed (global non-China spot USD 0.115/W, Aug 2026); string inverters 3–4.5 THB/W (≤10 kW), 2–3 (≥50 kW); LFP batteries 9,000–12,000 THB/kWh installed (generic), 18,000–22,000 branded, utility-scale 5,000–8,000. Ground-mount EPC 17–25 M THB/MW ex-land/BESS. Import: modules ~0%, inverters/batteries 10% MFN → 0% with ACFTA Form E, +7% VAT; anti-dumping 5.12–21.94% on Chinese aluminium extrusions since 25 Nov 2025. USD/THB ≈ 33.
+
+## Research Date: March 2026 · updated 4 September 2026
 ## Status: Comprehensive Research Complete
 
 ---
@@ -728,4 +730,4 @@ In April 2025, the US imposed tariffs of up to **375.2%** on Thai-manufactured s
 
 ---
 
-*Research compiled March 2026. Prices and policies subject to change. All USD figures use THB 35 = USD 1 conversion unless noted. Always verify current rates and policies with local advisors before investment decisions.*
+*Research compiled March 2026 · updated 4 Sep 2026. Prices and policies subject to change. All USD figures use THB 35 = USD 1 conversion unless noted. Always verify current rates and policies with local advisors before investment decisions.*
