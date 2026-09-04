@@ -66,7 +66,7 @@
 - ✅ **Language switcher:** EN/HE/TH toggle works via `data-en`/`data-he`/`data-th` attributes
 - ✅ **YouTube embeds:** Responsive container with `padding-bottom: 56.25%`
 - ✅ **Image paths:** All `../images/` paths verified — 21 images present in images directory
-- ✅ **Logo path:** `../../proposals/tm-logo.png` resolves correctly from courses/
+- ✅ **Logo path:** `../../assets/bustan-energy.svg` resolves correctly from courses/
 - ✅ **Quiz engine:** `initQuiz()` creates questions dynamically, validates answers, shows correct/incorrect, calculates score
 - ✅ **"Did You Know" boxes:** Properly styled with gold border and 💡 pseudo-element
 - ✅ **Key Term boxes:** Gold left-border (RTL: right-border) with proper styling

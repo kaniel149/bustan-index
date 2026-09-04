@@ -236,6 +236,13 @@ function readTitle(rel) {
 }
 
 function updated(rel) {
+  try {
+    const abs = path.join(ROOT, rel);
+    if (/\.html?$/i.test(rel)) {
+      const m = fs.readFileSync(abs, 'utf8').slice(0, 8000).match(/<meta\s+name=["']content-updated["']\s+content=["'](\d{4}-\d{2}-\d{2})["']/i);
+      if (m) return m[1];
+    }
+  } catch {}
   try { return execFileSync('git', ['log', '-1', '--format=%cs', '--', rel], { cwd: ROOT }).toString().trim() || null; } catch { return null; }
 }
 
