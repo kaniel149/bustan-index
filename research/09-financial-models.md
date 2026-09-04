@@ -1,5 +1,7 @@
 # 09. Financial Models & Financing for Solar Farms in Thailand
 
+> **Update — 4 September 2026:** Bank of Thailand policy rate 1.00% (held 26 Aug 2026); model 4.5–5.5% blended over 7–10 years (GSB Solar for Life 3.5% first 2 yrs; TTB SME solar 3.5% first 2 yrs, ≤8 yrs, up to 100%; Krungsri 4.99% then floating). Private rooftop PPA market 2.50–3.80 THB/kWh (Bustan headline 3.80, escalation 0–1.5%/yr) — the 4.50–5.00 range below is outdated. Avoided cost for self-consumption: 4.07 (MV) – 4.58 (small business) ex-VAT. Excess generation: residential net billing 2.20 THB/kWh (not net metering); commercial 0. Module CAPEX ≈ 6.5–7.5 M THB/MW. BOI CIT exemption applies only to power-for-sale projects (Cat. 7.1), not own-use rooftop. Direct PPA/TPA: draft regulation, not in force. Depreciation: per Revenue Code — confirm with accountant. Koh Phangan yield 1,424 kWh/kWp/yr (Global Solar Atlas); use 1,450 base / 1,400 P90.
+
 ## Table of Contents
 1. [Revenue Models Overview](#1-revenue-models-overview)
 2. [Community Solar FiT Model Economics](#2-community-solar-fit-model-economics)
@@ -136,7 +138,7 @@ Results:
 - **Capacity:** Up to 2,000 MW
 - **Structure:** Direct power purchase agreements bypassing state utilities (EGAT/PEA)
 - **Target:** Data centers, large industrial users
-- **Effective:** January 2026
+- **Effective:** draft regulation (data centres) — not yet in force as of Sep 2026
 - **Significance:** First time corporates can buy directly from generators in Thailand
 
 **Source:** GovSiam, "Thailand Approves Direct Power Purchase Agreements for Renewable Energy" (2025)
@@ -192,7 +194,7 @@ Results:
 ### 4.1 Structure
 - **No PPA required** — owner generates and consumes own electricity
 - **Revenue = avoided electricity cost:** THB 4.00-5.50/kWh (depending on tariff class)
-- **Excess generation:** Can sell back to grid at ~THB 2.20/kWh (net metering)
+- **Excess generation:** Residential only: sell back at THB 2.20/kWh (net billing, ≤5 kW export); commercial: 0
 - **Best for:** Industrial/commercial facilities with high daytime consumption
 - **Typical size:** 100 kW - 5 MW rooftop or adjacent ground-mount
 

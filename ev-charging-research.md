@@ -343,7 +343,7 @@
 - [ ] Order 4× AC chargers (Delta or Wallbox) — pilot
 - [ ] Order 1× DC charger (Delta 50kW) — Thong Sala
 - [ ] Set up OCPP backend (Evolt partnership or ChargeLab SaaS)
-- [ ] Design branding: "TM Charge" or "Bustan Energy Charging"
+- [ ] Design branding: "Bustan Charge" or "Bustan Energy Charging"
 
 ### Month 3: Installation — Phase 1
 - [ ] Install Thong Sala (AC×2 + DC×1) — highest priority

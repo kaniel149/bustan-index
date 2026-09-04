@@ -2,6 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="content-updated" content="2026-09-04">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bustan Energy — Bustan Energy — דשבורד פיננסי</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -144,7 +145,7 @@ a{color:var(--gold);text-decoration:none}
 <script src="auth.js"></script>
 <div class="tm-logo-header">
   <span class="brand-text">BUSTAN ENERGY</span>
-  <img src="proposals/tm-logo.png" alt="Bustan Energy">
+  <img src="assets/bustan-energy.svg" alt="Bustan Energy">
 </div>
 
 <div class="progress-bar" id="progress"></div>
@@ -159,7 +160,7 @@ a{color:var(--gold);text-decoration:none}
     <h1>דשבורד פיננסי<br><span class="gold">Bustan Energy</span></h1>
     <p class="subtitle">תכנון מול ביצוע | PPA Modeling | P&L</p>
   </div>
-  <p style="opacity:.4;font-size:13px">Bustan Energy — מרץ 2026</p>
+  <p style="opacity:.4;font-size:13px">Bustan Energy — עודכן 4.9.2026 · נתונים נכונים לספטמבר 2026</p>
 </div>
 
 <!-- SLIDE 1: Executive Dashboard -->
@@ -288,14 +289,14 @@ a{color:var(--gold);text-decoration:none}
         <table>
           <tr><th>פרמטר</th><th>ערך</th></tr>
           <tr><td>גודל מערכת</td><td>50 kWp</td></tr>
-          <tr><td>עלות מערכת</td><td>฿600,000 (฿12K/kWp)</td></tr>
-          <tr><td>ייצור שנתי</td><td>82,125 kWh (4.5h × 365 × 50)</td></tr>
+          <tr><td>עלות מערכת (all-in ESCO)</td><td>฿800,000 (฿16K/kWp)</td></tr>
+          <tr><td>ייצור שנתי</td><td>72,500 kWh (1,450 kWh/kWp — Global Solar Atlas)</td></tr>
           <tr><td>Degradation</td><td>0.5%/שנה</td></tr>
-          <tr><td>תעריף PPA</td><td>฿4.50/kWh</td></tr>
-          <tr><td>Escalation</td><td>CPI או עליית תעריפי PEA — הגבוה (~3%/שנה)</td></tr>
-          <tr><td>O&M</td><td>฿36K/שנה (฿3K/חודש)</td></tr>
-          <tr><td>ביטוח</td><td>฿7K/שנה (1%)</td></tr>
-          <tr><td>תעריף PEA</td><td>฿6-8/kWh (עולה 3%/שנה)</td></tr>
+          <tr><td>תעריף PPA</td><td>฿3.80/kWh</td></tr>
+          <tr><td>Escalation</td><td>1.5%/שנה (Ft מוקפא פוליטית; טווח 0-1.5%)</td></tr>
+          <tr><td>O&M</td><td>฿25K/שנה (฿500/kWp)</td></tr>
+          <tr><td>ביטוח</td><td>฿8K/שנה (1%)</td></tr>
+          <tr><td>תעריף PEA</td><td>฿4.58/kWh שולי לעסק קטן (לפני מע"מ), TOU שיא 5.96</td></tr>
           <tr><td>תקופת חוזה</td><td>15 שנים</td></tr>
         </table>
       </div>
@@ -305,23 +306,23 @@ a{color:var(--gold);text-decoration:none}
       <div class="table-wrap">
         <table>
           <tr><th>שנה</th><th>ייצור kWh</th><th>תעריף</th><th>הכנסה</th><th>O&M+ביטוח</th><th>נטו</th><th>מצטבר</th></tr>
-          <tr><td>0</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="coral-text">-600K</td><td class="coral-text">-600K</td></tr>
-          <tr><td>1</td><td>82,125</td><td>฿4.50</td><td>370K</td><td>43K</td><td>327K</td><td class="coral-text">-273K</td></tr>
-          <tr><td>2</td><td>81,714</td><td>฿4.64</td><td>379K</td><td>44K</td><td>335K</td><td class="reef-text">+62K</td></tr>
-          <tr><td>3</td><td>81,306</td><td>฿4.77</td><td>388K</td><td>45K</td><td>343K</td><td class="reef-text">+405K</td></tr>
-          <tr><td>4</td><td>80,899</td><td>฿4.92</td><td>398K</td><td>46K</td><td>352K</td><td class="reef-text">+757K</td></tr>
-          <tr><td>5</td><td>80,495</td><td>฿5.07</td><td>408K</td><td>48K</td><td>360K</td><td class="reef-text">+1.12M</td></tr>
-          <tr><td>6-10</td><td>~79K avg</td><td>฿5.22-5.87</td><td>2.20M</td><td>247K</td><td>1.95M</td><td class="reef-text">+3.07M</td></tr>
-          <tr><td>11-15</td><td>~77.7K avg</td><td>฿6.05-6.81</td><td>2.48M</td><td>273K</td><td>2.21M</td><td class="reef-text">+5.27M</td></tr>
-          <tr style="background:rgba(232,168,32,.1)"><td><strong>Total</strong></td><td></td><td></td><td><strong>6.62M</strong></td><td><strong>744K</strong></td><td><strong>5.87M</strong></td><td><strong class="gold">+5.27M</strong></td></tr>
+          <tr><td>0</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="coral-text">-800K</td><td class="coral-text">-800K</td></tr>
+          <tr><td>1</td><td>72,500</td><td>฿3.80</td><td>275.5K</td><td>33K</td><td>242.5K</td><td class="coral-text">-557.5K</td></tr>
+          <tr><td>2</td><td>72,138</td><td>฿3.86</td><td>278.2K</td><td>33.5K</td><td>244.7K</td><td class="coral-text">-312.8K</td></tr>
+          <tr><td>3</td><td>71,777</td><td>฿3.91</td><td>281.0K</td><td>34K</td><td>247.0K</td><td class="coral-text">-65.8K</td></tr>
+          <tr><td>4</td><td>71,418</td><td>฿3.97</td><td>283.8K</td><td>34.5K</td><td>249.3K</td><td class="reef-text">+183.5K</td></tr>
+          <tr><td>5</td><td>71,061</td><td>฿4.03</td><td>286.6K</td><td>35K</td><td>251.6K</td><td class="reef-text">+435K</td></tr>
+          <tr><td>6-10</td><td>~69.8K avg</td><td>฿4.09-4.35</td><td>1.48M</td><td>183K</td><td>1.29M</td><td class="reef-text">+1.73M</td></tr>
+          <tr><td>11-15</td><td>~68.1K avg</td><td>฿4.41-4.68</td><td>1.55M</td><td>197K</td><td>1.35M</td><td class="reef-text">+3.08M</td></tr>
+          <tr style="background:rgba(232,168,32,.1)"><td><strong>Total</strong></td><td></td><td></td><td><strong>4.43M</strong></td><td><strong>550K</strong></td><td><strong>3.88M</strong></td><td><strong class="gold">+3.08M</strong></td></tr>
         </table>
       </div>
     </div>
   </div>
   <div class="stat-grid">
-    <div><div class="big-num">1.8</div><div class="stat-label">שנות Payback</div></div>
+    <div><div class="big-num">3.3</div><div class="stat-label">שנות Payback</div></div>
     <div><div class="big-num">879%</div><div class="stat-label">ROI ב-15 שנים</div></div>
-    <div><div class="big-num">52%</div><div class="stat-label">IRR</div></div>
+    <div><div class="big-num">~29%</div><div class="stat-label">IRR (לא ממונף, לפני מס)</div></div>
     <div><div class="big-num">฿389K</div><div class="stat-label">הכנסה שנתית ממוצעת</div></div>
   </div>
 </div>
@@ -335,14 +336,14 @@ a{color:var(--gold);text-decoration:none}
       <h3 style="color:#6496FF">וילה 10kWp</h3>
       <div class="table-wrap" style="margin:8px 0">
         <table>
-          <tr><td>עלות מערכת</td><td><strong>฿120K</strong></td></tr>
-          <tr><td>ייצור שנתי</td><td>16,425 kWh</td></tr>
-          <tr><td>הכנסה שנתית</td><td>฿74K</td></tr>
-          <tr><td>O&M שנתי</td><td>฿18K</td></tr>
-          <tr><td>נטו שנתי</td><td>฿56K</td></tr>
-          <tr><td>Payback</td><td><strong class="gold">2.1 שנים</strong></td></tr>
-          <tr><td>15yr profit</td><td><strong class="reef-text">฿860K</strong></td></tr>
-          <tr><td>IRR</td><td>46%</td></tr>
+          <tr><td>עלות מערכת</td><td><strong>฿170K</strong></td></tr>
+          <tr><td>ייצור שנתי</td><td>14,500 kWh</td></tr>
+          <tr><td>הכנסה שנתית (฿3.80)</td><td>฿55K</td></tr>
+          <tr><td>O&M+ביטוח שנתי</td><td>฿6.7K</td></tr>
+          <tr><td>נטו שנתי</td><td>฿48K</td></tr>
+          <tr><td>Payback</td><td><strong class="gold">3.5 שנים</strong></td></tr>
+          <tr><td>15yr profit</td><td><strong class="reef-text">฿600K</strong></td></tr>
+          <tr><td>IRR</td><td>~27%</td></tr>
         </table>
       </div>
     </div>
@@ -350,14 +351,14 @@ a{color:var(--gold);text-decoration:none}
       <h3 class="gold">רזורט 50kWp</h3>
       <div class="table-wrap" style="margin:8px 0">
         <table>
-          <tr><td>עלות מערכת</td><td><strong>฿600K</strong></td></tr>
-          <tr><td>ייצור שנתי</td><td>82,125 kWh</td></tr>
-          <tr><td>הכנסה שנתית</td><td>฿370K</td></tr>
-          <tr><td>O&M שנתי</td><td>฿43K</td></tr>
-          <tr><td>נטו שנתי</td><td>฿327K</td></tr>
-          <tr><td>Payback</td><td><strong class="gold">1.8 שנים</strong></td></tr>
-          <tr><td>15yr profit</td><td><strong class="reef-text">฿5.27M</strong></td></tr>
-          <tr><td>IRR</td><td>52%</td></tr>
+          <tr><td>עלות מערכת</td><td><strong>฿800K</strong></td></tr>
+          <tr><td>ייצור שנתי</td><td>72,500 kWh</td></tr>
+          <tr><td>הכנסה שנתית (฿3.80)</td><td>฿275K</td></tr>
+          <tr><td>O&M+ביטוח שנתי</td><td>฿33K</td></tr>
+          <tr><td>נטו שנתי</td><td>฿242K</td></tr>
+          <tr><td>Payback</td><td><strong class="gold">3.3 שנים</strong></td></tr>
+          <tr><td>15yr profit</td><td><strong class="reef-text">฿3.08M</strong></td></tr>
+          <tr><td>IRR</td><td>~29%</td></tr>
         </table>
       </div>
     </div>
@@ -365,14 +366,14 @@ a{color:var(--gold);text-decoration:none}
       <h3 class="reef-text">מסחרי 100kWp</h3>
       <div class="table-wrap" style="margin:8px 0">
         <table>
-          <tr><td>עלות מערכת</td><td><strong>฿1.2M</strong></td></tr>
-          <tr><td>ייצור שנתי</td><td>164,250 kWh</td></tr>
-          <tr><td>הכנסה שנתית</td><td>฿739K</td></tr>
-          <tr><td>O&M שנתי</td><td>฿72K</td></tr>
-          <tr><td>נטו שנתי</td><td>฿667K</td></tr>
-          <tr><td>Payback</td><td><strong class="gold">1.8 שנים</strong></td></tr>
-          <tr><td>15yr profit</td><td><strong class="reef-text">฿10.5M</strong></td></tr>
-          <tr><td>IRR</td><td>52%</td></tr>
+          <tr><td>עלות מערכת</td><td><strong>฿1.45M</strong></td></tr>
+          <tr><td>ייצור שנתי</td><td>145,000 kWh</td></tr>
+          <tr><td>הכנסה שנתית (฿3.60)</td><td>฿522K</td></tr>
+          <tr><td>O&M+ביטוח שנתי</td><td>฿65K</td></tr>
+          <tr><td>נטו שנתי</td><td>฿457K</td></tr>
+          <tr><td>Payback</td><td><strong class="gold">3.2 שנים</strong></td></tr>
+          <tr><td>15yr profit</td><td><strong class="reef-text">฿5.9M</strong></td></tr>
+          <tr><td>IRR</td><td>~30%</td></tr>
         </table>
       </div>
     </div>
@@ -390,15 +391,15 @@ a{color:var(--gold);text-decoration:none}
       <tr><td><strong>מערכות PPA פעילות</strong></td><td>5</td><td>15</td><td>30</td></tr>
       <tr><td>kWp PPA מותקן</td><td>150</td><td>500</td><td>1,200</td></tr>
       <tr><td>השקעה מצטברת</td><td>฿2.1M</td><td>฿7M</td><td>฿16.8M</td></tr>
-      <tr style="color:var(--gold)"><td><strong>MRR מ-PPA</strong></td><td><strong>฿48K</strong></td><td><strong>฿159K</strong></td><td><strong>฿380K</strong></td></tr>
+      <tr style="color:var(--gold)"><td><strong>MRR מ-PPA</strong></td><td><strong>฿36K</strong></td><td><strong>฿118K</strong></td><td><strong>฿283K</strong></td></tr>
       <tr style="color:#2ED89A"><td><strong>MRR מ-O&M</strong></td><td><strong>฿25K</strong></td><td><strong>฿75K</strong></td><td><strong>฿150K</strong></td></tr>
-      <tr style="background:rgba(232,168,32,.1)"><td><strong>סה"כ MRR חוזר</strong></td><td><strong class="gold">฿73K</strong></td><td><strong class="gold">฿234K</strong></td><td><strong class="gold">฿530K</strong></td></tr>
-      <tr><td><strong>ARR חוזר</strong></td><td>฿876K</td><td>฿2.8M</td><td>฿6.36M</td></tr>
-      <tr><td>Asset Value (15yr cashflows)</td><td>฿10.5M</td><td>฿35M</td><td>฿86M</td></tr>
+      <tr style="background:rgba(232,168,32,.1)"><td><strong>סה"כ MRR חוזר</strong></td><td><strong class="gold">฿61K</strong></td><td><strong class="gold">฿193K</strong></td><td><strong class="gold">฿433K</strong></td></tr>
+      <tr><td><strong>ARR חוזר</strong></td><td>฿732K</td><td>฿2.32M</td><td>฿5.2M</td></tr>
+      <tr><td>Asset Value (15yr cashflows)</td><td>฿8.1M</td><td>฿27M</td><td>฿66M</td></tr>
     </table>
   </div>
   <div class="alert alert-info" style="margin-top:12px">
-    <strong>PPA = בניית נכס.</strong> אחרי 3 שנים: ฿86M בנכסים מניבים. MRR ฿530K = $15K/חודש הכנסה חוזרת פסיבית.
+    <strong>PPA = בניית נכס.</strong> אחרי 3 שנים: ฿66M בנכסים מניבים. MRR ฿433K = $13K/חודש הכנסה חוזרת פסיבית.
   </div>
 </div>
 
@@ -410,33 +411,33 @@ a{color:var(--gold);text-decoration:none}
     <div>
       <h3>מימון ללקוח (EPC)</h3>
       <div class="card" style="margin:8px 0;border-color:var(--gold)">
-        <h3>Krungsri Solar Loan</h3>
-        <p>100% מימון | 3.5% ריבית קבועה | עד 7 שנים<br>
+        <h3>GSB — Solar for Life</h3>
+        <p>3.5% בשנתיים הראשונות (3.25% עם בטוחה) | 5% שנים 3-5 | עד 7 שנים | עד ฿1M<br>
         <strong>הלקוח חוסך מיום 1:</strong> תשלום חודשי < חיסכון חשמל<br>
-        📞 02-626-2626</p>
+        📞 1115 · הגשה עד 31.3.2027</p>
       </div>
       <div class="card" style="margin:8px 0">
         <h3>Bangkok Bank Bualuang Green</h3>
-        <p>80% מימון | 4.5% | עד 5 שנים<br>
+        <p>בתים: MRR−1% ≈ 5.65% | עד 10 שנים · SME: MLR−1.25% בשנתיים | עד 8 שנים<br>
         דורשים Tier-1 equipment + licensed installer</p>
       </div>
       <div class="card" style="margin:8px 0">
-        <h3>SME Development Bank</h3>
-        <p>3% ריבית מסובסדת | עד ฿15M | SMEs בלבד<br>
-        📞 1357</p>
+        <h3>TTB — SME Solar Rooftop</h3>
+        <p>3.5% בשנתיים הראשונות | עד 100% מימון | עד 8 שנים | SMEs<br>
+        📞 1428</p>
       </div>
     </div>
     <div>
       <h3>מימון לנו (PPA)</h3>
       <div class="card" style="margin:8px 0;border-color:rgba(46,216,154,.3)">
         <h3 class="reef-text">Self-funded (שנה 1)</h3>
-        <p>5 מערכות × ฿600K avg = ฿3.0M השקעה עצמית<br>
-        ROI: 2.2 שנים → ฿2.24M רווח/מערכת</p>
+        <p>5 מערכות × ฿800K avg = ฿4.0M השקעה עצמית<br>
+        Payback 3.3 שנים → ฿3.08M רווח/מערכת (15 שנה)</p>
       </div>
       <div class="card" style="margin:8px 0;border-color:rgba(100,150,255,.3)">
         <h3 style="color:#6496FF">Project Finance (שנה 2+)</h3>
         <p>PPA contracts = ביטחון להלוואה<br>
-        EXIM Bank: 0.5% discount עם BOI<br>
+        TTB SME Solar: עד 100% מימון, 3.5% בשנתיים<br>
         LTV: 70-80% על בסיס PPA cashflows<br>
         <strong>ממנף ฿1 → ฿4 (leverage 1:3)</strong></p>
       </div>
@@ -508,7 +509,7 @@ a{color:var(--gold);text-decoration:none}
       <div class="calc-input">
         <label>גודל מערכת (kWp)<input type="number" id="calcKwp" value="50" min="5" max="500"></label>
         <label>עלות/kWp (฿)<input type="number" id="calcCostKwp" value="12000" min="10000" max="20000"></label>
-        <label>תעריף PPA (฿/kWh)<input type="number" id="calcRate" value="4.50" min="2" max="8" step="0.1"></label>
+        <label>תעריף PPA (฿/kWh)<input type="number" id="calcRate" value="3.80" min="2" max="8" step="0.1"></label>
         <label>שעות שמש/יום<input type="number" id="calcSun" value="4.5" min="3" max="6" step="0.1"></label>
         <label>Degradation (%/שנה)<input type="number" id="calcDeg" value="0.5" min="0" max="2" step="0.1"></label>
         <label>Escalation (%/שנה)<input type="number" id="calcEsc" value="3" min="0" max="5" step="0.5"></label>
@@ -666,11 +667,9 @@ window.PAGE_TRANSLATIONS = {
   "שער": {en: "Cover", th: "หน้าปก"},
   "דשבורד פיננסי": {en: "Financial Dashboard", th: "แดชบอร์ดการเงิน"},
   "תכנון מול ביצוע | PPA Modeling | P&L": {en: "Plan vs Actual | PPA Modeling | P&L", th: "แผนเทียบผล | การสร้างแบบจำลอง PPA | P&L"},
-  "Bustan Energy — מרץ 2026": {en: "Bustan Energy — March 2026", th: "Bustan Energy — มีนาคม 2026"},
   "דשבורד מנהלים": {en: "Executive Dashboard", th: "แดชบอร์ดผู้บริหาร"},
   "דשבורד מנהלים — שנה 1 תכנון": {en: "Executive Dashboard — Year 1 Plan", th: "แดชบอร์ดผู้บริหาร — แผนปีที่ 1"},
   "הכנסות צפויות": {en: "Expected Revenue", th: "รายได้ที่คาดการณ์"},
-  "רווח גולמי": {en: "Gross Profit", th: "กำไรขั้นต้น"},
   "רווח נקי": {en: "Net Profit", th: "กำไรสุทธิ"},
   "עסקאות": {en: "Deals", th: "ดีล"},
   "הכנסות לפי מודל": {en: "Revenue by Model", th: "รายได้ตามรูปแบบ"},
@@ -758,18 +757,13 @@ window.PAGE_TRANSLATIONS = {
   "סה\"כ MRR חוזר": {en: "Total Recurring MRR", th: "MRR ที่เกิดซ้ำทั้งหมด"},
   "ARR חוזר": {en: "Recurring ARR", th: "ARR ที่เกิดซ้ำ"},
   "PPA = בניית נכס.": {en: "PPA = Asset building.", th: "PPA = การสร้างทรัพย์สิน"},
-  "אחרי 3 שנים: ฿86M בנכסים מניבים. MRR ฿530K = $15K/חודש הכנסה חוזרת פסיבית.": {en: "After 3 years: ฿86M in income-generating assets. MRR ฿530K = $15K/month passive recurring income.", th: "หลัง 3 ปี: ฿86M ในทรัพย์สินที่สร้างรายได้ MRR ฿530K = $15K/เดือน รายได้แบบ passive"},
   "מימון בנקאי": {en: "Bank Financing", th: "การจัดหาเงินทุนจากธนาคาร"},
   "מימון — מקורות + מבנה": {en: "Financing — Sources + Structure", th: "การจัดหาเงินทุน — แหล่งที่มา + โครงสร้าง"},
   "מימון ללקוח (EPC)": {en: "Customer Financing (EPC)", th: "การจัดหาเงินทุนสำหรับลูกค้า (EPC)"},
   "הלקוח חוסך מיום 1:": {en: "Customer saves from day 1:", th: "ลูกค้าประหยัดตั้งแต่วันแรก:"},
   "תשלום חודשי < חיסכון חשמל": {en: "Monthly payment < electricity savings", th: "การชำระรายเดือน < การประหยัดค่าไฟ"},
   "דורשים Tier-1 equipment + licensed installer": {en: "Requires Tier-1 equipment + licensed installer", th: "ต้องการอุปกรณ์ Tier-1 + ผู้ติดตั้งที่มีใบอนุญาต"},
-  "ריבית מסובסדת": {en: "Subsidized interest", th: "ดอกเบี้ยอุดหนุน"},
-  "SMEs בלבד": {en: "SMEs only", th: "เฉพาะ SME เท่านั้น"},
   "מימון לנו (PPA)": {en: "Our Financing (PPA)", th: "การจัดหาเงินทุนของเรา (PPA)"},
-  "5 מערכות × ฿600K avg = ฿3.0M השקעה עצמית": {en: "5 systems × ฿600K avg = ฿3.0M self-investment", th: "5 ระบบ × ฿600K เฉลี่ย = ฿3.0M การลงทุนด้วยตนเอง"},
-  "ROI: 2.2 שנים → ฿2.24M רווח/מערכת": {en: "ROI: 2.2 years → ฿2.24M profit/system", th: "ROI: 2.2 ปี → ฿2.24M กำไร/ระบบ"},
   "PPA contracts = ביטחון להלוואה": {en: "PPA contracts = loan collateral", th: "สัญญา PPA = หลักประกันเงินกู้"},
   "LTV: 70-80% על בסיס PPA cashflows": {en: "LTV: 70-80% based on PPA cashflows", th: "LTV: 70-80% จาก PPA cashflows"},
   "ממנף ฿1 → ฿4 (leverage 1:3)": {en: "Leverage ฿1 → ฿4 (leverage 1:3)", th: "เลเวอเรจ ฿1 → ฿4 (เลเวอเรจ 1:3)"},
@@ -838,8 +832,6 @@ window.PAGE_TRANSLATIONS = {
   "הבא ←": {en: "Next ←", th: "ถัดไป ←"},
   "O&M+ביטוח": {en: "O&M+Insurance", th: "O&M+ประกัน"},
   "ביטוח": {en: "Insurance", th: "ประกันภัย"},
-  "CPI או עליית תעריפי PEA — הגבוה (~3%/שנה)": {en: "CPI or PEA tariff increase — whichever is higher (~3%/year)", th: "CPI หรือการขึ้นอัตรา PEA — สูงกว่า (~3%/ปี)"},
-  "עולה 3%/שנה": {en: "increases 3%/year", th: "เพิ่มขึ้น 3%/ปี"},
   "15 שנים": {en: "15 years", th: "15 ปี"},
   "0.5%/שנה": {en: "0.5%/year", th: "0.5%/ปี"},
   "שנה 1": {en: "Year 1", th: "ปีที่ 1"},
@@ -847,17 +839,11 @@ window.PAGE_TRANSLATIONS = {
   "שנה 3": {en: "Year 3", th: "ปีที่ 3"},
   "שנים": {en: "years", th: "ปี"},
   "kWp PPA מותקן": {en: "kWp PPA Installed", th: "kWp PPA ที่ติดตั้ง"},
-  "ריבית קבועה": {en: "fixed interest", th: "ดอกเบี้ยคงที่"},
-  "ריבית": {en: "interest", th: "ดอกเบี้ย"},
   "מימון": {en: "financing", th: "การจัดหาเงินทุน"},
   "עד 7 שנים": {en: "up to 7 years", th: "สูงสุด 7 ปี"},
-  "עד 5 שנים": {en: "up to 5 years", th: "สูงสุด 5 ปี"},
-  "עם BOI": {en: "with BOI", th: "พร้อม BOI"},
   'סה"כ שנה 1:': {en: "Total Year 1:", th: "รวมปีที่ 1:"},
   "ייצור": {en: "Production", th: "การผลิต"},
   "עם EPC:": {en: "with EPC:", th: "พร้อม EPC:"},
-  "מדרג PPA": {en: "PPA escalation", th: "การปรับอัตรา PPA"},
-  "כולל": {en: "includes", th: "รวม"},
   "בנכסים מניבים": {en: "in income-generating assets", th: "ในทรัพย์สินที่สร้างรายได้"},
 };
 </script>

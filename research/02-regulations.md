@@ -1,6 +1,16 @@
 # Solar Farm Regulations in Thailand
 
-> Research compiled March 2026 | Bustan Energy Project
+> **Update — 4 September 2026 (supersedes March 2026 status where they conflict):**
+> - **Residential rooftop net billing (ERC regulation 24 Jun 2026):** 2.20 THB/kWh export, 10-yr contract, ≤5 kW AC export per meter, Type 1 residential meters only, 500 MW national quota (auto-extends +500 MW), applications on PEA PPIM 1 Jul 2026 – 30 Nov 2027. Commercial (Type 2+) export = 0 → zero-export. No net metering exists.
+> - **Licensing <1,000 kVA:** ERC exemption notification only (ERC Office Ann. 74-2568, 4 Apr 2025), filed via PEA PPIM; 200–999 kVA also needs พค.2. NEPC 29 Apr 2026: PEA/MEA one-stop, 7-day (self-use) / 30-day (with sale) targets.
+> - **Building permit (Or.1):** not required for installations ≤20 kg/m² on any building since **19 Nov 2025** (Interior Ministerial Reg. No. 72 B.E. 2568, issued 17 Nov).
+> - **BOI:** solar for own use removed from the efficiency-enhancement measure from 1 Jul 2025 (Ann. 3/2568); Cat. 7.1 (power for sale) still promoted.
+> - **Tax:** Royal Decree No. 805 B.E. 2569 — personal deduction up to 200,000 THB (on-grid rooftop ≤10 kWp, meter owner, e-Tax Invoice, 3 Mar 2026–31 Dec 2028); corporate 150% deduction on 5-star equipment.
+> - **TIS mandatory wave:** modules TIS 61730-2 (May 2026); PV cable 62930, ESS battery 63056, inverter 2603-2, PV fuse 60269-6, DC breaker 60947-2 (target Sep 2026); DC connectors 62852, DC switchgear 61439-8 (target Dec 2026).
+> - **Thai Ltd:** 2 shareholders minimum (since Feb 2023). Bustan Energy is an Israeli-founded Thai company (KANIEL TORD LLC, Florida, as parent) — not Danish.
+> - Legacy PPA restructuring: NEPC 15 Jul 2026 approved cutting 565 legacy solar/wind PPAs to ~2.16 THB/kWh and ending auto-renewals.
+
+> Research compiled March 2026 · updated 4 Sep 2026 | Bustan Energy Project
 > Sources cited inline; verify critical details with Thai legal counsel before relying on this document.
 
 ---
@@ -388,7 +398,7 @@ In **April 2025**, the Thai Cabinet approved in principle amendments to the FBA:
 
 ### 7.5 Practical Recommendations
 
-For Bustan Energy (Danish company entering Thailand):
+For Bustan Energy (Israeli-founded company with a US (Florida LLC) parent entering Thailand):
 
 1. **BOI promotion is the clear path** — Provides foreign ownership, tax benefits, and operational flexibility
 2. **Apply for BOI before company registration** — BOI approval needed before setting up Thai entity
@@ -527,7 +537,7 @@ The BOI has been updating its promotion policies to align with Thailand's carbon
 | Royalties/service fees | 15% | May be reduced by DTA |
 | Contractor payments (Thai) | 3% | Creditable against CIT |
 
-**Denmark-Thailand Double Tax Agreement (DTA):**
+**Double Tax Agreements (Israel–Thailand and US–Thailand DTAs; the Denmark reference below is historical):**
 - Dividends: 10% (if ≥25% ownership) or 15% otherwise
 - Interest: 10%
 - Royalties: 5% or 15%
@@ -645,7 +655,7 @@ The BOI has been updating its promotion policies to align with Thailand's carbon
 | Average retail tariff | ฿3.50–4.50/kWh | Varies by category |
 | CIT rate | 20% (or 0% with BOI) | 8-year BOI holiday |
 | VAT | 7% | Standard rate |
-| WHT on dividends (Denmark) | 10% | Under DTA |
+| WHT on dividends (Israel/US) | 10–15% | Under the applicable DTA — confirm with accountant |
 | Typical CAPEX | ฿25–35M per MW | Ground-mount, all-in |
 | Annual O&M | ฿500K–800K per MW | Including insurance |
 | Capacity factor | 15–18% | Central Thailand average |

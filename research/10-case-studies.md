@@ -456,7 +456,7 @@
 1. **Private PPA at ฿4.50 vs FiT at ฿2.25** — 2x revenue per kWh
 2. **Grid-connected island** — no diesel backup needed, lower cost than Koh Phaluai
 3. **Tourism-driven demand** — stable, growing off-take
-4. **TM Developers partnership** — local entity, construction crew, client base
+4. **Bustan Energy partnership** — local entity, construction crew, client base
 5. **First-mover on Koh Phangan** — no competing solar farms on the island
 
 ### Recommended Approach (Based on Case Studies)

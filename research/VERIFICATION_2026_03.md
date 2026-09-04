@@ -336,3 +336,19 @@
 
 *Verification report compiled by Rex (Research & Intelligence Agent), March 18, 2026*
 *For internal use by Bustan Energy project team*
+
+
+---
+
+## Closure — 4 September 2026 (content refresh)
+
+Full audit and market/regulation check: see `presentations/VALIDATION.md` and the September 2026 update blocks at the top of research/02, 03, 05, 07, 09 and README. Resolved in this pass:
+- PPA tariff 4.50 → **3.80 THB/kWh** (market 2.50–3.80); PEA retail "6–8" → marginal 4.52/4.58 ex-VAT (avg 3.86, Sep–Dec 2026).
+- Net metering claims → **net billing** (2.20 residential ≤5 kW; commercial 0); "6.01–6.85 southern FiT" removed (obsolete 2013–15 tiers).
+- Installed cost 11,800/12,000 → 17,000 / 14,500 / 13,500–14,500 THB/kWp by size; sale price tiers 34K/30K/24K/22K; yield 1,640 → 1,450 kWh/kWp.
+- Bank terms: Krungsri 3.5%/10 yr → GSB Solar for Life / TTB SME (3.5% first 2 yrs); BoT 1.00%.
+- BOI 8-yr holiday removed from rooftop/ESCO contexts (own-use dropped 1 Jul 2025); ฿200K personal deduction stated with Royal Decree 805 conditions.
+- BESS 18,000 THB/kWh (farm guide) → 8,000 utility / 9,000–12,000 rooftop; module price 5,500 → 1,750 THB/panel; ground-mount EPC 26–37 → 17–25 M THB/MW.
+- Grid: "no upgrades until 2030+" → EGAT 230 kV 2028/2029 + PEA 115 kV circuit 4 (2028); PEA 73 → 74 provinces.
+- Brand: all TM Energy / TM Developers / Copenhagen Solar leftovers replaced (incl. Thai legal name in pea-docs and regenerated PDFs); old phone and CRM URLs replaced.
+Still open (not verifiable from primary sources): Thai Customs MFN for HS 8541.43; KBank/Krungthai current SME rates; ESCO discount %; PEA Type 3 rates; TIS Gazette publication; 500 MW quota uptake; Lopburi/ADB-GRE project figures in research/10–11.

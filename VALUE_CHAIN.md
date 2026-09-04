@@ -141,7 +141,7 @@ electricity_analysis: id, project_id,
   - הצגת אזורי הצללה
   - מרחק בין שורות
 - **בחירת ציוד** (dropdown מהמלאי):
-  - Panel: LONGi Hi-MO X6 580W / 550W / 400W
+  - Panel: JA / Jinko / Trina TOPCon 555–620W
   - Inverter: Huawei SUN2000 5/8/10/15/20KTL
   - Battery: Huawei LUNA2000 5/10/15 kWh
   - Mounting: Roof/Ground/Ballast
@@ -378,7 +378,7 @@ installation_issues: id, installation_id, issue_type,
 ## שלב 10: 🔌 Grid Connection — חיבור PEA
 
 ### מה קורה
-- הגשת בקשה ל-PEA (30 יום הודעה)
+- הודעת פטור ל-ERC + בקשת חיבור ב-PEA PPIM (15-30 ימי עבודה); net billing למגורים בלבד (฿2.20, עד 5 kW), zero-export לעסקים
 - התקנת מונה דו-כיווני
 - בדיקת PEA
 - אישור חיבור
