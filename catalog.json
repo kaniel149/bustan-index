@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-04",
- "count": 202,
+ "generated": "2026-09-05",
+ "count": 205,
  "entries": [
   {
    "title": "Presentations hub",
@@ -25,7 +25,7 @@
    ],
    "audience": "internal",
    "updated": "2026-09-04",
-   "size": 62981,
+   "size": 62989,
    "alt": "Community-solar models and their fit for Thailand",
    "thumb": "assets/thumbs/presentations-community-solar-research.webp"
   },
@@ -54,7 +54,7 @@
    ],
    "audience": "investor",
    "updated": "2026-09-04",
-   "size": 74088,
+   "size": 74155,
    "alt": "Charging-station opportunity, sites, unit economics",
    "thumb": "assets/thumbs/presentations-ev-charging-koh-phangan.webp"
   },
@@ -84,7 +84,7 @@
    ],
    "audience": "investor",
    "updated": "2026-09-04",
-   "size": 69762,
+   "size": 69774,
    "alt": "EV charging network (Hebrew twin)",
    "thumb": "assets/thumbs/presentations-ev-charging-koh-phangan-he.webp"
   },
@@ -231,6 +231,44 @@
    "alt": "Grid connection + O&M"
   },
   {
+   "title": "Supplier request — TIS / IEC certificates per model (Integra Renewable Energy)",
+   "path": "docs/supplier-tis-request-2026-09.md",
+   "kind": "doc",
+   "group": "docs",
+   "lang": [
+    "th"
+   ],
+   "audience": "internal",
+   "updated": null,
+   "size": 9011
+  },
+  {
+   "title": "רישום מתקין וציוד ב-PEA/MEA — צ'קליסט לקניאל (דדליין 30.9.2026)",
+   "path": "docs/pea-installer-registration-2026.md",
+   "kind": "doc",
+   "group": "docs",
+   "lang": [
+    "he",
+    "th"
+   ],
+   "audience": "internal",
+   "updated": null,
+   "size": 11422
+  },
+  {
+   "title": "תדריך לעו\"ד — בדיקת חוזי PPA ו-EPC (ספטמבר 2026)",
+   "path": "docs/legal-review-brief-2026-09.md",
+   "kind": "doc",
+   "group": "docs",
+   "lang": [
+    "he",
+    "th"
+   ],
+   "audience": "internal",
+   "updated": null,
+   "size": 10686
+  },
+  {
    "title": "Drone island scan plan",
    "path": "DRONE_SCAN_PLAN.md",
    "kind": "doc",
@@ -239,7 +277,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 13241
   },
   {
@@ -288,7 +326,7 @@
    ],
    "audience": "client",
    "updated": "2026-09-04",
-   "size": 71305,
+   "size": 71496,
    "alt": "PPA contract"
   },
   {
@@ -301,7 +339,7 @@
    ],
    "audience": "client",
    "updated": "2026-09-04",
-   "size": 65166,
+   "size": 65310,
    "alt": "EPC contract"
   },
   {
@@ -314,7 +352,7 @@
    ],
    "audience": "client",
    "updated": "2026-09-04",
-   "size": 64363,
+   "size": 78417,
    "alt": "Legal, contracts & agreements",
    "playbook": true,
    "thumb": "assets/thumbs/legal-contracts.webp"
@@ -329,7 +367,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 41863,
+   "size": 41868,
    "playbook": true,
    "thumb": "assets/thumbs/solar-farm-guide.webp"
   },
@@ -357,7 +395,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 44144,
+   "size": 44393,
    "alt": "Drone roof-scanning guide",
    "playbook": true,
    "thumb": "assets/thumbs/drone-guide.webp"
@@ -372,7 +410,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 58280,
+   "size": 62835,
    "alt": "Monitoring & maintenance",
    "playbook": true,
    "thumb": "assets/thumbs/monitoring-maintenance.webp"
@@ -387,7 +425,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 102391,
+   "size": 117406,
    "alt": "Licensing solar systems in Thailand",
    "playbook": true,
    "thumb": "assets/thumbs/licensing.webp"
@@ -402,7 +440,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 60243,
+   "size": 63098,
    "alt": "Procurement & engineering",
    "playbook": true,
    "thumb": "assets/thumbs/procurement-engineering.webp"
@@ -432,7 +470,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 83355,
+   "size": 91432,
    "alt": "Installation process",
    "playbook": true,
    "thumb": "assets/thumbs/installation.webp"
@@ -542,7 +580,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 20201
   },
   {
@@ -555,7 +593,7 @@
    ],
    "audience": "internal",
    "updated": "2026-09-03",
-   "size": 3234,
+   "size": 4663,
    "alt": "Financing deck vs business-plan workbook, cell by cell"
   },
   {
@@ -567,7 +605,7 @@
     "en"
    ],
    "audience": "client",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 4374,
    "alt": "Company one-pager"
   },
@@ -581,7 +619,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 68879,
+   "size": 68897,
    "alt": "15 slides",
    "playbook": true,
    "thumb": "assets/thumbs/crm-value-chain.webp"
@@ -596,7 +634,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 23660,
+   "size": 53266,
    "alt": "Customer avatars",
    "playbook": true,
    "thumb": "assets/thumbs/customer-avatars.webp"
@@ -611,7 +649,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 25686,
+   "size": 47061,
    "alt": "Value-chain architecture (CRM)",
    "playbook": true,
    "thumb": "assets/thumbs/value-chain.webp"
@@ -626,7 +664,7 @@
    ],
    "audience": "team",
    "updated": "2026-09-04",
-   "size": 77906,
+   "size": 102312,
    "alt": "Sales & marketing playbook",
    "playbook": true,
    "thumb": "assets/thumbs/sales-marketing.webp"
@@ -641,7 +679,7 @@
    ],
    "audience": "internal",
    "updated": "2026-09-03",
-   "size": 19285,
+   "size": 29918,
    "alt": "Ko Phangan Solar Business Plan (canonical numbers)"
   },
   {
@@ -654,7 +692,7 @@
    ],
    "audience": "internal",
    "updated": "2026-09-04",
-   "size": 73851,
+   "size": 79678,
    "alt": "Strategy deck",
    "playbook": true,
    "thumb": "assets/thumbs/strategy.webp"
@@ -669,7 +707,7 @@
    ],
    "audience": "internal",
    "updated": "2026-09-04",
-   "size": 67082,
+   "size": 69971,
    "alt": "Financial dashboard",
    "playbook": true,
    "thumb": "assets/thumbs/financial-dashboard.webp"
@@ -684,7 +722,7 @@
    ],
    "audience": "internal",
    "updated": "2026-09-04",
-   "size": 46389,
+   "size": 56693,
    "alt": "Financing deep dive — banks, terms, PPA/ESCO math",
    "playbook": true,
    "thumb": "assets/thumbs/financing.webp"
@@ -698,8 +736,8 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-09-04",
-   "size": 106792,
+   "updated": "2026-09-05",
+   "size": 111768,
    "alt": "P&L + full build-out plan",
    "playbook": true,
    "thumb": "assets/thumbs/pnl-plan.webp"
@@ -714,7 +752,7 @@
    ],
    "audience": "internal",
    "updated": "2026-09-04",
-   "size": 89148,
+   "size": 98387,
    "alt": "Business plan — year 1",
    "playbook": true,
    "thumb": "assets/thumbs/business-plan.webp"
@@ -1214,7 +1252,7 @@
     "he"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 43885,
    "alt": "תוכנית סריקת רחפן"
   },
@@ -1347,7 +1385,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-09-03",
+   "updated": "2026-09-04",
    "size": 71396,
    "alt": "Roof scanner + solar atlas (unified)"
   },
@@ -1360,7 +1398,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 15586
   },
   {
@@ -1372,7 +1410,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 11430
   },
   {
@@ -1384,7 +1422,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 55179
   },
   {
@@ -1396,7 +1434,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 10907
   },
   {
@@ -1432,7 +1470,7 @@
     "en"
    ],
    "audience": "client",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 75623
   },
   {
@@ -1444,7 +1482,7 @@
     "en"
    ],
    "audience": "client",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 75594
   },
   {
@@ -1456,7 +1494,7 @@
     "he"
    ],
    "audience": "client",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 67590,
    "alt": "Proposal 001 (Hebrew)"
   },
@@ -1469,7 +1507,7 @@
     "th"
    ],
    "audience": "client",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 75235,
    "alt": "Proposal 001 (Thai)"
   },
@@ -1506,7 +1544,7 @@
     "en"
    ],
    "audience": "client",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 60863
   },
   {
@@ -1530,7 +1568,7 @@
     "en"
    ],
    "audience": "client",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 89757
   },
   {
@@ -1542,7 +1580,7 @@
     "en"
    ],
    "audience": "client",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 59456
   },
   {
@@ -1604,7 +1642,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-03-13",
+   "updated": "2026-09-04",
    "size": 597175
   },
   {
@@ -1628,7 +1666,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-03-13",
+   "updated": "2026-09-04",
    "size": 539749
   },
   {
@@ -1664,7 +1702,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-03-13",
+   "updated": "2026-09-04",
    "size": 472452
   },
   {
@@ -1724,7 +1762,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 2410,
    "hub": true
   },
@@ -1737,8 +1775,8 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
-   "size": 15855
+   "updated": "2026-09-04",
+   "size": 15859
   },
   {
    "title": "Research verification — March 2026",
@@ -1749,7 +1787,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 20932
   },
   {
@@ -1797,7 +1835,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 33767
   },
   {
@@ -1809,7 +1847,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-03-10",
+   "updated": "2026-09-04",
    "size": 42444
   },
   {
@@ -1833,7 +1871,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-03-10",
+   "updated": "2026-09-04",
    "size": 45328
   },
   {
@@ -1857,7 +1895,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 34682
   },
   {
@@ -1881,7 +1919,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 38947
   },
   {
@@ -1893,7 +1931,7 @@
     "en"
    ],
    "audience": "internal",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 18610
   },
   {
@@ -2084,7 +2122,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 10216
   },
   {
@@ -2096,7 +2134,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 13228
   },
   {
@@ -2146,7 +2184,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 3023
   },
   {
@@ -2158,7 +2196,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 3197
   },
   {
@@ -2170,7 +2208,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 3467
   },
   {
@@ -2182,7 +2220,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 3956
   },
   {
@@ -2194,7 +2232,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 4076
   },
   {
@@ -2206,7 +2244,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-14",
+   "updated": "2026-09-04",
    "size": 3699
   },
   {
@@ -2218,7 +2256,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 4595
   },
   {
@@ -2230,7 +2268,7 @@
     "en"
    ],
    "audience": "team",
-   "updated": "2026-06-10",
+   "updated": "2026-09-04",
    "size": 4621
   },
   {
