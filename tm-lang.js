@@ -116,7 +116,7 @@
     '.subtitle','.stat-label','.stat-num','.tag','.cover-meta',
     '.card-icon + h3','.card p','.filter-label',
     '.alert','.detail','.time','.flow-label','.flow-sub','.bar-label','.clause','.sub-clause','.section-title',
-    '.bank-detail','.bank-desc','.m-label','.stat-desc','.highlight-box','.highlight-gold','.highlight-green','.response','.deal-size','.stat','.month-cell','.bank-name',
+    '.bank-detail','.bank-desc','.m-label','.stat-desc','.highlight-box','.highlight-gold','.highlight-green','.response','.deal-size','.stat','.month-cell','.bank-name','.sig-label','.contract-type','.chain-desc','.chain-model','.detail-sub','.pipe-label','.summary-label','.avatar-name','.avatar-title','.model-reason','.step-content','.warning','.important','.success',
     'a[href]'
   ].join(',');
 
