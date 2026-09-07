@@ -33,3 +33,11 @@ node academy/tests/run-all.mjs
 Tests cover data/schema/languages/source references, generated anchors and JavaScript, conservation in the energy model, shared foundation sequencing, search, legacy progress retention, quiz thresholds, storage failure and concurrent notebook changes. Browser verification covers desktop/mobile Hebrew/English/Thai, lesson navigation, notes, quiz completion and the energy exercise.
 
 Before changing tariff or permitting content, verify the relevant primary authority publication and effective date for the actual customer class, system and location. Product manual examples are model-specific and never imply PEA approval or universal settings. Keep training assumptions clearly separate from current project facts.
+
+## Visual learning
+
+Every one of the 86 lessons (62 role-curriculum lessons and 24 earlier lessons) includes an original diagram and a selected professional video with lesson-specific observation prompts, takeaway and reflection question. The diagram, caption, text alternative and guidance are authored in English, Hebrew and Thai. Desktop/mobile SVG variants preserve all text and provide a larger dialog view. Four introductory lessons also show the clearly labelled AI-generated generic equipment identification image.
+
+The video library at `media.html` groups 33 unique videos and links each to its related lessons; multilingual topic search and original-audio filtering are available. Original publisher titles/audio are preserved. Captions and translation availability are controlled by YouTube/publishers, and videos are not represented as professionally dubbed in all languages. Embeds use youtube-nocookie and load only after a click; source links remain available. No video completion or watch-time tracking is added.
+
+Edit the four `media-data/*.json` source bundles and rebuild with the curriculum generator. The video ledgers document exact source/title/channel checks on 7 September 2026 and the limits of older or manufacturer-specific demonstrations. Original diagrams are academy teaching models, not installation schematics. Earlier generated images and unverified video blocks have been removed from the visible lesson pages. Existing quizzes and progress storage remain intact.

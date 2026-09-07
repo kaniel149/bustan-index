@@ -1,0 +1,33 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {renderDiagram} from './visual-diagrams.mjs';
+export const academyDir=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+export const MEDIA_VERSION='media-20260907';
+export const e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export const T=(en,he,th)=>({en,he,th});
+export const t=x=>['en','he','th'].map(l=>`<span data-${l}>${e(x[l])}</span>`).join('');
+const data=['foundation','technical','commercial','planning-management'].filter(f=>fs.existsSync(path.join(academyDir,'media-data',f+'.json'))).map(f=>JSON.parse(fs.readFileSync(path.join(academyDir,'media-data',f+'.json'),'utf8')));
+export const videoMap=new Map(data.flatMap(d=>d.videos).map(v=>[v.id,v]));
+export const mediaPacks=new Map(data.flatMap(d=>d.lessons).map(p=>[p.lesson,p]));
+export function createDiagramFiles(){
+ const dir=path.join(academyDir,'media/diagrams');fs.mkdirSync(dir,{recursive:true});
+ for(const pack of mediaPacks.values())for(const lang of ['en','he','th'])for(const mobile of [false,true])fs.writeFileSync(path.join(dir,`${pack.lesson}-${lang}${mobile?'-mobile':''}.svg`),renderDiagram(pack.diagram,lang,{mobile}));
+}
+function figure(pack){
+ const d=pack.diagram,slug=pack.lesson;
+ return `<figure class="teaching-figure"><picture><source media="(max-width:600px)" srcset="../media/diagrams/${slug}-en-mobile.svg" data-diagram-source="${slug}"><img src="../media/diagrams/${slug}-en.svg" data-diagram="${slug}" ${['en','he','th'].map(l=>`data-alt-${l}="${e(d.alt[l])}"`).join(' ')} alt="${e(d.alt.en)}" loading="lazy" decoding="async"></picture><div class="figure-tools"><button type="button" class="btn" data-enlarge-diagram>${t(T('Enlarge diagram','הגדלת התרשים','ขยายแผนภาพ'))}</button><a class="btn" href="#watch-and-apply">${t(T('Go to the lesson video','לסרטון של השיעור','ไปยังวิดีโอของบท'))}</a><details><summary>${t(T('Read the diagram as text','קריאת התרשים כטקסט','อ่านแผนภาพเป็นข้อความ'))}</summary><ol>${d.nodes.map(n=>`<li><strong>${t(n.label)}</strong> — ${t(n.detail)}${n.value!==undefined?` · <bdi>${n.value} ${t(d.unit)}</bdi>`:''}</li>`).join('')}</ol></details></div><figcaption>${t(d.caption)}</figcaption></figure>`;
+}
+function componentFigure(){
+ const labels=[T('Top left: solar module — converts sunlight into DC electricity.','למעלה משמאל: פאנל — ממיר אור שמש לחשמל DC.','ซ้ายบน: แผงโซลาร์ — เปลี่ยนแสงอาทิตย์เป็นไฟฟ้า DC'),T('Top right: inverter — controls conversion between electrical interfaces.','למעלה מימין: ממיר — מנהל המרה בין ממשקים חשמליים.','ขวาบน: อินเวอร์เตอร์ — ควบคุมการแปลงระหว่างส่วนต่อไฟฟ้า'),T('Bottom left: battery — stores energy for later use.','למטה משמאל: סוללה — אוגרת אנרגיה לשימוש מאוחר יותר.','ซ้ายล่าง: แบตเตอรี่ — เก็บพลังงานไว้ใช้ภายหลัง'),T('Bottom right: electricity meter — measures energy at its defined boundary.','למטה מימין: מונה — מודד אנרגיה בגבול שהוגדר עבורו.','ขวาล่าง: มิเตอร์ไฟฟ้า — วัดพลังงาน ณ ขอบเขตที่กำหนด')];
+ return `<figure class="component-figure"><img src="../media/system-components.png" alt="Solar module, inverter, battery and electricity meter — conceptual equipment identification" data-component-image loading="lazy" decoding="async" width="1536" height="1024"><ul class="component-key">${labels.map(l=>`<li>${t(l)}</li>`).join('')}</ul><figcaption>${t(T('AI-generated identification illustration: generic closed equipment, not an installation or a particular approved product.','איור המחשה שנוצר ב־AI לזיהוי רכיבים: ציוד גנרי סגור, לא תצורת התקנה או מוצר מאושר מסוים.','ภาพประกอบสร้างด้วย AI เพื่อรู้จักอุปกรณ์: อุปกรณ์ทั่วไปปิดฝา ไม่ใช่แบบติดตั้งหรือผลิตภัณฑ์ที่รับรองเฉพาะ'))}</figcaption></figure>`;
+}
+export function lessonVisual(slug){
+ const pack=mediaPacks.get(slug);if(!pack)return '';
+ return `<!-- BUSTAN VISUAL START --><section class="lesson-section lesson-media" id="visual-guide" data-media-lesson="${slug}"><p class="eyebrow">${t(T('See the idea','רואים את הרעיון','มองเห็นแนวคิด'))}</p><h2>${t(pack.diagram.title)}</h2>${['foundation-01','solar-fundamentals-01','installers-03','service-01'].includes(slug)?componentFigure():''}${figure(pack)}</section><!-- BUSTAN VISUAL END -->`;
+}
+export function lessonVideo(slug){
+ const p=mediaPacks.get(slug);if(!p)return '';const v=videoMap.get(p.videoId);if(!v)throw Error('Missing video '+p.videoId);
+ const lang={en:T('English','אנגלית','อังกฤษ'),he:T('Hebrew','עברית','ฮีบรู'),th:T('Thai','תאילנדית','ไทย')}[v.language];
+ return `<!-- BUSTAN VIDEO START --><section class="lesson-section lesson-media guided-video" id="watch-and-apply" data-video-id="${e(v.youtubeId)}"><p class="eyebrow">${t(T('Watch and apply','צופים ומיישמים','ดูแล้วนำไปใช้'))}</p><h2>${t(T('A professional demonstration','הדגמה מקצועית','การสาธิตจากผู้เชี่ยวชาญ'))}</h2><p class="watch-prompt"><strong>${t(T('Before pressing play','לפני שמפעילים','ก่อนกดเล่น'))}</strong><br>${t(p.watchFor)}</p><div class="video-stage"><button type="button" class="video-launch" data-play-video aria-label="Play video: ${e(v.title)}"><img src="https://i.ytimg.com/vi/${e(v.youtubeId)}/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="play-symbol" aria-hidden="true">▶</span><span class="play-label">${t(T('Play the video','הפעלת הסרטון','เล่นวิดีโอ'))}</span></button></div><h3 class="source-video-title" data-original-title lang="${v.language}" dir="auto">${e(v.title)}</h3><div class="video-meta"><span>${e(v.publisher)}</span><span>${t(T('Original audio','שפת המקור','เสียงต้นฉบับ'))}: ${t(lang)}</span><a href="${e(v.url)}" target="_blank" rel="noopener">${t(T('Watch on YouTube ↗','צפייה ב־YouTube ↗','ดูบน YouTube ↗'))}</a></div><p class="video-scope">${t(v.description)}</p><div class="watch-guide"><div><h3>${t(T('Connect it to this lesson','מחברים לחומר בשיעור','เชื่อมกับบทเรียนนี้'))}</h3><p>${t(p.takeaway)}</p></div><div><h3>${t(T('Pause and explain','עוצרים ומסבירים','หยุดแล้วอธิบาย'))}</h3><p>${t(p.question)}</p></div></div><p class="video-note">${t(T('The guidance is available in all three languages. The video keeps the publisher’s original audio; captions and translations depend on the publisher and YouTube. If the embedded player is unavailable, use the source link.','הנחיות הצפייה זמינות בשלוש השפות. הסרטון נשאר בשפת המקור; כתוביות ותרגום תלויים במפרסם וב־YouTube. אם הנגן אינו זמין, פתחו את קישור המקור.','คำแนะนำมีครบสามภาษา วิดีโอใช้เสียงต้นฉบับ คำบรรยายและการแปลขึ้นกับผู้เผยแพร่และ YouTube หากเครื่องเล่นใช้ไม่ได้ให้เปิดลิงก์ต้นฉบับ'))}</p></section><!-- BUSTAN VIDEO END -->`;
+}

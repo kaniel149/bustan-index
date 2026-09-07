@@ -21,6 +21,8 @@ export function gaps(html) {
     const [whole, tag, attrs, inner] = m;
     if (/\sdata-(en|he|th)\b/.test(attrs) || /\sdata-(en|he|th)\b/.test(inner)) continue; // translated (sibling or span pattern)
     if (covered.some(([a, b]) => m.index > a && m.index < b)) continue; // translated via ancestor
+    // Publisher titles must retain their exact original-language identity.
+    if (/data-original-title/.test(attrs) && /class="source-video-title"/.test(attrs) && /lang="(?:en|he|th)"/.test(attrs)) continue;
     const text = inner.replace(/<[^>]+>/g, '').trim();
     if (!/[A-Za-z]{4,}/.test(text)) continue; // numbers / symbols only
     out.push({ tag, whole, inner, text });

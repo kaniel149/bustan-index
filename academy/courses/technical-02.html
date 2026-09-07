@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-en="Lesson 2: DC Wiring &amp; String Configuration — Bustan Energy Academy" data-he="שיעור 2: חיווט DC ותצורת מחרוזות — Bustan Energy Academy" data-th="บทเรียนที่ 2: การเดินสาย DC และการกำหนดค่า String — Bustan Energy Academy">Lesson 2: DC Wiring & String Configuration — Bustan Energy Academy</title>
-  <link rel="stylesheet" href="../assets/academy.css?v=paths-20260907">
-  <script src="../assets/academy.js?v=paths-20260907" defer></script>
+  <link rel="stylesheet" href="../assets/academy.css?v=media-20260907">
+  <script src="../assets/academy.js?v=media-20260907" defer></script>
   <style>
     .lesson-image { width: 100%; max-width: 700px; border-radius: 12px; margin: 20px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
     .video-section { margin: 30px 0; padding: 20px; background: rgba(39,52,47,0.03); border-radius: 12px; border: 1px solid rgba(39,52,47,0.08); }
@@ -15,9 +15,10 @@
     .video-caption { margin-top: 10px; font-size: 0.9em; color: rgba(39,52,47,0.6); font-style: italic; }
   </style>
   <link rel="icon" type="image/png" href="../../assets/bustan-energy-logo.png">
-  <link rel="stylesheet" href="../assets/academy-brand.css?v=paths-20260907">
-  <link rel="stylesheet" href="../assets/lesson-tools.css?v=paths-20260907">
-  <script src="../assets/lesson-tools.js?v=paths-20260907" defer></script>
+  <link rel="stylesheet" href="../assets/academy-brand.css?v=media-20260907">
+  <link rel="stylesheet" href="../assets/lesson-tools.css?v=media-20260907">
+  <script src="../assets/lesson-tools.js?v=media-20260907" defer></script>
+<link rel="stylesheet" href="../assets/media-learning.css?v=media-20260907"><script src="../assets/media-learning.js?v=media-20260907" defer></script>
 </head>
 <body data-lang="en">
 
@@ -53,7 +54,7 @@
     <h2 data-he>חיווט טורי מול מקבילי</h2>
     <h2 data-th>การต่อแบบอนุกรม vs แบบขนาน</h2>
 
-    <img src="../images/string-wiring.webp" alt="Diagram showing series and parallel wiring configurations for solar panels" class="lesson-image" loading="lazy" decoding="async">
+
 
     <p data-en>Understanding the difference between series and parallel wiring is fundamental to solar PV system design. The wiring method determines the voltage and current characteristics of your array:</p>
     <p data-he>הבנת ההבדל בין חיווט טורי ומקבילי היא יסודית לתכנון מערכת PV סולארית. שיטת החיווט קובעת את מאפייני המתח והזרם של המערך שלכם:</p>
@@ -75,7 +76,7 @@
     <div class="key-term">
       <p><strong data-en>String</strong><strong data-he>סטרינג</strong><strong data-th>สตริง</strong> — <span data-en>A group of solar panels wired in series. A string is the basic building block of a solar array. Each MPPT input on an inverter connects to one or more strings.</span><span data-he>קבוצת פאנלים סולאריים מחוברים בטור. סטרינג הוא אבן הבניין הבסיסית של מערך סולארי. כל כניסת MPPT בממיר מתחברת לסטרינג אחד או יותר.</span><span data-th>กลุ่มแผงโซลาร์ที่ต่ออนุกรม สตริงเป็นส่วนประกอบพื้นฐานของอาร์เรย์โซลาร์ แต่ละอินพุต MPPT บนอินเวอร์เตอร์เชื่อมต่อกับหนึ่งสตริงขึ้นไป</span></p>
     </div>
-  </section>
+  </section><!-- BUSTAN VISUAL START --><section class="lesson-section lesson-media" id="visual-guide" data-media-lesson="technical-02"><p class="eyebrow"><span data-en>See the idea</span><span data-he>רואים את הרעיון</span><span data-th>มองเห็นแนวคิด</span></p><h2><span data-en>Separate the string checks</span><span data-he>להפריד בדיקות סטרינג</span><span data-th>แยกตรวจสตริง</span></h2><figure class="teaching-figure"><picture><source media="(max-width:600px)" srcset="../media/diagrams/technical-02-en-mobile.svg" data-diagram-source="technical-02"><img src="../media/diagrams/technical-02-en.svg" data-diagram="technical-02" data-alt-en="Three cards distinguish series Voc, operating Vmp and parallel-current limit checks." data-alt-he="שלושה כרטיסים מבדילים בדיקות Voc בטור, Vmp בעבודה וזרם במקביל." data-alt-th="สามช่องแยกตรวจ Voc อนุกรม Vmp ทำงาน และขีดกระแสขนาน." alt="Three cards distinguish series Voc, operating Vmp and parallel-current limit checks." loading="lazy" decoding="async"></picture><div class="figure-tools"><button type="button" class="btn" data-enlarge-diagram><span data-en>Enlarge diagram</span><span data-he>הגדלת התרשים</span><span data-th>ขยายแผนภาพ</span></button><a class="btn" href="#watch-and-apply"><span data-en>Go to the lesson video</span><span data-he>לסרטון של השיעור</span><span data-th>ไปยังวิดีโอของบท</span></a><details><summary><span data-en>Read the diagram as text</span><span data-he>קריאת התרשים כטקסט</span><span data-th>อ่านแผนภาพเป็นข้อความ</span></summary><ol><li><strong><span data-en>Series voltage</span><span data-he>מתח בטור</span><span data-th>แรงดันอนุกรม</span></strong> — <span data-en>Voltages add; check cold Voc against maximum DC voltage.</span><span data-he>מתחים מצטברים; בודקים Voc קר מול מקסימום DC.</span><span data-th>แรงดันบวกกัน ตรวจ Voc เย็นกับ DC สูงสุด.</span></li><li><strong><span data-en>Operating voltage</span><span data-he>מתח עבודה</span><span data-th>แรงดันทำงาน</span></strong> — <span data-en>Check expected Vmp against the model’s MPPT range.</span><span data-he>בודקים Vmp צפוי מול טווח MPPT לדגם.</span><span data-th>ตรวจ Vmp คาดกับช่วง MPPT รุ่น.</span></li><li><strong><span data-en>Parallel current</span><span data-he>זרם במקביל</span><span data-th>กระแสขนาน</span></strong> — <span data-en>Branch currents add; verify applicable input and protection limits.</span><span data-he>זרמי ענפים מצטברים; מאמתים כניסה והגנות.</span><span data-th>กระแสแขนงบวก ตรวจขีดอินพุตและป้องกัน.</span></li></ol></details></div><figcaption><span data-en>Series and parallel relationships affect different equipment limits. Maximum DC voltage and the MPPT operating window are separate checks: cold-corrected Voc addresses the first, while expected operating Vmp addresses the second. This conceptual comparison does not determine a safe string length or connector arrangement.</span><span data-he>יחסי טור ומקביל משפיעים על מגבלות ציוד שונות. מתח DC מרבי וחלון עבודת MPPT הם בדיקות נפרדות: Voc מתוקן לקור נבדק מול הראשון ו-Vmp צפוי בעבודה מול השני. ההשוואה המושגית אינה קובעת אורך סטרינג או סידור מחברים בטוח.</span><span data-th>อนุกรมกับขนานมีผลต่อขีดเครื่องต่างกัน แรงดัน DC สูงสุดกับช่วงทำงาน MPPT ต้องตรวจแยก Voc ปรับเย็นตรวจข้อแรก Vmp ขณะทำงานตรวจข้อสอง ภาพแนวคิดนี้ไม่กำหนดจำนวนแผงหรือจัดขั้วต่อที่ปลอดภัย.</span></figcaption></figure></section><!-- BUSTAN VISUAL END -->
 
   <!-- Section 2: String Sizing -->
   <section class="lesson-section fade-up">
@@ -83,9 +84,9 @@
     <h2 data-he>תכנון גודל סטרינג: התאמת פאנלים לממיר</h2>
     <h2 data-th>การกำหนดขนาดสตริง: จับคู่แผงกับอินเวอร์เตอร์</h2>
 
-    <p data-en>String sizing is one of the most critical calculations in solar design. The total open-circuit voltage (Voc) of all panels in a string must fall within the inverter's MPPT voltage window — and must <strong>never exceed the inverter's maximum DC input voltage</strong>, or the inverter will be permanently destroyed.</p>
-    <p data-he>תכנון גודל סטרינג הוא אחד החישובים הקריטיים ביותר בתכנון סולארי. מתח המעגל הפתוח הכולל (Voc) של כל הפאנלים בסטרינג חייב ליפול בתוך חלון מתח ה-MPPT של הממיר — ו<strong>לעולם לא לחרוג ממתח DC מקסימלי של הממיר</strong>, אחרת הממיר ייהרס לצמיתות.</p>
-    <p data-th>การกำหนดขนาดสตริงเป็นหนึ่งในการคำนวณที่สำคัญที่สุดในการออกแบบโซลาร์ แรงดันวงจรเปิดรวม (Voc) ของแผงทั้งหมดในสตริงต้องอยู่ในช่วงแรงดัน MPPT ของอินเวอร์เตอร์ — และ<strong>ห้ามเกินแรงดัน DC อินพุตสูงสุดของอินเวอร์เตอร์</strong>โดยเด็ดขาด ไม่เช่นนั้นอินเวอร์เตอร์จะเสียหายถาวร</p>
+    <p data-en>String sizing requires separate voltage checks. The string’s open-circuit voltage (Voc), corrected for the site’s lowest design temperature using the exact module data, must <strong>remain within the inverter’s maximum DC input voltage limit</strong> and all required design margins. Check the expected operating voltage (Vmp) across the design temperature range against the exact inverter’s MPPT operating range, alongside its startup, current and other model limits. Passing one check does not establish a complete acceptable design.</p>
+    <p data-he>תכנון סטרינג דורש בדיקות מתח נפרדות. מתח המעגל הפתוח (Voc), מתוקן לטמפרטורת התכנון הנמוכה באתר לפי נתוני המודול המדויק, חייב <strong>להישאר בגבול מתח כניסת DC המרבי של הממיר</strong> ובכל מרווחי התכנון הנדרשים. את מתח העבודה הצפוי (Vmp) לאורך טווח טמפרטורות התכנון בודקים מול טווח עבודת MPPT של הממיר המדויק, לצד מגבלות התנעה, זרם ודרישות דגם אחרות. מעבר בדיקה אחת אינו מוכיח תכנון מלא קביל.</p>
+    <p data-th>การออกแบบสตริงต้องตรวจแรงดันแยกกัน แรงดันวงจรเปิด (Voc) ที่ปรับตามอุณหภูมิออกแบบต่ำสุดของไซต์และข้อมูลโมดูลรุ่นจริงต้อง<strong>อยู่ภายในขีดแรงดันอินพุต DC สูงสุดของอินเวอร์เตอร์</strong>พร้อมระยะเผื่อออกแบบที่กำหนด ตรวจแรงดันทำงาน (Vmp) ที่คาดตลอดช่วงอุณหภูมิออกแบบเทียบกับช่วงทำงาน MPPT ของอินเวอร์เตอร์รุ่นจริง รวมทั้งขีดสตาร์ต กระแส และข้อกำหนดอื่นของรุ่น การผ่านข้อเดียวไม่ยืนยันว่าแบบทั้งหมดใช้ได้</p>
 
     <p data-en><strong>The formula:</strong></p>
     <p data-he><strong>הנוסחה:</strong></p>
@@ -151,7 +152,7 @@
     <h2 data-he>מחברי MC4: הרכבה ושיטות עבודה מיטביות</h2>
     <h2 data-th>ขั้วต่อ MC4: การประกอบและแนวปฏิบัติที่ดี</h2>
 
-    <img src="../images/mc4-connector.webp" alt="MC4 connector components showing crimping process and assembly" class="lesson-image" loading="lazy" decoding="async">
+
 
     <p data-en>MC4 connectors are the industry standard for solar DC connections. The name stands for "Multi-Contact, 4mm" — referring to the 4mm² contact pin. Proper MC4 assembly is critical for system safety and longevity.</p>
     <p data-he>מחברי MC4 הם הסטנדרט התעשייתי לחיבורי DC סולאריים. השם מייצג "Multi-Contact, 4mm" — מתייחס לפין מגע 4 מ"מ². הרכבת MC4 נכונה היא קריטית לבטיחות ואריכות חיי המערכת.</p>
@@ -303,34 +304,10 @@
   </section>
 
   <!-- Video Section -->
-  <section class="lesson-section fade-up">
-    <h2 data-en>Watch & Learn: DC Wiring</h2>
-    <h2 data-he>צפו ולמדו: חיווט DC</h2>
-    <h2 data-th>ชมและเรียนรู้: การเดินสาย DC</h2>
 
-    <div class="video-section">
-      <h3><span data-en>📹 Watch: Solar Panel Wiring — Series vs Parallel Explained</span><span data-he>📹 צפו: חיווט פאנלים סולאריים — הסבר על חיבור טורי לעומת מקבילי</span><span data-th>📹 รับชม: การเดินสายแผงโซลาร์เซลล์ — อธิบายการต่อแบบอนุกรม vs แบบขนาน</span></h3>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/0UHLMx_0mRY" frameborder="0" allowfullscreen
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-        </iframe>
-      </div>
-      <p class="video-caption"><span data-en>Clear visual explanation of series and parallel solar panel wiring with real-world examples</span><span data-he>הסבר חזותי ברור של חיווט פאנלים סולאריים בטור ובמקביל עם דוגמאות מהעולם האמיתי</span><span data-th>คำอธิบายด้วยภาพที่ชัดเจนเกี่ยวกับการเดินสายแผงโซลาร์เซลล์แบบอนุกรมและแบบขนาน พร้อมตัวอย่างการใช้งานจริง</span></p>
-    </div>
-
-    <div class="video-section">
-      <h3><span data-en>📹 Watch: How to Crimp MC4 Connectors</span><span data-he>📹 צפו: כיצד ללחוץ מחברי MC4</span><span data-th>📹 รับชม: วิธีการเข้าหัวคอนเนคเตอร์ MC4</span></h3>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/kCN9s3JdOZk" frameborder="0" allowfullscreen
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-        </iframe>
-      </div>
-      <p class="video-caption"><span data-en>Step-by-step MC4 connector crimping and assembly tutorial</span><span data-he>מדריך שלב אחר שלב ללחיצה והרכבה של מחברי MC4</span><span data-th>คู่มือการเข้าหัวและการประกอบคอนเนคเตอร์ MC4 แบบทีละขั้นตอน</span></p>
-    </div>
-  </section>
 
   <!-- Quiz -->
-  <section class="quiz-section fade-up">
+  <!-- BUSTAN VIDEO START --><section class="lesson-section lesson-media guided-video" id="watch-and-apply" data-video-id="BJpCWKgW8Ac"><p class="eyebrow"><span data-en>Watch and apply</span><span data-he>צופים ומיישמים</span><span data-th>ดูแล้วนำไปใช้</span></p><h2><span data-en>A professional demonstration</span><span data-he>הדגמה מקצועית</span><span data-th>การสาธิตจากผู้เชี่ยวชาญ</span></h2><p class="watch-prompt"><strong><span data-en>Before pressing play</span><span data-he>לפני שמפעילים</span><span data-th>ก่อนกดเล่น</span></strong><br><span data-en>Follow the explanation of conversion and series connections while keeping input limits separate from output ratings.</span><span data-he>עקבו אחר הסבר המרה וטור והפרידו מגבלות כניסה מדירוגי יציאה.</span><span data-th>ดูคำอธิบายแปลงกับอนุกรม โดยแยกขีดอินพุตจากพิกัดเอาต์พุต.</span></p><div class="video-stage"><button type="button" class="video-launch" data-play-video aria-label="Play video: How does a Victron Energy MPPT Solar Charge Controller work?"><img src="https://i.ytimg.com/vi/BJpCWKgW8Ac/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="play-symbol" aria-hidden="true">▶</span><span class="play-label"><span data-en>Play the video</span><span data-he>הפעלת הסרטון</span><span data-th>เล่นวิดีโอ</span></span></button></div><h3 class="source-video-title" data-original-title lang="en" dir="auto">How does a Victron Energy MPPT Solar Charge Controller work?</h3><div class="video-meta"><span>Victron Energy</span><span><span data-en>Original audio</span><span data-he>שפת המקור</span><span data-th>เสียงต้นฉบับ</span>: <span data-en>English</span><span data-he>אנגלית</span><span data-th>อังกฤษ</span></span><a href="https://www.youtube.com/watch?v=BJpCWKgW8Ac" target="_blank" rel="noopener"><span data-en>Watch on YouTube ↗</span><span data-he>צפייה ב־YouTube ↗</span><span data-th>ดูบน YouTube ↗</span></a></div><p class="video-scope"><span data-en>English manufacturer explanation of MPPT operation, conversion, series connection and control interfaces. Illustrative Victron hardware supports concept learning; exact ratings and application rules remain model-specific.</span><span data-he>הסבר יצרן באנגלית על MPPT, המרה, חיבור טורי וממשקי בקרה. ציוד Victron מדגים מושגים; דירוגים ודרישות יישום נשארים תלויי דגם.</span><span data-th>ผู้ผลิตอธิบายภาษาอังกฤษเรื่อง MPPT การแปลง อนุกรม และอินเทอร์เฟซควบคุม ใช้ฮาร์ดแวร์ Victron เรียนแนวคิด พิกัดกับข้อกำหนดยังขึ้นกับรุ่น.</span></p><div class="watch-guide"><div><h3><span data-en>Connect it to this lesson</span><span data-he>מחברים לחומר בשיעור</span><span data-th>เชื่อมกับบทเรียนนี้</span></h3><p><span data-en>A controller’s conversion function does not remove its voltage and current limits.</span><span data-he>פעולת המרה אינה מבטלת מגבלות מתח וזרם של בקר.</span><span data-th>การแปลงของคอนโทรลเลอร์ไม่ลบขีดแรงดันกับกระแส.</span></p></div><div><h3><span data-en>Pause and explain</span><span data-he>עוצרים ומסבירים</span><span data-th>หยุดแล้วอธิบาย</span></h3><p><span data-en>Why would a string passing the maximum-voltage check still need an MPPT operating-range check?</span><span data-he>מדוע סטרינג שעבר מתח מרבי עדיין דורש בדיקת טווח MPPT?</span><span data-th>ทำไมสตริงผ่านแรงดันสูงสุดแล้วยังต้องตรวจช่วงทำงาน MPPT?</span></p></div></div><p class="video-note"><span data-en>The guidance is available in all three languages. The video keeps the publisher’s original audio; captions and translations depend on the publisher and YouTube. If the embedded player is unavailable, use the source link.</span><span data-he>הנחיות הצפייה זמינות בשלוש השפות. הסרטון נשאר בשפת המקור; כתוביות ותרגום תלויים במפרסם וב־YouTube. אם הנגן אינו זמין, פתחו את קישור המקור.</span><span data-th>คำแนะนำมีครบสามภาษา วิดีโอใช้เสียงต้นฉบับ คำบรรยายและการแปลขึ้นกับผู้เผยแพร่และ YouTube หากเครื่องเล่นใช้ไม่ได้ให้เปิดลิงก์ต้นฉบับ</span></p></section><!-- BUSTAN VIDEO END --><section class="quiz-section fade-up">
     <div class="quiz-title">
       <span>📝</span>
       <span data-en>Knowledge Check</span>
@@ -425,6 +402,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script src="../../assets/site.js?v=paths-20260907" data-root="../../" defer></script>
+<script src="../../assets/site.js?v=media-20260907" data-root="../../" defer></script>
 </body>
 </html>

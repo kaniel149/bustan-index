@@ -11,5 +11,11 @@ for (const f of htmlIn('academy/courses')) {
     if (!seen.has(p)) { seen.add(p); total += fs.statSync(p).size; }
   }
 }
+for(const folder of ['academy/media','academy/media/diagrams']){
+  for(const file of fs.readdirSync(rel(folder))){
+    const p=rel(folder,file);if(!fs.statSync(p).isFile()||!/[.](svg|png|webp)$/.test(file))continue;
+    if(!seen.has(p)){seen.add(p);total+=fs.statSync(p).size}
+  }
+}
 console.log(`image-budget: ${seen.size} images, ${(total / 1024 / 1024).toFixed(2)} MB (budget 8 MB)`);
 if (total > BUDGET) fail('image budget exceeded');

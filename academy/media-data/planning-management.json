@@ -1,0 +1,2169 @@
+{
+  "videos": [
+    {
+      "id": "pm-load",
+      "youtubeId": "urimEINWuYw",
+      "title": "Download Modeled Load Data",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=urimEINWuYw",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/howto.html",
+      "description": {
+        "en": "Official SAM demonstration of obtaining modeled load data. English speech; modeled profiles require comparison with the actual property.",
+        "he": "הדגמה רשמית של SAM להורדת נתוני צריכה ממודל. הדיבור באנגלית; יש להשוות פרופיל מחושב לנתוני הנכס בפועל.",
+        "th": "การสาธิตอย่างเป็นทางการของ SAM เรื่องการดาวน์โหลดข้อมูลโหลดจากแบบจำลอง เสียงภาษาอังกฤษ ต้องเทียบโปรไฟล์จำลองกับข้อมูลจริงของอาคาร"
+      }
+    },
+    {
+      "id": "pm-pv",
+      "youtubeId": "ba5NcqlANZQ",
+      "title": "Modeling PV Systems in SAM 2020.2.29",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=ba5NcqlANZQ",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/photovoltaic/pv-videos.html",
+      "description": {
+        "en": "Official PV modeling webinar for SAM 2020.2.29, including sizing and loss inputs. English speech; older interface, not an installation or Thai approval procedure.",
+        "he": "וובינר רשמי למידול PV בגרסת SAM 2020.2.29, כולל גודל מערכת ונתוני הפסדים. הדיבור באנגלית; ממשק ישן, לא הוראות התקנה או הליך אישור תאילנדי.",
+        "th": "เว็บบินาร์อย่างเป็นทางการสำหรับการจำลอง PV ใน SAM 2020.2.29 รวมการกำหนดขนาดและข้อมูลการสูญเสีย เสียงภาษาอังกฤษ เป็นหน้าจอรุ่นเก่า ไม่ใช่ขั้นตอนติดตั้งหรือขออนุญาตในไทย"
+      }
+    },
+    {
+      "id": "pm-uncertainty",
+      "youtubeId": "xIA-AmGfQ5E",
+      "title": "Modeling PV Uncertainty in SAM",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=xIA-AmGfQ5E",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/simulation-options.html",
+      "description": {
+        "en": "Official SAM webinar on uncertainty in PV modeling. English speech; scenario outputs illustrate uncertainty rather than guarantee a property’s production.",
+        "he": "וובינר רשמי של SAM על אי־ודאות במידול PV. הדיבור באנגלית; תוצאות תרחישים ממחישות אי־ודאות ואינן מבטיחות תפוקה בנכס מסוים.",
+        "th": "เว็บบินาร์อย่างเป็นทางการของ SAM ว่าด้วยความไม่แน่นอนในการจำลอง PV เสียงภาษาอังกฤษ ผลสถานการณ์แสดงความไม่แน่นอน ไม่ได้รับประกันผลผลิตของอาคารใด"
+      }
+    },
+    {
+      "id": "pm-battery",
+      "youtubeId": "KCzPGf_9YKQ",
+      "title": "Behind-the-meter Battery Dispatch in SAM",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=KCzPGf_9YKQ",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/battery-storage/battery-videos.html",
+      "description": {
+        "en": "Official SAM demonstration of behind-the-meter battery dispatch. English speech; modeled dispatch is not a commissioning setting or proof of backup capability.",
+        "he": "הדגמה רשמית של SAM להפעלת סוללה מאחורי המונה. הדיבור באנגלית; תזמון במודל אינו הגדרת הפעלה בשטח או הוכחת יכולת גיבוי.",
+        "th": "การสาธิตอย่างเป็นทางการของ SAM เรื่องการจัดการจ่ายพลังงานจากแบตเตอรี่หลังมิเตอร์ เสียงภาษาอังกฤษ การจำลองไม่ใช่ค่าตั้งตอนทดสอบระบบหรือหลักฐานความสามารถสำรองไฟ"
+      }
+    },
+    {
+      "id": "pm-reliability",
+      "youtubeId": "tdQEt_cO2To",
+      "title": "Photovoltaic Reliability Performance Model in SAM 2017.9.5",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=tdQEt_cO2To",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/photovoltaic/pv-videos.html",
+      "description": {
+        "en": "Official introduction to the PV Reliability Performance Model in SAM 2017.9.5. English speech; an older simulation workflow, not a maintenance interval or field inspection manual.",
+        "he": "מבוא רשמי למודל אמינות PV בגרסת SAM 2017.9.5. הדיבור באנגלית; תהליך הדמיה ישן, לא תדירות תחזוקה או מדריך בדיקה בשטח.",
+        "th": "บทนำอย่างเป็นทางการของแบบจำลองความเชื่อถือได้ของ PV ใน SAM 2017.9.5 เสียงภาษาอังกฤษ เป็นขั้นตอนจำลองรุ่นเก่า ไม่ใช่รอบบำรุงรักษาหรือคู่มือตรวจหน้างาน"
+      }
+    },
+    {
+      "id": "pm-risk",
+      "youtubeId": "qxdL1TNjR4s",
+      "title": "Project Stakeholder and Risk Management",
+      "publisher": "Project Management",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=qxdL1TNjR4s",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://nptel.ac.in/courses/110104073",
+      "description": {
+        "en": "NPTEL / IIT Kanpur lecture by Raghu Nandan Sengupta on project stakeholders and risk. English speech; general management concepts, not Thai regulatory or electrical safety instruction.",
+        "he": "הרצאת NPTEL / IIT Kanpur מאת Raghu Nandan Sengupta על בעלי עניין וסיכוני פרויקט. הדיבור באנגלית; עקרונות ניהול כלליים, לא הוראות רגולציה או בטיחות חשמל בתאילנד.",
+        "th": "การบรรยาย NPTEL / IIT Kanpur โดย Raghu Nandan Sengupta เรื่องผู้มีส่วนได้ส่วนเสียและความเสี่ยงโครงการ เสียงภาษาอังกฤษ เป็นหลักบริหารทั่วไป ไม่ใช่คำสั่งด้านกฎหมายไทยหรือความปลอดภัยทางไฟฟ้า"
+      }
+    },
+    {
+      "id": "pm-cpm",
+      "youtubeId": "TuoxrttyxpQ",
+      "title": "Concept of CRITICAL PATH METHOD (CPM) and Introduction to PERT",
+      "publisher": "Project Management",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=TuoxrttyxpQ",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://nptel.ac.in/courses/110104073",
+      "description": {
+        "en": "NPTEL / IIT Kanpur lecture on critical paths, precedence and PERT. English speech; network logic must use project-specific dependencies and current estimates.",
+        "he": "הרצאת NPTEL / IIT Kanpur על נתיב קריטי, תלויות ו־PERT. הדיבור באנגלית; יש לבנות את הרשת לפי תלויות ואומדנים עדכניים של הפרויקט.",
+        "th": "การบรรยาย NPTEL / IIT Kanpur เรื่องเส้นทางวิกฤต ความสัมพันธ์ก่อนหลัง และ PERT เสียงภาษาอังกฤษ ต้องใช้ความสัมพันธ์และประมาณการปัจจุบันของโครงการจริง"
+      }
+    },
+    {
+      "id": "pm-evm",
+      "youtubeId": "mcW4yNs_bzc",
+      "title": "Earned Value Management",
+      "publisher": "Project Management",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=mcW4yNs_bzc",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://nptel.ac.in/courses/110104073",
+      "description": {
+        "en": "NPTEL / IIT Kanpur lecture on earned value management. English speech; project performance measures require a documented baseline and do not establish payment rights.",
+        "he": "הרצאת NPTEL / IIT Kanpur על ניהול ערך נצבר. הדיבור באנגלית; מדדי ביצוע דורשים בסיס מתועד ואינם קובעים זכויות לתשלום.",
+        "th": "การบรรยาย NPTEL / IIT Kanpur เรื่องการบริหารมูลค่างานที่ทำได้ เสียงภาษาอังกฤษ ตัวชี้วัดต้องมีแผนฐานที่บันทึกไว้ และไม่ได้กำหนดสิทธิรับชำระเงิน"
+      }
+    },
+    {
+      "id": "pm-finance",
+      "youtubeId": "C1k9Ul6Bc9w",
+      "title": "Discounting Rates and Project Pricing",
+      "publisher": "Project Management",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=C1k9Ul6Bc9w",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://nptel.ac.in/courses/110104073",
+      "description": {
+        "en": "NPTEL / IIT Kanpur lecture on discounting rates and project pricing. English speech; financial methods do not verify current Thai tariffs, taxes or investment returns.",
+        "he": "הרצאת NPTEL / IIT Kanpur על שיעורי היוון ותמחור פרויקטים. הדיבור באנגלית; שיטות פיננסיות אינן מאמתות תעריפים, מסים או תשואה עדכניים בתאילנד.",
+        "th": "การบรรยาย NPTEL / IIT Kanpur เรื่องอัตราคิดลดและการกำหนดราคาโครงการ เสียงภาษาอังกฤษ วิธีการเงินไม่ได้ยืนยันอัตราค่าไฟ ภาษี หรือผลตอบแทนปัจจุบันในไทย"
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "lesson": "design-permitting-01",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "From property to design brief",
+          "he": "מהנכס למסמך דרישות",
+          "th": "จากอาคารสู่ข้อกำหนดออกแบบ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Define boundary",
+              "he": "מגדירים גבול",
+              "th": "กำหนดขอบเขต"
+            },
+            "detail": {
+              "en": "Identify property, meter and included loads",
+              "he": "מזהים נכס, מונה וצרכנים כלולים",
+              "th": "ระบุอาคาร มิเตอร์ และโหลดที่รวม"
+            }
+          },
+          {
+            "label": {
+              "en": "Collect evidence",
+              "he": "אוספים ראיות",
+              "th": "เก็บหลักฐาน"
+            },
+            "detail": {
+              "en": "Separate measured, reported and modeled information",
+              "he": "מפרידים מדידה, דיווח ומודל",
+              "th": "แยกข้อมูลวัดจริง คำบอกเล่า และแบบจำลอง"
+            }
+          },
+          {
+            "label": {
+              "en": "Resolve gaps",
+              "he": "סוגרים פערים",
+              "th": "จัดการข้อมูลขาด"
+            },
+            "detail": {
+              "en": "Assign each uncertainty an owner and next action",
+              "he": "מצמידים לכל אי־ודאות אחראי ופעולה",
+              "th": "กำหนดผู้รับผิดชอบและงานถัดไปให้ข้อไม่แน่นอน"
+            }
+          },
+          {
+            "label": {
+              "en": "Release brief",
+              "he": "משחררים דרישות",
+              "th": "ออกข้อกำหนด"
+            },
+            "detail": {
+              "en": "Record scope and unresolved design constraints",
+              "he": "מתעדים היקף ומגבלות תכנון פתוחות",
+              "th": "บันทึกขอบเขตและข้อจำกัดออกแบบที่ยังเปิด"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A design brief connects a defined meter boundary to traceable evidence. Modeled demand can help frame questions, but it cannot silently replace measured data. Unresolved roof access or load information remains visible before a qualified designer proceeds.",
+          "he": "מסמך הדרישות מחבר בין גבול מונה מוגדר לראיות שניתן לבדוק. נתוני צריכה ממודל עוזרים לנסח שאלות, אך אינם מחליפים בשקט נתוני מדידה. פערי גישה לגג או מידע על עומסים נשארים גלויים לפני שמתכנן מוסמך מתקדם.",
+          "th": "ข้อกำหนดออกแบบเชื่อมขอบเขตมิเตอร์ที่ชัดเจนกับหลักฐานที่ตรวจสอบได้ โหลดจากแบบจำลองช่วยตั้งคำถาม แต่ไม่ควรแทนข้อมูลวัดจริงโดยไม่แจ้ง ข้อมูลโหลดหรือการเข้าถึงหลังคาที่ยังขาดต้องแสดงให้ชัดก่อนผู้มีคุณสมบัติเริ่มออกแบบ"
+        },
+        "alt": {
+          "en": "Four stages connect meter scope, evidence, unresolved gaps and the design brief.",
+          "he": "ארבעה שלבים מחברים גבול מונה, ראיות, פערים פתוחים ומסמך דרישות.",
+          "th": "สี่ขั้นเชื่อมขอบเขตมิเตอร์ หลักฐาน ข้อมูลที่ยังขาด และข้อกำหนดออกแบบ"
+        }
+      },
+      "videoId": "pm-load",
+      "watchFor": {
+        "en": "Notice that the tutorial obtains a modeled load profile. Identify which property measurements would be needed to challenge that profile.",
+        "he": "שימו לב שההדגמה מורידה פרופיל צריכה מחושב. זהו אילו מדידות בנכס יאפשרו לבחון אותו.",
+        "th": "สังเกตว่าบทสาธิตดาวน์โหลดโปรไฟล์โหลดจำลอง ระบุข้อมูลวัดของอาคารที่ต้องใช้ตรวจสอบโปรไฟล์นั้น"
+      },
+      "takeaway": {
+        "en": "A plausible profile is an explicit assumption until site evidence supports it.",
+        "he": "פרופיל סביר הוא הנחה מפורשת עד שראיות מהאתר תומכות בו.",
+        "th": "โปรไฟล์ที่ดูสมเหตุผลยังเป็นสมมติฐานจนมีข้อมูลหน้างานสนับสนุน"
+      },
+      "question": {
+        "en": "Which source label would you attach to this profile in the survey register?",
+        "he": "איזה סיווג מקור תצמידו לפרופיל הזה ביומן הסקר?",
+        "th": "คุณจะติดป้ายประเภทแหล่งข้อมูลใดให้โปรไฟล์นี้ในทะเบียนสำรวจ?"
+      }
+    },
+    {
+      "lesson": "design-permitting-02",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "Shade changes the estimate",
+          "he": "הצללה משנה את האומדן",
+          "th": "เงาบังเปลี่ยนประมาณการ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "No shade loss",
+              "he": "ללא הפסד הצללה",
+              "th": "ไม่มีการสูญเสียจากเงา"
+            },
+            "detail": {
+              "en": "Training reference before the stated shade assumption",
+              "he": "ייחוס לתרגול לפני הנחת ההצללה",
+              "th": "ค่าอ้างอิงฝึกก่อนใช้สมมติฐานเงาบัง"
+            },
+            "value": 15000
+          },
+          {
+            "label": {
+              "en": "6% shade loss",
+              "he": "הפסד הצללה 6%",
+              "th": "สูญเสียจากเงา 6%"
+            },
+            "detail": {
+              "en": "15,000 × 0.94",
+              "he": "15,000 × 0.94",
+              "th": "15,000 × 0.94"
+            },
+            "value": 14100
+          },
+          {
+            "label": {
+              "en": "14% shade loss",
+              "he": "הפסד הצללה 14%",
+              "th": "สูญเสียจากเงา 14%"
+            },
+            "detail": {
+              "en": "15,000 × 0.86",
+              "he": "15,000 × 0.86",
+              "th": "15,000 × 0.86"
+            },
+            "value": 12900
+          }
+        ],
+        "caption": {
+          "en": "This training example changes one shade assumption while holding the reference constant. The two shaded estimates differ by 1,200 kWh per year. Neither annual total establishes hourly self-consumption, export permission or a guaranteed saving for an actual property.",
+          "he": "בדוגמת התרגול משתנה הנחת הצללה אחת בעוד בסיס ההשוואה נשאר קבוע. שני האומדנים עם הצללה נבדלים ב־1,200 קוט״ש בשנה. אף סך שנתי אינו קובע צריכה עצמית שעתית, היתר הזרמה או חיסכון מובטח בנכס ממשי.",
+          "th": "ตัวอย่างฝึกนี้เปลี่ยนสมมติฐานเงาบังอย่างเดียว โดยคงค่าอ้างอิงเดิม ผลประมาณการที่มีเงาบังสองกรณีต่างกัน 1,200 กิโลวัตต์ชั่วโมงต่อปี ยอดรายปีไม่ได้ยืนยันการใช้เองรายชั่วโมง สิทธิส่งไฟเข้าระบบ หรือเงินประหยัดที่รับประกันสำหรับอาคารจริง"
+        },
+        "alt": {
+          "en": "Three bars show 15,000, 14,100 and 12,900 kWh per year under different training shade assumptions.",
+          "he": "שלוש עמודות מציגות 15,000, 14,100 ו־12,900 קוט״ש בשנה בהנחות הצללה שונות לתרגול.",
+          "th": "แท่งสามแท่งแสดง 15,000, 14,100 และ 12,900 กิโลวัตต์ชั่วโมงต่อปีตามสมมติฐานเงาบังสำหรับฝึก"
+        },
+        "unit": {
+          "en": "kWh/year · training example",
+          "he": "קוט״ש לשנה · דוגמת תרגול",
+          "th": "กิโลวัตต์ชั่วโมงต่อปี · ตัวอย่างฝึก"
+        }
+      },
+      "videoId": "pm-uncertainty",
+      "watchFor": {
+        "en": "Watch how PV uncertainty is treated as part of modeling. Relate that uncertainty to a shade estimate supported by limited site observations.",
+        "he": "התבוננו בשילוב אי־ודאות במידול PV. קשרו אותה לאומדן הצללה המבוסס על תצפיות מוגבלות באתר.",
+        "th": "สังเกตการพิจารณาความไม่แน่นอนในการจำลอง PV แล้วเชื่อมกับประมาณการเงาบังจากการสังเกตหน้างานที่จำกัด"
+      },
+      "takeaway": {
+        "en": "Record the uncertain input and test alternatives before presenting one production number.",
+        "he": "תעדו את הנתון שאינו ודאי ובדקו חלופות לפני הצגת מספר תפוקה יחיד.",
+        "th": "บันทึกข้อมูลที่ไม่แน่นอนและทดสอบกรณีอื่นก่อนเสนอผลผลิตเพียงค่าเดียว"
+      },
+      "question": {
+        "en": "Which site observation would most improve the shade assumption in this example?",
+        "he": "איזו תצפית באתר תשפר במיוחד את הנחת ההצללה בדוגמה?",
+        "th": "การสังเกตใดในพื้นที่จะช่วยปรับสมมติฐานเงาบังในตัวอย่างนี้ได้มากที่สุด?"
+      }
+    },
+    {
+      "lesson": "design-permitting-03",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "Cold voltage screening",
+          "he": "בדיקת מתח בקור",
+          "th": "ตรวจคัดกรองแรงดันในอากาศเย็น"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "11 modules",
+              "he": "11 מודולים",
+              "th": "11 แผง"
+            },
+            "detail": {
+              "en": "11 × 52.1 V; other checks remain",
+              "he": "11 × 52.1 וולט; בדיקות אחרות נותרו",
+              "th": "11 × 52.1 โวลต์ ยังต้องตรวจด้านอื่น"
+            },
+            "value": 573.1
+          },
+          {
+            "label": {
+              "en": "Example limit",
+              "he": "גבול בדוגמה",
+              "th": "ขีดจำกัดตัวอย่าง"
+            },
+            "detail": {
+              "en": "Fictional inverter maximum; not a universal setting",
+              "he": "מקסימום ממיר בדיוני; לא ערך כללי",
+              "th": "ค่าสูงสุดของอินเวอร์เตอร์สมมติ ไม่ใช่ค่ามาตรฐานทั่วไป"
+            },
+            "value": 600
+          },
+          {
+            "label": {
+              "en": "12 modules",
+              "he": "12 מודולים",
+              "th": "12 แผง"
+            },
+            "detail": {
+              "en": "12 × 52.1 V exceeds example limit",
+              "he": "12 × 52.1 וולט חורג מהגבול בדוגמה",
+              "th": "12 × 52.1 โวลต์ เกินขีดจำกัดตัวอย่าง"
+            },
+            "value": 625.2
+          }
+        ],
+        "caption": {
+          "en": "At the lesson’s assumed cold temperature, each example module has 52.1 V open-circuit voltage. Eleven modules pass only this voltage screen; twelve exceed the fictional limit. Hot operating voltage, input current, manufacturer requirements and professional review remain separate checks.",
+          "he": "בטמפרטורת הקור שהונחה בשיעור, מתח המעגל הפתוח של כל מודול בדוגמה הוא 52.1 וולט. אחד־עשר מודולים עוברים רק בדיקת מתח זו; שנים־עשר חורגים מהגבול הבדיוני. מתח עבודה בחום, זרם כניסה, דרישות יצרן וביקורת מקצועית דורשים בדיקות נפרדות.",
+          "th": "ที่อุณหภูมิเย็นสมมติของบทเรียน แผงตัวอย่างแต่ละแผงมีแรงดันวงจรเปิด 52.1 โวลต์ จำนวนสิบเอ็ดแผงผ่านเฉพาะการคัดกรองแรงดันนี้ ส่วนสิบสองแผงเกินขีดจำกัดสมมติ ยังต้องตรวจแรงดันใช้งานเมื่อร้อน กระแสขาเข้า ข้อกำหนดผู้ผลิต และการทบทวนโดยผู้มีคุณสมบัติแยกกัน"
+        },
+        "alt": {
+          "en": "Training voltage bars compare an eleven-module string at 573.1 V, a fictional 600 V limit and twelve modules at 625.2 V.",
+          "he": "עמודות מתח לתרגול משוות 573.1 וולט באחד־עשר מודולים, גבול בדיוני של 600 וולט ו־625.2 וולט בשנים־עשר מודולים.",
+          "th": "แท่งแรงดันสำหรับฝึกเปรียบเทียบสิบเอ็ดแผงที่ 573.1 โวลต์ ขีดจำกัดสมมติ 600 โวลต์ และสิบสองแผงที่ 625.2 โวลต์"
+        },
+        "unit": {
+          "en": "V · training example",
+          "he": "וולט · דוגמת תרגול",
+          "th": "โวลต์ · ตัวอย่างฝึก"
+        }
+      },
+      "videoId": "pm-pv",
+      "watchFor": {
+        "en": "Find the system-sizing discussion. Distinguish a modeled array configuration from the exact module and inverter datasheet checks required for release.",
+        "he": "אתרו את הדיון בקביעת גודל המערכת. הבדילו בין מערך במודל לבין בדיקות דפי הנתונים המדויקים של המודול והממיר הנדרשות לשחרור.",
+        "th": "หาช่วงอธิบายการกำหนดขนาดระบบ แยกการจัดแผงในแบบจำลองออกจากการตรวจเอกสารรุ่นแผงและอินเวอร์เตอร์ที่ต้องทำก่อนอนุมัติแบบ"
+      },
+      "takeaway": {
+        "en": "Software helps explore configurations; a qualified designer must verify every applicable limit.",
+        "he": "תוכנה מסייעת לבחון תצורות; מתכנן מוסמך נדרש לאמת כל מגבלה רלוונטית.",
+        "th": "ซอฟต์แวร์ช่วยสำรวจรูปแบบ แต่ผู้มีคุณสมบัติต้องตรวจยืนยันทุกขีดจำกัดที่เกี่ยวข้อง"
+      },
+      "question": {
+        "en": "What checks still block release after eleven modules pass the example voltage test?",
+        "he": "אילו בדיקות עדיין מעכבות שחרור אחרי שאחד־עשר מודולים עברו את בדיקת המתח בדוגמה?",
+        "th": "หลังสิบเอ็ดแผงผ่านการตรวจแรงดันตัวอย่าง ยังมีการตรวจใดที่ต้องทำก่อนอนุมัติแบบ?"
+      }
+    },
+    {
+      "lesson": "design-permitting-04",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Three independent electrical checks",
+          "he": "שלוש בדיקות חשמל נפרדות",
+          "th": "การตรวจไฟฟ้าสามด้านแยกกัน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Carry current",
+              "he": "נשיאת זרם",
+              "th": "รองรับกระแส"
+            },
+            "detail": {
+              "en": "Installation conditions affect allowable conductor loading",
+              "he": "תנאי התקנה משפיעים על העמסת המוליך המותרת",
+              "th": "สภาพติดตั้งมีผลต่อกระแสที่ตัวนำรับได้"
+            }
+          },
+          {
+            "label": {
+              "en": "Limit voltage drop",
+              "he": "הגבלת נפילת מתח",
+              "th": "จำกัดแรงดันตก"
+            },
+            "detail": {
+              "en": "Length and resistance affect operating losses",
+              "he": "אורך והתנגדות משפיעים על הפסדי העבודה",
+              "th": "ความยาวและความต้านทานมีผลต่อการสูญเสีย"
+            }
+          },
+          {
+            "label": {
+              "en": "Clear faults",
+              "he": "ניתוק תקלות",
+              "th": "ตัดวงจรเมื่อขัดข้อง"
+            },
+            "detail": {
+              "en": "Protection and earthing must match each operating mode",
+              "he": "הגנה והארקה מותאמות לכל מצב עבודה",
+              "th": "การป้องกันและต่อลงดินต้องเหมาะกับแต่ละโหมด"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A conductor can pass one check and fail another. The lesson’s voltage-drop calculation is therefore only one part of design evidence. Protection coordination, earthing and changed fault conditions during backup require separate qualified assessment of the actual equipment and installation.",
+          "he": "מוליך יכול לעבור בדיקה אחת ולהיכשל באחרת. חישוב נפילת המתח בשיעור הוא לכן רק חלק מראיות התכנון. תיאום הגנות, הארקה ותנאי תקלה המשתנים במצב גיבוי מחייבים הערכה מקצועית נפרדת של הציוד ושל ההתקנה בפועל.",
+          "th": "ตัวนำอาจผ่านการตรวจด้านหนึ่งแต่ไม่ผ่านอีกด้าน การคำนวณแรงดันตกในบทเรียนจึงเป็นเพียงส่วนหนึ่งของหลักฐานออกแบบ การประสานอุปกรณ์ป้องกัน การต่อลงดิน และสภาวะขัดข้องที่เปลี่ยนในโหมดสำรอง ต้องได้รับการประเมินแยกโดยผู้มีคุณสมบัติตามอุปกรณ์และการติดตั้งจริง"
+        },
+        "alt": {
+          "en": "Three parallel checks compare current capacity, voltage drop and fault clearing. Passing one does not establish the others.",
+          "he": "שלוש בדיקות מקבילות משוות נשיאת זרם, נפילת מתח וניתוק תקלות. מעבר באחת אינו מוכיח את האחרות.",
+          "th": "สามด้านเปรียบเทียบพิกัดกระแส แรงดันตก และการตัดเมื่อขัดข้อง การผ่านด้านหนึ่งไม่ได้ยืนยันด้านอื่น"
+        }
+      },
+      "videoId": "pm-pv",
+      "watchFor": {
+        "en": "Use the webinar’s loss modeling to identify the boundary between a production-loss assumption and an electrical safety calculation.",
+        "he": "היעזרו במידול ההפסדים בוובינר כדי לזהות את הגבול בין הנחת הפסד תפוקה לחישוב בטיחות חשמל.",
+        "th": "ใช้การจำลองการสูญเสียในเว็บบินาร์เพื่อแยกสมมติฐานการสูญเสียผลผลิตออกจากการคำนวณความปลอดภัยทางไฟฟ้า"
+      },
+      "takeaway": {
+        "en": "An energy-loss percentage cannot replace cable, protection or earthing design evidence.",
+        "he": "אחוז הפסד אנרגיה אינו מחליף ראיות לתכנון כבלים, הגנות או הארקה.",
+        "th": "เปอร์เซ็นต์การสูญเสียพลังงานไม่แทนหลักฐานออกแบบสาย อุปกรณ์ป้องกัน หรือการต่อลงดิน"
+      },
+      "question": {
+        "en": "Which independent check would a low voltage-drop result leave unanswered?",
+        "he": "איזו בדיקה עצמאית נשארת ללא מענה גם כאשר נפילת המתח נמוכה?",
+        "th": "ผลแรงดันตกต่ำยังไม่ตอบการตรวจอิสระด้านใด?"
+      }
+    },
+    {
+      "lesson": "design-permitting-05",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Energy, power and operating mode",
+          "he": "אנרגיה, הספק ומצב עבודה",
+          "th": "พลังงาน กำลัง และโหมดทำงาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Energy budget",
+              "he": "תקציב אנרגיה",
+              "th": "งบพลังงาน"
+            },
+            "detail": {
+              "en": "Usable energy determines modeled duration",
+              "he": "אנרגיה שימושית קובעת משך מחושב",
+              "th": "พลังงานใช้ได้กำหนดระยะเวลาตามแบบจำลอง"
+            }
+          },
+          {
+            "label": {
+              "en": "Power ceiling",
+              "he": "תקרת הספק",
+              "th": "ขีดจำกัดกำลัง"
+            },
+            "detail": {
+              "en": "Simultaneous loads must fit equipment capabilities",
+              "he": "עומסים בו־זמניים חייבים להתאים ליכולות הציוד",
+              "th": "โหลดพร้อมกันต้องอยู่ในความสามารถของอุปกรณ์"
+            }
+          },
+          {
+            "label": {
+              "en": "Mode boundary",
+              "he": "גבול מצב עבודה",
+              "th": "ขอบเขตโหมด"
+            },
+            "detail": {
+              "en": "Grid, outage and EV behavior require distinct evidence",
+              "he": "רשת, הפסקה וטעינת רכב דורשים ראיות נפרדות",
+              "th": "ระบบกริด ไฟดับ และ EV ต้องมีหลักฐานแยก"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Battery duration, instantaneous power and operating mode answer different questions. A modeled dispatch schedule does not prove that backup circuits will work or that EV demand stays within the service limit. Record mode-specific responsibilities and verification before making a resilience promise.",
+          "he": "משך סוללה, הספק רגעי ומצב עבודה עונים על שאלות שונות. תזמון הפעלה במודל אינו מוכיח שמעגלי הגיבוי יעבדו או שצריכת הרכב תישאר בגבול החיבור. תעדו אחריות ובדיקות לכל מצב לפני הבטחת רציפות אנרגטית ללקוח.",
+          "th": "ระยะเวลาจ่ายไฟ กำลังขณะนั้น และโหมดทำงานตอบคนละคำถาม ตารางจ่ายพลังงานจำลองไม่ได้พิสูจน์ว่าวงจรสำรองจะทำงาน หรือโหลด EV จะไม่เกินขีดจำกัดจุดจ่าย ต้องบันทึกผู้รับผิดชอบและการตรวจแต่ละโหมดก่อนให้คำมั่นเรื่องความต่อเนื่องของไฟฟ้า"
+        },
+        "alt": {
+          "en": "Three separate design boundaries show usable energy, simultaneous power and grid or backup operating mode.",
+          "he": "שלושה גבולות תכנון נפרדים מציגים אנרגיה שימושית, הספק בו־זמני ומצב רשת או גיבוי.",
+          "th": "สามขอบเขตออกแบบแยกพลังงานใช้ได้ กำลังพร้อมกัน และโหมดกริดหรือสำรอง"
+        }
+      },
+      "videoId": "pm-battery",
+      "watchFor": {
+        "en": "Watch the behind-the-meter dispatch choices and ask which modeled objective is being served. Keep outage capability as a separate verification question.",
+        "he": "התבוננו בחלופות ההפעלה מאחורי המונה ושאלו איזו מטרה במודל הן משרתות. השאירו יכולת בהפסקת חשמל כשאלת אימות נפרדת.",
+        "th": "สังเกตทางเลือกการจ่ายพลังงานหลังมิเตอร์และวัตถุประสงค์ของแบบจำลอง แยกความสามารถตอนไฟดับเป็นเรื่องที่ต้องตรวจยืนยันต่างหาก"
+      },
+      "takeaway": {
+        "en": "Dispatch optimization and proven backup capability are different deliverables.",
+        "he": "אופטימיזציית הפעלה והוכחת יכולת גיבוי הן תוצרים שונים.",
+        "th": "การปรับแผนจ่ายพลังงานกับการพิสูจน์ความสามารถสำรองไฟเป็นคนละผลงาน"
+      },
+      "question": {
+        "en": "What extra evidence is needed before translating a dispatch result into an outage promise?",
+        "he": "אילו ראיות נוספות נדרשות לפני שהופכים תוצאת תזמון להבטחת גיבוי בהפסקה?",
+        "th": "ต้องมีหลักฐานเพิ่มใดก่อนนำผลจำลองการจ่ายพลังงานไปสัญญาว่าสำรองไฟได้?"
+      }
+    },
+    {
+      "lesson": "design-permitting-06",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "One controlled evidence chain",
+          "he": "שרשרת ראיות מבוקרת אחת",
+          "th": "สายหลักฐานที่ควบคุมได้"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Design intent",
+              "he": "כוונת תכנון",
+              "th": "เจตนาออกแบบ"
+            },
+            "detail": {
+              "en": "State loads, modes and selected equipment",
+              "he": "מציינים עומסים, מצבים וציוד נבחר",
+              "th": "ระบุโหลด โหมด และอุปกรณ์ที่เลือก"
+            }
+          },
+          {
+            "label": {
+              "en": "Coherent documents",
+              "he": "מסמכים עקביים",
+              "th": "เอกสารสอดคล้อง"
+            },
+            "detail": {
+              "en": "Align SLD, calculations and bill of materials",
+              "he": "מתאמים תרשים חד־קווי, חישובים ורשימת ציוד",
+              "th": "ให้ SLD การคำนวณ และรายการอุปกรณ์ตรงกัน"
+            }
+          },
+          {
+            "label": {
+              "en": "Reviewed revision",
+              "he": "מהדורה שנבדקה",
+              "th": "ฉบับผ่านทบทวน"
+            },
+            "detail": {
+              "en": "Record reviewer, status and open conditions",
+              "he": "מתעדים בודק, סטטוס ותנאים פתוחים",
+              "th": "บันทึกผู้ทบทวน สถานะ และเงื่อนไขค้าง"
+            }
+          },
+          {
+            "label": {
+              "en": "Issued package",
+              "he": "חבילה מופצת",
+              "th": "ชุดเอกสารออกใช้"
+            },
+            "detail": {
+              "en": "Release the same version to every responsible party",
+              "he": "מפיצים אותה מהדורה לכל בעלי האחריות",
+              "th": "ส่งฉบับเดียวกันให้ผู้รับผิดชอบทุกฝ่าย"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Each issued drawing must agree with the equipment list, calculations and operating-mode description. A simulation file can support the chain but does not certify the installation. When one item changes, identify every affected document before releasing a revised package.",
+          "he": "כל שרטוט מופץ חייב להתאים לרשימת הציוד, לחישובים ולתיאור מצבי העבודה. קובץ הדמיה יכול לתמוך בשרשרת אך אינו מאשר את ההתקנה. כאשר פריט אחד משתנה, מזהים את כל המסמכים המושפעים לפני הפצת חבילה מתוקנת לצוות.",
+          "th": "แบบที่ออกใช้ต้องตรงกับรายการอุปกรณ์ การคำนวณ และคำอธิบายโหมดทำงาน ไฟล์จำลองช่วยสนับสนุนสายหลักฐานแต่ไม่ได้รับรองการติดตั้ง เมื่อรายการหนึ่งเปลี่ยน ต้องระบุเอกสารทุกฉบับที่ได้รับผลก่อนออกชุดแก้ไขให้ทีม"
+        },
+        "alt": {
+          "en": "A document flow links design intent to consistent documents, reviewed revision and controlled issue.",
+          "he": "זרימת מסמכים מחברת כוונת תכנון, עקביות מסמכים, מהדורה שנבדקה והפצה מבוקרת.",
+          "th": "ลำดับเอกสารเชื่อมเจตนาออกแบบ เอกสารสอดคล้อง ฉบับทบทวน และการออกใช้อย่างควบคุม"
+        }
+      },
+      "videoId": "pm-pv",
+      "watchFor": {
+        "en": "Notice the explicit equipment and system inputs used for the PV case. Consider where each input must be reconciled with the issued drawing package.",
+        "he": "שימו לב לנתוני הציוד והמערכת המפורשים במודל PV. חשבו היכן כל נתון צריך להתאים לחבילת השרטוטים שהופצה.",
+        "th": "สังเกตข้อมูลอุปกรณ์และระบบที่ป้อนในกรณี PV แล้วพิจารณาว่าต้องตรวจให้ตรงกับชุดแบบที่ออกใช้ตรงไหน"
+      },
+      "takeaway": {
+        "en": "Trace a model input to its source document and revision, not just a screenshot.",
+        "he": "קשרו נתון במודל למסמך המקור ולמהדורתו, מעבר לצילום מסך.",
+        "th": "เชื่อมข้อมูลในแบบจำลองกับเอกสารต้นทางและเลขฉบับ ไม่ใช่เพียงภาพหน้าจอ"
+      },
+      "question": {
+        "en": "If the inverter model changes, which parts of your package need review?",
+        "he": "אם דגם הממיר משתנה, אילו חלקים בחבילה מחייבים בדיקה מחדש?",
+        "th": "ถ้าเปลี่ยนรุ่นอินเวอร์เตอร์ เอกสารส่วนใดในชุดต้องทบทวน?"
+      }
+    },
+    {
+      "lesson": "design-permitting-07",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Six decisions, separate evidence",
+          "he": "שש החלטות, ראיות נפרדות",
+          "th": "หกการตัดสินใจ หลักฐานแยกกัน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Grid and operation",
+              "he": "רשת ותפעול",
+              "th": "กริดและการทำงาน"
+            },
+            "detail": {
+              "en": "PEA connection permission; verified no-export control where applicable",
+              "he": "אישור חיבור PEA; בקרת אפס הזרמה כשנדרשת",
+              "th": "อนุญาตเชื่อมต่อ PEA และควบคุมไม่ส่งออกเมื่อเกี่ยวข้อง"
+            }
+          },
+          {
+            "label": {
+              "en": "Sale and energy status",
+              "he": "מכירה ומעמד אנרגיה",
+              "th": "การขายและสถานะพลังงาน"
+            },
+            "detail": {
+              "en": "Export agreement; ERC licensing or applicable exemption process",
+              "he": "הסכם מכירה; רישוי ERC או הליך פטור רלוונטי",
+              "th": "ข้อตกลงขายไฟ และใบอนุญาตหรือกระบวนการยกเว้น ERC"
+            }
+          },
+          {
+            "label": {
+              "en": "Building and inspection",
+              "he": "מבנה ובדיקה",
+              "th": "อาคารและการตรวจ"
+            },
+            "detail": {
+              "en": "Building/professional signoff; electrical inspection and acceptance",
+              "he": "אישור מבנה ובעל מקצוע; בדיקת חשמל וקבלה",
+              "th": "การรับรองอาคารและวิชาชีพ รวมการตรวจรับไฟฟ้า"
+            }
+          }
+        ],
+        "caption": {
+          "en": "These groups organize six separate questions; they are not a universal approval sequence. A grid connection decision does not grant an export contract, and a licensing exemption does not settle building or inspection obligations. Confirm current applicability with each responsible Thai authority for the specific property.",
+          "he": "קבוצות אלו מסדרות שש שאלות נפרדות; הן אינן סדר אישורים אחיד. החלטת חיבור לרשת אינה מעניקה הסכם מכירה, ופטור מרישיון אינו מכריע חובות מבנה או בדיקה. יש לאמת תחולה עדכנית מול כל רשות תאילנדית אחראית עבור הנכס המסוים.",
+          "th": "กลุ่มเหล่านี้จัดหกคำถามที่ต้องพิจารณาแยกกัน ไม่ใช่ลำดับอนุมัติสากล การอนุญาตเชื่อมต่อกริดไม่ได้ให้สัญญาขายไฟ และการยกเว้นใบอนุญาตไม่ได้ตัดสินหน้าที่ด้านอาคารหรือการตรวจ ต้องยืนยันข้อกำหนดปัจจุบันของอาคารนั้นกับหน่วยงานไทยที่รับผิดชอบแต่ละเรื่อง"
+        },
+        "alt": {
+          "en": "Three comparison groups distinguish connection and controls, commercial and ERC status, and building and inspection evidence.",
+          "he": "שלוש קבוצות משוות חיבור ובקרה, מכירה ומעמד ERC, וראיות מבנה ובדיקה.",
+          "th": "สามกลุ่มแยกการเชื่อมต่อและการควบคุม สถานะการขายและ ERC และหลักฐานอาคารกับการตรวจ"
+        }
+      },
+      "videoId": "pm-risk",
+      "watchFor": {
+        "en": "Use the stakeholder discussion to identify distinct decision owners. The lecture teaches stakeholder management, not the Thai permissions listed in this lesson.",
+        "he": "היעזרו בדיון בבעלי עניין לזיהוי אחראי החלטה נפרדים. ההרצאה מלמדת ניהול בעלי עניין, לא את האישורים התאילנדיים שבשיעור.",
+        "th": "ใช้การอธิบายผู้มีส่วนได้ส่วนเสียเพื่อแยกเจ้าของการตัดสินใจ การบรรยายสอนการบริหารผู้เกี่ยวข้อง ไม่ได้สอนใบอนุญาตไทยในบทเรียนนี้"
+      },
+      "takeaway": {
+        "en": "Map each permission to its own authority, evidence and unresolved conditions.",
+        "he": "מפו כל אישור לרשות שלו, לראיות ולתנאים שנותרו פתוחים.",
+        "th": "จับคู่การอนุญาตแต่ละเรื่องกับหน่วยงาน หลักฐาน และเงื่อนไขที่ยังค้าง"
+      },
+      "question": {
+        "en": "Which decision owner must still act if a grid application is accepted but export sale is unconfirmed?",
+        "he": "מי עדיין צריך להחליט אם בקשת חיבור התקבלה אך מכירת עודפים טרם אושרה?",
+        "th": "ถ้ารับคำขอเชื่อมต่อแล้วแต่การขายไฟยังไม่ยืนยัน เจ้าของการตัดสินใจเรื่องใดยังต้องดำเนินการ?"
+      }
+    },
+    {
+      "lesson": "design-permitting-08",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "From installed asset to handover",
+          "he": "מהנכס המותקן למסירה",
+          "th": "จากอุปกรณ์ติดตั้งสู่ส่งมอบ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Verify actual equipment",
+              "he": "אימות ציוד בפועל",
+              "th": "ยืนยันอุปกรณ์จริง"
+            },
+            "detail": {
+              "en": "Match model, serial and installed location",
+              "he": "מתאימים דגם, מספר סידורי ומיקום",
+              "th": "จับคู่รุ่น หมายเลขเครื่อง และตำแหน่ง"
+            }
+          },
+          {
+            "label": {
+              "en": "Attach test evidence",
+              "he": "צירוף ראיות בדיקה",
+              "th": "แนบหลักฐานทดสอบ"
+            },
+            "detail": {
+              "en": "Link results to the actual asset and revision",
+              "he": "מקשרים תוצאות לנכס ולמהדורה בפועל",
+              "th": "เชื่อมผลกับอุปกรณ์และฉบับจริง"
+            }
+          },
+          {
+            "label": {
+              "en": "Resolve punch list",
+              "he": "סגירת רשימת ליקויים",
+              "th": "ปิดรายการค้าง"
+            },
+            "detail": {
+              "en": "Separate critical holds from agreed remaining work",
+              "he": "מפרידים חסמים קריטיים מעבודות המשך מוסכמות",
+              "th": "แยกข้อหยุดงานสำคัญจากงานคงเหลือที่ตกลง"
+            }
+          },
+          {
+            "label": {
+              "en": "Transfer knowledge",
+              "he": "העברת ידע",
+              "th": "ส่งต่อความรู้"
+            },
+            "detail": {
+              "en": "Give owner as-built records and service contacts",
+              "he": "מוסרים לבעלים תיעוד ביצוע ופרטי שירות",
+              "th": "มอบเอกสารตามติดตั้งจริงและผู้ติดต่อบริการ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Handover transfers traceable evidence as well as equipment. A monitoring screen cannot replace tests tied to the installed serial numbers. The owner receives the verified configuration, remaining agreed actions and service route so later faults can be investigated against a reliable baseline.",
+          "he": "מסירה מעבירה ראיות ניתנות למעקב לצד הציוד. מסך ניטור אינו מחליף בדיקות המשויכות למספרים הסידוריים שהותקנו. הבעלים מקבל תצורה מאומתת, פעולות המשך מוסכמות ודרך לקבלת שירות, כדי שתקלות עתידיות ייבדקו מול בסיס אמין ומתועד.",
+          "th": "การส่งมอบต้องส่งต่อหลักฐานตรวจสอบย้อนกลับพร้อมอุปกรณ์ หน้าจอมอนิเตอร์ไม่แทนผลทดสอบที่ผูกกับหมายเลขเครื่องที่ติดตั้ง เจ้าของได้รับรูปแบบที่ยืนยันแล้ว งานคงเหลือที่ตกลง และช่องทางบริการ เพื่อใช้ฐานข้อมูลที่เชื่อถือได้เมื่อวิเคราะห์ปัญหาภายหลัง"
+        },
+        "alt": {
+          "en": "Four handover steps connect actual equipment, asset-specific tests, open-item closure and owner knowledge.",
+          "he": "ארבעה שלבי מסירה מחברים ציוד בפועל, בדיקות לנכס, סגירת פריטים פתוחים וידע לבעלים.",
+          "th": "สี่ขั้นส่งมอบเชื่อมอุปกรณ์จริง ผลทดสอบเฉพาะเครื่อง การปิดงานค้าง และความรู้เจ้าของ"
+        }
+      },
+      "videoId": "pm-reliability",
+      "watchFor": {
+        "en": "Relate the reliability model’s performance perspective to the need for a trustworthy starting record. Distinguish simulation evidence from acceptance tests.",
+        "he": "קשרו את נקודת המבט של מודל האמינות לצורך בתיעוד פתיחה אמין. הבדילו בין ראיות הדמיה לבדיקות קבלה.",
+        "th": "เชื่อมมุมมองผลการทำงานของแบบจำลองความเชื่อถือได้กับความจำเป็นของบันทึกตั้งต้นที่น่าเชื่อถือ แยกหลักฐานจำลองออกจากผลทดสอบรับมอบ"
+      },
+      "takeaway": {
+        "en": "A reliable service history starts with identifying what was actually installed and tested.",
+        "he": "היסטוריית שירות אמינה מתחילה בזיהוי מה הותקן ומה נבדק בפועל.",
+        "th": "ประวัติบริการที่เชื่อถือได้เริ่มจากการระบุสิ่งที่ติดตั้งและทดสอบจริง"
+      },
+      "question": {
+        "en": "What evidence becomes invalid if an inverter is replaced after the recorded tests?",
+        "he": "איזו ראיה מפסיקה להתאים אם ממיר הוחלף אחרי הבדיקות המתועדות?",
+        "th": "หลักฐานใดใช้ยืนยันไม่ได้ถ้าเปลี่ยนอินเวอร์เตอร์หลังการทดสอบที่บันทึกไว้?"
+      }
+    },
+    {
+      "lesson": "design-permitting-09",
+      "diagram": {
+        "kind": "cycle",
+        "title": {
+          "en": "Review the complete design case",
+          "he": "בודקים את תיק התכנון השלם",
+          "th": "ทบทวนกรณีออกแบบครบวงจร"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Frame the property",
+              "he": "הגדרת הנכס",
+              "th": "กำหนดโจทย์อาคาร"
+            },
+            "detail": {
+              "en": "Confirm scope and evidence quality",
+              "he": "מאמתים היקף ואיכות ראיות",
+              "th": "ยืนยันขอบเขตและคุณภาพหลักฐาน"
+            }
+          },
+          {
+            "label": {
+              "en": "Challenge assumptions",
+              "he": "בחינת הנחות",
+              "th": "ท้าทายสมมติฐาน"
+            },
+            "detail": {
+              "en": "Test design, yield and operating scenarios",
+              "he": "בודקים תכנון, תפוקה ותרחישי עבודה",
+              "th": "ตรวจกรณีออกแบบ ผลผลิต และโหมดทำงาน"
+            }
+          },
+          {
+            "label": {
+              "en": "Track approvals",
+              "he": "מעקב אישורים",
+              "th": "ติดตามการอนุมัติ"
+            },
+            "detail": {
+              "en": "Keep authority decisions and conditions distinct",
+              "he": "מפרידים החלטות רשויות ותנאיהן",
+              "th": "แยกคำตัดสินและเงื่อนไขแต่ละหน่วยงาน"
+            }
+          },
+          {
+            "label": {
+              "en": "Review handover readiness",
+              "he": "בחינת מוכנות למסירה",
+              "th": "ทบทวนความพร้อมส่งมอบ"
+            },
+            "detail": {
+              "en": "Return unresolved evidence to its responsible owner",
+              "he": "מחזירים פערי ראיות לאחראי המתאים",
+              "th": "ส่งหลักฐานที่ยังขาดกลับให้ผู้รับผิดชอบ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The capstone reviews the whole case and returns weak evidence to its owner. A strong yield model cannot compensate for an unresolved structural question or missing authority condition. The learning exercise supports supervised judgment; it does not qualify a learner to sign professional designs.",
+          "he": "תרגיל הסיכום בוחן את התיק כולו ומחזיר ראיות חלשות לאחראי שלהן. מודל תפוקה טוב אינו מפצה על שאלה מבנית פתוחה או תנאי חסר של רשות. התרגיל מפתח שיקול דעת בפיקוח ואינו מסמיך את הלומד לחתום על תכנון מקצועי.",
+          "th": "กรณีสรุปทบทวนทั้งชุดและส่งหลักฐานที่อ่อนกลับให้เจ้าของเรื่อง แบบจำลองผลผลิตที่ดีไม่ชดเชยข้อสงสัยโครงสร้างหรือเงื่อนไขหน่วยงานที่ยังขาด แบบฝึกช่วยพัฒนาวิจารณญาณภายใต้การกำกับ ไม่ได้ทำให้ผู้เรียนมีคุณสมบัติลงนามรับรองแบบวิชาชีพ"
+        },
+        "alt": {
+          "en": "A review cycle connects property evidence, challenged assumptions, separate approvals and handover readiness.",
+          "he": "מחזור ביקורת מחבר ראיות נכס, בחינת הנחות, אישורים נפרדים ומוכנות למסירה.",
+          "th": "วงจรทบทวนเชื่อมหลักฐานอาคาร การทดสอบสมมติฐาน การอนุมัติแยกเรื่อง และความพร้อมส่งมอบ"
+        }
+      },
+      "videoId": "pm-uncertainty",
+      "watchFor": {
+        "en": "Use the uncertainty webinar to prepare challenges to your capstone production estimate, then identify non-model questions that still require separate reviewers.",
+        "he": "היעזרו בוובינר אי־הוודאות כדי לאתגר את אומדן התפוקה בתרגיל, ואז זהו שאלות שמחוץ למודל ודורשות בודקים נפרדים.",
+        "th": "ใช้เว็บบินาร์ความไม่แน่นอนเพื่อท้าทายประมาณการผลผลิตในกรณีสรุป แล้วระบุคำถามนอกแบบจำลองที่ยังต้องมีผู้ทบทวนแยก"
+      },
+      "takeaway": {
+        "en": "Decision readiness depends on both model quality and the completeness of independent evidence.",
+        "he": "מוכנות להחלטה תלויה באיכות המודל ובשלמות הראיות העצמאיות גם יחד.",
+        "th": "ความพร้อมตัดสินใจขึ้นกับทั้งคุณภาพแบบจำลองและความครบของหลักฐานอิสระ"
+      },
+      "question": {
+        "en": "Which unresolved assumption would you send back first, and to whom?",
+        "he": "איזו הנחה פתוחה תחזירו לבדיקה תחילה, ולמי?",
+        "th": "คุณจะส่งสมมติฐานที่ยังค้างข้อใดกลับไปตรวจเป็นอันดับแรก และส่งให้ใคร?"
+      }
+    },
+    {
+      "lesson": "leadership-01",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Make a gate reviewable",
+          "he": "מגדירים שער שלב שניתן לבחון",
+          "th": "ทำให้จุดอนุมัติตรวจสอบได้"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Name the decision",
+              "he": "מגדירים החלטה",
+              "th": "ระบุการตัดสินใจ"
+            },
+            "detail": {
+              "en": "State exactly what may proceed",
+              "he": "מציינים בדיוק מה רשאי להתקדם",
+              "th": "ระบุชัดว่างานใดจะเดินหน้าต่อ"
+            }
+          },
+          {
+            "label": {
+              "en": "Assign accountability",
+              "he": "מקצים אחריות",
+              "th": "กำหนดผู้รับผิดชอบ"
+            },
+            "detail": {
+              "en": "Separate accountable owner from supporting roles",
+              "he": "מפרידים אחראי להחלטה מתפקידי תמיכה",
+              "th": "แยกเจ้าของคำตัดสินจากผู้สนับสนุน"
+            }
+          },
+          {
+            "label": {
+              "en": "Require evidence",
+              "he": "דורשים ראיות",
+              "th": "กำหนดหลักฐาน"
+            },
+            "detail": {
+              "en": "Check agreed criteria and unresolved conditions",
+              "he": "בודקים קריטריונים מוסכמים ותנאים פתוחים",
+              "th": "ตรวจเกณฑ์ที่ตกลงและเงื่อนไขค้าง"
+            }
+          },
+          {
+            "label": {
+              "en": "Record the outcome",
+              "he": "מתעדים תוצאה",
+              "th": "บันทึกผลตัดสิน"
+            },
+            "detail": {
+              "en": "Approve, hold or return with named actions",
+              "he": "מאשרים, מעכבים או מחזירים עם פעולות ואחראים",
+              "th": "อนุมัติ พัก หรือส่งกลับพร้อมงานและเจ้าของ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A stage gate is a recorded decision against explicit evidence. RACI clarifies who owns that decision and who contributes; it does not transfer statutory authority. A commercial manager cannot replace a required engineer or authority decision by marking the project green.",
+          "he": "שער שלב הוא החלטה מתועדת מול ראיות מוגדרות. RACI מבהיר מי אחראי להחלטה ומי תורם לה, ואינו מעביר סמכות חוקית. מנהל מסחרי אינו יכול להחליף החלטה נדרשת של מהנדס או רשות באמצעות סימון הפרויקט בירוק.",
+          "th": "จุดอนุมัติระยะงานคือคำตัดสินที่บันทึกเทียบหลักฐานชัดเจน RACI อธิบายเจ้าของคำตัดสินและผู้ร่วมงาน ไม่ได้ถ่ายโอนอำนาจตามกฎหมาย ผู้จัดการเชิงพาณิชย์ไม่สามารถแทนคำตัดสินที่ต้องได้จากวิศวกรหรือหน่วยงานด้วยการเปลี่ยนสถานะโครงการเป็นสีเขียว"
+        },
+        "alt": {
+          "en": "Four steps make a stage gate explicit: decision, accountable owner, required evidence and recorded outcome.",
+          "he": "ארבעה שלבים מגדירים שער שלב: החלטה, אחראי, ראיות נדרשות ותוצאה מתועדת.",
+          "th": "สี่ขั้นทำให้จุดอนุมัติชัดเจน ได้แก่ คำตัดสิน เจ้าของ หลักฐานที่ต้องมี และผลที่บันทึก"
+        }
+      },
+      "videoId": "pm-risk",
+      "watchFor": {
+        "en": "Watch how stakeholders are identified. Translate that perspective into a gate with one accountable internal owner and separately named external decision makers.",
+        "he": "שימו לב לזיהוי בעלי העניין. תרגמו את הגישה לשער עם אחראי פנימי אחד ובעלי החלטה חיצוניים המצוינים בנפרד.",
+        "th": "สังเกตการระบุผู้มีส่วนได้ส่วนเสีย แล้วนำมาใช้กับจุดอนุมัติที่มีเจ้าของภายในหนึ่งคนและแยกผู้ตัดสินภายนอกให้ชัด"
+      },
+      "takeaway": {
+        "en": "Knowing who participates is not the same as knowing who can authorize the next step.",
+        "he": "ידיעה מי משתתף אינה זהה לידיעה מי מוסמך לאשר את הצעד הבא.",
+        "th": "การรู้ว่าใครมีส่วนร่วมต่างจากการรู้ว่าใครมีอำนาจอนุมัติขั้นต่อไป"
+      },
+      "question": {
+        "en": "Who owns your design-release gate, and which decisions remain outside that person’s authority?",
+        "he": "מי אחראי לשער שחרור התכנון שלכם, ואילו החלטות נותרות מחוץ לסמכותו?",
+        "th": "ใครเป็นเจ้าของจุดอนุมัติออกแบบ และคำตัดสินใดยังอยู่นอกอำนาจของคนนั้น?"
+      }
+    },
+    {
+      "lesson": "leadership-02",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "The longest dependency controls",
+          "he": "התלות הארוכה קובעת",
+          "th": "เส้นทางยาวที่สุดกำหนดเวลา"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Survey/design · 5 days",
+              "he": "סקר ותכנון · 5 ימים",
+              "th": "สำรวจและออกแบบ · 5 วัน"
+            },
+            "detail": {
+              "en": "Survey and design precede both readiness streams",
+              "he": "סקר ותכנון קודמים לשני מסלולי המוכנות",
+              "th": "สำรวจและออกแบบก่อนทั้งสองสายความพร้อม"
+            }
+          },
+          {
+            "label": {
+              "en": "Parallel work · 8 days",
+              "he": "עבודה במקביל · 8 ימים",
+              "th": "งานขนาน · 8 วัน"
+            },
+            "detail": {
+              "en": "Approval readiness 8; procurement 6 + transport 2; await both",
+              "he": "מוכנות לאישור 8; רכש 6 והובלה 2; ממתינים לשניהם",
+              "th": "พร้อมขออนุมัติ 8 จัดซื้อ 6 และขนส่ง 2 รอทั้งคู่"
+            }
+          },
+          {
+            "label": {
+              "en": "Installation · 3 days",
+              "he": "התקנה · 3 ימים",
+              "th": "ติดตั้ง · 3 วัน"
+            },
+            "detail": {
+              "en": "Starts after both predecessors finish",
+              "he": "מתחילה לאחר סיום שתי הפעילויות הקודמות",
+              "th": "เริ่มเมื่อทั้งสองงานก่อนหน้าเสร็จ"
+            }
+          },
+          {
+            "label": {
+              "en": "Testing · 1 day",
+              "he": "בדיקה · יום אחד",
+              "th": "ทดสอบ · 1 วัน"
+            },
+            "detail": {
+              "en": "Total example duration: 17 days",
+              "he": "משך כולל בדוגמה: 17 ימים",
+              "th": "ระยะเวลาตัวอย่างรวม 17 วัน"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The training network lasts 5 + max(8, 8) + 3 + 1 = 17 working days. Survey/design precedes parallel approval readiness and procurement/transport. Installation waits for both. A two-day transport delay makes nineteen working days; these are learning assumptions, not supplier or PEA service commitments.",
+          "he": "רשת התרגול נמשכת 5 + max(8, 8) + 3 + 1 = 17 ימי עבודה. סקר ותכנון קודמים למוכנות לאישור ולרכש והובלה המתנהלים במקביל. ההתקנה ממתינה לשניהם. עיכוב הובלה של יומיים מביא לתשעה־עשר ימי עבודה; אלו הנחות לימוד, לא התחייבויות ספק או PEA.",
+          "th": "เครือข่ายฝึกใช้เวลา 5 + max(8, 8) + 3 + 1 = 17 วันทำงาน หลังสำรวจและออกแบบจึงทำความพร้อมขออนุมัติขนานกับจัดซื้อและขนส่ง การติดตั้งรอทั้งคู่ หากขนส่งช้าสองวันจะเป็นสิบเก้าวันทำงาน นี่คือสมมติฐานฝึก ไม่ใช่คำมั่นบริการของผู้ขายหรือ PEA"
+        },
+        "alt": {
+          "en": "A training schedule shows five survey/design days, parallel eight-day approval readiness and procurement/transport, three installation days and one testing day.",
+          "he": "לוח תרגול מציג חמישה ימי סקר ותכנון, שמונה ימי מוכנות לאישור במקביל לרכש והובלה, שלושה ימי התקנה ויום בדיקה.",
+          "th": "แผนฝึกแสดงสำรวจและออกแบบห้าวัน ความพร้อมขออนุมัติแปดวันขนานกับจัดซื้อและขนส่ง ติดตั้งสามวัน และทดสอบหนึ่งวัน"
+        }
+      },
+      "videoId": "pm-cpm",
+      "watchFor": {
+        "en": "Follow the precedence relationships and early/late-start reasoning. Apply them where approval readiness and island procurement/transport must both finish.",
+        "he": "עקבו אחר קשרי התלות וההיגיון של התחלה מוקדמת ומאוחרת. יישמו אותם בנקודה שבה מוכנות לאישור ורכש והובלה לאי חייבים להסתיים יחד.",
+        "th": "ติดตามความสัมพันธ์ก่อนหลังและเหตุผลของเวลาเริ่มเร็วหรือช้า แล้วใช้กับจุดที่ต้องรอทั้งความพร้อมขออนุมัติและจัดซื้อขนส่งเข้าเกาะ"
+      },
+      "takeaway": {
+        "en": "Shortening a task only changes completion if the controlling dependencies also allow it.",
+        "he": "קיצור משימה משנה את מועד הסיום רק אם התלויות הקובעות מאפשרות זאת.",
+        "th": "การลดเวลางานเปลี่ยนวันเสร็จได้ต่อเมื่อความสัมพันธ์ที่ควบคุมเวลาก็ยอมให้เปลี่ยน"
+      },
+      "question": {
+        "en": "What happens to the finish date if only approval readiness falls from eight days to six?",
+        "he": "מה קורה למועד הסיום אם רק המוכנות לאישור מתקצרת משמונה ימים לשישה?",
+        "th": "วันเสร็จจะเปลี่ยนอย่างไรถ้าลดเฉพาะความพร้อมขออนุมัติจากแปดวันเหลือหกวัน?"
+      }
+    },
+    {
+      "lesson": "leadership-03",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Build the completion forecast",
+          "he": "בונים תחזית לסיום",
+          "th": "สร้างประมาณการต้นทุนจบงาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Actual cost",
+              "he": "עלות בפועל",
+              "th": "ต้นทุนจริง"
+            },
+            "detail": {
+              "en": "120,000 THB incurred within the training cost boundary",
+              "he": "120,000 באט עלויות שהתהוו בגבולות דוגמת התרגול",
+              "th": "ต้นทุนเกิดแล้ว 120,000 บาท ภายในขอบเขตตัวอย่างฝึก"
+            }
+          },
+          {
+            "label": {
+              "en": "Remaining commitments",
+              "he": "התחייבויות שנותרו",
+              "th": "ภาระผูกพันคงเหลือ"
+            },
+            "detail": {
+              "en": "70,000 THB committed cost still to be incurred",
+              "he": "70,000 באט עלויות מחויבות שטרם התהוו",
+              "th": "ต้นทุนผูกพัน 70,000 บาท ที่ยังไม่เกิด"
+            }
+          },
+          {
+            "label": {
+              "en": "Uncommitted work",
+              "he": "עבודה ללא התחייבות",
+              "th": "งานยังไม่ผูกพัน"
+            },
+            "detail": {
+              "en": "30,000 THB still needed to complete",
+              "he": "30,000 באט נוספים נדרשים להשלמה",
+              "th": "ยังต้องใช้เพื่อจบงานอีก 30,000 บาท"
+            }
+          },
+          {
+            "label": {
+              "en": "Forecast total",
+              "he": "תחזית כוללת",
+              "th": "ยอดคาดการณ์รวม"
+            },
+            "detail": {
+              "en": "220,000 THB; compare with defined revenue and exclusions",
+              "he": "220,000 באט; משווים להכנסה ולהחרגות מוגדרות",
+              "th": "220,000 บาท เทียบรายได้และรายการที่ไม่รวม"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The cost forecast combines incurred costs, remaining committed costs and uncommitted work needed for completion. Keep the categories non-overlapping and track payment dates separately. The training total is 220,000 THB; contribution comparisons need a consistent revenue, cost and tax boundary.",
+          "he": "תחזית העלות משלבת עלויות שהתהוו, עלויות מחויבות שנותרו ועבודה להשלמה ללא התחייבות. שומרים על קטגוריות שאינן חופפות ועוקבים בנפרד אחר מועדי התשלום. בדוגמת התרגול הסכום הוא 220,000 באט; השוואת תרומה דורשת גבולות עקביים להכנסות, לעלויות ולמסים.",
+          "th": "ประมาณการต้นทุนรวมต้นทุนที่เกิดแล้ว ต้นทุนผูกพันคงเหลือ และงานที่ยังไม่ผูกพันแต่ต้องทำให้เสร็จ แยกหมวดไม่ให้นับซ้ำและติดตามวันชำระเงินต่างหาก ตัวอย่างฝึกยอดรวม 220,000 บาท การเทียบส่วนต่างต้องใช้ขอบเขตรายได้ ต้นทุน และภาษีเดียวกัน"
+        },
+        "alt": {
+          "en": "A cost forecast adds 120,000 THB incurred, 70,000 THB remaining committed costs and 30,000 THB uncommitted work to reach 220,000 THB.",
+          "he": "תחזית עלות מחברת 120,000 באט עלויות שהתהוו, 70,000 עלויות מחויבות שנותרו ו־30,000 עבודה ללא התחייבות, לסך 220,000 באט.",
+          "th": "ประมาณการบวกต้นทุนเกิดแล้ว 120,000 บาท ต้นทุนผูกพันคงเหลือ 70,000 บาท และงานยังไม่ผูกพัน 30,000 บาท ได้ 220,000 บาท"
+        }
+      },
+      "videoId": "pm-evm",
+      "watchFor": {
+        "en": "Use the earned-value lecture to distinguish achieved work from incurred cost. Identify evidence for the remaining-work forecast, and keep payment timing in a separate cash schedule.",
+        "he": "היעזרו בהרצאת הערך הנצבר להבחנה בין עבודה שהושגה לעלות שהתהוותה. זהו ראיות לתחזית העבודה שנותרה, ושמרו את מועדי התשלום בלוח תזרים נפרד.",
+        "th": "ใช้การบรรยายมูลค่างานเพื่อแยกงานที่ทำได้ออกจากต้นทุนที่เกิด ระบุหลักฐานรองรับประมาณการงานคงเหลือ และแยกเวลาชำระไว้ในตารางเงินสด"
+      },
+      "takeaway": {
+        "en": "Low incurred cost can reflect unfinished work; cash paid is a separate measure.",
+        "he": "עלות נמוכה שהתהוותה עשויה לשקף עבודה שלא הושלמה; מזומן ששולם הוא מדד נפרד.",
+        "th": "ต้นทุนที่เกิดต่ำอาจสะท้อนงานยังไม่เสร็จ ส่วนเงินสดที่จ่ายเป็นอีกตัววัดหนึ่ง"
+      },
+      "question": {
+        "en": "Which uncommitted island-logistics costs could make your forecast incomplete?",
+        "he": "אילו עלויות לוגיסטיקה לאי שטרם הוזמנו עלולות להשאיר את התחזית חסרה?",
+        "th": "ต้นทุนขนส่งเข้าเกาะที่ยังไม่ผูกพันรายการใดอาจทำให้ประมาณการของคุณไม่ครบ?"
+      }
+    },
+    {
+      "lesson": "leadership-04",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Can this work proceed?",
+          "he": "האם העבודה יכולה להתקדם?",
+          "th": "งานนี้เดินหน้าต่อได้หรือไม่?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Critical controls verified?",
+              "he": "בקרות קריטיות אומתו?",
+              "th": "ยืนยันมาตรการสำคัญแล้ว?"
+            },
+            "detail": {
+              "en": "Check competence, conditions and required evidence",
+              "he": "בודקים כשירות, תנאים וראיות נדרשות",
+              "th": "ตรวจความสามารถ สภาพงาน และหลักฐานที่ต้องมี"
+            }
+          },
+          {
+            "label": {
+              "en": "Evidence complete",
+              "he": "הראיות שלמות",
+              "th": "หลักฐานครบ"
+            },
+            "detail": {
+              "en": "Authorized owner may release within scope",
+              "he": "אחראי מוסמך יכול לשחרר בגבולות ההיקף",
+              "th": "เจ้าของอำนาจอาจอนุมัติภายในขอบเขต"
+            }
+          },
+          {
+            "label": {
+              "en": "Control unresolved",
+              "he": "בקרה לא הושלמה",
+              "th": "มาตรการยังค้าง"
+            },
+            "detail": {
+              "en": "Hold affected work and assign corrective action",
+              "he": "עוצרים עבודה מושפעת ומקצים פעולה מתקנת",
+              "th": "พักงานที่เกี่ยวข้องและมอบหมายการแก้ไข"
+            }
+          },
+          {
+            "label": {
+              "en": "Conditions changed",
+              "he": "התנאים השתנו",
+              "th": "สภาพงานเปลี่ยน"
+            },
+            "detail": {
+              "en": "Stop and reassess before continuing",
+              "he": "עוצרים ומעריכים מחדש לפני המשך",
+              "th": "หยุดและประเมินใหม่ก่อนทำต่อ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Release depends on the critical controls, not the average completion score. Eighteen closed items out of twenty can still leave a serious hold. The decision structure supports competent safety governance; it is not a substitute for a site-specific work method or emergency plan.",
+          "he": "שחרור עבודה תלוי בבקרות הקריטיות, לא באחוז ההשלמה הממוצע. שמונה־עשר פריטים סגורים מתוך עשרים עדיין יכולים להשאיר חסם חמור. מבנה ההחלטה תומך בניהול בטיחות בידי בעלי כשירות, ואינו מחליף שיטת עבודה או תוכנית חירום המתאימות לאתר.",
+          "th": "การอนุมัติงานขึ้นกับมาตรการสำคัญ ไม่ใช่คะแนนความครบเฉลี่ย แม้ปิดสิบแปดจากยี่สิบรายการก็อาจยังมีข้อหยุดงานร้ายแรง โครงสร้างตัดสินใจช่วยการกำกับความปลอดภัยโดยผู้มีความสามารถ แต่ไม่แทนวิธีทำงานหรือแผนฉุกเฉินเฉพาะพื้นที่"
+        },
+        "alt": {
+          "en": "A decision asks whether critical controls are verified, with alternatives to release, hold or reassess changed conditions.",
+          "he": "החלטה שואלת אם הבקרות הקריטיות אומתו, עם חלופות לשחרור, עצירה או הערכה מחדש בעקבות שינוי תנאים.",
+          "th": "คำตัดสินถามว่ายืนยันมาตรการสำคัญหรือยัง พร้อมทางเลือกอนุมัติ พักงาน หรือประเมินใหม่เมื่อสภาพเปลี่ยน"
+        }
+      },
+      "videoId": "pm-risk",
+      "watchFor": {
+        "en": "Relate the lecture’s risk-management stages to the manager’s duty to keep unresolved critical controls visible. Do not treat general risk discussion as electrical instruction.",
+        "he": "קשרו את שלבי ניהול הסיכון בהרצאה לחובת המנהל להשאיר בקרות קריטיות פתוחות גלויות. דיון כללי בסיכון אינו הוראות עבודת חשמל.",
+        "th": "เชื่อมขั้นบริหารความเสี่ยงกับหน้าที่ผู้จัดการในการแสดงมาตรการสำคัญที่ยังไม่ครบ อย่าใช้บทอภิปรายความเสี่ยงทั่วไปเป็นคำสั่งงานไฟฟ้า"
+      },
+      "takeaway": {
+        "en": "Commercial urgency does not establish that a critical safety condition has been met.",
+        "he": "דחיפות מסחרית אינה מוכיחה שתנאי בטיחות קריטי התקיים.",
+        "th": "ความเร่งด่วนทางธุรกิจไม่ได้พิสูจน์ว่าเงื่อนไขความปลอดภัยสำคัญครบแล้ว"
+      },
+      "question": {
+        "en": "If two critical controls remain open, what should the gate record show?",
+        "he": "אם שתי בקרות קריטיות נשארו פתוחות, מה צריך להופיע ברישום שער השלב?",
+        "th": "ถ้ามาตรการสำคัญสองรายการยังค้าง บันทึกจุดอนุมัติควรแสดงอะไร?"
+      }
+    },
+    {
+      "lesson": "leadership-05",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Own the subcontractor interface",
+          "he": "אחריות לממשק קבלני משנה",
+          "th": "รับผิดชอบรอยต่องานผู้รับเหมาช่วง"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Define the boundary",
+              "he": "מגדירים גבול",
+              "th": "กำหนดขอบเขต"
+            },
+            "detail": {
+              "en": "State included work and exclusions",
+              "he": "מגדירים עבודה כלולה והחרגות",
+              "th": "ระบุงานที่รวมและไม่รวม"
+            }
+          },
+          {
+            "label": {
+              "en": "Name interface owners",
+              "he": "ממנים אחראי ממשק",
+              "th": "ระบุเจ้าของรอยต่อ"
+            },
+            "detail": {
+              "en": "Assign adjacent work and handoff responsibilities",
+              "he": "מקצים עבודה משיקה ואחריות להעברה",
+              "th": "มอบหมายงานเกี่ยวเนื่องและความรับผิดชอบส่งต่อ"
+            }
+          },
+          {
+            "label": {
+              "en": "Check the result",
+              "he": "בודקים תוצאה",
+              "th": "ตรวจผลงาน"
+            },
+            "detail": {
+              "en": "Inspect against agreed scope and evidence",
+              "he": "בודקים מול היקף וראיות מוסכמים",
+              "th": "ตรวจเทียบขอบเขตและหลักฐานที่ตกลง"
+            }
+          },
+          {
+            "label": {
+              "en": "Accept explicitly",
+              "he": "מאשרים קבלה במפורש",
+              "th": "รับมอบอย่างชัดเจน"
+            },
+            "detail": {
+              "en": "Separate completed, checked and accepted states",
+              "he": "מפרידים בוצע, נבדק והתקבל",
+              "th": "แยกสถานะทำเสร็จ ตรวจแล้ว และรับแล้ว"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A subcontract package needs an owner on both sides of each interface. Roof penetration, waterproofing and electrical work can otherwise leave gaps between competent trades. Completion, inspection and acceptance are distinct states; define who records each and what evidence closes the handoff.",
+          "he": "לחבילת קבלן משנה נדרש אחראי בכל צד של הממשק. חדירה לגג, איטום ועבודת חשמל עלולים אחרת להשאיר פערים בין בעלי מקצוע כשירים. ביצוע, בדיקה וקבלה הם מצבים שונים; הגדירו מי מתעד כל מצב ואיזו ראיה סוגרת את ההעברה.",
+          "th": "ชุดงานผู้รับเหมาช่วงต้องมีเจ้าของทั้งสองฝั่งของแต่ละรอยต่อ งานเจาะหลังคา กันน้ำ และไฟฟ้าอาจมีช่องว่างระหว่างช่างที่มีความสามารถ การทำเสร็จ การตรวจ และการรับมอบเป็นคนละสถานะ ต้องกำหนดผู้บันทึกและหลักฐานปิดการส่งต่อแต่ละจุด"
+        },
+        "alt": {
+          "en": "Four stages assign a subcontract boundary, interface owners, checking and explicit acceptance.",
+          "he": "ארבעה שלבים מגדירים גבול קבלן משנה, אחראי ממשק, בדיקה וקבלה מפורשת.",
+          "th": "สี่ขั้นกำหนดขอบเขตผู้รับเหมาช่วง เจ้าของรอยต่อ การตรวจ และการรับมอบชัดเจน"
+        }
+      },
+      "videoId": "pm-risk",
+      "watchFor": {
+        "en": "Apply the stakeholder perspective to adjacent subcontractors. Identify who is affected when one trade hands work to another.",
+        "he": "יישמו את גישת בעלי העניין לקבלנים משיקים. זהו מי מושפע כאשר בעל מקצוע אחד מעביר עבודה לאחר.",
+        "th": "ใช้มุมมองผู้มีส่วนได้ส่วนเสียกับผู้รับเหมาที่ทำงานต่อกัน ระบุผู้ได้รับผลเมื่องานถูกส่งจากทีมหนึ่งไปอีกทีม"
+      },
+      "takeaway": {
+        "en": "An interface without an accountable owner can remain unfinished even when both subcontractors report completion.",
+        "he": "ממשק ללא אחראי עלול להישאר לא גמור גם כששני הקבלנים מדווחים שסיימו.",
+        "th": "รอยต่อที่ไม่มีเจ้าของอาจยังไม่เสร็จ แม้ผู้รับเหมาทั้งสองรายรายงานว่าจบงานแล้ว"
+      },
+      "question": {
+        "en": "Who owns the evidence that a roof penetration is sealed after electrical work?",
+        "he": "מי אחראי לראיה שחדירת הגג נאטמה לאחר עבודת החשמל?",
+        "th": "ใครรับผิดชอบหลักฐานว่าจุดเจาะหลังคาปิดกันน้ำแล้วหลังงานไฟฟ้า?"
+      }
+    },
+    {
+      "lesson": "leadership-06",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Classify before changing the baseline",
+          "he": "מסווגים לפני שינוי הבסיס",
+          "th": "จำแนกก่อนเปลี่ยนแผนฐาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "What changed?",
+              "he": "מה השתנה?",
+              "th": "สิ่งใดเปลี่ยน?"
+            },
+            "detail": {
+              "en": "Compare the request with the agreed baseline",
+              "he": "משווים את הבקשה לבסיס המוסכם",
+              "th": "เทียบคำขอกับแผนฐานที่ตกลง"
+            }
+          },
+          {
+            "label": {
+              "en": "New scope",
+              "he": "היקף חדש",
+              "th": "ขอบเขตใหม่"
+            },
+            "detail": {
+              "en": "Assess technical, cost and schedule impacts before authorization",
+              "he": "בוחנים השפעה טכנית, עלות וזמן לפני אישור",
+              "th": "ประเมินเทคนิค ต้นทุน และเวลาก่อนอนุมัติ"
+            }
+          },
+          {
+            "label": {
+              "en": "Defect correction",
+              "he": "תיקון ליקוי",
+              "th": "แก้ข้อบกพร่อง"
+            },
+            "detail": {
+              "en": "Restore an agreed requirement through the responsible party",
+              "he": "משיבים דרישה מוסכמת באמצעות האחראי",
+              "th": "ให้ผู้รับผิดชอบแก้ให้ตรงข้อกำหนดเดิม"
+            }
+          },
+          {
+            "label": {
+              "en": "Uncertain exposure",
+              "he": "חשיפה לא ודאית",
+              "th": "ความเสี่ยงไม่แน่นอน"
+            },
+            "detail": {
+              "en": "Record risk owner, trigger and response",
+              "he": "מתעדים אחראי סיכון, טריגר ותגובה",
+              "th": "บันทึกเจ้าของความเสี่ยง เงื่อนไขกระตุ้น และการตอบสนอง"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A new EV request, a faulty installation and a possible shipping delay are different management problems. Classify the event before changing price or baseline. An approved commercial change still needs technical review and any relevant authority decision; a better margin does not prove feasibility.",
+          "he": "בקשת רכב חדשה, התקנה לקויה ועיכוב אפשרי במשלוח הן בעיות ניהול שונות. מסווגים את האירוע לפני שינוי מחיר או בסיס. שינוי מסחרי מאושר עדיין דורש בדיקה טכנית והחלטת רשות רלוונטית; שיפור בשולי התרומה אינו מוכיח היתכנות.",
+          "th": "คำขอ EV ใหม่ การติดตั้งบกพร่อง และความเป็นไปได้ที่ขนส่งล่าช้าเป็นปัญหาบริหารคนละแบบ จำแนกเหตุการณ์ก่อนเปลี่ยนราคาหรือแผนฐาน การอนุมัติเชิงพาณิชย์ยังต้องมีการทบทวนเทคนิคและคำตัดสินหน่วยงานที่เกี่ยวข้อง ส่วนต่างที่ดีขึ้นไม่ได้พิสูจน์ว่าทำได้จริง"
+        },
+        "alt": {
+          "en": "A classification decision separates new scope, defect correction and uncertain risk exposure.",
+          "he": "החלטת סיווג מפרידה היקף חדש, תיקון ליקוי וחשיפה לסיכון לא ודאי.",
+          "th": "การจำแนกแยกขอบเขตใหม่ การแก้ข้อบกพร่อง และความเสี่ยงที่ยังไม่แน่นอน"
+        }
+      },
+      "videoId": "pm-risk",
+      "watchFor": {
+        "en": "Use the risk and uncertainty discussion to distinguish a possible future event from an approved scope change or an existing defect.",
+        "he": "היעזרו בדיון בסיכון ובאי־ודאות להבחנה בין אירוע עתידי אפשרי, שינוי היקף מאושר וליקוי קיים.",
+        "th": "ใช้เรื่องความเสี่ยงและความไม่แน่นอนแยกเหตุการณ์ที่อาจเกิดจากการเปลี่ยนขอบเขตที่อนุมัติแล้วหรือข้อบกพร่องที่มีอยู่"
+      },
+      "takeaway": {
+        "en": "Different categories need different owners, evidence and authorization paths.",
+        "he": "קטגוריות שונות דורשות אחראים, ראיות ומסלולי אישור שונים.",
+        "th": "แต่ละประเภทต้องใช้เจ้าของ หลักฐาน และเส้นทางอนุมัติต่างกัน"
+      },
+      "question": {
+        "en": "How would you classify an EV charger request received after design release?",
+        "he": "כיצד תסווגו בקשת מטען לרכב שהגיעה לאחר שחרור התכנון?",
+        "th": "คุณจะจำแนกคำขอเพิ่มเครื่องชาร์จ EV ที่ได้รับหลังอนุมัติแบบอย่างไร?"
+      }
+    },
+    {
+      "lesson": "leadership-07",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Progress is more than paid",
+          "he": "התקדמות רחבה מתשלום",
+          "th": "ความก้าวหน้ามีมากกว่าการจ่าย"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Physical completion",
+              "he": "השלמה פיזית",
+              "th": "งานกายภาพเสร็จ"
+            },
+            "detail": {
+              "en": "Equipment installed against scope",
+              "he": "ציוד מותקן בהתאם להיקף",
+              "th": "ติดตั้งอุปกรณ์ตามขอบเขต"
+            }
+          },
+          {
+            "label": {
+              "en": "Verified performance",
+              "he": "ביצוע מאומת",
+              "th": "ผลทำงานยืนยันแล้ว"
+            },
+            "detail": {
+              "en": "Required tests linked to actual assets",
+              "he": "בדיקות נדרשות מקושרות לציוד בפועל",
+              "th": "ผลทดสอบที่ต้องมีผูกกับอุปกรณ์จริง"
+            }
+          },
+          {
+            "label": {
+              "en": "Required acceptance",
+              "he": "קבלה נדרשת",
+              "th": "การรับรองที่จำเป็น"
+            },
+            "detail": {
+              "en": "Authority and client conditions tracked separately",
+              "he": "תנאי רשות ולקוח מנוהלים בנפרד",
+              "th": "ติดตามเงื่อนไขหน่วยงานและลูกค้าแยกกัน"
+            }
+          },
+          {
+            "label": {
+              "en": "Contractual payment",
+              "he": "תשלום חוזי",
+              "th": "การจ่ายตามสัญญา"
+            },
+            "detail": {
+              "en": "Payment follows the agreed contract milestone",
+              "he": "תשלום לפי אבן הדרך החוזית המוסכמת",
+              "th": "จ่ายตามหมุดหมายที่ตกลงในสัญญา"
+            }
+          }
+        ],
+        "caption": {
+          "en": "These statuses can differ on the same day. Installed equipment may await tests; accepted work may await a contractual invoice date. Earned-value reporting supports progress analysis but does not create payment or withholding rights. Keep contract milestones and technical acceptance evidence explicit.",
+          "he": "המצבים יכולים להיות שונים באותו יום. ציוד מותקן עשוי להמתין לבדיקות; עבודה שהתקבלה עשויה להמתין למועד חשבונית חוזי. דיווח ערך נצבר תומך בניתוח התקדמות ואינו יוצר זכויות תשלום או עיכוב. שמרו על אבני דרך חוזיות וראיות קבלה טכנית מפורשות.",
+          "th": "สถานะเหล่านี้อาจต่างกันในวันเดียว อุปกรณ์ติดตั้งแล้วอาจยังรอทดสอบ งานที่รับแล้วอาจยังไม่ถึงวันออกใบแจ้งหนี้ตามสัญญา การรายงานมูลค่างานช่วยวิเคราะห์ความก้าวหน้า แต่ไม่ได้สร้างสิทธิรับหรือระงับชำระเงิน ต้องระบุหมุดหมายสัญญาและหลักฐานรับทางเทคนิคให้ชัด"
+        },
+        "alt": {
+          "en": "Four distinct status categories compare installation, tested performance, required acceptance and contractual payment.",
+          "he": "ארבע קטגוריות מצב נפרדות משוות התקנה, ביצוע שנבדק, קבלה נדרשת ותשלום חוזי.",
+          "th": "สี่สถานะแยกการติดตั้ง ผลผ่านทดสอบ การรับรองที่ต้องมี และการจ่ายตามสัญญา"
+        }
+      },
+      "videoId": "pm-evm",
+      "watchFor": {
+        "en": "Observe how earned value treats project performance. Then identify the additional technical and contractual evidence your handover milestone requires.",
+        "he": "שימו לב לאופן שבו ערך נצבר מתייחס לביצועי פרויקט. לאחר מכן זהו את הראיות הטכניות והחוזיות הנוספות שאבן דרך המסירה דורשת.",
+        "th": "สังเกตการใช้มูลค่างานวัดผลโครงการ แล้วระบุหลักฐานเทคนิคและสัญญาเพิ่มเติมที่หมุดหมายส่งมอบของคุณต้องมี"
+      },
+      "takeaway": {
+        "en": "A progress metric and a payment trigger must be reconciled, not assumed identical.",
+        "he": "יש ליישב בין מדד התקדמות לטריגר תשלום, בלי להניח שהם זהים.",
+        "th": "ต้องตรวจให้ตัวชี้วัดความก้าวหน้ากับเงื่อนไขจ่ายสอดคล้องกัน อย่าสมมติว่าเหมือนกัน"
+      },
+      "question": {
+        "en": "What remains open when installation is complete but the required asset-specific test is missing?",
+        "he": "מה נשאר פתוח כשההתקנה הסתיימה אך חסרה בדיקה נדרשת המשויכת לציוד?",
+        "th": "อะไรยังค้างเมื่อการติดตั้งเสร็จแต่ไม่มีผลทดสอบเฉพาะอุปกรณ์ที่ต้องมี?"
+      }
+    },
+    {
+      "lesson": "leadership-08",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "Service capacity before promises",
+          "he": "קיבולת שירות לפני הבטחות",
+          "th": "ตรวจความจุบริการก่อนสัญญา"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Existing commitments",
+              "he": "התחייבויות קיימות",
+              "th": "งานผูกพันเดิม"
+            },
+            "detail": {
+              "en": "Service, site work, travel and records",
+              "he": "שירות, עבודת אתר, נסיעות ותיעוד",
+              "th": "บริการ งานหน้างาน เดินทาง และบันทึก"
+            },
+            "value": 60
+          },
+          {
+            "label": {
+              "en": "Qualified capacity",
+              "he": "קיבולת כשירה",
+              "th": "ชั่วโมงทีมมีคุณสมบัติ"
+            },
+            "detail": {
+              "en": "Available qualified hours in the example period",
+              "he": "שעות כשירות זמינות בתקופת הדוגמה",
+              "th": "ชั่วโมงผู้มีคุณสมบัติที่ใช้ได้ในช่วงตัวอย่าง"
+            },
+            "value": 80
+          },
+          {
+            "label": {
+              "en": "With new work",
+              "he": "עם העבודה החדשה",
+              "th": "รวมงานใหม่"
+            },
+            "detail": {
+              "en": "Existing 60 plus proposed 30 hours",
+              "he": "60 קיימות ועוד 30 שעות מוצעות",
+              "th": "เดิม 60 บวกงานเสนอใหม่ 30 ชั่วโมง"
+            },
+            "value": 90
+          }
+        ],
+        "caption": {
+          "en": "The training team has eighty qualified hours available and sixty already committed. Adding thirty hours creates a ten-hour shortage. Capacity includes travel and documentation, not only time on tools; revise timing or staffing before promising a service response that the team cannot deliver.",
+          "he": "לצוות בתרגול שמונים שעות כשירות זמינות ושישים כבר מחויבות. הוספת שלושים שעות יוצרת מחסור של עשר שעות. הקיבולת כוללת נסיעות ותיעוד, מעבר לזמן עבודה בכלים; יש לשנות תזמון או כוח אדם לפני הבטחת מענה שהצוות לא יוכל לספק.",
+          "th": "ทีมฝึกมีเวลาผู้มีคุณสมบัติแปดสิบชั่วโมงและผูกพันแล้วหกสิบชั่วโมง หากเพิ่มสามสิบชั่วโมงจะขาดสิบชั่วโมง ความจุรวมเวลาเดินทางและทำเอกสาร ไม่ใช่เฉพาะใช้เครื่องมือ ต้องปรับเวลาและกำลังคนก่อนสัญญาการตอบสนองที่ทีมทำไม่ได้"
+        },
+        "alt": {
+          "en": "Three bars compare sixty committed hours, eighty available qualified hours and ninety hours after accepting new work.",
+          "he": "שלוש עמודות משוות שישים שעות מחויבות, שמונים שעות כשירות זמינות ותשעים שעות לאחר קבלת עבודה חדשה.",
+          "th": "แท่งสามแท่งเทียบงานผูกพันหกสิบชั่วโมง เวลาผู้มีคุณสมบัติแปดสิบชั่วโมง และเก้าสิบชั่วโมงหลังรับงานใหม่"
+        },
+        "unit": {
+          "en": "qualified hours · training example",
+          "he": "שעות כשירות · דוגמת תרגול",
+          "th": "ชั่วโมงผู้มีคุณสมบัติ · ตัวอย่างฝึก"
+        }
+      },
+      "videoId": "pm-reliability",
+      "watchFor": {
+        "en": "Relate the reliability model’s treatment of system performance to the service organization needed when equipment fails. Add local travel and qualified staffing to your operational plan.",
+        "he": "קשרו את עיסוק מודל האמינות בביצועי מערכת לארגון השירות הנדרש כשציוד נכשל. הוסיפו לתוכנית התפעול נסיעות מקומיות ואיוש כשיר.",
+        "th": "เชื่อมการพิจารณาผลทำงานในแบบจำลองความเชื่อถือได้กับทีมบริการที่ต้องใช้เมื่ออุปกรณ์ขัดข้อง เพิ่มการเดินทางท้องถิ่นและบุคลากรมีคุณสมบัติในแผนงาน"
+      },
+      "takeaway": {
+        "en": "A warranty promise requires practical capacity to diagnose, coordinate and document service.",
+        "he": "הבטחת אחריות דורשת קיבולת מעשית לאבחון, לתיאום ולתיעוד שירות.",
+        "th": "คำมั่นรับประกันต้องมีความจุจริงในการวินิจฉัย ประสานงาน และบันทึกบริการ"
+      },
+      "question": {
+        "en": "How would you resolve the ten-hour shortage without hiding travel or documentation work?",
+        "he": "כיצד תסגרו מחסור של עשר שעות בלי להעלים נסיעות או תיעוד?",
+        "th": "คุณจะแก้เวลาขาดสิบชั่วโมงอย่างไรโดยไม่ซ่อนงานเดินทางหรือเอกสาร?"
+      }
+    },
+    {
+      "lesson": "leadership-09",
+      "diagram": {
+        "kind": "cycle",
+        "title": {
+          "en": "Recover a project with evidence",
+          "he": "משקמים פרויקט בעזרת ראיות",
+          "th": "ฟื้นโครงการด้วยหลักฐาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Reconcile baseline",
+              "he": "מיישבים בסיס",
+              "th": "กระทบยอดแผนฐาน"
+            },
+            "detail": {
+              "en": "Confirm scope, commitments and current facts",
+              "he": "מאמתים היקף, התחייבויות ועובדות עדכניות",
+              "th": "ยืนยันขอบเขต ภาระผูกพัน และข้อเท็จจริง"
+            }
+          },
+          {
+            "label": {
+              "en": "Expose blockers",
+              "he": "מציפים חסמים",
+              "th": "เปิดเผยข้อขัดขวาง"
+            },
+            "detail": {
+              "en": "Prioritize critical safety and dependency gaps",
+              "he": "מתעדפים פערי בטיחות ותלות קריטיים",
+              "th": "จัดลำดับช่องว่างความปลอดภัยและงานสำคัญ"
+            }
+          },
+          {
+            "label": {
+              "en": "Approve recovery actions",
+              "he": "מאשרים פעולות שיקום",
+              "th": "อนุมัติแผนฟื้นงาน"
+            },
+            "detail": {
+              "en": "Evaluate cost, timing and authority boundaries",
+              "he": "מעריכים עלות, זמן וגבולות סמכות",
+              "th": "ประเมินต้นทุน เวลา และขอบเขตอำนาจ"
+            }
+          },
+          {
+            "label": {
+              "en": "Verify and learn",
+              "he": "מאמתים ולומדים",
+              "th": "ยืนยันและเรียนรู้"
+            },
+            "detail": {
+              "en": "Check closure and update the next project’s practice",
+              "he": "בודקים סגירה ומעדכנים עבודה בפרויקט הבא",
+              "th": "ตรวจการปิดงานและปรับแนวทางโครงการถัดไป"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Recovery starts by rebuilding a trustworthy view of the project, then selecting actions that address the controlling problems. Reforecast both cost and timing after approval. The cycle ends with verified closure and a specific lesson for future work, rather than a revised green status alone.",
+          "he": "שיקום מתחיל בבנייה מחדש של תמונת פרויקט אמינה, ולאחר מכן בבחירת פעולות המטפלות בבעיות הקובעות. מעדכנים תחזית עלות וזמן אחרי האישור. המחזור מסתיים בסגירה מאומתת ובלקח מסוים לעבודה עתידית, מעבר לעדכון מצב הפרויקט לירוק בלבד.",
+          "th": "การฟื้นโครงการเริ่มจากสร้างภาพข้อเท็จจริงที่เชื่อถือได้ แล้วเลือกการแก้ที่ตรงปัญหาซึ่งควบคุมผลลัพธ์ หลังอนุมัติต้องประมาณการต้นทุนและเวลาใหม่ วงจรจบด้วยการยืนยันปิดงานและบทเรียนที่เฉพาะเจาะจงสำหรับงานต่อไป ไม่ใช่เพียงเปลี่ยนสถานะเป็นสีเขียว"
+        },
+        "alt": {
+          "en": "A recovery cycle reconciles the baseline, exposes blockers, authorizes recovery and verifies closure before lessons are reused.",
+          "he": "מחזור שיקום מיישב בסיס, מציף חסמים, מאשר פעולות ומאמת סגירה לפני יישום לקחים.",
+          "th": "วงจรฟื้นงานกระทบยอดแผนฐาน เปิดเผยข้อขัดขวาง อนุมัติการฟื้น และยืนยันปิดก่อนใช้บทเรียน"
+        }
+      },
+      "videoId": "pm-evm",
+      "watchFor": {
+        "en": "Use earned-value reasoning to challenge whether the recovery forecast reflects achieved work and remaining exposure. Keep critical technical holds visible alongside performance metrics.",
+        "he": "היעזרו בהיגיון הערך הנצבר לבחינת התאמת תחזית השיקום לעבודה שהושגה ולחשיפה שנותרה. השאירו חסמים טכניים קריטיים גלויים לצד מדדי הביצוע.",
+        "th": "ใช้เหตุผลมูลค่างานตรวจว่าประมาณการฟื้นสะท้อนงานที่ทำแล้วและความเสี่ยงคงเหลือหรือไม่ แสดงข้อพักงานเทคนิคสำคัญควบคู่กับตัวชี้วัด"
+      },
+      "takeaway": {
+        "en": "A credible recovery plan changes evidence and dependencies, not only the reported forecast.",
+        "he": "תוכנית שיקום אמינה משנה ראיות ותלויות, מעבר לעדכון התחזית המדווחת.",
+        "th": "แผนฟื้นที่น่าเชื่อถือต้องเปลี่ยนหลักฐานและความสัมพันธ์งาน ไม่ใช่แค่ปรับตัวเลขคาดการณ์"
+      },
+      "question": {
+        "en": "Which evidence would demonstrate that your proposed recovery action actually closed the blocker?",
+        "he": "איזו ראיה תוכיח שפעולת השיקום המוצעת אכן סגרה את החסם?",
+        "th": "หลักฐานใดจะแสดงว่าการฟื้นงานที่เสนอปิดข้อขัดขวางได้จริง?"
+      }
+    },
+    {
+      "lesson": "management-01",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Manage dependencies across the project",
+          "he": "מנהלים תלויות לאורך הפרויקט",
+          "th": "จัดการงานที่พึ่งพากันทั้งโครงการ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Define deliverables",
+              "he": "הגדרת תוצרים",
+              "th": "กำหนดผลงานส่งมอบ"
+            },
+            "detail": {
+              "en": "Make scope and acceptance criteria explicit",
+              "he": "מגדירים היקף וקריטריוני קבלה במפורש",
+              "th": "ระบุขอบเขตและเกณฑ์รับมอบชัดเจน"
+            }
+          },
+          {
+            "label": {
+              "en": "Connect predecessors",
+              "he": "חיבור פעילויות קודמות",
+              "th": "เชื่อมงานก่อนหน้า"
+            },
+            "detail": {
+              "en": "Identify what each activity must wait for",
+              "he": "מזהים למה כל פעילות חייבת להמתין",
+              "th": "ระบุว่างานแต่ละอย่างต้องรออะไร"
+            }
+          },
+          {
+            "label": {
+              "en": "Coordinate execution",
+              "he": "תיאום ביצוע",
+              "th": "ประสานการทำงาน"
+            },
+            "detail": {
+              "en": "Track owners, actual progress and changed constraints",
+              "he": "עוקבים אחר אחראים, התקדמות ומגבלות משתנות",
+              "th": "ติดตามเจ้าของ ความก้าวหน้าจริง และข้อจำกัดเปลี่ยน"
+            }
+          },
+          {
+            "label": {
+              "en": "Verify milestones",
+              "he": "אימות אבני דרך",
+              "th": "ยืนยันหมุดหมาย"
+            },
+            "detail": {
+              "en": "Close with agreed evidence and remaining-action records",
+              "he": "סוגרים עם ראיות מוסכמות ותיעוד פעולות שנותרו",
+              "th": "ปิดด้วยหลักฐานที่ตกลงและบันทึกงานคงเหลือ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The project network connects deliverables through real dependencies, then checks progress against evidence. Supplier delivery, access and authority decisions need project-specific estimates and owners. This diagram shows management logic without asserting a universal Thai permit sequence or guaranteed completion period.",
+          "he": "רשת הפרויקט מחברת תוצרים באמצעות תלויות אמיתיות ובודקת התקדמות מול ראיות. אספקה, גישה והחלטות רשויות דורשות אומדנים ואחראים המתאימים לפרויקט. התרשים מציג היגיון ניהולי ואינו קובע רצף היתרים תאילנדי אחיד או תקופת השלמה מובטחת לכל פרויקט.",
+          "th": "เครือข่ายโครงการเชื่อมผลงานผ่านความสัมพันธ์จริง แล้วตรวจความก้าวหน้าเทียบหลักฐาน การส่งสินค้า การเข้าพื้นที่ และคำตัดสินหน่วยงานต้องมีประมาณการกับเจ้าของเฉพาะโครงการ แผนภาพนี้แสดงตรรกะบริหาร ไม่ได้กำหนดลำดับใบอนุญาตไทยแบบเดียวหรือรับประกันระยะเวลาจบงาน"
+        },
+        "alt": {
+          "en": "A project flow moves from deliverables to predecessors, execution coordination and evidence-based milestones.",
+          "he": "זרימת פרויקט עוברת מתוצרים לתלויות, לתיאום ביצוע ולאבני דרך הנתמכות בראיות.",
+          "th": "ลำดับโครงการเริ่มจากผลงาน งานก่อนหน้า การประสานทำงาน และหมุดหมายที่มีหลักฐาน"
+        }
+      },
+      "videoId": "pm-cpm",
+      "watchFor": {
+        "en": "Watch how precedence creates a schedule network. Map one solar-project milestone to the real work that must finish before it.",
+        "he": "שימו לב כיצד תלויות יוצרות רשת לוח זמנים. קשרו אבן דרך אחת בפרויקט סולארי לעבודות שחייבות להסתיים לפניה.",
+        "th": "สังเกตว่าความสัมพันธ์ก่อนหลังสร้างเครือข่ายเวลาอย่างไร จับคู่หมุดหมายโครงการโซลาร์หนึ่งจุดกับงานจริงที่ต้องเสร็จก่อน"
+      },
+      "takeaway": {
+        "en": "A date without its predecessors is a weak planning commitment.",
+        "he": "תאריך ללא הפעילויות הקודמות לו הוא התחייבות תכנון חלשה.",
+        "th": "วันที่ซึ่งไม่ระบุงานก่อนหน้าเป็นคำมั่นแผนที่อ่อน"
+      },
+      "question": {
+        "en": "Which prerequisite could stop installation even if the equipment arrives on time?",
+        "he": "איזה תנאי מוקדם יכול לעצור התקנה גם כשהציוד מגיע בזמן?",
+        "th": "เงื่อนไขก่อนเริ่มใดอาจหยุดการติดตั้งแม้อุปกรณ์มาทันเวลา?"
+      }
+    },
+    {
+      "lesson": "management-02",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Three financial lenses",
+          "he": "שלוש זוויות פיננסיות",
+          "th": "สามมุมมองทางการเงิน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Payback",
+              "he": "החזר השקעה",
+              "th": "ระยะคืนทุน"
+            },
+            "detail": {
+              "en": "When cumulative defined cash flows recover the investment",
+              "he": "מתי תזרים מצטבר מוגדר מחזיר את ההשקעה",
+              "th": "เมื่อกระแสเงินสดสะสมตามนิยามคืนเงินลงทุน"
+            }
+          },
+          {
+            "label": {
+              "en": "IRR",
+              "he": "שיעור תשואה פנימי",
+              "th": "อัตราผลตอบแทนภายใน"
+            },
+            "detail": {
+              "en": "Discount rate where modeled net present value is zero",
+              "he": "שיעור היוון שבו הערך הנוכחי הנקי במודל אפס",
+              "th": "อัตราคิดลดที่มูลค่าปัจจุบันสุทธิของแบบจำลองเป็นศูนย์"
+            }
+          },
+          {
+            "label": {
+              "en": "LCOE",
+              "he": "עלות אנרגיה מפולסת",
+              "th": "ต้นทุนพลังงานเฉลี่ยตลอดอายุ"
+            },
+            "detail": {
+              "en": "Discounted lifetime costs divided by discounted energy",
+              "he": "עלויות מהוונות לאורך החיים חלקי אנרגיה מהוונת",
+              "th": "ต้นทุนตลอดอายุคิดลดหารด้วยพลังงานคิดลด"
+            }
+          }
+        ],
+        "caption": {
+          "en": "These metrics answer different questions and depend on explicit cash-flow, lifetime and discounting assumptions. Keep calculation conventions consistent when comparing projects. The diagram provides definitions only; it does not establish a current tariff, financing offer, tax treatment or achievable return in Thailand.",
+          "he": "המדדים עונים על שאלות שונות ותלויים בהנחות מפורשות לגבי תזרים, אורך חיים והיוון. יש לשמור על שיטות חישוב עקביות בהשוואת פרויקטים. התרשים מציג הגדרות בלבד ואינו קובע תעריף עדכני, הצעת מימון, טיפול מס או תשואה אפשרית בתאילנד.",
+          "th": "ตัวชี้วัดเหล่านี้ตอบต่างคำถามและขึ้นกับสมมติฐานกระแสเงินสด อายุใช้งาน และการคิดลดที่ระบุชัด ต้องใช้หลักคำนวณเดียวกันเมื่อเทียบโครงการ แผนภาพให้คำนิยามเท่านั้น ไม่ได้ยืนยันอัตราค่าไฟ ข้อเสนอเงินทุน วิธีภาษี หรือผลตอบแทนที่ทำได้ในไทย"
+        },
+        "alt": {
+          "en": "Three financial definitions compare investment payback, internal rate of return and discounted lifetime cost per energy unit.",
+          "he": "שלוש הגדרות פיננסיות משוות החזר השקעה, שיעור תשואה פנימי ועלות מהוונת לאורך החיים ליחידת אנרגיה.",
+          "th": "สามนิยามเทียบการคืนทุน อัตราผลตอบแทนภายใน และต้นทุนตลอดอายุคิดลดต่อหน่วยพลังงาน"
+        }
+      },
+      "videoId": "pm-finance",
+      "watchFor": {
+        "en": "Follow the discounting and project-pricing discussion. Notice why the timing and definition of a cash flow matter when comparing financial outcomes.",
+        "he": "עקבו אחר הדיון בהיוון ובתמחור פרויקטים. שימו לב מדוע מועד התזרים והגדרתו חשובים בהשוואת תוצאות פיננסיות.",
+        "th": "ติดตามเรื่องการคิดลดและกำหนดราคาโครงการ สังเกตว่าเวลาและนิยามกระแสเงินสดมีผลต่อการเทียบผลการเงินอย่างไร"
+      },
+      "takeaway": {
+        "en": "A financial metric is interpretable only with its assumptions and calculation boundary.",
+        "he": "מדד פיננסי ניתן לפירוש רק לצד ההנחות וגבולות החישוב שלו.",
+        "th": "ตัวชี้วัดการเงินตีความได้เมื่อทราบสมมติฐานและขอบเขตคำนวณ"
+      },
+      "question": {
+        "en": "Which assumption could change a project’s IRR without changing its installed capacity?",
+        "he": "איזו הנחה עשויה לשנות את התשואה הפנימית בלי לשנות את ההספק המותקן?",
+        "th": "สมมติฐานใดเปลี่ยน IRR โครงการได้โดยไม่เปลี่ยนกำลังติดตั้ง?"
+      }
+    },
+    {
+      "lesson": "management-03",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Which decision are you seeking?",
+          "he": "איזו החלטה מבקשים?",
+          "th": "กำลังขอคำตัดสินเรื่องใด?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Identify the question",
+              "he": "זיהוי השאלה",
+              "th": "ระบุคำถาม"
+            },
+            "detail": {
+              "en": "Separate the legal and commercial outcomes sought",
+              "he": "מפרידים תוצאות משפטיות ומסחריות מבוקשות",
+              "th": "แยกผลทางกฎหมายและพาณิชย์ที่ต้องการ"
+            }
+          },
+          {
+            "label": {
+              "en": "Connect and operate",
+              "he": "חיבור ותפעול",
+              "th": "เชื่อมต่อและเดินระบบ"
+            },
+            "detail": {
+              "en": "PEA conditions and applicable operating controls",
+              "he": "תנאי PEA ובקרות עבודה רלוונטיות",
+              "th": "เงื่อนไข PEA และการควบคุมที่เกี่ยวข้อง"
+            }
+          },
+          {
+            "label": {
+              "en": "Sell and license",
+              "he": "מכירה ורישוי",
+              "th": "ขายไฟและใบอนุญาต"
+            },
+            "detail": {
+              "en": "Export agreement and separate ERC status",
+              "he": "הסכם מכירה ומעמד ERC נפרד",
+              "th": "ข้อตกลงขายไฟและสถานะ ERC แยกกัน"
+            }
+          },
+          {
+            "label": {
+              "en": "Build and inspect",
+              "he": "מבנה ובדיקה",
+              "th": "อาคารและการตรวจ"
+            },
+            "detail": {
+              "en": "Local building, professional and inspection requirements",
+              "he": "דרישות מבנה מקומיות, מקצועיות ובדיקה",
+              "th": "ข้อกำหนดอาคารท้องถิ่น วิชาชีพ และการตรวจ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "This decision map separates obligations that may apply to one property without imposing a fixed sequence. Eligibility, thresholds, application status and authority conditions must be confirmed from current primary sources. A completed application or one exemption does not automatically satisfy the other decision categories.",
+          "he": "מפת ההחלטות מפרידה חובות שעשויות לחול על נכס אחד בלי לכפות סדר קבוע. יש לאמת זכאות, ספים, מצב בקשה ותנאי רשות ממקורות ראשוניים עדכניים. בקשה שהושלמה או פטור אחד אינם ממלאים אוטומטית את הדרישות בקטגוריות ההחלטה האחרות.",
+          "th": "แผนที่ตัดสินใจแยกหน้าที่ที่อาจใช้กับอาคารเดียวโดยไม่บังคับลำดับตายตัว ต้องยืนยันสิทธิ เกณฑ์ สถานะคำขอ และเงื่อนไขหน่วยงานจากแหล่งปฐมภูมิปัจจุบัน การส่งคำขอครบหรือได้ยกเว้นเรื่องหนึ่งไม่ได้ทำให้คำตัดสินประเภทอื่นครบโดยอัตโนมัติ"
+        },
+        "alt": {
+          "en": "A decision map asks which outcome is needed, then separates connection, commercial and ERC, and building or inspection questions.",
+          "he": "מפת החלטות שואלת מה התוצאה הנדרשת ומפרידה שאלות חיבור, מכירה ו־ERC, ומבנה או בדיקה.",
+          "th": "แผนที่ถามว่าต้องการผลเรื่องใด แล้วแยกคำถามเชื่อมต่อ การขายและ ERC และอาคารหรือการตรวจ"
+        }
+      },
+      "videoId": "pm-risk",
+      "watchFor": {
+        "en": "Apply the lecture’s stakeholder analysis to identifying the correct authority for each question. Use current Thai sources for the actual requirements.",
+        "he": "יישמו את ניתוח בעלי העניין לזיהוי הרשות המתאימה לכל שאלה. לדרישות עצמן השתמשו במקורות תאילנדיים עדכניים.",
+        "th": "ใช้การวิเคราะห์ผู้มีส่วนได้ส่วนเสียเพื่อระบุหน่วยงานที่ถูกต้องของแต่ละคำถาม ส่วนข้อกำหนดจริงให้ตรวจจากแหล่งไทยปัจจุบัน"
+      },
+      "takeaway": {
+        "en": "Authority mapping organizes follow-up; it does not verify eligibility or replace a written decision.",
+        "he": "מיפוי רשויות מארגן מעקב; הוא אינו מאמת זכאות או מחליף החלטה כתובה.",
+        "th": "การจับคู่หน่วยงานช่วยจัดการติดตาม ไม่ได้ยืนยันสิทธิหรือแทนคำตัดสินเป็นลายลักษณ์อักษร"
+      },
+      "question": {
+        "en": "Which records would prove that connection and export-sale questions were resolved separately?",
+        "he": "אילו מסמכים יוכיחו ששאלות החיבור ומכירת העודפים נפתרו בנפרד?",
+        "th": "เอกสารใดพิสูจน์ว่าคำถามเชื่อมต่อและขายไฟส่วนเกินได้รับการตัดสินแยกกัน?"
+      }
+    },
+    {
+      "lesson": "management-04",
+      "diagram": {
+        "kind": "cycle",
+        "title": {
+          "en": "Close the maintenance loop",
+          "he": "סוגרים את מעגל התחזוקה",
+          "th": "ปิดวงจรบำรุงรักษา"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Observe performance",
+              "he": "תצפית ביצועים",
+              "th": "สังเกตผลทำงาน"
+            },
+            "detail": {
+              "en": "Compare signals with the documented baseline",
+              "he": "משווים אותות לבסיס המתועד",
+              "th": "เทียบสัญญาณกับฐานข้อมูลที่บันทึก"
+            }
+          },
+          {
+            "label": {
+              "en": "Triage evidence",
+              "he": "מיון ראיות",
+              "th": "คัดกรองหลักฐาน"
+            },
+            "detail": {
+              "en": "Check data quality and prioritize the issue",
+              "he": "בודקים איכות נתונים ומתעדפים את הבעיה",
+              "th": "ตรวจคุณภาพข้อมูลและจัดลำดับปัญหา"
+            }
+          },
+          {
+            "label": {
+              "en": "Assign qualified action",
+              "he": "הקצאת פעולה כשירה",
+              "th": "มอบงานให้ผู้มีคุณสมบัติ"
+            },
+            "detail": {
+              "en": "Coordinate access, competence and manufacturer guidance",
+              "he": "מתאמים גישה, כשירות והנחיות יצרן",
+              "th": "ประสานการเข้าถึง ความสามารถ และคู่มือผู้ผลิต"
+            }
+          },
+          {
+            "label": {
+              "en": "Verify and record",
+              "he": "אימות ותיעוד",
+              "th": "ยืนยันและบันทึก"
+            },
+            "detail": {
+              "en": "Confirm outcome and retain the service history",
+              "he": "מאמתים תוצאה ושומרים היסטוריית שירות",
+              "th": "ยืนยันผลและเก็บประวัติบริการ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Maintenance turns an observed issue into verified closure and a useful history. First check whether the signal is trustworthy, then assign a proportionate qualified response. Manufacturer requirements, site conditions and risk determine the work; this learning loop does not prescribe a universal cleaning or inspection interval.",
+          "he": "תחזוקה הופכת בעיה שנצפתה לסגירה מאומתת ולהיסטוריה מועילה. תחילה בודקים אם האות אמין, ואז מקצים תגובה מקצועית מידתית. דרישות יצרן, תנאי אתר וסיכון קובעים את העבודה; מעגל הלמידה אינו מכתיב תדירות אחידה לניקוי או לבדיקות בכל מערכת.",
+          "th": "การบำรุงรักษาเปลี่ยนปัญหาที่พบเป็นการปิดที่ยืนยันและประวัติใช้งานได้ เริ่มตรวจว่าสัญญาณเชื่อถือได้ก่อนมอบการตอบสนองที่เหมาะสมให้ผู้มีคุณสมบัติ งานขึ้นกับผู้ผลิต สภาพพื้นที่ และความเสี่ยง วงจรเรียนรู้นี้ไม่ได้กำหนดรอบล้างหรือตรวจแบบเดียวสำหรับทุกระบบ"
+        },
+        "alt": {
+          "en": "The maintenance cycle links performance observation, evidence triage, qualified action and verified service records.",
+          "he": "מעגל התחזוקה מחבר תצפית ביצועים, מיון ראיות, פעולה כשירה ותיעוד שירות מאומת.",
+          "th": "วงจรบำรุงรักษาเชื่อมการสังเกตผล คัดกรองหลักฐาน งานโดยผู้มีคุณสมบัติ และบันทึกบริการที่ยืนยัน"
+        }
+      },
+      "videoId": "pm-reliability",
+      "watchFor": {
+        "en": "Watch the introduction to PV reliability modeling. Relate modeled performance consequences to the importance of recording actual failures and service outcomes.",
+        "he": "צפו במבוא למידול אמינות PV. קשרו השלכות ביצוע במודל לחשיבות תיעוד תקלות אמיתיות ותוצאות שירות.",
+        "th": "ดูบทนำการจำลองความเชื่อถือได้ของ PV แล้วเชื่อมผลต่อสมรรถนะจำลองกับความสำคัญของการบันทึกเหตุขัดข้องและผลบริการจริง"
+      },
+      "takeaway": {
+        "en": "Simulation can frame reliability questions; field evidence determines the actual service history.",
+        "he": "הדמיה יכולה למסגר שאלות אמינות; ראיות שטח קובעות את היסטוריית השירות בפועל.",
+        "th": "แบบจำลองช่วยตั้งคำถามความเชื่อถือได้ แต่หลักฐานหน้างานกำหนดประวัติบริการจริง"
+      },
+      "question": {
+        "en": "What evidence would you retain to prove that a reported performance issue was resolved?",
+        "he": "איזו ראיה תשמרו כדי להוכיח שבעיית ביצועים שדווחה נפתרה?",
+        "th": "คุณจะเก็บหลักฐานใดเพื่อพิสูจน์ว่าปัญหาผลทำงานที่แจ้งมาแก้แล้ว?"
+      }
+    },
+    {
+      "lesson": "management-05",
+      "diagram": {
+        "kind": "cycle",
+        "title": {
+          "en": "Reassess when conditions change",
+          "he": "מעריכים מחדש כשהתנאים משתנים",
+          "th": "ประเมินใหม่เมื่อสภาพงานเปลี่ยน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Define the task",
+              "he": "הגדרת משימה",
+              "th": "กำหนดงาน"
+            },
+            "detail": {
+              "en": "Identify location, people and affected activities",
+              "he": "מזהים מיקום, אנשים ופעילויות מושפעות",
+              "th": "ระบุสถานที่ คน และกิจกรรมที่กระทบ"
+            }
+          },
+          {
+            "label": {
+              "en": "Assess hazards",
+              "he": "הערכת סיכונים",
+              "th": "ประเมินอันตราย"
+            },
+            "detail": {
+              "en": "Use competent review and site-specific controls",
+              "he": "מפעילים בדיקה כשירה ובקרות ייעודיות לאתר",
+              "th": "ใช้ผู้มีความสามารถทบทวนและมาตรการเฉพาะพื้นที่"
+            }
+          },
+          {
+            "label": {
+              "en": "Verify readiness",
+              "he": "אימות מוכנות",
+              "th": "ยืนยันความพร้อม"
+            },
+            "detail": {
+              "en": "Confirm controls, communication and response arrangements",
+              "he": "מאמתים בקרות, תקשורת וסידורי תגובה",
+              "th": "ยืนยันมาตรการ การสื่อสาร และแผนตอบสนอง"
+            }
+          },
+          {
+            "label": {
+              "en": "Stop and review",
+              "he": "עצירה ובחינה",
+              "th": "หยุดและทบทวน"
+            },
+            "detail": {
+              "en": "Changed conditions return the task to assessment",
+              "he": "שינוי תנאים מחזיר את המשימה להערכה",
+              "th": "สภาพเปลี่ยนต้องนำงานกลับไปประเมิน"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A safety review belongs to the specific task, crew and conditions. Weather, access or equipment changes can invalidate earlier assumptions and require reassessment. This diagram supports management oversight; practical electrical isolation, roof access and emergency arrangements require competent site-specific procedures and instruction.",
+          "he": "בדיקת בטיחות שייכת למשימה, לצוות ולתנאים המסוימים. שינוי מזג אוויר, גישה או ציוד עלול לפסול הנחות קודמות ולדרוש הערכה מחדש. התרשים תומך בפיקוח ניהולי; בידוד חשמלי, גישה לגג וסידורי חירום דורשים נהלים והדרכה מקצועיים המתאימים לאתר.",
+          "th": "การทบทวนความปลอดภัยต้องตรงกับงาน ทีม และสภาพจริง การเปลี่ยนอากาศ ทางเข้า หรืออุปกรณ์อาจทำให้สมมติฐานเดิมใช้ไม่ได้และต้องประเมินใหม่ แผนภาพช่วยกำกับการบริหาร ส่วนการแยกไฟ การขึ้นหลังคา และแผนฉุกเฉินต้องมีวิธีเฉพาะพื้นที่และคำแนะนำจากผู้มีความสามารถ"
+        },
+        "alt": {
+          "en": "A safety cycle defines the task, assesses hazards, verifies readiness and returns to review when conditions change.",
+          "he": "מחזור בטיחות מגדיר משימה, מעריך סיכונים, מאמת מוכנות וחוזר לבדיקה כאשר התנאים משתנים.",
+          "th": "วงจรความปลอดภัยกำหนดงาน ประเมินอันตราย ยืนยันพร้อม และกลับไปทบทวนเมื่อสภาพเปลี่ยน"
+        }
+      },
+      "videoId": "base-electrical-safety",
+      "watchFor": {
+        "en": "Watch the electrical-risk controls presented by SafeWork NSW. Connect each control to evidence the responsible supervisor should verify before work proceeds.",
+        "he": "התבוננו בבקרות סיכון החשמל שמציגה SafeWork NSW. קשרו כל בקרה לראיות שהממונה האחראי צריך לאמת לפני התקדמות העבודה.",
+        "th": "สังเกตมาตรการควบคุมความเสี่ยงทางไฟฟ้าที่ SafeWork NSW นำเสนอ เชื่อมแต่ละมาตรการกับหลักฐานที่ผู้ควบคุมงานต้องยืนยันก่อนเดินหน้างาน"
+      },
+      "takeaway": {
+        "en": "The Australian safety example supports hazard awareness; site procedures and Thai requirements still need competent local verification.",
+        "he": "הדוגמה האוסטרלית תומכת במודעות לסיכונים; נהלי האתר ודרישות תאילנד עדיין מחייבים אימות מקומי בידי בעל כשירות.",
+        "th": "ตัวอย่างความปลอดภัยจากออสเตรเลียช่วยให้ตระหนักอันตราย ส่วนวิธีหน้างานและข้อกำหนดไทยยังต้องให้ผู้มีความสามารถในพื้นที่ตรวจยืนยัน"
+      },
+      "question": {
+        "en": "Which change in equipment or work conditions would require the supervisor to reassess the electrical controls?",
+        "he": "איזה שינוי בציוד או בתנאי העבודה יחייב את הממונה להעריך מחדש את בקרות החשמל?",
+        "th": "การเปลี่ยนอุปกรณ์หรือสภาพงานใดจะทำให้ผู้ควบคุมต้องประเมินมาตรการไฟฟ้าใหม่?"
+      }
+    },
+    {
+      "lesson": "management-06",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Grow within delivery capacity",
+          "he": "צמיחה בגבולות יכולת הביצוע",
+          "th": "เติบโตตามความสามารถส่งมอบ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Qualify the pipeline",
+              "he": "סינון צבר הזדמנויות",
+              "th": "คัดกรองโอกาสงาน"
+            },
+            "detail": {
+              "en": "Confirm scope, customer need and evidence quality",
+              "he": "מאמתים היקף, צורך לקוח ואיכות ראיות",
+              "th": "ยืนยันขอบเขต ความต้องการ และคุณภาพข้อมูล"
+            }
+          },
+          {
+            "label": {
+              "en": "Check delivery resources",
+              "he": "בדיקת משאבי ביצוע",
+              "th": "ตรวจทรัพยากรส่งมอบ"
+            },
+            "detail": {
+              "en": "Match qualified people, procurement and island logistics",
+              "he": "מתאימים כוח אדם כשיר, רכש ולוגיסטיקה לאי",
+              "th": "จับคู่คนมีคุณสมบัติ จัดซื้อ และขนส่งเกาะ"
+            }
+          },
+          {
+            "label": {
+              "en": "Reserve service headroom",
+              "he": "שמירת מרווח לשירות",
+              "th": "เผื่อกำลังบริการ"
+            },
+            "detail": {
+              "en": "Include existing customers, travel and documentation",
+              "he": "כוללים לקוחות קיימים, נסיעות ותיעוד",
+              "th": "รวมลูกค้าเดิม การเดินทาง และเอกสาร"
+            }
+          },
+          {
+            "label": {
+              "en": "Commit and measure",
+              "he": "התחייבות ומדידה",
+              "th": "รับงานและวัดผล"
+            },
+            "detail": {
+              "en": "Track delivery quality, cash exposure and lessons",
+              "he": "עוקבים אחר איכות ביצוע, חשיפת מזומן ולקחים",
+              "th": "ติดตามคุณภาพส่งมอบ เงินสดเสี่ยง และบทเรียน"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Growth turns a sales pipeline into commitments on qualified people, cash and service capacity. Check those constraints before adding work, especially when island travel competes with installation time. The sequence supports scaling decisions without assuming every lead, contract or installed kilowatt produces the same business value.",
+          "he": "צמיחה הופכת צבר מכירות להתחייבויות על אנשים כשירים, מזומן וקיבולת שירות. בודקים מגבלות אלו לפני הוספת עבודה, במיוחד כשנסיעות לאי מתחרות בזמן התקנה. הרצף תומך בהחלטות צמיחה בלי להניח שכל ליד, חוזה או קילוואט מותקן מייצרים אותו ערך עסקי.",
+          "th": "การเติบโตเปลี่ยนโอกาสขายเป็นภาระต่อคนมีคุณสมบัติ เงินสด และความจุบริการ ต้องตรวจข้อจำกัดก่อนเพิ่มงาน โดยเฉพาะเมื่อการเดินทางบนเกาะใช้เวลาร่วมกับการติดตั้ง ลำดับนี้ช่วยตัดสินใจขยายธุรกิจโดยไม่สมมติว่าทุกลูกค้าเป้าหมาย สัญญา หรือกิโลวัตต์ติดตั้งสร้างมูลค่าเท่ากัน"
+        },
+        "alt": {
+          "en": "Growth moves through qualified opportunities, delivery resources, service headroom and measured commitments.",
+          "he": "צמיחה עוברת דרך הזדמנויות מסוננות, משאבי ביצוע, מרווח שירות והתחייבויות נמדדות.",
+          "th": "การเติบโตผ่านโอกาสที่คัดกรอง ทรัพยากรส่งมอบ กำลังบริการเผื่อ และภาระผูกพันที่วัดผล"
+        }
+      },
+      "videoId": "pm-cpm",
+      "watchFor": {
+        "en": "Use the lecture’s dependency logic to identify where shared people or delivery prerequisites constrain several projects at once.",
+        "he": "היעזרו בהיגיון התלויות בהרצאה כדי לזהות היכן עובדים משותפים או תנאים מוקדמים מגבילים כמה פרויקטים במקביל.",
+        "th": "ใช้ตรรกะความสัมพันธ์งานเพื่อหาจุดที่คนร่วมกันหรือเงื่อนไขส่งมอบจำกัดหลายโครงการพร้อมกัน"
+      },
+      "takeaway": {
+        "en": "Portfolio growth requires checking interactions between projects, not only each project’s target date.",
+        "he": "צמיחת תיק פרויקטים מחייבת בדיקת ההשפעות ביניהם, מעבר למועד היעד של כל אחד.",
+        "th": "การเติบโตหลายโครงการต้องตรวจผลต่อกัน ไม่ใช่ดูแค่วันเป้าหมายแยกโครงการ"
+      },
+      "question": {
+        "en": "Which shared resource could make two individually feasible schedules impossible together?",
+        "he": "איזה משאב משותף עלול להפוך שני לוחות זמנים אפשריים בנפרד לבלתי אפשריים יחד?",
+        "th": "ทรัพยากรร่วมใดอาจทำให้สองแผนที่ทำได้แยกกันไม่สามารถทำพร้อมกันได้?"
+      }
+    }
+  ]
+}

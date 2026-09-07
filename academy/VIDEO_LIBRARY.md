@@ -1,82 +1,43 @@
-# Bustan Energy Academy — Verified Video Library
+# Bustan Academy visual learning
 
-Curated YouTube videos — all verified with real video IDs from YouTube search.
+Reviewed: 2026-09-07. 86 lessons, 33 unique videos, 516 desktop/mobile diagrams in English, Hebrew and Thai.
 
-## Site Survey & Assessment
-- **How to Perform a Solar Site Survey** (20 min, SepiSolar, 14K views) — https://www.youtube.com/watch?v=gv_OwtR7KEQ
-- **Everything You Need to Know About Solar Site Surveys (2025)** (9 min, Surya Setu) — https://www.youtube.com/watch?v=kZiB7337fiQ
-- **Solar Site Assessment of Electrical** (6 min, Interplay Learning, 1.3K views) — https://www.youtube.com/watch?v=X_9r70-xhY0
-- **How to perform site assessment and shading analysis** (14 min, EnergyUME, 10K views) — https://www.youtube.com/watch?v=iYYqpgTNav0
-- **Solar Survey Guide - How to Use a Drone** (4 min, Green Home Systems) — https://www.youtube.com/watch?v=CqKDvaHkiO0
-- **How We Design And Quote Solar PV installations** (7 min, Electrical Innovations, 5.4K views) — https://www.youtube.com/watch?v=A0NKDNC4pcc
-- **Solar Power System Design Course - Site Survey** (19 min) — https://www.youtube.com/watch?v=JL2wjVNcads
+Videos retain original audio. Translated guidance is original academy content, not a claim of translated publisher audio or captions. YouTube availability can change. Embeds load only after the learner presses play; an external source link remains available. Source scope and limitations appear beside every video.
 
-## Solar Installation Step-by-Step
-- **How a Solar Farm is Constructed Start to End** (6 min, 174K views) — https://www.youtube.com/watch?v=sM7ge9ahsGY
-- **How do solar plants work? explained** (5 min, 314K views) — https://www.youtube.com/watch?v=FQXkMt0Zm1A
+The source ledgers and editable trilingual diagram packs are in media-data/. Render with node academy/tools/build-curriculum.mjs. Original generic equipment illustration: media/system-components.png; generation provenance in media-data/components-illustration.md.
 
-## Electricity Bills & Consumption
-- **How To Read Your Electricity Bill** — https://www.youtube.com/watch?v=A_7y-gxKJSw
-- **Understanding Your Electric Bill** — https://www.youtube.com/watch?v=sXFJDC6NRAY
-- **How to Calculate Your Electricity Usage** — https://www.youtube.com/watch?v=z0_S1jFBECU
-
-## Wiring & Connections
-- **Solar Panel Wiring (Series vs Parallel)** — https://www.youtube.com/watch?v=0S5s-DPOmGM
-- **MC4 Connector Assembly** — https://www.youtube.com/watch?v=5PaUAZEhh7Y
-- **How to Wire Solar Panels, Charge Controller, Battery** — https://www.youtube.com/watch?v=7tpcjHniGPQ
-- **Solar DC Cable Sizing** — https://www.youtube.com/watch?v=r-zy3gkFJnQ
-
-## Inverter Installation & Setup
-- **Huawei SUN2000 Installation** — https://www.youtube.com/watch?v=KsXEuVv2PlM
-- **How to Commission a Solar Inverter** — https://www.youtube.com/watch?v=IqpGB1n7HWw
-- **Inverter Location & Placement Guide** — https://www.youtube.com/watch?v=fj1PXqV_bFo
-- **FusionSolar App Setup** — https://www.youtube.com/watch?v=dxJM0Y6XKl8
-
-## Battery Storage
-- **Huawei LUNA2000 Battery Installation** — https://www.youtube.com/watch?v=qDG7SQNXsCc
-- **Home Battery Storage System Explained** — https://www.youtube.com/watch?v=Q5P3N_rH3lg
-
-## Testing & Safety
-- **Solar Panel Testing (Megger, IV Curve)** — https://www.youtube.com/watch?v=4g82ELSi2Dk
-- **Electrical Safety for Solar Installers** — https://www.youtube.com/watch?v=Xb_RVHt7BkI
-- **Thermal Imaging Solar Panel Inspection** — https://www.youtube.com/watch?v=rGH8WjDLqfE
-
-## EV Charging Installation
-- **How to Install an EV Charger at Home** — https://www.youtube.com/watch?v=3JvnQwhw5BM
-- **EV Charger Wiring Guide** — https://www.youtube.com/watch?v=8yQb7EH4mNs
-- **Solar + EV Charging Integration** — https://www.youtube.com/watch?v=5tUvXK2BBIY
-
-## Sales & Business
-- **How to Sell Solar — Sales Training** — https://www.youtube.com/watch?v=V0p8G9WKXQE
-- **Solar ROI Calculator Walkthrough** — https://www.youtube.com/watch?v=eC-gIxX4xKw
-
----
-
-## Embedding Format
-```html
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
-    frameborder="0" allowfullscreen
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-  </iframe>
-</div>
-```
-
-CSS:
-```css
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  margin: 20px 0;
-  background: rgba(255,255,255,0.03);
-}
-.video-container iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border-radius: 12px;
-}
-```
+| Video | Publisher | Audio | Primary source | Related lessons |
+|---|---|---|---|---|
+| [How do solar panels work? - Richard Komp ](https://www.youtube.com/watch?v=xKxrkht7CpY) | TED-Ed | en | [Source](https://ed.ted.com/lessons/8VWvxWL8) | solar-fundamentals-01, solar-fundamentals-02 |
+| [Energy 101: Solar PV ](https://www.youtube.com/watch?v=0elhIcPVtKE) | U.S. Department of Energy | en | [Source](https://www.energy.gov/cmei/education/articles/energy-101-solar-pv) | foundation-01 |
+| [What is a kWh - kilowatt hour  + CALCULATIONS 💡💰 energy bill ](https://www.youtube.com/watch?v=SMPhh8gT_1E) | The Engineering Mindset | en | [Source](https://www.youtube.com/watch?v=SMPhh8gT_1E) | foundation-02, foundation-08 |
+| [New-Build Energy Storage System with Solar & Lithium ](https://www.youtube.com/watch?v=zgZ0cHq-NfE) | Victron Energy | en | [Source](https://www.victronenergy.com/blog/2020/08/11/video-shows-ess-installation/) | foundation-03, foundation-04, solar-fundamentals-04 |
+| [Solar Safety - How to manage risks of falls ](https://www.youtube.com/watch?v=cEgZhTozZ94) | SafeWork NSW | en | [Source](https://www.safework.nsw.gov.au/hazards-a-z/solar-panel-retail-and-installation) | solar-fundamentals-05 |
+| [Solar Safety - How to manage electrical risks ](https://www.youtube.com/watch?v=fxH9P-347F4) | SafeWork NSW | en | [Source](https://www.safework.nsw.gov.au/hazards-a-z/solar-panel-retail-and-installation) | foundation-06, management-05 |
+| [“PEA Sabuy Service สบายทุกเรื่องไฟฟ้า” ](https://www.youtube.com/watch?v=XSKoPKO3vK8) | PEA CHANNEL THAILAND | th | [Source](https://www.youtube.com/watch?v=XSKoPKO3vK8) | solar-fundamentals-08 |
+| [K2 MiniRail Comp Installation (EN) ](https://www.youtube.com/watch?v=KABRQDQx9rA) | K2 Systems US & MX | en | [Source](https://www.youtube.com/watch?v=KABRQDQx9rA) | installers-01, installers-02, technical-01 |
+| [How to assemble and crimp Stäubli Original MC4 / MC4-Evo 2 solar power connectors / Best practice ](https://www.youtube.com/watch?v=TfHsCjCEYI4) | Stäubli Electrical Connectors AG | en | [Source](https://www.staubli.com/de/de/news/global/2022/safe-pv-connector-assembly.html) | installers-03, installers-04, installers-09 |
+| [How does the new Victron Energy Lithium NG Battery & BMS NG work? ](https://www.youtube.com/watch?v=Q_pBm0eaLAw) | Victron Energy | en | [Source](https://www.youtube.com/watch?v=Q_pBm0eaLAw) | installers-06, service-04, ev-storage-01 |
+| [Electric Vehicle Charging Station Victron Energy - Technical Guide ](https://www.youtube.com/watch?v=H7rQLGDTOM8) | Victron Tech | en | [Source](https://www.victronenergy.com/ev-charging/ev-charging-station) | installers-07, service-07, ev-storage-02, ev-storage-03 |
+| [New Victron Remote Management Dashboard released ](https://www.youtube.com/watch?v=bG1uKqVgePY) | Victron Energy | en | [Source](https://www.victronenergy.com/media/pg/VRM_Portal_manual/en/dashboard.html) | solar-fundamentals-03, service-01, service-05 |
+| [How does a Victron Energy MPPT Solar Charge Controller work? ](https://www.youtube.com/watch?v=BJpCWKgW8Ac) | Victron Energy | en | [Source](https://www.victronenergy.com/knowledge-articles/2026/5/4/how-to-size-rv-solar-system) | service-03, technical-02 |
+| [Remotely update VE.Direct firmware ](https://www.youtube.com/watch?v=oKvUXLUK1aM) | Victron Energy | en | [Source](https://www.victronenergy.com/media/pg/VRM_Remote_firmware_update/en/remote-firmware-update.html) | service-08 |
+| [Victron Energy Tech Talk - Episode 5 ](https://www.youtube.com/watch?v=is_nXRNWlHI) | Victron Energy | en | [Source](https://www.youtube.com/watch?v=is_nXRNWlHI) | installers-05 |
+| [Tools and Techniques for Commissioning and Maintaining PV Systems ](https://www.youtube.com/watch?v=D277lQ1vVOc) | Test Equipment Depot | en | [Source](https://www.testequipmentdepot.com/fluke-pv-solar-testing-solutions-resources) | installers-08, service-02, service-06, service-09, technical-03 |
+| [Importing Load Data from a Text File ](https://www.youtube.com/watch?v=hb7mNmlzZZs) | System Advisor Model | en | [Source](https://sam.nlr.gov/financial-models/residential-and-commercial.html) | sales-02 |
+| [Electricity Rates and Bill Savings for Residential and Commercial Projects in SAM 2017.1.17 ](https://www.youtube.com/watch?v=yDziI9J8Qjc) | System Advisor Model | en | [Source](https://sam.nlr.gov/financial-models/residential-and-commercial.html) | solar-fundamentals-07, finance-01, finance-02, sales-bd-04 |
+| [Electricity Bill Calculator Updates ](https://www.youtube.com/watch?v=DYV8Grz-9kA) | System Advisor Model | en | [Source](https://sam.nlr.gov/financial-models/residential-and-commercial.html) | sales-05, finance-03 |
+| [Financial Models for Utility-scale Projects in SAM ](https://www.youtube.com/watch?v=IRZj-01cjz8) | System Advisor Model | en | [Source](https://sam.nlr.gov/financial-models/utility-scale-ppa.html) | finance-04, finance-06, finance-08, finance-09 |
+| [Introduction to present value / Interest and debt / Finance & Capital Markets / Khan Academy ](https://www.youtube.com/watch?v=ks33lMoxst0) | Khan Academy | en | [Source](https://www.khanacademy.org/v/introduction-to-present-value?playlist=Finance) | finance-07 |
+| [Present Value 4 (and discounted cash flow) / Finance & Capital Markets / Khan Academy ](https://www.youtube.com/watch?v=6WCfVjUTTEY) | Khan Academy | en | [Source](https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial/present-value/v/present-value-4-and-discounted-cash-flow) | finance-05 |
+| [Sales Training: The Science of Asking High Gain Questions ](https://www.youtube.com/watch?v=jK6cASnCQME) | HubSpot | en | [Source](https://certification.hubspot.com/master-class/sales-training-david-hoffeld) | sales-01, sales-03, sales-04, sales-09, sales-bd-01, sales-bd-02 |
+| [Stanford Webinar - Negotiation: How to Get (More of) What You Want ](https://www.youtube.com/watch?v=7XTlcCvgijI) | Stanford Online | en | [Source](https://www.youtube.com/watch?v=7XTlcCvgijI) | sales-06, sales-07, sales-08, sales-bd-03 |
+| [Download Modeled Load Data ](https://www.youtube.com/watch?v=urimEINWuYw) | System Advisor Model | en | [Source](https://sam.nlr.gov/howto.html) | design-permitting-01 |
+| [Modeling PV Systems in SAM 2020.2.29 ](https://www.youtube.com/watch?v=ba5NcqlANZQ) | System Advisor Model | en | [Source](https://sam.nlr.gov/photovoltaic/pv-videos.html) | foundation-05, solar-fundamentals-06, design-permitting-03, design-permitting-04, design-permitting-06 |
+| [Modeling PV Uncertainty in SAM ](https://www.youtube.com/watch?v=xIA-AmGfQ5E) | System Advisor Model | en | [Source](https://sam.nlr.gov/simulation-options.html) | design-permitting-02, design-permitting-09 |
+| [Behind-the-meter Battery Dispatch in SAM ](https://www.youtube.com/watch?v=KCzPGf_9YKQ) | System Advisor Model | en | [Source](https://sam.nlr.gov/battery-storage/battery-videos.html) | design-permitting-05 |
+| [Photovoltaic Reliability Performance Model in SAM 2017.9.5 ](https://www.youtube.com/watch?v=tdQEt_cO2To) | System Advisor Model | en | [Source](https://sam.nlr.gov/photovoltaic/pv-videos.html) | design-permitting-08, leadership-08, management-04 |
+| [Project Stakeholder and Risk Management ](https://www.youtube.com/watch?v=qxdL1TNjR4s) | Project Management | en | [Source](https://nptel.ac.in/courses/110104073) | foundation-07, design-permitting-07, leadership-01, leadership-04, leadership-05, leadership-06, management-03 |
+| [Concept of CRITICAL PATH METHOD (CPM) and Introduction to PERT ](https://www.youtube.com/watch?v=TuoxrttyxpQ) | Project Management | en | [Source](https://nptel.ac.in/courses/110104073) | leadership-02, management-01, management-06 |
+| [Earned Value Management ](https://www.youtube.com/watch?v=mcW4yNs_bzc) | Project Management | en | [Source](https://nptel.ac.in/courses/110104073) | leadership-03, leadership-07, leadership-09 |
+| [Discounting Rates and Project Pricing ](https://www.youtube.com/watch?v=C1k9Ul6Bc9w) | Project Management | en | [Source](https://nptel.ac.in/courses/110104073) | management-02 |

@@ -1,0 +1,1988 @@
+{
+  "videos": [
+    {
+      "id": "com-load-import",
+      "youtubeId": "hb7mNmlzZZs",
+      "title": "Importing Load Data from a Text File",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=hb7mNmlzZZs",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/financial-models/residential-and-commercial.html",
+      "description": {
+        "en": "Official SAM tutorial on importing a load profile. Older software interface; it does not verify a property’s meter data.",
+        "he": "הדרכת SAM הרשמית לייבוא פרופיל עומס. הממשק מגרסה קודמת; הסרטון אינו מאמת את נתוני המונה בנכס.",
+        "th": "บทสอนทางการของ SAM เรื่องนำเข้ารูปแบบโหลด อินเทอร์เฟซเป็นรุ่นเก่า และไม่ได้ยืนยันข้อมูลมิเตอร์ของสถานที่"
+      }
+    },
+    {
+      "id": "com-bill-savings",
+      "youtubeId": "yDziI9J8Qjc",
+      "title": "Electricity Rates and Bill Savings for Residential and Commercial Projects in SAM 2017.1.17",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=yDziI9J8Qjc",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/financial-models/residential-and-commercial.html",
+      "description": {
+        "en": "Official SAM webinar linking load, tariffs, bill savings and cash flow. US examples and 2017 interface are not current Thai tariff or tax guidance.",
+        "he": "וובינר SAM הרשמי מחבר עומס, תעריפים, חיסכון בחשבון ותזרים. הדוגמאות מארה״ב והממשק מ־2017 אינם הנחיות תעריף או מס עדכניות לתאילנד.",
+        "th": "เว็บบินาร์ทางการของ SAM เชื่อมโหลด อัตราค่าไฟ ผลต่างบิล และกระแสเงินสด ตัวอย่างสหรัฐฯ และหน้าจอปี 2017 ไม่ใช่คำแนะนำอัตราค่าไฟหรือภาษีไทยปัจจุบัน"
+      }
+    },
+    {
+      "id": "com-bill-calculator",
+      "youtubeId": "DYV8Grz-9kA",
+      "title": "Electricity Bill Calculator Updates",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=DYV8Grz-9kA",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/financial-models/residential-and-commercial.html",
+      "description": {
+        "en": "Official SAM webinar on billing and export-compensation model options. These are software scenarios, not evidence that a Thai property can export or receive payment.",
+        "he": "וובינר SAM הרשמי על חישוב חשבון ומודלים לתמורת ייצוא. אלו אפשרויות מידול, ואינן ראיה לאישור ייצוא או תשלום בנכס בתאילנד.",
+        "th": "เว็บบินาร์ทางการของ SAM เรื่องการคำนวณบิลและตัวเลือกค่าตอบแทนไฟส่งออก เป็นแบบจำลองในซอฟต์แวร์ ไม่ใช่หลักฐานว่าสถานที่ในไทยมีสิทธิส่งออกหรือรับเงิน"
+      }
+    },
+    {
+      "id": "com-financial-models",
+      "youtubeId": "IRZj-01cjz8",
+      "title": "Financial Models for Utility-scale Projects in SAM",
+      "publisher": "System Advisor Model",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=IRZj-01cjz8",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://sam.nlr.gov/financial-models/utility-scale-ppa.html",
+      "description": {
+        "en": "Official SAM financial-model webinar with utility-scale ownership and cash-flow perspectives. Transfer modelling concepts carefully; US tax structures and utility PPA terms are not Thai rooftop defaults.",
+        "he": "וובינר פיננסי רשמי של SAM על בעלות ותזרים בפרויקטים בקנה מידה גדול. יש ליישם בזהירות את עקרונות המידול; מבני המס והסכמי החשמל בארה״ב אינם ברירת מחדל לגגות בתאילנד.",
+        "th": "เว็บบินาร์แบบจำลองการเงินทางการของ SAM ว่าด้วยความเป็นเจ้าของและกระแสเงินสดโครงการขนาดใหญ่ นำหลักการมาใช้อย่างระมัดระวัง โครงสร้างภาษีและ PPA สหรัฐฯ ไม่ใช่ค่าตั้งต้นสำหรับหลังคาในไทย"
+      }
+    },
+    {
+      "id": "com-present-value",
+      "youtubeId": "ks33lMoxst0",
+      "title": "Introduction to present value | Interest and debt | Finance & Capital Markets | Khan Academy",
+      "publisher": "Khan Academy",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=ks33lMoxst0",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.khanacademy.org/v/introduction-to-present-value?playlist=Finance",
+      "description": {
+        "en": "Sal Khan introduces discounting money received at different times. Example discount rates illustrate the method; they are not recommendations for this project.",
+        "he": "סאל קהאן מציג היוון של כסף המתקבל במועדים שונים. שיעורי ההיוון בדוגמה מדגימים שיטה, ואינם המלצה לפרויקט הזה.",
+        "th": "Sal Khan แนะนำการคิดลดเงินที่ได้รับต่างเวลา อัตราคิดลดในตัวอย่างใช้อธิบายวิธี ไม่ใช่อัตราที่แนะนำสำหรับโครงการนี้"
+      }
+    },
+    {
+      "id": "com-discounted-cash-flow",
+      "youtubeId": "6WCfVjUTTEY",
+      "title": "Present Value 4 (and discounted cash flow) | Finance & Capital Markets | Khan Academy",
+      "publisher": "Khan Academy",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=6WCfVjUTTEY",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial/present-value/v/present-value-4-and-discounted-cash-flow",
+      "description": {
+        "en": "Khan Academy explains discounted cash flows. Apply the timing principle to a separately verified project cash-flow schedule; it is not a solar-return forecast.",
+        "he": "קהאן אקדמי מסביר תזרימים מהוונים. יש ליישם את עקרון התזמון על תזרים פרויקט שנבדק בנפרד; הסרטון אינו תחזית תשואה סולארית.",
+        "th": "Khan Academy อธิบายกระแสเงินสดคิดลด ใช้หลักเรื่องเวลากับตารางกระแสเงินสดโครงการที่ตรวจสอบแยกแล้ว ไม่ใช่การพยากรณ์ผลตอบแทนโซลาร์"
+      }
+    },
+    {
+      "id": "com-discovery-questions",
+      "youtubeId": "jK6cASnCQME",
+      "title": "Sales Training: The Science of Asking High Gain Questions",
+      "publisher": "HubSpot",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=jK6cASnCQME",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://certification.hubspot.com/master-class/sales-training-david-hoffeld",
+      "description": {
+        "en": "David Hoffeld teaches questioning in a HubSpot Academy masterclass. Use the questioning method for discovery; the video does not establish solar suitability or local contract requirements.",
+        "he": "דיוויד הופלד מלמד שאלות בשיעור מומחה של HubSpot Academy. השיטה מסייעת לגילוי צרכים; הסרטון אינו קובע התאמה לסולאר או דרישות חוזיות מקומיות.",
+        "th": "David Hoffeld สอนวิธีตั้งคำถามในมาสเตอร์คลาสของ HubSpot Academy ใช้เพื่อค้นหาความต้องการ วิดีโอไม่ได้ยืนยันความเหมาะสมของโซลาร์หรือข้อกำหนดสัญญาท้องถิ่น"
+      }
+    },
+    {
+      "id": "com-negotiation",
+      "youtubeId": "7XTlcCvgijI",
+      "title": "Stanford Webinar - Negotiation: How to Get (More of) What You Want",
+      "publisher": "Stanford Online",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=7XTlcCvgijI",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.youtube.com/watch?v=7XTlcCvgijI",
+      "description": {
+        "en": "Professor Margaret A. Neale discusses negotiation outcomes and common mistakes. Educational negotiation principles do not replace technical evidence, contract review or a customer’s voluntary decision.",
+        "he": "פרופ׳ מרגרט ניל דנה בתוצאות משא ומתן ובטעויות נפוצות. עקרונות ההדרכה אינם מחליפים ראיות טכניות, בדיקת חוזה או החלטה חופשית של הלקוח.",
+        "th": "ศาสตราจารย์ Margaret A. Neale อธิบายผลการเจรจาและข้อผิดพลาดทั่วไป หลักการเรียนรู้นี้ไม่แทนหลักฐานทางเทคนิค การตรวจสัญญา หรือการตัดสินใจโดยสมัครใจของลูกค้า"
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "lesson": "sales-01",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "From contact to decision map",
+          "he": "מאיש קשר למפת החלטה",
+          "th": "จากผู้ติดต่อสู่แผนที่ผู้ตัดสินใจ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Operator",
+              "he": "מפעיל הנכס",
+              "th": "ผู้ดำเนินงาน"
+            },
+            "detail": {
+              "en": "Describes daily operations and disruption",
+              "he": "מתאר פעילות יומית והפרעות",
+              "th": "อธิบายงานประจำวันและผลกระทบ"
+            }
+          },
+          {
+            "label": {
+              "en": "Owner",
+              "he": "בעלים",
+              "th": "เจ้าของ"
+            },
+            "detail": {
+              "en": "Confirms authority over property changes",
+              "he": "מאשר סמכות לשינויים בנכס",
+              "th": "ยืนยันสิทธิอนุมัติการเปลี่ยนแปลงสถานที่"
+            }
+          },
+          {
+            "label": {
+              "en": "Payer",
+              "he": "משלם",
+              "th": "ผู้จ่ายเงิน"
+            },
+            "detail": {
+              "en": "Confirms budget and payment responsibility",
+              "he": "מאשר תקציב ואחריות לתשלום",
+              "th": "ยืนยันงบประมาณและผู้รับผิดชอบจ่าย"
+            }
+          },
+          {
+            "label": {
+              "en": "Shared next step",
+              "he": "צעד הבא מוסכם",
+              "th": "ขั้นตอนถัดไปที่ตกลงกัน"
+            },
+            "detail": {
+              "en": "Names the decision and its participants",
+              "he": "מגדיר החלטה ומשתתפים",
+              "th": "ระบุเรื่องที่จะตัดสินใจและผู้เกี่ยวข้อง"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A discovery contact may operate the property without owning it or controlling the budget. Map these responsibilities before arranging a survey. The sequence describes information gathering; it does not assume that every property has four different people or the same decision process.",
+          "he": "איש הקשר עשוי לתפעל את הנכס בלי להיות בעליו או לשלוט בתקציב. ממפים את האחריות לפני תיאום סקר. הרצף מתאר איסוף מידע, ואינו מניח שבכל נכס יש ארבעה אנשים שונים או אותו תהליך החלטה.",
+          "th": "ผู้ติดต่ออาจดูแลสถานที่แต่ไม่ได้เป็นเจ้าของหรือควบคุมงบประมาณ จึงควรระบุบทบาทก่อนนัดสำรวจ ลำดับนี้อธิบายการเก็บข้อมูล ไม่ได้หมายความว่าทุกแห่งต้องมีคนสี่คนหรือมีกระบวนการตัดสินใจเหมือนกัน"
+        },
+        "alt": {
+          "en": "Operator, owner and payer responsibilities feed a shared next step.",
+          "he": "תחומי האחריות של המפעיל, הבעלים והמשלם מובילים לצעד הבא המוסכם.",
+          "th": "บทบาทผู้ดำเนินงาน เจ้าของ และผู้จ่ายเงินนำไปสู่ขั้นตอนถัดไปที่ตกลงร่วมกัน."
+        }
+      },
+      "videoId": "com-discovery-questions",
+      "watchFor": {
+        "en": "Notice how questions reveal the buyer’s situation before a solution is offered.",
+        "he": "שימו לב כיצד השאלות חושפות את מצב הקונה לפני הצעת פתרון.",
+        "th": "สังเกตว่าคำถามช่วยเผยบริบทของผู้ซื้อก่อนเสนอทางออกอย่างไร"
+      },
+      "takeaway": {
+        "en": "Ask who experiences the problem, who authorizes changes and who funds them.",
+        "he": "שאלו מי חווה את הבעיה, מי מאשר שינויים ומי מממן אותם.",
+        "th": "ถามว่าใครพบปัญหา ใครอนุมัติการเปลี่ยนแปลง และใครออกเงิน"
+      },
+      "question": {
+        "en": "Which question would reveal whether the resort manager can approve a roof survey?",
+        "he": "איזו שאלה תגלה אם מנהל הריזורט מוסמך לאשר סקר גג?",
+        "th": "คำถามใดช่วยทราบว่าผู้จัดการรีสอร์ตมีอำนาจอนุมัติสำรวจหลังคาหรือไม่"
+      }
+    },
+    {
+      "lesson": "sales-02",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Which meter receives the benefit?",
+          "he": "איזה מונה מקבל את התועלת?",
+          "th": "มิเตอร์ใดได้รับประโยชน์?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Room meter",
+              "he": "מונה החדרים",
+              "th": "มิเตอร์ห้องพัก"
+            },
+            "detail": {
+              "en": "3,000 kWh/month; proposed connection",
+              "he": "3,000 קוט״ש בחודש; חיבור מוצע",
+              "th": "3,000 kWh ต่อเดือน จุดเชื่อมต่อที่เสนอ"
+            }
+          },
+          {
+            "label": {
+              "en": "Kitchen meter",
+              "he": "מונה המטבח",
+              "th": "มิเตอร์ครัว"
+            },
+            "detail": {
+              "en": "2,000 kWh/month; separate connection",
+              "he": "2,000 קוט״ש בחודש; חיבור נפרד",
+              "th": "2,000 kWh ต่อเดือน เชื่อมต่อแยก"
+            }
+          },
+          {
+            "label": {
+              "en": "Model boundary",
+              "he": "גבול המודל",
+              "th": "ขอบเขตแบบจำลอง"
+            },
+            "detail": {
+              "en": "Use the connected load profile",
+              "he": "משתמשים בפרופיל העומס המחובר",
+              "th": "ใช้รูปแบบโหลดของมิเตอร์ที่เชื่อมต่อ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "In this training resort, the two meters total 5,000 kWh per month, but the proposed system connects only to the rooms. Kitchen use cannot automatically increase modelled self-consumption. Confirm meter boundaries and time-based load data before claiming savings.",
+          "he": "בדוגמת הריזורט לצורכי תרגול, שני המונים צורכים יחד 5,000 קוט״ש בחודש, אך המערכת המוצעת מתחברת לחדרים בלבד. אין להוסיף אוטומטית את צריכת המטבח לצריכה העצמית במודל. מאמתים גבולות מונה ונתוני עומס מתוזמנים לפני הצגת חיסכון.",
+          "th": "ในตัวอย่างรีสอร์ตนี้ สองมิเตอร์รวมกันใช้ไฟ 5,000 kWh ต่อเดือน แต่ระบบที่เสนอเชื่อมต่อเฉพาะห้องพัก จึงนำโหลดครัวมานับเป็นการใช้ไฟโซลาร์เองโดยอัตโนมัติไม่ได้ ต้องยืนยันขอบเขตมิเตอร์และข้อมูลโหลดตามเวลาก่อนกล่าวถึงการประหยัด"
+        },
+        "alt": {
+          "en": "Separate room and kitchen meters; only the room load enters the connected-system model.",
+          "he": "מונים נפרדים לחדרים ולמטבח; רק עומס החדרים נכלל במודל המערכת המחוברת.",
+          "th": "มิเตอร์ห้องพักและครัวแยกกัน แบบจำลองระบบที่เชื่อมต่อใช้เฉพาะโหลดห้องพัก"
+        }
+      },
+      "videoId": "com-load-import",
+      "watchFor": {
+        "en": "Observe the load-profile import step and the need for a correctly prepared input file.",
+        "he": "התבוננו בייבוא פרופיל העומס ובצורך בקובץ קלט מוכן כראוי.",
+        "th": "สังเกตขั้นตอนนำเข้าโหลดและความจำเป็นของไฟล์ข้อมูลที่เตรียมถูกต้อง"
+      },
+      "takeaway": {
+        "en": "An imported profile must represent the right meter and period.",
+        "he": "פרופיל מיובא חייב לייצג את המונה והתקופה הנכונים.",
+        "th": "รูปแบบโหลดที่นำเข้าต้องตรงกับมิเตอร์และช่วงเวลา"
+      },
+      "question": {
+        "en": "What would you label on the room-meter file to prevent the kitchen load being added?",
+        "he": "מה תסמנו בקובץ מונה החדרים כדי למנוע הוספת עומס המטבח?",
+        "th": "จะระบุอะไรในไฟล์มิเตอร์ห้องพักเพื่อป้องกันการรวมโหลดครัว?"
+      }
+    },
+    {
+      "lesson": "sales-03",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Ready for a final proposal?",
+          "he": "מוכנים להצעה סופית?",
+          "th": "พร้อมเสนอข้อเสนอสุดท้ายหรือยัง?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Is the roof ready?",
+              "he": "הגג מוכן?",
+              "th": "หลังคาพร้อมหรือยัง?"
+            },
+            "detail": {
+              "en": "Leaks reported; replacement planned next year",
+              "he": "דווחו נזילות; החלפה מתוכננת בשנה הבאה",
+              "th": "แจ้งว่ารั่ว วางแผนเปลี่ยนปีหน้า"
+            }
+          },
+          {
+            "label": {
+              "en": "Survey first",
+              "he": "סקר תחילה",
+              "th": "สำรวจก่อน"
+            },
+            "detail": {
+              "en": "Technical team examines the constraint",
+              "he": "הצוות הטכני בודק את המגבלה",
+              "th": "ทีมเทคนิคตรวจสอบข้อจำกัด"
+            }
+          },
+          {
+            "label": {
+              "en": "Conditional schedule",
+              "he": "לוח זמנים מותנה",
+              "th": "กำหนดการมีเงื่อนไข"
+            },
+            "detail": {
+              "en": "Coordinate roof and solar work",
+              "he": "מתאמים עבודות גג וסולאר",
+              "th": "ประสานงานหลังคากับงานโซลาร์"
+            }
+          },
+          {
+            "label": {
+              "en": "Hold commitment",
+              "he": "השהיית התחייבות",
+              "th": "พักการผูกพัน"
+            },
+            "detail": {
+              "en": "Unresolved condition blocks final scope",
+              "he": "מצב לא פתור חוסם היקף סופי",
+              "th": "ข้อจำกัดที่ยังไม่ยุติขวางขอบเขตสุดท้าย"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A reported roof problem changes the next commercial action. This decision map helps sales route the issue to qualified survey staff and coordinate timing. It does not assess roof safety remotely or authorize installation before the required technical decisions.",
+          "he": "דיווח על בעיית גג משנה את הפעולה המסחרית הבאה. מפת ההחלטה מסייעת להעביר את הסוגיה לצוות סקר מוסמך ולתאם מועדים. היא אינה הערכת בטיחות מרחוק, ואינה מתירה התקנה לפני השלמת ההחלטות הטכניות הנדרשות.",
+          "th": "ปัญหาหลังคาที่ได้รับแจ้งเปลี่ยนขั้นตอนเชิงพาณิชย์ถัดไป แผนผังช่วยส่งเรื่องให้ผู้สำรวจที่มีคุณสมบัติเหมาะสมและประสานเวลา ไม่ใช่การประเมินความปลอดภัยหลังคาจากระยะไกล และไม่อนุญาตให้ติดตั้งก่อนตัดสินใจทางเทคนิคครบ"
+        },
+        "alt": {
+          "en": "Roof leaks trigger survey, conditional scheduling or a hold on final commitment.",
+          "he": "נזילות בגג מובילות לסקר, לתזמון מותנה או להשהיית התחייבות סופית.",
+          "th": "หลังคารั่วนำไปสู่การสำรวจ กำหนดการมีเงื่อนไข หรือพักการผูกพันขั้นสุดท้าย"
+        }
+      },
+      "videoId": "com-discovery-questions",
+      "watchFor": {
+        "en": "Listen for questions that uncover constraints behind the buyer’s initial request.",
+        "he": "הקשיבו לשאלות שחושפות מגבלות מאחורי בקשת הקונה הראשונית.",
+        "th": "ฟังคำถามที่ค้นหาข้อจำกัดเบื้องหลังคำขอแรกของผู้ซื้อ"
+      },
+      "takeaway": {
+        "en": "Qualification records uncertainty and assigns the next verification step.",
+        "he": "בדיקת התאמה מתעדת אי־ודאות ומקצה את שלב האימות הבא.",
+        "th": "การคัดกรองต้องบันทึกความไม่แน่นอนและกำหนดขั้นตอนตรวจสอบถัดไป"
+      },
+      "question": {
+        "en": "How would you ask about planned roof works without pretending to diagnose the roof?",
+        "he": "איך תשאלו על עבודות גג מתוכננות בלי להתיימר לאבחן את מצבו?",
+        "th": "จะถามเรื่องแผนงานหลังคาอย่างไรโดยไม่อ้างว่าวินิจฉัยสภาพหลังคาแล้ว?"
+      }
+    },
+    {
+      "lesson": "sales-04",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Separate the customer outcomes",
+          "he": "מפרידים בין תוצאות ללקוח",
+          "th": "แยกผลลัพธ์ที่ลูกค้าต้องการ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Bill reduction",
+              "he": "הפחתת חשבון",
+              "th": "ลดค่าไฟ"
+            },
+            "detail": {
+              "en": "Model matched consumption and tariff",
+              "he": "מודל צריכה תואמת ותעריף",
+              "th": "จำลองการใช้ไฟที่ตรงเวลาและอัตราค่าไฟ"
+            }
+          },
+          {
+            "label": {
+              "en": "Reception backup",
+              "he": "גיבוי הקבלה",
+              "th": "สำรองไฟแผนกต้อนรับ"
+            },
+            "detail": {
+              "en": "Specified circuits and stated conditions",
+              "he": "מעגלים מוגדרים ותנאים מפורשים",
+              "th": "วงจรที่ระบุและเงื่อนไขชัดเจน"
+            }
+          },
+          {
+            "label": {
+              "en": "Whole resort",
+              "he": "הריזורט כולו",
+              "th": "ทั้งรีสอร์ต"
+            },
+            "detail": {
+              "en": "Not included in this proposed scope",
+              "he": "אינו כלול בהיקף המוצע הזה",
+              "th": "ไม่รวมในขอบเขตที่เสนอนี้"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The reception example separates an economic objective from an outage-service objective. A bill-saving model cannot demonstrate whole-resort backup. Explain selected circuits, exclusions and runtime assumptions together, then ask the customer to confirm whether that defined outcome addresses the actual need.",
+          "he": "דוגמת הקבלה מפרידה בין מטרה כלכלית למטרת שירות בזמן הפסקת חשמל. מודל חיסכון אינו מוכיח גיבוי לכל הריזורט. מסבירים יחד מעגלים נבחרים, החרגות והנחות זמן גיבוי, ומבקשים מהלקוח לאשר שהתוצאה המוגדרת עונה על הצורך.",
+          "th": "ตัวอย่างแผนกต้อนรับแยกเป้าหมายด้านค่าใช้จ่ายออกจากบริการเมื่อไฟดับ แบบจำลองประหยัดค่าไฟไม่ได้พิสูจน์ว่าสำรองไฟได้ทั้งรีสอร์ต อธิบายวงจรที่เลือก สิ่งที่ไม่รวม และสมมติฐานระยะเวลาสำรองพร้อมกัน แล้วให้ลูกค้ายืนยันว่าตรงความต้องการจริง"
+        },
+        "alt": {
+          "en": "Bill reduction and specified reception backup are distinct; whole-resort backup is excluded.",
+          "he": "חיסכון בחשבון וגיבוי מוגדר לקבלה הם נפרדים; גיבוי לכל הריזורט מוחרג.",
+          "th": "ลดค่าไฟกับสำรองไฟแผนกต้อนรับเป็นคนละผลลัพธ์ โดยไม่รวมการสำรองทั้งรีสอร์ต"
+        }
+      },
+      "videoId": "com-discovery-questions",
+      "watchFor": {
+        "en": "Consider how outcome-focused questions differ from a list of product features.",
+        "he": "חשבו כיצד שאלות על תוצאות שונות מרשימת תכונות מוצר.",
+        "th": "พิจารณาว่าคำถามเรื่องผลลัพธ์ต่างจากการไล่คุณสมบัติสินค้าอย่างไร"
+      },
+      "takeaway": {
+        "en": "Translate a desired outcome into a defined scope before making a commitment.",
+        "he": "מתרגמים תוצאה רצויה להיקף מוגדר לפני התחייבות.",
+        "th": "แปลงผลลัพธ์ที่ต้องการเป็นขอบเขตชัดเจนก่อนผูกพัน"
+      },
+      "question": {
+        "en": "Which reception activities must continue, and which loads can remain outside backup?",
+        "he": "אילו פעילויות בקבלה חייבות להימשך, ואילו עומסים יכולים להישאר מחוץ לגיבוי?",
+        "th": "งานใดของแผนกต้อนรับต้องทำต่อ และโหลดใดไม่ต้องอยู่ในระบบสำรอง?"
+      }
+    },
+    {
+      "lesson": "sales-05",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Can export income enter the case?",
+          "he": "האם לכלול הכנסה מייצוא?",
+          "th": "นำรายได้ส่งออกเข้าแบบจำลองได้หรือยัง?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Evidence available?",
+              "he": "יש ראיות?",
+              "th": "มีหลักฐานหรือไม่?"
+            },
+            "detail": {
+              "en": "Check account, approval and purchase terms",
+              "he": "בדיקת חשבון, אישור ותנאי רכישה",
+              "th": "ตรวจบัญชี การอนุมัติ และเงื่อนไขรับซื้อ"
+            }
+          },
+          {
+            "label": {
+              "en": "Announcement only",
+              "he": "הודעה כללית בלבד",
+              "th": "มีเพียงประกาศ"
+            },
+            "detail": {
+              "en": "Does not establish this property’s eligibility",
+              "he": "אינה מוכיחה זכאות לנכס הזה",
+              "th": "ยังไม่ยืนยันสิทธิของสถานที่นี้"
+            }
+          },
+          {
+            "label": {
+              "en": "Verified agreement",
+              "he": "הסכם מאומת",
+              "th": "สัญญาที่ตรวจสอบแล้ว"
+            },
+            "detail": {
+              "en": "Use its actual applicable terms",
+              "he": "משתמשים בתנאיו הרלוונטיים בפועל",
+              "th": "ใช้เงื่อนไขที่มีผลจริง"
+            }
+          },
+          {
+            "label": {
+              "en": "Unresolved income",
+              "he": "הכנסה לא פתורה",
+              "th": "รายได้ยังไม่ยืนยัน"
+            },
+            "detail": {
+              "en": "Exclude from base case; track separately",
+              "he": "מחריגים מתרחיש בסיס; עוקבים בנפרד",
+              "th": "ไม่รวมในกรณีฐาน ติดตามแยก"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A residential-program announcement does not prove that a resort can sell electricity. Verify the specific account, approvals and purchase agreement before adding income. Excluding unverified revenue from the base case is a modelling convention, not a claim that export is universally prohibited.",
+          "he": "הודעה על תוכנית למגורים אינה מוכיחה שריזורט יכול למכור חשמל. מאמתים את החשבון המסוים, האישורים והסכם הרכישה לפני הוספת הכנסה. החרגת הכנסה לא מאומתת מתרחיש הבסיס היא מוסכמת מידול, ולא טענה שייצוא אסור תמיד.",
+          "th": "ประกาศโครงการสำหรับบ้านพักไม่ได้พิสูจน์ว่ารีสอร์ตขายไฟได้ ต้องตรวจบัญชีเฉพาะ การอนุมัติ และสัญญารับซื้อก่อนเพิ่มรายได้ การไม่นับรายได้ที่ยังไม่ยืนยันในกรณีฐานเป็นหลักการจำลอง ไม่ได้หมายความว่าห้ามส่งออกทุกกรณี"
+        },
+        "alt": {
+          "en": "Export income depends on property-specific evidence, not the existence of a general announcement.",
+          "he": "הכנסת ייצוא תלויה בראיות לנכס המסוים, ולא בעצם קיומה של הודעה כללית.",
+          "th": "รายได้ส่งออกขึ้นกับหลักฐานของสถานที่นั้น ไม่ใช่เพียงมีประกาศทั่วไป"
+        }
+      },
+      "videoId": "com-bill-calculator",
+      "watchFor": {
+        "en": "Notice that billing and export-compensation methods are separate model inputs.",
+        "he": "שימו לב ששיטת חיוב ותמורת ייצוא הן תשומות מודל נפרדות.",
+        "th": "สังเกตว่าวิธีคิดบิลและค่าตอบแทนไฟส่งออกเป็นข้อมูลนำเข้าคนละส่วน"
+      },
+      "takeaway": {
+        "en": "A software option does not grant permission or create a purchase agreement.",
+        "he": "אפשרות בתוכנה אינה נותנת היתר ואינה יוצרת הסכם רכישה.",
+        "th": "ตัวเลือกในซอฟต์แวร์ไม่ได้ให้สิทธิหรือสร้างสัญญารับซื้อ"
+      },
+      "question": {
+        "en": "What project evidence would justify replacing zero unverified export income with a dated assumption?",
+        "he": "איזו ראיה תצדיק החלפת אפס הכנסה לא מאומתת מייצוא בהנחה מתוארכת?",
+        "th": "หลักฐานโครงการใดจึงจะรองรับการเปลี่ยนรายได้ส่งออกที่ยังไม่ยืนยันจากศูนย์เป็นสมมติฐานมีวันที่?"
+      }
+    },
+    {
+      "lesson": "sales-06",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Normalize scope before price",
+          "he": "משווים היקף לפני מחיר",
+          "th": "ปรับขอบเขตให้เทียบกันก่อนราคา"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Quote A",
+              "he": "הצעה א׳",
+              "th": "ข้อเสนอ A"
+            },
+            "detail": {
+              "en": "300,000 THB; agreed access included",
+              "he": "300,000 באט; גישה מוסכמת כלולה",
+              "th": "300,000 บาท รวมงานเข้าถึงที่ตกลง"
+            }
+          },
+          {
+            "label": {
+              "en": "Quote B",
+              "he": "הצעה ב׳",
+              "th": "ข้อเสนอ B"
+            },
+            "detail": {
+              "en": "280,000 THB; access excluded",
+              "he": "280,000 באט; גישה לא כלולה",
+              "th": "280,000 บาท ไม่รวมงานเข้าถึง"
+            }
+          },
+          {
+            "label": {
+              "en": "B adjusted comparison",
+              "he": "ב׳ להשוואה מתואמת",
+              "th": "B เมื่อปรับเพื่อเทียบ"
+            },
+            "detail": {
+              "en": "Add confirmed 25,000 THB access cost",
+              "he": "מוסיפים עלות גישה מאומתת: 25,000 באט",
+              "th": "บวกค่างานเข้าถึงยืนยันแล้ว 25,000 บาท"
+            }
+          },
+          {
+            "label": {
+              "en": "Compare evidence",
+              "he": "השוואת ראיות",
+              "th": "เทียบหลักฐาน"
+            },
+            "detail": {
+              "en": "Check models, warranty and exclusions too",
+              "he": "בודקים גם דגמים, אחריות והחרגות",
+              "th": "ตรวจรุ่น การรับประกัน และข้อยกเว้นด้วย"
+            }
+          }
+        ],
+        "caption": {
+          "en": "These fictional quotes become 300,000 THB versus 305,000 THB for the limited matched scope. Keep Quote B’s original price visible and label the adjustment. The comparison still needs equipment, warranty and service evidence; the lower adjusted amount alone does not establish suitability.",
+          "he": "בדוגמאות הבדיוניות ההשוואה היא 300,000 מול 305,000 באט, עבור ההיקף המצומצם שתואם. משאירים את מחיר ב׳ המקורי גלוי ומסמנים את ההתאמה. עדיין נדרשות ראיות על ציוד, אחריות ושירות; המחיר המתואם הנמוך לבדו אינו מוכיח התאמה.",
+          "th": "เมื่อปรับขอบเขตเฉพาะส่วนให้ตรงกัน ข้อเสนอสมมตินี้เป็น 300,000 เทียบกับ 305,000 บาท ต้องแสดงราคาเดิมของ B และระบุรายการปรับ ยังต้องตรวจหลักฐานอุปกรณ์ การรับประกัน และบริการ เพราะยอดต่ำกว่าอย่างเดียวไม่ยืนยันความเหมาะสม"
+        },
+        "alt": {
+          "en": "A costs 300,000 THB; B’s 280,000 plus 25,000 access becomes 305,000 for comparison.",
+          "he": "א׳ עולה 300,000 באט; ב׳ בסך 280,000 ועוד 25,000 לגישה מגיעה ל־305,000 להשוואה.",
+          "th": "A ราคา 300,000 บาท ส่วน B 280,000 บวกงานเข้าถึง 25,000 รวม 305,000 เพื่อเทียบ"
+        }
+      },
+      "videoId": "com-negotiation",
+      "watchFor": {
+        "en": "Consider how evaluating the full agreement changes a price-only conversation.",
+        "he": "חשבו כיצד בחינת ההסכם כולו משנה שיחה שמתמקדת רק במחיר.",
+        "th": "พิจารณาว่าการประเมินข้อตกลงทั้งหมดเปลี่ยนบทสนทนาที่มองแต่ราคาอย่างไร"
+      },
+      "takeaway": {
+        "en": "Compare like scope and record the trade-offs before negotiating an amount.",
+        "he": "משווים היקף דומה ומתעדים תמורות לפני משא ומתן על הסכום.",
+        "th": "เทียบขอบเขตให้ตรงและบันทึกสิ่งแลกเปลี่ยนก่อนเจรจายอดเงิน"
+      },
+      "question": {
+        "en": "Which exclusions could make an apparently cheaper quote costlier for this property?",
+        "he": "אילו החרגות עלולות לייקר לנכס הזה הצעה שנראית זולה יותר?",
+        "th": "ข้อยกเว้นใดอาจทำให้ข้อเสนอที่ดูถูกกว่ามีต้นทุนสูงกว่าสำหรับสถานที่นี้?"
+      }
+    },
+    {
+      "lesson": "sales-07",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Turn an objection into scope",
+          "he": "מהתנגדות להיקף מוסכם",
+          "th": "เปลี่ยนข้อกังวลเป็นขอบเขต"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Listen",
+              "he": "הקשבה",
+              "th": "รับฟัง"
+            },
+            "detail": {
+              "en": "Restaurant asks for no service interruption",
+              "he": "המסעדה מבקשת רציפות שירות",
+              "th": "ร้านอาหารขอไม่ให้บริการสะดุด"
+            }
+          },
+          {
+            "label": {
+              "en": "Clarify",
+              "he": "הבהרה",
+              "th": "ถามให้ชัด"
+            },
+            "detail": {
+              "en": "Identify operations and unacceptable impacts",
+              "he": "מזהים פעילויות והשפעות בלתי קבילות",
+              "th": "ระบุงานและผลกระทบที่รับไม่ได้"
+            }
+          },
+          {
+            "label": {
+              "en": "Verify",
+              "he": "אימות",
+              "th": "ตรวจสอบ"
+            },
+            "detail": {
+              "en": "Engineering checks the connection and sequence",
+              "he": "ההנדסה בודקת חיבור וסדר עבודה",
+              "th": "วิศวกรตรวจจุดเชื่อมต่อและลำดับงาน"
+            }
+          },
+          {
+            "label": {
+              "en": "Document",
+              "he": "תיעוד",
+              "th": "บันทึก"
+            },
+            "detail": {
+              "en": "Agree workable windows and unresolved conditions",
+              "he": "מסכימים על חלונות עבודה ותנאים פתוחים",
+              "th": "ตกลงช่วงทำงานและเงื่อนไขที่ยังไม่ยุติ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The request for uninterrupted restaurant service is useful project information. Ask what interruption would mean, then obtain the technical plan before agreeing to a commitment. This flow converts concern into an operational constraint while keeping unresolved conditions visible to the customer.",
+          "he": "הבקשה לרציפות שירות במסעדה היא מידע שימושי לפרויקט. שואלים מה משמעותה של הפרעה, ומקבלים תוכנית טכנית לפני התחייבות. הרצף הופך חשש למגבלה תפעולית, תוך שמירה על התנאים שטרם נפתרו גלויים ומובנים ללקוח.",
+          "th": "คำขอให้ร้านอาหารบริการต่อเนื่องเป็นข้อมูลโครงการที่มีประโยชน์ ถามให้ชัดว่าการสะดุดหมายถึงอะไร แล้วรับแผนทางเทคนิคก่อนตกลงผูกพัน กระบวนการนี้เปลี่ยนความกังวลเป็นข้อจำกัดการดำเนินงาน และแสดงเงื่อนไขที่ยังไม่ยุติให้ลูกค้าเห็น"
+        },
+        "alt": {
+          "en": "Listen, clarify the operational constraint, verify with engineering, and document the agreement.",
+          "he": "מקשיבים, מבהירים מגבלה תפעולית, מאמתים מול ההנדסה ומתעדים הסכמה.",
+          "th": "รับฟัง ถามข้อจำกัดงาน ตรวจสอบกับวิศวกร และบันทึกข้อตกลง"
+        }
+      },
+      "videoId": "com-negotiation",
+      "watchFor": {
+        "en": "Reflect on evaluating an agreement before accepting an outcome that may not serve either party.",
+        "he": "חשבו על בחינת ההסכם לפני קבלת תוצאה שעלולה לא להתאים לצדדים.",
+        "th": "พิจารณาการประเมินข้อตกลงก่อนยอมรับผลที่อาจไม่เป็นประโยชน์ต่อทั้งสองฝ่าย"
+      },
+      "takeaway": {
+        "en": "A customer concern needs a defined response and evidence, not an unsupported promise.",
+        "he": "חשש של לקוח דורש מענה מוגדר וראיות, לא הבטחה ללא ביסוס.",
+        "th": "ความกังวลลูกค้าต้องมีคำตอบชัดเจนและหลักฐาน ไม่ใช่คำสัญญาที่ไม่มีข้อมูลรองรับ"
+      },
+      "question": {
+        "en": "What could you commit to now, and what must wait for the engineering plan?",
+        "he": "למה אפשר להתחייב כעת, ומה חייב להמתין לתוכנית ההנדסית?",
+        "th": "ตอนนี้ผูกพันเรื่องใดได้ และเรื่องใดต้องรอแผนวิศวกรรม?"
+      }
+    },
+    {
+      "lesson": "sales-08",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "A small discount, large effect",
+          "he": "הנחה קטנה, השפעה גדולה",
+          "th": "ส่วนลดเล็ก ผลกระทบมาก"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Original price",
+              "he": "מחיר מקורי",
+              "th": "ราคาเดิม"
+            },
+            "detail": {
+              "en": "Training quote",
+              "he": "הצעת תרגול",
+              "th": "ใบเสนอราคาฝึก"
+            },
+            "value": 400000
+          },
+          {
+            "label": {
+              "en": "Discounted price",
+              "he": "מחיר לאחר הנחה",
+              "th": "ราคาหลังลด"
+            },
+            "detail": {
+              "en": "10% discount; unchanged scope",
+              "he": "הנחה של 10%; אותו היקף",
+              "th": "ลด 10% ขอบเขตเดิม"
+            },
+            "value": 360000
+          },
+          {
+            "label": {
+              "en": "Direct cost",
+              "he": "עלות ישירה",
+              "th": "ต้นทุนตรง"
+            },
+            "detail": {
+              "en": "Held constant for this example",
+              "he": "קבועה לצורך הדוגמה",
+              "th": "คงที่ในตัวอย่างนี้"
+            },
+            "value": 320000
+          }
+        ],
+        "caption": {
+          "en": "With direct cost fixed at 320,000 THB, reducing the training price from 400,000 to 360,000 THB cuts direct-cost contribution from 80,000 to 40,000 THB. Contribution halves even though price falls only 10%. This is not the company’s net profit.",
+          "he": "כשעלות ישירה קבועה על 320,000 באט, הפחתת מחיר התרגול מ־400,000 ל־360,000 באט מקטינה תרומה מעל עלות ישירה מ־80,000 ל־40,000 באט. התרומה נחצית למרות שהמחיר ירד רק ב־10%. זה אינו הרווח הנקי של החברה.",
+          "th": "เมื่อต้นทุนตรงคงที่ 320,000 บาท การลดราคาฝึกจาก 400,000 เหลือ 360,000 บาททำให้ส่วนเกินจากต้นทุนตรงลดจาก 80,000 เหลือ 40,000 บาท ส่วนเกินลดครึ่งหนึ่งแม้ราคาลดเพียง 10% ซึ่งยังไม่ใช่กำไรสุทธิของบริษัท"
+        },
+        "alt": {
+          "en": "Bars show original price 400,000, discounted price 360,000 and unchanged direct cost 320,000 THB.",
+          "he": "עמודות מציגות מחיר מקורי 400,000, מחיר מוזל 360,000 ועלות ישירה קבועה 320,000 באט.",
+          "th": "แท่งแสดงราคาเดิม 400,000 ราคาหลังลด 360,000 และต้นทุนตรงคงที่ 320,000 บาท"
+        },
+        "unit": {
+          "en": "THB · training example",
+          "he": "באט · דוגמת תרגול",
+          "th": "บาท · ตัวอย่างฝึก"
+        }
+      },
+      "videoId": "com-negotiation",
+      "watchFor": {
+        "en": "Look for ways to assess negotiation outcomes beyond merely reaching agreement.",
+        "he": "חפשו דרכים להעריך תוצאות משא ומתן מעבר לעצם ההסכמה.",
+        "th": "มองหาวิธีประเมินผลเจรจานอกเหนือจากแค่ตกลงกันได้"
+      },
+      "takeaway": {
+        "en": "Record the approved price, scope and contribution effect together in the opportunity.",
+        "he": "מתעדים יחד את המחיר המאושר, ההיקף והשפעת התרומה ברשומת ההזדמנות.",
+        "th": "บันทึกราคาอนุมัติ ขอบเขต และผลต่อส่วนเกินร่วมกันในโอกาสขาย"
+      },
+      "question": {
+        "en": "Which approved scope or timing option could address the request without hiding the cost effect?",
+        "he": "איזו אפשרות היקף או תזמון מאושרת תענה לבקשה בלי להסתיר את השפעת העלות?",
+        "th": "ตัวเลือกขอบเขตหรือเวลาที่อนุมัติใดตอบคำขอได้โดยไม่ปิดบังผลต่อต้นทุน?"
+      }
+    },
+    {
+      "lesson": "sales-09",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "One consistent handover pack",
+          "he": "תיק מסירה אחד ועקבי",
+          "th": "ชุดส่งมอบที่ตรงกันทั้งชุด"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Signed scope",
+              "he": "היקף חתום",
+              "th": "ขอบเขตที่ลงนาม"
+            },
+            "detail": {
+              "en": "Equipment, circuits and exclusions",
+              "he": "ציוד, מעגלים והחרגות",
+              "th": "อุปกรณ์ วงจร และข้อยกเว้น"
+            }
+          },
+          {
+            "label": {
+              "en": "Technical design",
+              "he": "תכנון טכני",
+              "th": "แบบทางเทคนิค"
+            },
+            "detail": {
+              "en": "Matches promised performance boundaries",
+              "he": "תואם גבולות ביצועים שהובטחו",
+              "th": "ตรงกับขอบเขตผลการทำงานที่สัญญา"
+            }
+          },
+          {
+            "label": {
+              "en": "Supplier order",
+              "he": "הזמנת ספק",
+              "th": "คำสั่งซื้อผู้ขาย"
+            },
+            "detail": {
+              "en": "Matches approved models and quantities",
+              "he": "תואמת דגמים וכמויות שאושרו",
+              "th": "ตรงรุ่นและจำนวนที่อนุมัติ"
+            }
+          },
+          {
+            "label": {
+              "en": "Accepted transfer",
+              "he": "העברה מאושרת",
+              "th": "รับมอบข้อมูลแล้ว"
+            },
+            "detail": {
+              "en": "Receiving owner acknowledges open items",
+              "he": "האחראי המקבל מאשר נושאים פתוחים",
+              "th": "ผู้รับผิดชอบรับทราบเรื่องค้าง"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The capstone contains conflicting battery models and backup promises. Before ordering, reconcile the signed scope, design and supplier order, then obtain acceptance of the corrected record. This sequence prevents a known contradiction from becoming the installation team’s problem after commercial handover.",
+          "he": "בתרגיל המסכם יש סתירה בין דגמי סוללה ובין הבטחות גיבוי. לפני הזמנה מיישבים את ההיקף החתום, התכנון והזמנת הספק, ומקבלים אישור לתיעוד המתוקן. הרצף מונע העברת סתירה ידועה לצוות ההתקנה לאחר המסירה המסחרית.",
+          "th": "โจทย์สรุปมีรุ่นแบตเตอรี่และคำสัญญาเรื่องสำรองไฟขัดกัน ก่อนสั่งซื้อให้ปรับขอบเขตที่ลงนาม แบบ และคำสั่งซื้อให้ตรง แล้วรับการยอมรับบันทึกฉบับแก้ ลำดับนี้ป้องกันไม่ให้ความขัดแย้งที่รู้แล้วกลายเป็นปัญหาของทีมติดตั้งหลังส่งมอบ"
+        },
+        "alt": {
+          "en": "Signed scope, design and supplier order must agree before the receiving team accepts the handover.",
+          "he": "היקף חתום, תכנון והזמנת ספק חייבים להתאים לפני קבלת התיק בצוות הבא.",
+          "th": "ขอบเขตลงนาม แบบ และคำสั่งซื้อต้องตรงก่อนทีมถัดไปรับชุดส่งมอบ"
+        }
+      },
+      "videoId": "com-discovery-questions",
+      "watchFor": {
+        "en": "Use the questioning approach to test what the customer expects the agreed solution to do.",
+        "he": "השתמשו בשיטת השאלות כדי לבדוק מה הלקוח מצפה מהפתרון המוסכם.",
+        "th": "ใช้แนวทางตั้งคำถามตรวจว่าลูกค้าคาดหวังให้โซลูชันที่ตกลงทำอะไร"
+      },
+      "takeaway": {
+        "en": "Carry the verified customer outcome into the delivery record, including exclusions.",
+        "he": "מעבירים את תוצאת הלקוח המאומתת לתיק הביצוע, כולל החרגות.",
+        "th": "ถ่ายทอดผลลัพธ์ที่ยืนยันกับลูกค้าแล้วสู่บันทึกส่งมอบ รวมข้อยกเว้น"
+      },
+      "question": {
+        "en": "Which acceptance question would expose reception-only versus whole-resort backup expectations?",
+        "he": "איזו שאלת אישור תחשוף ציפייה לגיבוי קבלה בלבד מול גיבוי לכל הריזורט?",
+        "th": "คำถามยืนยันใดเผยความคาดหวังสำรองเฉพาะแผนกต้อนรับเทียบกับทั้งรีสอร์ต?"
+      }
+    },
+    {
+      "lesson": "finance-01",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "Energy generated is not all saved",
+          "he": "לא כל הייצור נחסך בחשבון",
+          "th": "ไฟผลิตได้ไม่เท่ากับไฟที่ลดการซื้อ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "AC generation",
+              "he": "ייצור AC",
+              "th": "ผลิตไฟ AC"
+            },
+            "detail": {
+              "en": "PV-only training hour",
+              "he": "שעת תרגול עם סולאר בלבד",
+              "th": "ชั่วโมงฝึกที่มีเฉพาะ PV"
+            },
+            "value": 12
+          },
+          {
+            "label": {
+              "en": "Direct use",
+              "he": "שימוש ישיר",
+              "th": "ใช้โดยตรง"
+            },
+            "detail": {
+              "en": "Matches the 8 kWh load",
+              "he": "תואם לעומס של 8 קוט״ש",
+              "th": "ตรงกับโหลด 8 kWh"
+            },
+            "value": 8
+          },
+          {
+            "label": {
+              "en": "Surplus",
+              "he": "עודף",
+              "th": "ส่วนเกิน"
+            },
+            "detail": {
+              "en": "Destination permitted; compensation unverified",
+              "he": "יעד מורשה; תמורה לא מאומתת",
+              "th": "ปลายทางอนุญาต แต่ยังไม่ยืนยันค่าตอบแทน"
+            },
+            "value": 4
+          }
+        ],
+        "caption": {
+          "en": "In the lesson’s fictional hour, 12 kWh generation serves 8 kWh of load and leaves 4 kWh surplus. Only the direct use displaces purchases in that hour. The surplus needs an allowed destination, and its monetary treatment requires separate evidence.",
+          "he": "בשעה הבדיונית בשיעור, ייצור של 12 קוט״ש מספק עומס של 8 קוט״ש ומשאיר עודף של 4 קוט״ש. רק השימוש הישיר מחליף רכישות באותה שעה. העודף דורש יעד מותר, והטיפול הכספי בו מצריך ראיות נפרדות.",
+          "th": "ในชั่วโมงสมมติของบทเรียน ผลิต 12 kWh จ่ายให้โหลด 8 kWh และเหลือ 4 kWh มีเพียงส่วนใช้ตรงที่แทนการซื้อไฟในชั่วโมงนั้น ส่วนเกินต้องมีปลายทางที่อนุญาต และการตีมูลค่าเงินต้องมีหลักฐานแยก"
+        },
+        "alt": {
+          "en": "12 kWh generation splits into 8 kWh direct consumption and 4 kWh surplus.",
+          "he": "12 קוט״ש ייצור מתחלקים ל־8 קוט״ש צריכה ישירה ול־4 קוט״ש עודפים.",
+          "th": "ผลิต 12 kWh แบ่งเป็นใช้ตรง 8 kWh กับส่วนเกิน 4 kWh"
+        },
+        "unit": {
+          "en": "kWh · one training hour",
+          "he": "קוט״ש · שעת תרגול אחת",
+          "th": "kWh · หนึ่งชั่วโมงฝึก"
+        }
+      },
+      "videoId": "com-bill-savings",
+      "watchFor": {
+        "en": "Track the link between generation, customer load and the calculated electricity bill.",
+        "he": "עקבו אחר הקשר בין ייצור, עומס לקוח וחשבון החשמל המחושב.",
+        "th": "ติดตามความเชื่อมโยงระหว่างการผลิต โหลดลูกค้า และบิลที่คำนวณ"
+      },
+      "takeaway": {
+        "en": "The financial ledger must distinguish generation, avoided imports and surplus.",
+        "he": "הרישום הכספי חייב להבחין בין ייצור, יבוא שנמנע ועודפים.",
+        "th": "บัญชีการเงินต้องแยกการผลิต การซื้อไฟที่ลดลง และส่วนเกิน"
+      },
+      "question": {
+        "en": "Why would pricing all 12 kWh at the retail tariff overstate the directly avoided purchase here?",
+        "he": "מדוע תמחור כל 12 הקוט״ש בתעריף קמעונאי יפריז ברכישה שנמנעה ישירות כאן?",
+        "th": "ทำไมการคูณทั้ง 12 kWh ด้วยอัตราขายปลีกจึงตีค่าการซื้อไฟที่ลดโดยตรงสูงเกินในกรณีนี้?"
+      }
+    },
+    {
+      "lesson": "finance-02",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "From bill savings to cash",
+          "he": "מחיסכון בחשבון לתזרים",
+          "th": "จากผลต่างบิลสู่เงินสด"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Before bill",
+              "he": "חשבון לפני",
+              "th": "บิลก่อน"
+            },
+            "detail": {
+              "en": "12,000 THB per month",
+              "he": "12,000 באט בחודש",
+              "th": "12,000 บาทต่อเดือน"
+            }
+          },
+          {
+            "label": {
+              "en": "After bill",
+              "he": "חשבון אחרי",
+              "th": "บิลหลัง"
+            },
+            "detail": {
+              "en": "8,000 THB per month",
+              "he": "8,000 באט בחודש",
+              "th": "8,000 บาทต่อเดือน"
+            }
+          },
+          {
+            "label": {
+              "en": "Incremental maintenance",
+              "he": "תחזוקה נוספת",
+              "th": "ค่าบำรุงเพิ่ม"
+            },
+            "detail": {
+              "en": "500 THB per month",
+              "he": "500 באט בחודש",
+              "th": "500 บาทต่อเดือน"
+            }
+          },
+          {
+            "label": {
+              "en": "Operating cash benefit",
+              "he": "תועלת תפעולית במזומן",
+              "th": "ประโยชน์เงินสดดำเนินงาน"
+            },
+            "detail": {
+              "en": "4,000 minus 500 = 3,500 THB",
+              "he": "4,000 פחות 500 = 3,500 באט",
+              "th": "4,000 ลบ 500 = 3,500 บาท"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The training bridge separates 4,000 THB of gross monthly bill savings from 3,500 THB after incremental maintenance. Export, tax and financing are excluded consistently in this example. Add applicable items explicitly before describing the result as cash available to the owner.",
+          "he": "הגישור בתרגול מפריד בין חיסכון חודשי גולמי של 4,000 באט לבין 3,500 באט לאחר תחזוקה נוספת. ייצוא, מס ומימון אינם נכללים בעקביות בדוגמה. מוסיפים רכיבים רלוונטיים במפורש לפני שמכנים את התוצאה כסף הזמין לבעלים.",
+          "th": "ตัวอย่างแยกผลประหยัดบิลรายเดือนขั้นต้น 4,000 บาทออกจาก 3,500 บาทหลังหักค่าบำรุงเพิ่ม โดยไม่รวมส่งออก ภาษี และเงินกู้อย่างสอดคล้องกัน ต้องเพิ่มรายการที่เกี่ยวข้องอย่างชัดเจนก่อนเรียกผลลัพธ์ว่าเงินสดที่เจ้าของใช้ได้"
+        },
+        "alt": {
+          "en": "A 4,000 THB bill difference minus 500 THB maintenance leaves 3,500 THB operating benefit.",
+          "he": "הפרש חשבון של 4,000 באט פחות תחזוקה של 500 משאיר תועלת תפעולית של 3,500 באט.",
+          "th": "ผลต่างบิล 4,000 บาทหักค่าบำรุง 500 เหลือประโยชน์ดำเนินงาน 3,500 บาท"
+        }
+      },
+      "videoId": "com-bill-savings",
+      "watchFor": {
+        "en": "Watch how bill savings feed the project cash-flow calculation.",
+        "he": "צפו כיצד חיסכון בחשבון מזין את חישוב תזרים הפרויקט.",
+        "th": "ดูว่าผลประหยัดบิลเข้าสู่การคำนวณกระแสเงินสดโครงการอย่างไร"
+      },
+      "takeaway": {
+        "en": "Bill savings are one cash-flow input, not the final owner return.",
+        "he": "חיסכון בחשבון הוא רכיב בתזרים, לא התשואה הסופית לבעלים.",
+        "th": "ผลประหยัดบิลเป็นข้อมูลหนึ่งของกระแสเงินสด ไม่ใช่ผลตอบแทนสุดท้ายของเจ้าของ"
+      },
+      "question": {
+        "en": "Which additional cash items would you verify before converting this bridge to an equity cash flow?",
+        "he": "אילו רכיבי מזומן נוספים תאמתו לפני הפיכת הגישור לתזרים לבעלי ההון?",
+        "th": "ต้องตรวจรายการเงินสดใดเพิ่มก่อนเปลี่ยนตัวอย่างนี้เป็นกระแสเงินสดผู้ถือหุ้น?"
+      }
+    },
+    {
+      "lesson": "finance-03",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Reconstruct the applicable bill",
+          "he": "משחזרים את החשבון הרלוונטי",
+          "th": "สร้างบิลที่ใช้จริงขึ้นใหม่"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Account and period",
+              "he": "חשבון ותקופה",
+              "th": "บัญชีและงวด"
+            },
+            "detail": {
+              "en": "Verify PEA class and effective dates",
+              "he": "מאמתים סיווג PEA ותאריכי תחולה",
+              "th": "ยืนยันประเภทผู้ใช้ PEA และวันมีผล"
+            }
+          },
+          {
+            "label": {
+              "en": "Base charges",
+              "he": "חיובי בסיס",
+              "th": "ค่าไฟฐาน"
+            },
+            "detail": {
+              "en": "Apply the actual category rules",
+              "he": "מיישמים כללי קטגוריה בפועל",
+              "th": "ใช้กติกาของประเภทจริง"
+            }
+          },
+          {
+            "label": {
+              "en": "Ft and tax",
+              "he": "Ft ומס",
+              "th": "Ft และภาษี"
+            },
+            "detail": {
+              "en": "Use separately verified applicable treatment",
+              "he": "משתמשים בטיפול רלוונטי שאומת בנפרד",
+              "th": "ใช้วิธีที่เกี่ยวข้องและตรวจแยกแล้ว"
+            }
+          },
+          {
+            "label": {
+              "en": "Before and after",
+              "he": "לפני ואחרי",
+              "th": "ก่อนและหลัง"
+            },
+            "detail": {
+              "en": "Recalculate consistently for both cases",
+              "he": "מחשבים מחדש בעקביות לשני המצבים",
+              "th": "คำนวณใหม่ด้วยหลักเดียวกันทั้งสองกรณี"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Start from the actual PEA account and billing period, then reconstruct the applicable components. Recalculate the before and after cases under consistent rules instead of multiplying all solar output by an average bill rate. The diagram provides no universal tariff or tax rate.",
+          "he": "מתחילים מחשבון PEA בפועל ומתקופת החיוב, ומשחזרים את הרכיבים החלים. מחשבים מחדש את המצבים לפני ואחרי לפי כללים עקביים, במקום להכפיל את כל הייצור בתעריף ממוצע מהחשבון. התרשים אינו מציג תעריף חשמל או שיעור מס אוניברסלי.",
+          "th": "เริ่มจากบัญชี PEA และงวดบิลจริง แล้วสร้างองค์ประกอบที่เกี่ยวข้อง คำนวณกรณีก่อนและหลังด้วยกติกาเดียวกัน แทนการคูณไฟโซลาร์ทั้งหมดด้วยอัตราเฉลี่ยจากบิล แผนผังนี้ไม่ได้ให้ค่าไฟหรืออัตราภาษีที่ใช้ได้ทุกกรณี"
+        },
+        "alt": {
+          "en": "Account and period determine base charges and applicable Ft/tax treatment before the two bills are compared.",
+          "he": "החשבון והתקופה קובעים חיובי בסיס וטיפול Ft ומס רלוונטי לפני השוואת החשבונות.",
+          "th": "บัญชีและงวดกำหนดค่าไฟฐานและวิธี Ft/ภาษีที่เกี่ยวข้องก่อนเทียบบิลสองกรณี"
+        }
+      },
+      "videoId": "com-bill-calculator",
+      "watchFor": {
+        "en": "Notice the separate billing inputs and how changing the method changes the calculated bill.",
+        "he": "שימו לב לתשומות חיוב נפרדות ולהשפעת שינוי השיטה על החשבון המחושב.",
+        "th": "สังเกตข้อมูลนำเข้าค่าบิลที่แยกกันและผลเมื่อเปลี่ยนวิธีคำนวณ"
+      },
+      "takeaway": {
+        "en": "Use the video for modelling structure; verify Thai tariff inputs from current official documents.",
+        "he": "משתמשים בסרטון למבנה המודל; מאמתים נתוני תעריף תאילנדיים במסמכים רשמיים עדכניים.",
+        "th": "ใช้วิดีโอเรียนโครงสร้างแบบจำลอง และตรวจอัตราค่าไฟไทยจากเอกสารทางการปัจจุบัน"
+      },
+      "question": {
+        "en": "Which account category and effective date must be attached to your bill reconstruction?",
+        "he": "איזה סיווג חשבון ותאריך תחולה חייבים לצרף לשחזור החשבון שלכם?",
+        "th": "ต้องแนบประเภทบัญชีและวันมีผลใดในการสร้างบิลของคุณใหม่?"
+      }
+    },
+    {
+      "lesson": "finance-04",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Keep replacement cash visible",
+          "he": "מציגים תזרים החלפה במפורש",
+          "th": "แสดงเงินเปลี่ยนอุปกรณ์ให้ชัด"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Initial CAPEX",
+              "he": "השקעה ראשונית",
+              "th": "CAPEX เริ่มต้น"
+            },
+            "detail": {
+              "en": "300,000 THB training input",
+              "he": "תשומת תרגול: 300,000 באט",
+              "th": "ข้อมูลฝึก 300,000 บาท"
+            }
+          },
+          {
+            "label": {
+              "en": "Annual OPEX",
+              "he": "הוצאה שנתית",
+              "th": "OPEX รายปี"
+            },
+            "detail": {
+              "en": "10,000 THB each year",
+              "he": "10,000 באט בכל שנה",
+              "th": "10,000 บาทต่อปี"
+            }
+          },
+          {
+            "label": {
+              "en": "Year 8 replacement",
+              "he": "החלפה בשנה 8",
+              "th": "เปลี่ยนในปี 8"
+            },
+            "detail": {
+              "en": "80,000 THB scenario cost",
+              "he": "עלות תרחיש: 80,000 באט",
+              "th": "ต้นทุนสถานการณ์ 80,000 บาท"
+            }
+          },
+          {
+            "label": {
+              "en": "Evidence review",
+              "he": "בדיקת ראיות",
+              "th": "ทบทวนหลักฐาน"
+            },
+            "detail": {
+              "en": "Check warranty, exclusions and replacement scope",
+              "he": "בודקים אחריות, החרגות והיקף החלפה",
+              "th": "ตรวจประกัน ข้อยกเว้น และขอบเขตเปลี่ยน"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The training schedule keeps an assumed 80,000 THB replacement in year eight separate from annual OPEX. This exposes the year of cash need. It neither predicts equipment lifespan nor asserts warranty coverage; verify actual models, terms and replacement responsibilities separately.",
+          "he": "לוח התרגול מציג החלפה משוערת של 80,000 באט בשנה השמינית בנפרד מההוצאה השנתית. כך נחשפת שנת הצורך במזומן. אין כאן תחזית לחיי הציוד או קביעה לכיסוי אחריות; מאמתים בנפרד דגמים, תנאים ואחריות להחלפה.",
+          "th": "ตารางฝึกแยกค่าเปลี่ยนสมมติ 80,000 บาทในปีที่แปดออกจาก OPEX รายปี เพื่อให้เห็นปีที่ต้องใช้เงิน ไม่ได้ทำนายอายุอุปกรณ์หรือยืนยันความคุ้มครองประกัน ต้องตรวจรุ่นจริง เงื่อนไข และผู้รับผิดชอบการเปลี่ยนแยกต่างหาก"
+        },
+        "alt": {
+          "en": "Initial 300,000 THB CAPEX, annual 10,000 THB OPEX and an assumed year-eight 80,000 THB replacement.",
+          "he": "השקעה ראשונית של 300,000 באט, הוצאה שנתית 10,000 והחלפה משוערת בשנה השמינית ב־80,000 באט.",
+          "th": "CAPEX เริ่มต้น 300,000 บาท OPEX ปีละ 10,000 และสมมติเปลี่ยนปีที่แปด 80,000 บาท"
+        }
+      },
+      "videoId": "com-financial-models",
+      "watchFor": {
+        "en": "Inspect how model inputs are connected to a multi-year project cash-flow perspective.",
+        "he": "בדקו כיצד תשומות המודל מתחברות לתזרים פרויקט לאורך שנים.",
+        "th": "พิจารณาว่าข้อมูลนำเข้าเชื่อมกับมุมมองกระแสเงินสดหลายปีอย่างไร"
+      },
+      "takeaway": {
+        "en": "Keep lifecycle cost assumptions dated, visible and supported by project-specific evidence.",
+        "he": "שומרים הנחות עלות לאורך החיים מתוזמנות, גלויות ומבוססות ראיות לפרויקט.",
+        "th": "ระบุเวลาของสมมติฐานต้นทุนตลอดอายุให้ชัด พร้อมหลักฐานเฉพาะโครงการ"
+      },
+      "question": {
+        "en": "If warranty excludes transport, where would you record that possible cash cost?",
+        "he": "אם האחריות מחריגה הובלה, היכן תרשמו את עלות המזומן האפשרית?",
+        "th": "ถ้าประกันไม่รวมขนส่ง จะบันทึกต้นทุนเงินสดที่อาจเกิดตรงไหน?"
+      }
+    },
+    {
+      "lesson": "finance-05",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Discount the dated cash flows",
+          "he": "היוון התזרימים לפי מועד",
+          "th": "คิดลดกระแสเงินสดตามเวลา"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Year 0",
+              "he": "שנה 0",
+              "th": "ปี 0"
+            },
+            "detail": {
+              "en": "Pay 100,000 THB now",
+              "he": "תשלום 100,000 באט היום",
+              "th": "จ่าย 100,000 บาทวันนี้"
+            }
+          },
+          {
+            "label": {
+              "en": "Year 1",
+              "he": "שנה 1",
+              "th": "ปี 1"
+            },
+            "detail": {
+              "en": "Receive 60,000 THB; discount once",
+              "he": "קבלת 60,000 באט; היוון פעם אחת",
+              "th": "รับ 60,000 บาท คิดลดหนึ่งปี"
+            }
+          },
+          {
+            "label": {
+              "en": "Year 2",
+              "he": "שנה 2",
+              "th": "ปี 2"
+            },
+            "detail": {
+              "en": "Receive 60,000 THB; discount twice",
+              "he": "קבלת 60,000 באט; היוון לשנתיים",
+              "th": "รับ 60,000 บาท คิดลดสองปี"
+            }
+          },
+          {
+            "label": {
+              "en": "NPV at 10%",
+              "he": "ערך נוכחי נקי ב־10%",
+              "th": "NPV ที่ 10%"
+            },
+            "detail": {
+              "en": "Approximately +4,132 THB",
+              "he": "כ־4,132 באט חיוביים",
+              "th": "ประมาณ +4,132 บาท"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The lesson’s training example discounts each 60,000 THB receipt by its own date, then subtracts the 100,000 THB initial cost. At an illustrative 10% discount rate, NPV is about 4,132 THB. This arithmetic excludes further project costs and is not an investment recommendation.",
+          "he": "בדוגמת התרגול מהוונים כל תקבול של 60,000 באט לפי מועדו, ואז מפחיתים את ההשקעה הראשונית של 100,000 באט. בשיעור היוון המחשה של 10%, הערך הנוכחי הנקי הוא כ־4,132 באט. החישוב אינו כולל עלויות נוספות ואינו המלצת השקעה.",
+          "th": "ตัวอย่างฝึกคิดลดเงินรับ 60,000 บาทแต่ละครั้งตามเวลาที่ได้รับ แล้วหักต้นทุนเริ่มต้น 100,000 บาท ที่อัตราคิดลดสมมติ 10% จะได้ NPV ประมาณ 4,132 บาท การคำนวณนี้ไม่รวมต้นทุนโครงการอื่นและไม่ใช่คำแนะนำลงทุน"
+        },
+        "alt": {
+          "en": "A 100,000 THB payment followed by two annual 60,000 THB receipts gives roughly 4,132 THB NPV at 10%.",
+          "he": "תשלום של 100,000 באט ושני תקבולים שנתיים של 60,000 באט מניבים ערך נוכחי נקי של כ־4,132 באט בהיוון של 10%.",
+          "th": "จ่าย 100,000 บาทแล้วรับปีละ 60,000 บาทสองปี ได้ NPV ราว 4,132 บาทเมื่อคิดลด 10%"
+        }
+      },
+      "videoId": "com-discounted-cash-flow",
+      "watchFor": {
+        "en": "Follow how each future receipt is brought back to a common present date.",
+        "he": "עקבו אחר החזרת כל תקבול עתידי למועד נוכחי משותף.",
+        "th": "ติดตามวิธีนำเงินรับในอนาคตแต่ละครั้งกลับมายังวันปัจจุบันเดียวกัน"
+      },
+      "takeaway": {
+        "en": "NPV requires dated net cash flows and a consistent discount-rate basis.",
+        "he": "ערך נוכחי נקי דורש תזרים נטו מתוזמן ובסיס היוון עקבי.",
+        "th": "NPV ต้องใช้กระแสเงินสดสุทธิที่มีเวลาและฐานอัตราคิดลดสอดคล้องกัน"
+      },
+      "question": {
+        "en": "Why is adding both 60,000 THB receipts without discounting insufficient?",
+        "he": "מדוע חיבור שני התקבולים של 60,000 באט בלי היוון אינו מספיק?",
+        "th": "เหตุใดการบวกเงินรับ 60,000 บาททั้งสองครั้งโดยไม่คิดลดจึงไม่เพียงพอ"
+      }
+    },
+    {
+      "lesson": "finance-06",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "Cash available versus debt due",
+          "he": "מזומן זמין מול חוב לפירעון",
+          "th": "เงินที่มีเทียบกับหนี้ถึงกำหนด"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Base cash available",
+              "he": "מזומן זמין בבסיס",
+              "th": "เงินพร้อมชำระกรณีฐาน"
+            },
+            "detail": {
+              "en": "Defined annual CFADS",
+              "he": "CFADS שנתי לפי ההגדרה",
+              "th": "CFADS รายปีตามนิยาม"
+            },
+            "value": 120000
+          },
+          {
+            "label": {
+              "en": "Scheduled debt service",
+              "he": "שירות חוב מתוכנן",
+              "th": "ภาระชำระหนี้ตามกำหนด"
+            },
+            "detail": {
+              "en": "80,000 principal + 20,000 interest",
+              "he": "80,000 קרן + 20,000 ריבית",
+              "th": "เงินต้น 80,000 + ดอกเบี้ย 20,000"
+            },
+            "value": 100000
+          },
+          {
+            "label": {
+              "en": "Downside cash available",
+              "he": "מזומן זמין בהרעה",
+              "th": "เงินพร้อมชำระกรณีแย่"
+            },
+            "detail": {
+              "en": "Same period and cash definition",
+              "he": "אותה תקופה ואותה הגדרת מזומן",
+              "th": "งวดและนิยามเงินเดียวกัน"
+            },
+            "value": 80000
+          }
+        ],
+        "caption": {
+          "en": "Using the lesson’s defined annual cash flows, coverage is 1.20 in the base case and 0.80 in the downside. The downside leaves a 20,000 THB gap against scheduled debt. Neither ratio establishes lender approval; monthly timing and the actual financing terms still matter.",
+          "he": "לפי הגדרת התזרים השנתי בשיעור, הכיסוי הוא 1.20 בבסיס ו־0.80 בתרחיש ההרעה. בהרעה נוצר פער של 20,000 באט מול שירות החוב המתוכנן. אף יחס אינו מהווה אישור מלווה; תזמון חודשי ותנאי המימון בפועל עדיין חשובים.",
+          "th": "ตามนิยามกระแสเงินสดรายปีในบทเรียน อัตราคุ้มครองเป็น 1.20 ในกรณีฐานและ 0.80 ในกรณีแย่ กรณีแย่ขาด 20,000 บาทเทียบหนี้ที่ถึงกำหนด ทั้งสองอัตราไม่ใช่การอนุมัติสินเชื่อ ยังต้องดูเวลารายเดือนและเงื่อนไขเงินกู้จริง"
+        },
+        "alt": {
+          "en": "Annual CFADS of 120,000 or 80,000 THB compared with 100,000 THB debt service.",
+          "he": "CFADS שנתי של 120,000 או 80,000 באט מול שירות חוב של 100,000 באט.",
+          "th": "CFADS รายปี 120,000 หรือ 80,000 บาท เทียบภาระหนี้ 100,000 บาท"
+        },
+        "unit": {
+          "en": "THB per training year",
+          "he": "באט לשנת תרגול",
+          "th": "บาทต่อปีฝึก"
+        }
+      },
+      "videoId": "com-financial-models",
+      "watchFor": {
+        "en": "Examine how the financial-model perspective distinguishes project returns from financing.",
+        "he": "בדקו כיצד נקודת המבט הפיננסית מפרידה בין תשואת פרויקט למימון.",
+        "th": "พิจารณาว่ามุมมองแบบจำลองแยกผลตอบแทนโครงการกับการจัดหาเงินอย่างไร"
+      },
+      "takeaway": {
+        "en": "Debt analysis needs an explicit cash definition, period and repayment schedule.",
+        "he": "ניתוח חוב דורש הגדרת מזומן, תקופה ולוח סילוקין מפורשים.",
+        "th": "วิเคราะห์หนี้ต้องมีนิยามเงินสด งวด และตารางชำระคืนชัดเจน"
+      },
+      "question": {
+        "en": "What monthly evidence would you require before accepting annual DSCR as sufficient?",
+        "he": "אילו ראיות חודשיות תדרשו לפני הסתמכות מספקת על DSCR שנתי?",
+        "th": "ต้องมีหลักฐานรายเดือนใดก่อนถือว่า DSCR รายปีเพียงพอ?"
+      }
+    },
+    {
+      "lesson": "finance-07",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "Currency exposure in a fixed quote",
+          "he": "חשיפת מטבע בהצעה קבועה",
+          "th": "ความเสี่ยงค่าเงินในราคาเหมาจ่าย"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "At 35 THB/USD",
+              "he": "ב־35 באט לדולר",
+              "th": "ที่ 35 บาทต่อดอลลาร์"
+            },
+            "detail": {
+              "en": "USD 20,000 supplier amount",
+              "he": "סכום ספק: 20,000 דולר",
+              "th": "ยอดผู้ขาย 20,000 ดอลลาร์"
+            },
+            "value": 700000
+          },
+          {
+            "label": {
+              "en": "At 36 THB/USD",
+              "he": "ב־36 באט לדולר",
+              "th": "ที่ 36 บาทต่อดอลลาร์"
+            },
+            "detail": {
+              "en": "Same supplier amount, different assumption",
+              "he": "אותו סכום ספק, הנחת מטבע אחרת",
+              "th": "ยอดผู้ขายเดิม สมมติค่าเงินต่างกัน"
+            },
+            "value": 720000
+          },
+          {
+            "label": {
+              "en": "Additional cash needed",
+              "he": "תוספת מזומן נדרשת",
+              "th": "เงินเพิ่มที่ต้องใช้"
+            },
+            "detail": {
+              "en": "Before fees and taxes",
+              "he": "לפני עמלות ומסים",
+              "th": "ก่อนค่าธรรมเนียมและภาษี"
+            },
+            "value": 20000
+          }
+        ],
+        "caption": {
+          "en": "The lesson compares hypothetical exchange rates for the same USD 20,000 equipment commitment. A one-baht movement creates a 20,000 THB difference before fees and tax. These are not current exchange quotes. Record payment dates, contractual allocation and any verified protection separately.",
+          "he": "השיעור משווה שערי חליפין היפותטיים לאותה התחייבות ציוד של 20,000 דולר. שינוי של באט אחד יוצר הפרש של 20,000 באט לפני עמלות ומס. אלו אינם שערים עדכניים. מתעדים בנפרד מועדי תשלום, הקצאה חוזית וכל הגנה מאומתת.",
+          "th": "บทเรียนเทียบอัตราแลกเปลี่ยนสมมติสำหรับภาระซื้ออุปกรณ์ 20,000 ดอลลาร์เท่ากัน การเปลี่ยนหนึ่งบาทสร้างส่วนต่าง 20,000 บาทก่อนค่าธรรมเนียมและภาษี ตัวเลขนี้ไม่ใช่ราคาแลกเปลี่ยนปัจจุบัน ต้องบันทึกวันจ่าย ผู้รับความเสี่ยงตามสัญญา และมาตรการป้องกันที่ยืนยันแล้วแยกกัน"
+        },
+        "alt": {
+          "en": "USD 20,000 costs 700,000 THB at 35 or 720,000 THB at 36; the difference is 20,000 THB.",
+          "he": "20,000 דולר עולים 700,000 באט בשער 35 או 720,000 בשער 36; ההפרש 20,000 באט.",
+          "th": "20,000 ดอลลาร์เป็น 700,000 บาทที่อัตรา 35 หรือ 720,000 ที่ 36 ต่างกัน 20,000 บาท"
+        },
+        "unit": {
+          "en": "THB · hypothetical exchange rates",
+          "he": "באט · שערי חליפין היפותטיים",
+          "th": "บาท · อัตราแลกเปลี่ยนสมมติ"
+        }
+      },
+      "videoId": "com-present-value",
+      "watchFor": {
+        "en": "Focus on why the date of a payment matters when comparing money across time.",
+        "he": "התמקדו בחשיבות מועד התשלום בהשוואת כסף בין מועדים.",
+        "th": "เน้นว่าทำไมวันจ่ายจึงสำคัญเมื่อเปรียบเทียบเงินต่างเวลา"
+      },
+      "takeaway": {
+        "en": "First define the currency amount and payment date; assess FX and tax separately.",
+        "he": "תחילה מגדירים סכום מטבע ומועד תשלום; בודקים מט״ח ומס בנפרד.",
+        "th": "กำหนดยอดสกุลเงินและวันจ่ายก่อน แล้วประเมินค่าเงินและภาษีแยก"
+      },
+      "question": {
+        "en": "Which invoice milestone sets the date of this foreign-currency cash obligation?",
+        "he": "איזו אבן דרך בחשבונית קובעת את מועד התחייבות המזומן במטבע הזר?",
+        "th": "งวดใบแจ้งหนี้ใดกำหนดวันที่ต้องจ่ายเงินต่างประเทศนี้?"
+      }
+    },
+    {
+      "lesson": "finance-08",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Separate sensitivity from scenarios",
+          "he": "מפרידים רגישות מתרחישים",
+          "th": "แยกความไวจากสถานการณ์"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Base case",
+              "he": "תרחיש בסיס",
+              "th": "กรณีฐาน"
+            },
+            "detail": {
+              "en": "150,000 benefit − 30,000 OPEX = 120,000 THB",
+              "he": "150,000 תועלת פחות 30,000 הוצאה = 120,000 באט",
+              "th": "ประโยชน์ 150,000 − OPEX 30,000 = 120,000 บาท"
+            }
+          },
+          {
+            "label": {
+              "en": "Combined downside",
+              "he": "הרעה משולבת",
+              "th": "กรณีแย่รวมหลายปัจจัย"
+            },
+            "detail": {
+              "en": "100,000 benefit − 40,000 OPEX = 60,000 THB",
+              "he": "100,000 תועלת פחות 40,000 הוצאה = 60,000 באט",
+              "th": "ประโยชน์ 100,000 − OPEX 40,000 = 60,000 บาท"
+            }
+          },
+          {
+            "label": {
+              "en": "Two changes",
+              "he": "שני שינויים",
+              "th": "เปลี่ยนสองปัจจัย"
+            },
+            "detail": {
+              "en": "Benefit falls; operating expense rises",
+              "he": "התועלת יורדת; ההוצאה התפעולית עולה",
+              "th": "ประโยชน์ลด ค่าใช้จ่ายดำเนินงานเพิ่ม"
+            }
+          }
+        ],
+        "caption": {
+          "en": "In this annual training case, gross benefit falls while OPEX rises, halving operating benefit from 120,000 to 60,000 THB. That is a combined scenario. A single-variable sensitivity would change only one input while holding others fixed; neither result includes debt or tax here.",
+          "he": "בתרגול השנתי התועלת הגולמית יורדת וההוצאה עולה, ולכן התועלת התפעולית נחצית מ־120,000 ל־60,000 באט. זהו תרחיש משולב. בדיקת רגישות למשתנה יחיד תשנה רק תשומה אחת ותשאיר אחרות קבועות; כאן שתי התוצאות אינן כוללות חוב או מס.",
+          "th": "ในตัวอย่างรายปี ประโยชน์ขั้นต้นลดขณะ OPEX เพิ่ม ทำให้ประโยชน์ดำเนินงานลดครึ่งจาก 120,000 เหลือ 60,000 บาท นี่คือสถานการณ์รวม การวิเคราะห์ความไวตัวแปรเดียวจะเปลี่ยนเพียงข้อมูลเดียวและคงค่าอื่นไว้ ทั้งสองผลในที่นี้ยังไม่รวมหนี้หรือภาษี"
+        },
+        "alt": {
+          "en": "Base operating benefit is 120,000 THB; two simultaneous adverse changes reduce it to 60,000 THB.",
+          "he": "התועלת התפעולית בבסיס היא 120,000 באט; שני שינויים שליליים במקביל מורידים אותה ל־60,000.",
+          "th": "ประโยชน์ดำเนินงานฐาน 120,000 บาทลดเหลือ 60,000 เมื่อสองปัจจัยแย่ลงพร้อมกัน"
+        }
+      },
+      "videoId": "com-financial-models",
+      "watchFor": {
+        "en": "Notice why selecting the cash-flow perspective matters before comparing model results.",
+        "he": "שימו לב לחשיבות בחירת נקודת המבט בתזרים לפני השוואת תוצאות מודל.",
+        "th": "สังเกตว่าทำไมต้องเลือกมุมมองกระแสเงินสดก่อนเทียบผลแบบจำลอง"
+      },
+      "takeaway": {
+        "en": "Keep scenario changes and excluded costs explicit so comparisons remain meaningful.",
+        "he": "מציגים שינויי תרחיש ועלויות מוחרגות במפורש כדי שההשוואה תהיה משמעותית.",
+        "th": "แสดงปัจจัยที่เปลี่ยนและต้นทุนที่ไม่รวมให้ชัดเพื่อให้การเทียบมีความหมาย"
+      },
+      "question": {
+        "en": "How would you isolate only the OPEX effect in a second model run?",
+        "he": "איך תבודדו רק את השפעת ההוצאה התפעולית בהרצת מודל נוספת?",
+        "th": "จะทดสอบเฉพาะผลของ OPEX ในการรันแบบจำลองครั้งที่สองอย่างไร?"
+      }
+    },
+    {
+      "lesson": "finance-09",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Ready for financial approval?",
+          "he": "מוכנים לאישור פיננסי?",
+          "th": "พร้อมอนุมัติการเงินหรือยัง?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Is funding committed?",
+              "he": "המימון מובטח?",
+              "th": "เงินทุนผูกพันแล้วหรือยัง?"
+            },
+            "detail": {
+              "en": "Proposed debt and equity: 300,000 each",
+              "he": "חוב והון מוצעים: 300,000 כל אחד",
+              "th": "เสนอหนี้และทุนฝ่ายละ 300,000"
+            }
+          },
+          {
+            "label": {
+              "en": "Base coverage",
+              "he": "כיסוי בבסיס",
+              "th": "ความคุ้มครองกรณีฐาน"
+            },
+            "detail": {
+              "en": "144,000 annual CFADS / 96,000 annual debt service = 1.50",
+              "he": "144,000 CFADS שנתי / 96,000 שירות חוב שנתי = 1.50",
+              "th": "CFADS รายปี 144,000 / ยอดชำระหนี้รายปี 96,000 = 1.50"
+            }
+          },
+          {
+            "label": {
+              "en": "Downside coverage",
+              "he": "כיסוי בהרעה",
+              "th": "ความคุ้มครองกรณีแย่"
+            },
+            "detail": {
+              "en": "72,000 annual CFADS / 96,000 annual debt service = 0.75",
+              "he": "72,000 CFADS שנתי / 96,000 שירות חוב שנתי = 0.75",
+              "th": "CFADS รายปี 72,000 / ยอดชำระหนี้รายปี 96,000 = 0.75"
+            }
+          },
+          {
+            "label": {
+              "en": "Conditional or hold",
+              "he": "מותנה או בהשהיה",
+              "th": "มีเงื่อนไขหรือพักไว้"
+            },
+            "detail": {
+              "en": "Verify funding and the 24,000 THB gap remedy",
+              "he": "מאמתים מימון ומענה לפער 24,000 באט",
+              "th": "ยืนยันเงินทุนและวิธีปิดช่องว่าง 24,000 บาท"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The 600,000 THB capstone’s proposed financing is not yet committed. Base coverage of 1.50 does not remove the downside’s 24,000 THB shortfall. The approval memo should identify conditions, owners and evidence before release, using the actual lender’s definition and terms rather than an invented universal threshold.",
+          "he": "המימון המוצע בתרגיל המסכם של 600,000 באט טרם הובטח. כיסוי בסיס של 1.50 אינו מבטל מחסור של 24,000 באט בהרעה. מזכר האישור צריך לציין תנאים, אחראים וראיות לפני שחרור, לפי הגדרות ותנאי המלווה בפועל ולא לפי סף אוניברסלי מומצא.",
+          "th": "เงินทุนที่เสนอในโจทย์สรุปมูลค่า 600,000 บาทยังไม่ผูกพัน อัตราฐาน 1.50 ไม่ลบช่องว่าง 24,000 บาทในกรณีแย่ บันทึกอนุมัติต้องระบุเงื่อนไข ผู้รับผิดชอบ และหลักฐานก่อนปล่อยเงิน โดยใช้นิยามและเงื่อนไขผู้ให้กู้จริง ไม่ใช้เกณฑ์สากลที่แต่งขึ้น"
+        },
+        "alt": {
+          "en": "Uncommitted financing and downside coverage below one keep approval conditional until evidence resolves the shortfall.",
+          "he": "מימון שטרם הובטח וכיסוי הרעה מתחת לאחת משאירים אישור מותנה עד לפתרון הפער בראיות.",
+          "th": "เงินทุนยังไม่ผูกพันและอัตรากรณีแย่ต่ำกว่าหนึ่งทำให้อนุมัติยังมีเงื่อนไขจนมีหลักฐานแก้ช่องว่าง"
+        }
+      },
+      "videoId": "com-financial-models",
+      "watchFor": {
+        "en": "Use the model overview to distinguish the owner’s cash flow, project performance and debt assumptions.",
+        "he": "השתמשו בסקירת המודלים להבחנה בין תזרים הבעלים, ביצועי הפרויקט והנחות החוב.",
+        "th": "ใช้ภาพรวมแบบจำลองแยกเงินสดเจ้าของ ผลโครงการ และสมมติฐานหนี้"
+      },
+      "takeaway": {
+        "en": "An approval memo must show both model results and the evidence still required.",
+        "he": "מזכר אישור חייב להציג גם תוצאות מודל וגם ראיות שעדיין חסרות.",
+        "th": "บันทึกอนุมัติต้องแสดงทั้งผลแบบจำลองและหลักฐานที่ยังต้องมี"
+      },
+      "question": {
+        "en": "Who must supply the funding commitment and how will the downside gap be resolved?",
+        "he": "מי חייב לספק התחייבות מימון, וכיצד ייפתר הפער בתרחיש ההרעה?",
+        "th": "ใครต้องให้หลักฐานผูกพันเงินทุน และจะแก้ช่องว่างกรณีแย่อย่างไร?"
+      }
+    },
+    {
+      "lesson": "sales-bd-01",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Segment the need, not the person",
+          "he": "מפלחים צורך, לא אדם",
+          "th": "แยกตามความต้องการ ไม่เหมารวมคน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Villa",
+              "he": "וילה",
+              "th": "วิลลา"
+            },
+            "detail": {
+              "en": "Ask about occupancy and priority loads",
+              "he": "שואלים על תפוסה ועומסים חשובים",
+              "th": "ถามการเข้าพักและโหลดสำคัญ"
+            }
+          },
+          {
+            "label": {
+              "en": "Resort",
+              "he": "ריזורט",
+              "th": "รีสอร์ต"
+            },
+            "detail": {
+              "en": "Ask about guest operations and meters",
+              "he": "שואלים על שירות לאורחים ומונים",
+              "th": "ถามงานบริการแขกและมิเตอร์"
+            }
+          },
+          {
+            "label": {
+              "en": "Restaurant",
+              "he": "מסעדה",
+              "th": "ร้านอาหาร"
+            },
+            "detail": {
+              "en": "Ask about service hours and disruption",
+              "he": "שואלים על שעות שירות והפרעות",
+              "th": "ถามเวลาให้บริการและผลกระทบ"
+            }
+          },
+          {
+            "label": {
+              "en": "Verified needs",
+              "he": "צרכים מאומתים",
+              "th": "ความต้องการที่ยืนยัน"
+            },
+            "detail": {
+              "en": "Confirm answers with the actual stakeholders",
+              "he": "מאשרים תשובות עם המעורבים בפועל",
+              "th": "ยืนยันคำตอบกับผู้เกี่ยวข้องจริง"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Property segments help prepare relevant questions, but they do not establish the buyer’s motives, authority or suitability. Start with operating context, then verify the actual pain points and decision makers. Use each conversation to replace assumptions with a documented customer-specific brief.",
+          "he": "פלחי נכסים מסייעים להכין שאלות רלוונטיות, אך אינם קובעים מניעים, סמכות או התאמה של קונה. מתחילים בהקשר התפעולי, ואז מאמתים קשיים ומקבלי החלטות בפועל. משתמשים בכל שיחה להחלפת הנחות בתדריך מתועד שמותאם ללקוח המסוים.",
+          "th": "ประเภทสถานที่ช่วยเตรียมคำถามที่เกี่ยวข้อง แต่ไม่ได้บอกแรงจูงใจ อำนาจ หรือความเหมาะสมของผู้ซื้อ เริ่มจากบริบทการดำเนินงานแล้วตรวจปัญหาและผู้ตัดสินใจจริง ใช้การสนทนาแทนสมมติฐานด้วยสรุปข้อมูลเฉพาะลูกค้าที่บันทึกไว้"
+        },
+        "alt": {
+          "en": "Villa, resort and restaurant prompts lead to verified needs rather than fixed assumptions about customers.",
+          "he": "שאלות לווילה, לריזורט ולמסעדה מובילות לצרכים מאומתים במקום הנחות קבועות על לקוחות.",
+          "th": "คำถามสำหรับวิลลา รีสอร์ต และร้านอาหารนำไปสู่ความต้องการที่ยืนยันแทนการเหมารวมลูกค้า"
+        }
+      },
+      "videoId": "com-discovery-questions",
+      "watchFor": {
+        "en": "Focus on how purposeful questions uncover the customer’s own account of the problem.",
+        "he": "התמקדו באופן שבו שאלות מכוונות חושפות את תיאור הבעיה מפי הלקוח.",
+        "th": "เน้นว่าคำถามมีจุดประสงค์ช่วยให้ลูกค้าเล่าปัญหาด้วยตนเองอย่างไร"
+      },
+      "takeaway": {
+        "en": "A segment is a starting point for discovery, not proof of need.",
+        "he": "פלח הוא נקודת פתיחה לגילוי צרכים, לא הוכחה לצורך.",
+        "th": "กลุ่มลูกค้าเป็นจุดเริ่มค้นหาความต้องการ ไม่ใช่หลักฐานว่ามีความต้องการนั้น"
+      },
+      "question": {
+        "en": "Which assumption about a villa owner would you replace with an open question?",
+        "he": "איזו הנחה על בעל וילה תחליפו בשאלה פתוחה?",
+        "th": "จะเปลี่ยนสมมติฐานใดเกี่ยวกับเจ้าของวิลลาเป็นคำถามปลายเปิด?"
+      }
+    },
+    {
+      "lesson": "sales-bd-02",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Evidence moves the sales process",
+          "he": "ראיות מקדמות את תהליך המכירה",
+          "th": "หลักฐานขับเคลื่อนขั้นตอนขาย"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Qualify",
+              "he": "בדיקת התאמה",
+              "th": "คัดกรอง"
+            },
+            "detail": {
+              "en": "Confirm need, authority, budget and timing",
+              "he": "מאמתים צורך, סמכות, תקציב ותזמון",
+              "th": "ยืนยันความต้องการ อำนาจ งบ และเวลา"
+            }
+          },
+          {
+            "label": {
+              "en": "Survey",
+              "he": "סקר",
+              "th": "สำรวจ"
+            },
+            "detail": {
+              "en": "Assign technical evidence gathering",
+              "he": "מקצים איסוף ראיות טכניות",
+              "th": "มอบหมายเก็บหลักฐานเทคนิค"
+            }
+          },
+          {
+            "label": {
+              "en": "Explain proposal",
+              "he": "הסבר ההצעה",
+              "th": "อธิบายข้อเสนอ"
+            },
+            "detail": {
+              "en": "Show scope, assumptions and open questions",
+              "he": "מציגים היקף, הנחות ושאלות פתוחות",
+              "th": "แสดงขอบเขต สมมติฐาน และเรื่องค้าง"
+            }
+          },
+          {
+            "label": {
+              "en": "Agree next step",
+              "he": "תיאום צעד הבא",
+              "th": "ตกลงขั้นตอนต่อไป"
+            },
+            "detail": {
+              "en": "Record owner, action and date",
+              "he": "מתעדים אחראי, פעולה ותאריך",
+              "th": "บันทึกผู้รับผิดชอบ งาน และวันที่"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Qualification and survey create the evidence needed for a useful proposal conversation. Advance when the next decision has enough support, not simply because a meeting occurred. The sequence is a learning framework; the actual CRM should reflect the team’s approved process and project constraints.",
+          "he": "בדיקת התאמה וסקר יוצרים את הראיות לשיחת הצעה מועילה. מתקדמים כשההחלטה הבאה נתמכת מספיק, ולא רק מפני שהתקיימה פגישה. הרצף הוא מסגרת לימוד; מערכת ניהול הלקוחות בפועל צריכה לשקף תהליך צוות מאושר ומגבלות פרויקט.",
+          "th": "การคัดกรองและสำรวจสร้างหลักฐานสำหรับการคุยข้อเสนอที่มีประโยชน์ ให้เดินหน้าต่อเมื่อมีข้อมูลพอรองรับการตัดสินใจ ไม่ใช่เพียงจัดประชุมแล้ว ลำดับนี้เป็นกรอบเรียนรู้ CRM จริงควรสะท้อนขั้นตอนที่ทีมอนุมัติและข้อจำกัดโครงการ"
+        },
+        "alt": {
+          "en": "Qualification leads to survey evidence, a clear proposal and a documented next action.",
+          "he": "בדיקת התאמה מובילה לראיות סקר, להצעה ברורה ולפעולה הבאה המתועדת.",
+          "th": "คัดกรองนำไปสู่หลักฐานสำรวจ ข้อเสนอชัดเจน และงานถัดไปที่บันทึก"
+        }
+      },
+      "videoId": "com-discovery-questions",
+      "watchFor": {
+        "en": "Pay attention to questions that reveal whether the next sales step is useful for the buyer.",
+        "he": "שימו לב לשאלות שמגלות אם שלב המכירה הבא מועיל לקונה.",
+        "th": "สังเกตคำถามที่ช่วยทราบว่าขั้นตอนขายถัดไปมีประโยชน์กับผู้ซื้อหรือไม่"
+      },
+      "takeaway": {
+        "en": "A good question can expose a missing decision before a proposal is rushed.",
+        "he": "שאלה טובה עשויה לחשוף החלטה חסרה לפני שממהרים להציע.",
+        "th": "คำถามที่ดีอาจเผยการตัดสินใจที่ยังขาดก่อนรีบเสนอราคา"
+      },
+      "question": {
+        "en": "What evidence would you need before moving a lead from qualification to survey?",
+        "he": "אילו ראיות תדרשו לפני העברת ליד מבדיקת התאמה לסקר?",
+        "th": "ต้องมีหลักฐานใดก่อนย้ายลีดจากคัดกรองไปสำรวจ?"
+      }
+    },
+    {
+      "lesson": "sales-bd-03",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Compare the payment relationships",
+          "he": "השוואת יחסי התשלום",
+          "th": "เทียบความสัมพันธ์ด้านการจ่ายเงิน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "EPC purchase",
+              "he": "רכישת EPC",
+              "th": "ซื้อแบบ EPC"
+            },
+            "detail": {
+              "en": "Customer purchases the agreed installed scope",
+              "he": "הלקוח רוכש היקף מותקן מוסכם",
+              "th": "ลูกค้าซื้อขอบเขตติดตั้งที่ตกลง"
+            }
+          },
+          {
+            "label": {
+              "en": "PPA",
+              "he": "הסכם רכישת חשמל",
+              "th": "PPA"
+            },
+            "detail": {
+              "en": "Energy payment follows the specific agreement",
+              "he": "תשלום חשמל לפי ההסכם המסוים",
+              "th": "จ่ายค่าพลังงานตามสัญญาเฉพาะ"
+            }
+          },
+          {
+            "label": {
+              "en": "Lease",
+              "he": "שכירות",
+              "th": "เช่า"
+            },
+            "detail": {
+              "en": "Lease payments follow defined asset terms",
+              "he": "תשלומי שכירות לפי תנאי נכס מוגדרים",
+              "th": "ค่าเช่าตามเงื่อนไขสินทรัพย์ที่ระบุ"
+            }
+          },
+          {
+            "label": {
+              "en": "Common comparison",
+              "he": "השוואה משותפת",
+              "th": "ฐานเทียบร่วมกัน"
+            },
+            "detail": {
+              "en": "Ownership, service, term and exit obligations",
+              "he": "בעלות, שירות, תקופה וחובות יציאה",
+              "th": "เจ้าของ บริการ ระยะเวลา และภาระเมื่อจบ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A proposal comparison should explain who owns the asset, who pays for what, and how service and exit obligations are allocated. These labels describe contract structures, not offers automatically available to every property. Verify the actual agreement before comparing total costs or promising an outcome.",
+          "he": "השוואת הצעות צריכה להסביר מי בעל הנכס, מי משלם על מה וכיצד מחולקות חובות שירות ויציאה. הכותרות מתארות מבנים חוזיים, לא הצעות שזמינות אוטומטית לכל נכס. מאמתים הסכם בפועל לפני השוואת עלויות כוללות או הבטחת תוצאה.",
+          "th": "การเทียบข้อเสนอควรอธิบายว่าใครเป็นเจ้าของ ใครจ่ายอะไร และแบ่งหน้าที่บริการกับภาระเมื่อสิ้นสุดอย่างไร ชื่อเหล่านี้อธิบายโครงสร้างสัญญา ไม่ใช่ข้อเสนอที่ทุกสถานที่เลือกได้โดยอัตโนมัติ ต้องตรวจสัญญาจริงก่อนเทียบต้นทุนรวมหรือสัญญาผลลัพธ์"
+        },
+        "alt": {
+          "en": "EPC, PPA and lease differ in what is purchased; compare ownership, service, term and exit duties.",
+          "he": "EPC, הסכם חשמל ושכירות נבדלים במה שנרכש; משווים בעלות, שירות, תקופה וחובות יציאה.",
+          "th": "EPC PPA และเช่าต่างกันในสิ่งที่ซื้อ ต้องเทียบเจ้าของ บริการ ระยะเวลา และภาระเมื่อจบ"
+        }
+      },
+      "videoId": "com-negotiation",
+      "watchFor": {
+        "en": "Consider how a negotiated package contains more than its headline payment.",
+        "he": "חשבו כיצד חבילה במשא ומתן כוללת יותר מהתשלום שבכותרת.",
+        "th": "พิจารณาว่าชุดข้อตกลงมีมากกว่ายอดจ่ายที่พาดหัวอย่างไร"
+      },
+      "takeaway": {
+        "en": "A useful closing discussion makes responsibilities and alternatives understandable.",
+        "he": "שיחת סגירה מועילה הופכת אחריות וחלופות למובנות.",
+        "th": "การคุยปิดการขายที่มีประโยชน์ทำให้เข้าใจหน้าที่และทางเลือก"
+      },
+      "question": {
+        "en": "Which responsibility could make two equal monthly payments economically different?",
+        "he": "איזו אחריות עשויה להפוך שני תשלומים חודשיים זהים לשונים כלכלית?",
+        "th": "หน้าที่ใดอาจทำให้ยอดจ่ายรายเดือนเท่ากันมีผลทางเศรษฐกิจต่างกัน?"
+      }
+    },
+    {
+      "lesson": "sales-bd-04",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Build the economic explanation",
+          "he": "בונים את ההסבר הכלכלי",
+          "th": "สร้างคำอธิบายด้านเศรษฐศาสตร์"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Energy ledger",
+              "he": "רישום אנרגיה",
+              "th": "บัญชีพลังงาน"
+            },
+            "detail": {
+              "en": "Separate direct use, imports and surplus",
+              "he": "מפרידים שימוש ישיר, יבוא ועודף",
+              "th": "แยกใช้ตรง ซื้อจากกริด และส่วนเกิน"
+            }
+          },
+          {
+            "label": {
+              "en": "Billing treatment",
+              "he": "טיפול בחשבון",
+              "th": "วิธีคิดบิล"
+            },
+            "detail": {
+              "en": "Apply verified tariff and export terms",
+              "he": "מיישמים תעריף ותנאי ייצוא מאומתים",
+              "th": "ใช้อัตราค่าไฟและเงื่อนไขส่งออกที่ตรวจแล้ว"
+            }
+          },
+          {
+            "label": {
+              "en": "Cash obligations",
+              "he": "התחייבויות מזומן",
+              "th": "ภาระเงินสด"
+            },
+            "detail": {
+              "en": "Include actual costs and contract payments",
+              "he": "כוללים עלויות ותשלומים חוזיים בפועל",
+              "th": "รวมต้นทุนจริงและการจ่ายตามสัญญา"
+            }
+          },
+          {
+            "label": {
+              "en": "Customer outcome",
+              "he": "תוצאה ללקוח",
+              "th": "ผลลัพธ์ลูกค้า"
+            },
+            "detail": {
+              "en": "Explain assumptions, range and remaining evidence",
+              "he": "מסבירים הנחות, טווח וראיות חסרות",
+              "th": "อธิบายสมมติฐาน ช่วงผล และหลักฐานที่ขาด"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Build a project-specific economic story from measured energy boundaries to the applicable bill and contract cash flows. Historical worked projects can illustrate a method, but do not validate another property’s savings, tariff or financing terms. Keep the customer’s assumptions and unresolved evidence visible.",
+          "he": "בונים הסבר כלכלי לפרויקט המסוים מגבולות אנרגיה מדודים ועד לחשבון הרלוונטי ולתזרים החוזי. פרויקטים היסטוריים יכולים להמחיש שיטה, אך אינם מאמתים חיסכון, תעריף או תנאי מימון של נכס אחר. משאירים הנחות לקוח וראיות חסרות גלויות.",
+          "th": "สร้างเรื่องราวเศรษฐศาสตร์เฉพาะโครงการจากขอบเขตพลังงานที่วัดถึงบิลที่ใช้จริงและเงินสดตามสัญญา โครงการตัวอย่างในอดีตอธิบายวิธีได้ แต่ไม่ยืนยันผลประหยัด อัตราค่าไฟ หรือเงินกู้ของอีกสถานที่ ต้องแสดงสมมติฐานลูกค้าและหลักฐานที่ยังขาดให้เห็น"
+        },
+        "alt": {
+          "en": "Energy quantities feed verified billing, then actual cash obligations and a conditional customer outcome.",
+          "he": "כמויות אנרגיה מזינות חיוב מאומת, אחריו התחייבויות מזומן בפועל ותוצאה מותנית ללקוח.",
+          "th": "ปริมาณพลังงานเข้าสู่วิธีคิดบิลที่ยืนยัน ต่อด้วยภาระเงินสดจริงและผลลัพธ์ลูกค้าที่มีเงื่อนไข"
+        }
+      },
+      "videoId": "com-bill-savings",
+      "watchFor": {
+        "en": "Follow the progression from load and rate inputs to bill savings and project cash flow.",
+        "he": "עקבו אחר ההתקדמות מעומס ותעריף לחיסכון בחשבון ולתזרים פרויקט.",
+        "th": "ติดตามจากโหลดและอัตราค่าไฟไปยังผลประหยัดบิลและกระแสเงินสดโครงการ"
+      },
+      "takeaway": {
+        "en": "An economic model is a chain of evidence-backed assumptions, not a reusable savings promise.",
+        "he": "מודל כלכלי הוא שרשרת הנחות מגובות בראיות, לא הבטחת חיסכון לשימוש חוזר.",
+        "th": "แบบจำลองเศรษฐศาสตร์คือชุดสมมติฐานที่มีหลักฐาน ไม่ใช่คำสัญญาประหยัดที่ใช้ซ้ำได้ทุกแห่ง"
+      },
+      "question": {
+        "en": "Which inputs must be replaced before applying an earlier project example to a new resort?",
+        "he": "אילו תשומות חייבים להחליף לפני יישום דוגמת פרויקט קודם בריזורט חדש?",
+        "th": "ต้องเปลี่ยนข้อมูลใดก่อนนำตัวอย่างโครงการเดิมไปใช้กับรีสอร์ตใหม่?"
+      }
+    }
+  ]
+}

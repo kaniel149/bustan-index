@@ -1,0 +1,1496 @@
+{
+  "videos": [
+    {
+      "id": "base-pv-cell",
+      "youtubeId": "xKxrkht7CpY",
+      "title": "How do solar panels work? - Richard Komp",
+      "publisher": "TED-Ed",
+      "language": "en",
+      "evidenceUrl": "https://ed.ted.com/lessons/8VWvxWL8",
+      "url": "https://www.youtube.com/watch?v=xKxrkht7CpY",
+      "verified": "2026-09-07",
+      "description": {
+        "en": "Animation explaining photovoltaic cells and conversion of light to electricity. Use it for the physical principle, not product selection or installation instructions.",
+        "he": "אנימציה המסבירה תאים פוטו־וולטאיים והמרת אור לחשמל. מיועדת להבנת העיקרון הפיזיקלי, ולא לבחירת מוצר או להוראות התקנה.",
+        "th": "แอนิเมชันอธิบายเซลล์แสงอาทิตย์และการเปลี่ยนแสงเป็นไฟฟ้า ใช้เรียนหลักฟิสิกส์ ไม่ใช่เลือกผลิตภัณฑ์หรือสั่งงานติดตั้ง"
+      }
+    },
+    {
+      "id": "base-pv-system",
+      "youtubeId": "0elhIcPVtKE",
+      "title": "Energy 101: Solar PV",
+      "publisher": "U.S. Department of Energy",
+      "language": "en",
+      "evidenceUrl": "https://www.energy.gov/cmei/education/articles/energy-101-solar-pv",
+      "url": "https://www.youtube.com/watch?v=0elhIcPVtKE",
+      "verified": "2026-09-07",
+      "description": {
+        "en": "A 2011 introduction to PV modules and system components. The basic energy path is useful; prices, products and local rules must come from current project sources.",
+        "he": "מבוא משנת 2011 לפאנלים ולרכיבי מערכת. מסלול המרת האנרגיה שימושי; מחירים, מוצרים וכללים מקומיים יש לבדוק במקורות הפרויקט העדכניים.",
+        "th": "บทนำปี 2011 เกี่ยวกับแผงและองค์ประกอบระบบ เส้นทางพลังงานพื้นฐานยังใช้เรียนได้ ส่วนราคา ผลิตภัณฑ์ และกฎท้องถิ่นต้องตรวจจากแหล่งปัจจุบันของโครงการ"
+      }
+    },
+    {
+      "id": "base-kwh",
+      "youtubeId": "SMPhh8gT_1E",
+      "title": "What is a kWh - kilowatt hour  + CALCULATIONS 💡💰 energy bill",
+      "publisher": "The Engineering Mindset",
+      "language": "en",
+      "evidenceUrl": "https://www.youtube.com/watch?v=SMPhh8gT_1E",
+      "url": "https://www.youtube.com/watch?v=SMPhh8gT_1E",
+      "verified": "2026-09-07",
+      "description": {
+        "en": "Explains power, operating time and electrical energy with calculations. Any illustrated prices or currencies are examples, not a Thai electricity tariff.",
+        "he": "מסביר הספק, זמן פעולה ואנרגיה חשמלית דרך חישובים. המחירים והמטבעות המוצגים הם דוגמאות, ולא תעריף החשמל בתאילנד.",
+        "th": "อธิบายกำลัง เวลาใช้งาน และพลังงานไฟฟ้าผ่านการคำนวณ ราคาและสกุลเงินในตัวอย่างไม่ใช่อัตราค่าไฟไทย"
+      }
+    },
+    {
+      "id": "base-storage",
+      "youtubeId": "zgZ0cHq-NfE",
+      "title": "New-Build Energy Storage System with Solar & Lithium",
+      "publisher": "Victron Energy",
+      "language": "en",
+      "evidenceUrl": "https://www.victronenergy.com/blog/2020/08/11/video-shows-ess-installation/",
+      "url": "https://www.youtube.com/watch?v=zgZ0cHq-NfE",
+      "verified": "2026-09-07",
+      "description": {
+        "en": "A 2020 UK installation example showing solar, storage and selected circuits. Study system roles; its wiring, hardware and rules are not a design for a Thai property.",
+        "he": "דוגמת התקנה בבריטניה מ־2020 עם סולאר, אגירה ומעגלים נבחרים. בחנו את תפקידי הרכיבים; החיווט, הציוד והכללים אינם תכנון לנכס בתאילנד.",
+        "th": "ตัวอย่างติดตั้งในสหราชอาณาจักรปี 2020 มีโซลาร์ แบตเตอรี่ และวงจรที่เลือก ศึกษาหน้าที่ระบบ ไม่ใช้การเดินสาย อุปกรณ์ หรือกฎนั้นเป็นแบบสำหรับอาคารในไทย"
+      }
+    },
+    {
+      "id": "base-fall-safety",
+      "youtubeId": "cEgZhTozZ94",
+      "title": "Solar Safety - How to manage risks of falls",
+      "publisher": "SafeWork NSW",
+      "language": "en",
+      "evidenceUrl": "https://www.safework.nsw.gov.au/hazards-a-z/solar-panel-retail-and-installation",
+      "url": "https://www.youtube.com/watch?v=cEgZhTozZ94",
+      "verified": "2026-09-07",
+      "description": {
+        "en": "Australian regulator training about identifying and controlling falls during solar work. Apply the hazard-management ideas; confirm Thai requirements and the site-specific approved work plan.",
+        "he": "הדרכת רגולטור אוסטרלי לזיהוי ולבקרת נפילות בעבודה סולארית. למדו את עקרונות ניהול הסיכון, ואמתו את הדרישות בתאילנד ואת תוכנית העבודה המאושרת לאתר.",
+        "th": "การฝึกจากหน่วยงานออสเตรเลียเรื่องการระบุและควบคุมการตกในงานโซลาร์ ใช้แนวคิดจัดการอันตรายโดยตรวจข้อกำหนดไทยและแผนงานที่อนุมัติสำหรับหน้างาน"
+      }
+    },
+    {
+      "id": "base-electrical-safety",
+      "youtubeId": "fxH9P-347F4",
+      "title": "Solar Safety - How to manage electrical risks",
+      "publisher": "SafeWork NSW",
+      "language": "en",
+      "evidenceUrl": "https://www.safework.nsw.gov.au/hazards-a-z/solar-panel-retail-and-installation",
+      "url": "https://www.youtube.com/watch?v=fxH9P-347F4",
+      "verified": "2026-09-07",
+      "description": {
+        "en": "Australian regulator training on electrical risks in solar work. It illustrates hazard controls, not Thai licensing, a switching sequence or permission to work on live equipment.",
+        "he": "הדרכת רגולטור אוסטרלי על סיכוני חשמל בעבודה סולארית. מדגימה בקרות סיכון, ולא רישוי בתאילנד, סדר מיתוג או אישור לעבוד בציוד חי.",
+        "th": "การฝึกจากหน่วยงานออสเตรเลียเรื่องอันตรายไฟฟ้าในงานโซลาร์ แสดงการควบคุมอันตราย ไม่ใช่ใบอนุญาตไทย ลำดับสับวงจร หรืออนุญาตให้ทำงานกับอุปกรณ์มีไฟ"
+      }
+    },
+    {
+      "id": "base-pea-service",
+      "youtubeId": "XSKoPKO3vK8",
+      "title": "“PEA Sabuy Service สบายทุกเรื่องไฟฟ้า”",
+      "publisher": "PEA CHANNEL THAILAND",
+      "language": "th",
+      "evidenceUrl": "https://www.youtube.com/watch?v=XSKoPKO3vK8",
+      "url": "https://www.youtube.com/watch?v=XSKoPKO3vK8",
+      "verified": "2026-09-07",
+      "description": {
+        "en": "PEA introduces its online service channel. This is an orientation clip, not a complete solar approval tutorial: verify the project route, PPIM requirements and written decisions separately.",
+        "he": "PEA מציגה את ערוץ השירות המקוון. זהו סרטון היכרות, ולא הדרכה מלאה לאישור מערכת סולארית: יש לאמת בנפרד מסלול פרויקט, דרישות PPIM והחלטות בכתב.",
+        "th": "PEA แนะนำช่องทางบริการออนไลน์ เป็นคลิปทำความรู้จัก ไม่ใช่คู่มืออนุมัติโซลาร์ครบขั้นตอน ต้องตรวจเส้นทางโครงการ ข้อกำหนด PPIM และผลอนุมัติเป็นลายลักษณ์อักษรแยกกัน"
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "lesson": "foundation-01",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Follow the electricity",
+          "he": "עוקבים אחרי החשמל",
+          "th": "ติดตามเส้นทางไฟฟ้า"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Sunlight",
+              "he": "אור שמש",
+              "th": "แสงอาทิตย์"
+            },
+            "detail": {
+              "en": "Input energy, not stored electricity",
+              "he": "אנרגיה נכנסת, לא חשמל שנאגר",
+              "th": "พลังงานขาเข้า ไม่ใช่ไฟฟ้าที่เก็บไว้"
+            }
+          },
+          {
+            "label": {
+              "en": "PV module",
+              "he": "פאנל סולארי",
+              "th": "แผงโซลาร์"
+            },
+            "detail": {
+              "en": "Converts light into DC electricity",
+              "he": "ממיר אור לחשמל DC",
+              "th": "เปลี่ยนแสงเป็นไฟฟ้า DC"
+            }
+          },
+          {
+            "label": {
+              "en": "Inverter",
+              "he": "ממיר",
+              "th": "อินเวอร์เตอร์"
+            },
+            "detail": {
+              "en": "Converts DC into usable AC",
+              "he": "ממיר DC לחשמל AC שימושי",
+              "th": "แปลง DC เป็น AC ที่ใช้งานได้"
+            }
+          },
+          {
+            "label": {
+              "en": "Property loads",
+              "he": "עומסי הנכס",
+              "th": "โหลดอาคาร"
+            },
+            "detail": {
+              "en": "Use energy at the same time",
+              "he": "צורכים אנרגיה באותו זמן",
+              "th": "ใช้พลังงานในช่วงเวลาเดียวกัน"
+            }
+          }
+        ],
+        "caption": {
+          "en": "This simplified daytime path shows conversion and immediate use. A battery stores energy through a compatible system; a meter measures it. Neither creates energy, and this conceptual path is not an electrical connection drawing.",
+          "he": "המסלול הפשוט מציג המרה ושימוש מיידי בשעות היום. סוללה אוגרת אנרגיה באמצעות מערכת תואמת, ומונה מודד אותה. אף אחד מהם אינו מייצר אנרגיה, והמסלול העקרוני אינו שרטוט חיבורים חשמליים.",
+          "th": "เส้นทางกลางวันอย่างง่ายแสดงการแปลงและใช้ทันที แบตเตอรี่เก็บพลังงานผ่านระบบที่เข้ากันได้ มิเตอร์วัดพลังงาน ทั้งสองไม่ได้สร้างพลังงาน และแผนภาพแนวคิดนี้ไม่ใช่แบบต่อวงจร"
+        },
+        "alt": {
+          "en": "Four stages: sunlight, PV module, inverter and property loads.",
+          "he": "ארבעה שלבים: אור שמש, פאנל, ממיר ועומסי הנכס.",
+          "th": "สี่ขั้น: แสงอาทิตย์ แผงโซลาร์ อินเวอร์เตอร์ และโหลดอาคาร"
+        }
+      },
+      "videoId": "base-pv-system",
+      "watchFor": {
+        "en": "Find the module, inverter and point of use. Which component changes the form of electricity?",
+        "he": "זהו את הפאנל, הממיר ונקודת השימוש. איזה רכיב משנה את צורת החשמל?",
+        "th": "หาแผง อินเวอร์เตอร์ และจุดใช้งาน อุปกรณ์ใดเปลี่ยนรูปแบบไฟฟ้า?"
+      },
+      "takeaway": {
+        "en": "Trace energy before discussing savings. Generation, conversion, storage and measurement are different jobs.",
+        "he": "עקבו אחרי האנרגיה לפני שמדברים על חיסכון. ייצור, המרה, אגירה ומדידה הם תפקידים שונים.",
+        "th": "ติดตามพลังงานก่อนพูดถึงการประหยัด การผลิต การแปลง การเก็บ และการวัดทำหน้าที่ต่างกัน"
+      },
+      "question": {
+        "en": "Why does a solar module alone not guarantee power during a grid outage?",
+        "he": "מדוע פאנל לבדו אינו מבטיח חשמל בהפסקת רשת?",
+        "th": "เหตุใดแผงเพียงอย่างเดียวจึงไม่รับประกันไฟใช้เมื่อไฟฟ้าดับ?"
+      }
+    },
+    {
+      "lesson": "foundation-02",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "From power to energy",
+          "he": "מהספק לאנרגיה",
+          "th": "จากกำลังสู่พลังงาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "1.2 kW",
+              "he": "1.2 קילוואט",
+              "th": "1.2 kW"
+            },
+            "detail": {
+              "en": "Constant example load",
+              "he": "עומס קבוע בדוגמה",
+              "th": "โหลดสมมติคงที่"
+            }
+          },
+          {
+            "label": {
+              "en": "5 hours",
+              "he": "5 שעות",
+              "th": "5 ชั่วโมง"
+            },
+            "detail": {
+              "en": "Daily operating time",
+              "he": "זמן הפעלה יומי",
+              "th": "เวลาใช้งานต่อวัน"
+            }
+          },
+          {
+            "label": {
+              "en": "6 kWh/day",
+              "he": "6 קוט״ש ביום",
+              "th": "6 kWh/วัน"
+            },
+            "detail": {
+              "en": "1.2 × 5 = 6",
+              "he": "1.2 × 5 = 6",
+              "th": "1.2 × 5 = 6"
+            }
+          },
+          {
+            "label": {
+              "en": "180 kWh/month",
+              "he": "180 קוט״ש בחודש",
+              "th": "180 kWh/เดือน"
+            },
+            "detail": {
+              "en": "6 × 30 identical days",
+              "he": "6 × 30 ימים זהים",
+              "th": "6 × 30 วันที่เหมือนกัน"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Power multiplied by operating time gives energy. This example assumes a constant 1.2 kW load for five hours on each of 30 days. Real equipment cycles, so use measurements before predicting monthly consumption.",
+          "he": "הספק כפול זמן פעולה נותן אנרגיה. הדוגמה מניחה עומס קבוע של 1.2 קילוואט במשך חמש שעות בכל אחד מ־30 ימים. ציוד אמיתי פועל במחזורים, לכן מודדים לפני שחוזים צריכה חודשית.",
+          "th": "กำลังคูณเวลาใช้งานเท่ากับพลังงาน ตัวอย่างสมมติโหลดคงที่ 1.2 kW นานห้าชั่วโมงในแต่ละวันตลอด 30 วัน อุปกรณ์จริงมีรอบการทำงาน จึงควรวัดก่อนคาดการณ์การใช้รายเดือน"
+        },
+        "alt": {
+          "en": "Calculation: 1.2 kilowatts times five hours equals six kilowatt-hours daily; thirty days equals 180.",
+          "he": "חישוב: 1.2 קילוואט כפול חמש שעות הם שישה קוט״ש ביום; שלושים ימים הם 180.",
+          "th": "คำนวณ: 1.2 กิโลวัตต์คูณห้าชั่วโมงเท่ากับหกกิโลวัตต์ชั่วโมงต่อวัน สามสิบวันเท่ากับ 180"
+        }
+      },
+      "videoId": "base-kwh",
+      "watchFor": {
+        "en": "Watch how operating time turns a power rating into energy. Keep kW and kWh in separate columns.",
+        "he": "שימו לב איך זמן הפעולה הופך הספק לאנרגיה. רשמו קילוואט וקוט״ש בעמודות נפרדות.",
+        "th": "ดูว่าเวลาใช้งานเปลี่ยนค่ากำลังเป็นพลังงานอย่างไร แยกคอลัมน์ kW กับ kWh"
+      },
+      "takeaway": {
+        "en": "A 5 kW device running for two hours uses 10 kWh only if that power remains constant.",
+        "he": "מכשיר של 5 קילוואט שפועל שעתיים צורך 10 קוט״ש רק אם ההספק נשאר קבוע.",
+        "th": "อุปกรณ์ 5 kW ทำงานสองชั่วโมงใช้ 10 kWh เฉพาะเมื่อกำลังคงที่"
+      },
+      "question": {
+        "en": "What extra information is missing when a client tells you only the air-conditioner rating?",
+        "he": "איזה מידע חסר כשהלקוח מוסר רק את הספק המזגן?",
+        "th": "ขาดข้อมูลอะไรเมื่อผู้ใช้บอกเพียงกำลังพิกัดเครื่องปรับอากาศ?"
+      }
+    },
+    {
+      "lesson": "foundation-03",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "Separate the energy flows",
+          "he": "מפרידים בין זרמי האנרגיה",
+          "th": "แยกการไหลของพลังงาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Direct use",
+              "he": "שימוש ישיר",
+              "th": "ใช้โดยตรง"
+            },
+            "detail": {
+              "en": "PV serving the load",
+              "he": "סולאר שמשרת את העומס",
+              "th": "โซลาร์จ่ายให้โหลด"
+            },
+            "value": 6
+          },
+          {
+            "label": {
+              "en": "Grid import",
+              "he": "יבוא מהרשת",
+              "th": "นำเข้าจากโครงข่าย"
+            },
+            "detail": {
+              "en": "Load supplied by the grid",
+              "he": "עומס שמסופק מהרשת",
+              "th": "โหลดที่โครงข่ายจ่าย"
+            },
+            "value": 2
+          },
+          {
+            "label": {
+              "en": "PV surplus",
+              "he": "עודף סולארי",
+              "th": "โซลาร์ส่วนเกิน"
+            },
+            "detail": {
+              "en": "Needs an allowed destination",
+              "he": "דורש יעד שמותר בפרויקט",
+              "th": "ต้องมีปลายทางที่อนุญาต"
+            },
+            "value": 2
+          }
+        ],
+        "caption": {
+          "en": "In this training interval, PV produces 8 kWh and the load uses 8 kWh. Direct use is 6, so import and surplus are each 2. Surplus may be stored, curtailed or exported only where the system and permissions allow.",
+          "he": "בפרק הזמן הלימודי הסולאר מייצר 8 קוט״ש והעומס צורך 8 קוט״ש. השימוש הישיר הוא 6, לכן היבוא והעודף הם 2 כל אחד. העודף יכול להיאגר, להיות מוגבל או להיות מוזרם רק בהתאם למערכת ולהיתרים.",
+          "th": "ในช่วงฝึก โซลาร์ผลิต 8 kWh และโหลดใช้ 8 kWh ใช้ตรง 6 จึงนำเข้าและมีส่วนเกินอย่างละ 2 ส่วนเกินอาจเก็บ จำกัด หรือส่งออกได้ตามความสามารถระบบและการอนุญาต"
+        },
+        "alt": {
+          "en": "Three bars: direct use 6 kWh, grid import 2 kWh, PV surplus 2 kWh.",
+          "he": "שלוש עמודות: שימוש ישיר 6 קוט״ש, יבוא 2 ועודף 2.",
+          "th": "สามแท่ง: ใช้ตรง 6 kWh นำเข้า 2 และส่วนเกิน 2"
+        },
+        "unit": {
+          "en": "kWh",
+          "he": "קוט״ש",
+          "th": "kWh"
+        }
+      },
+      "videoId": "base-storage",
+      "watchFor": {
+        "en": "Identify the solar supply, battery and chosen circuits. Look for separate paths rather than treating every generated unit as bill savings.",
+        "he": "זהו את הייצור, הסוללה והמעגלים הנבחרים. הבחינו במסלולים נפרדים במקום לספור כל יחידת ייצור כחיסכון.",
+        "th": "ระบุโซลาร์ แบตเตอรี่ และวงจรที่เลือก มองเส้นทางแยกกันแทนการนับทุกหน่วยผลิตเป็นเงินประหยัด"
+      },
+      "takeaway": {
+        "en": "The filmed system shows possible roles, not the quantities in our exercise. Reconcile generation and consumption separately.",
+        "he": "המערכת המצולמת מדגימה תפקידים אפשריים, ולא את הכמויות בתרגיל. אזנו ייצור וצריכה בנפרד.",
+        "th": "ระบบในคลิปแสดงบทบาทที่เป็นไปได้ ไม่ใช่ปริมาณในโจทย์ กระทบยอดการผลิตและการใช้แยกกัน"
+      },
+      "question": {
+        "en": "How can a property import energy on the same day that it has solar surplus?",
+        "he": "איך נכס מייבא אנרגיה ביום שבו נוצר גם עודף סולארי?",
+        "th": "อาคารนำเข้าไฟในวันเดียวกับที่มีโซลาร์ส่วนเกินได้อย่างไร?"
+      }
+    },
+    {
+      "lesson": "foundation-04",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Battery energy to runtime",
+          "he": "מאנרגיית סוללה לזמן גיבוי",
+          "th": "จากพลังงานแบตเตอรี่สู่เวลาสำรอง"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "10 kWh DC",
+              "he": "10 קוט״ש DC",
+              "th": "10 kWh DC"
+            },
+            "detail": {
+              "en": "Starting energy assumption",
+              "he": "הנחת אנרגיה התחלתית",
+              "th": "สมมติพลังงานเริ่มต้น"
+            }
+          },
+          {
+            "label": {
+              "en": "8 kWh available",
+              "he": "8 קוט״ש זמינים",
+              "th": "ใช้ได้ 8 kWh"
+            },
+            "detail": {
+              "en": "After a 20% reserve",
+              "he": "אחרי רזרבה של 20%",
+              "th": "หลังกันสำรอง 20%"
+            }
+          },
+          {
+            "label": {
+              "en": "7.2 kWh AC",
+              "he": "7.2 קוט״ש AC",
+              "th": "7.2 kWh AC"
+            },
+            "detail": {
+              "en": "At assumed 90% conversion",
+              "he": "בהמרה מונחת של 90%",
+              "th": "สมมติการแปลง 90%"
+            }
+          },
+          {
+            "label": {
+              "en": "3 hours",
+              "he": "3 שעות",
+              "th": "3 ชั่วโมง"
+            },
+            "detail": {
+              "en": "7.2 ÷ 2.4 kW load",
+              "he": "7.2 ÷ עומס 2.4 קילוואט",
+              "th": "7.2 ÷ โหลด 2.4 kW"
+            }
+          }
+        ],
+        "caption": {
+          "en": "This arithmetic assumes 10 kWh before reserve, 20% reserved and 90% conversion efficiency. With a constant 2.4 kW load, the result is three hours. Separately verify power limits, starting currents, conditions and the manufacturer’s usable-energy definition.",
+          "he": "החישוב מניח 10 קוט״ש לפני רזרבה, שמירת 20% ויעילות המרה של 90%. בעומס קבוע של 2.4 קילוואט מתקבלות שלוש שעות. בודקים בנפרד מגבלות הספק, זרמי התנעה, תנאים והגדרת האנרגיה השימושית של היצרן.",
+          "th": "คำนวณโดยสมมติ 10 kWh ก่อนกันสำรอง เก็บสำรอง 20% และประสิทธิภาพแปลง 90% ที่โหลดคงที่ 2.4 kW ได้สามชั่วโมง ต้องตรวจขีดจำกัดกำลัง กระแสเริ่มต้น สภาพใช้งาน และนิยามพลังงานใช้ได้ของผู้ผลิตแยกต่างหาก"
+        },
+        "alt": {
+          "en": "Ten becomes eight after reserve, then 7.2 after conversion, supporting 2.4 kW for three hours.",
+          "he": "עשרה הופכים לשמונה אחרי רזרבה ול־7.2 אחרי המרה, ומספקים 2.4 קילוואט לשלוש שעות.",
+          "th": "สิบเหลือแปดหลังกันสำรอง แล้วเหลือ 7.2 หลังแปลง รองรับ 2.4 kW สามชั่วโมง"
+        }
+      },
+      "videoId": "base-storage",
+      "watchFor": {
+        "en": "Watch which loads are selected for backup and how the battery fits into the system.",
+        "he": "בדקו אילו עומסים נבחרים לגיבוי ואיך הסוללה משתלבת במערכת.",
+        "th": "ดูว่าเลือกโหลดใดสำรองและแบตเตอรี่ทำหน้าที่ในระบบอย่างไร"
+      },
+      "takeaway": {
+        "en": "Storage capacity and output power answer different questions: how long and how much at once.",
+        "he": "קיבולת אגירה והספק מוצא עונים על שאלות שונות: לכמה זמן וכמה בבת אחת.",
+        "th": "ความจุและกำลังขาออกตอบคนละคำถาม: นานเท่าไรกับจ่ายพร้อมกันได้เท่าไร"
+      },
+      "question": {
+        "en": "Why could a battery with enough kWh still fail to start a large pump?",
+        "he": "מדוע סוללה עם מספיק קוט״ש עדיין עלולה לא להצליח להניע משאבה גדולה?",
+        "th": "ทำไมแบตเตอรี่ที่มี kWh พอจึงอาจสตาร์ตปั๊มใหญ่ไม่ได้?"
+      }
+    },
+    {
+      "lesson": "foundation-05",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "From observation to evidence",
+          "he": "מתצפית לראיות",
+          "th": "จากการสังเกตสู่หลักฐาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Observe",
+              "he": "מתבוננים",
+              "th": "สังเกต"
+            },
+            "detail": {
+              "en": "Roof, shade, access and load",
+              "he": "גג, צל, גישה ועומס",
+              "th": "หลังคา เงา ทางเข้า และโหลด"
+            }
+          },
+          {
+            "label": {
+              "en": "Record",
+              "he": "מתעדים",
+              "th": "บันทึก"
+            },
+            "detail": {
+              "en": "Photos, dimensions and time",
+              "he": "תמונות, מידות ושעה",
+              "th": "ภาพ ขนาด และเวลา"
+            }
+          },
+          {
+            "label": {
+              "en": "Model",
+              "he": "ממדלים",
+              "th": "จำลอง"
+            },
+            "detail": {
+              "en": "Explicit inputs and assumptions",
+              "he": "קלט והנחות מפורשים",
+              "th": "ข้อมูลเข้าและสมมติฐานชัดเจน"
+            }
+          },
+          {
+            "label": {
+              "en": "Review",
+              "he": "בודקים",
+              "th": "ทบทวน"
+            },
+            "detail": {
+              "en": "Range, uncertainty and next survey",
+              "he": "טווח, אי־ודאות וסקר המשך",
+              "th": "ช่วงผล ความไม่แน่นอน และสำรวจเพิ่ม"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A roof photograph is evidence of what was visible at that moment, not a complete structural, shading or electrical assessment. Preserve measured inputs and unknowns so the designer can explain the model and request missing survey work.",
+          "he": "תצלום גג הוא ראיה למה שנראה באותו רגע, ולא בדיקה מלאה של קונסטרוקציה, הצללה או חשמל. שמרו נתונים שנמדדו ופערי מידע כדי שהמתכנן יוכל להסביר את המודל ולדרוש השלמות סקר.",
+          "th": "ภาพหลังคาเป็นหลักฐานสิ่งที่เห็นในเวลานั้น ไม่ใช่การประเมินโครงสร้าง เงา หรือไฟฟ้าครบถ้วน เก็บข้อมูลที่วัดและสิ่งที่ยังไม่รู้ เพื่อให้ผู้ออกแบบอธิบายแบบจำลองและขอสำรวจส่วนที่ขาด"
+        },
+        "alt": {
+          "en": "Observe, record, model and review: each stage produces evidence for the next.",
+          "he": "מתבוננים, מתעדים, ממדלים ובודקים: כל שלב מספק ראיות לשלב הבא.",
+          "th": "สังเกต บันทึก จำลอง และทบทวน แต่ละขั้นส่งหลักฐานให้ขั้นถัดไป"
+        }
+      },
+      "videoId": "pm-pv",
+      "watchFor": {
+        "en": "Look at the inputs for system size, shading and losses. Which ones require site evidence?",
+        "he": "שימו לב לקלט של גודל מערכת, הצללה והפסדים. אילו נתונים דורשים ראיות מהאתר?",
+        "th": "ดูข้อมูลขนาดระบบ เงา และการสูญเสีย ค่าใดต้องมีหลักฐานหน้างาน?"
+      },
+      "takeaway": {
+        "en": "SAM is a modeling example. Its older interface demonstrates why assumptions must be recorded; it does not approve the roof.",
+        "he": "SAM הוא דוגמת מידול. הממשק הישן מדגים מדוע צריך לתעד הנחות; הוא אינו מאשר את הגג.",
+        "th": "SAM เป็นตัวอย่างการจำลอง หน้าจอรุ่นเก่าแสดงเหตุผลที่ต้องบันทึกสมมติฐาน ไม่ได้อนุมัติหลังคา"
+      },
+      "question": {
+        "en": "Name three inputs you would not guess from a single photograph.",
+        "he": "ציינו שלושה נתוני קלט שלא תנחשו מתמונה אחת.",
+        "th": "ระบุข้อมูลเข้าสามอย่างที่ไม่ควรเดาจากภาพเดียว"
+      }
+    },
+    {
+      "lesson": "foundation-06",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Is the work ready?",
+          "he": "האם אפשר להתחיל?",
+          "th": "พร้อมเริ่มงานหรือยัง?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Check before work",
+              "he": "בודקים לפני עבודה",
+              "th": "ตรวจก่อนทำงาน"
+            },
+            "detail": {
+              "en": "Hazards, authority and controls",
+              "he": "סיכונים, סמכות ובקרות",
+              "th": "อันตราย อำนาจหน้าที่ และการควบคุม"
+            }
+          },
+          {
+            "label": {
+              "en": "Unknown hazard",
+              "he": "סיכון לא ברור",
+              "th": "อันตรายไม่ชัด"
+            },
+            "detail": {
+              "en": "Stop and escalate",
+              "he": "עוצרים ומסלימים",
+              "th": "หยุดและแจ้งผู้รับผิดชอบ"
+            }
+          },
+          {
+            "label": {
+              "en": "Missing control",
+              "he": "בקרה חסרה",
+              "th": "ขาดมาตรการ"
+            },
+            "detail": {
+              "en": "Resolve before release",
+              "he": "משלימים לפני אישור",
+              "th": "แก้ก่อนอนุมัติเริ่ม"
+            }
+          },
+          {
+            "label": {
+              "en": "Reviewed plan",
+              "he": "תוכנית שנבדקה",
+              "th": "แผนผ่านการทบทวน"
+            },
+            "detail": {
+              "en": "Qualified person authorizes scope",
+              "he": "האחראי המוסמך מאשר היקף",
+              "th": "ผู้มีคุณสมบัติอนุมัติขอบเขต"
+            }
+          }
+        ],
+        "caption": {
+          "en": "These branches are decision conditions, not an electrical isolation sequence. Unknown hazards or missing controls stop release. The responsible qualified person must confirm the work scope, site conditions and required protections before work proceeds.",
+          "he": "הענפים הם תנאים לקבלת החלטה, ולא סדר ניתוק חשמלי. סיכונים לא ידועים או בקרות חסרות עוצרים אישור. האחראי המוסמך חייב לוודא היקף עבודה, תנאי אתר והגנות נדרשות לפני תחילת העבודה.",
+          "th": "แขนงเป็นเงื่อนไขตัดสินใจ ไม่ใช่ลำดับแยกไฟ อันตรายที่ไม่ทราบหรือมาตรการขาดต้องหยุดการอนุมัติ ผู้มีคุณสมบัติรับผิดชอบต้องยืนยันขอบเขตงาน สภาพหน้างาน และการป้องกันที่จำเป็นก่อนเริ่ม"
+        },
+        "alt": {
+          "en": "Decision branches: unknown hazard means stop; missing control means resolve; reviewed plan needs qualified authorization.",
+          "he": "ענפי החלטה: סיכון לא ידוע מחייב עצירה; בקרה חסרה מחייבת השלמה; תוכנית בדוקה דורשת אישור מוסמך.",
+          "th": "แขนงตัดสินใจ: อันตรายไม่ทราบให้หยุด มาตรการขาดให้แก้ แผนที่ทบทวนต้องได้รับอนุมัติจากผู้มีคุณสมบัติ"
+        }
+      },
+      "videoId": "base-electrical-safety",
+      "watchFor": {
+        "en": "Identify hazards and the controls that prevent exposure. Do not turn the clip into a switching checklist.",
+        "he": "זהו סיכונים ובקרות שמונעות חשיפה. אל תהפכו את הסרטון לרשימת פעולות מיתוג.",
+        "th": "ระบุอันตรายและมาตรการลดการสัมผัส อย่าใช้คลิปเป็นรายการสับวงจร"
+      },
+      "takeaway": {
+        "en": "Safety starts before contact with equipment. Solar, grid and batteries can be different energy sources.",
+        "he": "בטיחות מתחילה לפני מגע בציוד. סולאר, רשת וסוללות יכולים להיות מקורות אנרגיה נפרדים.",
+        "th": "ความปลอดภัยเริ่มก่อนสัมผัสอุปกรณ์ โซลาร์ โครงข่าย และแบตเตอรี่อาจเป็นแหล่งพลังงานแยกกัน"
+      },
+      "question": {
+        "en": "What would make you stop a survey even if the customer wants installation today?",
+        "he": "מה יגרום לכם לעצור סקר גם אם הלקוח רוצה התקנה היום?",
+        "th": "อะไรทำให้คุณหยุดสำรวจแม้ลูกค้าต้องการติดตั้งวันนี้?"
+      }
+    },
+    {
+      "lesson": "foundation-07",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "One evidence chain",
+          "he": "רצף אחד של ראיות",
+          "th": "หลักฐานต่อเนื่องชุดเดียว"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Sales brief",
+              "he": "בריף מכירות",
+              "th": "ข้อมูลจากฝ่ายขาย"
+            },
+            "detail": {
+              "en": "Needs, evidence and open promises",
+              "he": "צרכים, ראיות והבטחות פתוחות",
+              "th": "ความต้องการ หลักฐาน และคำมั่นค้าง"
+            }
+          },
+          {
+            "label": {
+              "en": "Design revision",
+              "he": "גרסת תכנון",
+              "th": "ฉบับแบบ"
+            },
+            "detail": {
+              "en": "Approved assumptions and scope",
+              "he": "הנחות והיקף שאושרו",
+              "th": "สมมติฐานและขอบเขตอนุมัติ"
+            }
+          },
+          {
+            "label": {
+              "en": "Installation record",
+              "he": "תיעוד התקנה",
+              "th": "บันทึกติดตั้ง"
+            },
+            "detail": {
+              "en": "As-built changes and tests",
+              "he": "שינויים בפועל ובדיקות",
+              "th": "การเปลี่ยนจริงและผลทดสอบ"
+            }
+          },
+          {
+            "label": {
+              "en": "Service handover",
+              "he": "מסירה לשירות",
+              "th": "ส่งมอบฝ่ายบริการ"
+            },
+            "detail": {
+              "en": "Settings, access and owner",
+              "he": "הגדרות, הרשאות ואחראי",
+              "th": "การตั้งค่า สิทธิ์ และผู้รับผิดชอบ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A handover preserves decisions as well as files. Each team should identify the current revision, supporting evidence and unresolved items. Missing information returns to an owner; it must not silently become the next team’s assumption.",
+          "he": "מסירה משמרת החלטות וגם קבצים. כל צוות צריך לזהות את הגרסה הנוכחית, הראיות התומכות והנושאים הפתוחים. מידע חסר חוזר לבעל אחריות; הוא לא הופך בשקט להנחה של הצוות הבא.",
+          "th": "การส่งมอบรักษาทั้งการตัดสินใจและไฟล์ ทุกทีมควรระบุฉบับปัจจุบัน หลักฐานสนับสนุน และเรื่องค้าง ข้อมูลขาดต้องส่งกลับให้เจ้าของรับผิดชอบ ไม่ควรกลายเป็นสมมติฐานเงียบ ๆ ของทีมถัดไป"
+        },
+        "alt": {
+          "en": "Sales brief flows into design revision, installation record and service handover.",
+          "he": "בריף מכירות מועבר לגרסת תכנון, לתיעוד התקנה ולמסירה לשירות.",
+          "th": "ข้อมูลฝ่ายขายส่งต่อสู่ฉบับแบบ บันทึกติดตั้ง และส่งมอบฝ่ายบริการ"
+        }
+      },
+      "videoId": "pm-risk",
+      "watchFor": {
+        "en": "Watch how stakeholder responsibilities and project risks connect. Identify where an unresolved item needs an owner.",
+        "he": "שימו לב לקשר בין אחריות בעלי עניין לסיכוני פרויקט. זהו היכן נדרש אחראי לנושא פתוח.",
+        "th": "ดูความสัมพันธ์ระหว่างหน้าที่ผู้เกี่ยวข้องกับความเสี่ยง ระบุเรื่องค้างที่ต้องมีเจ้าของ"
+      },
+      "takeaway": {
+        "en": "The project-management framework helps explain handovers; the four Bustan stages in the diagram are our lesson’s application.",
+        "he": "מסגרת ניהול הפרויקט עוזרת להבין מסירות; ארבעת שלבי בוסתן בתרשים הם היישום בשיעור שלנו.",
+        "th": "กรอบบริหารโครงการช่วยอธิบายการส่งมอบ ส่วนสี่ขั้นของ Bustan ในแผนภาพคือการประยุกต์ในบทนี้"
+      },
+      "question": {
+        "en": "Who should receive a changed inverter model before installation starts, and what evidence must change with it?",
+        "he": "מי צריך לקבל עדכון על שינוי דגם ממיר לפני התקנה, ואילו מסמכים צריכים להתעדכן?",
+        "th": "ใครต้องรับทราบเมื่อเปลี่ยนรุ่นอินเวอร์เตอร์ก่อนติดตั้ง และหลักฐานใดต้องเปลี่ยนตาม?"
+      }
+    },
+    {
+      "lesson": "foundation-08",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "Reconcile the case study",
+          "he": "מאזנים את מקרה התרגול",
+          "th": "กระทบยอดกรณีฝึก"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "PV generation",
+              "he": "ייצור סולארי",
+              "th": "โซลาร์ผลิต"
+            },
+            "detail": {
+              "en": "Total in the example interval",
+              "he": "סך הייצור בפרק הזמן",
+              "th": "รวมในช่วงตัวอย่าง"
+            },
+            "value": 14
+          },
+          {
+            "label": {
+              "en": "Direct use",
+              "he": "שימוש ישיר",
+              "th": "ใช้โดยตรง"
+            },
+            "detail": {
+              "en": "Shared by both balances",
+              "he": "מופיע בשני המאזנים",
+              "th": "อยู่ในสมดุลทั้งสองด้าน"
+            },
+            "value": 11
+          },
+          {
+            "label": {
+              "en": "Grid import",
+              "he": "יבוא רשת",
+              "th": "นำเข้าโครงข่าย"
+            },
+            "detail": {
+              "en": "Completes 14 kWh load",
+              "he": "משלים עומס 14 קוט״ש",
+              "th": "เติมให้โหลดครบ 14 kWh"
+            },
+            "value": 3
+          },
+          {
+            "label": {
+              "en": "PV surplus",
+              "he": "עודף סולארי",
+              "th": "โซลาร์ส่วนเกิน"
+            },
+            "detail": {
+              "en": "Completes 14 kWh generation",
+              "he": "משלים ייצור 14 קוט״ש",
+              "th": "เติมให้ผลิตครบ 14 kWh"
+            },
+            "value": 3
+          }
+        ],
+        "caption": {
+          "en": "Do not add all four bars. The two balances are PV 14 = direct 11 + surplus 3, and load 14 = direct 11 + import 3. This is an interval training case, not annual performance or guaranteed savings.",
+          "he": "לא מחברים את כל ארבע העמודות. שני המאזנים הם ייצור 14 = שימוש ישיר 11 + עודף 3, וצריכה 14 = שימוש ישיר 11 + יבוא 3. זהו מקרה לימודי לפרק זמן, ולא ביצוע שנתי או חיסכון מובטח.",
+          "th": "ห้ามบวกทั้งสี่แท่ง สมดุลสองด้านคือผลิต 14 = ใช้ตรง 11 + ส่วนเกิน 3 และโหลด 14 = ใช้ตรง 11 + นำเข้า 3 เป็นโจทย์ช่วงเวลาหนึ่ง ไม่ใช่ผลรายปีหรือเงินประหยัดรับประกัน"
+        },
+        "alt": {
+          "en": "PV 14, direct use 11, grid import 3 and surplus 3 kWh; two balances share direct use.",
+          "he": "ייצור 14, שימוש ישיר 11, יבוא 3 ועודף 3 קוט״ש; השימוש הישיר משותף לשני מאזנים.",
+          "th": "ผลิต 14 ใช้ตรง 11 นำเข้า 3 ส่วนเกิน 3 kWh การใช้ตรงอยู่ในสองสมดุล"
+        },
+        "unit": {
+          "en": "kWh",
+          "he": "קוט״ש",
+          "th": "kWh"
+        }
+      },
+      "videoId": "base-kwh",
+      "watchFor": {
+        "en": "Use the video to check the units before solving the property case. Power and energy must not be added together.",
+        "he": "השתמשו בסרטון לבדיקת היחידות לפני פתרון מקרה הנכס. אין לחבר הספק ואנרגיה יחד.",
+        "th": "ใช้คลิปตรวจหน่วยก่อนแก้กรณีอาคาร ห้ามนำกำลังกับพลังงานมาบวกกัน"
+      },
+      "takeaway": {
+        "en": "First reconcile kWh, then consider tariffs, equipment and approvals. A correct balance alone does not prove project feasibility.",
+        "he": "קודם מאזנים קוט״ש, ואז בוחנים תעריפים, ציוד ואישורים. מאזן נכון לבדו לא מוכיח היתכנות.",
+        "th": "กระทบยอด kWh ก่อน แล้วพิจารณาอัตรา อุปกรณ์ และการอนุมัติ สมดุลถูกต้องอย่างเดียวไม่ยืนยันความเป็นไปได้"
+      },
+      "question": {
+        "en": "Which extra measurements would you request before turning these interval values into an annual proposal?",
+        "he": "אילו מדידות נוספות תבקשו לפני הפיכת הערכים להצעה שנתית?",
+        "th": "ต้องขอการวัดอะไรเพิ่มก่อนใช้ค่าช่วงเวลานี้ทำข้อเสนอรายปี?"
+      }
+    },
+    {
+      "lesson": "solar-fundamentals-01",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Inside the PV principle",
+          "he": "עקרון התא הפוטו־וולטאי",
+          "th": "หลักการภายในเซลล์แสงอาทิตย์"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Light arrives",
+              "he": "האור מגיע",
+              "th": "แสงตกกระทบ"
+            },
+            "detail": {
+              "en": "Photons carry energy",
+              "he": "פוטונים נושאים אנרגיה",
+              "th": "โฟตอนนำพลังงานมา"
+            }
+          },
+          {
+            "label": {
+              "en": "Charges separate",
+              "he": "מטענים נפרדים",
+              "th": "ประจุแยกตัว"
+            },
+            "detail": {
+              "en": "Semiconductor junction creates direction",
+              "he": "צומת מוליך למחצה יוצר כיוון",
+              "th": "รอยต่อสารกึ่งตัวนำกำหนดทิศ"
+            }
+          },
+          {
+            "label": {
+              "en": "Current flows",
+              "he": "זרם עובר",
+              "th": "กระแสไหล"
+            },
+            "detail": {
+              "en": "A suitable closed circuit is required",
+              "he": "נדרש מעגל סגור מתאים",
+              "th": "ต้องมีวงจรปิดที่เหมาะสม"
+            }
+          },
+          {
+            "label": {
+              "en": "Power is used",
+              "he": "ההספק מנוצל",
+              "th": "ใช้กำลังไฟ"
+            },
+            "detail": {
+              "en": "System equipment manages conversion",
+              "he": "ציוד המערכת מנהל המרה",
+              "th": "อุปกรณ์ระบบจัดการการแปลง"
+            }
+          }
+        ],
+        "caption": {
+          "en": "The diagram explains the photovoltaic effect at a conceptual level. Light energy becomes electrical energy through a cell and a suitable circuit. It does not show terminals, polarity, protective devices or a safe assembly sequence.",
+          "he": "התרשים מסביר את האפקט הפוטו־וולטאי ברמה עקרונית. אנרגיית האור הופכת לחשמל באמצעות תא ומעגל מתאים. הוא אינו מציג הדקים, קוטביות, אמצעי הגנה או סדר הרכבה בטוח למערכת בשטח.",
+          "th": "แผนภาพอธิบายปรากฏการณ์โฟโตโวลตาอิกในระดับแนวคิด พลังงานแสงเปลี่ยนเป็นไฟฟ้าผ่านเซลล์และวงจรที่เหมาะสม ไม่ได้แสดงขั้วไฟ ขั้วบวกขั้วลบ อุปกรณ์ป้องกัน หรือลำดับประกอบที่ปลอดภัย"
+        },
+        "alt": {
+          "en": "Light brings energy, charges separate, current flows in a suitable circuit, and system equipment makes the power usable.",
+          "he": "האור מביא אנרגיה, מטענים נפרדים, זרם עובר במעגל מתאים וציוד המערכת מאפשר שימוש.",
+          "th": "แสงนำพลังงานมา ประจุแยก กระแสไหลในวงจรเหมาะสม และอุปกรณ์ทำให้ใช้กำลังได้"
+        }
+      },
+      "videoId": "base-pv-cell",
+      "watchFor": {
+        "en": "Follow the animation inside the cell. Separate the movement of charge from the idea of storing energy.",
+        "he": "עקבו אחרי האנימציה בתוך התא. הבדילו בין תנועת מטענים לבין אגירת אנרגיה.",
+        "th": "ติดตามแอนิเมชันภายในเซลล์ แยกการเคลื่อนประจุออกจากการเก็บพลังงาน"
+      },
+      "takeaway": {
+        "en": "A PV cell converts energy while illuminated. Storage is a separate function in the complete system.",
+        "he": "תא סולארי ממיר אנרגיה כשהוא מואר. אגירה היא תפקיד נפרד במערכת המלאה.",
+        "th": "เซลล์แปลงพลังงานเมื่อได้รับแสง การเก็บพลังงานเป็นอีกหน้าที่หนึ่งในระบบ"
+      },
+      "question": {
+        "en": "Why is a panel not a battery, even though both can supply DC electricity?",
+        "he": "מדוע פאנל אינו סוללה, למרות ששניהם יכולים לספק חשמל DC?",
+        "th": "ทำไมแผงจึงไม่ใช่แบตเตอรี่แม้ทั้งคู่จ่ายไฟ DC ได้?"
+      }
+    },
+    {
+      "lesson": "solar-fundamentals-02",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Read four datasheet clues",
+          "he": "ארבעה נתונים בדף המוצר",
+          "th": "อ่านข้อมูลสี่จุดในสเปก"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Rated power",
+              "he": "הספק נקוב",
+              "th": "กำลังพิกัด"
+            },
+            "detail": {
+              "en": "Measured under stated test conditions",
+              "he": "נמדד בתנאי בדיקה מוגדרים",
+              "th": "วัดภายใต้เงื่อนไขทดสอบระบุ"
+            }
+          },
+          {
+            "label": {
+              "en": "Temperature coefficient",
+              "he": "מקדם טמפרטורה",
+              "th": "สัมประสิทธิ์อุณหภูมิ"
+            },
+            "detail": {
+              "en": "Output changes with cell temperature",
+              "he": "התפוקה משתנה עם טמפרטורת התא",
+              "th": "ผลผลิตเปลี่ยนตามอุณหภูมิเซลล์"
+            }
+          },
+          {
+            "label": {
+              "en": "Dimensions and loads",
+              "he": "מידות ועומסים",
+              "th": "ขนาดและแรงกระทำ"
+            },
+            "detail": {
+              "en": "Check the exact roof design",
+              "he": "נבדקים מול תכנון הגג המדויק",
+              "th": "ตรวจเทียบแบบหลังคาจริง"
+            }
+          },
+          {
+            "label": {
+              "en": "Warranty terms",
+              "he": "תנאי אחריות",
+              "th": "เงื่อนไขรับประกัน"
+            },
+            "detail": {
+              "en": "Product and performance promises differ",
+              "he": "אחריות מוצר וביצועים שונות",
+              "th": "สินค้าและประสิทธิภาพรับประกันต่างกัน"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Panel technology names are only one comparison input. Use the exact model datasheet, stated test conditions, mechanical limits and warranty exclusions. A larger nameplate rating alone does not establish the best annual yield or roof layout.",
+          "he": "שם טכנולוגיית הפאנל הוא רק נתון אחד להשוואה. השתמשו בדף הדגם המדויק, בתנאי הבדיקה, במגבלות המכניות ובחריגי האחריות. הספק נקוב גדול יותר לבדו אינו קובע את התפוקה השנתית או את פריסת הגג הטובה ביותר.",
+          "th": "ชื่อเทคโนโลยีแผงเป็นเพียงข้อมูลหนึ่งในการเปรียบเทียบ ใช้สเปกรุ่นจริง เงื่อนไขทดสอบ ขีดจำกัดทางกล และข้อยกเว้นรับประกัน กำลังป้ายสูงกว่าอย่างเดียวไม่ได้ยืนยันผลผลิตรายปีหรือผังหลังคาที่ดีที่สุด"
+        },
+        "alt": {
+          "en": "Four independent comparison criteria: rated power, temperature coefficient, dimensions and loads, warranty terms.",
+          "he": "ארבעה קריטריונים נפרדים: הספק נקוב, מקדם טמפרטורה, מידות ועומסים ותנאי אחריות.",
+          "th": "เกณฑ์เปรียบเทียบสี่ด้าน: กำลังพิกัด สัมประสิทธิ์อุณหภูมิ ขนาดและแรงกระทำ เงื่อนไขรับประกัน"
+        }
+      },
+      "videoId": "base-pv-cell",
+      "watchFor": {
+        "en": "Use the cell animation to understand why material and cell structure matter before comparing model datasheets.",
+        "he": "השתמשו באנימציית התא כדי להבין את חשיבות החומר והמבנה לפני השוואת דגמים.",
+        "th": "ใช้แอนิเมชันเซลล์เข้าใจความสำคัญของวัสดุและโครงสร้างก่อนเทียบสเปกรุ่น"
+      },
+      "takeaway": {
+        "en": "The video teaches the principle; it does not rank current module models or establish a product warranty.",
+        "he": "הסרטון מלמד את העיקרון; הוא אינו מדרג דגמי פאנלים עדכניים או קובע אחריות מוצר.",
+        "th": "คลิปสอนหลักการ ไม่ได้จัดอันดับแผงรุ่นปัจจุบันหรือกำหนดรับประกัน"
+      },
+      "question": {
+        "en": "Which two datasheet fields would you compare for a hot roof with limited area?",
+        "he": "אילו שני שדות בדף המוצר תשוו עבור גג חם עם שטח מוגבל?",
+        "th": "จะเทียบข้อมูลสองช่องใดสำหรับหลังคาร้อนที่พื้นที่จำกัด?"
+      }
+    },
+    {
+      "lesson": "solar-fundamentals-03",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Four jobs around the module",
+          "he": "ארבעה תפקידים סביב הפאנל",
+          "th": "สี่หน้าที่รอบแผง"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Convert",
+              "he": "ממירים",
+              "th": "แปลง"
+            },
+            "detail": {
+              "en": "Inverter manages electrical conversion",
+              "he": "הממיר מנהל המרה חשמלית",
+              "th": "อินเวอร์เตอร์จัดการแปลงไฟ"
+            }
+          },
+          {
+            "label": {
+              "en": "Protect",
+              "he": "מגנים",
+              "th": "ป้องกัน"
+            },
+            "detail": {
+              "en": "Selected devices address defined faults",
+              "he": "ציוד שנבחר מטפל בתקלות מוגדרות",
+              "th": "อุปกรณ์ที่เลือกจัดการความขัดข้องระบุ"
+            }
+          },
+          {
+            "label": {
+              "en": "Measure",
+              "he": "מודדים",
+              "th": "วัด"
+            },
+            "detail": {
+              "en": "Meter location defines the reading",
+              "he": "מיקום המונה מגדיר את המדידה",
+              "th": "ตำแหน่งมิเตอร์กำหนดสิ่งที่วัด"
+            }
+          },
+          {
+            "label": {
+              "en": "Monitor",
+              "he": "מנטרים",
+              "th": "ติดตาม"
+            },
+            "detail": {
+              "en": "Software interprets available telemetry",
+              "he": "התוכנה מפרשת טלמטריה זמינה",
+              "th": "ซอฟต์แวร์แปลข้อมูลที่ได้รับ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "These are functional roles, not a wiring order. Monitoring can report only the sensors and communications available to it. A dashboard value is not proof of safe installation, correct meter placement or a complete electrical test.",
+          "he": "אלה תפקידים במערכת, ולא סדר חיווט. ניטור מציג רק את החיישנים והתקשורת הזמינים לו. ערך בלוח בקרה אינו הוכחה להתקנה בטוחה, למיקום מונה נכון או לבדיקת חשמל מלאה.",
+          "th": "นี่คือหน้าที่ ไม่ใช่ลำดับเดินสาย ระบบติดตามรายงานได้เฉพาะเซนเซอร์และการสื่อสารที่มี ค่าบนหน้าจอไม่ใช่หลักฐานว่าติดตั้งปลอดภัย วางมิเตอร์ถูก หรือทดสอบไฟฟ้าครบ"
+        },
+        "alt": {
+          "en": "Conversion, protection, measurement and monitoring are separate system functions.",
+          "he": "המרה, הגנה, מדידה וניטור הם תפקידים נפרדים במערכת.",
+          "th": "การแปลง การป้องกัน การวัด และการติดตามเป็นคนละหน้าที่"
+        }
+      },
+      "videoId": "tech-vrm-dashboard",
+      "watchFor": {
+        "en": "Identify which displayed values come from meters or devices, and which are calculated summaries.",
+        "he": "זהו אילו ערכים מגיעים ממונים או מציוד ואילו הם סיכומים מחושבים.",
+        "th": "แยกค่าที่มาจากมิเตอร์หรืออุปกรณ์กับค่าที่คำนวณสรุป"
+      },
+      "takeaway": {
+        "en": "VRM demonstrates one manufacturer’s monitoring interface. Apply the measurement questions to the actual platform in your project.",
+        "he": "VRM מדגים ממשק ניטור של יצרן אחד. יישמו את שאלות המדידה על הפלטפורמה שבפרויקט שלכם.",
+        "th": "VRM สาธิตหน้าจอของผู้ผลิตรายหนึ่ง นำคำถามเรื่องการวัดไปใช้กับแพลตฟอร์มจริงของโครงการ"
+      },
+      "question": {
+        "en": "How would you distinguish zero generation from missing telemetry?",
+        "he": "איך תבדילו בין אפס ייצור לבין נתוני ניטור חסרים?",
+        "th": "จะแยกการผลิตเป็นศูนย์ออกจากข้อมูลขาดได้อย่างไร?"
+      }
+    },
+    {
+      "lesson": "solar-fundamentals-04",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Three system architectures",
+          "he": "שלוש תצורות מערכת",
+          "th": "สถาปัตยกรรมระบบสามแบบ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Grid-connected",
+              "he": "מחוברת רשת",
+              "th": "เชื่อมโครงข่าย"
+            },
+            "detail": {
+              "en": "Grid interface; backup not automatic",
+              "he": "ממשק רשת; גיבוי אינו אוטומטי",
+              "th": "ต่อโครงข่าย ไม่ได้มีสำรองเสมอ"
+            }
+          },
+          {
+            "label": {
+              "en": "Hybrid",
+              "he": "היברידית",
+              "th": "ไฮบริด"
+            },
+            "detail": {
+              "en": "Compatible storage and configured controls",
+              "he": "אגירה תואמת ובקרות מוגדרות",
+              "th": "เก็บพลังงานที่เข้ากันและตั้งค่าควบคุม"
+            }
+          },
+          {
+            "label": {
+              "en": "Off-grid",
+              "he": "עצמאית",
+              "th": "นอกโครงข่าย"
+            },
+            "detail": {
+              "en": "Energy balance without normal grid supply",
+              "he": "מאזן אנרגיה ללא אספקת רשת רגילה",
+              "th": "สมดุลพลังงานโดยไม่มีโครงข่ายปกติ"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A system label does not establish backup capability. Confirm the actual inverter, storage, transfer arrangement, selected loads and approved operating modes. An off-grid site also needs an energy plan for low-sun periods and peak loads.",
+          "he": "כותרת המערכת אינה מוכיחה יכולת גיבוי. מאמתים ממיר, אגירה, הסדר מעבר, עומסים נבחרים ומצבי עבודה מאושרים. נכס עצמאי דורש גם תוכנית אנרגיה לתקופות שמש חלשה ולעומסי שיא.",
+          "th": "ชื่อระบบไม่ได้ยืนยันความสามารถสำรอง ต้องตรวจอินเวอร์เตอร์ แบตเตอรี่ การสลับแหล่งจ่าย โหลดที่เลือก และโหมดที่อนุมัติ พื้นที่นอกโครงข่ายยังต้องวางแผนช่วงแดดน้อยและโหลดสูงสุด"
+        },
+        "alt": {
+          "en": "Grid-connected, hybrid and off-grid are compared as architectures, not sequential stages.",
+          "he": "מחוברת רשת, היברידית ועצמאית מושוות כתצורות ולא כשלבים עוקבים.",
+          "th": "เปรียบเทียบเชื่อมโครงข่าย ไฮบริด และนอกโครงข่ายเป็นรูปแบบ ไม่ใช่ขั้นต่อเนื่อง"
+        }
+      },
+      "videoId": "base-storage",
+      "watchFor": {
+        "en": "Notice how the filmed example combines storage and selected circuits. Ask what must be configured for an outage.",
+        "he": "שימו לב לשילוב אגירה ומעגלים נבחרים בדוגמה. בדקו מה צריך להגדיר להפסקת חשמל.",
+        "th": "สังเกตการรวมแบตเตอรี่กับวงจรที่เลือก ต้องตั้งค่าอะไรสำหรับไฟดับ?"
+      },
+      "takeaway": {
+        "en": "The example illustrates a configured storage system. It does not mean every hybrid-labelled inverter backs up every load.",
+        "he": "הדוגמה מציגה מערכת אגירה מוגדרת. אין להסיק שכל ממיר שמכונה היברידי מגבה כל עומס.",
+        "th": "ตัวอย่างแสดงระบบเก็บพลังงานที่ตั้งค่าแล้ว ไม่ได้หมายความว่าอินเวอร์เตอร์ชื่อไฮบริดทุกตัวสำรองได้ทุกโหลด"
+      },
+      "question": {
+        "en": "What would you verify before promising that a resort’s pumps will run during an outage?",
+        "he": "מה תבדקו לפני שמבטיחים שמשאבות ריזורט יפעלו בהפסקת חשמל?",
+        "th": "ต้องตรวจอะไรก่อนสัญญาว่าปั๊มรีสอร์ตจะทำงานเมื่อไฟดับ?"
+      }
+    },
+    {
+      "lesson": "solar-fundamentals-05",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Four survey lenses",
+          "he": "ארבע זוויות לסקר",
+          "th": "สี่มุมมองในการสำรวจ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Roof condition",
+              "he": "מצב הגג",
+              "th": "สภาพหลังคา"
+            },
+            "detail": {
+              "en": "Material, age and structural evidence",
+              "he": "חומר, גיל וראיות הנדסיות",
+              "th": "วัสดุ อายุ และหลักฐานโครงสร้าง"
+            }
+          },
+          {
+            "label": {
+              "en": "Solar access",
+              "he": "חשיפה לשמש",
+              "th": "การรับแสง"
+            },
+            "detail": {
+              "en": "Orientation and time-dependent shade",
+              "he": "כיוון וצל לאורך הזמן",
+              "th": "ทิศและเงาที่เปลี่ยนตามเวลา"
+            }
+          },
+          {
+            "label": {
+              "en": "Electrical context",
+              "he": "הקשר חשמלי",
+              "th": "บริบทไฟฟ้า"
+            },
+            "detail": {
+              "en": "Supply, meter and load measurements",
+              "he": "הזנה, מונה ומדידות עומס",
+              "th": "ระบบจ่าย มิเตอร์ และการวัดโหลด"
+            }
+          },
+          {
+            "label": {
+              "en": "Safe access",
+              "he": "גישה בטוחה",
+              "th": "การเข้าถึงปลอดภัย"
+            },
+            "detail": {
+              "en": "Edges, fragile surfaces and access plan",
+              "he": "קצוות, משטחים שבירים ותוכנית גישה",
+              "th": "ขอบ พื้นเปราะ และแผนเข้าถึง"
+            }
+          }
+        ],
+        "caption": {
+          "en": "A useful survey combines roof, sunlight, electrical and access evidence. Missing structural information or unsafe access is a reason to arrange the appropriate qualified survey, not a reason to fill in a guessed value.",
+          "he": "סקר שימושי משלב ראיות על הגג, השמש, החשמל והגישה. מידע קונסטרוקטיבי חסר או גישה לא בטוחה מחייבים לתאם בדיקה מתאימה עם איש מקצוע מוסמך, ולא למלא ערך שנוח לנחש.",
+          "th": "การสำรวจที่ใช้ได้รวมหลักฐานหลังคา แสง ไฟฟ้า และทางเข้า ข้อมูลโครงสร้างขาดหรือเข้าถึงไม่ปลอดภัยต้องจัดสำรวจโดยผู้มีคุณสมบัติ ไม่ใช่ใส่ค่าที่เดาเอง"
+        },
+        "alt": {
+          "en": "Roof condition, solar access, electrical context and safe access are four complementary survey areas.",
+          "he": "מצב הגג, חשיפה לשמש, הקשר חשמלי וגישה בטוחה הם ארבעה תחומי סקר משלימים.",
+          "th": "สภาพหลังคา การรับแสง บริบทไฟฟ้า และทางเข้าปลอดภัยเป็นสี่ด้านที่เสริมกัน"
+        }
+      },
+      "videoId": "base-fall-safety",
+      "watchFor": {
+        "en": "Identify fragile surfaces, edges and access risks before thinking about panel placement.",
+        "he": "זהו משטחים שבירים, קצוות וסיכוני גישה לפני שממקמים פאנלים.",
+        "th": "ระบุพื้นเปราะ ขอบ และอันตรายทางเข้าก่อนคิดตำแหน่งแผง"
+      },
+      "takeaway": {
+        "en": "A good view of the roof does not make the roof safe to walk on. Survey methods must match the controlled work plan.",
+        "he": "תצפית טובה על הגג אינה הופכת אותו לבטוח להליכה. שיטת הסקר חייבת להתאים לתוכנית העבודה המבוקרת.",
+        "th": "มองเห็นหลังคาชัดไม่ได้ทำให้เดินได้ปลอดภัย วิธีสำรวจต้องสอดคล้องแผนงานที่ควบคุม"
+      },
+      "question": {
+        "en": "Which survey information could you collect safely before any roof access is authorized?",
+        "he": "איזה מידע תוכלו לאסוף בבטחה לפני שניתן אישור לעלות לגג?",
+        "th": "เก็บข้อมูลใดได้อย่างปลอดภัยก่อนอนุมัติขึ้นหลังคา?"
+      }
+    },
+    {
+      "lesson": "solar-fundamentals-06",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Sizing is an evidence process",
+          "he": "גודל המערכת נקבע לפי ראיות",
+          "th": "กำหนดขนาดด้วยหลักฐาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Load profile",
+              "he": "פרופיל עומס",
+              "th": "รูปแบบโหลด"
+            },
+            "detail": {
+              "en": "When energy is actually consumed",
+              "he": "מתי האנרגיה באמת נצרכת",
+              "th": "ใช้พลังงานจริงเมื่อใด"
+            }
+          },
+          {
+            "label": {
+              "en": "Usable roof",
+              "he": "שטח גג שמיש",
+              "th": "หลังคาที่ใช้ได้"
+            },
+            "detail": {
+              "en": "Approved area and constraints",
+              "he": "שטח מאושר ומגבלות",
+              "th": "พื้นที่อนุมัติและข้อจำกัด"
+            }
+          },
+          {
+            "label": {
+              "en": "Yield model",
+              "he": "מודל תפוקה",
+              "th": "แบบจำลองผลผลิต"
+            },
+            "detail": {
+              "en": "Weather, shade and losses",
+              "he": "מזג אוויר, צל והפסדים",
+              "th": "อากาศ เงา และการสูญเสีย"
+            }
+          },
+          {
+            "label": {
+              "en": "Reviewed proposal",
+              "he": "הצעה שנבדקה",
+              "th": "ข้อเสนอผ่านทบทวน"
+            },
+            "detail": {
+              "en": "Equipment, permissions and economics",
+              "he": "ציוד, אישורים וכלכליות",
+              "th": "อุปกรณ์ การอนุญาต และเศรษฐศาสตร์"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Sizing should reconcile time-based consumption, usable space and modeled production. A single monthly bill or roof area does not determine the final array. Keep the design iteration visible when equipment, shading or connection constraints change.",
+          "he": "קביעת גודל משלבת צריכה לפי זמן, שטח שמיש וייצור ממודל. חשבון חודשי אחד או שטח הגג אינם קובעים לבדם את המערך הסופי. תעדו כל איטרציית תכנון כשציוד, הצללה או מגבלות חיבור משתנים.",
+          "th": "การกำหนดขนาดต้องเชื่อมการใช้ตามเวลา พื้นที่ใช้ได้ และผลผลิตจำลอง บิลเดือนเดียวหรือพื้นที่หลังคาไม่กำหนดขนาดสุดท้าย บันทึกรอบการออกแบบเมื่ออุปกรณ์ เงา หรือข้อจำกัดเชื่อมต่อเปลี่ยน"
+        },
+        "alt": {
+          "en": "Load profile leads to usable roof constraints, yield modeling and a reviewed proposal.",
+          "he": "פרופיל עומס מוביל לבחינת שטח הגג, למידול תפוקה ולהצעה שנבדקה.",
+          "th": "รูปแบบโหลดนำสู่ข้อจำกัดหลังคา จำลองผลผลิต และข้อเสนอที่ทบทวน"
+        }
+      },
+      "videoId": "pm-pv",
+      "watchFor": {
+        "en": "Follow how a PV model combines system inputs, shading and losses before producing results.",
+        "he": "עקבו אחר שילוב נתוני מערכת, הצללה והפסדים במודל לפני קבלת תוצאות.",
+        "th": "ติดตามการรวมข้อมูลระบบ เงา และการสูญเสียก่อนออกรายงาน"
+      },
+      "takeaway": {
+        "en": "A model result depends on its inputs. Record the software version and site evidence alongside the proposed size.",
+        "he": "תוצאת מודל תלויה בנתוני הקלט. תעדו גרסת תוכנה וראיות אתר לצד גודל המערכת המוצע.",
+        "th": "ผลจำลองขึ้นกับข้อมูลเข้า บันทึกรุ่นซอฟต์แวร์และหลักฐานหน้างานคู่กับขนาดที่เสนอ"
+      },
+      "question": {
+        "en": "How could two properties with equal monthly kWh need different system sizes?",
+        "he": "איך שני נכסים עם צריכה חודשית זהה עשויים להזדקק לגדלי מערכת שונים?",
+        "th": "อาคารสองแห่งใช้ kWh ต่อเดือนเท่ากันแต่ต้องใช้ระบบต่างขนาดได้อย่างไร?"
+      }
+    },
+    {
+      "lesson": "solar-fundamentals-07",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "From energy to cash flow",
+          "he": "מאנרגיה לתזרים",
+          "th": "จากพลังงานสู่กระแสเงินสด"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Baseline bill",
+              "he": "חשבון בסיס",
+              "th": "บิลฐาน"
+            },
+            "detail": {
+              "en": "Classify energy and other charges",
+              "he": "מסווגים אנרגיה וחיובים נוספים",
+              "th": "แยกค่าพลังงานและค่าอื่น"
+            }
+          },
+          {
+            "label": {
+              "en": "After-system bill",
+              "he": "חשבון עם מערכת",
+              "th": "บิลหลังมีระบบ"
+            },
+            "detail": {
+              "en": "Apply the actual tariff structure",
+              "he": "מיישמים את מבנה התעריף בפועל",
+              "th": "ใช้โครงสร้างอัตราจริง"
+            }
+          },
+          {
+            "label": {
+              "en": "Net annual cash",
+              "he": "תזרים שנתי נטו",
+              "th": "เงินสดสุทธิรายปี"
+            },
+            "detail": {
+              "en": "Subtract operating and replacement costs",
+              "he": "מפחיתים תפעול והחלפות",
+              "th": "หักค่าดำเนินงานและเปลี่ยน"
+            }
+          },
+          {
+            "label": {
+              "en": "Scenario comparison",
+              "he": "השוואת תרחישים",
+              "th": "เปรียบเทียบสถานการณ์"
+            },
+            "detail": {
+              "en": "Check timing, risk and assumptions",
+              "he": "בודקים עיתוי, סיכון והנחות",
+              "th": "ตรวจเวลา ความเสี่ยง และสมมติฐาน"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Savings are the difference between modeled bills under the applicable tariff, not generation multiplied by a headline rate. Project cash flow also includes costs and timing. Treat export revenue as a separate assumption requiring an eligible approved route.",
+          "he": "חיסכון הוא ההפרש בין חשבונות ממודלים לפי התעריף החל, ולא ייצור כפול מחיר כותרת. תזרים הפרויקט כולל גם עלויות ועיתוי. הכנסה מהזרמה היא הנחה נפרדת שדורשת מסלול מתאים ומאושר.",
+          "th": "การประหยัดคือส่วนต่างบิลจำลองตามอัตราที่ใช้จริง ไม่ใช่ผลผลิตคูณอัตราโฆษณา กระแสเงินสดยังรวมต้นทุนและเวลา รายได้ส่งออกเป็นสมมติฐานแยกที่ต้องมีสิทธิ์และช่องทางอนุมัติ"
+        },
+        "alt": {
+          "en": "Baseline bill, after-system bill, net annual cash and scenario comparison form a financial reasoning chain.",
+          "he": "חשבון בסיס, חשבון עם מערכת, תזרים שנתי נטו והשוואת תרחישים יוצרים רצף חשיבה פיננסי.",
+          "th": "บิลฐาน บิลหลังมีระบบ เงินสดสุทธิรายปี และการเทียบสถานการณ์เป็นลำดับคิดด้านการเงิน"
+        }
+      },
+      "videoId": "com-bill-savings",
+      "watchFor": {
+        "en": "Watch how a rate structure and load profile affect bill savings. Separate energy savings from the complete bill.",
+        "he": "בדקו איך מבנה תעריף ופרופיל עומס משפיעים על החיסכון. הפרידו חיסכון באנרגיה מהחשבון המלא.",
+        "th": "ดูว่าโครงสร้างอัตราและโหลดมีผลต่อเงินประหยัดอย่างไร แยกการลดพลังงานออกจากบิลรวม"
+      },
+      "takeaway": {
+        "en": "The SAM example demonstrates billing logic. Replace its example rates and assumptions with verified project-specific values.",
+        "he": "דוגמת SAM מדגימה את לוגיקת החיוב. החליפו תעריפים והנחות לדוגמה בנתונים מאומתים לפרויקט.",
+        "th": "ตัวอย่าง SAM แสดงตรรกะบิล ต้องแทนอัตราและสมมติฐานด้วยค่าที่ตรวจสำหรับโครงการ"
+      },
+      "question": {
+        "en": "Why can two systems generating the same kWh produce different bill savings?",
+        "he": "מדוע שתי מערכות שמייצרות אותו מספר קוט״ש עשויות ליצור חיסכון שונה?",
+        "th": "ทำไมสองระบบผลิต kWh เท่ากันแต่ประหยัดเงินต่างกัน?"
+      }
+    },
+    {
+      "lesson": "solar-fundamentals-08",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Separate the approval questions",
+          "he": "מפרידים בין שאלות האישור",
+          "th": "แยกคำถามการอนุญาต"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Grid connection",
+              "he": "חיבור לרשת",
+              "th": "เชื่อมต่อโครงข่าย"
+            },
+            "detail": {
+              "en": "Confirm the PEA project route",
+              "he": "מאמתים מסלול פרויקט מול PEA",
+              "th": "ยืนยันช่องทางโครงการกับ PEA"
+            }
+          },
+          {
+            "label": {
+              "en": "Regulatory status",
+              "he": "מעמד רגולטורי",
+              "th": "สถานะกำกับดูแล"
+            },
+            "detail": {
+              "en": "Check applicable ERC requirements",
+              "he": "בודקים דרישות ERC שחלות",
+              "th": "ตรวจข้อกำหนด ERC ที่ใช้"
+            }
+          },
+          {
+            "label": {
+              "en": "Building and site",
+              "he": "מבנה ואתר",
+              "th": "อาคารและพื้นที่"
+            },
+            "detail": {
+              "en": "Verify competent local authority",
+              "he": "מאמתים רשות מקומית מוסמכת",
+              "th": "ตรวจหน่วยงานท้องถิ่นที่รับผิดชอบ"
+            }
+          },
+          {
+            "label": {
+              "en": "Export revenue",
+              "he": "הכנסה מהזרמה",
+              "th": "รายได้ส่งออก"
+            },
+            "detail": {
+              "en": "Requires eligible written arrangements",
+              "he": "דורשת הסדרים כתובים מתאימים",
+              "th": "ต้องมีข้อตกลงเป็นลายลักษณ์อักษร"
+            }
+          }
+        ],
+        "caption": {
+          "en": "These checks are separate responsibilities, not four guaranteed permits or a universal filing order. Start from the property, connection and intended operating mode. A submitted form is not approval, and self-consumption does not automatically authorize paid export.",
+          "he": "אלה תחומי בדיקה נפרדים, ולא ארבעה היתרים מובטחים או סדר הגשה אחיד. מתחילים מהנכס, החיבור ומצב ההפעלה המתוכנן. הגשת טופס אינה אישור, וצריכה עצמית אינה מתירה אוטומטית הזרמה בתשלום.",
+          "th": "เป็นการตรวจคนละหน้าที่ ไม่ใช่ใบอนุญาตสี่ฉบับที่รับรองว่าจะได้หรือลำดับยื่นตายตัว เริ่มจากอาคาร จุดเชื่อมต่อ และโหมดที่จะใช้ ยื่นแบบไม่เท่ากับอนุมัติ และใช้เองไม่ได้อนุญาตขายส่วนเกินอัตโนมัติ"
+        },
+        "alt": {
+          "en": "Four distinct checks: PEA grid connection, ERC regulatory status, local building/site requirements and written export arrangements.",
+          "he": "ארבע בדיקות שונות: חיבור PEA, מעמד ERC, דרישות מבנה ואתר והסדר הזרמה כתוב.",
+          "th": "สี่เรื่องแยกกัน: เชื่อมต่อ PEA สถานะ ERC ข้อกำหนดอาคารท้องถิ่น และข้อตกลงส่งออก"
+        }
+      },
+      "videoId": "base-pea-service",
+      "watchFor": {
+        "en": "Identify PEA’s official online service channel. Then compare it with the project-specific authority links in this lesson.",
+        "he": "זהו את ערוץ השירות הרשמי של PEA. לאחר מכן השוו אותו לקישורי הרשויות המתאימים לפרויקט בשיעור.",
+        "th": "รู้จักช่องทางออนไลน์ทางการของ PEA แล้วเทียบกับลิงก์หน่วยงานตามโครงการในบทนี้"
+      },
+      "takeaway": {
+        "en": "The clip introduces a service entry point. It does not replace the current PPIM process or written project decisions.",
+        "he": "הסרטון מציג נקודת כניסה לשירות. הוא אינו מחליף את תהליך PPIM העדכני או החלטות פרויקט בכתב.",
+        "th": "คลิปแนะนำจุดเริ่มใช้บริการ ไม่แทนกระบวนการ PPIM ปัจจุบันหรือผลตัดสินโครงการเป็นลายลักษณ์อักษร"
+      },
+      "question": {
+        "en": "What evidence distinguishes an application received from permission to energize or sell electricity?",
+        "he": "אילו ראיות מבדילות בין בקשה שהתקבלה לבין היתר לחבר מתח או למכור חשמל?",
+        "th": "หลักฐานใดแยกระหว่างรับคำขอแล้วกับอนุญาตจ่ายไฟหรือขายไฟ?"
+      }
+    }
+  ]
+}

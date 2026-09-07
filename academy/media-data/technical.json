@@ -1,0 +1,2118 @@
+{
+  "videos": [
+    {
+      "id": "tech-k2-mount",
+      "youtubeId": "KABRQDQx9rA",
+      "title": "K2 MiniRail Comp Installation (EN)",
+      "publisher": "K2 Systems US & MX",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=KABRQDQx9rA",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.youtube.com/watch?v=KABRQDQx9rA",
+      "description": {
+        "en": "English manufacturer demonstration of K2 MiniRail Comp for composition-shingle roofs. Use it to examine system-specific attachment and sealing; it is not a universal method for Thai metal roofs.",
+        "he": "הדגמת יצרן באנגלית ל-K2 MiniRail Comp בגגות שינגל. בוחנים עיגון ואיטום ייעודיים למערכת; אין זו שיטה כללית לגגות פח בתאילנד.",
+        "th": "ผู้ผลิตสาธิตภาษาอังกฤษ K2 MiniRail Comp สำหรับหลังคาชิงเกิล ใช้ดูการยึดและซีลเฉพาะระบบ ไม่ใช่วิธีทั่วไปสำหรับหลังคาโลหะไทย."
+      }
+    },
+    {
+      "id": "tech-mc4-assembly",
+      "youtubeId": "TfHsCjCEYI4",
+      "title": "How to assemble and crimp Stäubli Original MC4 / MC4-Evo 2 solar power connectors | Best practice",
+      "publisher": "Stäubli Electrical Connectors AG",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=TfHsCjCEYI4",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.staubli.com/de/de/news/global/2022/safe-pv-connector-assembly.html",
+      "description": {
+        "en": "English Stäubli connector-assembly tutorial. Exact connector family, cable and qualified tools govern applicability; viewing does not authorize field work or disconnection under load.",
+        "he": "הדרכת הרכבת מחברי Stäubli באנגלית. משפחת המחבר, הכבל והכלים המתאימים קובעים תחולה; צפייה אינה מתירה עבודת שטח או ניתוק תחת עומס.",
+        "th": "บทสอนประกอบขั้วต่อ Stäubli ภาษาอังกฤษ ต้องตรวจตระกูล สาย และเครื่องมือที่กำหนด การดูไม่ให้สิทธิ์ทำหน้างานหรือถอดขณะมีโหลด."
+      }
+    },
+    {
+      "id": "tech-ng-bms",
+      "youtubeId": "Q_pBm0eaLAw",
+      "title": "How does the new Victron Energy Lithium NG Battery & BMS NG work?",
+      "publisher": "Victron Energy",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=Q_pBm0eaLAw",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.youtube.com/watch?v=Q_pBm0eaLAw",
+      "description": {
+        "en": "Victron’s English explanation of Lithium NG batteries, communication and the matching BMS. This product-family example does not establish compatibility with other batteries or Thai project approval.",
+        "he": "הסבר Victron באנגלית על מצברי Lithium NG, תקשורת ו-BMS תואם. הדוגמה למשפחה זו אינה מוכיחה תאימות למצברים אחרים או אישור פרויקט בתאילנד.",
+        "th": "Victron อธิบายภาษาอังกฤษเรื่องแบตเตอรี่ Lithium NG การสื่อสาร และ BMS คู่กัน ตัวอย่างตระกูลนี้ไม่ยืนยันเข้ากันแบตอื่นหรืออนุมัติโครงการไทย."
+      }
+    },
+    {
+      "id": "tech-ev-guide",
+      "youtubeId": "H7rQLGDTOM8",
+      "title": "Electric Vehicle Charging Station Victron Energy - Technical Guide",
+      "publisher": "Victron Tech",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=H7rQLGDTOM8",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.victronenergy.com/ev-charging/ev-charging-station",
+      "description": {
+        "en": "English technical guide published by Victron Tech and linked by Victron’s official EVCS product page. Charging modes and interfaces are product-specific; confirm current manuals and the local design.",
+        "he": "מדריך טכני באנגלית של Victron Tech המקושר מעמוד EVCS הרשמי. מצבי טעינה וממשקים תלויים במוצר; מאמתים מדריך עדכני ותכנון מקומי.",
+        "th": "คู่มือเทคนิคภาษาอังกฤษโดย Victron Tech ซึ่งหน้าสินค้า EVCS ทางการเชื่อมไว้ โหมดและอินเทอร์เฟซเฉพาะผลิตภัณฑ์ ต้องตรวจคู่มือปัจจุบันและแบบท้องถิ่น."
+      }
+    },
+    {
+      "id": "tech-vrm-dashboard",
+      "youtubeId": "bG1uKqVgePY",
+      "title": "New Victron Remote Management Dashboard released",
+      "publisher": "Victron Energy",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=bG1uKqVgePY",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.victronenergy.com/media/pg/VRM_Portal_manual/en/dashboard.html",
+      "description": {
+        "en": "Victron’s English dashboard introduction, embedded in its current VRM manual. The demonstrated interface may differ from today’s version; monitoring displays are evidence, not electrical acceptance tests.",
+        "he": "מבוא ללוח ניטור באנגלית של Victron המשולב במדריך VRM הנוכחי. הממשק עשוי להשתנות; תצוגת ניטור היא ראיה ולא בדיקת קבלה חשמלית.",
+        "th": "Victron แนะนำแดชบอร์ดภาษาอังกฤษที่ฝังในคู่มือ VRM ปัจจุบัน หน้าตาอาจต่างจากรุ่นวันนี้ ข้อมูลติดตามเป็นหลักฐาน ไม่ใช่ทดสอบรับไฟฟ้า."
+      }
+    },
+    {
+      "id": "tech-mppt-principle",
+      "youtubeId": "BJpCWKgW8Ac",
+      "title": "How does a Victron Energy MPPT Solar Charge Controller work?",
+      "publisher": "Victron Energy",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=BJpCWKgW8Ac",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.victronenergy.com/knowledge-articles/2026/5/4/how-to-size-rv-solar-system",
+      "description": {
+        "en": "English manufacturer explanation of MPPT operation, conversion, series connection and control interfaces. Illustrative Victron hardware supports concept learning; exact ratings and application rules remain model-specific.",
+        "he": "הסבר יצרן באנגלית על MPPT, המרה, חיבור טורי וממשקי בקרה. ציוד Victron מדגים מושגים; דירוגים ודרישות יישום נשארים תלויי דגם.",
+        "th": "ผู้ผลิตอธิบายภาษาอังกฤษเรื่อง MPPT การแปลง อนุกรม และอินเทอร์เฟซควบคุม ใช้ฮาร์ดแวร์ Victron เรียนแนวคิด พิกัดกับข้อกำหนดยังขึ้นกับรุ่น."
+      }
+    },
+    {
+      "id": "tech-remote-update",
+      "youtubeId": "oKvUXLUK1aM",
+      "title": "Remotely update VE.Direct firmware",
+      "publisher": "Victron Energy",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=oKvUXLUK1aM",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.victronenergy.com/media/pg/VRM_Remote_firmware_update/en/remote-firmware-update.html",
+      "description": {
+        "en": "English Victron demonstration of remote VE.Direct firmware updates. Use it for change-control discussion; the current manual cautions against unnecessary updates to stable systems. Interface details can change.",
+        "he": "הדגמת Victron באנגלית לעדכון VE.Direct מרחוק. משמשת לדיון בבקרת שינוי; המדריך הנוכחי מזהיר מעדכון לא נחוץ למערכת יציבה. פרטי ממשק עשויים להשתנות.",
+        "th": "Victron สาธิตอัปเดต VE.Direct ทางไกลภาษาอังกฤษ ใช้อภิปรายควบคุมการเปลี่ยน คู่มือปัจจุบันเตือนไม่อัปเดตระบบเสถียรโดยไม่จำเป็น รายละเอียดหน้าจออาจเปลี่ยน."
+      }
+    },
+    {
+      "id": "tech-ground-context",
+      "youtubeId": "is_nXRNWlHI",
+      "title": "Victron Energy Tech Talk - Episode 5",
+      "publisher": "Victron Energy",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=is_nXRNWlHI",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.youtube.com/watch?v=is_nXRNWlHI",
+      "description": {
+        "en": "English manufacturer Q&A covering communication, external BMS and grounding in mobile applications. Grounding examples are context-specific comparisons, not a Thai rooftop earthing design.",
+        "he": "שאלות ותשובות יצרן באנגלית על תקשורת, BMS חיצוני והארקה ביישומים ניידים. דוגמאות הארקה הן להשוואת הקשר ולא תכנון גג תאילנדי.",
+        "th": "ผู้ผลิตตอบภาษาอังกฤษเรื่องสื่อสาร BMS ภายนอก และกราวด์งานเคลื่อนที่ ตัวอย่างกราวด์ใช้เทียบบริบท ไม่ใช่แบบดินหลังคาไทย."
+      }
+    },
+    {
+      "id": "tech-fluke-workflow",
+      "youtubeId": "D277lQ1vVOc",
+      "title": "Tools and Techniques for Commissioning and Maintaining PV Systems",
+      "publisher": "Test Equipment Depot",
+      "language": "en",
+      "url": "https://www.youtube.com/watch?v=D277lQ1vVOc",
+      "verified": "2026-09-07",
+      "evidenceUrl": "https://www.testequipmentdepot.com/fluke-pv-solar-testing-solutions-resources",
+      "description": {
+        "en": "English webinar presented by Fluke Solar Application Specialist Will White, hosted by Test Equipment Depot. Covers measurement categories, commissioning and O&M. US examples and demonstrated procedures require local and model-specific review.",
+        "he": "וובינר באנגלית של מומחה הסולאר ב-Fluke, Will White, באירוח Test Equipment Depot. עוסק בקטגוריות מדידה, הפעלה ותחזוקה. דוגמאות אמריקאיות ונהלים מחייבים בדיקת תחולה מקומית ודגם.",
+        "th": "เว็บบินาร์ภาษาอังกฤษโดย Will White ผู้เชี่ยวชาญโซลาร์ Fluke จัดโดย Test Equipment Depot ครอบคลุมประเภทวัด ทดสอบส่งมอบ และ O&M ตัวอย่างสหรัฐฯ และวิธีต้องตรวจท้องถิ่นกับรุ่น."
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "lesson": "installers-01",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "From drawing to work",
+          "he": "משרטוט לעבודה",
+          "th": "จากแบบสู่งาน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Issued revision",
+              "he": "גרסה לביצוע",
+              "th": "รุ่นแบบก่อสร้าง"
+            },
+            "detail": {
+              "en": "Identify the approved construction package.",
+              "he": "מזהים תיק ביצוע מאושר.",
+              "th": "ระบุชุดก่อสร้างอนุมัติ."
+            }
+          },
+          {
+            "label": {
+              "en": "Site comparison",
+              "he": "השוואה לאתר",
+              "th": "เทียบหน้างาน"
+            },
+            "detail": {
+              "en": "Match actual roof and access conditions.",
+              "he": "משווים גג וגישה בפועל.",
+              "th": "เทียบหลังคาและทางเข้าจริง."
+            }
+          },
+          {
+            "label": {
+              "en": "Hold or release",
+              "he": "עצירה או שחרור",
+              "th": "พักหรือปล่อย"
+            },
+            "detail": {
+              "en": "Named reviewer resolves any discrepancy.",
+              "he": "גורם מוגדר פותר אי התאמה.",
+              "th": "ผู้ตรวจที่ระบุแก้ความคลาดเคลื่อน."
+            }
+          }
+        ],
+        "caption": {
+          "en": "An installation method becomes usable only when its exact system and site conditions match the issued design. This flow links document control to mobilisation; a delivery quantity or demonstration video cannot authorize a changed roof layout.",
+          "he": "שיטת התקנה מתאימה לביצוע רק כאשר המערכת המדויקת ותנאי האתר תואמים לתכנון המאושר. התרשים קושר בקרת מסמכים להתארגנות בשטח; כמות במשלוח או סרטון הדגמה אינם מאשרים שינוי בפריסת הגג.",
+          "th": "วิธีติดตั้งใช้ได้เมื่อระบบจริงและสภาพไซต์ตรงแบบที่ออก แผนนี้เชื่อมการควบคุมเอกสารกับเตรียมหน้างาน จำนวนส่งของหรือวิดีโอสาธิตไม่อนุมัติเปลี่ยนผังหลังคา."
+        },
+        "alt": {
+          "en": "Approved revision leads to site comparison, then a named hold or release decision.",
+          "he": "גרסה מאושרת מובילה להשוואת אתר ואז להחלטת עצירה או שחרור.",
+          "th": "รุ่นอนุมัตินำไปเทียบไซต์แล้วผู้รับผิดชอบตัดสินพักหรือปล่อย."
+        }
+      },
+      "videoId": "tech-k2-mount",
+      "watchFor": {
+        "en": "Identify the particular roof and mounting system demonstrated before considering its work sequence.",
+        "he": "זהו את סוג הגג ומערכת העיגון לפני בחינת סדר העבודה.",
+        "th": "ระบุหลังคาและระบบยึดที่สาธิตก่อนพิจารณาลำดับงาน."
+      },
+      "takeaway": {
+        "en": "A manufacturer demonstration belongs to a defined system, not every roof.",
+        "he": "הדגמת יצרן שייכת למערכת מוגדרת ולא לכל גג.",
+        "th": "สาธิตผู้ผลิตใช้กับระบบที่ระบุ ไม่ใช่ทุกหลังคา."
+      },
+      "question": {
+        "en": "Which site mismatch would stop you from applying this demonstrated method?",
+        "he": "איזו אי התאמה באתר תעצור שימוש בשיטה המודגמת?",
+        "th": "สิ่งใดไม่ตรงไซต์จะทำให้หยุดใช้วิธีสาธิตนี้?"
+      }
+    },
+    {
+      "lesson": "installers-02",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Two independent roof checks",
+          "he": "שתי בדיקות גג נפרדות",
+          "th": "สองการตรวจหลังคาแยกกัน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Load path",
+              "he": "מסלול עומס",
+              "th": "เส้นทางแรง"
+            },
+            "detail": {
+              "en": "Attachments transfer forces into accepted structure.",
+              "he": "עיגונים מעבירים כוחות לשלד שנבדק.",
+              "th": "จุดยึดถ่ายแรงสู่โครงที่รับแล้ว."
+            }
+          },
+          {
+            "label": {
+              "en": "Water path",
+              "he": "מסלול מים",
+              "th": "ทางน้ำ"
+            },
+            "detail": {
+              "en": "Approved seals and drainage protect the roof.",
+              "he": "אטמים וניקוז מאושרים מגינים על הגג.",
+              "th": "ซีลและทางระบายอนุมัติปกป้องหลังคา."
+            }
+          },
+          {
+            "label": {
+              "en": "Hidden evidence",
+              "he": "ראיות נסתרות",
+              "th": "หลักฐานงานซ่อน"
+            },
+            "detail": {
+              "en": "Record both before modules conceal them.",
+              "he": "מתעדים את שניהם לפני כיסוי במודולים.",
+              "th": "บันทึกทั้งคู่ก่อนแผงปิด."
+            }
+          }
+        ],
+        "caption": {
+          "en": "An attachment can carry load yet leak, or look sealed while its support is inadequate. Inspect structural and waterproofing evidence separately, then record concealed details before covering them. The diagram is a review comparison, not a mounting detail.",
+          "he": "עיגון עשוי לשאת עומס אך לדלוף, או להיראות אטום כאשר התמיכה אינה מספקת. בודקים ראיות מבנה ואיטום בנפרד ומתעדים פרטים נסתרים לפני כיסוי. התרשים משווה בדיקות ואינו פרט עיגון לביצוע.",
+          "th": "จุดยึดอาจรับแรงแต่รั่ว หรือดูซีลดีแต่โครงไม่พอ ตรวจหลักฐานโครงกับกันน้ำแยกแล้วบันทึกก่อนปิด ภาพนี้เปรียบเทียบการตรวจ ไม่ใช่รายละเอียดติดตั้ง."
+        },
+        "alt": {
+          "en": "Three cards compare structural load path, waterproofing path and evidence before concealment.",
+          "he": "שלושה כרטיסים משווים מסלול עומס, איטום וראיות לפני כיסוי.",
+          "th": "สามช่องเทียบเส้นแรง กันน้ำ และหลักฐานก่อนปิด."
+        }
+      },
+      "videoId": "tech-k2-mount",
+      "watchFor": {
+        "en": "Notice the attachment and sealing elements as separate functions in this shingle-roof system.",
+        "he": "שימו לב לתפקודי עיגון ואיטום הנפרדים במערכת שינגל זו.",
+        "th": "ดูหน้าที่ยึดกับซีลแยกในระบบชิงเกิลนี้."
+      },
+      "takeaway": {
+        "en": "Correct assembly needs both a supported load path and the specified water seal.",
+        "he": "הרכבה נכונה דורשת מסלול עומס נתמך ואטם מוגדר.",
+        "th": "ประกอบถูกต้องต้องมีเส้นแรงรองรับและซีลตามระบุ."
+      },
+      "question": {
+        "en": "What photograph would you need before the next component hides the seal?",
+        "he": "איזה צילום נדרש לפני שהרכיב הבא מסתיר את האטם?",
+        "th": "ต้องถ่ายหลักฐานใดก่อนชิ้นถัดไปปิดซีล?"
+      }
+    },
+    {
+      "lesson": "installers-03",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Accept the delivered part?",
+          "he": "לקבל את החלק שסופק?",
+          "th": "รับชิ้นส่วนที่ส่งหรือไม่?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Exact part match?",
+              "he": "התאמה מדויקת?",
+              "th": "รุ่นตรงหรือไม่?"
+            },
+            "detail": {
+              "en": "Check approved identity, condition and exposure limits.",
+              "he": "בודקים זהות, מצב וגבולות חשיפה.",
+              "th": "ตรวจรหัส สภาพ และข้อจำกัดสัมผัส."
+            }
+          },
+          {
+            "label": {
+              "en": "Accepted stock",
+              "he": "מלאי מאושר",
+              "th": "ของรับแล้ว"
+            },
+            "detail": {
+              "en": "Traceable and suitable for the approved use.",
+              "he": "עקיב ומתאים לשימוש המאושר.",
+              "th": "ตามรอยได้และเหมาะงานอนุมัติ."
+            }
+          },
+          {
+            "label": {
+              "en": "Quarantine",
+              "he": "הפרדה",
+              "th": "กักกัน"
+            },
+            "detail": {
+              "en": "Damage, moisture or unidentified family needs review.",
+              "he": "נזק, רטיבות או משפחה לא מזוהה לבדיקה.",
+              "th": "เสีย เปียก หรือไม่รู้ตระกูลต้องตรวจ."
+            }
+          },
+          {
+            "label": {
+              "en": "Substitution review",
+              "he": "בדיקת החלפה",
+              "th": "ทบทวนทดแทน"
+            },
+            "detail": {
+              "en": "Similar appearance cannot establish compatibility.",
+              "he": "דמיון חיצוני אינו מוכיח תאימות.",
+              "th": "หน้าตาคล้ายไม่พิสูจน์เข้ากัน."
+            }
+          }
+        ],
+        "caption": {
+          "en": "Receiving quality is a decision, not just counting boxes. The same connector shape can conceal a different family or unsuitable condition. Coastal exposure adds context, but acceptance still requires the exact approved product and documented disposition of questionable stock.",
+          "he": "איכות קבלה היא החלטה ולא רק ספירת ארגזים. צורת מחבר דומה עשויה להסתיר משפחה שונה או מצב לא מתאים. חשיפה חופית מוסיפה הקשר, אך הקבלה דורשת מוצר מאושר מדויק והכרעה מתועדת לגבי מלאי חשוד.",
+          "th": "รับคุณภาพคือการตัดสิน ไม่ใช่นับกล่อง ขั้วต่อรูปเหมือนอาจต่างตระกูลหรือสภาพไม่เหมาะ ชายฝั่งเพิ่มบริบท แต่ต้องรับรุ่นอนุมัติจริงและบันทึกการจัดการของสงสัย."
+        },
+        "alt": {
+          "en": "A receiving decision branches to accepted stock, quarantine or substitution review.",
+          "he": "החלטת קבלה מתפצלת למאושר, הפרדה או בדיקת חלופה.",
+          "th": "การรับแยกเป็นรับแล้ว กักกัน หรือทบทวนทดแทน."
+        }
+      },
+      "videoId": "tech-mc4-assembly",
+      "watchFor": {
+        "en": "Identify the connector family and specified tool combination, not merely the finished shape.",
+        "he": "זהו משפחת מחבר ושילוב כלים ולא רק צורה סופית.",
+        "th": "ระบุตระกูลและชุดเครื่องมือ ไม่ใช่ดูรูปเสร็จเท่านั้น."
+      },
+      "takeaway": {
+        "en": "Compatibility belongs to the complete specified connector system.",
+        "he": "תאימות שייכת למערכת המחבר המוגדרת המלאה.",
+        "th": "ความเข้ากันเป็นของชุดขั้วต่อที่ระบุครบ."
+      },
+      "question": {
+        "en": "How would you document ten visually similar but unapproved connectors?",
+        "he": "איך תתעדו עשרה מחברים דומים אך לא מאושרים?",
+        "th": "จะบันทึกขั้วต่อคล้ายสิบตัวแต่ไม่อนุมัติอย่างไร?"
+      }
+    },
+    {
+      "lesson": "installers-04",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Count the complete loop",
+          "he": "לספור את הלולאה המלאה",
+          "th": "นับครบวงรอบ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "24 m loop",
+              "he": "לולאה 24 מטר",
+              "th": "วงรอบ 24 m"
+            },
+            "detail": {
+              "en": "12 m positive plus 12 m negative.",
+              "he": "12 מטר חיובי ועוד 12 שלילי.",
+              "th": "บวก 12 m และลบ 12 m."
+            }
+          },
+          {
+            "label": {
+              "en": "0.12 Ω resistance",
+              "he": "התנגדות 0.12 אוהם",
+              "th": "ความต้านทาน 0.12 Ω"
+            },
+            "detail": {
+              "en": "24 × 0.005 Ω/m.",
+              "he": "24 × 0.005 אוהם למטר.",
+              "th": "24 × 0.005 Ω/m."
+            }
+          },
+          {
+            "label": {
+              "en": "1.2 V drop",
+              "he": "מפל 1.2 וולט",
+              "th": "แรงดันตก 1.2 V"
+            },
+            "detail": {
+              "en": "10 A × 0.12 Ω.",
+              "he": "10 אמפר × 0.12 אוהם.",
+              "th": "10 A × 0.12 Ω."
+            }
+          },
+          {
+            "label": {
+              "en": "12 W loss",
+              "he": "הפסד 12 ואט",
+              "th": "สูญเสีย 12 W"
+            },
+            "detail": {
+              "en": "10² × 0.12 Ω.",
+              "he": "10² × 0.12 אוהם.",
+              "th": "10² × 0.12 Ω."
+            }
+          }
+        ],
+        "caption": {
+          "en": "The lesson’s invented example counts both conductors before calculating resistance, voltage drop and heat loss. Counting only one direction halves the results incorrectly. These supplied numbers explain a calculation; they do not establish an acceptable real cable size.",
+          "he": "בדוגמה המדומה בשיעור סופרים את שני המוליכים לפני חישוב התנגדות, מפל מתח והפסד כחום. ספירת כיוון אחד בלבד חוצה בטעות את התוצאות. המספרים מסבירים חישוב ואינם קובעים חתך כבל מתאים להתקנה אמיתית.",
+          "th": "ตัวอย่างสมมติในบทนับตัวนำทั้งสองก่อนหาความต้านทาน แรงดันตก และสูญเสียความร้อน นับทางเดียวทำให้ผลเหลือครึ่งผิด ตัวเลขอธิบายคำนวณ ไม่กำหนดขนาดสายจริงที่ยอมรับได้."
+        },
+        "alt": {
+          "en": "Four calculation stages show 24 m producing 0.12 ohm, 1.2 V drop and 12 W loss at 10 A.",
+          "he": "ארבעה שלבים מציגים 24 מטר, 0.12 אוהם, מפל 1.2 וולט והפסד 12 ואט ב-10 אמפר.",
+          "th": "สี่ขั้นคำนวณ 24 m เป็น 0.12 ohm แรงดันตก 1.2 V สูญเสีย 12 W ที่ 10 A."
+        }
+      },
+      "videoId": "tech-mc4-assembly",
+      "watchFor": {
+        "en": "Look for the contact, cable and tool as one assembly system.",
+        "he": "חפשו מגע, כבל וכלי כמערכת הרכבה אחת.",
+        "th": "ดูหน้าสัมผัส สาย และเครื่องมือเป็นชุดประกอบเดียว."
+      },
+      "takeaway": {
+        "en": "A good cable calculation cannot compensate for an unsuitable termination.",
+        "he": "חישוב כבל תקין אינו מפצה על סיומת לא מתאימה.",
+        "th": "คำนวณสายดีไม่ชดเชยจุดต่อไม่เหมาะ."
+      },
+      "question": {
+        "en": "Which evidence would confirm the cable and connector are an approved combination?",
+        "he": "איזו ראיה תאשר שילוב מאושר של כבל ומחבר?",
+        "th": "หลักฐานใดยืนยันว่าสายกับขั้วต่อเป็นชุดอนุมัติ?"
+      }
+    },
+    {
+      "lesson": "installers-05",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Different protective duties",
+          "he": "תפקידי הגנה שונים",
+          "th": "หน้าที่ป้องกันต่างกัน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Overcurrent",
+              "he": "זרם יתר",
+              "th": "กระแสเกิน"
+            },
+            "detail": {
+              "en": "Review ratings and fault interruption.",
+              "he": "בודקים דירוגים וניתוק תקלה.",
+              "th": "ตรวจพิกัดและกำลังตัด."
+            }
+          },
+          {
+            "label": {
+              "en": "Residual current",
+              "he": "זרם שיורי",
+              "th": "กระแสรั่ว"
+            },
+            "detail": {
+              "en": "Exact product and system govern selection.",
+              "he": "מוצר ומערכת מדויקים קובעים בחירה.",
+              "th": "รุ่นจริงกับระบบกำหนดเลือก."
+            }
+          },
+          {
+            "label": {
+              "en": "Surge protection",
+              "he": "הגנת נחשול",
+              "th": "ป้องกันกระชาก"
+            },
+            "detail": {
+              "en": "Coordinate with the approved protection design.",
+              "he": "מתאמים עם תכנון ההגנות המאושר.",
+              "th": "ประสานกับแบบป้องกันอนุมัติ."
+            }
+          },
+          {
+            "label": {
+              "en": "Bonding and earthing",
+              "he": "חיבור מגן והארקה",
+              "th": "บอนดิ้งและดิน"
+            },
+            "detail": {
+              "en": "Verify intended paths in every operating mode.",
+              "he": "מאמתים נתיבים בכל מצב עבודה.",
+              "th": "ยืนยันทางที่ตั้งใจทุกโหมด."
+            }
+          }
+        ],
+        "caption": {
+          "en": "These functions answer different fault and system questions. One installed device cannot stand in for every other protection, and a familiar mobile-system grounding example cannot determine a villa’s neutral and earthing arrangement. The approved design coordinates the complete set.",
+          "he": "תפקודים אלה עונים לשאלות שונות של תקלה ומערכת. התקן אחד אינו מחליף את יתר ההגנות, ודוגמת הארקה מיישום נייד אינה קובעת סידור אפס והארקה בווילה. התכנון המאושר מתאם את כלל התפקודים יחד.",
+          "th": "หน้าที่เหล่านี้ตอบคำถามเหตุเสียกับระบบต่างกัน อุปกรณ์หนึ่งไม่แทนทุกป้องกัน ตัวอย่างกราวด์งานเคลื่อนที่ไม่กำหนดนิวทรัลและดินวิลล่า แบบอนุมัติประสานทั้งชุด."
+        },
+        "alt": {
+          "en": "Four parallel cards distinguish overcurrent, residual current, surge protection and bonding/earthing.",
+          "he": "ארבעה כרטיסים מבדילים זרם יתר, פחת, נחשול וחיבור מגן.",
+          "th": "สี่ช่องแยกกระแสเกิน กระแสรั่ว กระชาก และบอนดิ้ง/ดิน."
+        }
+      },
+      "videoId": "tech-ground-context",
+      "watchFor": {
+        "en": "Listen for why the grounding question identifies a mobile application.",
+        "he": "שימו לב מדוע שאלת ההארקה מציינת יישום נייד.",
+        "th": "ฟังว่าทำไมคำถามกราวด์ระบุงานเคลื่อนที่."
+      },
+      "takeaway": {
+        "en": "Application context and transfer design matter more than copying a connection.",
+        "he": "הקשר היישום ותכנון המעבר חשובים מהעתקת חיבור.",
+        "th": "บริบทงานและแบบโอนสำคัญกว่าคัดลอกจุดต่อ."
+      },
+      "question": {
+        "en": "Which details would a designer need before applying this grounding discussion to a villa?",
+        "he": "אילו פרטים נדרשים למתכנן לפני יישום הדיון בווילה?",
+        "th": "ผู้ออกแบบต้องรู้อะไรก่อนใช้เรื่องกราวด์นี้กับวิลล่า?"
+      }
+    },
+    {
+      "lesson": "installers-06",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "The control-permission chain",
+          "he": "שרשרת הרשאות הבקרה",
+          "th": "ห่วงโซ่สิทธิ์ควบคุม"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Battery observations",
+              "he": "נתוני מצבר",
+              "th": "ข้อมูลแบตเตอรี่"
+            },
+            "detail": {
+              "en": "Cell and temperature information.",
+              "he": "מידע תאים וטמפרטורה.",
+              "th": "ข้อมูลเซลล์และอุณหภูมิ."
+            }
+          },
+          {
+            "label": {
+              "en": "Matching BMS",
+              "he": "BMS תואם",
+              "th": "BMS คู่กัน"
+            },
+            "detail": {
+              "en": "Interprets the compatible battery family.",
+              "he": "מפרש את משפחת המצבר התואמת.",
+              "th": "แปลผลตระกูลแบตที่เข้ากัน."
+            }
+          },
+          {
+            "label": {
+              "en": "Charge/discharge permission",
+              "he": "הרשאת טעינה ופריקה",
+              "th": "สิทธิ์ชาร์จ/คาย"
+            },
+            "detail": {
+              "en": "Separate functions can have different states.",
+              "he": "לתפקודים נפרדים מצבים שונים.",
+              "th": "หน้าที่แยกมีสถานะต่างได้."
+            }
+          },
+          {
+            "label": {
+              "en": "Supported equipment response",
+              "he": "תגובת ציוד נתמכת",
+              "th": "การตอบของเครื่องที่รองรับ"
+            },
+            "detail": {
+              "en": "Approved interfaces convey the required control.",
+              "he": "ממשקים מאושרים מעבירים בקרה נדרשת.",
+              "th": "อินเทอร์เฟซอนุมัติส่งการควบคุมที่ต้องใช้."
+            }
+          }
+        ],
+        "caption": {
+          "en": "This is a conceptual control flow, not a power-wiring schematic. Correct power cables alone cannot establish battery protection: the exact battery, BMS, interfaces and equipment response must form a compatible chain. Model-specific verification remains part of commissioning.",
+          "he": "זהו תרשים בקרה מושגי ולא שרטוט חיווט כוח. כבלי כוח נכונים לבדם אינם מבססים הגנת מצבר: המצבר, ה-BMS, הממשקים ותגובת הציוד צריכים ליצור שרשרת תואמת. אימות לפי דגם נשאר חלק מתהליך ההפעלה.",
+          "th": "นี่การไหลควบคุมเชิงแนวคิด ไม่ใช่วงจรสายกำลัง สายกำลังถูกอย่างเดียวไม่ยืนยันป้องกันแบต ต้องมีแบต BMS อินเทอร์เฟซ และการตอบที่เข้ากัน การทดสอบยังต้องตามรุ่น."
+        },
+        "alt": {
+          "en": "Battery observations pass to a matching BMS, separate permissions and supported equipment response.",
+          "he": "נתוני מצבר עוברים ל-BMS תואם, הרשאות נפרדות ותגובת ציוד.",
+          "th": "ข้อมูลแบตไป BMS คู่กัน สิทธิ์แยก และการตอบเครื่อง."
+        }
+      },
+      "videoId": "tech-ng-bms",
+      "watchFor": {
+        "en": "Identify how the NG battery and its BMS communicate and divide responsibilities.",
+        "he": "זהו כיצד מצבר NG וה-BMS מתקשרים ומחלקים תפקידים.",
+        "th": "ระบุแบต NG กับ BMS สื่อสารและแบ่งหน้าที่อย่างไร."
+      },
+      "takeaway": {
+        "en": "Nominal voltage alone does not prove control compatibility.",
+        "he": "מתח נקוב לבדו אינו מוכיח תאימות בקרה.",
+        "th": "แรงดันชื่อป้ายอย่างเดียวไม่พิสูจน์เข้ากันควบคุม."
+      },
+      "question": {
+        "en": "What would be missing if the power cables were complete but the permission interface were absent?",
+        "he": "מה חסר אם כבלי הכוח הושלמו אך ממשק ההרשאות חסר?",
+        "th": "ขาดอะไรหากสายกำลังครบแต่ไม่มีอินเทอร์เฟซสิทธิ์?"
+      }
+    },
+    {
+      "lesson": "installers-07",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Choose the backup priority",
+          "he": "לבחור עדיפות גיבוי",
+          "th": "เลือกลำดับสำรอง"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Critical loads only",
+              "he": "חיוניים בלבד",
+              "th": "เฉพาะโหลดสำคัญ"
+            },
+            "detail": {
+              "en": "1.5 kW: idealized 4 hours.",
+              "he": "1.5 קילוואט: 4 שעות אידיאליות.",
+              "th": "1.5 kW: สมมติ 4 ชั่วโมง."
+            }
+          },
+          {
+            "label": {
+              "en": "Critical plus EV",
+              "he": "חיוניים ורכב",
+              "th": "สำคัญรวม EV"
+            },
+            "detail": {
+              "en": "4.5 kW: idealized 1.33 hours.",
+              "he": "4.5 קילוואט: 1.33 שעות אידיאליות.",
+              "th": "4.5 kW: สมมติ 1.33 ชั่วโมง."
+            }
+          },
+          {
+            "label": {
+              "en": "Power capability",
+              "he": "יכולת הספק",
+              "th": "ขีดกำลัง"
+            },
+            "detail": {
+              "en": "Check inverter limits separately.",
+              "he": "בודקים מגבלות ממיר בנפרד.",
+              "th": "ตรวจขีดอินเวอร์เตอร์แยก."
+            }
+          }
+        ],
+        "caption": {
+          "en": "Using the lesson’s invented 6 kWh usable-energy budget, adding a 3 kW EV load cuts the idealized duration from four hours to about 1.33 hours. Runtime arithmetic does not verify inverter capability, starting loads or approval to include the EV circuit.",
+          "he": "בתקציב המדומה בשיעור, 6 קוט״ש שימושיים, הוספת טעינת רכב של 3 קילוואט מקצרת זמן אידיאלי מארבע שעות לכ-1.33 שעות. חישוב הזמן אינו מאמת יכולת ממיר, עומסי התנעה או אישור לכלול את מעגל הרכב.",
+          "th": "ใช้งบพลังงานสมมติในบท 6 kWh เพิ่ม EV 3 kW ลดเวลาสมมติจากสี่เป็นราว 1.33 ชั่วโมง คำนวณเวลาไม่ยืนยันกำลังอินเวอร์เตอร์ โหลดสตาร์ต หรือสิทธิ์รวมวงจร EV."
+        },
+        "alt": {
+          "en": "Critical-only backup lasts four idealized hours; adding EV reduces it to 1.33, with power checked separately.",
+          "he": "גיבוי חיוני נותן ארבע שעות אידיאליות; רכב מקצר ל-1.33 והספק נבדק בנפרד.",
+          "th": "สำรองเฉพาะสำคัญสี่ชั่วโมงสมมติ เพิ่ม EV เหลือ 1.33 และตรวจกำลังแยก."
+        }
+      },
+      "videoId": "tech-ev-guide",
+      "watchFor": {
+        "en": "Compare the charger’s manual, scheduled and solar-related control choices with the property’s priorities.",
+        "he": "השוו בחירות בקרה ידניות, מתוזמנות וסולאריות לעדיפויות הנכס.",
+        "th": "เทียบตัวเลือกควบคุมมือ ตาราง และตามโซลาร์กับลำดับอาคาร."
+      },
+      "takeaway": {
+        "en": "A controllable charger still needs an explicit backup allocation.",
+        "he": "מטען נשלט עדיין דורש הקצאת גיבוי מפורשת.",
+        "th": "เครื่องชาร์จควบคุมได้ยังต้องกำหนดสำรองชัด."
+      },
+      "question": {
+        "en": "Which owner-approved priority would preserve critical service during an outage?",
+        "he": "איזו עדיפות מאושרת בידי בעלים תשמר שירות חיוני בהפסקה?",
+        "th": "ลำดับที่เจ้าของอนุมัติใดรักษาบริการสำคัญเมื่อไฟดับ?"
+      }
+    },
+    {
+      "lesson": "installers-08",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Three different release stages",
+          "he": "שלושה שלבי שחרור שונים",
+          "th": "สามขั้นปล่อยต่างกัน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Construction complete",
+              "he": "התקנה הושלמה",
+              "th": "ก่อสร้างเสร็จ"
+            },
+            "detail": {
+              "en": "Installed work matches its documented scope.",
+              "he": "עבודה תואמת להיקף המתועד.",
+              "th": "งานตรงขอบเขตเอกสาร."
+            }
+          },
+          {
+            "label": {
+              "en": "Ready for commissioning",
+              "he": "מוכן להפעלה",
+              "th": "พร้อมทดสอบ"
+            },
+            "detail": {
+              "en": "Evidence and safe test conditions are available.",
+              "he": "ראיות ותנאי בדיקה בטוחים זמינים.",
+              "th": "มีหลักฐานและสภาพทดสอบปลอดภัย."
+            }
+          },
+          {
+            "label": {
+              "en": "Authorized release",
+              "he": "שחרור מורשה",
+              "th": "ปล่อยโดยผู้มีสิทธิ์"
+            },
+            "detail": {
+              "en": "Required acceptance and permissions are resolved.",
+              "he": "קבלה והרשאות נדרשות הושלמו.",
+              "th": "รับและสิทธิ์ที่ต้องใช้ครบ."
+            }
+          }
+        ],
+        "caption": {
+          "en": "A finished roof does not collapse these three stages into one. Missing protection evidence can block release while construction progress remains recorded. The handover must identify unresolved items, their owners and the evidence required by the authorized commissioning lead.",
+          "he": "גג גמור אינו מאחד את שלושת השלבים לאחד. ראיית הגנה חסרה יכולה לחסום שחרור בעוד התקדמות הביצוע מתועדת. במסירה מזהים פריטים פתוחים, אחראים וראיות הנדרשות בידי מוביל ההפעלה המורשה כדי להמשיך.",
+          "th": "หลังคาเสร็จไม่รวมสามขั้นเป็นหนึ่ง หลักฐานป้องกันขาดอาจขวางปล่อยแม้บันทึกความคืบหน้าแล้ว ส่งมอบต้องระบุข้อค้าง เจ้าของ และหลักฐานที่ผู้นำทดสอบมีสิทธิ์ต้องการ."
+        },
+        "alt": {
+          "en": "Construction completion leads to commissioning readiness, then a separate authorized release.",
+          "he": "גמר התקנה מוביל למוכנות להפעלה ואז לשחרור מורשה נפרד.",
+          "th": "ก่อสร้างเสร็จไปพร้อมทดสอบแล้วปล่อยมีสิทธิ์แยก."
+        }
+      },
+      "videoId": "tech-fluke-workflow",
+      "watchFor": {
+        "en": "Notice how the solar workflow separates installation, commissioning and later maintenance.",
+        "he": "שימו לב להפרדת התקנה, הפעלה ותחזוקה מאוחרת בתהליך.",
+        "th": "ดูการแยกติดตั้ง ทดสอบ และบำรุงภายหลัง."
+      },
+      "takeaway": {
+        "en": "A test result needs the right method and traceable acceptance evidence.",
+        "he": "תוצאת בדיקה דורשת שיטה וראיית קבלה עקיבה.",
+        "th": "ผลทดสอบต้องวิธีถูกและหลักฐานรับตามรอยได้."
+      },
+      "question": {
+        "en": "Which missing record would prevent a green dashboard from becoming technical acceptance?",
+        "he": "איזה רישום חסר ימנע מלוח ירוק להפוך לקבלה טכנית?",
+        "th": "บันทึกใดขาดทำให้แดชบอร์ดเขียวไม่เป็นการรับเทคนิค?"
+      }
+    },
+    {
+      "lesson": "installers-09",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Can the task proceed?",
+          "he": "האם המשימה יכולה להמשיך?",
+          "th": "งานดำเนินต่อได้หรือไม่?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Capstone evidence complete?",
+              "he": "ראיות סיכום מלאות?",
+              "th": "หลักฐานภารกิจครบหรือไม่?"
+            },
+            "detail": {
+              "en": "Check each affected boundary separately.",
+              "he": "בודקים כל גבול מושפע בנפרד.",
+              "th": "ตรวจแต่ละขอบเขตกระทบแยก."
+            }
+          },
+          {
+            "label": {
+              "en": "Missing roof support",
+              "he": "תמיכת גג חסרה",
+              "th": "โครงรองรับขาด"
+            },
+            "detail": {
+              "en": "Structural owner must resolve the mismatch.",
+              "he": "אחראי מבנה פותר אי התאמה.",
+              "th": "เจ้าของโครงสร้างแก้สิ่งไม่ตรง."
+            }
+          },
+          {
+            "label": {
+              "en": "Unapproved connectors",
+              "he": "מחברים לא מאושרים",
+              "th": "ขั้วต่อไม่อนุมัติ"
+            },
+            "detail": {
+              "en": "Quarantine until compliant material is accepted.",
+              "he": "מפרידים עד קבלת חומר תואם.",
+              "th": "กักจนรับวัสดุตรง."
+            }
+          },
+          {
+            "label": {
+              "en": "EV scope change",
+              "he": "שינוי היקף רכב",
+              "th": "เปลี่ยนขอบเขต EV"
+            },
+            "detail": {
+              "en": "Hold pending load and protection review.",
+              "he": "עוצרים לבדיקת עומס והגנה.",
+              "th": "พักรอทบทวนโหลดและป้องกัน."
+            }
+          }
+        ],
+        "caption": {
+          "en": "The invented capstone contains three different blockers, each needing its own reviewer and closure evidence. A good practical assessment demonstrates correct boundaries as well as workmanship. A quiz score cannot release a roof zone, accept incompatible parts or approve an added load.",
+          "he": "במשימת הסיכום המדומה שלושה חסמים שונים, וכל אחד דורש בודק וראיית סגירה משלו. הערכה מעשית טובה מדגימה גבולות נכונים לצד איכות ביצוע. ציון בוחן אינו משחרר אזור גג, מקבל חלקים לא תואמים או מאשר עומס נוסף.",
+          "th": "ภารกิจสมมติมีสามตัวขวาง แต่ละข้อมีผู้ตรวจและหลักฐานปิดของตน ประเมินปฏิบัติดีแสดงขอบเขตถูกกับฝีมือ คะแนนสอบไม่ปล่อยโซนหลังคา รับชิ้นไม่เข้ากัน หรืออนุมัติเพิ่มโหลด."
+        },
+        "alt": {
+          "en": "A capstone decision distinguishes structural, material and EV-scope holds.",
+          "he": "החלטת סיכום מבדילה עצירת מבנה, חומר והיקף רכב.",
+          "th": "การตัดสินภารกิจแยกพักโครงสร้าง วัสดุ และขอบเขต EV."
+        }
+      },
+      "videoId": "tech-mc4-assembly",
+      "watchFor": {
+        "en": "Choose an observable assembly-quality criterion for the isolated task your assessor approves.",
+        "he": "בחרו קריטריון איכות נצפה למשימה המבודדת שהבוחן מאשר.",
+        "th": "เลือกเกณฑ์คุณภาพประกอบที่เห็นได้สำหรับงานแยกพลังงานที่ผู้ประเมินอนุมัติ."
+      },
+      "takeaway": {
+        "en": "Observed, model-specific workmanship is distinct from permission to energize.",
+        "he": "ביצוע נצפה לפי דגם נפרד מהרשאת מתח.",
+        "th": "ฝีมือตามรุ่นที่สังเกตแยกจากสิทธิ์จ่ายไฟ."
+      },
+      "question": {
+        "en": "What would your assessor need to see before accepting the isolated assembly?",
+        "he": "מה צריך הבוחן לראות לפני קבלת ההרכבה המבודדת?",
+        "th": "ผู้ประเมินต้องเห็นอะไรก่อนรับชุดประกอบแยกพลังงาน?"
+      }
+    },
+    {
+      "lesson": "service-01",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "What does silence mean?",
+          "he": "מה משמעות השקט?",
+          "th": "เงียบหมายถึงอะไร?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Monitoring has stopped?",
+              "he": "הניטור נעצר?",
+              "th": "ติดตามหยุดหรือไม่?"
+            },
+            "detail": {
+              "en": "Separate hazards, communications and electrical evidence.",
+              "he": "מפרידים סכנות, תקשורת וראיות חשמל.",
+              "th": "แยกอันตราย สื่อสาร และหลักฐานไฟฟ้า."
+            }
+          },
+          {
+            "label": {
+              "en": "Hazard reported",
+              "he": "דווחה סכנה",
+              "th": "รายงานอันตราย"
+            },
+            "detail": {
+              "en": "Escalate through the site emergency plan.",
+              "he": "מסלימים לפי תוכנית חירום באתר.",
+              "th": "ยกระดับตามแผนฉุกเฉินไซต์."
+            }
+          },
+          {
+            "label": {
+              "en": "Data path unavailable",
+              "he": "נתיב מידע חסר",
+              "th": "ทางข้อมูลขาด"
+            },
+            "detail": {
+              "en": "Preserve timestamps and investigate communications.",
+              "he": "שומרים שעות ובודקים תקשורת.",
+              "th": "เก็บเวลาและตรวจสื่อสาร."
+            }
+          },
+          {
+            "label": {
+              "en": "Electrical status uncertain",
+              "he": "מצב חשמלי לא ידוע",
+              "th": "สถานะไฟฟ้าไม่ชัด"
+            },
+            "detail": {
+              "en": "A qualified lead defines further investigation.",
+              "he": "מוביל מוסמך מגדיר המשך בירור.",
+              "th": "ผู้นำมีคุณสมบัติกำหนดตรวจต่อ."
+            }
+          }
+        ],
+        "caption": {
+          "en": "The lesson’s storm case separates an unavailable app from the equipment it reports on. Hazard screening comes first; communication evidence and electrical evidence then follow distinct paths. Normal building supply does not prove that PV generation or battery protection is healthy.",
+          "he": "מקרה הסערה בשיעור מפריד בין יישומון לא זמין לציוד שעליו הוא מדווח. סקר סכנות קודם; ראיות תקשורת וחשמל ממשיכות במסלולים נפרדים. אספקה רגילה לבניין אינה מוכיחה תקינות ייצור סולארי או הגנת מצבר.",
+          "th": "กรณีพายุในบทแยกแอปใช้ไม่ได้จากเครื่องที่รายงาน ต้องคัดอันตรายก่อน แล้วพิจารณาหลักฐานสื่อสารกับไฟฟ้าแยกกัน อาคารมีไฟปกติไม่พิสูจน์ว่า PV ผลิตหรือป้องกันแบตปกติ."
+        },
+        "alt": {
+          "en": "Monitoring silence branches into hazard escalation, communication checks and unresolved electrical status.",
+          "he": "שקט בניטור מתפצל להסלמת סכנה, בדיקת תקשורת ומצב חשמלי שטרם אומת.",
+          "th": "ติดตามเงียบแยกเป็นยกระดับอันตราย ตรวจสื่อสาร และไฟฟ้ายังไม่ยืนยัน."
+        }
+      },
+      "videoId": "tech-vrm-dashboard",
+      "watchFor": {
+        "en": "Identify which displayed values need current communications before you can interpret them.",
+        "he": "זהו אילו ערכים דורשים תקשורת עדכנית לפני פירוש.",
+        "th": "ระบุค่าที่ต้องมีสื่อสารปัจจุบันก่อนตีความ."
+      },
+      "takeaway": {
+        "en": "A dashboard is a reporting path, not proof that every connected asset is safe.",
+        "he": "לוח ניטור הוא נתיב דיווח ולא הוכחת בטיחות לכל הציוד.",
+        "th": "แดชบอร์ดเป็นทางรายงาน ไม่ใช่หลักฐานว่าทุกเครื่องปลอดภัย."
+      },
+      "question": {
+        "en": "What evidence would distinguish a reporting outage from an electrical outage?",
+        "he": "איזו ראיה תבדיל תקלה בדיווח מהפסקת חשמל?",
+        "th": "หลักฐานใดแยกข้อมูลขาดจากไฟฟ้าขัดข้อง?"
+      }
+    },
+    {
+      "lesson": "service-02",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Make a result meaningful",
+          "he": "לתת משמעות לתוצאה",
+          "th": "ทำให้ผลวัดมีความหมาย"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Defined test",
+              "he": "בדיקה מוגדרת",
+              "th": "ทดสอบชัดเจน"
+            },
+            "detail": {
+              "en": "Specify the circuit, method and acceptance criterion.",
+              "he": "מגדירים מעגל, שיטה וקריטריון קבלה.",
+              "th": "ระบุวงจร วิธี และเกณฑ์รับ."
+            }
+          },
+          {
+            "label": {
+              "en": "Suitable instrument",
+              "he": "מכשיר מתאים",
+              "th": "เครื่องเหมาะสม"
+            },
+            "detail": {
+              "en": "Confirm ratings, condition and identification.",
+              "he": "מאמתים דירוגים, מצב וזיהוי.",
+              "th": "ยืนยันพิกัด สภาพ และรหัส."
+            }
+          },
+          {
+            "label": {
+              "en": "Traceable measurement",
+              "he": "מדידה עקיבה",
+              "th": "ผลวัดตามรอยได้"
+            },
+            "detail": {
+              "en": "Record units, conditions and the responsible tester.",
+              "he": "מתעדים יחידות, תנאים ובודק אחראי.",
+              "th": "บันทึกหน่วย สภาพ และผู้ทดสอบ."
+            }
+          },
+          {
+            "label": {
+              "en": "Reviewed disposition",
+              "he": "הכרעה שנבדקה",
+              "th": "ผลพิจารณาแล้ว"
+            },
+            "detail": {
+              "en": "Accept, hold or plan an authorized repeat.",
+              "he": "מקבלים, עוצרים או מתכננים חזרה מורשית.",
+              "th": "รับ พัก หรือวางทดสอบซ้ำอนุญาต."
+            }
+          }
+        ],
+        "caption": {
+          "en": "A bare “0.8” in the lesson’s worksheet cannot support acceptance. The sequence shows how a defined test, suitable instrument and traceable conditions turn a number into reviewable evidence. Additional decimal places cannot replace missing units or a valid acceptance criterion.",
+          "he": "המספר ״0.8״ לבדו בגליון השיעור אינו מאפשר קבלה. הרצף מראה כיצד בדיקה מוגדרת, מכשיר מתאים ותנאים עקיבים הופכים מספר לראיה הניתנת לבדיקה. ספרות עשרוניות נוספות אינן מחליפות יחידות חסרות או קריטריון קבלה תקף.",
+          "th": "เลข “0.8” เดี่ยวในแผ่นงานไม่พอรับงาน ลำดับนี้แสดงว่าการทดสอบชัด เครื่องเหมาะ และสภาพตามรอยได้ทำให้เลขเป็นหลักฐานตรวจได้ ทศนิยมเพิ่มไม่แทนหน่วยหรือเกณฑ์รับที่ขาด."
+        },
+        "alt": {
+          "en": "Test definition, instrument suitability, a traceable record and review form four connected stages.",
+          "he": "הגדרת בדיקה, התאמת מכשיר, רישום עקיב וביקורת הם ארבעה שלבים מחוברים.",
+          "th": "นิยามทดสอบ เครื่องเหมาะ บันทึกตามรอย และทบทวนเชื่อมสี่ขั้น."
+        }
+      },
+      "videoId": "tech-fluke-workflow",
+      "watchFor": {
+        "en": "Compare the measurement task with the instrument category and purpose discussed by the presenter.",
+        "he": "השוו משימת מדידה לקטגוריית המכשיר ולמטרתו בדיון.",
+        "th": "เทียบงานวัดกับประเภทและวัตถุประสงค์เครื่องที่ผู้สอนกล่าว."
+      },
+      "takeaway": {
+        "en": "Measurement quality includes method, instrument and evidence, not just a displayed number.",
+        "he": "איכות מדידה כוללת שיטה, מכשיר וראיות, מעבר למספר בתצוגה.",
+        "th": "คุณภาพวัดรวมวิธี เครื่อง และหลักฐาน ไม่ใช่เลขหน้าจออย่างเดียว."
+      },
+      "question": {
+        "en": "Which missing fields prevent you from accepting the worksheet’s “0.8”?",
+        "he": "אילו שדות חסרים מונעים קבלת ״0.8״ בגליון?",
+        "th": "ช่องใดที่ขาดทำให้รับ “0.8” ในแผ่นงานไม่ได้?"
+      }
+    },
+    {
+      "lesson": "service-03",
+      "diagram": {
+        "kind": "decision",
+        "title": {
+          "en": "Why is charge low?",
+          "he": "מדוע הטעינה נמוכה?",
+          "th": "ทำไมชาร์จต่ำ?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Low current observed?",
+              "he": "נצפה זרם נמוך?",
+              "th": "พบกระแสต่ำหรือไม่?"
+            },
+            "detail": {
+              "en": "Interpret the operating state before assigning a fault.",
+              "he": "מפרשים מצב עבודה לפני קביעת תקלה.",
+              "th": "ตีความสถานะก่อนระบุเสีย."
+            }
+          },
+          {
+            "label": {
+              "en": "Input constrained",
+              "he": "מקור מוגבל",
+              "th": "อินพุตจำกัด"
+            },
+            "detail": {
+              "en": "Check relevant environmental and input evidence.",
+              "he": "בודקים ראיות סביבה ומקור רלוונטיות.",
+              "th": "ตรวจหลักฐานสภาพกับอินพุตที่เกี่ยว."
+            }
+          },
+          {
+            "label": {
+              "en": "Control limitation",
+              "he": "הגבלת בקרה",
+              "th": "จำกัดโดยควบคุม"
+            },
+            "detail": {
+              "en": "Full battery or approved external limit may explain it.",
+              "he": "מצבר מלא או הגבלה עשויים להסביר.",
+              "th": "แบตเต็มหรือขีดอนุมัติอาจอธิบาย."
+            }
+          },
+          {
+            "label": {
+              "en": "Device fault hypothesis",
+              "he": "השערת תקלה בציוד",
+              "th": "สมมติฐานเครื่องเสีย"
+            },
+            "detail": {
+              "en": "Seek model-specific diagnostic evidence before replacement.",
+              "he": "מחפשים ראיית אבחון לדגם לפני החלפה.",
+              "th": "หาหลักฐานวินิจฉัยรุ่นก่อนเปลี่ยน."
+            }
+          }
+        ],
+        "caption": {
+          "en": "Low charge current is an observation with several possible causes. In the lesson’s invented log, a full battery and active external limit support controlled limitation. This decision map organizes hypotheses; it does not authorize changing protection settings to force higher output.",
+          "he": "זרם טעינה נמוך הוא תצפית עם כמה סיבות אפשריות. ביומן המדומה בשיעור מצבר מלא והגבלה חיצונית פעילה תומכים בהגבלה מבוקרת. מפת ההחלטה מארגנת השערות ואינה מתירה שינוי הגנות כדי לכפות תפוקה גבוהה יותר.",
+          "th": "กระแสชาร์จต่ำเป็นสิ่งสังเกตที่มีหลายสาเหตุ บันทึกสมมติในบทมีแบตเต็มกับขีดภายนอกทำงาน จึงสนับสนุนการจำกัดควบคุม ภาพจัดสมมติฐาน ไม่อนุญาตแก้ป้องกันเพื่อบังคับเพิ่มกำลัง."
+        },
+        "alt": {
+          "en": "A low-current observation branches to input conditions, control limitation and a device-fault hypothesis.",
+          "he": "זרם נמוך מתפצל לתנאי מקור, הגבלת בקרה והשערת תקלה בציוד.",
+          "th": "กระแสต่ำแยกไปสภาพอินพุต จำกัดควบคุม และสมมติฐานเครื่องเสีย."
+        }
+      },
+      "videoId": "tech-mppt-principle",
+      "watchFor": {
+        "en": "Follow the controller’s conversion role and control interfaces before interpreting low output.",
+        "he": "עקבו אחר תפקיד ההמרה וממשקי הבקרה לפני פירוש תפוקה נמוכה.",
+        "th": "ดูหน้าที่แปลงและอินเทอร์เฟซควบคุมก่อนตีความกำลังต่ำ."
+      },
+      "takeaway": {
+        "en": "Understanding normal control behavior prevents a symptom becoming an unsupported replacement decision.",
+        "he": "הבנת בקרה רגילה מונעת החלטת החלפה ללא ראיות.",
+        "th": "เข้าใจควบคุมปกติช่วยไม่ให้ตัดสินเปลี่ยนจากอาการโดยไร้หลักฐาน."
+      },
+      "question": {
+        "en": "Which evidence in the lesson supports limitation rather than a proven controller failure?",
+        "he": "איזו ראיה בשיעור תומכת בהגבלה ולא בכשל בקר מוכח?",
+        "th": "หลักฐานใดในบทสนับสนุนจำกัดแทนพิสูจน์คอนโทรลเลอร์เสีย?"
+      }
+    },
+    {
+      "lesson": "service-04",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Read the BMS states separately",
+          "he": "לקרוא מצבי BMS בנפרד",
+          "th": "อ่านสถานะ BMS แยกกัน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Pre-alarm",
+              "he": "התראה מקדימה",
+              "th": "เตือนล่วงหน้า"
+            },
+            "detail": {
+              "en": "Record the warning and required response.",
+              "he": "מתעדים התראה ותגובה נדרשת.",
+              "th": "บันทึกเตือนและการตอบที่ต้องใช้."
+            }
+          },
+          {
+            "label": {
+              "en": "Charge permission",
+              "he": "הרשאת טעינה",
+              "th": "สิทธิ์ชาร์จ"
+            },
+            "detail": {
+              "en": "A charge restriction need not prohibit discharge.",
+              "he": "הגבלת טעינה אינה בהכרח איסור פריקה.",
+              "th": "จำกัดชาร์จไม่จำเป็นต้องห้ามคาย."
+            }
+          },
+          {
+            "label": {
+              "en": "Discharge permission",
+              "he": "הרשאת פריקה",
+              "th": "สิทธิ์คาย"
+            },
+            "detail": {
+              "en": "A discharge restriction has its own cause and response.",
+              "he": "להגבלת פריקה סיבה ותגובה נפרדות.",
+              "th": "จำกัดคายมีเหตุและตอบของตน."
+            }
+          }
+        ],
+        "caption": {
+          "en": "The NG product example distinguishes warnings and separate charge or discharge permissions. Service diagnosis records the actual model’s states and cause evidence instead of bypassing a restriction. A shorter backup duration also needs a load comparison before it can suggest lost battery capacity.",
+          "he": "דוגמת מוצר NG מבדילה אזהרות והרשאות טעינה או פריקה נפרדות. אבחון שירות מתעד מצבים וראיות סיבה בדגם בפועל במקום לעקוף הגבלה. גם זמן גיבוי קצר יותר דורש השוואת עומס לפני חשד לאובדן קיבולת מצבר.",
+          "th": "ตัวอย่าง NG แยกเตือนกับสิทธิ์ชาร์จหรือคาย การวินิจฉัยบันทึกสถานะรุ่นจริงและหลักฐานสาเหตุแทนข้ามข้อจำกัด เวลาสำรองสั้นลงก็ต้องเทียบโหลดก่อนสงสัยความจุแบตลด."
+        },
+        "alt": {
+          "en": "Three cards distinguish pre-alarm, charge permission and discharge permission.",
+          "he": "שלושה כרטיסים מבדילים התראה מקדימה, הרשאת טעינה והרשאת פריקה.",
+          "th": "สามช่องแยกเตือนล่วงหน้า สิทธิ์ชาร์จ และสิทธิ์คาย."
+        }
+      },
+      "videoId": "tech-ng-bms",
+      "watchFor": {
+        "en": "Identify the BMS’s distinct protective responsibilities and how the matching battery provides information.",
+        "he": "זהו תפקידי הגנה נפרדים וכיצד המצבר התואם מספק מידע.",
+        "th": "ระบุหน้าที่ป้องกันแยกและแบตคู่กันส่งข้อมูลอย่างไร."
+      },
+      "takeaway": {
+        "en": "Protection states provide diagnostic evidence; they are not obstacles to bypass.",
+        "he": "מצבי הגנה מספקים ראיות אבחון ואינם מכשול לעקיפה.",
+        "th": "สถานะป้องกันให้หลักฐานวินิจฉัย ไม่ใช่อุปสรรคให้ข้าม."
+      },
+      "question": {
+        "en": "What would you record if charging is restricted while discharge remains permitted?",
+        "he": "מה תתעדו כשטעינה מוגבלת אך פריקה עדיין מותרת?",
+        "th": "จะบันทึกอะไรเมื่อชาร์จจำกัดแต่ยังอนุญาตคาย?"
+      }
+    },
+    {
+      "lesson": "service-05",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Zero, missing or stale?",
+          "he": "אפס, חסר או ישן?",
+          "th": "ศูนย์ หาย หรือเก่า?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Measured zero",
+              "he": "אפס שנמדד",
+              "th": "วัดได้ศูนย์"
+            },
+            "detail": {
+              "en": "A valid current sample reports zero.",
+              "he": "דגימה נוכחית תקפה מדווחת אפס.",
+              "th": "ตัวอย่างปัจจุบันใช้ได้รายงานศูนย์."
+            }
+          },
+          {
+            "label": {
+              "en": "Missing sample",
+              "he": "דגימה חסרה",
+              "th": "ตัวอย่างหาย"
+            },
+            "detail": {
+              "en": "No usable value arrived for the period.",
+              "he": "לא הגיע ערך שמיש לתקופה.",
+              "th": "ไม่มีค่าที่ใช้ได้ในช่วงนั้น."
+            }
+          },
+          {
+            "label": {
+              "en": "Stale value",
+              "he": "ערך ישן",
+              "th": "ค่าเก่า"
+            },
+            "detail": {
+              "en": "A displayed number belongs to an earlier timestamp.",
+              "he": "המספר המוצג שייך לשעה קודמת.",
+              "th": "เลขแสดงเป็นเวลาที่เก่ากว่า."
+            }
+          }
+        ],
+        "caption": {
+          "en": "These three states can look similar on a dashboard but support different conclusions. Check timestamps, sampling and data quality before comparing normalized yield or escalating an alarm. A fresh zero still needs operating context; a missing sample must not silently become zero production.",
+          "he": "שלושה מצבים אלה עשויים להיראות דומים בלוח אך תומכים במסקנות שונות. בודקים שעות, דגימה ואיכות לפני השוואת תפוקה מנורמלת או הסלמת התראה. גם אפס עדכני דורש הקשר עבודה; דגימה חסרה אינה הופכת אוטומטית לייצור אפס.",
+          "th": "สามสถานะนี้อาจดูคล้ายบนแดชบอร์ดแต่รองรับข้อสรุปต่างกัน ตรวจเวลา การสุ่ม และคุณภาพก่อนเทียบผลปรับฐานหรือยกระดับเตือน ศูนย์ใหม่ยังต้องมีบริบท ตัวอย่างหายต้องไม่กลายเป็นผลิตศูนย์เงียบ ๆ."
+        },
+        "alt": {
+          "en": "Three monitoring states contrast a valid zero, absent data and an old displayed value.",
+          "he": "שלושה מצבי ניטור משווים אפס תקף, נתון חסר וערך ישן בתצוגה.",
+          "th": "สามสถานะเทียบศูนย์ใช้ได้ ข้อมูลขาด และเลขเก่าบนจอ."
+        }
+      },
+      "videoId": "tech-vrm-dashboard",
+      "watchFor": {
+        "en": "Locate the time context and history behind the displayed energy and power values.",
+        "he": "חפשו הקשר זמן והיסטוריה מאחורי ערכי האנרגיה וההספק.",
+        "th": "หาเวลาและประวัติเบื้องหลังค่าพลังงานกับกำลัง."
+      },
+      "takeaway": {
+        "en": "An attractive trend is only useful when the underlying samples are understood.",
+        "he": "מגמה ברורה מועילה רק כשמבינים את הדגימות שמאחוריה.",
+        "th": "แนวโน้มดูดีมีประโยชน์เมื่อเข้าใจตัวอย่างข้อมูลเบื้องหลัง."
+      },
+      "question": {
+        "en": "Which of these three states can support a claim of zero measured generation?",
+        "he": "איזה משלושת המצבים תומך בטענת ייצור נמדד אפס?",
+        "th": "สถานะใดในสามนี้รองรับว่าการผลิตที่วัดเป็นศูนย์?"
+      }
+    },
+    {
+      "lesson": "service-06",
+      "diagram": {
+        "kind": "cycle",
+        "title": {
+          "en": "Turn observations into maintenance",
+          "he": "להפוך תצפיות לתחזוקה",
+          "th": "เปลี่ยนข้อสังเกตเป็นบำรุงรักษา"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Baseline location",
+              "he": "מצב בסיס במיקום",
+              "th": "ฐานเทียบตำแหน่ง"
+            },
+            "detail": {
+              "en": "Keep dated asset and condition records.",
+              "he": "שומרים רישומי ציוד ומצב מתוארכים.",
+              "th": "เก็บบันทึกทรัพย์สินกับสภาพมีวัน."
+            }
+          },
+          {
+            "label": {
+              "en": "Compare condition",
+              "he": "השוואת מצב",
+              "th": "เทียบสภาพ"
+            },
+            "detail": {
+              "en": "Look for change, recurrence and consequences.",
+              "he": "מחפשים שינוי, הישנות והשלכות.",
+              "th": "ดูการเปลี่ยน กลับเป็น และผลกระทบ."
+            }
+          },
+          {
+            "label": {
+              "en": "Authorized correction",
+              "he": "תיקון מורשה",
+              "th": "แก้ที่อนุญาต"
+            },
+            "detail": {
+              "en": "Plan safe access and the applicable method.",
+              "he": "מתכננים גישה בטוחה ושיטה מתאימה.",
+              "th": "วางทางปลอดภัยและวิธีที่ใช้ได้."
+            }
+          },
+          {
+            "label": {
+              "en": "Review the interval",
+              "he": "בדיקת המרווח",
+              "th": "ทบทวนรอบตรวจ"
+            },
+            "detail": {
+              "en": "Adjust the affected location using observed evidence.",
+              "he": "מתאימים מיקום מושפע לפי ראיות.",
+              "th": "ปรับจุดกระทบตามหลักฐานพบ."
+            }
+          }
+        ],
+        "caption": {
+          "en": "The lesson’s repeated drainage photographs show a local condition getting worse. Maintenance follows that evidence: locate the risk, authorize correction and reconsider the affected inspection interval. This cycle supports preventive work without assuming one cleaning method or one frequency is suitable for every asset.",
+          "he": "צילומי הניקוז החוזרים בשיעור מציגים החמרה מקומית. התחזוקה עוקבת אחר הראיות: מאתרים סיכון, מאשרים תיקון ובוחנים מחדש את מרווח הבדיקה במיקום המושפע. המחזור תומך במניעה בלי להניח שיטת ניקוי או תדירות אחידה לכל פריט.",
+          "th": "ภาพทางระบายซ้ำในบทแสดงสภาพจุดหนึ่งแย่ลง บำรุงรักษาตามหลักฐาน ระบุเสี่ยง อนุญาตแก้ และพิจารณารอบตรวจจุดกระทบใหม่ วงจรนี้ไม่สมมติว่าวิธีล้างหรือความถี่เดียวเหมาะกับทุกเครื่อง."
+        },
+        "alt": {
+          "en": "A repeating loop connects the baseline, condition comparison, authorized correction and interval review.",
+          "he": "מחזור חוזר מחבר בסיס מצב, השוואה, תיקון מורשה ובחינת מרווח.",
+          "th": "วงซ้ำเชื่อมฐานเทียบ เทียบสภาพ แก้อนุญาต และทบทวนรอบ."
+        }
+      },
+      "videoId": "tech-fluke-workflow",
+      "watchFor": {
+        "en": "Distinguish the webinar’s commissioning checks from measurements that can support ongoing maintenance.",
+        "he": "הבדילו בדיקות הפעלה ממדידות התומכות בתחזוקה שוטפת.",
+        "th": "แยกตรวจส่งมอบจากการวัดที่ช่วยบำรุงรักษาต่อเนื่อง."
+      },
+      "takeaway": {
+        "en": "Maintenance evidence should reveal change and guide a specific authorized action.",
+        "he": "ראיות תחזוקה צריכות לזהות שינוי ולכוון פעולה מורשית מסוימת.",
+        "th": "หลักฐานบำรุงควรเผยการเปลี่ยนและชี้งานอนุญาตเฉพาะ."
+      },
+      "question": {
+        "en": "Why does the drainage case justify reviewing one location more often rather than every asset?",
+        "he": "מדוע מקרה הניקוז מצדיק בדיקה תכופה למיקום אחד ולא לכל הציוד?",
+        "th": "ทำไมกรณีระบายจึงให้ตรวจจุดเดียวถี่ขึ้นแทนทุกทรัพย์สิน?"
+      }
+    },
+    {
+      "lesson": "service-07",
+      "diagram": {
+        "kind": "bars",
+        "title": {
+          "en": "A phase budget under pressure",
+          "he": "תקציב פאזה תחת עומס",
+          "th": "งบเฟสที่เกินคำขอ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Scenario budget",
+              "he": "תקציב בדוגמה",
+              "th": "งบในตัวอย่าง"
+            },
+            "detail": {
+              "en": "Supplied training limit for this phase.",
+              "he": "מגבלת הדרכה נתונה לפאזה זו.",
+              "th": "ขีดสมมติที่ให้สำหรับเฟสนี้."
+            },
+            "value": 32
+          },
+          {
+            "label": {
+              "en": "Existing demand",
+              "he": "דרישה קיימת",
+              "th": "ความต้องการเดิม"
+            },
+            "detail": {
+              "en": "Building load before the EV request.",
+              "he": "עומס בניין לפני בקשת הרכב.",
+              "th": "โหลดอาคารก่อน EV ขอ."
+            },
+            "value": 20
+          },
+          {
+            "label": {
+              "en": "EV request",
+              "he": "בקשת הרכב",
+              "th": "คำขอ EV"
+            },
+            "detail": {
+              "en": "Requested current, not guaranteed delivery.",
+              "he": "זרם מבוקש, לא אספקה מובטחת.",
+              "th": "กระแสที่ขอ ไม่รับรองจ่าย."
+            },
+            "value": 16
+          },
+          {
+            "label": {
+              "en": "Requested total",
+              "he": "סך מבוקש",
+              "th": "รวมที่ขอ"
+            },
+            "detail": {
+              "en": "20 + 16 = 36 A exceeds 32 A.",
+              "he": "20 + 16 = 36 מעל 32.",
+              "th": "20 + 16 = 36 A เกิน 32 A."
+            },
+            "value": 36
+          }
+        ],
+        "caption": {
+          "en": "In the lesson’s invented single-phase budget, the combined request exceeds the supplied limit by 4 A. Arithmetic headroom is 12 A before other control requirements. These bars explain a demand constraint; they do not prescribe a charger setting, cable size or protective device.",
+          "he": "בתקציב הפאזה המדומה בשיעור הבקשה הכוללת חורגת מהמגבלה הנתונה ב-4 אמפר. המרווח החשבוני הוא 12 אמפר לפני דרישות בקרה אחרות. העמודות מסבירות מגבלת עומס ואינן מורות על הגדרת מטען, חתך כבל או התקן הגנה.",
+          "th": "งบเฟสเดียวสมมติในบทมีคำขอรวมเกินขีดที่ให้ 4 A ส่วนเหลือคำนวณ 12 A ก่อนเงื่อนไขควบคุมอื่น แท่งนี้อธิบายขีดโหลด ไม่กำหนดตั้งเครื่องชาร์จ ขนาดสาย หรืออุปกรณ์ป้องกัน."
+        },
+        "alt": {
+          "en": "Bars compare 32 A budget, 20 A building demand, 16 A EV request and 36 A total.",
+          "he": "עמודות משוות תקציב 32 אמפר, בניין 20, בקשת רכב 16 וסך 36.",
+          "th": "แท่งเทียบงบ 32 A อาคาร 20 A EV ขอ 16 A และรวม 36 A."
+        },
+        "unit": {
+          "en": "A, training example",
+          "he": "אמפר, דוגמת הדרכה",
+          "th": "A ตัวอย่างฝึก"
+        }
+      },
+      "videoId": "tech-ev-guide",
+      "watchFor": {
+        "en": "Look for the charger’s control modes and how site information influences charging behavior.",
+        "he": "חפשו מצבי בקרה וכיצד מידע אתר משפיע על טעינה.",
+        "th": "ดูโหมดควบคุมและข้อมูลไซต์มีผลต่อการชาร์จอย่างไร."
+      },
+      "takeaway": {
+        "en": "A reduced charging rate can reflect a site constraint rather than an EVSE failure.",
+        "he": "טעינה מופחתת עשויה לשקף מגבלת אתר ולא כשל מטען.",
+        "th": "อัตราชาร์จลดอาจสะท้อนขีดไซต์แทน EVSE เสีย."
+      },
+      "question": {
+        "en": "What additional controller requirements must be checked before using the calculated headroom?",
+        "he": "אילו דרישות בקר נוספות צריך לבדוק לפני שימוש במרווח המחושב?",
+        "th": "ต้องตรวจข้อกำหนดคอนโทรลเลอร์ใดเพิ่มก่อนใช้ส่วนเหลือคำนวณ?"
+      }
+    },
+    {
+      "lesson": "service-08",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Control the change",
+          "he": "לשלוט בשינוי",
+          "th": "ควบคุมการเปลี่ยน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Capture baseline",
+              "he": "שמירת מצב בסיס",
+              "th": "เก็บฐานเดิม"
+            },
+            "detail": {
+              "en": "Record versions, settings and the observed problem.",
+              "he": "מתעדים גרסאות, הגדרות ובעיה נצפית.",
+              "th": "บันทึกรุ่น ค่า และปัญหาพบ."
+            }
+          },
+          {
+            "label": {
+              "en": "Authorize a purpose",
+              "he": "אישור מטרה",
+              "th": "อนุมัติวัตถุประสงค์"
+            },
+            "detail": {
+              "en": "Define the fix, owner and recovery plan.",
+              "he": "מגדירים תיקון, אחראי ותוכנית התאוששות.",
+              "th": "ระบุแก้ เจ้าของ และแผนกู้."
+            }
+          },
+          {
+            "label": {
+              "en": "Verify affected functions",
+              "he": "אימות תפקודים מושפעים",
+              "th": "ยืนยันหน้าที่กระทบ"
+            },
+            "detail": {
+              "en": "Match checks to the actual change.",
+              "he": "מתאימים בדיקות לשינוי בפועל.",
+              "th": "ให้ตรวจตรงสิ่งที่เปลี่ยนจริง."
+            }
+          },
+          {
+            "label": {
+              "en": "Record the outcome",
+              "he": "תיעוד תוצאה",
+              "th": "บันทึกผล"
+            },
+            "detail": {
+              "en": "Preserve evidence and unresolved restrictions.",
+              "he": "שומרים ראיות והגבלות פתוחות.",
+              "th": "เก็บหลักฐานและข้อจำกัดค้าง."
+            }
+          }
+        ],
+        "caption": {
+          "en": "Remote access changes the delivery method, not the need for authority and verification. A firmware change needs a justified purpose and recovery plan; a notification-only correction needs a delivery test. The scope of recommissioning follows the affected functions and remaining restrictions.",
+          "he": "גישה מרחוק משנה את אופן הביצוע ולא את הצורך בסמכות ובאימות. שינוי קושחה דורש מטרה מוצדקת ותוכנית התאוששות; תיקון נמען בלבד דורש בדיקת מסירה. היקף ההפעלה החוזרת נגזר מתפקודים מושפעים והגבלות שנותרו.",
+          "th": "เข้าถึงไกลเปลี่ยนวิธีส่งงาน ไม่ลดความจำเป็นของสิทธิ์กับยืนยัน เปลี่ยนเฟิร์มแวร์ต้องมีเหตุและแผนกู้ แก้ผู้รับเตือนอย่างเดียวต้องทดสอบส่งถึง ขอบเขตทดสอบใหม่ตามหน้าที่กระทบและข้อจำกัดที่เหลือ."
+        },
+        "alt": {
+          "en": "Baseline, authorized purpose, affected-function verification and outcome records form a controlled change sequence.",
+          "he": "מצב בסיס, מטרה מאושרת, אימות מושפע ותיעוד תוצאה יוצרים רצף שינוי מבוקר.",
+          "th": "ฐานเดิม วัตถุประสงค์อนุมัติ ยืนยันหน้าที่กระทบ และบันทึกผลเป็นลำดับเปลี่ยนควบคุม."
+        }
+      },
+      "videoId": "tech-remote-update",
+      "watchFor": {
+        "en": "Observe what remote updating depends on, then identify the field coordination and recovery decisions it cannot replace.",
+        "he": "בחנו תלות בעדכון מרחוק וזהו תיאום שטח והחלטות התאוששות שלא מחליפים.",
+        "th": "ดูสิ่งที่อัปเดตไกลพึ่งพา แล้วระบุการประสานไซต์กับตัดสินกู้ที่แทนไม่ได้."
+      },
+      "takeaway": {
+        "en": "An available update is not, by itself, a reason to change a stable system.",
+        "he": "עדכון זמין כשלעצמו אינו סיבה לשנות מערכת יציבה.",
+        "th": "มีอัปเดตอย่างเดียวไม่ใช่เหตุให้เปลี่ยนระบบเสถียร."
+      },
+      "question": {
+        "en": "What documented benefit would justify this update, and who would own recovery?",
+        "he": "איזו תועלת מתועדת מצדיקה עדכון זה ומי אחראי להתאוששות?",
+        "th": "ประโยชน์บันทึกใดให้เหตุอัปเดต และใครรับผิดชอบกู้?"
+      }
+    },
+    {
+      "lesson": "service-09",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Close each fault separately",
+          "he": "לסגור כל תקלה בנפרד",
+          "th": "ปิดแต่ละเหตุแยกกัน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Communications restored",
+              "he": "תקשורת חזרה",
+              "th": "สื่อสารกลับแล้ว"
+            },
+            "detail": {
+              "en": "Current plausible data and notification delivery verified.",
+              "he": "אומתו נתונים סבירים עדכניים ומסירת הודעות.",
+              "th": "ยืนยันข้อมูลสดสมเหตุผลและส่งเตือน."
+            }
+          },
+          {
+            "label": {
+              "en": "Battery assessment open",
+              "he": "בדיקת מצבר פתוחה",
+              "th": "ประเมินแบตยังเปิด"
+            },
+            "detail": {
+              "en": "Preserve permissions pending specialist cause review.",
+              "he": "שומרים הרשאות עד בדיקת סיבה מקצועית.",
+              "th": "คงสิทธิ์รอผู้เชี่ยวชาญตรวจเหตุ."
+            }
+          },
+          {
+            "label": {
+              "en": "Physical restriction open",
+              "he": "הגבלה פיזית פתוחה",
+              "th": "ข้อจำกัดกายภาพเปิด"
+            },
+            "detail": {
+              "en": "Authorized correction and acceptance are still required.",
+              "he": "עדיין דרושים תיקון וקבלה מורשים.",
+              "th": "ยังต้องแก้และรับที่อนุญาต."
+            }
+          }
+        ],
+        "caption": {
+          "en": "The assessor’s invented update resolves one reporting fault while two other paths remain open. Track closure evidence for each fault independently. A recovered dashboard cannot accept physical storm damage, remove battery restrictions or turn a partial repair into a whole-system pass.",
+          "he": "בעדכון המדומה של הבוחן תקלה אחת בדיווח נפתרה ושני מסלולים נותרים פתוחים. עוקבים בנפרד אחר ראיות סגירה לכל תקלה. לוח שחזר אינו מאשר נזק פיזי מסערה, מסיר הגבלות מצבר או הופך תיקון חלקי למעבר מערכת מלאה.",
+          "th": "อัปเดตสมมติของผู้ประเมินแก้เหตุรายงานหนึ่งแต่สองทางยังเปิด ตามหลักฐานปิดแต่ละเหตุแยกกัน แดชบอร์ดกลับไม่รับความเสียหายพายุ ถอนข้อจำกัดแบต หรือเปลี่ยนซ่อมบางส่วนให้ผ่านทั้งระบบ."
+        },
+        "alt": {
+          "en": "Three cards show one verified communication closure and two unresolved battery and physical paths.",
+          "he": "שלושה כרטיסים מציגים תקשורת שנסגרה ושני מסלולי מצבר ונזק שטרם נסגרו.",
+          "th": "สามช่องแสดงปิดสื่อสารยืนยันหนึ่งและทางแบตกับกายภาพยังค้างสอง."
+        }
+      },
+      "videoId": "tech-fluke-workflow",
+      "watchFor": {
+        "en": "Identify why different commissioning and maintenance questions require different forms of measurement evidence.",
+        "he": "זהו מדוע שאלות הפעלה ותחזוקה שונות דורשות ראיות מדידה שונות.",
+        "th": "ระบุว่าทำไมคำถามส่งมอบกับบำรุงต่างกันต้องใช้หลักฐานวัดต่างกัน."
+      },
+      "takeaway": {
+        "en": "A service capstone succeeds by demonstrating defensible closure and preserving unresolved holds.",
+        "he": "הצלחת משימת שירות דורשת סגירה מנומקת ושמירת עצירות שלא נפתרו.",
+        "th": "ภารกิจบริการสำเร็จด้วยปิดมีหลักฐานและคงพักที่ยังไม่แก้."
+      },
+      "question": {
+        "en": "Which evidence is still missing after communications return in the assessor’s case?",
+        "he": "איזו ראיה עדיין חסרה לאחר חזרת התקשורת במקרה הבוחן?",
+        "th": "หลังสื่อสารกลับในกรณีผู้ประเมินยังขาดหลักฐานใด?"
+      }
+    },
+    {
+      "lesson": "technical-01",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Match the mounting system",
+          "he": "להתאים מערכת עיגון",
+          "th": "จับคู่ระบบยึด"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Identify the roof",
+              "he": "זיהוי הגג",
+              "th": "ระบุหลังคา"
+            },
+            "detail": {
+              "en": "Record covering, supporting structure and condition.",
+              "he": "מתעדים כיסוי, שלד תומך ומצב.",
+              "th": "บันทึกผิวหลังคา โครงรองรับ และสภาพ."
+            }
+          },
+          {
+            "label": {
+              "en": "Verify system applicability",
+              "he": "אימות תחולת מערכת",
+              "th": "ยืนยันระบบใช้ได้"
+            },
+            "detail": {
+              "en": "Match the exact mounting product and instructions.",
+              "he": "מתאימים מוצר עיגון והוראות מדויקים.",
+              "th": "จับคู่ผลิตภัณฑ์ยึดและคำสั่งจริง."
+            }
+          },
+          {
+            "label": {
+              "en": "Review the layout",
+              "he": "בדיקת פריסה",
+              "th": "ตรวจผัง"
+            },
+            "detail": {
+              "en": "Confirm approved structural and waterproofing details.",
+              "he": "מאשרים פרטי מבנה ואיטום מתוכננים.",
+              "th": "ยืนยันรายละเอียดโครงและกันน้ำอนุมัติ."
+            }
+          },
+          {
+            "label": {
+              "en": "Inspect concealed work",
+              "he": "בדיקת עבודה נסתרת",
+              "th": "ตรวจงานซ่อน"
+            },
+            "detail": {
+              "en": "Record acceptance before the array hides details.",
+              "he": "מתעדים קבלה לפני הסתרה במערך.",
+              "th": "บันทึกรับก่อนอาร์เรย์ปิดรายละเอียด."
+            }
+          }
+        ],
+        "caption": {
+          "en": "The roof category starts the choice but does not finish the design. A suitable mounting system must also match the specific structure, covering and approved details. The accompanying composition-shingle demonstration illustrates one product; its attachments and settings cannot be transferred automatically to Thai metal roofs.",
+          "he": "קטגוריית הגג מתחילה את הבחירה אך אינה משלימה תכנון. מערכת עיגון מתאימה צריכה להתאים גם לשלד, לכיסוי ולפרטים המאושרים. הדגמת השינגל המצורפת ממחישה מוצר אחד; אי אפשר להעתיק אוטומטית את עיגוניו והגדרותיו לגגות פח בתאילנד.",
+          "th": "ประเภทหลังคาเริ่มการเลือกแต่ไม่จบแบบ ระบบยึดต้องตรงโครง ผิว และรายละเอียดอนุมัติด้วย วิดีโอชิงเกิลประกอบแสดงหนึ่งผลิตภัณฑ์ ไม่ถ่ายจุดยึดหรือค่าตั้งไปหลังคาโลหะไทยโดยอัตโนมัติ."
+        },
+        "alt": {
+          "en": "A four-stage sequence matches roof identity to mounting applicability, approved layout and concealed-work inspection.",
+          "he": "רצף בן ארבעה שלבים מתאים גג למערכת, לפריסה מאושרת ולבדיקת עבודה נסתרת.",
+          "th": "สี่ขั้นจับคู่หลังคากับระบบ ผังอนุมัติ และตรวจงานซ่อน."
+        }
+      },
+      "videoId": "tech-k2-mount",
+      "watchFor": {
+        "en": "Identify the composition-shingle roof and the named MiniRail Comp parts used in the demonstration.",
+        "he": "זהו גג שינגל וחלקי MiniRail Comp הנקובים בהדגמה.",
+        "th": "ระบุหลังคาชิงเกิลและชิ้น MiniRail Comp ที่ระบุในสาธิต."
+      },
+      "takeaway": {
+        "en": "Mounting instructions travel with the specified system and roof application.",
+        "he": "הוראות עיגון שייכות למערכת וליישום הגג המוגדרים.",
+        "th": "คำสั่งยึดผูกกับระบบและการใช้หลังคาที่ระบุ."
+      },
+      "question": {
+        "en": "Which documents would you need before adapting this lesson to a different roof?",
+        "he": "אילו מסמכים דרושים לפני התאמת השיעור לגג אחר?",
+        "th": "ต้องมีเอกสารใดก่อนประยุกต์บทนี้กับหลังคาอื่น?"
+      }
+    },
+    {
+      "lesson": "technical-02",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Separate the string checks",
+          "he": "להפריד בדיקות סטרינג",
+          "th": "แยกตรวจสตริง"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Series voltage",
+              "he": "מתח בטור",
+              "th": "แรงดันอนุกรม"
+            },
+            "detail": {
+              "en": "Voltages add; check cold Voc against maximum DC voltage.",
+              "he": "מתחים מצטברים; בודקים Voc קר מול מקסימום DC.",
+              "th": "แรงดันบวกกัน ตรวจ Voc เย็นกับ DC สูงสุด."
+            }
+          },
+          {
+            "label": {
+              "en": "Operating voltage",
+              "he": "מתח עבודה",
+              "th": "แรงดันทำงาน"
+            },
+            "detail": {
+              "en": "Check expected Vmp against the model’s MPPT range.",
+              "he": "בודקים Vmp צפוי מול טווח MPPT לדגם.",
+              "th": "ตรวจ Vmp คาดกับช่วง MPPT รุ่น."
+            }
+          },
+          {
+            "label": {
+              "en": "Parallel current",
+              "he": "זרם במקביל",
+              "th": "กระแสขนาน"
+            },
+            "detail": {
+              "en": "Branch currents add; verify applicable input and protection limits.",
+              "he": "זרמי ענפים מצטברים; מאמתים כניסה והגנות.",
+              "th": "กระแสแขนงบวก ตรวจขีดอินพุตและป้องกัน."
+            }
+          }
+        ],
+        "caption": {
+          "en": "Series and parallel relationships affect different equipment limits. Maximum DC voltage and the MPPT operating window are separate checks: cold-corrected Voc addresses the first, while expected operating Vmp addresses the second. This conceptual comparison does not determine a safe string length or connector arrangement.",
+          "he": "יחסי טור ומקביל משפיעים על מגבלות ציוד שונות. מתח DC מרבי וחלון עבודת MPPT הם בדיקות נפרדות: Voc מתוקן לקור נבדק מול הראשון ו-Vmp צפוי בעבודה מול השני. ההשוואה המושגית אינה קובעת אורך סטרינג או סידור מחברים בטוח.",
+          "th": "อนุกรมกับขนานมีผลต่อขีดเครื่องต่างกัน แรงดัน DC สูงสุดกับช่วงทำงาน MPPT ต้องตรวจแยก Voc ปรับเย็นตรวจข้อแรก Vmp ขณะทำงานตรวจข้อสอง ภาพแนวคิดนี้ไม่กำหนดจำนวนแผงหรือจัดขั้วต่อที่ปลอดภัย."
+        },
+        "alt": {
+          "en": "Three cards distinguish series Voc, operating Vmp and parallel-current limit checks.",
+          "he": "שלושה כרטיסים מבדילים בדיקות Voc בטור, Vmp בעבודה וזרם במקביל.",
+          "th": "สามช่องแยกตรวจ Voc อนุกรม Vmp ทำงาน และขีดกระแสขนาน."
+        }
+      },
+      "videoId": "tech-mppt-principle",
+      "watchFor": {
+        "en": "Follow the explanation of conversion and series connections while keeping input limits separate from output ratings.",
+        "he": "עקבו אחר הסבר המרה וטור והפרידו מגבלות כניסה מדירוגי יציאה.",
+        "th": "ดูคำอธิบายแปลงกับอนุกรม โดยแยกขีดอินพุตจากพิกัดเอาต์พุต."
+      },
+      "takeaway": {
+        "en": "A controller’s conversion function does not remove its voltage and current limits.",
+        "he": "פעולת המרה אינה מבטלת מגבלות מתח וזרם של בקר.",
+        "th": "การแปลงของคอนโทรลเลอร์ไม่ลบขีดแรงดันกับกระแส."
+      },
+      "question": {
+        "en": "Why would a string passing the maximum-voltage check still need an MPPT operating-range check?",
+        "he": "מדוע סטרינג שעבר מתח מרבי עדיין דורש בדיקת טווח MPPT?",
+        "th": "ทำไมสตริงผ่านแรงดันสูงสุดแล้วยังต้องตรวจช่วงทำงาน MPPT?"
+      }
+    },
+    {
+      "lesson": "technical-03",
+      "diagram": {
+        "kind": "flow",
+        "title": {
+          "en": "Build the commissioning record",
+          "he": "לבנות רישום הפעלה",
+          "th": "สร้างบันทึกทดสอบส่งมอบ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Exact equipment identity",
+              "he": "זיהוי ציוד מדויק",
+              "th": "รหัสเครื่องตรง"
+            },
+            "detail": {
+              "en": "Record inverter model, variant and documentation.",
+              "he": "מתעדים דגם, גרסה ותיעוד ממיר.",
+              "th": "บันทึกรุ่น ตัวแปร และเอกสารอินเวอร์เตอร์."
+            }
+          },
+          {
+            "label": {
+              "en": "Approved operating modes",
+              "he": "מצבי עבודה מאושרים",
+              "th": "โหมดทำงานอนุมัติ"
+            },
+            "detail": {
+              "en": "Confirm project configuration and permission boundaries.",
+              "he": "מאמתים תצורת פרויקט וגבולות הרשאה.",
+              "th": "ยืนยันค่าระบบกับขอบเขตสิทธิ์."
+            }
+          },
+          {
+            "label": {
+              "en": "Qualified tests",
+              "he": "בדיקות מוסמכות",
+              "th": "ทดสอบโดยผู้มีคุณสมบัติ"
+            },
+            "detail": {
+              "en": "Use the approved plan and traceable results.",
+              "he": "משתמשים בתוכנית וברישומים עקיבים.",
+              "th": "ใช้แผนอนุมัติและผลตามรอยได้."
+            }
+          },
+          {
+            "label": {
+              "en": "Handover baseline",
+              "he": "בסיס למסירה",
+              "th": "ฐานเทียบส่งมอบ"
+            },
+            "detail": {
+              "en": "Preserve settings, evidence and unresolved holds.",
+              "he": "שומרים הגדרות, ראיות ועצירות פתוחות.",
+              "th": "เก็บค่า หลักฐาน และพักค้าง."
+            }
+          }
+        ],
+        "caption": {
+          "en": "A successful app connection is only one part of commissioning evidence. The model, approved operating modes, qualified tests and handover record must agree. The expert webinar teaches measurement workflow; it does not replace Huawei instructions or authorize a particular grid profile, energization sequence or protection setting.",
+          "he": "חיבור מוצלח ליישומון הוא רק חלק מראיות ההפעלה. דגם, מצבים מאושרים, בדיקות מוסמכות ותיק מסירה צריכים להתאים. הוובינר מלמד תהליך מדידה ואינו מחליף הוראות Huawei או מאשר פרופיל רשת, רצף חיבור מתח או ערך הגנה מסוים.",
+          "th": "เชื่อมแอปได้เป็นเพียงส่วนหนึ่งของหลักฐานส่งมอบ รุ่น โหมดอนุมัติ ทดสอบโดยผู้มีคุณสมบัติ และบันทึกต้องตรงกัน เว็บบินาร์สอนลำดับวัด ไม่แทนคำสั่ง Huawei หรืออนุญาตโปรไฟล์กริด ลำดับจ่ายไฟ หรือค่าป้องกัน."
+        },
+        "alt": {
+          "en": "A commissioning record connects exact identity, approved modes, qualified testing and a preserved handover baseline.",
+          "he": "רישום הפעלה מחבר זהות מדויקת, מצבים מאושרים, בדיקות ובסיס מסירה שמור.",
+          "th": "บันทึกส่งมอบเชื่อมรหัสตรง โหมดอนุมัติ ทดสอบ และฐานส่งมอบที่เก็บ."
+        }
+      },
+      "videoId": "tech-fluke-workflow",
+      "watchFor": {
+        "en": "Identify the test purpose, instrument choice and evidence that belong in a commissioning report.",
+        "he": "זהו מטרת בדיקה, בחירת מכשיר וראיות הנדרשות בדוח הפעלה.",
+        "th": "ระบุจุดประสงค์ทดสอบ เลือกเครื่อง และหลักฐานที่ควรในรายงาน."
+      },
+      "takeaway": {
+        "en": "A commissioning report must demonstrate measured acceptance beyond successful device registration.",
+        "he": "דוח הפעלה צריך להראות קבלה מדודה מעבר לרישום ציוד מוצלח.",
+        "th": "รายงานส่งมอบต้องแสดงรับจากผลวัดมากกว่าลงทะเบียนเครื่องสำเร็จ."
+      },
+      "question": {
+        "en": "Which evidence would still be missing if FusionSolar registration were the only completed item?",
+        "he": "אילו ראיות חסרות אם רישום FusionSolar הוא הסעיף היחיד שהושלם?",
+        "th": "หากทำแค่ลงทะเบียน FusionSolar ยังขาดหลักฐานใด?"
+      }
+    },
+    {
+      "lesson": "ev-storage-01",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Three different battery questions",
+          "he": "שלוש שאלות מצבר שונות",
+          "th": "สามคำถามแบตต่างกัน"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Energy: kWh",
+              "he": "אנרגיה: קוט״ש",
+              "th": "พลังงาน kWh"
+            },
+            "detail": {
+              "en": "How much energy is available under stated assumptions?",
+              "he": "כמה אנרגיה זמינה לפי ההנחות?",
+              "th": "มีพลังงานเท่าไรภายใต้สมมติฐาน?"
+            }
+          },
+          {
+            "label": {
+              "en": "Power: kW",
+              "he": "הספק: קילוואט",
+              "th": "กำลัง kW"
+            },
+            "detail": {
+              "en": "Which simultaneous loads can the system support?",
+              "he": "אילו עומסים בו זמנית נתמכים?",
+              "th": "ระบบจ่ายโหลดพร้อมกันใดได้?"
+            }
+          },
+          {
+            "label": {
+              "en": "Control compatibility",
+              "he": "תאימות בקרה",
+              "th": "เข้ากันควบคุม"
+            },
+            "detail": {
+              "en": "Do battery, BMS and inverter interfaces match?",
+              "he": "האם ממשקי מצבר, BMS וממיר תואמים?",
+              "th": "อินเทอร์เฟซแบต BMS และอินเวอร์เตอร์ตรงไหม?"
+            }
+          }
+        ],
+        "caption": {
+          "en": "Capacity, power capability and control compatibility answer different questions. A large energy label cannot promise whole-home backup or prove that an inverter will obey the battery’s limits. The NG video is a separate product-family example, so its interfaces do not establish Huawei LUNA compatibility.",
+          "he": "קיבולת, יכולת הספק ותאימות בקרה עונות לשאלות שונות. תווית אנרגיה גדולה אינה מבטיחה גיבוי לכל הבית או הוכחה שהממיר יציית למגבלות המצבר. סרטון NG מדגים משפחה אחרת, ולכן ממשקיו אינם מוכיחים תאימות Huawei LUNA.",
+          "th": "ความจุ ขีดกำลัง และเข้ากันควบคุมตอบต่างคำถาม ป้ายพลังงานใหญ่ไม่รับรองสำรองทั้งบ้านหรือพิสูจน์ว่าอินเวอร์เตอร์ทำตามขีดแบต วิดีโอ NG เป็นอีกตระกูล จึงไม่ยืนยันอินเทอร์เฟซเข้ากับ Huawei LUNA."
+        },
+        "alt": {
+          "en": "Three cards separate energy capacity, simultaneous power capability and control compatibility.",
+          "he": "שלושה כרטיסים מפרידים קיבולת אנרגיה, הספק בו זמני ותאימות בקרה.",
+          "th": "สามช่องแยกความจุพลังงาน ขีดกำลังพร้อมกัน และเข้ากันควบคุม."
+        }
+      },
+      "videoId": "tech-ng-bms",
+      "watchFor": {
+        "en": "Notice that the battery explanation includes communication and a matching BMS, not capacity alone.",
+        "he": "שימו לב שההסבר כולל תקשורת ו-BMS תואם לצד קיבולת.",
+        "th": "สังเกตว่าอธิบายแบตรวมสื่อสารและ BMS คู่กัน ไม่ใช่ความจุอย่างเดียว."
+      },
+      "takeaway": {
+        "en": "Battery selection is a system compatibility decision as well as an energy calculation.",
+        "he": "בחירת מצבר היא החלטת תאימות מערכת לצד חישוב אנרגיה.",
+        "th": "เลือกแบตเป็นการตัดสินเข้ากันระบบควบคู่คำนวณพลังงาน."
+      },
+      "question": {
+        "en": "What separate evidence would you request for runtime, load power and BMS compatibility?",
+        "he": "אילו ראיות נפרדות תבקשו לזמן, להספק עומס ולתאימות BMS?",
+        "th": "จะขอหลักฐานแยกใดสำหรับเวลา กำลังโหลด และเข้ากัน BMS?"
+      }
+    },
+    {
+      "lesson": "ev-storage-02",
+      "diagram": {
+        "kind": "compare",
+        "title": {
+          "en": "Where does conversion happen?",
+          "he": "היכן מתבצעת ההמרה?",
+          "th": "แปลงไฟที่ไหน?"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "AC charging",
+              "he": "טעינת AC",
+              "th": "ชาร์จ AC"
+            },
+            "detail": {
+              "en": "The vehicle’s onboard charger converts supplied AC to DC.",
+              "he": "מטען ברכב ממיר AC שסופק ל-DC.",
+              "th": "เครื่องชาร์จบนรถแปลง AC ที่จ่ายเป็น DC."
+            }
+          },
+          {
+            "label": {
+              "en": "DC charging",
+              "he": "טעינת DC",
+              "th": "ชาร์จ DC"
+            },
+            "detail": {
+              "en": "External charging equipment provides controlled DC to the vehicle.",
+              "he": "ציוד טעינה חיצוני מספק DC מבוקר לרכב.",
+              "th": "เครื่องภายนอกจ่าย DC ควบคุมให้รถ."
+            }
+          },
+          {
+            "label": {
+              "en": "Whole-system limits",
+              "he": "מגבלות המערכת",
+              "th": "ขีดทั้งระบบ"
+            },
+            "detail": {
+              "en": "Vehicle, equipment, connector and site must be compatible.",
+              "he": "רכב, ציוד, מחבר ואתר צריכים להתאים.",
+              "th": "รถ เครื่อง ขั้วต่อ และไซต์ต้องเข้ากัน."
+            }
+          }
+        ],
+        "caption": {
+          "en": "AC and DC charging differ in where power conversion occurs. Charging speed still depends on the vehicle, charger and site limits, rather than connector appearance alone. The accompanying Victron guide demonstrates an AC charging station and its controls; it is not a DC fast-charger installation tutorial.",
+          "he": "טעינת AC ו-DC נבדלות במיקום המרת ההספק. מהירות הטעינה עדיין תלויה ברכב, במטען ובמגבלות האתר ולא רק בצורת המחבר. מדריך Victron המצורף מדגים תחנת AC ובקרה שלה ואינו הדרכת התקנה למטען DC מהיר.",
+          "th": "ชาร์จ AC กับ DC ต่างที่ตำแหน่งแปลงกำลัง ความเร็วยังขึ้นกับรถ เครื่องชาร์จ และขีดไซต์ ไม่ใช่หน้าตาขั้วต่ออย่างเดียว คู่มือ Victron แสดงสถานี AC กับควบคุม ไม่ใช่บทติดตั้งชาร์จเร็ว DC."
+        },
+        "alt": {
+          "en": "AC conversion inside the vehicle is compared with external DC conversion and shared system constraints.",
+          "he": "המרת AC ברכב מושווית להמרת DC חיצונית ולמגבלות מערכת משותפות.",
+          "th": "เทียบแปลง AC ในรถกับแปลง DC ภายนอกและขีดร่วมระบบ."
+        }
+      },
+      "videoId": "tech-ev-guide",
+      "watchFor": {
+        "en": "Identify the station as an AC product and separate its charging modes from the vehicle’s conversion capability.",
+        "he": "זהו תחנת AC והפרידו מצבי טעינה מיכולת ההמרה ברכב.",
+        "th": "ระบุสถานีเป็น AC และแยกโหมดชาร์จจากความสามารถแปลงของรถ."
+      },
+      "takeaway": {
+        "en": "A charging mode can manage timing or available power without changing hardware limits.",
+        "he": "מצב טעינה מנהל זמן או הספק זמין בלי לשנות מגבלות חומרה.",
+        "th": "โหมดชาร์จจัดเวลาหรือกำลังที่มีได้โดยไม่เปลี่ยนขีดฮาร์ดแวร์."
+      },
+      "question": {
+        "en": "Why might charging remain below the station’s rating even when the plug fits?",
+        "he": "מדוע הטעינה עשויה להישאר מתחת לדירוג התחנה גם כשהתקע מתאים?",
+        "th": "ทำไมกำลังชาร์จอาจต่ำกว่าพิกัดสถานีแม้ปลั๊กเข้ากัน?"
+      }
+    },
+    {
+      "lesson": "ev-storage-03",
+      "diagram": {
+        "kind": "cycle",
+        "title": {
+          "en": "Make priorities observable",
+          "he": "להפוך עדיפויות לנצפות",
+          "th": "ทำให้เห็นผลลำดับความสำคัญ"
+        },
+        "nodes": [
+          {
+            "label": {
+              "en": "Observe generation and demand",
+              "he": "מדידת ייצור וביקוש",
+              "th": "ดูผลิตและต้องการ"
+            },
+            "detail": {
+              "en": "Use current measurements at the correct boundary.",
+              "he": "משתמשים במדידות עדכניות בגבול הנכון.",
+              "th": "ใช้ค่าปัจจุบันที่ขอบเขตถูก."
+            }
+          },
+          {
+            "label": {
+              "en": "Apply agreed priorities",
+              "he": "יישום עדיפויות מוסכמות",
+              "th": "ใช้ลำดับที่ตกลง"
+            },
+            "detail": {
+              "en": "Respect essential loads and approved battery reserve.",
+              "he": "מכבדים חיוניים ועתודת מצבר מאושרת.",
+              "th": "รักษาโหลดสำคัญและสำรองแบตอนุมัติ."
+            }
+          },
+          {
+            "label": {
+              "en": "Allocate EV charging",
+              "he": "הקצאת טעינת רכב",
+              "th": "จัดสรรชาร์จ EV"
+            },
+            "detail": {
+              "en": "Remain within approved site and product limits.",
+              "he": "נשארים במגבלות אתר ומוצר מאושרות.",
+              "th": "อยู่ในขีดไซต์และผลิตภัณฑ์อนุมัติ."
+            }
+          },
+          {
+            "label": {
+              "en": "Verify actual response",
+              "he": "אימות תגובה בפועל",
+              "th": "ยืนยันการตอบจริง"
+            },
+            "detail": {
+              "en": "Compare commanded behavior with observed operation.",
+              "he": "משווים הוראה לפעולה נצפית.",
+              "th": "เทียบพฤติกรรมสั่งกับทำจริง."
+            }
+          }
+        ],
+        "caption": {
+          "en": "An energy-management priority becomes useful when measurements, permissions and device response agree. This cycle illustrates coordinating solar, battery reserve and EV demand, not a power-wiring architecture. A product’s solar-charging mode does not prove whole-site integration, vehicle-to-grid capability or guaranteed bill savings.",
+          "he": "עדיפות בניהול אנרגיה מועילה כשמדידות, הרשאות ותגובת ציוד תואמות. המחזור ממחיש תיאום סולאר, עתודת מצבר וביקוש רכב ואינו ארכיטקטורת חיווט כוח. מצב טעינה סולארית במוצר אינו מוכיח שילוב אתר מלא, יכולת רכב לרשת או חיסכון מובטח בחשבון.",
+          "th": "ลำดับจัดการพลังงานมีผลเมื่อค่าที่วัด สิทธิ์ และการตอบเครื่องตรงกัน วงจรนี้อธิบายประสานโซลาร์ สำรองแบต และ EV ไม่ใช่สถาปัตยกรรมสายกำลัง โหมดชาร์จโซลาร์ไม่พิสูจน์รวมทั้งไซต์ V2G หรือรับรองลดบิล."
+        },
+        "alt": {
+          "en": "A repeating control cycle observes demand, applies priorities, allocates EV charging and verifies response.",
+          "he": "מחזור בקרה מודד ביקוש, מיישם עדיפויות, מקצה טעינה ומאמת תגובה.",
+          "th": "วงควบคุมดูความต้องการ ใช้ลำดับ จัดชาร์จ และยืนยันตอบ."
+        }
+      },
+      "videoId": "tech-ev-guide",
+      "watchFor": {
+        "en": "Compare the station’s manual, scheduled and solar-related modes with the coordination needed across the property.",
+        "he": "השוו מצבים ידניים, מתוזמנים וסולאריים לתיאום הנדרש בכל הנכס.",
+        "th": "เทียบโหมดมือ ตาราง และตามโซลาร์กับการประสานที่ต้องทั่วอาคาร."
+      },
+      "takeaway": {
+        "en": "A charger feature must be verified within the complete site’s agreed priorities.",
+        "he": "תכונת מטען חייבת אימות בתוך עדיפויות האתר המוסכמות.",
+        "th": "คุณสมบัติเครื่องชาร์จต้องยืนยันในลำดับที่ตกลงทั้งไซต์."
+      },
+      "question": {
+        "en": "Which measured change would show that EV demand is respecting the owner’s battery-reserve priority?",
+        "he": "איזה שינוי נמדד יראה שביקוש הרכב מכבד עדיפות עתודת מצבר של הבעלים?",
+        "th": "การเปลี่ยนที่วัดใดแสดงว่า EV เคารพลำดับสำรองแบตของเจ้าของ?"
+      }
+    }
+  ]
+}
